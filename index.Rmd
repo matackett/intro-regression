@@ -23,7 +23,7 @@ url: 'https\://www.introregression.org/'
 description: "This document contains lab assignments and other materials for an intermediate-level regression course."
 ---
 
-# Introduction 
+# Beginning of the Book 
 
 This is the introduction to the book.
 

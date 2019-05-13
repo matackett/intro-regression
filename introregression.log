@@ -1,4 +1,4 @@
-This is XeTeX, Version 3.14159265-2.6-0.99999 (TeX Live 2018) (preloaded format=xelatex 2018.4.16)  13 MAY 2019 19:51
+This is XeTeX, Version 3.14159265-2.6-0.99999 (TeX Live 2018) (preloaded format=xelatex 2018.4.16)  13 MAY 2019 19:53
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -1114,7 +1114,7 @@ Package atveryend Info: Empty hook `AtVeryEndDocument' on input line 3668.
 Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 3668.
 
 Package rerunfilecheck Info: File `introregression.out' has not changed.
-(rerunfilecheck)             Checksum: F1741476BAD671A2F39DE6676A826DFB.
+(rerunfilecheck)             Checksum: D38FAA1FF60FB8FE48CEE0D6D5DF4272.
 
 LaTeX Warning: There were undefined references.
 
@@ -1124,8 +1124,8 @@ LaTeX Warning: There were multiply-defined labels.
  ) 
 Here is how much of TeX's memory you used:
  23215 strings out of 492970
- 431116 string characters out of 6133938
- 577510 words of memory out of 5000000
+ 431123 string characters out of 6133938
+ 577439 words of memory out of 5000000
  26959 multiletter control sequences out of 15000+600000
  561442 words of font info for 74 fonts, out of 8000000 for 9000
  1348 hyphenation exceptions out of 8191
