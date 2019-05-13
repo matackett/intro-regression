@@ -1,5 +1,11 @@
 # Simple Linear Regression {#slr}
 
+```{r echo = F}
+knitr::opts_chunk$set(
+  eval = F
+)
+```
+
 The primary goal of today's lab is to give you practice with some of the tools you will need to conduct regression analysis using R. An additional goal for today is for you to be introduced to your teams and practice collaborating using GitHub and RStudio. 
 
 

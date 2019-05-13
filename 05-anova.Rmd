@@ -1,5 +1,11 @@
 # ANOVA {#anova}
 
+```{r echo = F}
+knitr::opts_chunk$set(
+  eval = F
+)
+```
+
 The goal of this lab is to use Analysis of Variance (ANOVA) to compare means in multiple groups. Additionally, you will be introduced to new R functions used for [wrangling](https://en.wikipedia.org/wiki/Data_wrangling) and summarizing data.
 
 
@@ -29,13 +35,13 @@ When using Analysis of Variance (ANOVA) to compare group means, it is ideal to h
 
 Use the `count` function before and after making the new color category to ensure the recoding worked as expected.
 
-```{r}
+```{r eval = F}
 ## number of observations at each color level 
 diamonds_low %>% 
   count(color)
 ```
 
-```{r}
+```{r eval= F}
 #create a new vector of the recoded values
 color_recoded <-  recode_factor(diamonds_low$color,
                                 `I` = "I/J", `J` = "I/J",
@@ -81,7 +87,7 @@ Are the assumptions for ANOVA met? Comment on each assumption using the summary 
 
 5. Use the code below to calculate the ANOVA table. The `tidy` function from the broom package is used to put the ANOVA output in a dataframe, and with the `kable` function from the knitr package, you can display the results in an easy-to-read table.
 
-```{r}
+```{r eval = F}
 anova <- aov(carat ~ color, data=diamonds_low)
 anova %>% 
   tidy() %>%
