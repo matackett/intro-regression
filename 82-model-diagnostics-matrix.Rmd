@@ -1,13 +1,6 @@
----
-title: "Details about Model Diagnostics"
-author: ""
-date: ""
-header_include: 
-  -\usepackage{amsmath}
-output: pdf_document
----
+# Details about Model Diagnostics
 
-```{r setup, include=FALSE}
+```{r include=FALSE}
 knitr::opts_chunk$set(echo = TRUE)
 ```
 

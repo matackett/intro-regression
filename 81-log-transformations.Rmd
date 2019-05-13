@@ -1,13 +1,6 @@
----
-title: "Log Transformations in Linear Regression"
-author: ""
-date: ""
-header_include: 
-  -\usepackage{amsmath}
-output: pdf_document
----
+# "Log Transformations in Linear Regression"
 
-```{r setup, include=FALSE}
+```{r include=FALSE}
 knitr::opts_chunk$set(echo = TRUE,
                       warning=FALSE,
                       message=FALSE)

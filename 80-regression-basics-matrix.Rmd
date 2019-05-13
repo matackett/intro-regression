@@ -1,13 +1,8 @@
----
-title: "Matrix Form of Linear Regression"
-author: ""
-date: ""
-header_include: 
-  -\usepackage{amsmath}
-output: pdf_document
----
+# (PART) Math Notes {-} 
 
-```{r setup, include=FALSE}
+# Matrix Form of Linear Regression
+
+```{r include=FALSE}
 knitr::opts_chunk$set(echo = TRUE)
 ```
 

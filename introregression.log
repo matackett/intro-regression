@@ -1,4 +1,4 @@
-This is XeTeX, Version 3.14159265-2.6-0.99999 (TeX Live 2018) (preloaded format=xelatex 2018.4.16)  13 MAY 2019 18:53
+This is XeTeX, Version 3.14159265-2.6-0.99999 (TeX Live 2018) (preloaded format=xelatex 2018.4.16)  13 MAY 2019 19:30
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -844,7 +844,23 @@ Package: titling 2009/09/04 v2.1d maketitle typesetting
 \thanksmarkwidth=\skip60
 \thanksmargin=\skip61
 \droptitle=\skip62
-) (./introregression.aux)
+) (./introregression.aux
+
+LaTeX Warning: Label `basic_model' multiply defined.
+
+
+LaTeX Warning: Label `ind_response' multiply defined.
+
+
+LaTeX Warning: Label `matrix notation' multiply defined.
+
+
+LaTeX Warning: Label `matrix_mean' multiply defined.
+
+
+LaTeX Warning: Label `aic' multiply defined.
+
+)
 \openout1 = `introregression.aux'.
 
 LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 136.
@@ -939,7 +955,7 @@ LaTeX Info: Redefining \nameref on input line 136.
 ] [2
 
 ] (./introregression.toc
-LaTeX Font Info:    Try loading font information for OT1+lmr on input line 7.
+LaTeX Font Info:    Try loading font information for OT1+lmr on input line 6.
 (/usr/local/texlive/2018/texmf-dist/tex/latex/lm/ot1lmr.fd
 File: ot1lmr.fd 2009/10/30 v1.6 Font defs for Latin Modern
 )
@@ -947,46 +963,49 @@ Package microtype Info: Loading generic protrusion settings for font family
 (microtype)             `lmr' (encoding: OT1).
 (microtype)             For optimal results, create family-specific settings.
 (microtype)             See the microtype manual for details.
-LaTeX Font Info:    Try loading font information for OML+lmm on input line 7.
+LaTeX Font Info:    Try loading font information for OML+lmm on input line 6.
 (/usr/local/texlive/2018/texmf-dist/tex/latex/lm/omllmm.fd
 File: omllmm.fd 2009/10/30 v1.6 Font defs for Latin Modern
 )
-LaTeX Font Info:    Try loading font information for OMS+lmsy on input line 7.
+LaTeX Font Info:    Try loading font information for OMS+lmsy on input line 6.
 (/usr/local/texlive/2018/texmf-dist/tex/latex/lm/omslmsy.fd
 File: omslmsy.fd 2009/10/30 v1.6 Font defs for Latin Modern
 )
-LaTeX Font Info:    Try loading font information for OMX+lmex on input line 7.
+LaTeX Font Info:    Try loading font information for OMX+lmex on input line 6.
 (/usr/local/texlive/2018/texmf-dist/tex/latex/lm/omxlmex.fd
 File: omxlmex.fd 2009/10/30 v1.6 Font defs for Latin Modern
 )
 LaTeX Font Info:    External font `lmex10' loaded for size
-(Font)              <10> on input line 7.
+(Font)              <10> on input line 6.
 LaTeX Font Info:    External font `lmex10' loaded for size
-(Font)              <7> on input line 7.
+(Font)              <7> on input line 6.
 LaTeX Font Info:    External font `lmex10' loaded for size
-(Font)              <5> on input line 7.
-LaTeX Font Info:    Try loading font information for U+msa on input line 7.
+(Font)              <5> on input line 6.
+LaTeX Font Info:    Try loading font information for U+msa on input line 6.
 (/usr/local/texlive/2018/texmf-dist/tex/latex/amsfonts/umsa.fd
 File: umsa.fd 2013/01/14 v3.01 AMS symbols A
 ) (/usr/local/texlive/2018/texmf-dist/tex/latex/microtype/mt-msa.cfg
 File: mt-msa.cfg 2006/02/04 v1.1 microtype config. file: AMS symbols (a) (RS)
 )
-LaTeX Font Info:    Try loading font information for U+msb on input line 7.
+LaTeX Font Info:    Try loading font information for U+msb on input line 6.
 (/usr/local/texlive/2018/texmf-dist/tex/latex/amsfonts/umsb.fd
 File: umsb.fd 2013/01/14 v3.01 AMS symbols B
 ) (/usr/local/texlive/2018/texmf-dist/tex/latex/microtype/mt-msb.cfg
 File: mt-msb.cfg 2005/06/01 v1.0 microtype config. file: AMS symbols (b) (RS)
-))
+)
+Underfull \vbox (badness 1946) has occurred while \output is active []
+
+[3])
 \tf@toc=\write5
 \openout5 = `introregression.toc'.
 
-[3] [4
-
-] (./introregression.lot)
+[4] (./introregression.lot)
 \tf@lot=\write6
 \openout6 = `introregression.lot'.
 
-[5] [6
+[5
+
+] [6
 
 ] (./introregression.lof)
 \tf@lof=\write7
@@ -998,61 +1017,57 @@ File: mt-msb.cfg 2005/06/01 v1.0 microtype config. file: AMS symbols (b) (RS)
 Chapter 1.
 [9] [10
 
-] [11] [12]
+]
 Chapter 2.
 
-LaTeX Warning: Reference `methods' on page 13 undefined on input line 157.
+LaTeX Warning: Reference `methods' on page 11 undefined on input line 159.
 
 LaTeX Font Info:    Font shape `TU/lmtt/bx/n' in size <10> not available
-(Font)              Font shape `TU/lmtt/b/n' tried instead on input line 164.
+(Font)              Font shape `TU/lmtt/b/n' tried instead on input line 166.
 File: introregression_files/figure-latex/nice-fig-1.pdf Graphic file (type pdf)
 
 <use introregression_files/figure-latex/nice-fig-1.pdf>
+[11] [12]
+Chapter 3.
 [13
 
-] [14]
-Chapter 3.
-[15
+] [14
 
-] [16
-
-]
+] [15] [16]
 Chapter 4.
-[17] [18
+[17
 
-]
-Chapter 5.
-[19] [20]
+] [18]
 Underfull \vbox (badness 10000) detected at line 445
  []
 
-[21] [22] [23] [24]
-Chapter 6.
-[25
+[19] [20] [21] [22]
+Chapter 5.
+[23
 
 ]
 Underfull \vbox (badness 10000) detected at line 841
  []
 
-[26] [27] [28
+[24] [25] [26
+
+]
+Chapter 6.
+[27] [28] [29] [30
 
 ]
 Chapter 7.
-[29] [30] [31] [32
+[31] [32] [33] [34
 
 ]
 Chapter 8.
-[33] [34] [35] [36
-
-]
+[35] [36] [37] [38]
 Chapter 9.
-[37] [38] [39] [40]
-Chapter 10.
-[41
+[39
 
-] [42] [43] [44]
-Chapter 11.
-[45
+] [40] [41] [42]
+Chapter 10.
+[43
 
 ]
 Overfull \hbox (149.74498pt too wide) in paragraph at lines 2275--2275
@@ -1060,41 +1075,60 @@ Overfull \hbox (149.74498pt too wide) in paragraph at lines 2275--2275
 ly need to include the variables that are in the dataset.[] 
  []
 
-[46] [47] [48
+[44] [45] [46
 
 ]
+Chapter 11.
+[47] [48] [49] [50]
 Chapter 12.
-[49] [50] [51] [52]
-Chapter 13.
-[53
+[51
+
+] [52] [53
 
 ] [54]
+Chapter 13.
+[55
+
+] [56] [57] [58]
 Chapter 14.
-(./introregression.bbl [55
+[59
 
-] [56
+] [60] [61] [62]
+Chapter 15.
+[63
 
-])
-Package atveryend Info: Empty hook `BeforeClearDocument' on input line 2885.
-[57]
-Package atveryend Info: Empty hook `AfterLastShipout' on input line 2885.
+] [64] [65] [66]
+Chapter 16.
+LaTeX Font Info:    External font `lmex10' loaded for size
+(Font)              <14.4> on input line 3566.
+[67
+
+] (./introregression.bbl [68])
+Package atveryend Info: Empty hook `BeforeClearDocument' on input line 3668.
+[69
+
+]
+Package atveryend Info: Empty hook `AfterLastShipout' on input line 3668.
 (./introregression.aux)
-Package atveryend Info: Empty hook `AtVeryEndDocument' on input line 2885.
-Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 2885.
+Package atveryend Info: Empty hook `AtVeryEndDocument' on input line 3668.
+Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 3668.
 
 Package rerunfilecheck Info: File `introregression.out' has not changed.
-(rerunfilecheck)             Checksum: BD20D15A8E79C4A3F00DBC86ACCA0373.
+(rerunfilecheck)             Checksum: F1741476BAD671A2F39DE6676A826DFB.
 
 LaTeX Warning: There were undefined references.
 
+
+LaTeX Warning: There were multiply-defined labels.
+
  ) 
 Here is how much of TeX's memory you used:
- 23117 strings out of 492970
- 429320 string characters out of 6133938
- 571364 words of memory out of 5000000
- 26873 multiletter control sequences out of 15000+600000
- 543031 words of font info for 57 fonts, out of 8000000 for 9000
+ 23215 strings out of 492970
+ 431116 string characters out of 6133938
+ 577510 words of memory out of 5000000
+ 26959 multiletter control sequences out of 15000+600000
+ 561442 words of font info for 74 fonts, out of 8000000 for 9000
  1348 hyphenation exceptions out of 8191
- 45i,8n,68p,10456b,464s stack positions out of 5000i,500n,10000p,200000b,80000s
+ 45i,15n,68p,10456b,464s stack positions out of 5000i,500n,10000p,200000b,80000s
 
-Output written on introregression.pdf (57 pages).
+Output written on introregression.pdf (69 pages).

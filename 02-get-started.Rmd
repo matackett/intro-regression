@@ -1,6 +1,3 @@
 # Getting Started {#getstarted}
 
 I am updating this to test it out.
-
-```{r child="test-child.Rmd"}
-```
