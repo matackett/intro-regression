@@ -1,0 +1,440 @@
+<!DOCTYPE html>
+<html >
+
+<head>
+
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <title>Chapter 10 Logistic Regression | A Minimal Book Example</title>
+  <meta name="description" content="This is a minimal example of using the bookdown package to write a book. The output format for this example is bookdown::gitbook.">
+  <meta name="generator" content="bookdown  and GitBook 2.6.7">
+
+  <meta property="og:title" content="Chapter 10 Logistic Regression | A Minimal Book Example" />
+  <meta property="og:type" content="book" />
+  
+  
+  <meta property="og:description" content="This is a minimal example of using the bookdown package to write a book. The output format for this example is bookdown::gitbook." />
+  
+
+  <meta name="twitter:card" content="summary" />
+  <meta name="twitter:title" content="Chapter 10 Logistic Regression | A Minimal Book Example" />
+  
+  <meta name="twitter:description" content="This is a minimal example of using the bookdown package to write a book. The output format for this example is bookdown::gitbook." />
+  
+
+<meta name="author" content="Yihui Xie">
+
+
+<meta name="date" content="2019-05-13">
+
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-status-bar-style" content="black">
+  
+  
+<link rel="prev" href="selection.html">
+
+<script src="libs/jquery-2.2.3/jquery.min.js"></script>
+<link href="libs/gitbook-2.6.7/css/style.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-table.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-bookdown.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-highlight.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-search.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-fontsettings.css" rel="stylesheet" />
+
+
+
+
+
+
+
+
+
+<style type="text/css">
+div.sourceCode { overflow-x: auto; }
+table.sourceCode, tr.sourceCode, td.lineNumbers, td.sourceCode {
+  margin: 0; padding: 0; vertical-align: baseline; border: none; }
+table.sourceCode { width: 100%; line-height: 100%; }
+td.lineNumbers { text-align: right; padding-right: 4px; padding-left: 4px; color: #aaaaaa; border-right: 1px solid #aaaaaa; }
+td.sourceCode { padding-left: 5px; }
+code > span.kw { color: #007020; font-weight: bold; } /* Keyword */
+code > span.dt { color: #902000; } /* DataType */
+code > span.dv { color: #40a070; } /* DecVal */
+code > span.bn { color: #40a070; } /* BaseN */
+code > span.fl { color: #40a070; } /* Float */
+code > span.ch { color: #4070a0; } /* Char */
+code > span.st { color: #4070a0; } /* String */
+code > span.co { color: #60a0b0; font-style: italic; } /* Comment */
+code > span.ot { color: #007020; } /* Other */
+code > span.al { color: #ff0000; font-weight: bold; } /* Alert */
+code > span.fu { color: #06287e; } /* Function */
+code > span.er { color: #ff0000; font-weight: bold; } /* Error */
+code > span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warning */
+code > span.cn { color: #880000; } /* Constant */
+code > span.sc { color: #4070a0; } /* SpecialChar */
+code > span.vs { color: #4070a0; } /* VerbatimString */
+code > span.ss { color: #bb6688; } /* SpecialString */
+code > span.im { } /* Import */
+code > span.va { color: #19177c; } /* Variable */
+code > span.cf { color: #007020; font-weight: bold; } /* ControlFlow */
+code > span.op { color: #666666; } /* Operator */
+code > span.bu { } /* BuiltIn */
+code > span.ex { } /* Extension */
+code > span.pp { color: #bc7a00; } /* Preprocessor */
+code > span.at { color: #7d9029; } /* Attribute */
+code > span.do { color: #ba2121; font-style: italic; } /* Documentation */
+code > span.an { color: #60a0b0; font-weight: bold; font-style: italic; } /* Annotation */
+code > span.cv { color: #60a0b0; font-weight: bold; font-style: italic; } /* CommentVar */
+code > span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Information */
+</style>
+
+<link rel="stylesheet" href="style.css" type="text/css" />
+</head>
+
+<body>
+
+
+
+  <div class="book without-animation with-summary font-size-2 font-family-1" data-basepath=".">
+
+    <div class="book-summary">
+      <nav role="navigation">
+
+<ul class="summary">
+<li><a href="./">A Minimal Book Example</a></li>
+
+<li class="divider"></li>
+<li class="chapter" data-level="1" data-path="index.html"><a href="index.html"><i class="fa fa-check"></i><b>1</b> Prerequisites</a></li>
+<li class="chapter" data-level="2" data-path="intro.html"><a href="intro.html"><i class="fa fa-check"></i><b>2</b> Introduction</a></li>
+<li class="chapter" data-level="3" data-path="getstarted.html"><a href="getstarted.html"><i class="fa fa-check"></i><b>3</b> Getting Started</a></li>
+<li class="chapter" data-level="4" data-path="intro-to-r.html"><a href="intro-to-r.html"><i class="fa fa-check"></i><b>4</b> Intro to R</a><ul>
+<li class="chapter" data-level="4.1" data-path="intro-to-r.html"><a href="intro-to-r.html#introduction"><i class="fa fa-check"></i><b>4.1</b> Introduction</a><ul>
+<li class="chapter" data-level="4.1.1" data-path="intro-to-r.html"><a href="intro-to-r.html#topics-covered-in-this-lab"><i class="fa fa-check"></i><b>4.1.1</b> Topics covered in this lab:</a></li>
+</ul></li>
+<li class="chapter" data-level="4.2" data-path="intro-to-r.html"><a href="intro-to-r.html#getting-started"><i class="fa fa-check"></i><b>4.2</b> Getting Started</a><ul>
+<li class="chapter" data-level="4.2.1" data-path="intro-to-r.html"><a href="intro-to-r.html#clone-assignment-repo"><i class="fa fa-check"></i><b>4.2.1</b> Clone Assignment Repo</a></li>
+<li class="chapter" data-level="4.2.2" data-path="intro-to-r.html"><a href="intro-to-r.html#configure-git"><i class="fa fa-check"></i><b>4.2.2</b> Configure git</a></li>
+</ul></li>
+<li class="chapter" data-level="4.3" data-path="intro-to-r.html"><a href="intro-to-r.html#packages"><i class="fa fa-check"></i><b>4.3</b> Packages</a></li>
+<li class="chapter" data-level="4.4" data-path="intro-to-r.html"><a href="intro-to-r.html#warm-up"><i class="fa fa-check"></i><b>4.4</b> Warm up</a></li>
+<li class="chapter" data-level="4.5" data-path="intro-to-r.html"><a href="intro-to-r.html#project-name"><i class="fa fa-check"></i><b>4.5</b> Project name:</a><ul>
+<li class="chapter" data-level="4.5.1" data-path="intro-to-r.html"><a href="intro-to-r.html#yaml"><i class="fa fa-check"></i><b>4.5.1</b> YAML:</a></li>
+<li class="chapter" data-level="4.5.2" data-path="intro-to-r.html"><a href="intro-to-r.html#commiting-changes"><i class="fa fa-check"></i><b>4.5.2</b> Commiting changes:</a></li>
+<li class="chapter" data-level="4.5.3" data-path="intro-to-r.html"><a href="intro-to-r.html#pushing-changes"><i class="fa fa-check"></i><b>4.5.3</b> Pushing changes:</a></li>
+<li class="chapter" data-level="4.5.4" data-path="intro-to-r.html"><a href="intro-to-r.html#data"><i class="fa fa-check"></i><b>4.5.4</b> Data</a></li>
+</ul></li>
+<li class="chapter" data-level="4.6" data-path="intro-to-r.html"><a href="intro-to-r.html#exercises"><i class="fa fa-check"></i><b>4.6</b> Exercises</a><ul>
+<li class="chapter" data-level="4.6.1" data-path="intro-to-r.html"><a href="intro-to-r.html#visualizing-your-data"><i class="fa fa-check"></i><b>4.6.1</b> Visualizing Your Data</a></li>
+</ul></li>
+<li class="chapter" data-level="4.7" data-path="intro-to-r.html"><a href="intro-to-r.html#simple-linear-regression"><i class="fa fa-check"></i><b>4.7</b> Simple Linear Regression</a></li>
+</ul></li>
+<li class="chapter" data-level="5" data-path="slr.html"><a href="slr.html"><i class="fa fa-check"></i><b>5</b> Simple Linear Regression</a><ul>
+<li class="chapter" data-level="5.1" data-path="slr.html"><a href="slr.html#getting-started-1"><i class="fa fa-check"></i><b>5.1</b> Getting Started</a><ul>
+<li class="chapter" data-level="5.1.1" data-path="slr.html"><a href="slr.html#clone-assignment-repo-1"><i class="fa fa-check"></i><b>5.1.1</b> Clone Assignment Repo</a></li>
+<li class="chapter" data-level="5.1.2" data-path="slr.html"><a href="slr.html#configure-git-1"><i class="fa fa-check"></i><b>5.1.2</b> Configure git</a></li>
+<li class="chapter" data-level="5.1.3" data-path="slr.html"><a href="slr.html#packages-1"><i class="fa fa-check"></i><b>5.1.3</b> Packages</a></li>
+<li class="chapter" data-level="5.1.4" data-path="slr.html"><a href="slr.html#project-name-1"><i class="fa fa-check"></i><b>5.1.4</b> Project name:</a></li>
+</ul></li>
+<li class="chapter" data-level="5.2" data-path="slr.html"><a href="slr.html#warm-up-1"><i class="fa fa-check"></i><b>5.2</b> Warm up</a><ul>
+<li class="chapter" data-level="5.2.1" data-path="slr.html"><a href="slr.html#yaml-1"><i class="fa fa-check"></i><b>5.2.1</b> YAML:</a></li>
+<li class="chapter" data-level="5.2.2" data-path="slr.html"><a href="slr.html#commiting-and-pushing-changes"><i class="fa fa-check"></i><b>5.2.2</b> Commiting and pushing changes:</a></li>
+<li class="chapter" data-level="5.2.3" data-path="slr.html"><a href="slr.html#pulling-changes"><i class="fa fa-check"></i><b>5.2.3</b> Pulling changes:</a></li>
+<li class="chapter" data-level="5.2.4" data-path="slr.html"><a href="slr.html#data-1"><i class="fa fa-check"></i><b>5.2.4</b> Data</a></li>
+</ul></li>
+<li class="chapter" data-level="5.3" data-path="slr.html"><a href="slr.html#exercises-1"><i class="fa fa-check"></i><b>5.3</b> Exercises</a><ul>
+<li class="chapter" data-level="5.3.1" data-path="slr.html"><a href="slr.html#exploratory-data-analysis"><i class="fa fa-check"></i><b>5.3.1</b> Exploratory Data Analysis</a></li>
+<li class="chapter" data-level="5.3.2" data-path="slr.html"><a href="slr.html#simple-linear-regression-1"><i class="fa fa-check"></i><b>5.3.2</b> Simple Linear Regression</a></li>
+</ul></li>
+</ul></li>
+<li class="chapter" data-level="6" data-path="anova.html"><a href="anova.html"><i class="fa fa-check"></i><b>6</b> ANOVA</a><ul>
+<li class="chapter" data-level="6.1" data-path="anova.html"><a href="anova.html#getting-started-2"><i class="fa fa-check"></i><b>6.1</b> Getting Started</a><ul>
+<li class="chapter" data-level="6.1.1" data-path="anova.html"><a href="anova.html#packages-2"><i class="fa fa-check"></i><b>6.1.1</b> Packages</a></li>
+<li class="chapter" data-level="6.1.2" data-path="anova.html"><a href="anova.html#project-name-2"><i class="fa fa-check"></i><b>6.1.2</b> Project name:</a></li>
+</ul></li>
+<li class="chapter" data-level="6.2" data-path="anova.html"><a href="anova.html#warm-up-2"><i class="fa fa-check"></i><b>6.2</b> Warm up</a><ul>
+<li class="chapter" data-level="6.2.1" data-path="anova.html"><a href="anova.html#yaml-2"><i class="fa fa-check"></i><b>6.2.1</b> YAML:</a></li>
+<li class="chapter" data-level="6.2.2" data-path="anova.html"><a href="anova.html#data-2"><i class="fa fa-check"></i><b>6.2.2</b> Data</a></li>
+</ul></li>
+<li class="chapter" data-level="6.3" data-path="anova.html"><a href="anova.html#exercises-2"><i class="fa fa-check"></i><b>6.3</b> Exercises</a></li>
+</ul></li>
+<li class="chapter" data-level="7" data-path="mlr.html"><a href="mlr.html"><i class="fa fa-check"></i><b>7</b> Multiple Linear Regression</a><ul>
+<li class="chapter" data-level="7.1" data-path="mlr.html"><a href="mlr.html#getting-started-3"><i class="fa fa-check"></i><b>7.1</b> Getting Started</a><ul>
+<li class="chapter" data-level="7.1.1" data-path="mlr.html"><a href="mlr.html#password-caching"><i class="fa fa-check"></i><b>7.1.1</b> Password caching</a></li>
+<li class="chapter" data-level="7.1.2" data-path="mlr.html"><a href="mlr.html#packages-3"><i class="fa fa-check"></i><b>7.1.2</b> Packages</a></li>
+<li class="chapter" data-level="7.1.3" data-path="mlr.html"><a href="mlr.html#project-name-3"><i class="fa fa-check"></i><b>7.1.3</b> Project name:</a></li>
+</ul></li>
+<li class="chapter" data-level="7.2" data-path="mlr.html"><a href="mlr.html#warm-up-3"><i class="fa fa-check"></i><b>7.2</b> Warm up</a><ul>
+<li class="chapter" data-level="7.2.1" data-path="mlr.html"><a href="mlr.html#yaml-3"><i class="fa fa-check"></i><b>7.2.1</b> YAML:</a></li>
+<li class="chapter" data-level="7.2.2" data-path="mlr.html"><a href="mlr.html#data-3"><i class="fa fa-check"></i><b>7.2.2</b> Data</a></li>
+</ul></li>
+<li class="chapter" data-level="7.3" data-path="mlr.html"><a href="mlr.html#exercises-3"><i class="fa fa-check"></i><b>7.3</b> Exercises</a><ul>
+<li class="chapter" data-level="7.3.1" data-path="mlr.html"><a href="mlr.html#acknowledgement"><i class="fa fa-check"></i><b>7.3.1</b> Acknowledgement</a></li>
+</ul></li>
+</ul></li>
+<li class="chapter" data-level="8" data-path="mlr2.html"><a href="mlr2.html"><i class="fa fa-check"></i><b>8</b> Data Wrangling &amp; Multiple Linear Regression</a><ul>
+<li class="chapter" data-level="8.1" data-path="mlr2.html"><a href="mlr2.html#getting-started-4"><i class="fa fa-check"></i><b>8.1</b> Getting Started</a><ul>
+<li class="chapter" data-level="8.1.1" data-path="mlr2.html"><a href="mlr2.html#password-caching-1"><i class="fa fa-check"></i><b>8.1.1</b> Password caching</a></li>
+<li class="chapter" data-level="8.1.2" data-path="mlr2.html"><a href="mlr2.html#packages-4"><i class="fa fa-check"></i><b>8.1.2</b> Packages</a></li>
+<li class="chapter" data-level="8.1.3" data-path="mlr2.html"><a href="mlr2.html#project-name-4"><i class="fa fa-check"></i><b>8.1.3</b> Project name:</a></li>
+</ul></li>
+<li class="chapter" data-level="8.2" data-path="mlr2.html"><a href="mlr2.html#warm-up-4"><i class="fa fa-check"></i><b>8.2</b> Warm up</a><ul>
+<li class="chapter" data-level="8.2.1" data-path="mlr2.html"><a href="mlr2.html#yaml-4"><i class="fa fa-check"></i><b>8.2.1</b> YAML:</a></li>
+<li class="chapter" data-level="8.2.2" data-path="mlr2.html"><a href="mlr2.html#data-4"><i class="fa fa-check"></i><b>8.2.2</b> Data</a></li>
+</ul></li>
+<li class="chapter" data-level="8.3" data-path="mlr2.html"><a href="mlr2.html#exercises-4"><i class="fa fa-check"></i><b>8.3</b> Exercises</a><ul>
+<li class="chapter" data-level="8.3.1" data-path="mlr2.html"><a href="mlr2.html#data-wrangling"><i class="fa fa-check"></i><b>8.3.1</b> Data wrangling</a></li>
+<li class="chapter" data-level="8.3.2" data-path="mlr2.html"><a href="mlr2.html#regression-analysis"><i class="fa fa-check"></i><b>8.3.2</b> Regression Analysis</a></li>
+<li class="chapter" data-level="8.3.3" data-path="mlr2.html"><a href="mlr2.html#acknowledgement-1"><i class="fa fa-check"></i><b>8.3.3</b> Acknowledgement</a></li>
+</ul></li>
+</ul></li>
+<li class="chapter" data-level="9" data-path="selection.html"><a href="selection.html"><i class="fa fa-check"></i><b>9</b> Model Selection</a><ul>
+<li class="chapter" data-level="9.1" data-path="selection.html"><a href="selection.html#getting-started-5"><i class="fa fa-check"></i><b>9.1</b> Getting Started</a><ul>
+<li class="chapter" data-level="9.1.1" data-path="selection.html"><a href="selection.html#password-caching-2"><i class="fa fa-check"></i><b>9.1.1</b> Password caching</a></li>
+<li class="chapter" data-level="9.1.2" data-path="selection.html"><a href="selection.html#packages-5"><i class="fa fa-check"></i><b>9.1.2</b> Packages</a></li>
+<li class="chapter" data-level="9.1.3" data-path="selection.html"><a href="selection.html#project-name-5"><i class="fa fa-check"></i><b>9.1.3</b> Project name:</a></li>
+</ul></li>
+<li class="chapter" data-level="9.2" data-path="selection.html"><a href="selection.html#warm-up-5"><i class="fa fa-check"></i><b>9.2</b> Warm up</a><ul>
+<li class="chapter" data-level="9.2.1" data-path="selection.html"><a href="selection.html#yaml-5"><i class="fa fa-check"></i><b>9.2.1</b> YAML:</a></li>
+<li class="chapter" data-level="9.2.2" data-path="selection.html"><a href="selection.html#data-5"><i class="fa fa-check"></i><b>9.2.2</b> Data</a></li>
+</ul></li>
+<li class="chapter" data-level="9.3" data-path="selection.html"><a href="selection.html#exercises-5"><i class="fa fa-check"></i><b>9.3</b> Exercises</a><ul>
+<li class="chapter" data-level="9.3.1" data-path="selection.html"><a href="selection.html#part-i-1"><i class="fa fa-check"></i><b>9.3.1</b> Part I</a></li>
+<li class="chapter" data-level="9.3.2" data-path="selection.html"><a href="selection.html#part-ii-1"><i class="fa fa-check"></i><b>9.3.2</b> Part II</a></li>
+<li class="chapter" data-level="9.3.3" data-path="selection.html"><a href="selection.html#acknowledgements"><i class="fa fa-check"></i><b>9.3.3</b> Acknowledgements</a></li>
+</ul></li>
+</ul></li>
+<li class="chapter" data-level="10" data-path="logistic.html"><a href="logistic.html"><i class="fa fa-check"></i><b>10</b> Logistic Regression</a><ul>
+<li class="chapter" data-level="10.1" data-path="logistic.html"><a href="logistic.html#getting-started-6"><i class="fa fa-check"></i><b>10.1</b> Getting Started</a><ul>
+<li class="chapter" data-level="10.1.1" data-path="logistic.html"><a href="logistic.html#password-caching-3"><i class="fa fa-check"></i><b>10.1.1</b> Password caching</a></li>
+<li class="chapter" data-level="10.1.2" data-path="logistic.html"><a href="logistic.html#packages-6"><i class="fa fa-check"></i><b>10.1.2</b> Packages</a></li>
+<li class="chapter" data-level="10.1.3" data-path="logistic.html"><a href="logistic.html#project-name-6"><i class="fa fa-check"></i><b>10.1.3</b> Project name:</a></li>
+</ul></li>
+<li class="chapter" data-level="10.2" data-path="logistic.html"><a href="logistic.html#warm-up-6"><i class="fa fa-check"></i><b>10.2</b> Warm up</a><ul>
+<li class="chapter" data-level="10.2.1" data-path="logistic.html"><a href="logistic.html#yaml-6"><i class="fa fa-check"></i><b>10.2.1</b> YAML:</a></li>
+<li class="chapter" data-level="10.2.2" data-path="logistic.html"><a href="logistic.html#data-6"><i class="fa fa-check"></i><b>10.2.2</b> Data</a></li>
+</ul></li>
+<li class="chapter" data-level="10.3" data-path="logistic.html"><a href="logistic.html#exercises-6"><i class="fa fa-check"></i><b>10.3</b> Exercises</a><ul>
+<li class="chapter" data-level="10.3.1" data-path="logistic.html"><a href="logistic.html#exploratory-data-analysis-1"><i class="fa fa-check"></i><b>10.3.1</b> Exploratory Data Analysis</a></li>
+<li class="chapter" data-level="10.3.2" data-path="logistic.html"><a href="logistic.html#part-ii-logistic-regression-model"><i class="fa fa-check"></i><b>10.3.2</b> Part II: Logistic Regression Model</a></li>
+<li class="chapter" data-level="10.3.3" data-path="logistic.html"><a href="logistic.html#part-iii-model-assessment"><i class="fa fa-check"></i><b>10.3.3</b> Part III: Model Assessment</a></li>
+<li class="chapter" data-level="10.3.4" data-path="logistic.html"><a href="logistic.html#part-iv-prediction"><i class="fa fa-check"></i><b>10.3.4</b> Part IV: Prediction</a></li>
+</ul></li>
+</ul></li>
+<li class="divider"></li>
+<li><a href="https://github.com/rstudio/bookdown" target="blank">Published with bookdown</a></li>
+
+</ul>
+
+      </nav>
+    </div>
+
+    <div class="book-body">
+      <div class="body-inner">
+        <div class="book-header" role="navigation">
+          <h1>
+            <i class="fa fa-circle-o-notch fa-spin"></i><a href="./">A Minimal Book Example</a>
+          </h1>
+        </div>
+
+        <div class="page-wrapper" tabindex="-1" role="main">
+          <div class="page-inner">
+
+            <section class="normal" id="section-">
+<div id="logistic" class="section level1">
+<h1><span class="header-section-number">Chapter 10</span> Logistic Regression</h1>
+<p>Over the past ten years, recommendation systems have become increasingly popular as more companies strive to offer customized user experiences. Amazon recommends products you may like based on your browse and purchase history, Netflix recommends movies and TV shows based on your viewing history, and music platforms like Spotify recommend songs you may like based on your listening history. While these recommendation systems are built using a variety of algorithms, they are all trying to achieve the same goal: use the characteristics of the products/movies/music a user is known to like to figure out the products/movies/music the user may like but hasn’t discovered yet.</p>
+<pre class="marginfigure"><code>See [&quot;How Does Spotify Know You So Well?&quot;](https://medium.com/s/story/spotifys-discover-weekly-how-machine-learning-finds-your-new-music-19a41ab76efe) for more information about Spotify&#39;s recommendation algorithms.</code></pre>
+<p>In today’s lab, we will focus on using the characteristics of songs a user previously played to determine whether or not a user will like a new song. We will use logistic regression to build a model that predicts the probability a user likes a song using the relevant characteristics of that song.</p>
+<div id="getting-started-6" class="section level2">
+<h2><span class="header-section-number">10.1</span> Getting Started</h2>
+<ul>
+<li><p>Go to the STA210-Sp19 organization on GitHub (<a href="https://github.com/STA210-Sp19" class="uri">https://github.com/STA210-Sp19</a>). Click on the repo with the prefix <strong>lab-07-</strong>. It contains the starter documents you need to complete the warmup exercise.</p></li>
+<li><p>Clone the repo and create a new project in RStudio Cloud.</p></li>
+<li><p>Configure git by typing the following in the <strong>console</strong>.</p></li>
+</ul>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="kw">library</span>(usethis)
+<span class="kw">use_git_config</span>(<span class="dt">user.name=</span><span class="st">&quot;your name&quot;</span>, <span class="dt">user.email=</span><span class="st">&quot;your email&quot;</span>)</code></pre></div>
+<pre class="marginfigure"><code>When configuring Git, be sure to use the email address that is associated with your GitHub account.</code></pre>
+<div id="password-caching-3" class="section level3">
+<h3><span class="header-section-number">10.1.1</span> Password caching</h3>
+<p>If you would like your git password cached for a week for this project, type the following in the <strong>Terminal</strong>:</p>
+<div class="sourceCode"><pre class="sourceCode bash"><code class="sourceCode bash"><span class="fu">git</span> config --global credential.helper <span class="st">&#39;cache --timeout 604800&#39;</span></code></pre></div>
+<p>You will need to enter your GitHub username and password one more time after caching the password. After that you won’t need to enter your credentials for 604800 seconds = 7 days.</p>
+</div>
+<div id="packages-6" class="section level3">
+<h3><span class="header-section-number">10.1.2</span> Packages</h3>
+<p>You will need the following packages for today’s lab:</p>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="kw">library</span>(tidyverse)</code></pre></div>
+<pre><code>## ── Attaching packages ──── tidyverse 1.2.1 ──</code></pre>
+<pre><code>## ✔ ggplot2 3.1.1       ✔ purrr   0.3.2  
+## ✔ tibble  2.1.1       ✔ dplyr   0.8.0.1
+## ✔ tidyr   0.8.1       ✔ stringr 1.4.0  
+## ✔ readr   1.3.1       ✔ forcats 0.3.0</code></pre>
+<pre><code>## ── Conflicts ─────── tidyverse_conflicts() ──
+## ✖ dplyr::filter() masks stats::filter()
+## ✖ dplyr::lag()    masks stats::lag()</code></pre>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="kw">library</span>(broom)
+## Fill in other packages as needed</code></pre></div>
+</div>
+<div id="project-name-6" class="section level3">
+<h3><span class="header-section-number">10.1.3</span> Project name:</h3>
+<p>Currently your project is called <em>Untitled Project</em>. Update the name of your project to the title of today’s lab.</p>
+</div>
+</div>
+<div id="warm-up-6" class="section level2">
+<h2><span class="header-section-number">10.2</span> Warm up</h2>
+<p>Before we introduce the data, let’s warm up with a simple exercise.</p>
+<div id="yaml-6" class="section level3">
+<h3><span class="header-section-number">10.2.1</span> YAML:</h3>
+<ul>
+<li><p>Pick one team member to update the <em>author</em> and <em>date</em> fields at the top of the R Markdown file. Knit, commit, and push all the updated documents to Github.</p></li>
+<li><p>Now, the remaining team members who have not been concurrently making these changes on their projects should click on the <strong>Pull</strong> button in their Git pane and observe that the changes are now reflected on their projects as well.</p></li>
+</ul>
+</div>
+<div id="data-6" class="section level3">
+<h3><span class="header-section-number">10.2.2</span> Data</h3>
+<p>The data in this lab is from the <a href="https://www.kaggle.com/geomack/spotifyclassification">Spotify Song Attributes</a> data set in Kaggle. This data set contains song characteristics of 2017 songs played by a single user and whether or not he liked the song. Since this dataset contains the song preferences of a single user, the scope of the analysis is limited to this particular user.</p>
+<p>You will use data <code>spotify.csv</code> to build the logistic regression model and test the performance of the model using the songs in <code>test_songs.csv</code>. Click <a href="https://www2.stat.duke.edu/courses/Spring19/sta210.001/labs/data/spotify.csv"><strong>here</strong></a> to download the dataset <code>spotify.csv</code>, and click <a href="https://www2.stat.duke.edu/courses/Spring19/sta210.001/labs/data/test_songs.csv"><strong>here</strong></a> to download the dataset <code>test_songs.csv</code>. Upload both files to the to the <code>data</code> folder in your <code>lab-07</code> project.</p>
+<p>The <a href="https://developer.spotify.com/documentation/web-api/reference/tracks/get-audio-features/">Spotify documentation page</a> contains a description of the variables included in this dataset.</p>
+</div>
+</div>
+<div id="exercises-6" class="section level2">
+<h2><span class="header-section-number">10.3</span> Exercises</h2>
+<div id="exploratory-data-analysis-1" class="section level3">
+<h3><span class="header-section-number">10.3.1</span> Exploratory Data Analysis</h3>
+<ol style="list-style-type: decimal">
+<li>Read through the <a href="https://developer.spotify.com/documentation/web-api/reference/tracks/get-audio-features/">Spotify documentation page</a> to learn more about the variables in the dataset. The response variable for this analysis is <code>like</code>, such that 1 indicates that the user likes the song and 0 otherwise. The remaining will be considered as predictor variables in the model.</li>
+</ol>
+<p>``<code>marginfigure Part of the code to make</code>x` a factor.</p>
+<p><code>mutate(x = factor(x))</code> ```</p>
+<pre><code>- Which potential predictor variables are categorical? You only need to include the variables that are in the dataset.
+- Recode the each of the categorical predictors so they are a `factor` variable type.</code></pre>
+<ol start="2" style="list-style-type: decimal">
+<li><p>Choose a quantitative predictor variable. Make the appropriate plot of the response versus this predictor variable. Describe the relationship between the two variables.</p></li>
+<li><p>Choose a categorical predictor variable. Make the appropriate plot of the response versus this predictor variable. Describe the relationship between the two variables.</p></li>
+<li><p>Let’s consider a potential interaction effect between the variables you choose in Exercises 2 and 3. Make the appropriate plots to examine the potential interaction effect. Do these plots suggest there is a significant interaction effect? Briefly explain.</p></li>
+</ol>
+<p><em>In practice, you should do exploratory data analysis for all potential explanatory variables. We did an abbreviated exploratory data analysis to make the assignment more manageable.</em></p>
+</div>
+<div id="part-ii-logistic-regression-model" class="section level3">
+<h3><span class="header-section-number">10.3.2</span> Part II: Logistic Regression Model</h3>
+<ol start="5" style="list-style-type: decimal">
+<li><p>Fit the full model and display the model output. The main objective for the model is to predict whether the user will like a song. Should we use this model for this objective? Briefly explain.</p></li>
+<li><p>Use the <code>step</code> function to perform backward selection. Display the output for the selected model.</p></li>
+<li><p>Briefly describe the criteria used by <code>step</code> to select the final model.</p></li>
+</ol>
+<p>For the remainder of this lab, you will use the model chosen by model selection . In practice; however, you would not just stop with the results from the automated model selection procedure and would examine the model further to see if there are any significant interactions, higher-order terms, or if it could even be simplified.</p>
+<ol start="8" style="list-style-type: decimal">
+<li><p>Consider the variable <code>duration_ms</code>.</p>
+<ul>
+<li>Interpret the coefficient of <code>duration_ms</code> and its 95% confidence interval in terms of the odds of the user liking a song.</li>
+<li>Suppose instead of <code>duration_ms</code>, we use the variable <code>duration_s</code>, the duration of a song in seconds. What would be the effect of <code>duration_s</code> on the odds of the user liking a song? Include the updated coefficient and corresponding 95% confidence interval for <code>duration_s</code>. <em>Assume all other variables in the model are unchanged.</em></li>
+</ul></li>
+<li><p>Interpret <code>mode</code> and its 95% confidence interval in terms of the odds of the user liking a song.</p>
+<ul>
+<li>Based on this model, is there evidence of a significant difference in the user’s preference between songs in a major key versus those in a minor key?</li>
+</ul></li>
+</ol>
+</div>
+<div id="part-iii-model-assessment" class="section level3">
+<h3><span class="header-section-number">10.3.3</span> Part III: Model Assessment</h3>
+<p>In the next few questions, we will do an abbreviated analysis of the residuals.</p>
+<ol start="10" style="list-style-type: decimal">
+<li><p>Create a binned plot of the residuals versus the predicted probabilities. <em>You will first need to use the <code>augment</code> function with the options <code>type.predict = &quot;response&quot;</code> and <code>type.residuals = &quot;response&quot;</code> to get the predicted probabilities and corresponding residuals.</em></p></li>
+<li><p>Choose a quantitative predictor in the final model. Make the appropriate table or plot to examine the residuals versus this predictor variable.</p></li>
+<li><p>Choose a categorical predictor in the final model. Make the appropriate table or plot to examine the residuals versus this predictor variable.</p></li>
+</ol>
+<p><em>In practice, you should examine plots of residuals versus <u>every</u> predictor variable to make a complete assessment of the model fit. For the sake of time on the lab, you will use these three plots to help make the assessment in Exercise 14.</em></p>
+<ol start="13" style="list-style-type: decimal">
+<li><p>Plot the ROC curve and find the area under the curve.</p></li>
+<li><p>Based on the residual plots and the ROC curve, is this logistic model a good fit for the data? Briefly explain.</p></li>
+</ol>
+</div>
+<div id="part-iv-prediction" class="section level3">
+<h3><span class="header-section-number">10.3.4</span> Part IV: Prediction</h3>
+<ol start="15" style="list-style-type: decimal">
+<li>You are part of the data science team at Spotify, and your model will be used to make song recommendations to users. The goal is to recommend songs the user has a high probability of liking.</li>
+</ol>
+<p>As a group, choose a threshold value to distinguish between songs the user will like and those the user won’t like. What is your threshold value? Use the ROC curve to help justify your choice.</p>
+<ol start="16" style="list-style-type: decimal">
+<li><p>Now let’s put your model and decision threshold to the test! Use your model to calculate the predicted probability that the user will like the following two songs:</p>
+<ul>
+<li>“Sign of the Times” by Harry Styles</li>
+<li>“Hotline Bling” by Drake</li>
+</ul></li>
+</ol>
+<p>The data for the songs can be found in <em>test_songs.csv</em>.</p>
+<ol start="17" style="list-style-type: decimal">
+<li><p>Using your decision threshold from Question 15, would you recommend “Sign of the Times” to this user? Would your recommend “Hotline Bling” to this user? Briefly explain your decision.</p></li>
+<li><p>The user likes “Hotline Bling” but doesn’t like “Sign of the Times”. How good were your recommendations based on these two songs?</p>
+<ul>
+<li>If they were good recommendations, explain how the model and threshold helped you distinguish between songs the user would like and those he wouldn’t.</li>
+<li>If they were not good recommendations, explain the limitations in your model and/or threshold.</li>
+</ul></li>
+</ol>
+
+<div id="refs" class="references">
+<div>
+<p>Xie, Yihui. 2015. <em>Dynamic Documents with R and Knitr</em>. 2nd ed. Boca Raton, Florida: Chapman; Hall/CRC. <a href="http://yihui.name/knitr/" class="uri">http://yihui.name/knitr/</a>.</p>
+</div>
+<div>
+<p>———. 2018. <em>Bookdown: Authoring Books and Technical Documents with R Markdown</em>. <a href="https://CRAN.R-project.org/package=bookdown" class="uri">https://CRAN.R-project.org/package=bookdown</a>.</p>
+</div>
+</div>
+</div>
+</div>
+</div>
+            </section>
+
+          </div>
+        </div>
+      </div>
+<a href="selection.html" class="navigation navigation-prev navigation-unique" aria-label="Previous page"><i class="fa fa-angle-left"></i></a>
+
+    </div>
+  </div>
+<script src="libs/gitbook-2.6.7/js/app.min.js"></script>
+<script src="libs/gitbook-2.6.7/js/lunr.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-search.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-sharing.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-fontsettings.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-bookdown.js"></script>
+<script src="libs/gitbook-2.6.7/js/jquery.highlight.js"></script>
+<script>
+gitbook.require(["gitbook"], function(gitbook) {
+gitbook.start({
+"sharing": {
+"github": false,
+"facebook": true,
+"twitter": true,
+"google": false,
+"linkedin": false,
+"weibo": false,
+"instapaper": false,
+"vk": false,
+"all": ["facebook", "google", "twitter", "linkedin", "weibo", "instapaper"]
+},
+"fontsettings": {
+"theme": "white",
+"family": "sans",
+"size": 2
+},
+"edit": {
+"link": null,
+"text": null
+},
+"history": {
+"link": null,
+"text": null
+},
+"download": ["introregression.pdf", "introregression.epub"],
+"toc": {
+"collapse": "subsection"
+}
+});
+});
+</script>
+
+</body>
+
+</html>
