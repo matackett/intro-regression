@@ -2,42 +2,17 @@
 
 The goal of this lab is to use Analysis of Variance (ANOVA) to compare means in multiple groups. Additionally, you will be introduced to new R functions used for [wrangling](https://en.wikipedia.org/wiki/Data_wrangling) and summarizing data.
 
-## Getting Started 
 
-- Go to the STA210-Sp19 organization on GitHub ([https://github.com/STA210-Sp19](https://github.com/STA210-Sp19)). Click on the repo with the prefix **lab-03-anova-**. It contains the starter documents you need to complete the warmup exercise. 
-
-- Clone the repo and create a new project in RStudio Cloud. 
-
-- Configure git by typing the following in the **console**.
-
-```{r eval=FALSE}
-library(usethis)
-use_git_config(user.name="your name", user.email="your email")
-```
 
 ### Packages
 
 We will use the following packages in today's lab.
 
-```{r load-packages}
+```{r}
 library(tidyverse)
 library(knitr)
 library(broom)
 ```
-
-### Project name: 
-
-Currently your project is called *Untitled Project*. Update the name of your project to be "Lab 03 - ANOVA".
-
-## Warm up
-
-Before we introduce the data, let's warm up with a simple exercise.
-
-### YAML: 
-
-- Pick one team member to update the *author* and *date* fields at the top of the R Markdown file. Knit, commit, and push all the updated documents to Github.
-
-- Now, the remaining team members who have not been concurrently making these changes on their projects should click on the **Pull** button in their Git pane and observe that the changes are now reflected on their projects as well.
 
 ### Data 
 
@@ -72,16 +47,16 @@ diamonds_low <- diamonds_low %>%
 ```
 
 
-```{marginfigure}
-Refer to the [ggplot2 Cheat Sheet](https://www.rstudio.com/wp-content/uploads/2015/03/ggplot2-cheatsheet.pdf) and [ggplot2 reference](https://ggplot2.tidyverse.org/reference/index.html) for plot ideas and help with code.
+```{r}
+# Refer to the [ggplot2 Cheat Sheet](https://www.rstudio.com/wp-content/uploads/2015/03/ggplot2-cheatsheet.pdf) and [ggplot2 reference](https://ggplot2.tidyverse.org/reference/index.html) for plot ideas and help with code.
 ```
 
 2. We begin by plotting the relationship between `color` and `carat`. As a group, brainstorm ways to plot the relationship between the two variables, then make one of the plots. Be sure to include informative axes labels and an informative title.
 
 3. Fill in the code below to calculate the mean and variance of `carat` at each level of `color`. 
 
-```{marginfigure}
-The `group_by` function is used to do calculation in groups. The `summarise` function is used to reduce variables to values.
+```{r}
+# The `group_by` function is used to do calculation in groups. The `summarise` function is used to reduce variables to values.
 ```
 
 ```{r}
@@ -129,12 +104,12 @@ State the alternative hypothesis is the context of the data.
 
 The formula for the confidence interval for the mean of group $k$ is 
 
-```{marginfigure}
-The critical value $t^*$ is calculated using the *t* distribution with $n-K$ degrees of freedom. 
+```{r}
+# The critical value $t^*$ is calculated using the *t* distribution with $n-K$ degrees of freedom. 
 ```
 
-```{marginfigure}
-The standard error of the mean is calculated using $\hat{\sigma}$, the square root of the variance within each group calculated from the ANOVA table.
+```{r}
+# The standard error of the mean is calculated using $\hat{\sigma}$, the square root of the variance within each group calculated from the ANOVA table.
 ```
 
 $$\bar{y}_k \pm t^* \frac{\hat{\sigma}}{\sqrt{n_k}}$$

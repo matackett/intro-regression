@@ -14,54 +14,15 @@
 
 The goal of this lab is to use multiple linear regression to understand the variation in the selling price of houses in King County, Washington. You will also gain practice using special predictors, such as categorical predictors and interaction effects, in the model, and you will be introduced to variable transformations.
 
-
-## Getting Started 
-
-- Go to the STA210-Sp19 organization on GitHub ([https://github.com/STA210-Sp19](https://github.com/STA210-Sp19)). Click on the repo with the prefix **lab-04-**. It contains the starter documents you need to complete the warmup exercise. 
-
-- Clone the repo and create a new project in RStudio Cloud. 
-
-- Configure git by typing the following in the **console**.
-
-```{r eval=FALSE}
-library(usethis)
-use_git_config(user.name="your name", user.email="your email")
-```
-
-### Password caching
-
-If you would like your git password cached for a week for this project, type the following in the **Terminal**:
-
-```{bash eval=FALSE}
-git config --global credential.helper 'cache --timeout 604800'
-```
-
-You will need to enter your GitHub username and password one more time after caching the password. After that you won't need to enter your credentials for 604800 seconds = 7 days.
-
-
 ### Packages
 
 We will use the following packages in today's lab.
 
-```{r load-packages}
+```{r}
 library(tidyverse)
 library(knitr)
 library(broom)
 ```
-
-### Project name: 
-
-Currently your project is called *Untitled Project*. Update the name of your project to be "Lab 04 - Multiple linear regression".
-
-## Warm up
-
-Before we introduce the data, let's warm up with a simple exercise.
-
-### YAML: 
-
-- Pick one team member to update the *author* and *date* fields at the top of the R Markdown file. Knit, commit, and push all the updated documents to Github.
-
-- Now, the remaining team members who have not been concurrently making these changes on their projects should click on the **Pull** button in their Git pane and observe that the changes are now reflected on their projects as well.
 
 ### Data 
 
@@ -78,7 +39,7 @@ The for today's lab contains the price and other characteristics of over 20,000 
 - `yr_renovated`: 0 if the house was never renovated, the year the house was renovated if else
 
 
-```{r}
+```{r eval = F}
 houses <- read_csv("data/KingCountyHouses.csv")
 ```
 
@@ -86,8 +47,8 @@ houses <- read_csv("data/KingCountyHouses.csv")
 
 1. Use data visualization and summary statistics to examine the distribution of `bedrooms`. What is the maximum value? Does this value make sense? If not, what is this an indication of, i.e. how did this value get recorded in the data? Briefly explain.
 
-```{marginfigure}
-See the [documentation](https://dplyr.tidyverse.org/reference/summarise.html) for more information about the `summarise` function.
+```{r}
+# See the [documentation](https://dplyr.tidyverse.org/reference/summarise.html) for more information about the `summarise` function.
 ```
 
 2. We want to remove observations that have extreme values for bedrooms, i.e. those with values for `bedrooms` above the 95<sup>th</sup> percentile in the data. What is the 95<sup>th</sup> percentile for `bedrooms`? Use the `summarise` function to help you calculate this value.
@@ -147,8 +108,8 @@ houses <- houses %>%
   mutate(floorsCat = as.factor(floors))
 ```
 
-```{marginfigure}
-See the [documentation](https://dplyr.tidyverse.org/reference/tally.html) for more information about the `count` function.
+```{r}
+# See the [documentation](https://dplyr.tidyverse.org/reference/tally.html) for more information about the `count` function.
 ```
 
 Use the `count` function to see the number of observations at each level of `floorsCat`. What is the most common number of floors?

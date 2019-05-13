@@ -2,55 +2,16 @@
 
 When doing statistical analyses in practice, there is often a lot of time spent on cleaning and preparing the data. The goal of today's lab is to practice cleaning messy data, so it can be used in a regression analysis. You will also practice interpreting the results from a regression model that has numeric and categorical predictors and a log-transformed response variable. 
 
-
-## Getting Started 
-
-- Go to the STA210-Sp19 organization on GitHub ([https://github.com/STA210-Sp19](https://github.com/STA210-Sp19)). Click on the repo with the prefix **lab-05-**. It contains the starter documents you need to complete the warmup exercise. 
-
-- Clone the repo and create a new project in RStudio Cloud. 
-
-- Configure git by typing the following in the **console**.
-
-```{r eval=FALSE}
-library(usethis)
-use_git_config(user.name="your name", user.email="your email")
-```
-
-### Password caching
-
-If you would like your git password cached for a week for this project, type the following in the **Terminal**:
-
-```{bash eval=FALSE}
-git config --global credential.helper 'cache --timeout 604800'
-```
-
-You will need to enter your GitHub username and password one more time after caching the password. After that you won't need to enter your credentials for 604800 seconds = 7 days.
-
-
 ### Packages
 
 We will use the following packages in today's lab.
 
-```{r load-packages}
+```{r}
 library(tidyverse)
 library(knitr)
 library(skimr)
 library(broom)
 ```
-
-### Project name: 
-
-Currently your project is called *Untitled Project*. Update the name of your project to be "Lab 05 - Airbnb ".
-
-## Warm up
-
-Before we introduce the data, let's warm up with a simple exercise.
-
-### YAML: 
-
-- Pick one team member to update the *author* and *date* fields at the top of the R Markdown file. Knit, commit, and push all the updated documents to Github.
-
-- Now, the remaining team members who have not been concurrently making these changes on their projects should click on the **Pull** button in their Git pane and observe that the changes are now reflected on their projects as well.
 
 ### Data 
 
@@ -58,7 +19,7 @@ Today's data is about Airbnb listings in Asheville, NC. The data was obtained fr
 
 You can see a visualization of some of the data used in today's lab at [http://insideairbnb.com/asheville/](http://insideairbnb.com/asheville/).
 
-```{r}
+```{r eval = F}
 basic_info <- read_csv("data/airbnb_basic.csv")
 details <- read_csv("data/airbnb_details.csv")
 ```
@@ -83,8 +44,8 @@ We will use the following variables in this lab:
 
 1. We would like to use variables from both the `basic_info` and `details` data frames in this analysis. Both dataframes have the variable `id` that uniquely identifies each Airbnb listing. Because we need data from `basic_info` and `details`, we only want to include observations that are in both the `basic_info` and `details` datasets. Therefore, we will use an `inner_join` to combine the two data sets. (Note: Both data frames include a variable called `id` that uniquely identifies each Airbnb listing. R will use this variable to join the two data frames.)
 
-```{marginfigure}
-See [Section 13.4 of *R for Data Science*](https://r4ds.had.co.nz/relational-data.html#mutating-joins) for more information about joins.
+```{r}
+# See [Section 13.4 of *R for Data Science*](https://r4ds.had.co.nz/relational-data.html#mutating-joins) for more information about joins.
 ```
 
 ```{r eval=F}
@@ -106,8 +67,8 @@ The column `cleaning_fee` currently contains what type of data? Why do you think
 
 3. Since `cleaning_fee` is a quantitative variable, we need to make sure it is stored as numeric data in the dataframe. To do so, we will first use the `extract` function in `tidyr` package to create a column of cleaning fees that don't have the dollar sign. Then, we will use the `as.numeric()` function to make the extracted data the numeric data type `double`.
 
-```{marginfigure}
-See [https://tidyr.tidyverse.org/reference/extract.html) for more information about the `extract` function.
+```{r}
+# See [https://tidyr.tidyverse.org/reference/extract.html) for more information about the `extract` function.
 ```
 
 ```{r eval=F}
@@ -122,8 +83,8 @@ Use the `typeof` function to confirm that `cleaning_fee` is now stored as a `dou
 
 5. Fill in the code below to impute the missing values of `cleaning_fee` with an appropriate numeric value. Then use the `skim` function to confirm that there are no longer missing values of `cleaning_fee`.
 
-```{marginfigure}
-See [https://dplyr.tidyverse.org/reference/case_when.html](https://dplyr.tidyverse.org/reference/case_when.html) for more information about the `case_when` function.
+```{r}
+# See [https://dplyr.tidyverse.org/reference/case_when.html](https://dplyr.tidyverse.org/reference/case_when.html) for more information about the `case_when` function.
 ```
 
 ```{r eval=F}
@@ -139,8 +100,8 @@ airbnb <- airbnb %>%
 *This is an example of data that is missing not at random, since there is a specific pattern/explanation to the misisng data.  We will talk more about dealing with missing data later in the semester.*
 
 
-```{marginfigure}
-See [Section 5.6.3 of *R for Data Science*](https://r4ds.had.co.nz/transform.html#counts) for more information about counting observations.
+```{r}
+# See [Section 5.6.3 of *R for Data Science*](https://r4ds.had.co.nz/transform.html#counts) for more information about counting observations.
 ```
 
 6. Next, we look at the variable `property_type`. 

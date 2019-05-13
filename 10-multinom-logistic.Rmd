@@ -5,41 +5,12 @@ The General Social Survey (GSS) has been used to measure trends in attitudes and
 In today's lab, we will use multinomial logistic regression to understand the relationship between a person's political views and their attitudes towards government spending on mass transportation projects. To do so, we will use data from the 2010 GSS survey. Refer to the [Multinomial Logistic Regression notes](https://www2.stat.duke.edu/courses/Spring19/sta210.001/slides/lec-slides/18-multinomial-logistic-pt2.html#1) for help with concepts and code.
 
 
-## Getting Started 
-
-- Go to the STA210-Sp19 organization on GitHub ([https://github.com/STA210-Sp19](https://github.com/STA210-Sp19)). Click on the repo with the prefix **lab-08-**. It contains the starter documents you need to complete the lab.
-
-- Clone the repo and create a new project in RStudio Cloud. 
-
-- Configure git by typing the following in the **console**.
-
-```{marginfigure}
-When configuring Git, be sure to use the email address that is associated with your GitHub account.
-```
-
-```{r eval=FALSE}
-library(usethis)
-use_git_config(user.name="your name", user.email="your email")
-```
-
-
-
-### Password caching
-
-If you would like your git password cached for a week for this project, type the following in the **Terminal**:
-
-```{bash eval=FALSE}
-git config --global credential.helper 'cache --timeout 604800'
-```
-
-You will need to enter your GitHub username and password one more time after caching the password. After that you won't need to enter your credentials for 604800 seconds = 7 days.
-
 
 ### Packages
 
 You will need the following packages for today's lab: 
 
-```{r load-packages}
+```{r}
 library(tidyverse)
 library(nnet)
 library(knitr)
@@ -47,26 +18,12 @@ library(broom)
 ## Fill in other packages as needed
 ```
 
-### Project name: 
-
-Currently your project is called *Untitled Project*. Update the name of your project to the title of today's lab.
-
-## Warm up
-
-Before we introduce the data, let's warm up with a simple exercise.
-
-### YAML: 
-
-- Pick one team member to update the *author* and *date* fields at the top of the R Markdown file. Knit, commit, and push all the updated documents to Github.
-
-- Now, the remaining team members who have not been concurrently making these changes on their projects should click on the **Pull** button in their Git pane and observe that the changes are now reflected on their projects as well.
-
 ### Data
 
 The data for this lab is from the 2016 General Social Survey. The original data set contains 2867 observations and 935 variables. Given the size of the dataset, we will handle it differently in our workflow than we've handled data in previous assignments. 
 
-```{marginfigure}
-[Working with large files](https://help.github.com/en/articles/working-with-large-files)
+```{r}
+# [Working with large files](https://help.github.com/en/articles/working-with-large-files)
 ```
 
 The size of this dataset is 34.3 MB. Compare that to the Spotify dataset from last weeks' lab which was 149 KB (0.149 MB)! GitHub will not allow you to push files larger than 100 MB and will give you a warning when you push files as large as 50 MB. Though we could push the file we're working with today to GitHub, it's large enough that we'd still prefer not to. 
@@ -110,8 +67,8 @@ Note also that only the variables of interest will be loaded, not the entire dat
 
 ### Part I: Exploratory Data Analysis
 
-```{marginfigure}
-See [Reorder factor levels by hand](https://forcats.tidyverse.org/reference/fct_relevel.html) for documentation about `fct_relevel`.
+```{r}
+# See [Reorder factor levels by hand](https://forcats.tidyverse.org/reference/fct_relevel.html) for documentation about `fct_relevel`.
 ```
 
 1. The variable `natmass` will be the response variable in the model, and you want to compare more opinionated views to the moderate position. Recode `natmass` so it is a factor variable with `"About right"` as the baseline.
@@ -151,10 +108,10 @@ Choose the appropriate model based on the results from the test. Use this model 
 
 12. Plot the binned residuals versus the predicted probabilities for each category of `natmass.` *You will have three plots.*
 
-```{marginfigure}
-You can change the size of your plots, so you can fit multiple plots on a single page. Include the arguments `fig.height = ` and `fig.width = ` in the header of the code chunk to change the plot size. 
+```{r}
+# You can change the size of your plots, so you can fit multiple plots on a single page. Include the arguments `fig.height = ` and `fig.width = ` in the header of the code chunk to change the plot size. 
 
-See [Using R Markdown](https://rstudio.github.io/dygraphs/r-markdown.html) for an example.
+# See [Using R Markdown](https://rstudio.github.io/dygraphs/r-markdown.html) for an example.
 ```
 
 13. Use binned residual plots to examine the residuals versus each of the quantitative variables.

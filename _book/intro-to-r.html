@@ -5,24 +5,24 @@
 
   <meta charset="UTF-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
-  <title>Chapter 4 Intro to R | A Minimal Book Example</title>
-  <meta name="description" content="This is a minimal example of using the bookdown package to write a book. The output format for this example is bookdown::gitbook.">
+  <title>Chapter 4 Intro to R | Intro to Regression Analysis</title>
+  <meta name="description" content="This document contains lab assignments and other materials for an intermediate-level regression course.">
   <meta name="generator" content="bookdown  and GitBook 2.6.7">
 
-  <meta property="og:title" content="Chapter 4 Intro to R | A Minimal Book Example" />
+  <meta property="og:title" content="Chapter 4 Intro to R | Intro to Regression Analysis" />
   <meta property="og:type" content="book" />
   
   
-  <meta property="og:description" content="This is a minimal example of using the bookdown package to write a book. The output format for this example is bookdown::gitbook." />
+  <meta property="og:description" content="This document contains lab assignments and other materials for an intermediate-level regression course." />
   
 
   <meta name="twitter:card" content="summary" />
-  <meta name="twitter:title" content="Chapter 4 Intro to R | A Minimal Book Example" />
+  <meta name="twitter:title" content="Chapter 4 Intro to R | Intro to Regression Analysis" />
   
-  <meta name="twitter:description" content="This is a minimal example of using the bookdown package to write a book. The output format for this example is bookdown::gitbook." />
+  <meta name="twitter:description" content="This document contains lab assignments and other materials for an intermediate-level regression course." />
   
 
-<meta name="author" content="Yihui Xie">
+<meta name="author" content="Maria Tackett">
 
 
 <meta name="date" content="2019-05-13">
@@ -33,7 +33,7 @@
   
   
 <link rel="prev" href="getstarted.html">
-<link rel="next" href="applications.html">
+<link rel="next" href="slr.html">
 <script src="libs/jquery-2.2.3/jquery.min.js"></script>
 <link href="libs/gitbook-2.6.7/css/style.css" rel="stylesheet" />
 <link href="libs/gitbook-2.6.7/css/plugin-table.css" rel="stylesheet" />
@@ -101,7 +101,7 @@ code > span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Inf
       <nav role="navigation">
 
 <ul class="summary">
-<li><a href="./">A Minimal Book Example</a></li>
+<li><a href="./">Materials for an Intro Regression Course</a></li>
 
 <li class="divider"></li>
 <li class="chapter" data-level="1" data-path="index.html"><a href="index.html"><i class="fa fa-check"></i><b>1</b> Prerequisites</a></li>
@@ -111,29 +111,89 @@ code > span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Inf
 <li class="chapter" data-level="4.1" data-path="intro-to-r.html"><a href="intro-to-r.html#introduction"><i class="fa fa-check"></i><b>4.1</b> Introduction</a><ul>
 <li class="chapter" data-level="4.1.1" data-path="intro-to-r.html"><a href="intro-to-r.html#topics-covered-in-this-lab"><i class="fa fa-check"></i><b>4.1.1</b> Topics covered in this lab:</a></li>
 </ul></li>
-<li class="chapter" data-level="4.2" data-path="intro-to-r.html"><a href="intro-to-r.html#getting-started"><i class="fa fa-check"></i><b>4.2</b> Getting Started</a><ul>
-<li class="chapter" data-level="4.2.1" data-path="intro-to-r.html"><a href="intro-to-r.html#clone-assignment-repo"><i class="fa fa-check"></i><b>4.2.1</b> Clone Assignment Repo</a></li>
-<li class="chapter" data-level="4.2.2" data-path="intro-to-r.html"><a href="intro-to-r.html#configure-git"><i class="fa fa-check"></i><b>4.2.2</b> Configure git</a></li>
+<li class="chapter" data-level="4.2" data-path="intro-to-r.html"><a href="intro-to-r.html#packages"><i class="fa fa-check"></i><b>4.2</b> Packages</a></li>
+<li class="chapter" data-level="4.3" data-path="intro-to-r.html"><a href="intro-to-r.html#warm-up"><i class="fa fa-check"></i><b>4.3</b> Warm up</a></li>
+<li class="chapter" data-level="4.4" data-path="intro-to-r.html"><a href="intro-to-r.html#project-name"><i class="fa fa-check"></i><b>4.4</b> Project name:</a><ul>
+<li class="chapter" data-level="4.4.1" data-path="intro-to-r.html"><a href="intro-to-r.html#yaml"><i class="fa fa-check"></i><b>4.4.1</b> YAML:</a></li>
+<li class="chapter" data-level="4.4.2" data-path="intro-to-r.html"><a href="intro-to-r.html#commiting-changes"><i class="fa fa-check"></i><b>4.4.2</b> Commiting changes:</a></li>
+<li class="chapter" data-level="4.4.3" data-path="intro-to-r.html"><a href="intro-to-r.html#pushing-changes"><i class="fa fa-check"></i><b>4.4.3</b> Pushing changes:</a></li>
+<li class="chapter" data-level="4.4.4" data-path="intro-to-r.html"><a href="intro-to-r.html#data"><i class="fa fa-check"></i><b>4.4.4</b> Data</a></li>
 </ul></li>
-<li class="chapter" data-level="4.3" data-path="intro-to-r.html"><a href="intro-to-r.html#packages"><i class="fa fa-check"></i><b>4.3</b> Packages</a></li>
-<li class="chapter" data-level="4.4" data-path="intro-to-r.html"><a href="intro-to-r.html#warm-up"><i class="fa fa-check"></i><b>4.4</b> Warm up</a></li>
-<li class="chapter" data-level="4.5" data-path="intro-to-r.html"><a href="intro-to-r.html#project-name"><i class="fa fa-check"></i><b>4.5</b> Project name:</a><ul>
-<li class="chapter" data-level="4.5.1" data-path="intro-to-r.html"><a href="intro-to-r.html#yaml"><i class="fa fa-check"></i><b>4.5.1</b> YAML:</a></li>
-<li class="chapter" data-level="4.5.2" data-path="intro-to-r.html"><a href="intro-to-r.html#commiting-changes"><i class="fa fa-check"></i><b>4.5.2</b> Commiting changes:</a></li>
-<li class="chapter" data-level="4.5.3" data-path="intro-to-r.html"><a href="intro-to-r.html#pushing-changes"><i class="fa fa-check"></i><b>4.5.3</b> Pushing changes:</a></li>
-<li class="chapter" data-level="4.5.4" data-path="intro-to-r.html"><a href="intro-to-r.html#data"><i class="fa fa-check"></i><b>4.5.4</b> Data</a></li>
+<li class="chapter" data-level="4.5" data-path="intro-to-r.html"><a href="intro-to-r.html#exercises"><i class="fa fa-check"></i><b>4.5</b> Exercises</a><ul>
+<li class="chapter" data-level="4.5.1" data-path="intro-to-r.html"><a href="intro-to-r.html#visualizing-your-data"><i class="fa fa-check"></i><b>4.5.1</b> Visualizing Your Data</a></li>
 </ul></li>
-<li class="chapter" data-level="4.6" data-path="intro-to-r.html"><a href="intro-to-r.html#exercises"><i class="fa fa-check"></i><b>4.6</b> Exercises</a><ul>
-<li class="chapter" data-level="4.6.1" data-path="intro-to-r.html"><a href="intro-to-r.html#visualizing-your-data"><i class="fa fa-check"></i><b>4.6.1</b> Visualizing Your Data</a></li>
+<li class="chapter" data-level="4.6" data-path="intro-to-r.html"><a href="intro-to-r.html#simple-linear-regression"><i class="fa fa-check"></i><b>4.6</b> Simple Linear Regression</a></li>
 </ul></li>
-<li class="chapter" data-level="4.7" data-path="intro-to-r.html"><a href="intro-to-r.html#simple-linear-regression"><i class="fa fa-check"></i><b>4.7</b> Simple Linear Regression</a></li>
+<li class="chapter" data-level="5" data-path="slr.html"><a href="slr.html"><i class="fa fa-check"></i><b>5</b> Simple Linear Regression</a><ul>
+<li class="chapter" data-level="5.0.1" data-path="slr.html"><a href="slr.html#packages-1"><i class="fa fa-check"></i><b>5.0.1</b> Packages</a></li>
+<li class="chapter" data-level="5.0.2" data-path="slr.html"><a href="slr.html#project-name-1"><i class="fa fa-check"></i><b>5.0.2</b> Project name:</a></li>
+<li class="chapter" data-level="5.1" data-path="slr.html"><a href="slr.html#warm-up-1"><i class="fa fa-check"></i><b>5.1</b> Warm up</a><ul>
+<li class="chapter" data-level="5.1.1" data-path="slr.html"><a href="slr.html#yaml-1"><i class="fa fa-check"></i><b>5.1.1</b> YAML:</a></li>
+<li class="chapter" data-level="5.1.2" data-path="slr.html"><a href="slr.html#commiting-and-pushing-changes"><i class="fa fa-check"></i><b>5.1.2</b> Commiting and pushing changes:</a></li>
+<li class="chapter" data-level="5.1.3" data-path="slr.html"><a href="slr.html#pulling-changes"><i class="fa fa-check"></i><b>5.1.3</b> Pulling changes:</a></li>
+<li class="chapter" data-level="5.1.4" data-path="slr.html"><a href="slr.html#data-1"><i class="fa fa-check"></i><b>5.1.4</b> Data</a></li>
 </ul></li>
-<li class="chapter" data-level="5" data-path="applications.html"><a href="applications.html"><i class="fa fa-check"></i><b>5</b> Applications</a><ul>
-<li class="chapter" data-level="5.1" data-path="applications.html"><a href="applications.html#example-one"><i class="fa fa-check"></i><b>5.1</b> Example one</a></li>
-<li class="chapter" data-level="5.2" data-path="applications.html"><a href="applications.html#example-two"><i class="fa fa-check"></i><b>5.2</b> Example two</a></li>
+<li class="chapter" data-level="5.2" data-path="slr.html"><a href="slr.html#exercises-1"><i class="fa fa-check"></i><b>5.2</b> Exercises</a><ul>
+<li class="chapter" data-level="5.2.1" data-path="slr.html"><a href="slr.html#exploratory-data-analysis"><i class="fa fa-check"></i><b>5.2.1</b> Exploratory Data Analysis</a></li>
+<li class="chapter" data-level="5.2.2" data-path="slr.html"><a href="slr.html#simple-linear-regression-1"><i class="fa fa-check"></i><b>5.2.2</b> Simple Linear Regression</a></li>
 </ul></li>
-<li class="chapter" data-level="6" data-path="final-words.html"><a href="final-words.html"><i class="fa fa-check"></i><b>6</b> Final Words</a></li>
-<li class="chapter" data-level="" data-path="references.html"><a href="references.html"><i class="fa fa-check"></i>References</a></li>
+</ul></li>
+<li class="chapter" data-level="6" data-path="anova.html"><a href="anova.html"><i class="fa fa-check"></i><b>6</b> ANOVA</a><ul>
+<li class="chapter" data-level="6.0.1" data-path="anova.html"><a href="anova.html#packages-2"><i class="fa fa-check"></i><b>6.0.1</b> Packages</a></li>
+<li class="chapter" data-level="6.0.2" data-path="anova.html"><a href="anova.html#data-2"><i class="fa fa-check"></i><b>6.0.2</b> Data</a></li>
+<li class="chapter" data-level="6.1" data-path="anova.html"><a href="anova.html#exercises-2"><i class="fa fa-check"></i><b>6.1</b> Exercises</a></li>
+</ul></li>
+<li class="chapter" data-level="7" data-path="mlr.html"><a href="mlr.html"><i class="fa fa-check"></i><b>7</b> Multiple Linear Regression</a><ul>
+<li class="chapter" data-level="7.0.1" data-path="mlr.html"><a href="mlr.html#packages-3"><i class="fa fa-check"></i><b>7.0.1</b> Packages</a></li>
+<li class="chapter" data-level="7.0.2" data-path="mlr.html"><a href="mlr.html#data-3"><i class="fa fa-check"></i><b>7.0.2</b> Data</a></li>
+<li class="chapter" data-level="7.1" data-path="mlr.html"><a href="mlr.html#exercises-3"><i class="fa fa-check"></i><b>7.1</b> Exercises</a><ul>
+<li class="chapter" data-level="7.1.1" data-path="mlr.html"><a href="mlr.html#acknowledgement"><i class="fa fa-check"></i><b>7.1.1</b> Acknowledgement</a></li>
+</ul></li>
+</ul></li>
+<li class="chapter" data-level="8" data-path="mlr2.html"><a href="mlr2.html"><i class="fa fa-check"></i><b>8</b> Data Wrangling &amp; Multiple Linear Regression</a><ul>
+<li class="chapter" data-level="8.0.1" data-path="mlr2.html"><a href="mlr2.html#packages-4"><i class="fa fa-check"></i><b>8.0.1</b> Packages</a></li>
+<li class="chapter" data-level="8.0.2" data-path="mlr2.html"><a href="mlr2.html#data-4"><i class="fa fa-check"></i><b>8.0.2</b> Data</a></li>
+<li class="chapter" data-level="8.1" data-path="mlr2.html"><a href="mlr2.html#exercises-4"><i class="fa fa-check"></i><b>8.1</b> Exercises</a><ul>
+<li class="chapter" data-level="8.1.1" data-path="mlr2.html"><a href="mlr2.html#data-wrangling"><i class="fa fa-check"></i><b>8.1.1</b> Data wrangling</a></li>
+<li class="chapter" data-level="8.1.2" data-path="mlr2.html"><a href="mlr2.html#regression-analysis"><i class="fa fa-check"></i><b>8.1.2</b> Regression Analysis</a></li>
+<li class="chapter" data-level="8.1.3" data-path="mlr2.html"><a href="mlr2.html#acknowledgement-1"><i class="fa fa-check"></i><b>8.1.3</b> Acknowledgement</a></li>
+</ul></li>
+</ul></li>
+<li class="chapter" data-level="9" data-path="selection.html"><a href="selection.html"><i class="fa fa-check"></i><b>9</b> Model Selection</a><ul>
+<li class="chapter" data-level="9.0.1" data-path="selection.html"><a href="selection.html#packages-5"><i class="fa fa-check"></i><b>9.0.1</b> Packages</a></li>
+<li class="chapter" data-level="9.0.2" data-path="selection.html"><a href="selection.html#data-5"><i class="fa fa-check"></i><b>9.0.2</b> Data</a></li>
+<li class="chapter" data-level="9.1" data-path="selection.html"><a href="selection.html#exercises-5"><i class="fa fa-check"></i><b>9.1</b> Exercises</a><ul>
+<li class="chapter" data-level="9.1.1" data-path="selection.html"><a href="selection.html#part-i-1"><i class="fa fa-check"></i><b>9.1.1</b> Part I</a></li>
+<li class="chapter" data-level="9.1.2" data-path="selection.html"><a href="selection.html#part-ii-1"><i class="fa fa-check"></i><b>9.1.2</b> Part II</a></li>
+<li class="chapter" data-level="9.1.3" data-path="selection.html"><a href="selection.html#acknowledgements"><i class="fa fa-check"></i><b>9.1.3</b> Acknowledgements</a></li>
+</ul></li>
+</ul></li>
+<li class="chapter" data-level="10" data-path="logistic.html"><a href="logistic.html"><i class="fa fa-check"></i><b>10</b> Logistic Regression</a><ul>
+<li class="chapter" data-level="10.0.1" data-path="logistic.html"><a href="logistic.html#packages-6"><i class="fa fa-check"></i><b>10.0.1</b> Packages</a></li>
+<li class="chapter" data-level="10.0.2" data-path="logistic.html"><a href="logistic.html#data-6"><i class="fa fa-check"></i><b>10.0.2</b> Data</a></li>
+<li class="chapter" data-level="10.1" data-path="logistic.html"><a href="logistic.html#exercises-6"><i class="fa fa-check"></i><b>10.1</b> Exercises</a><ul>
+<li class="chapter" data-level="10.1.1" data-path="logistic.html"><a href="logistic.html#exploratory-data-analysis-1"><i class="fa fa-check"></i><b>10.1.1</b> Exploratory Data Analysis</a></li>
+<li class="chapter" data-level="10.1.2" data-path="logistic.html"><a href="logistic.html#part-ii-logistic-regression-model"><i class="fa fa-check"></i><b>10.1.2</b> Part II: Logistic Regression Model</a></li>
+<li class="chapter" data-level="10.1.3" data-path="logistic.html"><a href="logistic.html#part-iii-model-assessment"><i class="fa fa-check"></i><b>10.1.3</b> Part III: Model Assessment</a></li>
+<li class="chapter" data-level="10.1.4" data-path="logistic.html"><a href="logistic.html#part-iv-prediction"><i class="fa fa-check"></i><b>10.1.4</b> Part IV: Prediction</a></li>
+</ul></li>
+</ul></li>
+<li class="chapter" data-level="11" data-path="multinom-logistic.html"><a href="multinom-logistic.html"><i class="fa fa-check"></i><b>11</b> Multinomial Logistic Regression</a><ul>
+<li class="chapter" data-level="11.0.1" data-path="multinom-logistic.html"><a href="multinom-logistic.html#packages-7"><i class="fa fa-check"></i><b>11.0.1</b> Packages</a></li>
+<li class="chapter" data-level="11.0.2" data-path="multinom-logistic.html"><a href="multinom-logistic.html#data-7"><i class="fa fa-check"></i><b>11.0.2</b> Data</a></li>
+<li class="chapter" data-level="11.1" data-path="multinom-logistic.html"><a href="multinom-logistic.html#exercises-7"><i class="fa fa-check"></i><b>11.1</b> Exercises</a><ul>
+<li class="chapter" data-level="11.1.1" data-path="multinom-logistic.html"><a href="multinom-logistic.html#part-i-exploratory-data-analysis"><i class="fa fa-check"></i><b>11.1.1</b> Part I: Exploratory Data Analysis</a></li>
+<li class="chapter" data-level="11.1.2" data-path="multinom-logistic.html"><a href="multinom-logistic.html#part-ii-multinomial-logistic-regression-model"><i class="fa fa-check"></i><b>11.1.2</b> Part II: Multinomial Logistic Regression Model</a></li>
+<li class="chapter" data-level="11.1.3" data-path="multinom-logistic.html"><a href="multinom-logistic.html#part-iii-model-fit"><i class="fa fa-check"></i><b>11.1.3</b> Part III: Model Fit</a></li>
+<li class="chapter" data-level="11.1.4" data-path="multinom-logistic.html"><a href="multinom-logistic.html#part-iv-using-the-model"><i class="fa fa-check"></i><b>11.1.4</b> Part IV: Using the Model</a></li>
+<li class="chapter" data-level="11.1.5" data-path="multinom-logistic.html"><a href="multinom-logistic.html#acknowledgements-1"><i class="fa fa-check"></i><b>11.1.5</b> Acknowledgements</a></li>
+</ul></li>
+</ul></li>
+<li class="chapter" data-level="12" data-path="together.html"><a href="together.html"><i class="fa fa-check"></i><b>12</b> Putting It All Together</a><ul>
+<li class="chapter" data-level="12.0.1" data-path="together.html"><a href="together.html#packages-8"><i class="fa fa-check"></i><b>12.0.1</b> Packages</a></li>
+<li class="chapter" data-level="12.0.2" data-path="together.html"><a href="together.html#data-8"><i class="fa fa-check"></i><b>12.0.2</b> Data</a></li>
+<li class="chapter" data-level="12.0.3" data-path="together.html"><a href="together.html#exercises-8"><i class="fa fa-check"></i><b>12.0.3</b> Exercises</a></li>
+</ul></li>
 <li class="divider"></li>
 <li><a href="https://github.com/rstudio/bookdown" target="blank">Published with bookdown</a></li>
 
@@ -146,7 +206,7 @@ code > span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Inf
       <div class="body-inner">
         <div class="book-header" role="navigation">
           <h1>
-            <i class="fa fa-circle-o-notch fa-spin"></i><a href="./">A Minimal Book Example</a>
+            <i class="fa fa-circle-o-notch fa-spin"></i><a href="./">Intro to Regression Analysis</a>
           </h1>
         </div>
 
@@ -158,9 +218,9 @@ code > span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Inf
 <h1><span class="header-section-number">Chapter 4</span> Intro to R</h1>
 <div id="introduction" class="section level2">
 <h2><span class="header-section-number">4.1</span> Introduction</h2>
-<pre class="marginfigure"><code>R is the name of the programming language itself and RStudio is a convenient interface.</code></pre>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="co"># R is the name of the programming language itself and RStudio is a convenient interface.</span></code></pre></div>
 <p>The main goal of this lab is to introduce you to R and RStudio, which we will be using throughout the course both to learn the statistical concepts discussed in the course and to analyze real data and come to informed conclusions.</p>
-<pre class="marginfigure"><code>git is a version control system (like &quot;Track Changes&quot; features from Microsoft Word but more powerful) and GitHub is the home for your Git-based projects on the internet (like DropBox but much better).</code></pre>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="co"># git is a version control system (like &quot;Track Changes&quot; features from Microsoft Word but more powerful) and GitHub is the home for your Git-based projects on the internet (like DropBox but much better).</span></code></pre></div>
 <p>An additional goal is to introduce you to git and GitHub, which is the collaboration and version control system that we will be using throughout the course.</p>
 <p>As the labs progress, you are encouraged to explore beyond what the labs dictate; a willingness to experiment will make you a much better programmer and statistician. If you’re new to R, you should begin by building some basic fluency in R. Today’s lab will focus on fundamental building blocks of R and RStudio: the interface, reading in data, and basic commands. Starting next week, the labs will focus on concepts more specific to regression analysis.</p>
 <p>To make versioning simpler, today’s lab is individual. This will give you a chance to become more familiar with git and GitHub. Next week you’ll learn about collaborating on GitHub and will produce a single lab report as a team.</p>
@@ -174,48 +234,8 @@ code > span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Inf
 </ul>
 </div>
 </div>
-<div id="getting-started" class="section level2">
-<h2><span class="header-section-number">4.2</span> Getting Started</h2>
-<p>Each of your assignments will begin with the following steps. You saw your TA demonstrate these steps, and they’re outlined in detail here again. Going forward each lab will start with a “Getting started” section but details will be a bit more sparse than this. You can always refer back to this lab for a detailed list of the steps involved for getting started with an assignment.</p>
-<div id="clone-assignment-repo" class="section level3">
-<h3><span class="header-section-number">4.2.1</span> Clone Assignment Repo</h3>
-<ul>
-<li>Go to the STA210-Sp19 organization on GitHub (<a href="https://github.com/STA210-Sp19" class="uri">https://github.com/STA210-Sp19</a>). Click on the repo with the prefix <strong>lab-01-intro-r</strong>. It contains the starter documents you need to complete the lab.</li>
-</ul>
-<p><img src="img/01-intro-r/clone-repo-link.png" /><!-- --></p>
-<ul>
-<li>Click on the green <strong>Clone or download</strong> button, select <strong>Use HTTPS</strong> (this might already be selected by default, and if it is, you’ll see the text <strong>Clone with HTTPS</strong> as in the image below). Click on the clipboard icon to copy the repo URL.</li>
-</ul>
-<p><img src="img/01-intro-r/new-project-from-gh.png" /><!-- --></p>
-<ul>
-<li>Go to RStudio Cloud and into the STA 210 course workspace. Create a <strong>New Project from Git Repo</strong>. You will need to click on the down arrow next to the <strong>New Project</strong> button to see this option.</li>
-</ul>
-<p><img src="img/01-intro-r/paste-gh-repo-url.png" /><!-- --></p>
-<ul>
-<li><p>Copy and paste the URL of your assignment repo into the dialog box. Be sure “Add packages from the base project” is checked.</p></li>
-<li><p>Click OK, and you should see the contents from your GitHub repo in the <strong>Files</strong> pane in RStudio.</p></li>
-</ul>
-</div>
-<div id="configure-git" class="section level3">
-<h3><span class="header-section-number">4.2.2</span> Configure git</h3>
-<p>There is one more piece of housekeeping we need to take care of before we get started. Specifically, we need to configure your git so that RStudio can communicate with GitHub. This requires two pieces of information: your email address and your name.</p>
-<p>To do so, you will use the <code>use_git_config()</code> function from the <code>usethis</code> package.</p>
-<p>Type the following lines of code in the <strong>console</strong> in RStudio filling in your name and email address.</p>
-<pre class="marginfigure"><code>Your email address is the address tied to your GitHub account and your name should be first and last name.</code></pre>
-<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="kw">library</span>(usethis)
-<span class="kw">use_git_config</span>(<span class="dt">user.name=</span><span class="st">&quot;your name&quot;</span>, <span class="dt">user.email=</span><span class="st">&quot;your email&quot;</span>)</code></pre></div>
-<p>For example, mine would be</p>
-<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="kw">library</span>(usethis)
-<span class="kw">use_git_config</span>(<span class="dt">user.name=</span><span class="st">&quot;Maria Tackett&quot;</span>, <span class="dt">user.email=</span><span class="st">&quot;maria.tackett@duke.edu&quot;</span>)</code></pre></div>
-<p>If you get the error message</p>
-<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r">Error <span class="cf">in</span> <span class="kw">library</span>(usethis) <span class="op">:</span><span class="st"> </span>there is no package called ‘usethis’</code></pre></div>
-<p>then you need to install the <code>usethis</code> package. Run the following code in the console to install the package.</p>
-<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="kw">install.package</span>(<span class="st">&quot;usethis&quot;</span>)</code></pre></div>
-<p>Once you run the code, your values for <code>user.name</code> and <code>user.email</code> will show in the console. If your <code>user.name</code> and <code>user.email</code> are correct, you’re good to go! Otherwise, run the code again with the necessary changes.</p>
-</div>
-</div>
 <div id="packages" class="section level2">
-<h2><span class="header-section-number">4.3</span> Packages</h2>
+<h2><span class="header-section-number">4.2</span> Packages</h2>
 <p>We will use the following packages in today’s lab.</p>
 <div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="kw">library</span>(tidyverse)</code></pre></div>
 <pre><code>## ── Attaching packages ──── tidyverse 1.2.1 ──</code></pre>
@@ -236,44 +256,44 @@ code > span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Inf
 <span class="kw">install.packages</span>(<span class="st">&quot;broom&quot;</span>)</code></pre></div>
 </div>
 <div id="warm-up" class="section level2">
-<h2><span class="header-section-number">4.4</span> Warm up</h2>
+<h2><span class="header-section-number">4.3</span> Warm up</h2>
 <p>Before we introduce the data, let’s warm up with some simple exercises.</p>
 </div>
 <div id="project-name" class="section level2">
-<h2><span class="header-section-number">4.5</span> Project name:</h2>
+<h2><span class="header-section-number">4.4</span> Project name:</h2>
 <p>Currently your project is called <em>Untitled Project</em>. Update the name of your project to be “Lab 01 - Intro R”.</p>
 <p><img src="img/01-intro-r/untitled-project.png" /><!-- --></p>
-<pre class="marginfigure"><code>The top portion of your R Markdown file (between the three dashed lines) is called YAML. It stands for &quot;YAML Ain&#39;t Markup Language&quot;. It is a human friendly data serialization standard for all programming languages. All you need to know is that this area is called the YAML (we will refer to it as such) and that it contains meta information about your document.</code></pre>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="co"># The top portion of your R Markdown file (between the three dashed lines) is called YAML. It stands for &quot;YAML Ain&#39;t Markup Language&quot;. It is a human friendly data serialization standard for all programming languages. All you need to know is that this area is called the YAML (we will refer to it as such) and that it contains meta information about your document.</span></code></pre></div>
 <div id="yaml" class="section level3">
-<h3><span class="header-section-number">4.5.1</span> YAML:</h3>
+<h3><span class="header-section-number">4.4.1</span> YAML:</h3>
 <p>Open the R Markdown (Rmd) file in your project, change the author name to your name, and knit the document.</p>
 <p><img src="img/01-intro-r/yaml-raw-to-rendered.png" /><!-- --></p>
 </div>
 <div id="commiting-changes" class="section level3">
-<h3><span class="header-section-number">4.5.2</span> Commiting changes:</h3>
+<h3><span class="header-section-number">4.4.2</span> Commiting changes:</h3>
 <p>Then go to the Git pane in your RStudio.</p>
 <p>If you have made changes to your Rmd file, you should see it listed here. Click on it to select it in this list and then click on <strong>Diff</strong>. This shows you the <em>diff</em>erence between the last committed state of the document and its current state that includes your changes. If you’re happy with these changes, write “Update author name” in the <strong>Commit message</strong> box and click <strong>Commit</strong>.</p>
 <p><img src="img/01-intro-r/update-author-name-commit.png" /><!-- --></p>
 <p>You don’t have to commit after every change, this would get quite cumbersome. You should consider committing states that are <em>meaningful to you</em> for inspection, comparison, or restoration. In the first few assignments we will tell you exactly when to commit and in some cases, what commit message to use. As the semester progresses we will let you make these decisions.</p>
 </div>
 <div id="pushing-changes" class="section level3">
-<h3><span class="header-section-number">4.5.3</span> Pushing changes:</h3>
+<h3><span class="header-section-number">4.4.3</span> Pushing changes:</h3>
 <p>Now that you have made an update and committed this change, it’s time to push these changes to the web! Or more specifically, to your repo on GitHub. Why? So that others can see your changes. And by others, we mean the course teaching team (your repos in this course are private to you and us, only).</p>
 <p>In order to push your changes to GitHub, click on <strong>Push</strong>. This will prompt a dialogue box where you first need to enter your user name, and then your password. This might feel cumbersome. Bear with me… We <em>will</em> teach you how to save your password so you don’t have to enter it every time. But for this one assignment you’ll have to manually enter each time you push in order to gain some experience with it.</p>
 </div>
 <div id="data" class="section level3">
-<h3><span class="header-section-number">4.5.4</span> Data</h3>
+<h3><span class="header-section-number">4.4.4</span> Data</h3>
 <p>Today’s data comes from the Capital Bikeshare in Washington D.C. The Capital Bikeshare is a system in which customers can rent a bike for little cost, ride it around the city, and return it to a station near their destination. You can get more information about the bikeshare on their website, <a href="https://www.capitalbikeshare.com/" class="uri">https://www.capitalbikeshare.com/</a>. We will read in the data from the file <em>bikeshare.csv</em> located in the <em>data</em> folder.</p>
 <div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r">bikeshare &lt;-<span class="st"> </span><span class="kw">read_csv</span>(<span class="st">&quot;data/bikeshare.csv&quot;</span>)</code></pre></div>
 <p>This dataset contains information about the number of bike rentals, environmental conditions, and other information about the each day in 2011 and 2012.</p>
 </div>
 </div>
 <div id="exercises" class="section level2">
-<h2><span class="header-section-number">4.6</span> Exercises</h2>
+<h2><span class="header-section-number">4.5</span> Exercises</h2>
 <p>Before doing any analysis, we want to understand the basic structure of the data. One way to do this, is to look at the actual dataset. Type the code below in the <strong>console</strong> to view the entire dataset.</p>
 <div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="kw">View</span>(bikeshare)</code></pre></div>
 <p>It is sometimes more useful to view a summary of the data structure rather than view the entire dataset. This is especially true for very large datasets, i.e. those with a very large number of observations and/or rows. We can use the <code>glimpse()</code> function to get a general idea about the structure of our dataset. This function can be very useful when importing data from a file such as a .csv file (like in this lab) to ensure that data imported correctly and that we have the number of observations (rows) and variables (columns) we expect. We can also use this function to see each variable’s type (e.g. integer, character).</p>
-<pre class="marginfigure"><code>You can  type `??glimpse` in the console to learn more about the function and its syntax.</code></pre>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="co"># You can  type `??glimpse` in the console to learn more about the function and its syntax.</span></code></pre></div>
 <ol style="list-style-type: decimal">
 <li>Type <code>glimpse(bikeshare)</code> in the <strong>console</strong> an overview of the <code>bikeshare</code> dataset.</li>
 </ol>
@@ -308,7 +328,7 @@ code > span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Inf
 </ol>
 <p><em>This is a good place to pause and commit changes with the commit message “Added summary statistics (Ex 1 - 3)”, and push.</em></p>
 <div id="visualizing-your-data" class="section level3">
-<h3><span class="header-section-number">4.6.1</span> Visualizing Your Data</h3>
+<h3><span class="header-section-number">4.5.1</span> Visualizing Your Data</h3>
 <ol start="4" style="list-style-type: decimal">
 <li>One important part of EDA is visualizing the data to get a better idea of the shape of the distribution of each variable along with the relationship between variables. There are a lot of ways to make plots in R; we will use the functions available in the <code>ggplot2</code> package.</li>
 </ol>
@@ -323,7 +343,7 @@ code > span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Inf
 <div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="kw">ggplot</span>(<span class="dt">data=</span>bikeshare, <span class="dt">mapping=</span><span class="kw">aes</span>(<span class="dt">x=</span>count)) <span class="op">+</span><span class="st"> </span>
 <span class="st">  </span><span class="kw">geom_histogram</span>(<span class="dt">color=</span><span class="st">&quot;_______&quot;</span>) <span class="op">+</span>
 <span class="st">  </span><span class="kw">labs</span>(<span class="dt">title=</span><span class="st">&quot;______&quot;</span>, <span class="dt">x=</span><span class="st">&quot;______&quot;</span>)</code></pre></div>
-<pre class="marginfigure"><code>This [ggplot2 quick reference](http://sape.inf.usi.ch/quick-reference/ggplot2/colour) has a long list of color options. You can also use [HTML color codes](https://htmlcolorcodes.com/).</code></pre>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="co"># This [ggplot2 quick reference](http://sape.inf.usi.ch/quick-reference/ggplot2/colour) has a long list of color options. You can also use [HTML color codes](https://htmlcolorcodes.com/).</span></code></pre></div>
 <p>Next, instead of <code>color=&quot;_____&quot;</code>, use <code>fill=&quot;______&quot;</code> inside of the <code>geom_histogram()</code> function and put the color of your choice inside the blank. You can use the same color as before or use a new one.</p>
 <p>What is the difference in the two plots? In other words, what is the difference in the way color is implemented when using <code>color</code> versus <code>fill</code>?</p>
 <ol start="6" style="list-style-type: decimal">
@@ -338,7 +358,7 @@ code > span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Inf
 <p>Complete the code below to make a scatterplot of the number of bike rentals versus the temperature.</p>
 <div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="kw">ggplot</span>(<span class="dt">data=</span>bikeshare, <span class="dt">mapping=</span><span class="kw">aes</span>(<span class="dt">x=</span>temp_c,<span class="dt">y=</span>count)) <span class="op">+</span>
 <span class="st">  </span>___________________</code></pre></div>
-<pre class="marginfigure"><code>[https://ggplot2.tidyverse.org/](https://ggplot2.tidyverse.org/) is a great resource as you learn `ggplot()`. Click **Reference** in the top right corner to see a list of the various plot types available in the ggplot2 package.</code></pre>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="co"># [https://ggplot2.tidyverse.org/](https://ggplot2.tidyverse.org/) is a great resource as you learn `ggplot()`. Click **Reference** in the top right corner to see a list of the various plot types available in the ggplot2 package.</span></code></pre></div>
 <p>Describe the relationship between the temperature and the number of bike rentals.</p>
 <ol start="8" style="list-style-type: decimal">
 <li>The temperature and number of bike rentals varies greatly depending on the season. Therefore, we would like to create a separate scatterplot of <code>count</code> versus <code>temp_c</code> for each season. To do so, we will use the <code>facet_wrap()</code> function, faceting by <code>season</code>. Recall from Exercise 2 that <code>season</code> is currently stored as an integer. We need to change it to a factor variable type before using it in the <code>facet_wrap()</code> function (you could also change it to a character variable).</li>
@@ -357,7 +377,7 @@ code > span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Inf
 </div>
 </div>
 <div id="simple-linear-regression" class="section level2">
-<h2><span class="header-section-number">4.7</span> Simple Linear Regression</h2>
+<h2><span class="header-section-number">4.6</span> Simple Linear Regression</h2>
 <p>We want to fit a least-squares regression using the temperature (<code>temp_c</code>) to explain variation in the number of bike rentals (<code>count</code>) in the <strong>winter</strong> season. We can use the <code>filter()</code> function to create a subset from the data that only includes days during the winter. The <code>&lt;-</code> assigns the name <code>winter_data</code> to our subset.</p>
 <div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r">winter_data &lt;-<span class="st"> </span>bikeshare <span class="op">%&gt;%</span>
 <span class="st">  </span><span class="kw">filter</span>(season<span class="op">==</span><span class="st">&quot;1&quot;</span>)</code></pre></div>
@@ -399,7 +419,7 @@ code > span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Inf
         </div>
       </div>
 <a href="getstarted.html" class="navigation navigation-prev " aria-label="Previous page"><i class="fa fa-angle-left"></i></a>
-<a href="applications.html" class="navigation navigation-next " aria-label="Next page"><i class="fa fa-angle-right"></i></a>
+<a href="slr.html" class="navigation navigation-next " aria-label="Next page"><i class="fa fa-angle-right"></i></a>
     </div>
   </div>
 <script src="libs/gitbook-2.6.7/js/app.min.js"></script>
@@ -436,7 +456,7 @@ gitbook.start({
 "link": null,
 "text": null
 },
-"download": ["introregression.pdf", "introregression.epub"],
+"download": ["introregression.pdf"],
 "toc": {
 "collapse": "subsection"
 }

@@ -2,39 +2,12 @@
 
 The goal of today’s lab is to practice forward and backward model selection. In addition to practice with model selection functions in R, you will manually conduct a backward selection procedure to better understand what occurs when you use model selection functions.
 
-## Getting Started 
-
-- Go to the STA210-Sp19 organization on GitHub ([https://github.com/STA210-Sp19](https://github.com/STA210-Sp19)). Click on the repo with the prefix **lab-06-**. It contains the starter documents you need to complete the warmup exercise. 
-
-- Clone the repo and create a new project in RStudio Cloud. 
-
-- Configure git by typing the following in the **console**.
-
-```{r eval=FALSE}
-library(usethis)
-use_git_config(user.name="your name", user.email="your email")
-```
-
-```{marginfigure}
-When configuring Git, be sure to use the email address that is associated with your GitHub account.
-```
-
-### Password caching
-
-If you would like your git password cached for a week for this project, type the following in the **Terminal**:
-
-```{bash eval=FALSE}
-git config --global credential.helper 'cache --timeout 604800'
-```
-
-You will need to enter your GitHub username and password one more time after caching the password. After that you won't need to enter your credentials for 604800 seconds = 7 days.
-
 
 ### Packages
 
 You will need the following packages for today's lab: 
 
-```{r load-packages}
+```{r}
 library(tidyverse)
 library(knitr)
 library(broom)
@@ -42,20 +15,6 @@ library(leaps)
 library(Sleuth3) #case1201 data
 library(ISLR) #Hitters data
 ```
-
-### Project name: 
-
-Currently your project is called *Untitled Project*. Update the name of your project to the title of today's lab.
-
-## Warm up
-
-Before we introduce the data, let's warm up with a simple exercise.
-
-### YAML: 
-
-- Pick one team member to update the *author* and *date* fields at the top of the R Markdown file. Knit, commit, and push all the updated documents to Github.
-
-- Now, the remaining team members who have not been concurrently making these changes on their projects should click on the **Pull** button in their Git pane and observe that the changes are now reflected on their projects as well.
 
 ### Data
 
@@ -141,8 +100,8 @@ The data for this part of the lab is the `Hitters` dataset in the `ISLR` package
 
 9. Fill in the code below to conduct forward selection and save the results in an object called `sel_summary` (selection summary).
 
-```{marginfigure}
-The `nvmax` option indicates the maximum-sized variable subsets to consider in the model selection.
+```{r}
+# The `nvmax` option indicates the maximum-sized variable subsets to consider in the model selection.
 ```
 
 ```{r eval=F}
@@ -162,8 +121,8 @@ summary_stats <- data.frame(bic = sel_summary$bic,
   mutate(np = row_number()) #number of variables
 ```
 
-```{marginfigure}
-See the [ggplot2 documentation](https://ggplot2.tidyverse.org/reference/geom_abline.html#arguments) for code to add a vertical line.
+```{r}
+# See the [ggplot2 documentation](https://ggplot2.tidyverse.org/reference/geom_abline.html#arguments) for code to add a vertical line.
 ```
 
 11. Use the data in the `summary_stats` data frame to plot $BIC$ versus the number of predictors. Include a vertical line on your plot that shows the number of predictors for the overall final model you would select based on $BIC$. Be sure your plot has clear and informative title and axes labels. 
