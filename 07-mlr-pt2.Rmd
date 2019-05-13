@@ -1,5 +1,11 @@
 # Data Wrangling & Multiple Linear Regression {#mlr2}
 
+```{r echo = F}
+knitr::opts_chunk$set(
+  eval = F
+)
+```
+
 When doing statistical analyses in practice, there is often a lot of time spent on cleaning and preparing the data. The goal of today's lab is to practice cleaning messy data, so it can be used in a regression analysis. You will also practice interpreting the results from a regression model that has numeric and categorical predictors and a log-transformed response variable. 
 
 ### Packages

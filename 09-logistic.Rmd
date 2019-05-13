@@ -1,5 +1,11 @@
 # Logistic Regression {#logistic}
 
+```{r echo = F}
+knitr::opts_chunk$set(
+  eval = F
+)
+```
+
 Over the past ten years, recommendation systems have become increasingly popular as more companies strive to offer customized user experiences. Amazon recommends products you may like based on your browse and purchase history, Netflix recommends movies and TV shows based on your viewing history, and music platforms like Spotify recommend songs you may like based on your listening history. While these recommendation systems are built using a variety of algorithms, they are all trying to achieve the same goal: use the characteristics of the products/movies/music a user is known to like to figure out the products/movies/music the user may like but hasn't discovered yet. 
 
 ```{r}

@@ -1,5 +1,11 @@
 # Multiple Linear Regression {#mlr}
 
+```{r echo = F}
+knitr::opts_chunk$set(
+  eval = F
+)
+```
+
 <p><span class="marginnote shownote">
 <!--
 <div class="figure">-->
@@ -72,7 +78,7 @@ Plot the histogram and Normal QQ-plot of the residuals. Based on these plots, wh
 
 Each transformation is applied to the response variable `price`, and the distributions of the transformed data are shown below.
 
-```{r echo=FALSE, eval=TRUE}
+```{r echo=FALSE, eval = F}
 houses <- houses %>% filter(bedrooms < 10)
 library(cowplot)
 

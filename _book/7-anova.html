@@ -5,11 +5,11 @@
 
   <meta charset="UTF-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
-  <title>Intro to Regression Analysis</title>
+  <title>Chapter 7 ANOVA | Intro to Regression Analysis</title>
   <meta name="description" content="This document contains lab assignments and other materials for an intermediate-level regression course.">
   <meta name="generator" content="bookdown  and GitBook 2.6.7">
 
-  <meta property="og:title" content="Intro to Regression Analysis" />
+  <meta property="og:title" content="Chapter 7 ANOVA | Intro to Regression Analysis" />
   <meta property="og:type" content="book" />
   <meta property="og:url" content="https://www.introregression.org/" />
   
@@ -17,7 +17,7 @@
   <meta name="github-repo" content="matackett/intro-regression" />
 
   <meta name="twitter:card" content="summary" />
-  <meta name="twitter:title" content="Intro to Regression Analysis" />
+  <meta name="twitter:title" content="Chapter 7 ANOVA | Intro to Regression Analysis" />
   
   <meta name="twitter:description" content="This document contains lab assignments and other materials for an intermediate-level regression course." />
   
@@ -32,8 +32,8 @@
   <meta name="apple-mobile-web-app-status-bar-style" content="black">
   
   
-
-<link rel="next" href="2-intro.html">
+<link rel="prev" href="6-slr.html">
+<link rel="next" href="8-mlr.html">
 <script src="libs/jquery-2.2.3/jquery.min.js"></script>
 <link href="libs/gitbook-2.6.7/css/style.css" rel="stylesheet" />
 <link href="libs/gitbook-2.6.7/css/plugin-table.css" rel="stylesheet" />
@@ -217,26 +217,113 @@ code > span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Inf
           <div class="page-inner">
 
             <section class="normal" id="section-">
-<div id="header">
-<h1 class="title">Intro to Regression Analysis</h1>
-<p class="author"><em>Maria Tackett</em></p>
-<p class="date"><em>2019-05-13</em></p>
+<div id="anova" class="section level1">
+<h1><span class="header-section-number">Chapter 7</span> ANOVA</h1>
+<p>The goal of this lab is to use Analysis of Variance (ANOVA) to compare means in multiple groups. Additionally, you will be introduced to new R functions used for <a href="https://en.wikipedia.org/wiki/Data_wrangling">wrangling</a> and summarizing data.</p>
+<div id="packages-2" class="section level3">
+<h3><span class="header-section-number">7.0.1</span> Packages</h3>
+<p>We will use the following packages in today’s lab.</p>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="kw">library</span>(tidyverse)
+<span class="kw">library</span>(knitr)
+<span class="kw">library</span>(broom)</code></pre></div>
 </div>
-<div id="introduction" class="section level1">
-<h1><span class="header-section-number">Chapter 1</span> Introduction</h1>
-<p>This is the introduction to the book.</p>
+<div id="data-2" class="section level3">
+<h3><span class="header-section-number">7.0.2</span> Data</h3>
+<p>In today’s lab, we will analyze the <code>diamonds</code> dataset from the ggplot2 package. Type <code>?diamonds</code> in the console to see a dictionary of the variables in the data set. This analysis will focus on the relationship between a diamond’s carat weight and its color. Before starting the exercises, take a moment to read more about the diamond attributes on the Gemological Institute of America webpage: <a href="https://www.gia.edu/diamond-quality-factor" class="uri">https://www.gia.edu/diamond-quality-factor</a>.</p>
+</div>
+<div id="exercises-2" class="section level2">
+<h2><span class="header-section-number">7.1</span> Exercises</h2>
+<p>The diamonds dataset contains the price and other characteristics for over 50,000 diamonds price from $326 to $18823. In this lab, we will analyze the subset of diamonds that are priced $1200 or less.</p>
+<ol style="list-style-type: decimal">
+<li>Create a dataframe called <code>diamonds_low</code> that is the subset of diamonds priced $1200 or less. How many observations are in <code>diamonds_low</code>?</li>
+</ol>
+<p>When using Analysis of Variance (ANOVA) to compare group means, it is ideal to have approximately the same number of observations in each group. Therefore, we will combine the worst two color groups, I and J, and create a new color category called “I/J”. Since <code>color</code> is an ordinal (<code>&lt;ord&gt;</code>) variable, we need to use the <code>recode_factor</code> function in the dplyr package to create the new category.</p>
+<p>Use the <code>count</code> function before and after making the new color category to ensure the recoding worked as expected.</p>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r">## number of observations at each color level 
+diamonds_low <span class="op">%&gt;%</span><span class="st"> </span>
+<span class="st">  </span><span class="kw">count</span>(color)</code></pre></div>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="co">#create a new vector of the recoded values</span>
+color_recoded &lt;-<span class="st">  </span><span class="kw">recode_factor</span>(diamonds_low<span class="op">$</span>color,
+                                <span class="st">`</span><span class="dt">I</span><span class="st">`</span> =<span class="st"> &quot;I/J&quot;</span>, <span class="st">`</span><span class="dt">J</span><span class="st">`</span> =<span class="st"> &quot;I/J&quot;</span>,
+                                <span class="dt">.default =</span> <span class="kw">levels</span>(diamonds_low<span class="op">$</span>color))
+
+<span class="co">#replace the color variable with the recoded data</span>
+diamonds_low &lt;-<span class="st"> </span>diamonds_low <span class="op">%&gt;%</span><span class="st"> </span>
+<span class="st">  </span><span class="kw">mutate</span>(<span class="dt">color =</span> color_recoded)</code></pre></div>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="co"># Refer to the [ggplot2 Cheat Sheet](https://www.rstudio.com/wp-content/uploads/2015/03/ggplot2-cheatsheet.pdf) and [ggplot2 reference](https://ggplot2.tidyverse.org/reference/index.html) for plot ideas and help with code.</span></code></pre></div>
+<ol start="2" style="list-style-type: decimal">
+<li><p>We begin by plotting the relationship between <code>color</code> and <code>carat</code>. As a group, brainstorm ways to plot the relationship between the two variables, then make one of the plots. Be sure to include informative axes labels and an informative title.</p></li>
+<li><p>Fill in the code below to calculate the mean and variance of <code>carat</code> at each level of <code>color</code>.</p></li>
+</ol>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="co"># The `group_by` function is used to do calculation in groups. The `summarise` function is used to reduce variables to values.</span></code></pre></div>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r">diamonds_low <span class="op">%&gt;%</span><span class="st"> </span>
+<span class="st">  </span><span class="kw">group_by</span>(_______) <span class="op">%&gt;%</span>
+<span class="st">  </span><span class="kw">summarise</span>(<span class="dt">n =</span> <span class="kw">n</span>(), 
+            <span class="dt">avg_carat =</span> <span class="kw">mean</span>(carat),
+            <span class="dt">var_carat =</span> _______)</code></pre></div>
+<p>Based on the plots and summary statistics, does there appear to be a relationship between carat weight the color of diamonds? In other words, does there appear to be a significant difference in the mean carat weight across colors?</p>
+<ol start="4" style="list-style-type: decimal">
+<li>When using ANOVA to compare means across groups, we make the following assumptions (note how similar they are to the assumptions for regression):</li>
+</ol>
+<ul>
+<li><strong>Normality</strong>: The distribution of <span class="math inline">\(y\)</span> is approximately normal within each category of <span class="math inline">\(x\)</span> - in the <span class="math inline">\(k^{th}\)</span> category, <span class="math inline">\(y \sim (\mu_k, \sigma^2)\)</span> . If the sample size is large, ANOVA is robust to some departures from Normality.</li>
+<li><strong>Independence</strong>: All observations are independent from one another, i.e. one observation does not affect another.</li>
+<li><strong>Constant Variance</strong>: The distribution of <span class="math inline">\(y\)</span> within each category of <span class="math inline">\(x\)</span> has a common variance, <span class="math inline">\(\sigma^2\)</span>. One way to assess if variances are sufficiently equal is to look at the ratio of the maximum group variance to the minimum group variance. If this ratio is less than 2, then we can conclude the variances are approximately equal. This isn’t an exact threshold, but rather a commonly used guideline. <em>Note: There are formal tests for equal variance that are outside the scope of this class.</em></li>
+</ul>
+<p>Are the assumptions for ANOVA met? Comment on each assumption using the summary statistics and/or plots from previous exercises to support your conclusion. You may also calculate any additional summary statistics or make additional plots as needed.</p>
+<p><em>Regardless of your answer to Excerise 4, We will proceed with the analysis in the remainder of this lab as if the assumptions are met.</em></p>
+<ol start="5" style="list-style-type: decimal">
+<li>Use the code below to calculate the ANOVA table. The <code>tidy</code> function from the broom package is used to put the ANOVA output in a dataframe, and with the <code>kable</code> function from the knitr package, you can display the results in an easy-to-read table.</li>
+</ol>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r">anova &lt;-<span class="st"> </span><span class="kw">aov</span>(carat <span class="op">~</span><span class="st"> </span>color, <span class="dt">data=</span>diamonds_low)
+anova <span class="op">%&gt;%</span><span class="st"> </span>
+<span class="st">  </span><span class="kw">tidy</span>() <span class="op">%&gt;%</span>
+<span class="st">   </span><span class="kw">kable</span>()</code></pre></div>
+<ol start="6" style="list-style-type: decimal">
+<li><p>Use the ANOVA table to calculate the total mean square, i.e. the sample variance of <code>carat</code>. Show your calculations. You can put the calculations in a code chunk to use R like a calculator.</p></li>
+<li><p>What is <span class="math inline">\(\hat{\sigma}^2\)</span>, the estimated variance of <code>carat</code> within each level of <code>color</code>.</p></li>
+<li><p>We can use ANOVA to test if the true mean value of <code>carat</code> is equal for all levels of <code>color</code>, i.e.</p></li>
+</ol>
+<p><span class="math display">\[ H_0: \mu_1 = \mu_2 = \dots = \mu_6\]</span></p>
+<p>State the alternative hypothesis is the context of the data.</p>
+<ol start="9" style="list-style-type: decimal">
+<li><p>Based on the ANOVA table, what is your conclusion from the test of the hypotheses in the previous question? State the conclusion in the context of the data.</p></li>
+<li><p>Use the code below to plot a 95% confidence interval for the mean carat weight at each level of color. Calculate the value of <code>sigma</code> by filling in the estimated variance from Exercise 7.</p></li>
+</ol>
+<p>The formula for the confidence interval for the mean of group <span class="math inline">\(k\)</span> is</p>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="co"># The critical value $t^*$ is calculated using the *t* distribution with $n-K$ degrees of freedom. </span></code></pre></div>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="co"># The standard error of the mean is calculated using $\hat{\sigma}$, the square root of the variance within each group calculated from the ANOVA table.</span></code></pre></div>
+<p><span class="math display">\[\bar{y}_k \pm t^* \frac{\hat{\sigma}}{\sqrt{n_k}}\]</span></p>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r">n.groups &lt;-<span class="st"> </span>diamonds_low <span class="op">%&gt;%</span><span class="st"> </span><span class="kw">distinct</span>(color) <span class="op">%&gt;%</span><span class="st"> </span><span class="kw">count</span>()
+crit.val &lt;-<span class="st"> </span><span class="kw">qt</span>(<span class="fl">0.975</span>, (<span class="kw">nrow</span>(diamonds_low)<span class="op">-</span>n.groups<span class="op">$</span>n))
+sigma &lt;-<span class="st"> </span><span class="kw">sqrt</span>(_________)
+
+conf.intervals &lt;-<span class="st"> </span>diamonds_low <span class="op">%&gt;%</span>
+<span class="st">  </span><span class="kw">group_by</span>(color) <span class="op">%&gt;%</span><span class="st"> </span>
+<span class="st">  </span><span class="kw">summarise</span>(<span class="dt">mean_carat =</span> <span class="kw">mean</span>(carat), <span class="dt">n =</span> <span class="kw">n</span>(), 
+            <span class="dt">lower =</span> mean_carat <span class="op">-</span><span class="st"> </span>crit.val <span class="op">*</span><span class="st"> </span>sigma<span class="op">/</span><span class="kw">sqrt</span>(n),
+            <span class="dt">upper =</span> mean_carat <span class="op">+</span><span class="st"> </span>crit.val <span class="op">*</span><span class="st"> </span>sigma<span class="op">/</span><span class="kw">sqrt</span>(n))</code></pre></div>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="kw">ggplot</span>(<span class="dt">data=</span>conf.intervals,<span class="kw">aes</span>(<span class="dt">x=</span>color,<span class="dt">y=</span>mean_carat)) <span class="op">+</span>
+<span class="st">  </span><span class="kw">geom_point</span>() <span class="op">+</span><span class="st"> </span>
+<span class="st">  </span><span class="kw">geom_errorbar</span>(<span class="kw">aes</span>(<span class="dt">ymin =</span> lower, <span class="dt">ymax =</span> upper), <span class="dt">width =</span> <span class="fl">0.1</span>) <span class="op">+</span><span class="st"> </span>
+<span class="st">  </span><span class="kw">labs</span>(<span class="dt">title=</span><span class="st">&quot;95% confidence interval for the mean value of carat&quot;</span>,
+       <span class="dt">subtitle=</span><span class="st">&quot;by Color&quot;</span>) <span class="op">+</span>
+<span class="st">  </span><span class="kw">coord_flip</span>()</code></pre></div>
+<ol start="11" style="list-style-type: decimal">
+<li><p>For what color level is the mean carat weight the most different from all the others?</p></li>
+<li><p>Based on this analysis, describe the relationship between the color and the mean carat weight in diamonds that cost $1200 or less. <em>Refer to the diamond documentation to recall what the color scale means.</em></p></li>
+</ol>
+<p><em>You’re done! Commit all remaining changes, use the commit message “Done with Lab 3!”, and push. Before you wrap up the assignment, make sure the .Rmd, .html, and .md documents are all updated on your GitHub repo.</em></p>
 
 </div>
-
-
-
+</div>
             </section>
 
           </div>
         </div>
       </div>
-
-<a href="2-intro.html" class="navigation navigation-next navigation-unique" aria-label="Next page"><i class="fa fa-angle-right"></i></a>
+<a href="6-slr.html" class="navigation navigation-prev " aria-label="Previous page"><i class="fa fa-angle-left"></i></a>
+<a href="8-mlr.html" class="navigation navigation-next " aria-label="Next page"><i class="fa fa-angle-right"></i></a>
     </div>
   </div>
 <script src="libs/gitbook-2.6.7/js/app.min.js"></script>

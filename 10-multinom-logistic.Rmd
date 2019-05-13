@@ -1,5 +1,11 @@
 # Multinomial Logistic Regression {#multinom-logistic}
 
+```{r echo = F}
+knitr::opts_chunk$set(
+  eval = F
+)
+```
+
 The General Social Survey (GSS) has been used to measure trends in attitudes and behaviors in American society since 1972. In addition to collecting demographic information, the survey includes questions used to gauge attitudes about government spending priorities, confidence in institutions, lifestyle, and many other topics. A full description of the survey may be found [here](http://www.norc.org/Research/Projects/Pages/general-social-survey.aspx).
 
 In today's lab, we will use multinomial logistic regression to understand the relationship between a person's political views and their attitudes towards government spending on mass transportation projects. To do so, we will use data from the 2010 GSS survey. Refer to the [Multinomial Logistic Regression notes](https://www2.stat.duke.edu/courses/Spring19/sta210.001/slides/lec-slides/18-multinomial-logistic-pt2.html#1) for help with concepts and code.

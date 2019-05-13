@@ -1,7 +1,10 @@
 bookdown::gitbook:
   css: style.css
+  split_by: "chapter+number"
   config:
     toc:
+      collapse: section
+      scroll_highlight: true
       before: |
         <li><a href="./">Materials for an Intro Regression Course</a></li>
       after: |
@@ -14,3 +17,4 @@ bookdown::pdf_book:
   citation_package: natbib
   keep_tex: yes
 bookdown::epub_book: default
+
