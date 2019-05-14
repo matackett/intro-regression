@@ -1,1 +1,7 @@
 # Simple Linear Regression {#slr}
+
+```{r child = c("comp-ex/02-slr.Rmd", "class-ex/01-slr-advertising.Rmd", "class-ex/02-slr-inf-beer.Rmd"), echo = FALSE}
+```
+
+
+

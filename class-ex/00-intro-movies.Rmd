@@ -1,6 +1,4 @@
-# (PART) In-class Exercises {-} 
-
-# Movies Analysis 
+## Movies Analysis 
 
 ```{r echo = F}
 knitr::opts_chunk$set(eval = F, 

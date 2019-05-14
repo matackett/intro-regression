@@ -1,9 +1,9 @@
-# Analyzing Beer Data
+## In-Class Exercise: Beer Data Analysis
 
 ```{r echo = F}
-knitr::opts_chunk$set(eval = F, 
-                      warning = F,
-                      message = F
+knitr::opts_chunk$set(eval = FALSE, 
+                      warning = FALSE,
+                      message = FALSE
                       )
 ```
 

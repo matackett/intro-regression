@@ -1,4 +1,4 @@
-# Exam 01 Review
+## Exam 01 Review
 
 ```{r include=FALSE}
 knitr::opts_chunk$set(warning=FALSE,

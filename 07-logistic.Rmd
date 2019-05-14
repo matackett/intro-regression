@@ -1,1 +1,11 @@
 # Logistic Regression {#logistic}
+
+# (PART\*) Computing Assignments {-} 
+
+```{r child = c("comp-ex/07-logistic.Rmd")}
+```
+
+# (PART\*) In-Class Exericse {-} 
+
+```{r child = c("class-ex/06-logistic-chd.Rmd")}
+```

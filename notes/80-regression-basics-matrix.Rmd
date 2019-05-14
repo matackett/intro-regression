@@ -1,6 +1,4 @@
-# (PART) Math Notes {-} 
-
-# Matrix Form of Linear Regression
+## Matrix Form of Linear Regression
 
 ```{r include=FALSE}
 knitr::opts_chunk$set(echo = TRUE)

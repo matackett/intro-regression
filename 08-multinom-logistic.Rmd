@@ -1,1 +1,11 @@
 # Multinomial Logistic Regression {#multinom-logistic}
+
+# (PART\*) Computing Assignments {-} 
+
+```{r child = c("comp-ex/08-multinom-logistic.Rmd")}
+```
+
+# (PART\*) In-Class Exericses {-} 
+
+```{r child = c("class-ex/07-multinom-sesame.Rmd")}
+```

@@ -1,4 +1,4 @@
-# Multinomial Logistic Regression 
+## Multinomial Logistic Regression 
 
 ```{r echo = F}
 knitr::opts_chunk$set(eval = FALSE, 

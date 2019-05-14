@@ -1,4 +1,4 @@
-# Putting It All Together {#together}
+## Putting It All Together 
 
 ```{r echo = F}
 knitr::opts_chunk$set(

@@ -1,4 +1,4 @@
-# Analyzing Wages 
+## Analyzing Wages 
 
 ```{r echo = F}
 knitr::opts_chunk$set(eval = FALSE, 

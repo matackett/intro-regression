@@ -1,4 +1,4 @@
-# Model Selection
+## Model Selection
 
 ```{r include=FALSE}
 knitr::opts_chunk$set(warning=FALSE,

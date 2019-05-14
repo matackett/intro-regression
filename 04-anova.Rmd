@@ -1,1 +1,7 @@
 # Analysis of Variance {#anova}
+
+# (PART\*) Computing Assignments {-} 
+
+```{r child = c("comp-ex/03-anova.Rmd")}
+```
+

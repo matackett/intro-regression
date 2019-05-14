@@ -1,4 +1,4 @@
-# Logistic Regression {#logistic}
+## Logistic Regression
 
 ```{r echo = F}
 knitr::opts_chunk$set(

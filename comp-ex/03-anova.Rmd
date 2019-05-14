@@ -1,4 +1,4 @@
-# ANOVA {#anova}
+## ANOVA {#anova}
 
 ```{r echo = F}
 knitr::opts_chunk$set(

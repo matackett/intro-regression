@@ -1,4 +1,6 @@
-## SLR Computation Activity
+# (PART\*) Computing Exercises {-}
+
+## Computing: College Admissions
 
 ```{r echo = F}
 knitr::opts_chunk$set(
@@ -7,8 +9,6 @@ knitr::opts_chunk$set(
 ```
 
 The primary goal of today's lab is to give you practice with some of the tools you will need to conduct regression analysis using R. An additional goal for today is for you to be introduced to your teams and practice collaborating using GitHub and RStudio. 
-
-
 
 ### Packages
 
@@ -21,6 +21,7 @@ library(broom)
 library(rcfss)
 ```
 
+<!--
 ### Project name: 
 
 Currently your project is called *Untitled Project*. Update the name of your project to be "Lab 02 - Simple Linear Regression"
@@ -122,3 +123,5 @@ State what the null and alternative hypotheses mean in terms of the linear relat
 
 
 *You're done! Commit all remaining changes, use the commit message "Done with Lab 2!", and push. Before you wrap up the assignment, make sure the .Rmd, .html, and .md documents are all updated on your GitHub repo.*
+
+-->

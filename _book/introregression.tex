@@ -236,19 +236,251 @@ This is a chapter about getting started using R and GitHub.
 
 \chapter{Simple Linear Regression}\label{slr}
 
+\part*{Computing Exercises}\label{part-computing-exercises}
+\addcontentsline{toc}{part}{Computing Exercises}
+
+\section{Computing: College
+Admissions}\label{computing-college-admissions}
+
+The primary goal of today's lab is to give you practice with some of the
+tools you will need to conduct regression analysis using R. An
+additional goal for today is for you to be introduced to your teams and
+practice collaborating using GitHub and RStudio.
+
+\subsection{Packages}\label{packages}
+
+We will use the following packages in today's lab.
+
+\part*{In-Class Exercises}\label{part-in-class-exercises}
+\addcontentsline{toc}{part}{In-Class Exercises}
+
+\section{In-Class Exercise: Advertising
+Analysis}\label{in-class-exercise-advertising-analysis}
+
+In this mini analysis, we will work with the \texttt{Advertising} data
+used in Chapters 2 and 3 of \emph{Introduction to Statistical Learning}.
+
+\section{Data and packages}\label{data-and-packages}
+
+We start with loading the packages we'll use.
+
+We will analyze the advertising and sales data for 200 markets. The
+variables we'll use are
+
+\begin{itemize}
+\tightlist
+\item
+  \texttt{tv}: total spending on TV advertising (in \$thousands)
+\item
+  \texttt{radio}: total spending on radio advertising (in \$thousands)
+\item
+  \texttt{newspaper}: total spending on newspaper advertising (in
+  \$thousands)
+\item
+  \texttt{sales}: total sales (in \$millions)
+\end{itemize}
+
+\section{Analysis}\label{analysis}
+
+We'll begin the analysis by getting quick view of the data:
+
+Next, we can calculate summary statistics for each of the variables in
+the data set.
+
+\begin{enumerate}
+\def\labelenumi{\arabic{enumi}.}
+\tightlist
+\item
+  What type of advertising has the smallest median spending?
+\item
+  What type of advertising has the largest variation in spending?
+\item
+  Describe the shape of the distribution of \texttt{sales}.
+\end{enumerate}
+
+We are most interested in understanding how advertising spending affect
+sales. One way to quantify the relationship between the variables is by
+calculating the correlation matrix.
+
+\begin{enumerate}
+\def\labelenumi{\arabic{enumi}.}
+\tightlist
+\item
+  What is the correlation between \texttt{radio} and \texttt{sales}?
+  Interpret this value.
+\item
+  What type of advertising has the strongest linear relationship with
+  \texttt{sales}?
+\end{enumerate}
+
+Below are visualizations of \texttt{sales} versus each explanatory
+variable.
+
+Since \texttt{tv} appears to have the strongest linear relationship with
+\texttt{sales}, let's calculate a simple linear regression model using
+these two variables.
+
+\begin{enumerate}
+\def\labelenumi{\arabic{enumi}.}
+\tightlist
+\item
+  Write the model equation.
+\item
+  Interpret the intercept in the context of the problem.
+\item
+  Interpret the slope in the context of the problem.
+\end{enumerate}
+
+\section{In-Class Exercise: Beer Data
+Analysis}\label{in-class-exercise-beer-data-analysis}
+
+In this analysis, we will analyze the relationship between the amount of
+alcohol (\texttt{PercentAlcohol}) and the caloric content
+(\texttt{CaloriesPer12Oz}) in domestic beers. Let
+\texttt{PercentAlcohol} be the predictor variable and
+\texttt{CaloriesPer12Oz} the response variable.
+
+Due to limited class time, we will not do the exploratory data analysis
+in this example. In practice, however, you should always start with the
+exploratory data analysis.
+
+\emph{You can add your answers to this R Markdown document}.
+
+**1. Calculate a regression model to describe the relationship between
+\texttt{PercentAlcohol} and \texttt{CaloriesPer12Oz}. Display the model
+output.*
+
+\textbf{2. Does it make sense to interpret the intercept? Why or why
+not?}
+
+There are non-alocoholic beers, so it is possible to have a meaningful
+interpretation of the intercept. In our data, however, there are very
+few beers with less than 3\% alcoholic content, so it would not be wise
+to interpret the intercept. It is not safe to assume the same
+relationship between \texttt{PercentAlcohol} and
+\texttt{CaloriesPer12Oz} hold for beers with 0\% alcohol; this would be
+extrapolation.
+
+\textbf{3. Interpret the 95\% confidence interval for the slope in the
+context of the data.}
+
+We are 95\% confident that the interval (26.557, 30.620) contains the
+true population slope for \texttt{PercentAlcohol}. This means we are
+95\% confident that for every 1\% increase in alcohol content, the
+number of calories (per 12 oz) is expected to increase between 26.557
+and 30.620 calories.
+
+\textbf{4. Find the critical value, \(t^*\), used to calculate the 95\%
+confidence interval. The code below is a guide; uncomment and complete
+the lines of code to calculate and display the critical value.}
+
+The critical value used to calculate the 95\% confident interval for the
+slope is \_\_\_\_\_\_.
+
+\textbf{5. Interpret the test statistic in the context of the data}
+
+The estimated slope of 28.577 is 27.78 standard errors above the
+hypothesized mean of 0, assuming there is no linear relationship between
+percent alcohol and calories in domestic beers.
+
+\textbf{6. How was the p-value calculated? Fill in the code below to
+calculate the p-value. The code below is a guide; uncomment and complete
+the lines of code to calculate and display the p-value.}
+
+The p-value is \_\_\_\_\_\_\_. Given there is no linear relationship
+between \texttt{PercentAlcohol} and \texttt{CaloriesPer12Oz}, the
+probability of obtaining a test statistic with magnitude
+\_\_\_\_\_\_\_\_ or more extreme is \_\_\_\_\_\_\_.
+
+\textbf{7. Fill in the code below to calculate the predicted calories
+and corresponding 90\% interval for a single beer with alcohol content
+of 4.3\%.}
+
+\textbf{8. Fill in the code below to calculate the predicted calories
+and corresponding 90\% interval for the subset of beers with alcohol
+content of 4.3\%.}
+
 \chapter{Analysis of Variance}\label{anova}
+
+\part*{Computing
+Assignments}\label{part-computing-assignments}
+\addcontentsline{toc}{part}{Computing Assignments}
 
 \chapter{Multiple Linear Regression}\label{mlr}
 
+\part*{Computing
+Assignments}\label{part-computing-assignments-1}
+\addcontentsline{toc}{part}{Computing Assignments}
+
+\part*{In-Class Exericses}\label{part-in-class-exericses}
+\addcontentsline{toc}{part}{In-Class Exericses}
+
+\chapter{(PART*) Math Notes}\label{part-math-notes}
+
 \chapter{Model Selection}\label{select}
+
+\part*{Computing
+Assignments}\label{part-computing-assignments-2}
+\addcontentsline{toc}{part}{Computing Assignments}
+
+\part*{In-Class Exericses}\label{part-in-class-exericses-1}
+\addcontentsline{toc}{part}{In-Class Exericses}
+
+\part*{Math Notes}\label{part-math-notes-1}
+\addcontentsline{toc}{part}{Math Notes}
 
 \chapter{Logistic Regression}\label{logistic}
 
+\part*{Computing
+Assignments}\label{part-computing-assignments-3}
+\addcontentsline{toc}{part}{Computing Assignments}
+
+\part*{In-Class Exericse}\label{part-in-class-exericse}
+\addcontentsline{toc}{part}{In-Class Exericse}
+
 \chapter{Multinomial Logistic Regression}\label{multinom-logistic}
+
+\part*{Computing
+Assignments}\label{part-computing-assignments-4}
+\addcontentsline{toc}{part}{Computing Assignments}
+
+\part*{In-Class Exericses}\label{part-in-class-exericses-2}
+\addcontentsline{toc}{part}{In-Class Exericses}
 
 \chapter{Special Topics}\label{special}
 
+\part*{Computing
+Assignments}\label{part-computing-assignments-5}
+\addcontentsline{toc}{part}{Computing Assignments}
+
+\part*{In-Class Exericses}\label{part}
+\addcontentsline{toc}{part}{In-Class Exericses}
+
 \chapter{Data Sets}\label{data}
+
+\begin{longtable}[]{@{}llll@{}}
+\toprule
+Data Set & Description & Chapter & Original Source\tabularnewline
+\midrule
+\endhead
+\texttt{advertising.csv} & test & test & test\tabularnewline
+\texttt{airbnb\_basic.csv} & test & test & test\tabularnewline
+\texttt{airbnb\_details.csv} & test & test & test\tabularnewline
+\texttt{beer.csv} & test & test & test\tabularnewline
+\texttt{evals\_mod.csv} & test & test & test\tabularnewline
+\texttt{fivethirtyeight-recent-grads.R} & test & test &
+test\tabularnewline
+\texttt{framingham.csv} & test & test & test\tabularnewline
+\texttt{gss2016.csv} & test & test & test\tabularnewline
+\texttt{KingCountyHouses.csv} & test & test & test\tabularnewline
+\texttt{ncbreweries.csv} & test & test & test\tabularnewline
+\texttt{recent-grads.csv} & test & test & test\tabularnewline
+\texttt{sesame.csv} & test & test & test\tabularnewline
+\texttt{sis.csv} & test & test & test\tabularnewline
+\texttt{spotify.csv} & test & test & test\tabularnewline
+\texttt{test\_songs.csv} & test & test & test\tabularnewline
+\bottomrule
+\end{longtable}
 
 \chapter{References}\label{refs}
 

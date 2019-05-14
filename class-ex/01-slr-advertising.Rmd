@@ -1,5 +1,6 @@
+# (PART\*) In-Class Exercises {-}
 
-# Advertising Analysis 
+## In-Class Exercise: Advertising Analysis
 
 ```{r echo = F}
 knitr::opts_chunk$set(eval = FALSE, 

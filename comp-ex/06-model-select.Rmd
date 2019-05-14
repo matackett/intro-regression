@@ -1,4 +1,4 @@
-# Model Selection {#selection}
+## Model Selection 
 
 ```{r echo = F}
 knitr::opts_chunk$set(
