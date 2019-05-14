@@ -70,6 +70,6 @@ fram_data <- read_csv("data/framingham.csv") %>%
 - A doctor plans to use the results from your model to help select patients for a new heart disease prevention program. She asks you which threshold would be best to select patients for this program. What threshold would you recommend to the doctor? Why?
     
 
-## References
+### References
 
 - Data obtained from [https://www.kaggle.com/neisha/heart-disease-prediction-using-logistic-regression/data](https://www.kaggle.com/neisha/heart-disease-prediction-using-logistic-regression/data)

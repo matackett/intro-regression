@@ -200,7 +200,7 @@ sat_scores <- case1201 %>%
   select(-State) #remove the state variable
 ```
 
-## Backward selection "manually"
+### Backward selection "manually"
 
 - Manually perform backward selection using Adj. $R^2$ as the selection criteria. Show each step of the selection process. To help you get started, the full model and the code for the first set of models to test are below. You will need to find Adj. $R^2$ for each model.
 
@@ -242,25 +242,25 @@ m6 <- lm(SAT ~ Takers + Years + Public + Income + Rank, data = sat_scores)
 Continue the model selection until you have a final model. Show each step of the model selection process.
 
 
-## Backward selection using regsubsets
+### Backward selection using regsubsets
 
 - Use the `regsubsets` function to perform backward selection using Adj. $R^2$ as the selection criteria. Are the variables the same as the ones at you chose? Is the Adj. $R^2$ the same? 
 
-## Changing selection criteria
+### Changing selection criteria
 
 - Use the `regsubsets` function to perform backward selection using BIC as the selection criteria. What variables were chosen for the follow model? How does this model compare to the one selected using Adj. $R^2$?
 
 - Use the `step` function to perform backward selection using AIC as the selection criteria. What variables were chosen for the follow model? How does this model compare to the models chosen from the other selection criteria? 
 
 
-## Different selection procedure
+### Different selection procedure
 
 - Use forward or stepwise selection to choose a model. Choose the criteria you will use to select the model.
 
 - How does this model compare to the previous selected models? 
 
 
-## Choosing a final model 
+### Choosing a final model 
 
 - You likely have at least 2 different models chosen by the various model selection procedures. Which variables will you include in your final model? Why did you choose this to be your final model?
 
@@ -270,7 +270,7 @@ Continue the model selection until you have a final model. Show each step of the
 
 This document discusses some of the mathematical details of Akaike's Information Criterion (AIC) and Schwarz's Bayesian Information Criterion (BIC).   We assume the reader knowledge of the matrix form for multiple linear regression.Please see [Matrix Form of Linear Regression](https://github.com/STA210-Sp19/supplemental-notes/blob/master/regression-basics-matrix.pdf) for a review.
 
-## Maximum Likelihood Estimation of $\boldsymbol{\beta}$ and $\sigma$
+### Maximum Likelihood Estimation of $\boldsymbol{\beta}$ and $\sigma$
 
 To understand the formulas for AIC and BIC, we will first briefly explain the likelihood function and maximum likelihood estimates for regression. 
 
@@ -311,7 +311,7 @@ The maximum likelihood estimate of $\boldsymbol{\beta}$ and $\sigma^2$ are
 
 where $RSS$ is the residual sum of squares. Note that the maximum likelihood estimate is not exactly equal to the estimate of $\sigma^2$ we typically use $\frac{RSS}{n-p-1}$. This is because the maximum likelihood estimate of $\sigma^2$ in (\ref{mle}) is a *biased* estimator of $\sigma^2$. When $n$ is much larger than the number of predictors $p$, then the differences in these two estimates are trivial. 
 
-## AIC 
+### AIC 
 
 Akaike's Information Criterion (AIC) is 
 
@@ -332,7 +332,7 @@ AIC &= -2 \log L + 2(p+1) \\[10pt]
 \end{aligned}
 \end{equation}
 
-## BIC 
+### BIC 
 
 [---]
 

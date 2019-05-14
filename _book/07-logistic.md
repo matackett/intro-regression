@@ -35,9 +35,9 @@ Click [**here**](https://www2.stat.duke.edu/courses/Spring19/sta210.001/labs/dat
 
 The  [Spotify documentation page](https://developer.spotify.com/documentation/web-api/reference/tracks/get-audio-features/) contains a description of the variables included in this dataset.
 
-## Exercises
+### Exercises
 
-### Exploratory Data Analysis
+#### Exploratory Data Analysis
     
 1. Read through the [Spotify documentation page](https://developer.spotify.com/documentation/web-api/reference/tracks/get-audio-features/) to learn more about the variables in the dataset. The response variable for this analysis is `like`, such that 1 indicates that the user likes the song and 0 otherwise. The remaining will be considered as predictor variables in the model.
 
@@ -58,7 +58,7 @@ The  [Spotify documentation page](https://developer.spotify.com/documentation/we
 
 *In practice, you should do exploratory data analysis for all potential explanatory variables. We did an abbreviated exploratory data analysis to make the assignment more manageable.*
 
-### Part II: Logistic Regression Model
+#### Part II: Logistic Regression Model
 
 5. Fit the full model and display the model output. The main objective for the model is to predict whether the user will like a song. Should we use this model for this objective? Briefly explain.  
 
@@ -77,7 +77,7 @@ For the remainder of this lab, you will use the model chosen by model selection 
 
     - Based on this model, is there evidence of a significant difference in the user's preference between songs in a major key versus those in a minor key? 
     
-### Part III: Model Assessment
+#### Part III: Model Assessment
 
 In the next few questions, we will do an abbreviated analysis of the residuals. 
 
@@ -93,7 +93,7 @@ In the next few questions, we will do an abbreviated analysis of the residuals.
 
 14. Based on the residual plots and the ROC curve, is this logistic model a good fit for the data? Briefly explain.
 
-### Part IV: Prediction
+#### Part IV: Prediction
 
 15. You are part of the data science team at Spotify, and your model will be used to make song recommendations to users. The goal is to recommend songs the user has a high probability of liking. 
 
@@ -183,6 +183,6 @@ fram_data <- read_csv("data/framingham.csv") %>%
 - A doctor plans to use the results from your model to help select patients for a new heart disease prevention program. She asks you which threshold would be best to select patients for this program. What threshold would you recommend to the doctor? Why?
     
 
-## References
+### References
 
 - Data obtained from [https://www.kaggle.com/neisha/heart-disease-prediction-using-logistic-regression/data](https://www.kaggle.com/neisha/heart-disease-prediction-using-logistic-regression/data)
