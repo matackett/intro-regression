@@ -1,16 +1,4 @@
 # Model Selection {#select}
 
-# (PART\*) Computing Assignments {-} 
-
-```{r child = c("comp-ex/06-model-select.Rmd")}
-```
-
-# (PART\*) In-Class Exericses {-} 
-
-```{r child = c("class-ex/05-model-select-sat")}
-```
-
-# (PART\*) Math Notes {-} 
-
-```{r child = c("notes/83-model-selection-criteria.Rmd")}
+```{r child = c("comp-ex/06-model-select.Rmd", "class-ex/05-model-select-sat", "notes/83-model-selection-criteria.Rmd"  )}
 ```

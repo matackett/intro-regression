@@ -1,11 +1,4 @@
 # Special Topics {#special}
 
-# (PART\*) Computing Assignments {-} 
-
-```{r child = c("comp-ex/09-put-together.Rmd")}
-```
-
-# (PART\*) In-Class Exericses {-#part} 
-
-```{r child = c("class-ex/08-missing.data.Rmd")}
+```{r child = c("comp-ex/09-put-together.Rmd", "class-ex/08-missing.data.Rmd")}
 ```
