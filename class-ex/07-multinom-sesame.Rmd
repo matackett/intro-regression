@@ -1,0 +1,102 @@
+# Multinomial Logistic Regression 
+
+```{r echo = F}
+knitr::opts_chunk$set(eval = FALSE, 
+                      warning = FALSE,
+                      message = FALSE
+                      )
+```
+
+
+```{r,echo=F}
+library(tidyverse)
+library(knitr)
+library(broom)
+library(cowplot)
+library(arm) #binned residuals
+library(nnet) #multinomial regression models
+```
+
+The main objective of this analysis is to understand how encouragement affects the frequency that children watch *Sesame Street*. We will use the following variables: 
+
+**Response:**
+
+- <font class="vocab">`viewcat`</font>
+    + 1: rarely watched show
+    + 2: once or twice a week
+      + 3: three to five times a week
+      + 4: watched show on average more than five times a week
+
+
+**Predictors:**
+
+- <font class="vocab">`age`:</font> child's age in months
+- <font class="vocab">`prenumb`: </font>score on numbers pretest (0 to 54)
+- <font class="vocab">`prelet`: </font>score on letters pretest (0 to 58)
+- <font class="vocab">`viewenc`:</font> 1: encouraged to watch, 2: not encouraged
+- <font class="vocab">`site:`</font>
+    + 1: three to five year old from disadvantaged inner city area
+    + 2: four year old from advantaged suburban area
+    + 3: from advantaged rural area
+    + 4: from disadvantaged rural area
+    + 5: from Spanish speaking home
+
+
+```{r}
+# read in dataset
+sesame <- read_csv("data/sesame.csv")
+```
+
+```{r}
+# mean-center relevant continuous variables, make categorical variables factors
+sesame <- sesame %>% 
+  mutate(viewcat = as.factor(viewcat), 
+         site = as.factor(site), 
+         prenumbCent = prenumb - mean(prenumb), 
+         preletCent = prelet - mean(prelet), 
+         ageCent = age - mean(age),
+         viewenc = ifelse(viewenc == 1, "Encouraged", "Not Encouraged"))
+```
+<br>
+
+### Questions
+
+1. We will build a model to predict how often a child in this study watched *Sesame Street*. What type of model should we build? Why? 
+
+2. Describe how you would conduct exploratory data analysis. What plots and/or summary statistics would you include? What information would you learn from the exploratory data analysis?
+
+```{r warning = F, message = F}
+model1 <- multinom(viewcat ~ site + viewenc + prenumbCent + preletCent + ageCent,
+                   data = sesame)
+kable(tidy(model1, conf.int=TRUE, exponentiate = FALSE),
+      format = "markdown")
+```
+<br>
+
+3. Interpret the intercept associated with the odds of `viewcat == 2` versus `viewcat == 1`. 
+
+4. Interpret the effect of the numbers pretest score on the odds of viewership. 
+
+
+5. The primary objective of the experiment was to understand the effect of encouragement `viewenc` on viewership. Does encouragement have a significant effect on viewership? If so, describe the effect. Otherwise, explain why not. 
+
+6.  We want to test if there are any significant interactions with `viewenc` and the pretests. We create a model that includes the variables from `model1` along with `viewenc*preletCent` and `viewenc*prenumbCent`. 
+
+```{r echo = T, warning = F, message = F}
+model2 <- multinom(viewcat ~ site + viewenc + prenumbCent + preletCent + ageCent + 
+                     viewenc*preletCent + viewenc*prenumbCent,
+                   data = sesame)
+```
+
+The results from the drop-in-deviance test are shown below. Is there evidence of a significant interaction effect? Explain. 
+
+```{r}
+anova(model1, model2, test = "Chisq")
+```
+
+7. How would you assess the appropriateness of the model flit? Describe the plots, tables, and/or calculations you would create to assess model fit. 
+
+### References
+
+Data from [http://www2.stat.duke.edu/~jerry/sta210/sesamelab.html](http://www2.stat.duke.edu/~jerry/sta210/sesamelab.html)
+

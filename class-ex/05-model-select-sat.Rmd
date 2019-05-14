@@ -1,0 +1,78 @@
+# Model Selection
+
+```{r include=FALSE}
+knitr::opts_chunk$set(warning=FALSE,
+                   message=FALSE, 
+                   eval = FALSE)
+```
+
+```{r}
+library(tidyverse)
+library(knitr)
+library(broom)
+library(Sleuth3)
+library(leaps)
+```
+
+
+```{r}
+sat_scores <- case1201 %>%
+  select(-State) #remove the state variable
+```
+
+## Backward selection "manually"
+
+- Manually perform backward selection using Adj. $R^2$ as the selection criteria. Show each step of the selection process. To help you get started, the full model and the code for the first set of models to test are below. You will need to find Adj. $R^2$ for each model.
+
+```{r}
+full_model <- lm(SAT ~ ., data = sat_scores)
+```
+
+```{r}
+m1 <- lm(SAT ~ Income + Years + Public + Expend + Rank, data = sat_scores)
+```
+
+```{r}
+m2 <- lm(SAT ~ Takers + Years + Public + Expend + Rank, data = sat_scores)
+```
+
+```{r}
+m3 <- lm(SAT ~ Takers + Income + Public + Expend + Rank, data = sat_scores)
+```
+
+```{r}
+m4 <- lm(SAT ~ Takers + Years + Income + Expend + Rank, data = sat_scores)
+```
+
+```{r}
+m5 <- lm(SAT ~ Takers + Years + Public + Income + Expend, data = sat_scores)
+```
+
+```{r}
+m6 <- lm(SAT ~ Takers + Years + Public + Income + Rank, data = sat_scores)
+```
+
+Continue the model selection until you have a final model. Show each step of the model selection process.
+
+
+## Backward selection using regsubsets
+
+- Use the `regsubsets` function to perform backward selection using Adj. $R^2$ as the selection criteria. Are the variables the same as the ones at you chose? Is the Adj. $R^2$ the same? 
+
+## Changing selection criteria
+
+- Use the `regsubsets` function to perform backward selection using BIC as the selection criteria. What variables were chosen for the follow model? How does this model compare to the one selected using Adj. $R^2$?
+
+- Use the `step` function to perform backward selection using AIC as the selection criteria. What variables were chosen for the follow model? How does this model compare to the models chosen from the other selection criteria? 
+
+
+## Different selection procedure
+
+- Use forward or stepwise selection to choose a model. Choose the criteria you will use to select the model.
+
+- How does this model compare to the previous selected models? 
+
+
+## Choosing a final model 
+
+- You likely have at least 2 different models chosen by the various model selection procedures. Which variables will you include in your final model? Why did you choose this to be your final model?

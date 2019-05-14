@@ -1,4 +1,4 @@
-# (PART) Assignments {-} 
+# (PART) Computing Assignments {-} 
 
 # Intro to R
 

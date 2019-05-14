@@ -1,0 +1,363 @@
+<!DOCTYPE html>
+<html >
+
+<head>
+
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <title> 12 Analyzing Beer Data | Intro to Regression Analysis</title>
+  <meta name="description" content="This document contains lab assignments and other materials for an intermediate-level regression course.">
+  <meta name="generator" content="bookdown  and GitBook 2.6.7">
+
+  <meta property="og:title" content=" 12 Analyzing Beer Data | Intro to Regression Analysis" />
+  <meta property="og:type" content="book" />
+  <meta property="og:url" content="https://www.introregression.org/" />
+  
+  <meta property="og:description" content="This document contains lab assignments and other materials for an intermediate-level regression course." />
+  <meta name="github-repo" content="matackett/intro-regression" />
+
+  <meta name="twitter:card" content="summary" />
+  <meta name="twitter:title" content=" 12 Analyzing Beer Data | Intro to Regression Analysis" />
+  
+  <meta name="twitter:description" content="This document contains lab assignments and other materials for an intermediate-level regression course." />
+  
+
+<meta name="author" content="Maria Tackett">
+
+
+<meta name="date" content="2019-05-14">
+
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-status-bar-style" content="black">
+  
+  
+<link rel="prev" href="11-movies-analysis.html">
+<link rel="next" href="13-analyzing-wages.html">
+<script src="libs/jquery-2.2.3/jquery.min.js"></script>
+<link href="libs/gitbook-2.6.7/css/style.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-table.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-bookdown.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-highlight.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-search.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-fontsettings.css" rel="stylesheet" />
+
+
+
+
+
+
+
+
+
+<style type="text/css">
+div.sourceCode { overflow-x: auto; }
+table.sourceCode, tr.sourceCode, td.lineNumbers, td.sourceCode {
+  margin: 0; padding: 0; vertical-align: baseline; border: none; }
+table.sourceCode { width: 100%; line-height: 100%; }
+td.lineNumbers { text-align: right; padding-right: 4px; padding-left: 4px; color: #aaaaaa; border-right: 1px solid #aaaaaa; }
+td.sourceCode { padding-left: 5px; }
+code > span.kw { color: #007020; font-weight: bold; } /* Keyword */
+code > span.dt { color: #902000; } /* DataType */
+code > span.dv { color: #40a070; } /* DecVal */
+code > span.bn { color: #40a070; } /* BaseN */
+code > span.fl { color: #40a070; } /* Float */
+code > span.ch { color: #4070a0; } /* Char */
+code > span.st { color: #4070a0; } /* String */
+code > span.co { color: #60a0b0; font-style: italic; } /* Comment */
+code > span.ot { color: #007020; } /* Other */
+code > span.al { color: #ff0000; font-weight: bold; } /* Alert */
+code > span.fu { color: #06287e; } /* Function */
+code > span.er { color: #ff0000; font-weight: bold; } /* Error */
+code > span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warning */
+code > span.cn { color: #880000; } /* Constant */
+code > span.sc { color: #4070a0; } /* SpecialChar */
+code > span.vs { color: #4070a0; } /* VerbatimString */
+code > span.ss { color: #bb6688; } /* SpecialString */
+code > span.im { } /* Import */
+code > span.va { color: #19177c; } /* Variable */
+code > span.cf { color: #007020; font-weight: bold; } /* ControlFlow */
+code > span.op { color: #666666; } /* Operator */
+code > span.bu { } /* BuiltIn */
+code > span.ex { } /* Extension */
+code > span.pp { color: #bc7a00; } /* Preprocessor */
+code > span.at { color: #7d9029; } /* Attribute */
+code > span.do { color: #ba2121; font-style: italic; } /* Documentation */
+code > span.an { color: #60a0b0; font-weight: bold; font-style: italic; } /* Annotation */
+code > span.cv { color: #60a0b0; font-weight: bold; font-style: italic; } /* CommentVar */
+code > span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Information */
+</style>
+
+<link rel="stylesheet" href="style.css" type="text/css" />
+</head>
+
+<body>
+
+
+
+  <div class="book without-animation with-summary font-size-2 font-family-1" data-basepath=".">
+
+    <div class="book-summary">
+      <nav role="navigation">
+
+<ul class="summary">
+<li><a href="./">Materials for an Intro Regression Course</a></li>
+
+<li class="divider"></li>
+<li class="chapter" data-level="1" data-path="index.html"><a href="index.html"><i class="fa fa-check"></i><b>1</b> Beginning of the Book</a></li>
+<li class="chapter" data-level="2" data-path="2-getstarted.html"><a href="2-getstarted.html"><i class="fa fa-check"></i><b>2</b> Getting Started</a><ul>
+<li class="chapter" data-level="2.1" data-path="2-getstarted.html"><a href="2-getstarted.html#slr-computation-activity"><i class="fa fa-check"></i><b>2.1</b> SLR Computation Activity</a><ul>
+<li class="chapter" data-level="2.1.1" data-path="2-getstarted.html"><a href="2-getstarted.html#packages"><i class="fa fa-check"></i><b>2.1.1</b> Packages</a></li>
+<li class="chapter" data-level="2.1.2" data-path="2-getstarted.html"><a href="2-getstarted.html#project-name"><i class="fa fa-check"></i><b>2.1.2</b> Project name:</a></li>
+</ul></li>
+<li class="chapter" data-level="2.2" data-path="2-getstarted.html"><a href="2-getstarted.html#warm-up"><i class="fa fa-check"></i><b>2.2</b> Warm up</a><ul>
+<li class="chapter" data-level="2.2.1" data-path="2-getstarted.html"><a href="2-getstarted.html#yaml"><i class="fa fa-check"></i><b>2.2.1</b> YAML:</a></li>
+<li class="chapter" data-level="2.2.2" data-path="2-getstarted.html"><a href="2-getstarted.html#commiting-and-pushing-changes"><i class="fa fa-check"></i><b>2.2.2</b> Commiting and pushing changes:</a></li>
+<li class="chapter" data-level="2.2.3" data-path="2-getstarted.html"><a href="2-getstarted.html#pulling-changes"><i class="fa fa-check"></i><b>2.2.3</b> Pulling changes:</a></li>
+<li class="chapter" data-level="2.2.4" data-path="2-getstarted.html"><a href="2-getstarted.html#data"><i class="fa fa-check"></i><b>2.2.4</b> Data</a></li>
+</ul></li>
+<li class="chapter" data-level="2.3" data-path="2-getstarted.html"><a href="2-getstarted.html#exercises"><i class="fa fa-check"></i><b>2.3</b> Exercises</a><ul>
+<li class="chapter" data-level="2.3.1" data-path="2-getstarted.html"><a href="2-getstarted.html#exploratory-data-analysis"><i class="fa fa-check"></i><b>2.3.1</b> Exploratory Data Analysis</a></li>
+<li class="chapter" data-level="2.3.2" data-path="2-getstarted.html"><a href="2-getstarted.html#simple-linear-regression"><i class="fa fa-check"></i><b>2.3.2</b> Simple Linear Regression</a></li>
+</ul></li>
+</ul></li>
+<li class="part"><span><b>I Computing Assignments</b></span></li>
+<li class="chapter" data-level="3" data-path="3-intro-to-r.html"><a href="3-intro-to-r.html"><i class="fa fa-check"></i><b>3</b> Intro to R</a><ul>
+<li class="chapter" data-level="3.1" data-path="3-intro-to-r.html"><a href="3-intro-to-r.html#introduction"><i class="fa fa-check"></i><b>3.1</b> Introduction</a><ul>
+<li class="chapter" data-level="3.1.1" data-path="3-intro-to-r.html"><a href="3-intro-to-r.html#topics-covered-in-this-lab"><i class="fa fa-check"></i><b>3.1.1</b> Topics covered in this lab:</a></li>
+</ul></li>
+<li class="chapter" data-level="3.2" data-path="3-intro-to-r.html"><a href="3-intro-to-r.html#packages-1"><i class="fa fa-check"></i><b>3.2</b> Packages</a></li>
+<li class="chapter" data-level="3.3" data-path="3-intro-to-r.html"><a href="3-intro-to-r.html#warm-up-1"><i class="fa fa-check"></i><b>3.3</b> Warm up</a></li>
+<li class="chapter" data-level="3.4" data-path="3-intro-to-r.html"><a href="3-intro-to-r.html#project-name-1"><i class="fa fa-check"></i><b>3.4</b> Project name:</a><ul>
+<li class="chapter" data-level="3.4.1" data-path="3-intro-to-r.html"><a href="3-intro-to-r.html#yaml-1"><i class="fa fa-check"></i><b>3.4.1</b> YAML:</a></li>
+<li class="chapter" data-level="3.4.2" data-path="3-intro-to-r.html"><a href="3-intro-to-r.html#commiting-changes"><i class="fa fa-check"></i><b>3.4.2</b> Commiting changes:</a></li>
+<li class="chapter" data-level="3.4.3" data-path="3-intro-to-r.html"><a href="3-intro-to-r.html#pushing-changes"><i class="fa fa-check"></i><b>3.4.3</b> Pushing changes:</a></li>
+<li class="chapter" data-level="3.4.4" data-path="3-intro-to-r.html"><a href="3-intro-to-r.html#data-1"><i class="fa fa-check"></i><b>3.4.4</b> Data</a></li>
+</ul></li>
+<li class="chapter" data-level="3.5" data-path="3-intro-to-r.html"><a href="3-intro-to-r.html#exercises-1"><i class="fa fa-check"></i><b>3.5</b> Exercises</a><ul>
+<li class="chapter" data-level="3.5.1" data-path="3-intro-to-r.html"><a href="3-intro-to-r.html#visualizing-your-data"><i class="fa fa-check"></i><b>3.5.1</b> Visualizing Your Data</a></li>
+</ul></li>
+<li class="chapter" data-level="3.6" data-path="3-intro-to-r.html"><a href="3-intro-to-r.html#simple-linear-regression-1"><i class="fa fa-check"></i><b>3.6</b> Simple Linear Regression</a></li>
+</ul></li>
+<li class="chapter" data-level="4" data-path="4-anova.html"><a href="4-anova.html"><i class="fa fa-check"></i><b>4</b> ANOVA</a><ul>
+<li class="chapter" data-level="4.0.1" data-path="4-anova.html"><a href="4-anova.html#packages-2"><i class="fa fa-check"></i><b>4.0.1</b> Packages</a></li>
+<li class="chapter" data-level="4.0.2" data-path="4-anova.html"><a href="4-anova.html#data-2"><i class="fa fa-check"></i><b>4.0.2</b> Data</a></li>
+<li class="chapter" data-level="4.1" data-path="4-anova.html"><a href="4-anova.html#exercises-2"><i class="fa fa-check"></i><b>4.1</b> Exercises</a></li>
+</ul></li>
+<li class="chapter" data-level="5" data-path="5-mlr.html"><a href="5-mlr.html"><i class="fa fa-check"></i><b>5</b> Multiple Linear Regression</a><ul>
+<li class="chapter" data-level="5.0.1" data-path="5-mlr.html"><a href="5-mlr.html#packages-3"><i class="fa fa-check"></i><b>5.0.1</b> Packages</a></li>
+<li class="chapter" data-level="5.0.2" data-path="5-mlr.html"><a href="5-mlr.html#data-3"><i class="fa fa-check"></i><b>5.0.2</b> Data</a></li>
+<li class="chapter" data-level="5.1" data-path="5-mlr.html"><a href="5-mlr.html#exercises-3"><i class="fa fa-check"></i><b>5.1</b> Exercises</a><ul>
+<li class="chapter" data-level="5.1.1" data-path="5-mlr.html"><a href="5-mlr.html#acknowledgement"><i class="fa fa-check"></i><b>5.1.1</b> Acknowledgement</a></li>
+</ul></li>
+</ul></li>
+<li class="chapter" data-level="6" data-path="6-mlr2.html"><a href="6-mlr2.html"><i class="fa fa-check"></i><b>6</b> Data Wrangling &amp; Multiple Linear Regression</a><ul>
+<li class="chapter" data-level="6.0.1" data-path="6-mlr2.html"><a href="6-mlr2.html#packages-4"><i class="fa fa-check"></i><b>6.0.1</b> Packages</a></li>
+<li class="chapter" data-level="6.0.2" data-path="6-mlr2.html"><a href="6-mlr2.html#data-4"><i class="fa fa-check"></i><b>6.0.2</b> Data</a></li>
+<li class="chapter" data-level="6.1" data-path="6-mlr2.html"><a href="6-mlr2.html#exercises-4"><i class="fa fa-check"></i><b>6.1</b> Exercises</a><ul>
+<li class="chapter" data-level="6.1.1" data-path="6-mlr2.html"><a href="6-mlr2.html#data-wrangling"><i class="fa fa-check"></i><b>6.1.1</b> Data wrangling</a></li>
+<li class="chapter" data-level="6.1.2" data-path="6-mlr2.html"><a href="6-mlr2.html#regression-analysis"><i class="fa fa-check"></i><b>6.1.2</b> Regression Analysis</a></li>
+<li class="chapter" data-level="6.1.3" data-path="6-mlr2.html"><a href="6-mlr2.html#acknowledgement-1"><i class="fa fa-check"></i><b>6.1.3</b> Acknowledgement</a></li>
+</ul></li>
+</ul></li>
+<li class="chapter" data-level="7" data-path="7-selection.html"><a href="7-selection.html"><i class="fa fa-check"></i><b>7</b> Model Selection</a><ul>
+<li class="chapter" data-level="7.0.1" data-path="7-selection.html"><a href="7-selection.html#packages-5"><i class="fa fa-check"></i><b>7.0.1</b> Packages</a></li>
+<li class="chapter" data-level="7.0.2" data-path="7-selection.html"><a href="7-selection.html#data-5"><i class="fa fa-check"></i><b>7.0.2</b> Data</a></li>
+<li class="chapter" data-level="7.1" data-path="7-selection.html"><a href="7-selection.html#exercises-5"><i class="fa fa-check"></i><b>7.1</b> Exercises</a><ul>
+<li class="chapter" data-level="7.1.1" data-path="7-selection.html"><a href="7-selection.html#part-i-1"><i class="fa fa-check"></i><b>7.1.1</b> Part I</a></li>
+<li class="chapter" data-level="7.1.2" data-path="7-selection.html"><a href="7-selection.html#part-ii-1"><i class="fa fa-check"></i><b>7.1.2</b> Part II</a></li>
+<li class="chapter" data-level="7.1.3" data-path="7-selection.html"><a href="7-selection.html#acknowledgements"><i class="fa fa-check"></i><b>7.1.3</b> Acknowledgements</a></li>
+</ul></li>
+</ul></li>
+<li class="chapter" data-level="8" data-path="8-logistic.html"><a href="8-logistic.html"><i class="fa fa-check"></i><b>8</b> Logistic Regression</a><ul>
+<li class="chapter" data-level="8.0.1" data-path="8-logistic.html"><a href="8-logistic.html#packages-6"><i class="fa fa-check"></i><b>8.0.1</b> Packages</a></li>
+<li class="chapter" data-level="8.0.2" data-path="8-logistic.html"><a href="8-logistic.html#data-6"><i class="fa fa-check"></i><b>8.0.2</b> Data</a></li>
+<li class="chapter" data-level="8.1" data-path="8-logistic.html"><a href="8-logistic.html#exercises-6"><i class="fa fa-check"></i><b>8.1</b> Exercises</a><ul>
+<li class="chapter" data-level="8.1.1" data-path="8-logistic.html"><a href="8-logistic.html#exploratory-data-analysis-1"><i class="fa fa-check"></i><b>8.1.1</b> Exploratory Data Analysis</a></li>
+<li class="chapter" data-level="8.1.2" data-path="8-logistic.html"><a href="8-logistic.html#part-ii-logistic-regression-model"><i class="fa fa-check"></i><b>8.1.2</b> Part II: Logistic Regression Model</a></li>
+<li class="chapter" data-level="8.1.3" data-path="8-logistic.html"><a href="8-logistic.html#part-iii-model-assessment"><i class="fa fa-check"></i><b>8.1.3</b> Part III: Model Assessment</a></li>
+<li class="chapter" data-level="8.1.4" data-path="8-logistic.html"><a href="8-logistic.html#part-iv-prediction"><i class="fa fa-check"></i><b>8.1.4</b> Part IV: Prediction</a></li>
+</ul></li>
+</ul></li>
+<li class="chapter" data-level="9" data-path="9-multinom-logistic.html"><a href="9-multinom-logistic.html"><i class="fa fa-check"></i><b>9</b> Multinomial Logistic Regression</a><ul>
+<li class="chapter" data-level="9.0.1" data-path="9-multinom-logistic.html"><a href="9-multinom-logistic.html#packages-7"><i class="fa fa-check"></i><b>9.0.1</b> Packages</a></li>
+<li class="chapter" data-level="9.0.2" data-path="9-multinom-logistic.html"><a href="9-multinom-logistic.html#data-7"><i class="fa fa-check"></i><b>9.0.2</b> Data</a></li>
+<li class="chapter" data-level="9.1" data-path="9-multinom-logistic.html"><a href="9-multinom-logistic.html#exercises-7"><i class="fa fa-check"></i><b>9.1</b> Exercises</a><ul>
+<li class="chapter" data-level="9.1.1" data-path="9-multinom-logistic.html"><a href="9-multinom-logistic.html#part-i-exploratory-data-analysis"><i class="fa fa-check"></i><b>9.1.1</b> Part I: Exploratory Data Analysis</a></li>
+<li class="chapter" data-level="9.1.2" data-path="9-multinom-logistic.html"><a href="9-multinom-logistic.html#part-ii-multinomial-logistic-regression-model"><i class="fa fa-check"></i><b>9.1.2</b> Part II: Multinomial Logistic Regression Model</a></li>
+<li class="chapter" data-level="9.1.3" data-path="9-multinom-logistic.html"><a href="9-multinom-logistic.html#part-iii-model-fit"><i class="fa fa-check"></i><b>9.1.3</b> Part III: Model Fit</a></li>
+<li class="chapter" data-level="9.1.4" data-path="9-multinom-logistic.html"><a href="9-multinom-logistic.html#part-iv-using-the-model"><i class="fa fa-check"></i><b>9.1.4</b> Part IV: Using the Model</a></li>
+<li class="chapter" data-level="9.1.5" data-path="9-multinom-logistic.html"><a href="9-multinom-logistic.html#acknowledgements-1"><i class="fa fa-check"></i><b>9.1.5</b> Acknowledgements</a></li>
+</ul></li>
+</ul></li>
+<li class="chapter" data-level="10" data-path="10-together.html"><a href="10-together.html"><i class="fa fa-check"></i><b>10</b> Putting It All Together</a><ul>
+<li class="chapter" data-level="10.0.1" data-path="10-together.html"><a href="10-together.html#packages-8"><i class="fa fa-check"></i><b>10.0.1</b> Packages</a></li>
+<li class="chapter" data-level="10.0.2" data-path="10-together.html"><a href="10-together.html#data-8"><i class="fa fa-check"></i><b>10.0.2</b> Data</a></li>
+<li class="chapter" data-level="10.0.3" data-path="10-together.html"><a href="10-together.html#exercises-8"><i class="fa fa-check"></i><b>10.0.3</b> Exercises</a></li>
+</ul></li>
+<li class="part"><span><b>II In-class Exercises</b></span></li>
+<li class="chapter" data-level="11" data-path="11-movies-analysis.html"><a href="11-movies-analysis.html"><i class="fa fa-check"></i><b>11</b> Movies Analysis</a><ul>
+<li class="chapter" data-level="11.1" data-path="11-movies-analysis.html"><a href="11-movies-analysis.html#data-9"><i class="fa fa-check"></i><b>11.1</b> Data</a></li>
+<li class="chapter" data-level="11.2" data-path="11-movies-analysis.html"><a href="11-movies-analysis.html#analysis"><i class="fa fa-check"></i><b>11.2</b> Analysis</a><ul>
+<li class="chapter" data-level="11.2.1" data-path="11-movies-analysis.html"><a href="11-movies-analysis.html#part-1"><i class="fa fa-check"></i><b>11.2.1</b> Part 1</a></li>
+<li class="chapter" data-level="11.2.2" data-path="11-movies-analysis.html"><a href="11-movies-analysis.html#part-2"><i class="fa fa-check"></i><b>11.2.2</b> Part 2</a></li>
+</ul></li>
+<li class="chapter" data-level="11.3" data-path="11-movies-analysis.html"><a href="11-movies-analysis.html#next-steps"><i class="fa fa-check"></i><b>11.3</b> Next Steps</a></li>
+<li class="chapter" data-level="11.4" data-path="11-movies-analysis.html"><a href="11-movies-analysis.html#discussion-questions"><i class="fa fa-check"></i><b>11.4</b> Discussion Questions</a></li>
+<li class="chapter" data-level="11.5" data-path="11-movies-analysis.html"><a href="11-movies-analysis.html#references"><i class="fa fa-check"></i><b>11.5</b> References</a></li>
+<li class="chapter" data-level="11.6" data-path="11-movies-analysis.html"><a href="11-movies-analysis.html#appendix"><i class="fa fa-check"></i><b>11.6</b> Appendix</a></li>
+</ul></li>
+<li class="chapter" data-level="12" data-path="12-analyzing-beer-data.html"><a href="12-analyzing-beer-data.html"><i class="fa fa-check"></i><b>12</b> Analyzing Beer Data</a></li>
+<li class="chapter" data-level="13" data-path="13-analyzing-wages.html"><a href="13-analyzing-wages.html"><i class="fa fa-check"></i><b>13</b> Analyzing Wages</a><ul>
+<li class="chapter" data-level="13.0.1" data-path="13-analyzing-wages.html"><a href="13-analyzing-wages.html#initial-model"><i class="fa fa-check"></i><b>13.0.1</b> Initial model</a></li>
+<li class="chapter" data-level="13.0.2" data-path="13-analyzing-wages.html"><a href="13-analyzing-wages.html#model-with-mean-centered-variables"><i class="fa fa-check"></i><b>13.0.2</b> Model with mean-centered variables</a></li>
+<li class="chapter" data-level="13.0.3" data-path="13-analyzing-wages.html"><a href="13-analyzing-wages.html#model-with-indicator-variables"><i class="fa fa-check"></i><b>13.0.3</b> Model with indicator variables</a></li>
+</ul></li>
+<li class="chapter" data-level="14" data-path="14-exam-01-review.html"><a href="14-exam-01-review.html"><i class="fa fa-check"></i><b>14</b> Exam 01 Review</a><ul>
+<li class="chapter" data-level="14.0.1" data-path="14-exam-01-review.html"><a href="14-exam-01-review.html#main-effects-model"><i class="fa fa-check"></i><b>14.0.1</b> Main Effects Model</a></li>
+<li class="chapter" data-level="14.1" data-path="14-exam-01-review.html"><a href="14-exam-01-review.html#model-with-interactions"><i class="fa fa-check"></i><b>14.1</b> Model with Interactions</a></li>
+</ul></li>
+<li class="chapter" data-level="15" data-path="15-model-selection.html"><a href="15-model-selection.html"><i class="fa fa-check"></i><b>15</b> Model Selection</a><ul>
+<li class="chapter" data-level="15.1" data-path="15-model-selection.html"><a href="15-model-selection.html#backward-selection-manually"><i class="fa fa-check"></i><b>15.1</b> Backward selection “manually”</a></li>
+<li class="chapter" data-level="15.2" data-path="15-model-selection.html"><a href="15-model-selection.html#backward-selection-using-regsubsets"><i class="fa fa-check"></i><b>15.2</b> Backward selection using regsubsets</a></li>
+<li class="chapter" data-level="15.3" data-path="15-model-selection.html"><a href="15-model-selection.html#changing-selection-criteria"><i class="fa fa-check"></i><b>15.3</b> Changing selection criteria</a></li>
+<li class="chapter" data-level="15.4" data-path="15-model-selection.html"><a href="15-model-selection.html#different-selection-procedure"><i class="fa fa-check"></i><b>15.4</b> Different selection procedure</a></li>
+<li class="chapter" data-level="15.5" data-path="15-model-selection.html"><a href="15-model-selection.html#choosing-a-final-model"><i class="fa fa-check"></i><b>15.5</b> Choosing a final model</a></li>
+</ul></li>
+<li class="chapter" data-level="16" data-path="16-logistic-regression.html"><a href="16-logistic-regression.html"><i class="fa fa-check"></i><b>16</b> Logistic Regression</a><ul>
+<li class="chapter" data-level="16.1" data-path="16-logistic-regression.html"><a href="16-logistic-regression.html#references-1"><i class="fa fa-check"></i><b>16.1</b> References</a></li>
+</ul></li>
+<li class="chapter" data-level="17" data-path="17-multinomial-logistic-regression.html"><a href="17-multinomial-logistic-regression.html"><i class="fa fa-check"></i><b>17</b> Multinomial Logistic Regression</a><ul>
+<li class="chapter" data-level="17.0.1" data-path="17-multinomial-logistic-regression.html"><a href="17-multinomial-logistic-regression.html#questions"><i class="fa fa-check"></i><b>17.0.1</b> Questions</a></li>
+<li class="chapter" data-level="17.0.2" data-path="17-multinomial-logistic-regression.html"><a href="17-multinomial-logistic-regression.html#references-2"><i class="fa fa-check"></i><b>17.0.2</b> References</a></li>
+</ul></li>
+<li class="chapter" data-level="18" data-path="18-dealing-with-missing-data.html"><a href="18-dealing-with-missing-data.html"><i class="fa fa-check"></i><b>18</b> Dealing with Missing Data</a></li>
+<li class="divider"></li>
+<li><a href="https://github.com/rstudio/bookdown" target="blank">Published with bookdown</a></li>
+
+</ul>
+
+      </nav>
+    </div>
+
+    <div class="book-body">
+      <div class="body-inner">
+        <div class="book-header" role="navigation">
+          <h1>
+            <i class="fa fa-circle-o-notch fa-spin"></i><a href="./">Intro to Regression Analysis</a>
+          </h1>
+        </div>
+
+        <div class="page-wrapper" tabindex="-1" role="main">
+          <div class="page-inner">
+
+            <section class="normal" id="section-">
+<div id="analyzing-beer-data" class="section level1">
+<h1><span class="header-section-number"> 12</span> Analyzing Beer Data</h1>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="kw">library</span>(tidyverse)
+<span class="kw">library</span>(readr)
+<span class="kw">library</span>(broom)</code></pre></div>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r">beer &lt;-<span class="st"> </span><span class="kw">read_csv</span>(<span class="st">&quot;data/beer.csv&quot;</span>)</code></pre></div>
+<p>In this analysis, we will analyze the relationship between the amount of alcohol (<code>PercentAlcohol</code>) and the caloric content (<code>CaloriesPer12Oz</code>) in domestic beers. Let <code>PercentAlcohol</code> be the predictor variable and <code>CaloriesPer12Oz</code> the response variable.</p>
+<p>Due to limited class time, we will not do the exploratory data analysis in this example. In practice, however, you should always start with the exploratory data analysis.</p>
+<p><em>You can add your answers to this R Markdown document</em>.</p>
+<p>**1. Calculate a regression model to describe the relationship between <code>PercentAlcohol</code> and <code>CaloriesPer12Oz</code>. Display the model output.*</p>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r">model &lt;-<span class="st"> </span><span class="kw">lm</span>(CaloriesPer12Oz <span class="op">~</span><span class="st"> </span>PercentAlcohol, <span class="dt">data=</span>beer)
+model <span class="op">%&gt;%</span><span class="st"> </span>
+<span class="st">  </span><span class="kw">tidy</span>(<span class="dt">conf.int=</span><span class="ot">TRUE</span>)</code></pre></div>
+<p><strong>2. Does it make sense to interpret the intercept? Why or why not?</strong></p>
+<p>There are non-alocoholic beers, so it is possible to have a meaningful interpretation of the intercept. In our data, however, there are very few beers with less than 3% alcoholic content, so it would not be wise to interpret the intercept. It is not safe to assume the same relationship between <code>PercentAlcohol</code> and <code>CaloriesPer12Oz</code> hold for beers with 0% alcohol; this would be extrapolation.</p>
+<p><strong>3. Interpret the 95% confidence interval for the slope in the context of the data.</strong></p>
+<p>We are 95% confident that the interval (26.557, 30.620) contains the true population slope for <code>PercentAlcohol</code>. This means we are 95% confident that for every 1% increase in alcohol content, the number of calories (per 12 oz) is expected to increase between 26.557 and 30.620 calories.</p>
+<p><strong>4. Find the critical value, <span class="math inline">\(t^*\)</span>, used to calculate the 95% confidence interval. The code below is a guide; uncomment and complete the lines of code to calculate and display the critical value.</strong></p>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r">n &lt;-<span class="st"> </span><span class="kw">nrow</span>(beer)
+
+df &lt;-<span class="st"> </span>n<span class="op">-</span><span class="dv">2</span>
+crit_val &lt;-<span class="st"> </span><span class="kw">qt</span>(<span class="fl">0.975</span>,df)</code></pre></div>
+<p>The critical value used to calculate the 95% confident interval for the slope is ______.</p>
+<p><strong>5. Interpret the test statistic in the context of the data</strong></p>
+<p>The estimated slope of 28.577 is 27.78 standard errors above the hypothesized mean of 0, assuming there is no linear relationship between percent alcohol and calories in domestic beers.</p>
+<p><strong>6. How was the p-value calculated? Fill in the code below to calculate the p-value. The code below is a guide; uncomment and complete the lines of code to calculate and display the p-value.</strong></p>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r">test_statistic &lt;-<span class="st"> </span><span class="fl">27.778990</span>
+
+prob &lt;-<span class="st"> </span><span class="dv">1</span> <span class="op">-</span><span class="st"> </span><span class="kw">pt</span>(<span class="kw">abs</span>(test_statistic),df)
+
+p_value &lt;-<span class="st"> </span><span class="dv">2</span> <span class="op">*</span><span class="st"> </span>prob</code></pre></div>
+<p>The p-value is _______. Given there is no linear relationship between <code>PercentAlcohol</code> and <code>CaloriesPer12Oz</code>, the probability of obtaining a test statistic with magnitude ________ or more extreme is _______.</p>
+<p><strong>7. Fill in the code below to calculate the predicted calories and corresponding 90% interval for a single beer with alcohol content of 4.3%.</strong></p>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r">x0 &lt;-<span class="st">  </span><span class="kw">data.frame</span>(<span class="dt">PercentAlcohol=</span><span class="fl">4.3</span>)
+<span class="kw">predict.lm</span>(model,x0,<span class="dt">interval=</span><span class="st">&quot;prediction&quot;</span>,<span class="dt">conf.level=</span><span class="fl">0.9</span>) </code></pre></div>
+<p><strong>8. Fill in the code below to calculate the predicted calories and corresponding 90% interval for the subset of beers with alcohol content of 4.3%.</strong></p>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r">x0 &lt;-<span class="st">  </span><span class="kw">data.frame</span>(<span class="dt">PercentAlcohol=</span><span class="fl">4.3</span>)
+<span class="kw">predict.lm</span>(model,x0,<span class="dt">interval=</span><span class="st">&quot;confidence&quot;</span>,<span class="dt">conf.level=</span> <span class="fl">0.9</span>) </code></pre></div>
+
+</div>
+            </section>
+
+          </div>
+        </div>
+      </div>
+<a href="11-movies-analysis.html" class="navigation navigation-prev " aria-label="Previous page"><i class="fa fa-angle-left"></i></a>
+<a href="13-analyzing-wages.html" class="navigation navigation-next " aria-label="Next page"><i class="fa fa-angle-right"></i></a>
+    </div>
+  </div>
+<script src="libs/gitbook-2.6.7/js/app.min.js"></script>
+<script src="libs/gitbook-2.6.7/js/lunr.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-search.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-sharing.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-fontsettings.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-bookdown.js"></script>
+<script src="libs/gitbook-2.6.7/js/jquery.highlight.js"></script>
+<script>
+gitbook.require(["gitbook"], function(gitbook) {
+gitbook.start({
+"sharing": {
+"github": false,
+"facebook": true,
+"twitter": true,
+"google": false,
+"linkedin": false,
+"weibo": false,
+"instapaper": false,
+"vk": false,
+"all": ["facebook", "google", "twitter", "linkedin", "weibo", "instapaper"]
+},
+"fontsettings": {
+"theme": "white",
+"family": "sans",
+"size": 2
+},
+"edit": {
+"link": null,
+"text": null
+},
+"history": {
+"link": null,
+"text": null
+},
+"download": ["introregression.pdf"],
+"toc": {
+"collapse": "section",
+"depth": 1,
+"scroll_highlight": true
+}
+});
+});
+</script>
+
+<!-- dynamically load mathjax for compatibility with self-contained -->
+<script>
+  (function () {
+    var script = document.createElement("script");
+    script.type = "text/javascript";
+    var src = "";
+    if (src === "" || src === "true") src = "https://mathjax.rstudio.com/latest/MathJax.js?config=TeX-MML-AM_CHTML";
+    if (location.protocol !== "file:" && /^https?:/.test(src))
+      src = src.replace(/^https?:/, '');
+    script.src = src;
+    document.getElementsByTagName("head")[0].appendChild(script);
+  })();
+</script>
+</body>
+
+</html>

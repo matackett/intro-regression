@@ -1,0 +1,187 @@
+# Exam 01 Review
+
+```{r include=FALSE}
+knitr::opts_chunk$set(warning=FALSE,
+                   message=FALSE, 
+                   eval = FALSE)
+```
+
+```{r}
+library(tidyverse)
+library(broom)
+library(rms)
+library(knitr)
+```
+
+```{r}
+set.seed(12)
+diamonds_samp <- ggplot2::diamonds %>% 
+  filter(carat < 1.1) %>%
+  sample_n(300) %>%
+  mutate(log_price = log(price), 
+         caratCent = carat - mean(carat), 
+         caratCent_sq = caratCent^2, 
+        color = factor(as.character(color)), # to fix variable format in model output
+        clarity = factor(as.character(clarity)) # to fix variable format in model output
+)
+```
+
+### Main Effects Model
+
+- **Why should we use `logprice` instead of `price` as the response variable? In other words, what is an example of previous analysis that could have been done to help us determine whether to use `logprice` or `price`?**
+
+To determine if a transformation on the response variable is needed, we can examine the following:
+
+  - The distribution of the response variable to see if there is extreme skewness
+  - The plot of the residuals vs. predicted to check for non-constant variance
+  - The histogram and QQ-plot of the residuals to see if there is extreme skewness in the residuals
+
+
+Below is the model with `log_price` as the response and `caratCent`, `color`, and `clarity` as the predictor variables.
+
+```{r}
+model_orig <- lm(log_price ~ caratCent +  color + clarity, data=diamonds_samp)
+kable(tidy(model_orig),format="markdown")
+```
+
+- **What is the baseline level of `color`? What is the baseline level of `clarity`?**
+
+The baseline level of `color` is `D`. The baseline level of `clarity` is `I1`.
+
+- **Interpret the intercept in terms of `price`.**
+
+```{r}
+coef <-  model_orig$coefficients
+```
+We expect the median price of diamonds with color D, clarity I1, and the mean carat weight (_____) to be approximately exp(______) =  ______.
+
+- **Describe the difference in the typical prices of diamonds that are color E and diamonds that are color D, holding all else constant.** 
+
+The difference in terms of the log(price) is the coefficient of `colorE`, _______. Therefore, the difference in terms of the price is
+
+```{r}
+(diff_e_d <- exp(coef[3]))
+```
+
+Therefore, holding all else constant, diamonds that are color E are expected to have a median price that is ______ times the median price of diamonds that are color D.
+
+
+- **Describe the difference in the typical prices of diamonds that are color E and diamonds that are color G, holding all else constant.**
+
+```{r}
+(diff_e_g_log <- coef[3] - coef[5])
+```
+
+Therefore, the difference in terms of the price is 
+```{r}
+(diff_e_g <- exp(diff_e_g_log))
+```
+
+Therefore, holding all else constant, diamonds that are color E are expected to have a median price that is ______ times the median price of diamonds that are color G.
+
+- **What is the predicted price of a single diamond that has color E, clarity VS2 and is 0.3 carats? Finish the code below the predicted value and the corresponding interval.**
+
+```{r}
+x0 <- data.frame(color="E", clarity="VS2", carat=0.3)
+x0 <- x0 %>% mutate(
+  caratCent = carat - mean(diamonds_samp$carat),
+  caratCent_sq = caratCent^2
+)
+
+(exp(predict(model_orig,x0,interval="prediction"))) #interval to predict for single observation
+```
+
+
+- **Suppose we wish to find the predicted median price of subset of all diamonds with color E, clarity VS2, and 0.3 carats. How do you expect the predicted price to change? How do you expect the corresponding interval to change?**
+
+    - The predicted price won't change, but the interval will be more narrow.
+
+- **Write code to find the predicted price and corresponding interval for the median price for the subset of all diamonds with color E, clarity VS2 and 0.3 carats.**
+
+```{r}
+(exp(predict(model_orig,x0,interval="confidence"))) #interval to predict typical price for subset
+```
+<br><br>
+
+Use the code below to obtain the ANOVA table for this model.
+
+```{r}
+anova(model_orig)
+```
+
+- **What is the estimated regression variance?**
+
+The estimated regression variance is the Residual Mean Square, 0.0204. 
+
+- **Compare $R^2$ and $Adj. R^2$. What does this comparison tell you about the predictors in the model?**
+
+$R^2$ is ______ and Adjusted $R^2$ is ______. These values are very close, indicating that the predictors in the model are important for understanding variation in price. There aren't a lot of predictors in the model that aren't significant.
+
+- Use the code below to calculate the VIF for this model.
+
+```{r}
+vif(model_orig)
+```
+
+- **This model has potential problems with multicollinearity. How did we come to this conclusion? Which variables are highly collinear?**
+
+We know this model has potential problems with multicollinearity, because there are multiple predictors with VIFs close or above 10. The variables with high collinearity are the indicator variables for `clarity`.
+
+- **Why do you think this multicollinearity is occurring? *Hint: Examine the distribution of the variable(s) that have high multicollinearity.***
+
+Let's look at the distribution of `clarity`. 
+
+```{r}
+diamonds_samp %>% 
+  count(clarity)
+```
+
+The baseline level is `I1`, and there are only 2 observations out of ______ with this level for clarity. Because there are so few observations at the baseline level, it is almost as if we have no baseline level for the categorical predictor `clarity` in the model. Remember, if we have no baseline level for a categorical variable in the model and there is an intercept, then the indicator variables are just linear combinations for one another. In this case, the indicator variables aren't exact linear combinations of one another, but they are highly collinear. 
+
+This multicollinearity is reduced when the baseline level is changed to a different level of `clarity`. Below is the VIF for a model with `IF`, the highest level of clarity as the baseline.
+
+```{r}
+diamonds_samp %>% 
+  mutate(clarity = fct_rev(clarity)) %>% #reverse the factoring order of clarity
+  lm(log_price ~ caratCent +  color + clarity, data=.) %>%
+  vif()
+```
+
+
+## Model with Interactions 
+
+- Below is the model that includes an interaction term between `caratCent` and `color`. What is the appropriate method to determine if the interaction is significant? 
+
+- We should use the nested F test.
+
+```{r}
+model_int <- lm(log_price ~ caratCent + color + 
+                  clarity + caratCent*color, data=diamonds_samp)
+```
+
+- Conduct the test you listed above. What is your conclusion? 
+
+```{r}
+anova(model_orig, model_int)
+```
+
+The p-value is 0.4104, indicating that there is not sufficient evidence that the interaction between carat and color is significant.
+
+*Regardless of your answer to the previous question, use `model_int` to answer the next two questions:*
+
+```{r}
+kable(tidy(model_int),format="markdown")
+```
+
+```{r}
+coef_int <- model_int$coefficients
+```
+
+- **What is the estimated slope of `caratCent` for a diamond with `color==D`?**
+
+
+
+- **What is the estimated slope of `caratCent` for a diamond with `color==J`?**
+
+
+

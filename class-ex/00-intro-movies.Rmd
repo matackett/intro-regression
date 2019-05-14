@@ -1,0 +1,108 @@
+# (PART) In-class Exercises {-} 
+
+# Movies Analysis 
+
+```{r echo = F}
+knitr::opts_chunk$set(eval = F, 
+                      warning = F,
+                      message = F
+                      )
+```
+
+We will look at the relationship between budget and revenue for movies made in the United States in 1986 to 2016. The data is from the [Internet Movie Database (IMDB)](https://www.imdb.com/).
+
+```{r warning=FALSE, message=FALSE}
+library(readr)
+library(tidyverse)
+library(DT)
+```
+
+## Data
+
+The `movies` data set includes basic information about each movie including budget, genre, movie studio, director, etc. A full list of the variables may be found [here](https://github.com/danielgrijalva/movie-stats).
+
+```{r read-data, message=FALSE, warning=FALSE}
+movies <- read_csv("https://raw.githubusercontent.com/danielgrijalva/movie-stats/master/movies.csv")
+```
+
+```{r filter-data}
+movies <- movies %>%
+  filter(country=="USA", 
+         !(genre %in% c("Musical","War","Western"))) #remove genres with < 10 movies
+```
+
+```{r view-data}
+movies
+```
+
+## Analysis
+
+### Part 1 
+
+We begin by looking at how the gross revenue (`gross`) has changed over time. Since we want to visualize the results, we will choose a few genres of interest for the analysis. 
+
+```{r country-list}
+genre_list <- c("Horror", "Drama", "Action", "Animation")
+```
+
+```{r plot-rating, fig.width=10, warning=FALSE}
+movies %>%
+  filter(genre %in% genre_list) %>% 
+  group_by(genre,year) %>%
+  summarise(avg_gross = mean(gross)) %>%
+  ggplot(mapping = aes(x = year, y = avg_gross, color=genre)) +
+    geom_line() +
+    ylab("Average Gross Revenue (in US Dollars)") +
+    ggtitle("Gross Revenue Over Time")
+```
+
+### Part 2
+
+Next, let's see the relationship between a movie's budget and its gross revenue. Because there is a large range of values for budget and revenue, we will plot the log-transformed version of each variable to more easily visualize the relationship. We will talk more about variable transformations later in the semester.
+
+```{r plot-revenue, fig.width=10, warning=FALSE}
+movies %>%
+  filter(genre %in% genre_list, budget > 0) %>% 
+  ggplot(mapping = aes(x=log(budget), y = log(gross), color=genre)) +
+  geom_point() +
+  geom_smooth(method="lm",se=FALSE) + 
+  xlab("Log-transformed Budget")+
+  ylab("Log-transformed Gross Revenue") +
+  facet_wrap(~ genre)
+```
+
+## Next Steps
+
+1. Put your name in the author field at the top of the file (in the  `yaml` -- we will discuss what this is at a later date). Knit again.
+
+2. Change the genre names in parts 1 and 2 to genres that interest you. The spelling and capitalization must match what's in the data, so you can use the [Appendix](#appendix) to see the correct spelling and capitalization. Knit again.
+
+You have made your first data visualization!
+
+## Discussion Questions
+
+1. Consider the plot in Part 1. 
+    - Describe how movie revenue has changed over time. 
+    - Suppose we use revenue as a measure of popularity. How has the popularity of each genre changed over time? In other words, are the genres that were most popular in 1986 still the most popular today?
+
+2. Consider the plot in Part 2. 
+    - Which genre(s) tend to have the highest budgets?
+    - In general, what is the relationship between a movie's budget and its total revenue? Are there any genres that show a different relationship between budget and revenue?
+
+
+## References
+
+1. [https://github.com/danielgrijalva/movie-stats](https://github.com/danielgrijalva/movie-stats)
+2. [Internet Movie Database](https://www.imdb.com/)
+
+## Appendix
+
+Below is a list of genres in the data set:
+
+```{r}
+movies %>% 
+  arrange(genre) %>% 
+  select(genre) %>%
+  distinct() %>%
+  datatable()
+```

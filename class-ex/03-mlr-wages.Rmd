@@ -1,0 +1,62 @@
+# Analyzing Wages 
+
+```{r echo = F}
+knitr::opts_chunk$set(eval = FALSE, 
+                      warning = FALSE,
+                      message = FALSE
+                      )
+```
+
+```{r}
+library(tidyverse)
+library(knitr)
+library(broom)
+library(Sleuth3)
+```
+
+```{r}
+wages <- case1202 %>% 
+  mutate(Female = ifelse(Sex=="Female",1,0)) %>%
+  select(-Sal77,-Sex)
+```
+
+### Initial model
+
+```{r}
+model <- lm(Bsal ~ Senior + Age + Educ + Exper + Female, 
+            data=wages)
+tidy(model,conf.int=TRUE)
+```
+
+### Model with mean-centered variables
+
+```{r}
+wages <- wages %>%
+  mutate(SeniorCent = Senior - mean(Senior), 
+         AgeCent = Age-mean(Age), 
+         EducCent = Educ - mean(Educ), 
+         ExperCent = Exper - mean(Exper))
+```
+
+- Calculate the regression model using the mean-centered variables. 
+
+```{r}
+
+```
+
+- How did the model change?
+
+### Model with indicator variables
+
+- Use the code below to create a categorical variable for `Educ`.
+
+```{r}
+wages <- wages %>%
+  mutate(EducCat = as.factor(Educ))
+```
+
+- Calculate the regression model using `EducCat` instead of `Educ`.
+
+```{r}
+
+```

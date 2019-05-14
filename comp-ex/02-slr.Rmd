@@ -1,4 +1,4 @@
-# Simple Linear Regression {#slr}
+## SLR Computation Activity
 
 ```{r echo = F}
 knitr::opts_chunk$set(
