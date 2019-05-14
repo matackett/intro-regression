@@ -1,3 +1,4 @@
+
 ## In-Class Exercise: Beer Data Analysis
 
 ```{r echo = F}
@@ -23,7 +24,7 @@ Due to limited class time, we will not do the exploratory data analysis in this 
 
 *You can add your answers to this R Markdown document*.
 
-**1. Calculate a regression model to describe the relationship between `PercentAlcohol` and `CaloriesPer12Oz`. Display the model output.*
+*1. Calculate a regression model to describe the relationship between `PercentAlcohol` and `CaloriesPer12Oz`. Display the model output.*
 
 ```{r}
 model <- lm(CaloriesPer12Oz ~ PercentAlcohol, data=beer)

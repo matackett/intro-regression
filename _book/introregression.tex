@@ -236,8 +236,9 @@ This is a chapter about getting started using R and GitHub.
 
 \chapter{Simple Linear Regression}\label{slr}
 
-\part*{Computing Exercises}\label{part-computing-exercises}
-\addcontentsline{toc}{part}{Computing Exercises}
+\part*{Computing
+Assignments}\label{part-computing-assignments}
+\addcontentsline{toc}{part}{Computing Assignments}
 
 \section{Computing: College
 Admissions}\label{computing-college-admissions}
@@ -251,6 +252,149 @@ practice collaborating using GitHub and RStudio.
 
 We will use the following packages in today's lab.
 
+\subsection{Data}\label{data}
+
+In today's lab, we will analyze the \texttt{scorecard} dataset from the
+rcfss package. This dataset contains information about 1849 colleges
+obtained from the Department of Education's College Scorecard. Load the
+rcfss library into the global R environment and type \texttt{?scorecard}
+in the \textbf{console} to learn more about the dataset and variable
+definitions. Today's analysis will focus on the following variables:
+
+\begin{longtable}[]{@{}ll@{}}
+\toprule
+\begin{minipage}[t]{0.16\columnwidth}\raggedright\strut
+\texttt{type}\strut
+\end{minipage} & \begin{minipage}[t]{0.56\columnwidth}\raggedright\strut
+Type of college (Public, Private - nonprofit, Private - for
+profit)\strut
+\end{minipage}\tabularnewline
+\begin{minipage}[t]{0.16\columnwidth}\raggedright\strut
+\texttt{cost}\strut
+\end{minipage} & \begin{minipage}[t]{0.56\columnwidth}\raggedright\strut
+The average annual cost of attendance, including tuition and feeds,
+books and supplies, and living expenses, minus the average
+grant/scholarship aid\strut
+\end{minipage}\tabularnewline
+\begin{minipage}[t]{0.16\columnwidth}\raggedright\strut
+\texttt{admrate}\strut
+\end{minipage} & \begin{minipage}[t]{0.56\columnwidth}\raggedright\strut
+Undergraduate admissions rate (from 0 - 100\%)\strut
+\end{minipage}\tabularnewline
+\bottomrule
+\end{longtable}
+
+\subsection{Exercises}\label{exercises}
+
+\subsubsection{Exploratory Data
+Analysis}\label{exploratory-data-analysis}
+
+\begin{enumerate}
+\def\labelenumi{\arabic{enumi}.}
+\item
+  Plot a histogram to examine the distribution of \texttt{admrate}. What
+  is the shape of the distribution?
+\item
+  To better understand the distribution of \texttt{admrate}, we would
+  like calculate measures of center and spread of the distribution. Fill
+  in the code below to use the \texttt{skim} function to calculate
+  summary statistics for \texttt{admrate}. Report the appropriate
+  measures of center (mean or median) and spread (standard deviation or
+  IQR) based on the shape of the distribution from Exercise 1.
+\item
+  Plot the distribution of \texttt{cost} and calculate the appropriate
+  summary statistics. Describe the distribution of \texttt{cost} (shape,
+  center, and spread) using the plot and appropriate summary statistics.
+\item
+  One nice feature of the \texttt{skim} function is that it provides
+  information about the number of observations that are missing values
+  of the variable. How many observations have missing values of
+  \texttt{admrate}? How many observations have missing values of
+  \texttt{cost}?
+\item
+  Later in the semester, we will techniques to deal with missing values
+  in the data. For now, however, we will only include complete
+  observations for the remainder of this analysis. We can use the
+  \texttt{filter} function to select only the rows that values for both
+  \texttt{cost} and \texttt{admrate}.
+\end{enumerate}
+
+Fill in the code below to create a new dataset called
+\texttt{scorecard\_new} that only includes observations with values for
+both \texttt{admrate} and \texttt{cost}.
+
+You will use \texttt{scorecard\_new} for the rest of the lab.
+
+\begin{enumerate}
+\def\labelenumi{\arabic{enumi}.}
+\setcounter{enumi}{5}
+\item
+  Create a scatterplot to display the relationship between \texttt{cost}
+  (response variable) and \texttt{admrate} (explanatory variable). Use
+  the scatterplot to describe the relationship between the two
+  variables.
+\item
+  The data contains information about the type of college, and we would
+  like to incorporate this information into the scatterplot. One way to
+  do this is to use a different color marker for each type of college.
+  Fill in the code below the scatterplot from the previous exercise with
+  the marker colors based on the variable \texttt{type}. Describe two
+  new observations from this scatterplot that you didn't see in the
+  previous plot.
+\end{enumerate}
+
+\subsubsection{Simple Linear Regression}\label{simple-linear-regression}
+
+\begin{enumerate}
+\def\labelenumi{\arabic{enumi}.}
+\setcounter{enumi}{7}
+\item
+  Fit a regression model to describe the relationship between a
+  college's admission rate and cost. Use the \texttt{tidy} function to
+  display the model.
+\item
+  Interpret the slope in the context of the problem. Does the intercept
+  have a meaningful interpretation? If so, write the interpretation in
+  the context of the problem. Otherwise, explain why the interpretation
+  is not meaningful.
+\item
+  While the \texttt{tidy} function is used to display the model, we can
+  obtain a one-row summary of the model using the \texttt{glance}
+  function. Use the \texttt{glance} function to get a summary of the
+  model fit in the previous exercise. See the
+  \href{https://rdrr.io/cran/broom/man/glance.lm.html}{documentation for
+  \texttt{glance}} for the syntax and a list of values output from the
+  function.
+\item
+  What is the value of \(R^2\)? Interpret this value in the context of
+  the problem. Do you think this is a ``good'' value of \(R^2\)?
+  Explain.
+\item
+  What is the value of \(\hat{\sigma}\), the residual standard error.
+\item
+  What is the 95\% confidence interval for the coefficient of
+  \texttt{admrate}, i.e.~the slope? Interpret the interval in the
+  context of the data.
+\item
+  We want to test the following hypotheses about the population slope
+  \(\beta_1\):
+\end{enumerate}
+
+\[H_0: \beta_1 = 0 \hspace{5mm} \text{versus} \hspace{5mm} H_a: \beta_1 \neq 0\]
+
+State what the null and alternative hypotheses mean in terms of the
+linear relationship between \texttt{admrate} and \texttt{cost}.
+
+\begin{enumerate}
+\def\labelenumi{\arabic{enumi}.}
+\setcounter{enumi}{14}
+\tightlist
+\item
+  Consider the confidence interval from Exercise 13 and the hypotheses
+  in Exercise 14. Is the confidence interval consistent with the null or
+  alternative hypothesis? Briefly explain.
+\end{enumerate}
+
 \part*{In-Class Exercises}\label{part-in-class-exercises}
 \addcontentsline{toc}{part}{In-Class Exercises}
 
@@ -260,7 +404,7 @@ Analysis}\label{in-class-exercise-advertising-analysis}
 In this mini analysis, we will work with the \texttt{Advertising} data
 used in Chapters 2 and 3 of \emph{Introduction to Statistical Learning}.
 
-\section{Data and packages}\label{data-and-packages}
+\subsection{Data and packages}\label{data-and-packages}
 
 We start with loading the packages we'll use.
 
@@ -280,7 +424,7 @@ variables we'll use are
   \texttt{sales}: total sales (in \$millions)
 \end{itemize}
 
-\section{Analysis}\label{analysis}
+\subsection{Analysis}\label{analysis}
 
 We'll begin the analysis by getting quick view of the data:
 
@@ -289,7 +433,6 @@ the data set.
 
 \begin{enumerate}
 \def\labelenumi{\arabic{enumi}.}
-\tightlist
 \item
   What type of advertising has the smallest median spending?
 \item
@@ -304,7 +447,6 @@ calculating the correlation matrix.
 
 \begin{enumerate}
 \def\labelenumi{\arabic{enumi}.}
-\tightlist
 \item
   What is the correlation between \texttt{radio} and \texttt{sales}?
   Interpret this value.
@@ -322,7 +464,6 @@ these two variables.
 
 \begin{enumerate}
 \def\labelenumi{\arabic{enumi}.}
-\tightlist
 \item
   Write the model equation.
 \item
@@ -346,9 +487,9 @@ exploratory data analysis.
 
 \emph{You can add your answers to this R Markdown document}.
 
-**1. Calculate a regression model to describe the relationship between
-\texttt{PercentAlcohol} and \texttt{CaloriesPer12Oz}. Display the model
-output.*
+\emph{1. Calculate a regression model to describe the relationship
+between \texttt{PercentAlcohol} and \texttt{CaloriesPer12Oz}. Display
+the model output.}
 
 \textbf{2. Does it make sense to interpret the intercept? Why or why
 not?}
@@ -403,13 +544,13 @@ content of 4.3\%.}
 \chapter{Analysis of Variance}\label{anova}
 
 \part*{Computing
-Assignments}\label{part-computing-assignments}
+Assignments}\label{part-computing-assignments-1}
 \addcontentsline{toc}{part}{Computing Assignments}
 
 \chapter{Multiple Linear Regression}\label{mlr}
 
 \part*{Computing
-Assignments}\label{part-computing-assignments-1}
+Assignments}\label{part-computing-assignments-2}
 \addcontentsline{toc}{part}{Computing Assignments}
 
 \part*{In-Class Exericses}\label{part-in-class-exericses}
@@ -420,7 +561,7 @@ Assignments}\label{part-computing-assignments-1}
 \chapter{Model Selection}\label{select}
 
 \part*{Computing
-Assignments}\label{part-computing-assignments-2}
+Assignments}\label{part-computing-assignments-3}
 \addcontentsline{toc}{part}{Computing Assignments}
 
 \part*{In-Class Exericses}\label{part-in-class-exericses-1}
@@ -432,7 +573,7 @@ Assignments}\label{part-computing-assignments-2}
 \chapter{Logistic Regression}\label{logistic}
 
 \part*{Computing
-Assignments}\label{part-computing-assignments-3}
+Assignments}\label{part-computing-assignments-4}
 \addcontentsline{toc}{part}{Computing Assignments}
 
 \part*{In-Class Exericse}\label{part-in-class-exericse}
@@ -441,7 +582,7 @@ Assignments}\label{part-computing-assignments-3}
 \chapter{Multinomial Logistic Regression}\label{multinom-logistic}
 
 \part*{Computing
-Assignments}\label{part-computing-assignments-4}
+Assignments}\label{part-computing-assignments-5}
 \addcontentsline{toc}{part}{Computing Assignments}
 
 \part*{In-Class Exericses}\label{part-in-class-exericses-2}
@@ -450,7 +591,7 @@ Assignments}\label{part-computing-assignments-4}
 \chapter{Special Topics}\label{special}
 
 \part*{Computing
-Assignments}\label{part-computing-assignments-5}
+Assignments}\label{part-computing-assignments-6}
 \addcontentsline{toc}{part}{Computing Assignments}
 
 \part*{In-Class Exericses}\label{part}

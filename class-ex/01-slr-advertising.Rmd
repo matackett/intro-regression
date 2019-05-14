@@ -3,15 +3,14 @@
 ## In-Class Exercise: Advertising Analysis
 
 ```{r echo = F}
-knitr::opts_chunk$set(eval = FALSE, 
-                      warning = FALSE,
-                      message = FALSE
-                      )
+knitr::opts_chunk$set(
+  eval = F
+)
 ```
 
 In this mini analysis, we will work with the `Advertising` data used in Chapters 2 and 3 of *Introduction to Statistical Learning*.
 
-## Data and packages
+### Data and packages
 
 We start with loading the packages we'll use.
 
@@ -33,7 +32,7 @@ We will analyze the advertising and sales data for 200 markets. The variables we
 - `newspaper`: total spending on newspaper advertising (in $thousands)
 - `sales`: total sales (in $millions)
 
-## Analysis
+### Analysis
 
 We'll begin the analysis by getting quick view of the data: 
 
@@ -48,7 +47,9 @@ advertising %>% skim()
 ```
 
 1. What type of advertising has the smallest median spending?
+
 2. What type of advertising has the largest variation in spending? 
+
 3. Describe the shape of the distribution of `sales`. 
 
 We are most interested in understanding how advertising spending affect sales. One way to quantify the relationship between the variables is by calculating the correlation matrix. 
@@ -59,6 +60,7 @@ advertising %>%
 ```
 
 1. What is the correlation between `radio` and `sales`? Interpret this value. 
+
 2. What type of advertising has the strongest linear relationship with `sales`? 
 
 Below are visualizations of `sales` versus each explanatory variable. 
@@ -101,5 +103,7 @@ ad_model
 ```
 
 1. Write the model equation. 
+
 2. Interpret the intercept in the context of the problem. 
+
 3. Interpret the slope in the context of the problem.

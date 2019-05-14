@@ -108,13 +108,18 @@ code > span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Inf
 <li class="chapter" data-level="2" data-path="2-intro.html"><a href="2-intro.html"><i class="fa fa-check"></i><b>2</b> Introduction</a></li>
 <li class="chapter" data-level="3" data-path="3-getstarted.html"><a href="3-getstarted.html"><i class="fa fa-check"></i><b>3</b> Getting Started</a></li>
 <li class="chapter" data-level="4" data-path="4-slr.html"><a href="4-slr.html"><i class="fa fa-check"></i><b>4</b> Simple Linear Regression</a></li>
-<li class="chapter" data-level="5" data-path="5-part-computing-exercises-.html"><a href="5-part-computing-exercises-.html"><i class="fa fa-check"></i><b>5</b> (PART*/) Computing Exercises {-}</a><ul>
-<li class="chapter" data-level="5.1" data-path="5-part-computing-exercises-.html"><a href="5-part-computing-exercises-.html#computing-college-admissions"><i class="fa fa-check"></i><b>5.1</b> Computing: College Admissions</a><ul>
-<li class="chapter" data-level="5.1.1" data-path="5-part-computing-exercises-.html"><a href="5-part-computing-exercises-.html#packages"><i class="fa fa-check"></i><b>5.1.1</b> Packages</a></li>
+<li class="chapter" data-level="5" data-path="5-part-computing-assignments-.html"><a href="5-part-computing-assignments-.html"><i class="fa fa-check"></i><b>5</b> (PART*/) Computing Assignments {-}</a><ul>
+<li class="chapter" data-level="5.1" data-path="5-part-computing-assignments-.html"><a href="5-part-computing-assignments-.html#computing-college-admissions"><i class="fa fa-check"></i><b>5.1</b> Computing: College Admissions</a><ul>
+<li class="chapter" data-level="5.1.1" data-path="5-part-computing-assignments-.html"><a href="5-part-computing-assignments-.html#packages"><i class="fa fa-check"></i><b>5.1.1</b> Packages</a></li>
+<li class="chapter" data-level="5.1.2" data-path="5-part-computing-assignments-.html"><a href="5-part-computing-assignments-.html#data"><i class="fa fa-check"></i><b>5.1.2</b> Data</a></li>
+<li class="chapter" data-level="5.1.3" data-path="5-part-computing-assignments-.html"><a href="5-part-computing-assignments-.html#exercises"><i class="fa fa-check"></i><b>5.1.3</b> Exercises</a></li>
 </ul></li>
 </ul></li>
 <li class="chapter" data-level="6" data-path="6-part-in-class-exercises-.html"><a href="6-part-in-class-exercises-.html"><i class="fa fa-check"></i><b>6</b> (PART*/) In-Class Exercises {-}</a><ul>
-<li class="chapter" data-level="6.1" data-path="6-part-in-class-exercises-.html"><a href="6-part-in-class-exercises-.html#in-class-exercise-advertising-analysis"><i class="fa fa-check"></i><b>6.1</b> In-Class Exercise: Advertising Analysis</a></li>
+<li class="chapter" data-level="6.1" data-path="6-part-in-class-exercises-.html"><a href="6-part-in-class-exercises-.html#in-class-exercise-advertising-analysis"><i class="fa fa-check"></i><b>6.1</b> In-Class Exercise: Advertising Analysis</a><ul>
+<li class="chapter" data-level="6.1.1" data-path="6-part-in-class-exercises-.html"><a href="6-part-in-class-exercises-.html#data-and-packages"><i class="fa fa-check"></i><b>6.1.1</b> Data and packages</a></li>
+<li class="chapter" data-level="6.1.2" data-path="6-part-in-class-exercises-.html"><a href="6-part-in-class-exercises-.html#analysis"><i class="fa fa-check"></i><b>6.1.2</b> Analysis</a></li>
+</ul></li>
 <li class="chapter" data-level="6.2" data-path="6-part-in-class-exercises-.html"><a href="6-part-in-class-exercises-.html#in-class-exercise-beer-data-analysis"><i class="fa fa-check"></i><b>6.2</b> In-Class Exercise: Beer Data Analysis</a></li>
 </ul></li>
 <li class="chapter" data-level="7" data-path="7-anova.html"><a href="7-anova.html"><i class="fa fa-check"></i><b>7</b> Analysis of Variance</a></li>
@@ -136,7 +141,7 @@ code > span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Inf
 <li class="chapter" data-level="13" data-path="13-special.html"><a href="13-special.html"><i class="fa fa-check"></i><b>13</b> Special Topics</a></li>
 <li class="part"><span><b>Computing Assignments</b></span></li>
 <li class="part"><span><b>In-Class Exericses</b></span></li>
-<li class="chapter" data-level="14" data-path="14-data.html"><a href="14-data.html"><i class="fa fa-check"></i><b>14</b> Data Sets</a></li>
+<li class="chapter" data-level="14" data-path="5-part-computing-assignments-.html"><a href="5-part-computing-assignments-.html#data"><i class="fa fa-check"></i><b>14</b> Data Sets</a></li>
 <li class="chapter" data-level="15" data-path="15-refs.html"><a href="15-refs.html"><i class="fa fa-check"></i><b>15</b> References</a></li>
 <li class="divider"></li>
 <li><a href="https://github.com/rstudio/bookdown" target="blank">Published with bookdown</a></li>
@@ -215,6 +220,19 @@ gitbook.start({
 });
 </script>
 
+<!-- dynamically load mathjax for compatibility with self-contained -->
+<script>
+  (function () {
+    var script = document.createElement("script");
+    script.type = "text/javascript";
+    var src = "";
+    if (src === "" || src === "true") src = "https://mathjax.rstudio.com/latest/MathJax.js?config=TeX-MML-AM_CHTML";
+    if (location.protocol !== "file:" && /^https?:/.test(src))
+      src = src.replace(/^https?:/, '');
+    script.src = src;
+    document.getElementsByTagName("head")[0].appendChild(script);
+  })();
+</script>
 </body>
 
 </html>

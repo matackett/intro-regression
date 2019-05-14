@@ -1,4 +1,4 @@
-# (PART\*) Computing Exercises {-}
+# (PART\*) Computing Assignments {-}
 
 ## Computing: College Admissions
 
@@ -21,32 +21,6 @@ library(broom)
 library(rcfss)
 ```
 
-<!--
-### Project name: 
-
-Currently your project is called *Untitled Project*. Update the name of your project to be "Lab 02 - Simple Linear Regression"
-
-## Warm up
-
-**Pick one team member to complete the steps in this section while the others contribute to the discussion but do not actually touch the files on their computer.**
-
-Before we introduce the data, let's warm up with a simple exercise.
-
-### YAML: 
-
-Open the R Markdown (Rmd) file in your project, change the author name to your **team** name, and knit the document.
-
-### Commiting and pushing changes:
-
-- Go to the **Git** pane in your RStudio. 
-- View the **Diff** and confirm that you are happy with the changes.
-- Add a commit message like "Update team name" in the **Commit message** box and hit **Commit**.
-- Click on **Push**. This will prompt a dialogue box where you first need to enter your user name, and then your password.
-
-### Pulling changes:
-
-Now, the remaining team members who have not been concurrently making these changes on their projects should click on the **Pull** button in their Git pane and observe that the changes are now reflected on their projects as well.
-
 ### Data 
 
 In today's lab, we will analyze the `scorecard` dataset from the rcfss package. This dataset contains information about 1849 colleges obtained from the Department of Education's College Scorecard. Load the rcfss library into the global R environment and type `?scorecard` in the **console** to learn more about the dataset and variable definitions. Today's analysis will focus on the following variables: 
@@ -57,9 +31,9 @@ In today's lab, we will analyze the `scorecard` dataset from the rcfss package. 
 | `cost` | The average annual cost of attendance, including tuition and feeds, books and supplies, and living expenses, minus the average grant/scholarship aid |
 | `admrate` | Undergraduate admissions rate (from 0 - 100%) |
 
-## Exercises 
+### Exercises 
 
-### Exploratory Data Analysis
+#### Exploratory Data Analysis
 
 1. Plot a histogram to examine the distribution of `admrate`. What is the shape of the distribution? 
 
@@ -99,7 +73,7 @@ ggplot(data=scorecard_new, mapping=aes(x=admrate, y=cost, color=type)) +
   _____________________
 ```
 
-### Simple Linear Regression
+#### Simple Linear Regression
 
 8. Fit a regression model to describe the relationship between a college's admission rate and cost. Use the `tidy` function to display the model.
 
@@ -121,7 +95,4 @@ State what the null and alternative hypotheses mean in terms of the linear relat
 
 15. Consider the confidence interval from Exercise 13 and the hypotheses in Exercise 14. Is the confidence interval consistent with the null or alternative hypothesis? Briefly explain.  
 
-
-*You're done! Commit all remaining changes, use the commit message "Done with Lab 2!", and push. Before you wrap up the assignment, make sure the .Rmd, .html, and .md documents are all updated on your GitHub repo.*
-
--->
+ 
