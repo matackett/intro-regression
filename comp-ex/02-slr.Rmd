@@ -1,5 +1,3 @@
-# (PART\*) Computing Assignments {-}
-
 ## Computing: College Admissions
 
 ```{r echo = F}

@@ -1,5 +1,3 @@
-# (PART\*) In-Class Exercises {-}
-
 ## In-Class Exercise: Advertising Analysis
 
 ```{r echo = F}
