@@ -6,7 +6,7 @@ knitr::opts_chunk$set(echo = TRUE)
 
 This document discusses some of the mathematical details of the model diagnostics - leverage, standardized residuals, and Cook's distance. We assume the reader knowledge of the matrix form for multiple linear regression.Please see [Matrix Form of Linear Regression](https://github.com/STA210-Sp19/supplemental-notes/blob/master/regression-basics-matrix.pdf) for a review.
 
-## Introduction 
+### Introduction 
 
 Suppose we have $n$ observations. Let the $i^{th}$ be $(x_{i1}, \ldots, x_{ip}, y_i)$, such that $x_{i1}, \ldots, x_{ip}$ are the explanatory variables (predictors) and $y_i$ is the response variable. We assume the data can be modeled using the least-squares regression model, such that the mean response for a given combination of explanatory variables follows the form in (\ref{basic_model}).
 
@@ -24,7 +24,7 @@ y_i = \beta_0 + \beta_1 x_{i1} + \dots + \beta_p x_{ip} + \epsilon_i
 
 such that $\epsilon_i$ is the amount $y_i$ deviates from $\mu\{y|x_{i1}, \ldots, x_{ip}\}$, the mean response for a given combination of explanatory variables. We assume each $\epsilon_i \sim N(0,\sigma^2)$, where $\sigma^2$ is a constant variance for the distribution of the response $y$ for any combination of explanatory variables $x_1, \ldots, x_p$. 
 
-## Matrix Form for the Regression Model 
+### Matrix Form for the Regression Model 
 
 We can represent the (\ref{basic_model}) and (\ref{ind_response}) using matrix notation. Let 
 
@@ -53,7 +53,7 @@ Therefore the estimated response for a given combination of explanatory variable
 \hat{\mathbf{Y}} = \mathbf{X}\hat{\boldsymbol{\beta}} \hspace{10mm} \mathbf{e} = \mathbf{Y} - \mathbf{X}\hat{\boldsymbol{\beta}}
 \end{equation}
 
-## Hat Matrix & Leverage
+### Hat Matrix & Leverage
 
 Recall from the notes [**Matrix Form of Linear Regression**](https://github.com/STA210-Sp19/supplemental-notes/blob/master/regression-basics-matrix.pdf) that $\hat{\boldsymbol{\beta}}$ can be written as the following: 
 
@@ -120,7 +120,7 @@ Var(\mathbf{e}) &= \mathbf{e}\mathbf{e}^T \\[10pt]
 
 where $\hat{\sigma}^2 = \frac{\sum_{i=1}^{n}e_i^2}{n-p-1}$ is the estimated regression variance. Thus, the variance of the $i^{th}$ residual is $Var(e_i) = \hat{\sigma}^2(1-h_{ii})$. Therefore, the higher the leverage, the smaller the variance of the residual. Because the expected value of the residuals is 0, we conclude that points with high leverage tend to have smaller residuals than points with lower leverage.
 
-## Standardized Residuals 
+### Standardized Residuals 
 
 In general, we standardize a value by shifting by the expected value and rescaling by the standard deviation (or standard error). Thus, the $i^{th}$ standardized residual takes the form 
 
@@ -133,7 +133,7 @@ The expected value of the residuals is 0, i.e. $E(e_i) = 0$. From (\ref{resid-va
 std.res_i = \frac{e_i}{\hat{\sigma}\sqrt{1-h_{ii}}}
 \end{equation}
 
-## Cook's Distance
+### Cook's Distance
 
 Cook's distance is a measure of how much each observation influences the model coefficients, and thus the predicted values. The Cook's distance for the $i^{th}$ observation can be written as 
 

@@ -43,9 +43,9 @@ The dataset for Part I contains the SAT score (out of 1600) and other variables 
 
 The dataset for Part II contains the performance statistics and salaries of Major League Baseball players in the 1986 and 1987 seasons. The data is in the `Hitters` dataset in the `ISLR` package. Type `?Hitters` in the console to see the variables names and their definitions.
 
-## Exercises
+### Exercises
 
-### Part I
+#### Part I
 
 For the first part of the lab, you will return to the model selection activity you started in class using the SAT data. The data is in the `case1201` data frame in the `Sleuth3` package.
 
@@ -96,7 +96,7 @@ m6 <- lm(SAT ~ Takers + Income + Years + Public + Expend, data = sat_scores)
     
 6. Consider the comparisons made in the previous exercise. Are these differences what you would expect given the selection criteria used? Briefly explain.
 
-### Part II
+#### Part II
 
 The data for this part of the lab is the `Hitters` dataset in the `ISLR` package. Your goal is to fit a regression model that uses the performance statistics of baseball players to predictor their salary. There are 19 potential predictor variables, so you will use the `regsubsets` function to conduct forward selection to choose a final model.
 

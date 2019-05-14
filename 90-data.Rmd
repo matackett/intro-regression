@@ -1,4 +1,4 @@
-# Data Sets {#data}
+# Data Sets
 
 | Data Set 	| Description 	| Chapter 	| Original Source 	|
 |----------	|-------------	|---------	|-----------------	|

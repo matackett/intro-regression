@@ -1,0 +1,355 @@
+<!DOCTYPE html>
+<html >
+
+<head>
+
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <title>5.5 Log Transformations in Linear Regression | Intro to Regression Analysis</title>
+  <meta name="description" content="This document contains lab assignments and other materials for an intermediate-level regression course.">
+  <meta name="generator" content="bookdown  and GitBook 2.6.7">
+
+  <meta property="og:title" content="5.5 Log Transformations in Linear Regression | Intro to Regression Analysis" />
+  <meta property="og:type" content="book" />
+  
+  
+  <meta property="og:description" content="This document contains lab assignments and other materials for an intermediate-level regression course." />
+  
+
+  <meta name="twitter:card" content="summary" />
+  <meta name="twitter:title" content="5.5 Log Transformations in Linear Regression | Intro to Regression Analysis" />
+  
+  <meta name="twitter:description" content="This document contains lab assignments and other materials for an intermediate-level regression course." />
+  
+
+<meta name="author" content="Maria Tackett">
+
+
+<meta name="date" content="2019-05-14">
+
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-status-bar-style" content="black">
+  
+  
+<link rel="prev" href="5-4-matrix-form-of-linear-regression.html">
+<link rel="next" href="5-6-details-about-model-diagnostics.html">
+<script src="libs/jquery-2.2.3/jquery.min.js"></script>
+<link href="libs/gitbook-2.6.7/css/style.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-table.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-bookdown.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-highlight.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-search.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-fontsettings.css" rel="stylesheet" />
+
+
+
+
+
+
+
+
+
+<style type="text/css">
+div.sourceCode { overflow-x: auto; }
+table.sourceCode, tr.sourceCode, td.lineNumbers, td.sourceCode {
+  margin: 0; padding: 0; vertical-align: baseline; border: none; }
+table.sourceCode { width: 100%; line-height: 100%; }
+td.lineNumbers { text-align: right; padding-right: 4px; padding-left: 4px; color: #aaaaaa; border-right: 1px solid #aaaaaa; }
+td.sourceCode { padding-left: 5px; }
+code > span.kw { color: #007020; font-weight: bold; } /* Keyword */
+code > span.dt { color: #902000; } /* DataType */
+code > span.dv { color: #40a070; } /* DecVal */
+code > span.bn { color: #40a070; } /* BaseN */
+code > span.fl { color: #40a070; } /* Float */
+code > span.ch { color: #4070a0; } /* Char */
+code > span.st { color: #4070a0; } /* String */
+code > span.co { color: #60a0b0; font-style: italic; } /* Comment */
+code > span.ot { color: #007020; } /* Other */
+code > span.al { color: #ff0000; font-weight: bold; } /* Alert */
+code > span.fu { color: #06287e; } /* Function */
+code > span.er { color: #ff0000; font-weight: bold; } /* Error */
+code > span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warning */
+code > span.cn { color: #880000; } /* Constant */
+code > span.sc { color: #4070a0; } /* SpecialChar */
+code > span.vs { color: #4070a0; } /* VerbatimString */
+code > span.ss { color: #bb6688; } /* SpecialString */
+code > span.im { } /* Import */
+code > span.va { color: #19177c; } /* Variable */
+code > span.cf { color: #007020; font-weight: bold; } /* ControlFlow */
+code > span.op { color: #666666; } /* Operator */
+code > span.bu { } /* BuiltIn */
+code > span.ex { } /* Extension */
+code > span.pp { color: #bc7a00; } /* Preprocessor */
+code > span.at { color: #7d9029; } /* Attribute */
+code > span.do { color: #ba2121; font-style: italic; } /* Documentation */
+code > span.an { color: #60a0b0; font-weight: bold; font-style: italic; } /* Annotation */
+code > span.cv { color: #60a0b0; font-weight: bold; font-style: italic; } /* CommentVar */
+code > span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Information */
+</style>
+
+<link rel="stylesheet" href="style.css" type="text/css" />
+</head>
+
+<body>
+
+
+
+  <div class="book without-animation with-summary font-size-2 font-family-1" data-basepath=".">
+
+    <div class="book-summary">
+      <nav role="navigation">
+
+<ul class="summary">
+<li><a href="./">Broadening Your Statistical Horizons</a></li>
+
+<li class="divider"></li>
+<li class="chapter" data-level="1" data-path="index.html"><a href="index.html"><i class="fa fa-check"></i><b>1</b> Beginning of the Book</a></li>
+<li class="chapter" data-level="2" data-path="2-chapter-1.html"><a href="2-chapter-1.html"><i class="fa fa-check"></i><b>2</b> Chapter 1</a><ul>
+<li class="chapter" data-level="2.1" data-path="2-1-anova.html"><a href="2-1-anova.html"><i class="fa fa-check"></i><b>2.1</b> ANOVA</a><ul>
+<li class="chapter" data-level="2.1.1" data-path="2-1-anova.html"><a href="2-1-anova.html#packages"><i class="fa fa-check"></i><b>2.1.1</b> Packages</a></li>
+<li class="chapter" data-level="2.1.2" data-path="2-1-anova.html"><a href="2-1-anova.html#data"><i class="fa fa-check"></i><b>2.1.2</b> Data</a></li>
+<li class="chapter" data-level="2.1.3" data-path="2-1-anova.html"><a href="2-1-anova.html#exercises"><i class="fa fa-check"></i><b>2.1.3</b> Exercises</a></li>
+</ul></li>
+</ul></li>
+<li class="chapter" data-level="3" data-path="3-chapter-2.html"><a href="3-chapter-2.html"><i class="fa fa-check"></i><b>3</b> Chapter 2</a></li>
+<li class="chapter" data-level="4" data-path="2-1-anova.html"><a href="2-1-anova.html#anova"><i class="fa fa-check"></i><b>4</b> Analysis of Variance</a><ul>
+<li class="chapter" data-level="4.1" data-path="4-1-anova-1.html"><a href="4-1-anova-1.html"><i class="fa fa-check"></i><b>4.1</b> ANOVA</a><ul>
+<li class="chapter" data-level="4.1.1" data-path="4-1-anova-1.html"><a href="4-1-anova-1.html#packages-1"><i class="fa fa-check"></i><b>4.1.1</b> Packages</a></li>
+<li class="chapter" data-level="4.1.2" data-path="4-1-anova-1.html"><a href="4-1-anova-1.html#data-1"><i class="fa fa-check"></i><b>4.1.2</b> Data</a></li>
+<li class="chapter" data-level="4.1.3" data-path="4-1-anova-1.html"><a href="4-1-anova-1.html#exercises-1"><i class="fa fa-check"></i><b>4.1.3</b> Exercises</a></li>
+</ul></li>
+</ul></li>
+<li class="chapter" data-level="5" data-path="5-mlr.html"><a href="5-mlr.html"><i class="fa fa-check"></i><b>5</b> Multiple Linear Regression</a><ul>
+<li class="chapter" data-level="5.1" data-path="5-1-multiple-linear-regression.html"><a href="5-1-multiple-linear-regression.html"><i class="fa fa-check"></i><b>5.1</b> Multiple Linear Regression</a><ul>
+<li class="chapter" data-level="5.1.1" data-path="5-1-multiple-linear-regression.html"><a href="5-1-multiple-linear-regression.html#packages-2"><i class="fa fa-check"></i><b>5.1.1</b> Packages</a></li>
+<li class="chapter" data-level="5.1.2" data-path="5-1-multiple-linear-regression.html"><a href="5-1-multiple-linear-regression.html#data-2"><i class="fa fa-check"></i><b>5.1.2</b> Data</a></li>
+<li class="chapter" data-level="5.1.3" data-path="5-1-multiple-linear-regression.html"><a href="5-1-multiple-linear-regression.html#exercises-2"><i class="fa fa-check"></i><b>5.1.3</b> Exercises</a></li>
+<li class="chapter" data-level="5.1.4" data-path="5-1-multiple-linear-regression.html"><a href="5-1-multiple-linear-regression.html#acknowledgement"><i class="fa fa-check"></i><b>5.1.4</b> Acknowledgement</a></li>
+</ul></li>
+<li class="chapter" data-level="5.2" data-path="5-2-data-wrangling-multiple-linear-regression.html"><a href="5-2-data-wrangling-multiple-linear-regression.html"><i class="fa fa-check"></i><b>5.2</b> Data Wrangling &amp; Multiple Linear Regression</a><ul>
+<li class="chapter" data-level="5.2.1" data-path="5-2-data-wrangling-multiple-linear-regression.html"><a href="5-2-data-wrangling-multiple-linear-regression.html#packages-3"><i class="fa fa-check"></i><b>5.2.1</b> Packages</a></li>
+<li class="chapter" data-level="5.2.2" data-path="5-2-data-wrangling-multiple-linear-regression.html"><a href="5-2-data-wrangling-multiple-linear-regression.html#data-3"><i class="fa fa-check"></i><b>5.2.2</b> Data</a></li>
+<li class="chapter" data-level="5.2.3" data-path="5-2-data-wrangling-multiple-linear-regression.html"><a href="5-2-data-wrangling-multiple-linear-regression.html#exercises-3"><i class="fa fa-check"></i><b>5.2.3</b> Exercises</a></li>
+<li class="chapter" data-level="5.2.4" data-path="5-2-data-wrangling-multiple-linear-regression.html"><a href="5-2-data-wrangling-multiple-linear-regression.html#acknowledgement-1"><i class="fa fa-check"></i><b>5.2.4</b> Acknowledgement</a></li>
+</ul></li>
+<li class="chapter" data-level="5.3" data-path="5-3-analyzing-wages.html"><a href="5-3-analyzing-wages.html"><i class="fa fa-check"></i><b>5.3</b> Analyzing Wages</a><ul>
+<li class="chapter" data-level="5.3.1" data-path="5-3-analyzing-wages.html"><a href="5-3-analyzing-wages.html#initial-model"><i class="fa fa-check"></i><b>5.3.1</b> Initial model</a></li>
+<li class="chapter" data-level="5.3.2" data-path="5-3-analyzing-wages.html"><a href="5-3-analyzing-wages.html#model-with-mean-centered-variables"><i class="fa fa-check"></i><b>5.3.2</b> Model with mean-centered variables</a></li>
+<li class="chapter" data-level="5.3.3" data-path="5-3-analyzing-wages.html"><a href="5-3-analyzing-wages.html#model-with-indicator-variables"><i class="fa fa-check"></i><b>5.3.3</b> Model with indicator variables</a></li>
+</ul></li>
+<li class="chapter" data-level="5.4" data-path="5-4-matrix-form-of-linear-regression.html"><a href="5-4-matrix-form-of-linear-regression.html"><i class="fa fa-check"></i><b>5.4</b> Matrix Form of Linear Regression</a><ul>
+<li class="chapter" data-level="5.4.1" data-path="5-4-matrix-form-of-linear-regression.html"><a href="5-4-matrix-form-of-linear-regression.html#introduction"><i class="fa fa-check"></i><b>5.4.1</b> Introduction</a></li>
+<li class="chapter" data-level="5.4.2" data-path="5-4-matrix-form-of-linear-regression.html"><a href="5-4-matrix-form-of-linear-regression.html#matrix-form-for-the-regression-model"><i class="fa fa-check"></i><b>5.4.2</b> Matrix Form for the Regression Model</a></li>
+<li class="chapter" data-level="5.4.3" data-path="5-4-matrix-form-of-linear-regression.html"><a href="5-4-matrix-form-of-linear-regression.html#estimating-the-coefficients"><i class="fa fa-check"></i><b>5.4.3</b> Estimating the Coefficients</a></li>
+<li class="chapter" data-level="5.4.4" data-path="5-4-matrix-form-of-linear-regression.html"><a href="5-4-matrix-form-of-linear-regression.html#variance-covariance-matrix-of-the-coefficients"><i class="fa fa-check"></i><b>5.4.4</b> Variance-covariance matrix of the coefficients</a></li>
+</ul></li>
+<li class="chapter" data-level="5.5" data-path="5-5-log-transformations-in-linear-regression.html"><a href="5-5-log-transformations-in-linear-regression.html"><i class="fa fa-check"></i><b>5.5</b> Log Transformations in Linear Regression</a><ul>
+<li class="chapter" data-level="5.5.1" data-path="5-5-log-transformations-in-linear-regression.html"><a href="5-5-log-transformations-in-linear-regression.html#log-transformation-on-the-response-variable"><i class="fa fa-check"></i><b>5.5.1</b> Log-transformation on the response variable</a></li>
+<li class="chapter" data-level="5.5.2" data-path="5-5-log-transformations-in-linear-regression.html"><a href="5-5-log-transformations-in-linear-regression.html#log-transformation-on-the-predictor-variable"><i class="fa fa-check"></i><b>5.5.2</b> Log-transformation on the predictor variable</a></li>
+<li class="chapter" data-level="5.5.3" data-path="5-5-log-transformations-in-linear-regression.html"><a href="5-5-log-transformations-in-linear-regression.html#log-transformation-on-the-the-response-and-predictor-variable"><i class="fa fa-check"></i><b>5.5.3</b> Log-transformation on the the response and predictor variable</a></li>
+</ul></li>
+<li class="chapter" data-level="5.6" data-path="5-6-details-about-model-diagnostics.html"><a href="5-6-details-about-model-diagnostics.html"><i class="fa fa-check"></i><b>5.6</b> Details about Model Diagnostics</a><ul>
+<li class="chapter" data-level="5.6.1" data-path="5-6-details-about-model-diagnostics.html"><a href="5-6-details-about-model-diagnostics.html#introduction-1"><i class="fa fa-check"></i><b>5.6.1</b> Introduction</a></li>
+<li class="chapter" data-level="5.6.2" data-path="5-6-details-about-model-diagnostics.html"><a href="5-6-details-about-model-diagnostics.html#matrix-form-for-the-regression-model-1"><i class="fa fa-check"></i><b>5.6.2</b> Matrix Form for the Regression Model</a></li>
+<li class="chapter" data-level="5.6.3" data-path="5-6-details-about-model-diagnostics.html"><a href="5-6-details-about-model-diagnostics.html#hat-matrix-leverage"><i class="fa fa-check"></i><b>5.6.3</b> Hat Matrix &amp; Leverage</a></li>
+<li class="chapter" data-level="5.6.4" data-path="5-6-details-about-model-diagnostics.html"><a href="5-6-details-about-model-diagnostics.html#standardized-residuals"><i class="fa fa-check"></i><b>5.6.4</b> Standardized Residuals</a></li>
+<li class="chapter" data-level="5.6.5" data-path="5-6-details-about-model-diagnostics.html"><a href="5-6-details-about-model-diagnostics.html#cooks-distance"><i class="fa fa-check"></i><b>5.6.5</b> Cook’s Distance</a></li>
+</ul></li>
+</ul></li>
+<li class="divider"></li>
+<li><a href="https://github.com/rstudio/bookdown" target="blank">Published with bookdown</a></li>
+
+</ul>
+
+      </nav>
+    </div>
+
+    <div class="book-body">
+      <div class="body-inner">
+        <div class="book-header" role="navigation">
+          <h1>
+            <i class="fa fa-circle-o-notch fa-spin"></i><a href="./">Intro to Regression Analysis</a>
+          </h1>
+        </div>
+
+        <div class="page-wrapper" tabindex="-1" role="main">
+          <div class="page-inner">
+
+            <section class="normal" id="section-">
+<div id="log-transformations-in-linear-regression" class="section level2">
+<h2><span class="header-section-number">5.5</span> Log Transformations in Linear Regression</h2>
+<p>This document provides details about the model interpretion when the predictor and/or response variables are log-transformed. For simplicity, we will discuss transformations for the simple linear regression model:</p>
+<span class="math display">\[\begin{equation}
+\label{orig}
+y = \beta_0 + \beta_1 x
+\end{equation}\]</span>
+<p>All results and interpretations can be easily extended to transformations in multiple regression models.</p>
+<p><em>Note</em>: <em>log</em> refers to the natural logarithm.</p>
+<div id="log-transformation-on-the-response-variable" class="section level3">
+<h3><span class="header-section-number">5.5.1</span> Log-transformation on the response variable</h3>
+<p>Suppose we fit a linear regression model with <span class="math inline">\(\log(y)\)</span>, the log-transformed <span class="math inline">\(y\)</span>, as the response variable. Under this model, we assume a linear relationship exists between <span class="math inline">\(x\)</span> and <span class="math inline">\(\log(y)\)</span>, such that <span class="math inline">\(\log(y) \sim N(\beta_0 + \beta_1 x, \sigma^2)\)</span> for some <span class="math inline">\(\beta_0\)</span>, <span class="math inline">\(\beta_1\)</span> and <span class="math inline">\(\sigma^2\)</span>. In other words, we can model the relationship between <span class="math inline">\(x\)</span> and <span class="math inline">\(\log(y)\)</span> using the model in ().</p>
+<span class="math display">\[\begin{equation}
+\label{log-y}
+\log(y) = \beta_0 + \beta_1 x
+\end{equation}\]</span>
+<p>If we interpret the model in terms of <span class="math inline">\(\log(y)\)</span>, then we can use the usual interpretations for slope and intercept. When reporting results, however, it is best to give all interpretations in terms of the original response variable <span class="math inline">\(y\)</span>, since interpretations using log-transformed variables are often more difficult to truly understand.</p>
+<p>In order to get back on the original scale, we need to use the exponential function (also known as the anti-log), <span class="math inline">\(\exp\{x\} = e^x\)</span>. Therefore, we use the model in () for interpretations and predictions, we will use () to state our conclusions in terms of <span class="math inline">\(y\)</span>.</p>
+<span class="math display">\[\begin{equation}
+\label{exp-y}
+\begin{aligned}
+&amp;\exp\{\log(y)\} = \exp\{\beta_0 + \beta_1 x\} \\[10pt]
+\Rightarrow &amp;y = \exp\{\beta_0 + \beta_1 x\} \\[10pt]
+\Rightarrow &amp;y = \exp\{\beta_0\}\exp\{\beta_1 x\}
+\end{aligned}
+\end{equation}\]</span>
+<p>In order to interpret the slope and intercept, we need to first understand the relationship between the mean, median and log transformations.</p>
+<div id="mean-median-and-log-transformations" class="section level4">
+<h4><span class="header-section-number">5.5.1.1</span> Mean, Median, and Log Transformations</h4>
+<p>Suppose we have a dataset <code>y</code> that contains the following observations:</p>
+<p>If we log-transform the values of <code>y</code> then calculate the mean and median, we have</p>
+<p>If we calculate the mean and median of <code>y</code>, then log-transform the mean and median, we have</p>
+<p>This is a simple illustration to show</p>
+<ol style="list-style-type: decimal">
+<li><p><span class="math inline">\(\text{Mean}[{\log(y)}] \neq \log[\text{Mean}(y)]\)</span> - the mean and log are not commutable</p></li>
+<li><p><span class="math inline">\(\text{Median}[\log(y)] = \log[\text{Median}(y)]\)</span> - the median and log are commutable</p></li>
+</ol>
+</div>
+<div id="interpretaton-of-model-coefficients" class="section level4">
+<h4><span class="header-section-number">5.5.1.2</span> Interpretaton of model coefficients</h4>
+<p>Using (), the mean <span class="math inline">\(\log(y)\)</span> for any given value of <span class="math inline">\(x\)</span> is <span class="math inline">\(\beta_0 + \beta_1 x\)</span>; however, this does <strong>not</strong> indicate that the mean of <span class="math inline">\(y = \exp\{\beta_0 + \beta_1 x\}\)</span> (see previous section). From the assumptions of linear regression, we assume that for any given value of <span class="math inline">\(x\)</span>, the distribution of <span class="math inline">\(\log(y)\)</span> is Normal, and therefore symmetric. Thus the median of <span class="math inline">\(\log(y)\)</span> is equal to the mean of <span class="math inline">\(\log(y)\)</span>, i.e <span class="math inline">\(\text{Median}(\log(y)) = \beta_0 + \beta_1 x\)</span>.</p>
+<p>Since the log and the median are commutable, <span class="math inline">\(\text{Median}(\log(y)) = \beta_0 + \beta_1 x \Rightarrow \text{Median}(y) = \exp\{\beta_0 + \beta_1 x\}\)</span>. Thus, when we log-transform the response variable, the interpretation of the intercept and slope are in terms of the effect on the <strong>median</strong> of <span class="math inline">\(y\)</span>.</p>
+<p><strong>Intercept</strong>: The intercept is expected median of <span class="math inline">\(y\)</span> when the predictor variable equals 0. Therefore, when <span class="math inline">\(x=0\)</span>,</p>
+<span class="math display">\[\begin{equation}
+\begin{aligned}
+&amp;\log(y) = \beta_0 + \beta_1 \times 0 = \beta_0 \\[10pt]
+\Rightarrow &amp;y = \exp\{\beta_0\}
+\end{aligned}
+\end{equation}\]</span>
+<p><em>Interpretation: When <span class="math inline">\(x=0\)</span>, the median of <span class="math inline">\(y\)</span> is expected to be <span class="math inline">\(\exp\{\beta_0\}\)</span>.</em></p>
+<p><strong>Slope</strong>: The slope is the expected change in the median of <span class="math inline">\(y\)</span> when <span class="math inline">\(x\)</span> increases by 1 unit. The change in the median of <span class="math inline">\(y\)</span> is</p>
+<span class="math display">\[\begin{equation}
+\exp\{[\beta_0 + \beta_1 (x+1)] - [\beta_0 + \beta_1 x]\} = \frac{\exp\{\beta_0 + \beta_1 (x+1)\}}{\exp\{\beta_0 + \beta_1 x\}} = \frac{\exp\{\beta_0\}\exp\{\beta_1 x\}\exp\{\beta_1\}}{\exp\{\beta_0\}\exp\{\beta_1 x\}} = \exp\{\beta_1\}
+\end{equation}\]</span>
+<p>Thus, the median of <span class="math inline">\(y\)</span> for <span class="math inline">\(x+1\)</span> is <span class="math inline">\(\exp\{\beta_1\}\)</span> times the median of <span class="math inline">\(y\)</span> for <span class="math inline">\(x\)</span>.</p>
+<p><em>Interpretation: When <span class="math inline">\(x\)</span> increases by one unit, the median of <span class="math inline">\(y\)</span> is expected to multiply by a factor of <span class="math inline">\(\exp\{\beta_1\}\)</span>.</em></p>
+</div>
+</div>
+<div id="log-transformation-on-the-predictor-variable" class="section level3">
+<h3><span class="header-section-number">5.5.2</span> Log-transformation on the predictor variable</h3>
+<p>Suppose we fit a linear regression model with <span class="math inline">\(\log(x)\)</span>, the log-transformed <span class="math inline">\(x\)</span>, as the predictor variable. Under this model, we assume a linear relationship exists between <span class="math inline">\(\log(x)\)</span> and <span class="math inline">\(y\)</span>, such that <span class="math inline">\(y \sim N(\beta_0 + \beta_1 \log(x), \sigma^2)\)</span> for some <span class="math inline">\(\beta_0\)</span>, <span class="math inline">\(\beta_1\)</span> and <span class="math inline">\(\sigma^2\)</span>. In other words, we can model the relationship between <span class="math inline">\(\log(x)\)</span> and <span class="math inline">\(y\)</span> using the model in ().</p>
+<span class="math display">\[\begin{equation}
+\label{log-x}
+y = \beta_0 + \beta_1 \log(x)
+\end{equation}\]</span>
+<p><strong>Intercept</strong>: The intercept is the mean of <span class="math inline">\(y\)</span> when <span class="math inline">\(\log(x) = 0\)</span>, i.e. <span class="math inline">\(x = 1\)</span>.</p>
+<p><em>Interpretation: When <span class="math inline">\(x = 1\)</span> <span class="math inline">\((\log(x) = 0)\)</span>, the mean of <span class="math inline">\(y\)</span> is expected to be <span class="math inline">\(\beta_0\)</span>.</em></p>
+<p><strong>Slope</strong>: The slope is interpreted in terms of the change in the mean of <span class="math inline">\(y\)</span> when <span class="math inline">\(x\)</span> is mutliplied by a factor of <span class="math inline">\(C\)</span>, since <span class="math inline">\(\log(Cx) = \log(x) + \log(C)\)</span>. Thus, when <span class="math inline">\(x\)</span> is multiplied by a factor of <span class="math inline">\(C\)</span>, the change in the mean of <span class="math inline">\(y\)</span> is</p>
+<span class="math display">\[\begin{equation}
+\begin{aligned}
+[\beta_0 + \beta_1 \log(Cx)] - [\beta_0 + \beta_1 \log(x)] &amp;= \beta_1 [\log(Cx) - \log(x)] \\[10pt] 
+&amp; = \beta_1[\log(C) + \log(x) - \log(x)] \\[10pt] 
+&amp; = \beta_1 \log(C)
+\end{aligned}
+\end{equation}\]</span>
+<p>Thus the mean of <span class="math inline">\(y\)</span> changes by <span class="math inline">\(\beta_1 \log(C)\)</span> units.</p>
+<p><em>Interpretation: When <span class="math inline">\(x\)</span> is multiplied by a factor of <span class="math inline">\(C\)</span>, the mean of <span class="math inline">\(y\)</span> is expected to change by <span class="math inline">\(\beta_1 \log(C)\)</span> units. For example, if <span class="math inline">\(x\)</span> is doubled, then the mean of <span class="math inline">\(y\)</span> is expected to change by <span class="math inline">\(\beta_1 \log(2)\)</span> units.</em></p>
+</div>
+<div id="log-transformation-on-the-the-response-and-predictor-variable" class="section level3">
+<h3><span class="header-section-number">5.5.3</span> Log-transformation on the the response and predictor variable</h3>
+<p>Suppose we fit a linear regression model with <span class="math inline">\(\log(x)\)</span>, the log-transformed <span class="math inline">\(x\)</span>, as the predictor variable and <span class="math inline">\(\log(y)\)</span>, the log-transformed <span class="math inline">\(y\)</span>, as the response variable. Under this model, we assume a linear relationship exists between <span class="math inline">\(\log(x)\)</span> and <span class="math inline">\(\log(y)\)</span>, such that <span class="math inline">\(\log(y) \sim N(\beta_0 + \beta_1 \log(x), \sigma^2)\)</span> for some <span class="math inline">\(\beta_0\)</span>, <span class="math inline">\(\beta_1\)</span> and <span class="math inline">\(\sigma^2\)</span>. In other words, we can model the relationship between <span class="math inline">\(\log(x)\)</span> and <span class="math inline">\(\log(y)\)</span> using the model in ().</p>
+<span class="math display">\[\begin{equation}
+\label{log-x-y}
+\log(y) = \beta_0 + \beta_1 \log(x)
+\end{equation}\]</span>
+<p>Because the response variable is log-transformed, the interpretations on the original scale will be in terms of the median of <span class="math inline">\(y\)</span> (see the section on the log-transformed response variable for more detail).</p>
+<p><strong>Intercept</strong>: The intercept is the mean of <span class="math inline">\(y\)</span> when <span class="math inline">\(\log(x) = 0\)</span>, i.e. <span class="math inline">\(x = 1\)</span>. Therefore, when <span class="math inline">\(\log(x) = 0\)</span>,</p>
+<span class="math display">\[\begin{equation}
+\begin{aligned}
+&amp;\log(y) = \beta_0 + \beta_1 \times 0 = \beta_0 \\[10pt]
+\Rightarrow &amp;y = \exp\{\beta_0\}
+\end{aligned}
+\end{equation}\]</span>
+<p><em>Interpretation: When <span class="math inline">\(x = 1\)</span> <span class="math inline">\((\log(x) = 0)\)</span>, the median of <span class="math inline">\(y\)</span> is expected to be <span class="math inline">\(\exp\{\beta_0\}\)</span>.</em></p>
+<p><strong>Slope</strong>: The slope is interpreted in terms of the change in the median <span class="math inline">\(y\)</span> when <span class="math inline">\(x\)</span> is mutliplied by a factor of <span class="math inline">\(C\)</span>, since <span class="math inline">\(\log(Cx) = \log(x) + \log(C)\)</span>. Thus, when <span class="math inline">\(x\)</span> is multiplied by a factor of <span class="math inline">\(C\)</span>, the change in the median of <span class="math inline">\(y\)</span> is</p>
+<span class="math display">\[\begin{equation}
+\begin{aligned}
+\exp\{[\beta_0 + \beta_1 \log(Cx)] - [\beta_0 + \beta_1 \log(x)]\} &amp;= 
+\exp\{\beta_1 [\log(Cx) - \log(x)]\} \\[10pt] 
+&amp; = \exp\{\beta_1[\log(C) + \log(x) - \log(x)]\} \\[10pt] 
+&amp; = \exp\{\beta_1 \log(C)\} = C^{\beta_1}
+\end{aligned}
+\end{equation}\]</span>
+<p>Thus, the median of <span class="math inline">\(y\)</span> for <span class="math inline">\(Cx\)</span> is <span class="math inline">\(C^{\beta_1}\)</span> times the median of <span class="math inline">\(y\)</span> for <span class="math inline">\(x\)</span>.</p>
+<p><em>Interpretation: When <span class="math inline">\(x\)</span> is multiplied by a factor of <span class="math inline">\(C\)</span>, the median of <span class="math inline">\(y\)</span> is expected to multiple by a factor of <span class="math inline">\(C^{\beta_1}\)</span>. For example, if <span class="math inline">\(x\)</span> is doubled, then the median of <span class="math inline">\(y\)</span> is expected to multiply by <span class="math inline">\(2^{\beta_1}\)</span>.</em></p>
+</div>
+</div>
+            </section>
+
+          </div>
+        </div>
+      </div>
+<a href="5-4-matrix-form-of-linear-regression.html" class="navigation navigation-prev " aria-label="Previous page"><i class="fa fa-angle-left"></i></a>
+<a href="5-6-details-about-model-diagnostics.html" class="navigation navigation-next " aria-label="Next page"><i class="fa fa-angle-right"></i></a>
+    </div>
+  </div>
+<script src="libs/gitbook-2.6.7/js/app.min.js"></script>
+<script src="libs/gitbook-2.6.7/js/lunr.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-search.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-sharing.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-fontsettings.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-bookdown.js"></script>
+<script src="libs/gitbook-2.6.7/js/jquery.highlight.js"></script>
+<script>
+gitbook.require(["gitbook"], function(gitbook) {
+gitbook.start({
+"sharing": {
+"github": false,
+"facebook": true,
+"twitter": true,
+"google": false,
+"linkedin": false,
+"weibo": false,
+"instapaper": false,
+"vk": false,
+"all": ["facebook", "google", "twitter", "linkedin", "weibo", "instapaper"]
+},
+"fontsettings": {
+"theme": "white",
+"family": "sans",
+"size": 2
+},
+"edit": {
+"link": null,
+"text": null
+},
+"history": {
+"link": null,
+"text": null
+},
+"download": ["intro-regression.pdf", "intro-regression.epub"],
+"toc": {
+"collapse": "section",
+"toc_depth": 1,
+"scroll_highlight": true
+}
+});
+});
+</script>
+
+<!-- dynamically load mathjax for compatibility with self-contained -->
+<script>
+  (function () {
+    var script = document.createElement("script");
+    script.type = "text/javascript";
+    var src = "";
+    if (src === "" || src === "true") src = "https://mathjax.rstudio.com/latest/MathJax.js?config=TeX-MML-AM_CHTML";
+    if (location.protocol !== "file:" && /^https?:/.test(src))
+      src = src.replace(/^https?:/, '');
+    script.src = src;
+    document.getElementsByTagName("head")[0].appendChild(script);
+  })();
+</script>
+</body>
+
+</html>

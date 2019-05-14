@@ -1,4 +1,4 @@
-## ANOVA {#anova}
+## ANOVA
 
 ```{r echo = F}
 knitr::opts_chunk$set(
@@ -25,7 +25,7 @@ library(broom)
 In today's lab, we will analyze the `diamonds` dataset from the ggplot2 package. Type `?diamonds` in the console to see a dictionary of the variables in the data set. This analysis will focus on the relationship between a diamond's carat weight and its color. Before starting the exercises, take a moment to read more about the diamond attributes on the Gemological Institute of America webpage: [https://www.gia.edu/diamond-quality-factor](https://www.gia.edu/diamond-quality-factor).
 
 
-## Exercises 
+### Exercises 
 
 The diamonds dataset contains the price and other characteristics for over 50,000 diamonds price from $326 to $18823. In this lab, we will analyze the subset of diamonds that are priced $1200 or less. 
 

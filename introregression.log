@@ -1,4 +1,4 @@
-This is XeTeX, Version 3.14159265-2.6-0.99999 (TeX Live 2018) (preloaded format=xelatex 2018.4.16)  14 MAY 2019 14:39
+This is XeTeX, Version 3.14159265-2.6-0.99999 (TeX Live 2018) (preloaded format=xelatex 2018.4.16)  14 MAY 2019 15:09
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -1071,12 +1071,12 @@ Chapter 12.
 (./introregression.bbl [33] [34
 
 ])
-Package atveryend Info: Empty hook `BeforeClearDocument' on input line 580.
+Package atveryend Info: Empty hook `BeforeClearDocument' on input line 582.
 [35]
-Package atveryend Info: Empty hook `AfterLastShipout' on input line 580.
+Package atveryend Info: Empty hook `AfterLastShipout' on input line 582.
 (./introregression.aux)
-Package atveryend Info: Empty hook `AtVeryEndDocument' on input line 580.
-Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 580.
+Package atveryend Info: Empty hook `AtVeryEndDocument' on input line 582.
+Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 582.
 Package rerunfilecheck Info: File `introregression.out' has not changed.
 (rerunfilecheck)             Checksum: 343FEFB1A809C6EE5A2C2DDDB4563E4F.
 

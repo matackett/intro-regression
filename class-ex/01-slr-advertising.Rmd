@@ -34,13 +34,13 @@ We will analyze the advertising and sales data for 200 markets. The variables we
 
 We'll begin the analysis by getting quick view of the data: 
 
-```{r glimpse-data}
+```{r}
 glimpse(advertising)
 ```
 
 Next, we can calculate summary statistics for each of the variables in the data set. 
 
-```{r summary-stats}
+```{r}
 advertising %>% skim()
 ```
 
@@ -52,7 +52,7 @@ advertising %>% skim()
 
 We are most interested in understanding how advertising spending affect sales. One way to quantify the relationship between the variables is by calculating the correlation matrix. 
 
-```{r correlation}
+```{r}
 advertising %>% 
   cor()
 ```

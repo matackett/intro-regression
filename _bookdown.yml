@@ -1,4 +1,8 @@
-book_filename: "introregression"
+book_filename: "intro-regression.md"
 chapter_name: " "
-output_dir: _book
+new_session: true
 delete_merged_file: true
+output_dir: "_book"
+
+
+

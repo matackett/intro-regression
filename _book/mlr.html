@@ -5,19 +5,19 @@
 
   <meta charset="UTF-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
-  <title>Chapter 8 Multiple Linear Regression | Intro to Regression Analysis</title>
+  <title> 5 Multiple Linear Regression | Intro to Regression Analysis</title>
   <meta name="description" content="This document contains lab assignments and other materials for an intermediate-level regression course.">
   <meta name="generator" content="bookdown  and GitBook 2.6.7">
 
-  <meta property="og:title" content="Chapter 8 Multiple Linear Regression | Intro to Regression Analysis" />
+  <meta property="og:title" content=" 5 Multiple Linear Regression | Intro to Regression Analysis" />
   <meta property="og:type" content="book" />
-  <meta property="og:url" content="https://www.introregression.org/" />
+  
   
   <meta property="og:description" content="This document contains lab assignments and other materials for an intermediate-level regression course." />
-  <meta name="github-repo" content="matackett/intro-regression" />
+  
 
   <meta name="twitter:card" content="summary" />
-  <meta name="twitter:title" content="Chapter 8 Multiple Linear Regression | Intro to Regression Analysis" />
+  <meta name="twitter:title" content=" 5 Multiple Linear Regression | Intro to Regression Analysis" />
   
   <meta name="twitter:description" content="This document contains lab assignments and other materials for an intermediate-level regression course." />
   
@@ -25,7 +25,7 @@
 <meta name="author" content="Maria Tackett">
 
 
-<meta name="date" content="2019-05-13">
+<meta name="date" content="2019-05-14">
 
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <meta name="apple-mobile-web-app-capable" content="yes">
@@ -33,7 +33,7 @@
   
   
 <link rel="prev" href="anova.html">
-<link rel="next" href="mlr2.html">
+<link rel="next" href="select.html">
 <script src="libs/jquery-2.2.3/jquery.min.js"></script>
 <link href="libs/gitbook-2.6.7/css/style.css" rel="stylesheet" />
 <link href="libs/gitbook-2.6.7/css/plugin-table.css" rel="stylesheet" />
@@ -101,101 +101,170 @@ code > span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Inf
       <nav role="navigation">
 
 <ul class="summary">
-<li><a href="./">Materials for an Intro Regression Course</a></li>
+<li><a href="./">Broadening Your Statistical Horizons</a></li>
 
 <li class="divider"></li>
-<li class="chapter" data-level="1" data-path="index.html"><a href="index.html"><i class="fa fa-check"></i><b>1</b> Introduction</a></li>
-<li class="chapter" data-level="2" data-path="intro.html"><a href="intro.html"><i class="fa fa-check"></i><b>2</b> Introduction</a></li>
-<li class="chapter" data-level="3" data-path="getstarted.html"><a href="getstarted.html"><i class="fa fa-check"></i><b>3</b> Getting Started</a></li>
-<li class="chapter" data-level="4" data-path="test-child.html"><a href="test-child.html"><i class="fa fa-check"></i><b>4</b> Test Child</a></li>
-<li class="chapter" data-level="5" data-path="intro-to-r.html"><a href="intro-to-r.html"><i class="fa fa-check"></i><b>5</b> Intro to R</a><ul>
-<li class="chapter" data-level="5.1" data-path="intro-to-r.html"><a href="intro-to-r.html#introduction-1"><i class="fa fa-check"></i><b>5.1</b> Introduction</a><ul>
-<li class="chapter" data-level="5.1.1" data-path="intro-to-r.html"><a href="intro-to-r.html#topics-covered-in-this-lab"><i class="fa fa-check"></i><b>5.1.1</b> Topics covered in this lab:</a></li>
+<li class="chapter" data-level="1" data-path="index.html"><a href="index.html"><i class="fa fa-check"></i><b>1</b> Beginning of the Book</a></li>
+<li class="chapter" data-level="2" data-path="getstarted.html"><a href="getstarted.html"><i class="fa fa-check"></i><b>2</b> Getting Started</a></li>
+<li class="chapter" data-level="3" data-path="slr.html"><a href="slr.html"><i class="fa fa-check"></i><b>3</b> Simple Linear Regression</a><ul>
+<li class="chapter" data-level="3.1" data-path="slr.html"><a href="slr.html#computing-college-admissions"><i class="fa fa-check"></i><b>3.1</b> Computing: College Admissions</a><ul>
+<li class="chapter" data-level="3.1.1" data-path="slr.html"><a href="slr.html#packages"><i class="fa fa-check"></i><b>3.1.1</b> Packages</a></li>
+<li class="chapter" data-level="3.1.2" data-path="slr.html"><a href="slr.html#data"><i class="fa fa-check"></i><b>3.1.2</b> Data</a></li>
+<li class="chapter" data-level="3.1.3" data-path="slr.html"><a href="slr.html#exercises"><i class="fa fa-check"></i><b>3.1.3</b> Exercises</a></li>
 </ul></li>
-<li class="chapter" data-level="5.2" data-path="intro-to-r.html"><a href="intro-to-r.html#packages"><i class="fa fa-check"></i><b>5.2</b> Packages</a></li>
-<li class="chapter" data-level="5.3" data-path="intro-to-r.html"><a href="intro-to-r.html#warm-up"><i class="fa fa-check"></i><b>5.3</b> Warm up</a></li>
-<li class="chapter" data-level="5.4" data-path="intro-to-r.html"><a href="intro-to-r.html#project-name"><i class="fa fa-check"></i><b>5.4</b> Project name:</a><ul>
-<li class="chapter" data-level="5.4.1" data-path="intro-to-r.html"><a href="intro-to-r.html#yaml"><i class="fa fa-check"></i><b>5.4.1</b> YAML:</a></li>
-<li class="chapter" data-level="5.4.2" data-path="intro-to-r.html"><a href="intro-to-r.html#commiting-changes"><i class="fa fa-check"></i><b>5.4.2</b> Commiting changes:</a></li>
-<li class="chapter" data-level="5.4.3" data-path="intro-to-r.html"><a href="intro-to-r.html#pushing-changes"><i class="fa fa-check"></i><b>5.4.3</b> Pushing changes:</a></li>
-<li class="chapter" data-level="5.4.4" data-path="intro-to-r.html"><a href="intro-to-r.html#data"><i class="fa fa-check"></i><b>5.4.4</b> Data</a></li>
+<li class="chapter" data-level="3.2" data-path="slr.html"><a href="slr.html#in-class-exercise-advertising-analysis"><i class="fa fa-check"></i><b>3.2</b> In-Class Exercise: Advertising Analysis</a><ul>
+<li class="chapter" data-level="3.2.1" data-path="slr.html"><a href="slr.html#data-and-packages"><i class="fa fa-check"></i><b>3.2.1</b> Data and packages</a></li>
+<li class="chapter" data-level="3.2.2" data-path="slr.html"><a href="slr.html#analysis"><i class="fa fa-check"></i><b>3.2.2</b> Analysis</a></li>
 </ul></li>
-<li class="chapter" data-level="5.5" data-path="intro-to-r.html"><a href="intro-to-r.html#exercises"><i class="fa fa-check"></i><b>5.5</b> Exercises</a><ul>
-<li class="chapter" data-level="5.5.1" data-path="intro-to-r.html"><a href="intro-to-r.html#visualizing-your-data"><i class="fa fa-check"></i><b>5.5.1</b> Visualizing Your Data</a></li>
+<li class="chapter" data-level="3.3" data-path="slr.html"><a href="slr.html#in-class-exercise-beer-data-analysis"><i class="fa fa-check"></i><b>3.3</b> In-Class Exercise: Beer Data Analysis</a></li>
 </ul></li>
-<li class="chapter" data-level="5.6" data-path="intro-to-r.html"><a href="intro-to-r.html#simple-linear-regression"><i class="fa fa-check"></i><b>5.6</b> Simple Linear Regression</a></li>
+<li class="chapter" data-level="4" data-path="anova.html"><a href="anova.html"><i class="fa fa-check"></i><b>4</b> Analysis of Variance</a></li>
+<li class="chapter" data-level="5" data-path="mlr.html"><a href="mlr.html"><i class="fa fa-check"></i><b>5</b> Multiple Linear Regression</a></li>
+<li class="chapter" data-level="6" data-path="select.html"><a href="select.html"><i class="fa fa-check"></i><b>6</b> Model Selection</a></li>
+<li class="chapter" data-level="7" data-path="logistic.html"><a href="logistic.html"><i class="fa fa-check"></i><b>7</b> Logistic Regression</a></li>
+<li class="chapter" data-level="8" data-path="multinom-logistic.html"><a href="multinom-logistic.html"><i class="fa fa-check"></i><b>8</b> Multinomial Logistic Regression</a></li>
+<li class="chapter" data-level="9" data-path="special.html"><a href="special.html"><i class="fa fa-check"></i><b>9</b> Special Topics</a></li>
+<li class="part"><span><b>Computing Assignments</b></span></li>
+<li class="chapter" data-level="10" data-path="intro-to-r.html"><a href="intro-to-r.html"><i class="fa fa-check"></i><b>10</b> Intro to R</a><ul>
+<li class="chapter" data-level="10.1" data-path="intro-to-r.html"><a href="intro-to-r.html#introduction"><i class="fa fa-check"></i><b>10.1</b> Introduction</a><ul>
+<li class="chapter" data-level="10.1.1" data-path="intro-to-r.html"><a href="intro-to-r.html#topics-covered-in-this-lab"><i class="fa fa-check"></i><b>10.1.1</b> Topics covered in this lab:</a></li>
 </ul></li>
-<li class="chapter" data-level="6" data-path="slr.html"><a href="slr.html"><i class="fa fa-check"></i><b>6</b> Simple Linear Regression</a><ul>
-<li class="chapter" data-level="6.0.1" data-path="slr.html"><a href="slr.html#packages-1"><i class="fa fa-check"></i><b>6.0.1</b> Packages</a></li>
-<li class="chapter" data-level="6.0.2" data-path="slr.html"><a href="slr.html#project-name-1"><i class="fa fa-check"></i><b>6.0.2</b> Project name:</a></li>
-<li class="chapter" data-level="6.1" data-path="slr.html"><a href="slr.html#warm-up-1"><i class="fa fa-check"></i><b>6.1</b> Warm up</a><ul>
-<li class="chapter" data-level="6.1.1" data-path="slr.html"><a href="slr.html#yaml-1"><i class="fa fa-check"></i><b>6.1.1</b> YAML:</a></li>
-<li class="chapter" data-level="6.1.2" data-path="slr.html"><a href="slr.html#commiting-and-pushing-changes"><i class="fa fa-check"></i><b>6.1.2</b> Commiting and pushing changes:</a></li>
-<li class="chapter" data-level="6.1.3" data-path="slr.html"><a href="slr.html#pulling-changes"><i class="fa fa-check"></i><b>6.1.3</b> Pulling changes:</a></li>
-<li class="chapter" data-level="6.1.4" data-path="slr.html"><a href="slr.html#data-1"><i class="fa fa-check"></i><b>6.1.4</b> Data</a></li>
+<li class="chapter" data-level="10.2" data-path="intro-to-r.html"><a href="intro-to-r.html#packages-1"><i class="fa fa-check"></i><b>10.2</b> Packages</a></li>
+<li class="chapter" data-level="10.3" data-path="intro-to-r.html"><a href="intro-to-r.html#warm-up"><i class="fa fa-check"></i><b>10.3</b> Warm up</a></li>
+<li class="chapter" data-level="10.4" data-path="intro-to-r.html"><a href="intro-to-r.html#project-name"><i class="fa fa-check"></i><b>10.4</b> Project name:</a><ul>
+<li class="chapter" data-level="10.4.1" data-path="intro-to-r.html"><a href="intro-to-r.html#yaml"><i class="fa fa-check"></i><b>10.4.1</b> YAML:</a></li>
+<li class="chapter" data-level="10.4.2" data-path="intro-to-r.html"><a href="intro-to-r.html#commiting-changes"><i class="fa fa-check"></i><b>10.4.2</b> Commiting changes:</a></li>
+<li class="chapter" data-level="10.4.3" data-path="intro-to-r.html"><a href="intro-to-r.html#pushing-changes"><i class="fa fa-check"></i><b>10.4.3</b> Pushing changes:</a></li>
+<li class="chapter" data-level="10.4.4" data-path="intro-to-r.html"><a href="intro-to-r.html#data-1"><i class="fa fa-check"></i><b>10.4.4</b> Data</a></li>
 </ul></li>
-<li class="chapter" data-level="6.2" data-path="slr.html"><a href="slr.html#exercises-1"><i class="fa fa-check"></i><b>6.2</b> Exercises</a><ul>
-<li class="chapter" data-level="6.2.1" data-path="slr.html"><a href="slr.html#exploratory-data-analysis"><i class="fa fa-check"></i><b>6.2.1</b> Exploratory Data Analysis</a></li>
-<li class="chapter" data-level="6.2.2" data-path="slr.html"><a href="slr.html#simple-linear-regression-1"><i class="fa fa-check"></i><b>6.2.2</b> Simple Linear Regression</a></li>
+<li class="chapter" data-level="10.5" data-path="intro-to-r.html"><a href="intro-to-r.html#exercises-1"><i class="fa fa-check"></i><b>10.5</b> Exercises</a><ul>
+<li class="chapter" data-level="10.5.1" data-path="intro-to-r.html"><a href="intro-to-r.html#visualizing-your-data"><i class="fa fa-check"></i><b>10.5.1</b> Visualizing Your Data</a></li>
 </ul></li>
+<li class="chapter" data-level="10.6" data-path="intro-to-r.html"><a href="intro-to-r.html#simple-linear-regression-1"><i class="fa fa-check"></i><b>10.6</b> Simple Linear Regression</a></li>
+<li class="chapter" data-level="10.7" data-path="intro-to-r.html"><a href="intro-to-r.html#computing-college-admissions-1"><i class="fa fa-check"></i><b>10.7</b> Computing: College Admissions</a><ul>
+<li class="chapter" data-level="10.7.1" data-path="intro-to-r.html"><a href="intro-to-r.html#packages-2"><i class="fa fa-check"></i><b>10.7.1</b> Packages</a></li>
+<li class="chapter" data-level="10.7.2" data-path="intro-to-r.html"><a href="intro-to-r.html#data-2"><i class="fa fa-check"></i><b>10.7.2</b> Data</a></li>
+<li class="chapter" data-level="10.7.3" data-path="intro-to-r.html"><a href="intro-to-r.html#exercises-2"><i class="fa fa-check"></i><b>10.7.3</b> Exercises</a></li>
 </ul></li>
-<li class="chapter" data-level="7" data-path="anova.html"><a href="anova.html"><i class="fa fa-check"></i><b>7</b> ANOVA</a><ul>
-<li class="chapter" data-level="7.0.1" data-path="anova.html"><a href="anova.html#packages-2"><i class="fa fa-check"></i><b>7.0.1</b> Packages</a></li>
-<li class="chapter" data-level="7.0.2" data-path="anova.html"><a href="anova.html#data-2"><i class="fa fa-check"></i><b>7.0.2</b> Data</a></li>
-<li class="chapter" data-level="7.1" data-path="anova.html"><a href="anova.html#exercises-2"><i class="fa fa-check"></i><b>7.1</b> Exercises</a></li>
+<li class="chapter" data-level="10.8" data-path="anova.html"><a href="anova.html#anova"><i class="fa fa-check"></i><b>10.8</b> ANOVA</a><ul>
+<li class="chapter" data-level="10.8.1" data-path="intro-to-r.html"><a href="intro-to-r.html#packages-3"><i class="fa fa-check"></i><b>10.8.1</b> Packages</a></li>
+<li class="chapter" data-level="10.8.2" data-path="intro-to-r.html"><a href="intro-to-r.html#data-3"><i class="fa fa-check"></i><b>10.8.2</b> Data</a></li>
 </ul></li>
-<li class="chapter" data-level="8" data-path="mlr.html"><a href="mlr.html"><i class="fa fa-check"></i><b>8</b> Multiple Linear Regression</a><ul>
-<li class="chapter" data-level="8.0.1" data-path="mlr.html"><a href="mlr.html#packages-3"><i class="fa fa-check"></i><b>8.0.1</b> Packages</a></li>
-<li class="chapter" data-level="8.0.2" data-path="mlr.html"><a href="mlr.html#data-3"><i class="fa fa-check"></i><b>8.0.2</b> Data</a></li>
-<li class="chapter" data-level="8.1" data-path="mlr.html"><a href="mlr.html#exercises-3"><i class="fa fa-check"></i><b>8.1</b> Exercises</a><ul>
-<li class="chapter" data-level="8.1.1" data-path="mlr.html"><a href="mlr.html#acknowledgement"><i class="fa fa-check"></i><b>8.1.1</b> Acknowledgement</a></li>
+<li class="chapter" data-level="10.9" data-path="intro-to-r.html"><a href="intro-to-r.html#exercises-3"><i class="fa fa-check"></i><b>10.9</b> Exercises</a></li>
+<li class="chapter" data-level="10.10" data-path="intro-to-r.html"><a href="intro-to-r.html#multiple-linear-regression"><i class="fa fa-check"></i><b>10.10</b> Multiple Linear Regression</a><ul>
+<li class="chapter" data-level="10.10.1" data-path="intro-to-r.html"><a href="intro-to-r.html#packages-4"><i class="fa fa-check"></i><b>10.10.1</b> Packages</a></li>
+<li class="chapter" data-level="10.10.2" data-path="intro-to-r.html"><a href="intro-to-r.html#data-4"><i class="fa fa-check"></i><b>10.10.2</b> Data</a></li>
 </ul></li>
+<li class="chapter" data-level="10.11" data-path="intro-to-r.html"><a href="intro-to-r.html#exercises-4"><i class="fa fa-check"></i><b>10.11</b> Exercises</a><ul>
+<li class="chapter" data-level="10.11.1" data-path="intro-to-r.html"><a href="intro-to-r.html#acknowledgement"><i class="fa fa-check"></i><b>10.11.1</b> Acknowledgement</a></li>
 </ul></li>
-<li class="chapter" data-level="9" data-path="mlr2.html"><a href="mlr2.html"><i class="fa fa-check"></i><b>9</b> Data Wrangling &amp; Multiple Linear Regression</a><ul>
-<li class="chapter" data-level="9.0.1" data-path="mlr2.html"><a href="mlr2.html#packages-4"><i class="fa fa-check"></i><b>9.0.1</b> Packages</a></li>
-<li class="chapter" data-level="9.0.2" data-path="mlr2.html"><a href="mlr2.html#data-4"><i class="fa fa-check"></i><b>9.0.2</b> Data</a></li>
-<li class="chapter" data-level="9.1" data-path="mlr2.html"><a href="mlr2.html#exercises-4"><i class="fa fa-check"></i><b>9.1</b> Exercises</a><ul>
-<li class="chapter" data-level="9.1.1" data-path="mlr2.html"><a href="mlr2.html#data-wrangling"><i class="fa fa-check"></i><b>9.1.1</b> Data wrangling</a></li>
-<li class="chapter" data-level="9.1.2" data-path="mlr2.html"><a href="mlr2.html#regression-analysis"><i class="fa fa-check"></i><b>9.1.2</b> Regression Analysis</a></li>
-<li class="chapter" data-level="9.1.3" data-path="mlr2.html"><a href="mlr2.html#acknowledgement-1"><i class="fa fa-check"></i><b>9.1.3</b> Acknowledgement</a></li>
+<li class="chapter" data-level="10.12" data-path="intro-to-r.html"><a href="intro-to-r.html#data-wrangling-multiple-linear-regression"><i class="fa fa-check"></i><b>10.12</b> Data Wrangling &amp; Multiple Linear Regression</a><ul>
+<li class="chapter" data-level="10.12.1" data-path="intro-to-r.html"><a href="intro-to-r.html#packages-5"><i class="fa fa-check"></i><b>10.12.1</b> Packages</a></li>
+<li class="chapter" data-level="10.12.2" data-path="intro-to-r.html"><a href="intro-to-r.html#data-5"><i class="fa fa-check"></i><b>10.12.2</b> Data</a></li>
 </ul></li>
+<li class="chapter" data-level="10.13" data-path="intro-to-r.html"><a href="intro-to-r.html#exercises-5"><i class="fa fa-check"></i><b>10.13</b> Exercises</a><ul>
+<li class="chapter" data-level="10.13.1" data-path="intro-to-r.html"><a href="intro-to-r.html#data-wrangling"><i class="fa fa-check"></i><b>10.13.1</b> Data wrangling</a></li>
+<li class="chapter" data-level="10.13.2" data-path="intro-to-r.html"><a href="intro-to-r.html#regression-analysis"><i class="fa fa-check"></i><b>10.13.2</b> Regression Analysis</a></li>
+<li class="chapter" data-level="10.13.3" data-path="intro-to-r.html"><a href="intro-to-r.html#acknowledgement-1"><i class="fa fa-check"></i><b>10.13.3</b> Acknowledgement</a></li>
 </ul></li>
-<li class="chapter" data-level="10" data-path="selection.html"><a href="selection.html"><i class="fa fa-check"></i><b>10</b> Model Selection</a><ul>
-<li class="chapter" data-level="10.0.1" data-path="selection.html"><a href="selection.html#packages-5"><i class="fa fa-check"></i><b>10.0.1</b> Packages</a></li>
-<li class="chapter" data-level="10.0.2" data-path="selection.html"><a href="selection.html#data-5"><i class="fa fa-check"></i><b>10.0.2</b> Data</a></li>
-<li class="chapter" data-level="10.1" data-path="selection.html"><a href="selection.html#exercises-5"><i class="fa fa-check"></i><b>10.1</b> Exercises</a><ul>
-<li class="chapter" data-level="10.1.1" data-path="selection.html"><a href="selection.html#part-i-1"><i class="fa fa-check"></i><b>10.1.1</b> Part I</a></li>
-<li class="chapter" data-level="10.1.2" data-path="selection.html"><a href="selection.html#part-ii-1"><i class="fa fa-check"></i><b>10.1.2</b> Part II</a></li>
-<li class="chapter" data-level="10.1.3" data-path="selection.html"><a href="selection.html#acknowledgements"><i class="fa fa-check"></i><b>10.1.3</b> Acknowledgements</a></li>
+<li class="chapter" data-level="10.14" data-path="intro-to-r.html"><a href="intro-to-r.html#model-selection"><i class="fa fa-check"></i><b>10.14</b> Model Selection</a><ul>
+<li class="chapter" data-level="10.14.1" data-path="intro-to-r.html"><a href="intro-to-r.html#packages-6"><i class="fa fa-check"></i><b>10.14.1</b> Packages</a></li>
+<li class="chapter" data-level="10.14.2" data-path="intro-to-r.html"><a href="intro-to-r.html#data-6"><i class="fa fa-check"></i><b>10.14.2</b> Data</a></li>
 </ul></li>
+<li class="chapter" data-level="10.15" data-path="intro-to-r.html"><a href="intro-to-r.html#exercises-6"><i class="fa fa-check"></i><b>10.15</b> Exercises</a><ul>
+<li class="chapter" data-level="10.15.1" data-path="intro-to-r.html"><a href="intro-to-r.html#part-i-1"><i class="fa fa-check"></i><b>10.15.1</b> Part I</a></li>
+<li class="chapter" data-level="10.15.2" data-path="intro-to-r.html"><a href="intro-to-r.html#part-ii-1"><i class="fa fa-check"></i><b>10.15.2</b> Part II</a></li>
+<li class="chapter" data-level="10.15.3" data-path="intro-to-r.html"><a href="intro-to-r.html#acknowledgements"><i class="fa fa-check"></i><b>10.15.3</b> Acknowledgements</a></li>
 </ul></li>
-<li class="chapter" data-level="11" data-path="logistic.html"><a href="logistic.html"><i class="fa fa-check"></i><b>11</b> Logistic Regression</a><ul>
-<li class="chapter" data-level="11.0.1" data-path="logistic.html"><a href="logistic.html#packages-6"><i class="fa fa-check"></i><b>11.0.1</b> Packages</a></li>
-<li class="chapter" data-level="11.0.2" data-path="logistic.html"><a href="logistic.html#data-6"><i class="fa fa-check"></i><b>11.0.2</b> Data</a></li>
-<li class="chapter" data-level="11.1" data-path="logistic.html"><a href="logistic.html#exercises-6"><i class="fa fa-check"></i><b>11.1</b> Exercises</a><ul>
-<li class="chapter" data-level="11.1.1" data-path="logistic.html"><a href="logistic.html#exploratory-data-analysis-1"><i class="fa fa-check"></i><b>11.1.1</b> Exploratory Data Analysis</a></li>
-<li class="chapter" data-level="11.1.2" data-path="logistic.html"><a href="logistic.html#part-ii-logistic-regression-model"><i class="fa fa-check"></i><b>11.1.2</b> Part II: Logistic Regression Model</a></li>
-<li class="chapter" data-level="11.1.3" data-path="logistic.html"><a href="logistic.html#part-iii-model-assessment"><i class="fa fa-check"></i><b>11.1.3</b> Part III: Model Assessment</a></li>
-<li class="chapter" data-level="11.1.4" data-path="logistic.html"><a href="logistic.html#part-iv-prediction"><i class="fa fa-check"></i><b>11.1.4</b> Part IV: Prediction</a></li>
+<li class="chapter" data-level="10.16" data-path="intro-to-r.html"><a href="intro-to-r.html#logistic-regression"><i class="fa fa-check"></i><b>10.16</b> Logistic Regression</a><ul>
+<li class="chapter" data-level="10.16.1" data-path="intro-to-r.html"><a href="intro-to-r.html#packages-7"><i class="fa fa-check"></i><b>10.16.1</b> Packages</a></li>
+<li class="chapter" data-level="10.16.2" data-path="intro-to-r.html"><a href="intro-to-r.html#data-7"><i class="fa fa-check"></i><b>10.16.2</b> Data</a></li>
 </ul></li>
+<li class="chapter" data-level="10.17" data-path="intro-to-r.html"><a href="intro-to-r.html#exercises-7"><i class="fa fa-check"></i><b>10.17</b> Exercises</a><ul>
+<li class="chapter" data-level="10.17.1" data-path="intro-to-r.html"><a href="intro-to-r.html#exploratory-data-analysis-2"><i class="fa fa-check"></i><b>10.17.1</b> Exploratory Data Analysis</a></li>
+<li class="chapter" data-level="10.17.2" data-path="intro-to-r.html"><a href="intro-to-r.html#part-ii-logistic-regression-model"><i class="fa fa-check"></i><b>10.17.2</b> Part II: Logistic Regression Model</a></li>
+<li class="chapter" data-level="10.17.3" data-path="intro-to-r.html"><a href="intro-to-r.html#part-iii-model-assessment"><i class="fa fa-check"></i><b>10.17.3</b> Part III: Model Assessment</a></li>
+<li class="chapter" data-level="10.17.4" data-path="intro-to-r.html"><a href="intro-to-r.html#part-iv-prediction"><i class="fa fa-check"></i><b>10.17.4</b> Part IV: Prediction</a></li>
 </ul></li>
-<li class="chapter" data-level="12" data-path="multinom-logistic.html"><a href="multinom-logistic.html"><i class="fa fa-check"></i><b>12</b> Multinomial Logistic Regression</a><ul>
-<li class="chapter" data-level="12.0.1" data-path="multinom-logistic.html"><a href="multinom-logistic.html#packages-7"><i class="fa fa-check"></i><b>12.0.1</b> Packages</a></li>
-<li class="chapter" data-level="12.0.2" data-path="multinom-logistic.html"><a href="multinom-logistic.html#data-7"><i class="fa fa-check"></i><b>12.0.2</b> Data</a></li>
-<li class="chapter" data-level="12.1" data-path="multinom-logistic.html"><a href="multinom-logistic.html#exercises-7"><i class="fa fa-check"></i><b>12.1</b> Exercises</a><ul>
-<li class="chapter" data-level="12.1.1" data-path="multinom-logistic.html"><a href="multinom-logistic.html#part-i-exploratory-data-analysis"><i class="fa fa-check"></i><b>12.1.1</b> Part I: Exploratory Data Analysis</a></li>
-<li class="chapter" data-level="12.1.2" data-path="multinom-logistic.html"><a href="multinom-logistic.html#part-ii-multinomial-logistic-regression-model"><i class="fa fa-check"></i><b>12.1.2</b> Part II: Multinomial Logistic Regression Model</a></li>
-<li class="chapter" data-level="12.1.3" data-path="multinom-logistic.html"><a href="multinom-logistic.html#part-iii-model-fit"><i class="fa fa-check"></i><b>12.1.3</b> Part III: Model Fit</a></li>
-<li class="chapter" data-level="12.1.4" data-path="multinom-logistic.html"><a href="multinom-logistic.html#part-iv-using-the-model"><i class="fa fa-check"></i><b>12.1.4</b> Part IV: Using the Model</a></li>
-<li class="chapter" data-level="12.1.5" data-path="multinom-logistic.html"><a href="multinom-logistic.html#acknowledgements-1"><i class="fa fa-check"></i><b>12.1.5</b> Acknowledgements</a></li>
+<li class="chapter" data-level="10.18" data-path="intro-to-r.html"><a href="intro-to-r.html#multinomial-logistic-regression"><i class="fa fa-check"></i><b>10.18</b> Multinomial Logistic Regression</a><ul>
+<li class="chapter" data-level="10.18.1" data-path="intro-to-r.html"><a href="intro-to-r.html#packages-8"><i class="fa fa-check"></i><b>10.18.1</b> Packages</a></li>
+<li class="chapter" data-level="10.18.2" data-path="intro-to-r.html"><a href="intro-to-r.html#data-8"><i class="fa fa-check"></i><b>10.18.2</b> Data</a></li>
 </ul></li>
+<li class="chapter" data-level="10.19" data-path="intro-to-r.html"><a href="intro-to-r.html#exercises-8"><i class="fa fa-check"></i><b>10.19</b> Exercises</a><ul>
+<li class="chapter" data-level="10.19.1" data-path="intro-to-r.html"><a href="intro-to-r.html#part-i-exploratory-data-analysis"><i class="fa fa-check"></i><b>10.19.1</b> Part I: Exploratory Data Analysis</a></li>
+<li class="chapter" data-level="10.19.2" data-path="intro-to-r.html"><a href="intro-to-r.html#part-ii-multinomial-logistic-regression-model"><i class="fa fa-check"></i><b>10.19.2</b> Part II: Multinomial Logistic Regression Model</a></li>
+<li class="chapter" data-level="10.19.3" data-path="intro-to-r.html"><a href="intro-to-r.html#part-iii-model-fit"><i class="fa fa-check"></i><b>10.19.3</b> Part III: Model Fit</a></li>
+<li class="chapter" data-level="10.19.4" data-path="intro-to-r.html"><a href="intro-to-r.html#part-iv-using-the-model"><i class="fa fa-check"></i><b>10.19.4</b> Part IV: Using the Model</a></li>
+<li class="chapter" data-level="10.19.5" data-path="intro-to-r.html"><a href="intro-to-r.html#acknowledgements-1"><i class="fa fa-check"></i><b>10.19.5</b> Acknowledgements</a></li>
 </ul></li>
-<li class="chapter" data-level="13" data-path="together.html"><a href="together.html"><i class="fa fa-check"></i><b>13</b> Putting It All Together</a><ul>
-<li class="chapter" data-level="13.0.1" data-path="together.html"><a href="together.html#packages-8"><i class="fa fa-check"></i><b>13.0.1</b> Packages</a></li>
-<li class="chapter" data-level="13.0.2" data-path="together.html"><a href="together.html#data-8"><i class="fa fa-check"></i><b>13.0.2</b> Data</a></li>
-<li class="chapter" data-level="13.0.3" data-path="together.html"><a href="together.html#exercises-8"><i class="fa fa-check"></i><b>13.0.3</b> Exercises</a></li>
+<li class="chapter" data-level="10.20" data-path="intro-to-r.html"><a href="intro-to-r.html#putting-it-all-together"><i class="fa fa-check"></i><b>10.20</b> Putting It All Together</a><ul>
+<li class="chapter" data-level="10.20.1" data-path="intro-to-r.html"><a href="intro-to-r.html#packages-9"><i class="fa fa-check"></i><b>10.20.1</b> Packages</a></li>
+<li class="chapter" data-level="10.20.2" data-path="intro-to-r.html"><a href="intro-to-r.html#data-9"><i class="fa fa-check"></i><b>10.20.2</b> Data</a></li>
+<li class="chapter" data-level="10.20.3" data-path="intro-to-r.html"><a href="intro-to-r.html#exercises-9"><i class="fa fa-check"></i><b>10.20.3</b> Exercises</a></li>
 </ul></li>
-<li class="chapter" data-level="14" data-path="test-child-1.html"><a href="test-child-1.html"><i class="fa fa-check"></i><b>14</b> Test Child</a></li>
+<li class="chapter" data-level="10.21" data-path="intro-to-r.html"><a href="intro-to-r.html#movies-analysis"><i class="fa fa-check"></i><b>10.21</b> Movies Analysis</a></li>
+<li class="chapter" data-level="10.22" data-path="intro-to-r.html"><a href="intro-to-r.html#data-10"><i class="fa fa-check"></i><b>10.22</b> Data</a></li>
+<li class="chapter" data-level="10.23" data-path="intro-to-r.html"><a href="intro-to-r.html#analysis-1"><i class="fa fa-check"></i><b>10.23</b> Analysis</a><ul>
+<li class="chapter" data-level="10.23.1" data-path="intro-to-r.html"><a href="intro-to-r.html#part-1"><i class="fa fa-check"></i><b>10.23.1</b> Part 1</a></li>
+<li class="chapter" data-level="10.23.2" data-path="intro-to-r.html"><a href="intro-to-r.html#part-2"><i class="fa fa-check"></i><b>10.23.2</b> Part 2</a></li>
+</ul></li>
+<li class="chapter" data-level="10.24" data-path="intro-to-r.html"><a href="intro-to-r.html#next-steps"><i class="fa fa-check"></i><b>10.24</b> Next Steps</a></li>
+<li class="chapter" data-level="10.25" data-path="intro-to-r.html"><a href="intro-to-r.html#discussion-questions"><i class="fa fa-check"></i><b>10.25</b> Discussion Questions</a></li>
+<li class="chapter" data-level="10.26" data-path="intro-to-r.html"><a href="intro-to-r.html#references"><i class="fa fa-check"></i><b>10.26</b> References</a></li>
+<li class="chapter" data-level="10.27" data-path="intro-to-r.html"><a href="intro-to-r.html#appendix"><i class="fa fa-check"></i><b>10.27</b> Appendix</a></li>
+<li class="chapter" data-level="10.28" data-path="intro-to-r.html"><a href="intro-to-r.html#in-class-exercise-advertising-analysis-1"><i class="fa fa-check"></i><b>10.28</b> In-Class Exercise: Advertising Analysis</a><ul>
+<li class="chapter" data-level="10.28.1" data-path="intro-to-r.html"><a href="intro-to-r.html#data-and-packages-1"><i class="fa fa-check"></i><b>10.28.1</b> Data and packages</a></li>
+<li class="chapter" data-level="10.28.2" data-path="intro-to-r.html"><a href="intro-to-r.html#analysis-2"><i class="fa fa-check"></i><b>10.28.2</b> Analysis</a></li>
+</ul></li>
+<li class="chapter" data-level="10.29" data-path="intro-to-r.html"><a href="intro-to-r.html#in-class-exercise-beer-data-analysis-1"><i class="fa fa-check"></i><b>10.29</b> In-Class Exercise: Beer Data Analysis</a></li>
+<li class="chapter" data-level="10.30" data-path="intro-to-r.html"><a href="intro-to-r.html#analyzing-wages"><i class="fa fa-check"></i><b>10.30</b> Analyzing Wages</a><ul>
+<li class="chapter" data-level="10.30.1" data-path="intro-to-r.html"><a href="intro-to-r.html#initial-model"><i class="fa fa-check"></i><b>10.30.1</b> Initial model</a></li>
+<li class="chapter" data-level="10.30.2" data-path="intro-to-r.html"><a href="intro-to-r.html#model-with-mean-centered-variables"><i class="fa fa-check"></i><b>10.30.2</b> Model with mean-centered variables</a></li>
+<li class="chapter" data-level="10.30.3" data-path="intro-to-r.html"><a href="intro-to-r.html#model-with-indicator-variables"><i class="fa fa-check"></i><b>10.30.3</b> Model with indicator variables</a></li>
+</ul></li>
+<li class="chapter" data-level="10.31" data-path="intro-to-r.html"><a href="intro-to-r.html#exam-01-review"><i class="fa fa-check"></i><b>10.31</b> Exam 01 Review</a><ul>
+<li class="chapter" data-level="10.31.1" data-path="intro-to-r.html"><a href="intro-to-r.html#main-effects-model"><i class="fa fa-check"></i><b>10.31.1</b> Main Effects Model</a></li>
+</ul></li>
+<li class="chapter" data-level="10.32" data-path="intro-to-r.html"><a href="intro-to-r.html#model-with-interactions"><i class="fa fa-check"></i><b>10.32</b> Model with Interactions</a></li>
+<li class="chapter" data-level="10.33" data-path="intro-to-r.html"><a href="intro-to-r.html#model-selection-1"><i class="fa fa-check"></i><b>10.33</b> Model Selection</a></li>
+<li class="chapter" data-level="10.34" data-path="intro-to-r.html"><a href="intro-to-r.html#backward-selection-manually"><i class="fa fa-check"></i><b>10.34</b> Backward selection “manually”</a></li>
+<li class="chapter" data-level="10.35" data-path="intro-to-r.html"><a href="intro-to-r.html#backward-selection-using-regsubsets"><i class="fa fa-check"></i><b>10.35</b> Backward selection using regsubsets</a></li>
+<li class="chapter" data-level="10.36" data-path="intro-to-r.html"><a href="intro-to-r.html#changing-selection-criteria"><i class="fa fa-check"></i><b>10.36</b> Changing selection criteria</a></li>
+<li class="chapter" data-level="10.37" data-path="intro-to-r.html"><a href="intro-to-r.html#different-selection-procedure"><i class="fa fa-check"></i><b>10.37</b> Different selection procedure</a></li>
+<li class="chapter" data-level="10.38" data-path="intro-to-r.html"><a href="intro-to-r.html#choosing-a-final-model"><i class="fa fa-check"></i><b>10.38</b> Choosing a final model</a></li>
+<li class="chapter" data-level="10.39" data-path="intro-to-r.html"><a href="intro-to-r.html#logistic-regression-1"><i class="fa fa-check"></i><b>10.39</b> Logistic Regression</a></li>
+<li class="chapter" data-level="10.40" data-path="intro-to-r.html"><a href="intro-to-r.html#references-1"><i class="fa fa-check"></i><b>10.40</b> References</a></li>
+<li class="chapter" data-level="10.41" data-path="intro-to-r.html"><a href="intro-to-r.html#multinomial-logistic-regression-1"><i class="fa fa-check"></i><b>10.41</b> Multinomial Logistic Regression</a><ul>
+<li class="chapter" data-level="10.41.1" data-path="intro-to-r.html"><a href="intro-to-r.html#questions"><i class="fa fa-check"></i><b>10.41.1</b> Questions</a></li>
+<li class="chapter" data-level="10.41.2" data-path="intro-to-r.html"><a href="intro-to-r.html#references-2"><i class="fa fa-check"></i><b>10.41.2</b> References</a></li>
+</ul></li>
+<li class="chapter" data-level="10.42" data-path="intro-to-r.html"><a href="intro-to-r.html#dealing-with-missing-data"><i class="fa fa-check"></i><b>10.42</b> Dealing with Missing Data</a></li>
+<li class="chapter" data-level="10.43" data-path="intro-to-r.html"><a href="intro-to-r.html#matrix-form-of-linear-regression"><i class="fa fa-check"></i><b>10.43</b> Matrix Form of Linear Regression</a></li>
+<li class="chapter" data-level="10.44" data-path="intro-to-r.html"><a href="intro-to-r.html#introduction-1"><i class="fa fa-check"></i><b>10.44</b> Introduction</a></li>
+<li class="chapter" data-level="10.45" data-path="intro-to-r.html"><a href="intro-to-r.html#matrix-form-for-the-regression-model"><i class="fa fa-check"></i><b>10.45</b> Matrix Form for the Regression Model</a></li>
+<li class="chapter" data-level="10.46" data-path="intro-to-r.html"><a href="intro-to-r.html#estimating-the-coefficients"><i class="fa fa-check"></i><b>10.46</b> Estimating the Coefficients</a></li>
+<li class="chapter" data-level="10.47" data-path="intro-to-r.html"><a href="intro-to-r.html#variance-covariance-matrix-of-the-coefficients"><i class="fa fa-check"></i><b>10.47</b> Variance-covariance matrix of the coefficients</a></li>
+<li class="chapter" data-level="10.48" data-path="intro-to-r.html"><a href="intro-to-r.html#log-transformations-in-linear-regression"><i class="fa fa-check"></i><b>10.48</b> Log Transformations in Linear Regression</a></li>
+<li class="chapter" data-level="10.49" data-path="intro-to-r.html"><a href="intro-to-r.html#log-transformation-on-the-response-variable"><i class="fa fa-check"></i><b>10.49</b> Log-transformation on the response variable</a><ul>
+<li class="chapter" data-level="10.49.1" data-path="intro-to-r.html"><a href="intro-to-r.html#mean-median-and-log-transformations"><i class="fa fa-check"></i><b>10.49.1</b> Mean, Median, and Log Transformations</a></li>
+<li class="chapter" data-level="10.49.2" data-path="intro-to-r.html"><a href="intro-to-r.html#interpretaton-of-model-coefficients"><i class="fa fa-check"></i><b>10.49.2</b> Interpretaton of model coefficients</a></li>
+</ul></li>
+<li class="chapter" data-level="10.50" data-path="intro-to-r.html"><a href="intro-to-r.html#log-transformation-on-the-predictor-variable"><i class="fa fa-check"></i><b>10.50</b> Log-transformation on the predictor variable</a></li>
+<li class="chapter" data-level="10.51" data-path="intro-to-r.html"><a href="intro-to-r.html#log-transformation-on-the-the-response-and-predictor-variable"><i class="fa fa-check"></i><b>10.51</b> Log-transformation on the the response and predictor variable</a></li>
+<li class="chapter" data-level="10.52" data-path="intro-to-r.html"><a href="intro-to-r.html#details-about-model-diagnostics"><i class="fa fa-check"></i><b>10.52</b> Details about Model Diagnostics</a></li>
+<li class="chapter" data-level="10.53" data-path="intro-to-r.html"><a href="intro-to-r.html#introduction-2"><i class="fa fa-check"></i><b>10.53</b> Introduction</a></li>
+<li class="chapter" data-level="10.54" data-path="intro-to-r.html"><a href="intro-to-r.html#matrix-form-for-the-regression-model-1"><i class="fa fa-check"></i><b>10.54</b> Matrix Form for the Regression Model</a></li>
+<li class="chapter" data-level="10.55" data-path="intro-to-r.html"><a href="intro-to-r.html#hat-matrix-leverage"><i class="fa fa-check"></i><b>10.55</b> Hat Matrix &amp; Leverage</a></li>
+<li class="chapter" data-level="10.56" data-path="intro-to-r.html"><a href="intro-to-r.html#standardized-residuals"><i class="fa fa-check"></i><b>10.56</b> Standardized Residuals</a></li>
+<li class="chapter" data-level="10.57" data-path="intro-to-r.html"><a href="intro-to-r.html#cooks-distance"><i class="fa fa-check"></i><b>10.57</b> Cook’s Distance</a></li>
+<li class="chapter" data-level="10.58" data-path="intro-to-r.html"><a href="intro-to-r.html#model-selection-criteria-aic-bic"><i class="fa fa-check"></i><b>10.58</b> Model Selection Criteria: AIC &amp; BIC</a></li>
+<li class="chapter" data-level="10.59" data-path="intro-to-r.html"><a href="intro-to-r.html#maximum-likelihood-estimation-of-boldsymbolbeta-and-sigma"><i class="fa fa-check"></i><b>10.59</b> Maximum Likelihood Estimation of <span class="math inline">\(\boldsymbol{\beta}\)</span> and <span class="math inline">\(\sigma\)</span></a></li>
+<li class="chapter" data-level="10.60" data-path="intro-to-r.html"><a href="intro-to-r.html#aic"><i class="fa fa-check"></i><b>10.60</b> AIC</a></li>
+<li class="chapter" data-level="10.61" data-path="intro-to-r.html"><a href="intro-to-r.html#bic"><i class="fa fa-check"></i><b>10.61</b> BIC</a></li>
+</ul></li>
+<li class="chapter" data-level="11" data-path="slr.html"><a href="slr.html#data"><i class="fa fa-check"></i><b>11</b> Data Sets</a></li>
+<li class="chapter" data-level="12" data-path="refs.html"><a href="refs.html"><i class="fa fa-check"></i><b>12</b> References</a></li>
+<li class="chapter" data-level="13" data-path="intro.html"><a href="intro.html"><i class="fa fa-check"></i><b>13</b> Introduction</a></li>
 <li class="divider"></li>
 <li><a href="https://github.com/rstudio/bookdown" target="blank">Published with bookdown</a></li>
 
@@ -217,100 +286,8 @@ code > span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Inf
 
             <section class="normal" id="section-">
 <div id="mlr" class="section level1">
-<h1><span class="header-section-number">Chapter 8</span> Multiple Linear Regression</h1>
-<p>
-<p><span class="marginnote shownote"> <!--
-<div class="figure">--> <img src="img/04-mlr/seattle-home.jpg" alt=" " width="527"  /> <br><br> <img src="img/04-mlr/seattle-home-3.jpg" alt=" " width="527"  /></p>
-<!--
-<p class="caption marginnote">-->
-<!--</p>-->
-<!--</div>-->
-</span>
-</p>
-<p>The goal of this lab is to use multiple linear regression to understand the variation in the selling price of houses in King County, Washington. You will also gain practice using special predictors, such as categorical predictors and interaction effects, in the model, and you will be introduced to variable transformations.</p>
-<div id="packages-3" class="section level3">
-<h3><span class="header-section-number">8.0.1</span> Packages</h3>
-<p>We will use the following packages in today’s lab.</p>
-<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="kw">library</span>(tidyverse)
-<span class="kw">library</span>(knitr)
-<span class="kw">library</span>(broom)</code></pre></div>
-</div>
-<div id="data-3" class="section level3">
-<h3><span class="header-section-number">8.0.2</span> Data</h3>
-<p>The for today’s lab contains the price and other characteristics of over 20,000 houses sold in King County, Washington (the county that includes Seattle). The dataset includes the following variables:</p>
-<ul>
-<li><code>price</code>: selling price of the house</li>
-<li><code>date</code>: date house was sold, measured in days since January 1, 2014</li>
-<li><code>bedrooms</code>: number of bedrooms</li>
-<li><code>bathrooms</code>: number of bathrooms</li>
-<li><code>sqft</code>: interior square footage</li>
-<li><code>floors</code>: number of floors</li>
-<li><code>waterfront</code>: 1 if the house has a view of the waterfront, 0 otherwise</li>
-<li><code>yr_built</code>: year the house was built</li>
-<li><code>yr_renovated</code>: 0 if the house was never renovated, the year the house was renovated if else</li>
-</ul>
-<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r">houses &lt;-<span class="st"> </span><span class="kw">read_csv</span>(<span class="st">&quot;data/KingCountyHouses.csv&quot;</span>)</code></pre></div>
-</div>
-<div id="exercises-3" class="section level2">
-<h2><span class="header-section-number">8.1</span> Exercises</h2>
-<ol style="list-style-type: decimal">
-<li>Use data visualization and summary statistics to examine the distribution of <code>bedrooms</code>. What is the maximum value? Does this value make sense? If not, what is this an indication of, i.e. how did this value get recorded in the data? Briefly explain.</li>
-</ol>
-<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="co"># See the [documentation](https://dplyr.tidyverse.org/reference/summarise.html) for more information about the `summarise` function.</span></code></pre></div>
-<ol start="2" style="list-style-type: decimal">
-<li><p>We want to remove observations that have extreme values for bedrooms, i.e. those with values for <code>bedrooms</code> above the 95<sup>th</sup> percentile in the data. What is the 95<sup>th</sup> percentile for <code>bedrooms</code>? Use the <code>summarise</code> function to help you calculate this value.</p></li>
-<li><p>Fill in the code below to filter the data so that the extreme observations are removed. How many observations are in the updated dataset?</p></li>
-</ol>
-<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r">houses &lt;-<span class="st"> </span>houses <span class="op">%&gt;%</span><span class="st"> </span><span class="kw">filter</span>(bedrooms <span class="op">&lt;=</span><span class="st"> </span>____)</code></pre></div>
-<p>We will use this dataset for the remainder of the analysis.</p>
-<ol start="4" style="list-style-type: decimal">
-<li>Fit a regression model using square feet to explain variation in the price. Plot the residuals versus the predicted values. Based on this plot, what regression assumption appears to be violated? Briefly explain.</li>
-</ol>
-<p>Plot the histogram and Normal QQ-plot of the residuals. Based on these plots, what regression assumption appears to be violated? Briefly explain.</p>
-<ol start="5" style="list-style-type: decimal">
-<li>One way to deal with violations in regression assumptions is to transform the response variable and use that transformed variable when fitting the regression model. (We will talk about this in class next week). Some common transformations used in regression are the natural log (<code>log(y)</code>), the square root (<code>sqrt(y)</code>), and the reciprocal (<code>1/y</code>).</li>
-</ol>
-<p>Each transformation is applied to the response variable <code>price</code>, and the distributions of the transformed data are shown below.</p>
-<p>Which transformation should we use to fix the violations of the model assumptions observed in the previous exercise? Briefly explain your choice.</p>
-<ol start="6" style="list-style-type: decimal">
-<li><p>Add the variable <code>logprice</code>, the log-transformed version of <code>price</code>, to the data frame. Fit a regression model with <code>logprice</code> as the response and <code>sqft</code> as the predictor variable. Create the residuals plots (residuals vs. predicted, histogram of residuals, Normal QQ-plot). Briefly comment on whether or not using the transformed variable improved on the model assumptions.</p></li>
-<li><p>Though we can explain about 48% of the variation in a house prices by the square footage, we would like to incorporate some of the other available house characteristics in the model.</p></li>
-</ol>
-<p>Before fitting the model, use the code below to add the variable<code>floorsCat</code> that is the categorical version of the variable <code>floors</code>. Discuss with your group why it may make sense to treat <code>floors</code> as categorical, even though it represents a count.</p>
-<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r">houses &lt;-<span class="st"> </span>houses <span class="op">%&gt;%</span>
-<span class="st">  </span><span class="kw">mutate</span>(<span class="dt">floorsCat =</span> <span class="kw">as.factor</span>(floors))</code></pre></div>
-<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="co"># See the [documentation](https://dplyr.tidyverse.org/reference/tally.html) for more information about the `count` function.</span></code></pre></div>
-<p>Use the <code>count</code> function to see the number of observations at each level of <code>floorsCat</code>. What is the most common number of floors?</p>
-<ol start="8" style="list-style-type: decimal">
-<li>Use the code below to calculate the mean-centered versions of the variables <code>sqft</code>, <code>bedrooms</code>, and <code>bathrooms</code> and add them to the data frame.</li>
-</ol>
-<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r">houses &lt;-<span class="st"> </span>houses <span class="op">%&gt;%</span><span class="st"> </span>
-<span class="st">  </span><span class="kw">mutate</span>(<span class="dt">sqftCent =</span> sqft <span class="op">-</span><span class="st"> </span><span class="kw">mean</span>(sqft), 
-         <span class="dt">bedroomsCent =</span> bedrooms <span class="op">-</span><span class="st"> </span><span class="kw">mean</span>(bedrooms),
-         <span class="dt">bathroomsCent =</span> bathrooms<span class="op">-</span><span class="kw">mean</span>(bathrooms))</code></pre></div>
-<p>It is not appropriate to calculate the mean-centered version of the variable <code>waterfront</code>. Briefly explain why it isn’t.</p>
-<ol start="9" style="list-style-type: decimal">
-<li><p>Fit a regression model with <code>logprice</code> as the response variable, and the mean-centered variables from the previous exercise along with <code>waterfront</code> and <code>floorsCat</code> as the predictor variables. Display the model output.</p></li>
-<li><p>What is the baseline level for the variable <code>floorsCat</code>?</p></li>
-<li><p>Interpret the intercept of the model in the context of the data. Write the interpretation in terms of the <strong>price</strong>.</p></li>
-<li><p>What is the intercept of the model for the subset of houses with 3 floors that are not on the waterfront? Write the intercept in terms of the <strong>log(price)</strong>.</p></li>
-<li><p>We would like to consider potential interactions for the model. A significant <strong>interaction</strong> occurs when the relationship of a predictor variable with the response depends on the value of another predictor variable.</p></li>
-</ol>
-<p>Fill in the code below to plot the relationship between <code>logprice</code> and <code>bedrooms</code> by <code>waterfront</code>. Based on this plot, do you think there is a significant interaction effect between <code>bedrooms</code> and <code>waterfront</code>? In other words, do you think the relationship between the logprice and the number of bedrooms differs based on whether or not a house is on the waterfront? Briefly explain.</p>
-<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="kw">ggplot</span>(<span class="dt">data=</span>houses,<span class="dt">mapping=</span><span class="kw">aes</span>(<span class="dt">x=</span>_____,<span class="dt">y=</span>_____,<span class="dt">color=</span><span class="kw">as.factor</span>(waterfront))) <span class="op">+</span>
-<span class="st">  </span><span class="kw">geom_smooth</span>(<span class="dt">method=</span><span class="st">&quot;lm&quot;</span>, <span class="dt">se=</span><span class="ot">FALSE</span>) <span class="op">+</span>
-<span class="st">  </span><span class="kw">labs</span>(<span class="dt">title=</span><span class="st">&quot;__________________&quot;</span>, 
-       <span class="dt">x=</span><span class="st">&quot;Number of bedrooms&quot;</span>, 
-       <span class="dt">y=</span><span class="st">&quot;Log Price&quot;</span>,
-       <span class="dt">color=</span><span class="st">&quot;Waterfront&quot;</span>)</code></pre></div>
-<p><strong>We will talk more about interaction effects in Monday’s lecture. In HW 03, you explore potential interaction effects using this housing data.</strong></p>
-<p><em>You’re done! Commit all remaining changes, use the commit message “Done with Lab 4!”, and push. Before you wrap up the assignment, make sure the .Rmd and .md documents are updated in your GitHub repo. There is a 10% penalty if the .Rmd file has to be knitted to display graphs, i.e. the graphs are not showing in the .md file on GitHub.</em></p>
-<div id="acknowledgement" class="section level3">
-<h3><span class="header-section-number">8.1.1</span> Acknowledgement</h3>
-<p>The data used in this lab was obtained from <a href="https://github.com/proback/BYSH" class="uri">https://github.com/proback/BYSH</a>.</p>
+<h1><span class="header-section-number"> 5</span> Multiple Linear Regression</h1>
 
-</div>
-</div>
 </div>
             </section>
 
@@ -318,7 +295,7 @@ code > span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Inf
         </div>
       </div>
 <a href="anova.html" class="navigation navigation-prev " aria-label="Previous page"><i class="fa fa-angle-left"></i></a>
-<a href="mlr2.html" class="navigation navigation-next " aria-label="Next page"><i class="fa fa-angle-right"></i></a>
+<a href="select.html" class="navigation navigation-next " aria-label="Next page"><i class="fa fa-angle-right"></i></a>
     </div>
   </div>
 <script src="libs/gitbook-2.6.7/js/app.min.js"></script>
@@ -355,9 +332,10 @@ gitbook.start({
 "link": null,
 "text": null
 },
-"download": ["introregression.pdf"],
+"download": ["intro-regression.pdf", "intro-regression.epub"],
 "toc": {
-"collapse": "section",
+"collapse": "subsection",
+"depth": 1,
 "scroll_highlight": true
 }
 });

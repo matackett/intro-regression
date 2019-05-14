@@ -6,7 +6,7 @@ knitr::opts_chunk$set(echo = TRUE)
 
 This document provides the details for the matrix form of multiple linear regression. We assume the reader has familiarity with some matrix alegbra. Please see Chapter 1 of [*An Introduction to Statistical Learning*](https://www-bcf.usc.edu/~gareth/ISL/) for a brief review of matrix algebra. 
 
-## Introduction 
+### Introduction 
 
 
 Suppose we have $n$ observations. Let the $i^{th}$ be $(x_{i1}, \ldots, x_{ip}, y_i)$, such that $x_{i1}, \ldots, x_{ip}$ are the explanatory variables (predictors) and $y_i$ is the response variable. We assume the data can be modeled using the least-squares regression model, such that the mean response for a given combination of explanatory variables follows the form in (\ref{basic_model}).
@@ -25,7 +25,7 @@ y_i = \beta_0 + \beta_1 x_{i1} + \dots + \beta_p x_{ip} + \epsilon_i
 
 such that $\epsilon_i$ is the amount $y_i$ deviates from $\mu\{y|x_{i1}, \ldots, x_{ip}\}$, the mean response for a given combination of explanatory variables. We assume each $\epsilon_i \sim N(0,\sigma^2)$, where $\sigma^2$ is a constant variance for the distribution of the response $y$ for any combination of explanatory variables $x_1, \ldots, x_p$. 
 
-## Matrix Form for the Regression Model 
+### Matrix Form for the Regression Model 
 
 We can represent the (\ref{basic_model}) and (\ref{ind_response}) using matrix notation. Let 
 
@@ -54,7 +54,7 @@ Therefore the estimated response for a given combination of explanatory variable
 \hat{\mathbf{Y}} = \mathbf{X}\hat{\boldsymbol{\beta}} \hspace{10mm} \mathbf{e} = \mathbf{Y} - \mathbf{X}\hat{\boldsymbol{\beta}}
 \end{equation}
 
-## Estimating the Coefficients
+### Estimating the Coefficients
 
 The least-squares model is the one that minimizes the sum of the squared residuals. Therefore, we want to find the coefficients, $\hat{\boldsymbol{\beta}}$ that minimizes
 
@@ -96,7 +96,7 @@ Since we want to find the $\hat{\boldsymbol{\beta}}$ that minimizes (\ref{sum_sq
 Thus, the estimate of the model coefficients is $\hat{\boldsymbol{\beta}} = (\mathbf{X}^T\mathbf{X})^{-1}\mathbf{X}^T\mathbf{Y}$.
 
 
-## Variance-covariance matrix of the coefficients
+### Variance-covariance matrix of the coefficients
 
 We will use two properties to derive the form of the variance-covarinace matrix of the coefficients: 
 

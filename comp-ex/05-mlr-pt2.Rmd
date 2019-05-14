@@ -44,9 +44,9 @@ We will use the following variables in this lab:
 
 
 
-## Exercises 
+### Exercises 
 
-### Data wrangling
+#### Data wrangling
 
 1. We would like to use variables from both the `basic_info` and `details` data frames in this analysis. Both dataframes have the variable `id` that uniquely identifies each Airbnb listing. Because we need data from `basic_info` and `details`, we only want to include observations that are in both the `basic_info` and `details` datasets. Therefore, we will use an `inner_join` to combine the two data sets. (Note: Both data frames include a variable called `id` that uniquely identifies each Airbnb listing. R will use this variable to join the two data frames.)
 
@@ -138,7 +138,7 @@ airbnb %>%
 Filter the `airbnb` data so that it only includes observations with  `minimum_nights <= 3`. You will use this filtered dataset for the remainder of the lab.
 
 
-### Regression Analysis
+#### Regression Analysis
 
 9. For the response variable, will use the cost to stay at an Airbnb location for 3 nights. Create a new variable called `price_3_nights` that uses `price` and `cleaning_fee` to calculate the total cost to stay at the Airbnb property for 3 nights. Be sure to add this variable to your dataframe.
 

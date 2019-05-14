@@ -1,0 +1,348 @@
+<!DOCTYPE html>
+<html >
+
+<head>
+
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <title> 4 Simple Linear Regression | Intro to Regression Analysis</title>
+  <meta name="description" content="This document contains lab assignments and other materials for an intermediate-level regression course.">
+  <meta name="generator" content="bookdown  and GitBook 2.6.7">
+
+  <meta property="og:title" content=" 4 Simple Linear Regression | Intro to Regression Analysis" />
+  <meta property="og:type" content="book" />
+  <meta property="og:url" content="https://www.introregression.org/" />
+  
+  <meta property="og:description" content="This document contains lab assignments and other materials for an intermediate-level regression course." />
+  <meta name="github-repo" content="matackett/intro-regression" />
+
+  <meta name="twitter:card" content="summary" />
+  <meta name="twitter:title" content=" 4 Simple Linear Regression | Intro to Regression Analysis" />
+  
+  <meta name="twitter:description" content="This document contains lab assignments and other materials for an intermediate-level regression course." />
+  
+
+<meta name="author" content="Maria Tackett">
+
+
+<meta name="date" content="2019-05-14">
+
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-status-bar-style" content="black">
+  
+  
+<link rel="prev" href="02-get-started.html">
+<link rel="next" href="04-anova.html">
+<script src="libs/jquery-2.2.3/jquery.min.js"></script>
+<link href="libs/gitbook-2.6.7/css/style.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-table.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-bookdown.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-highlight.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-search.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-fontsettings.css" rel="stylesheet" />
+
+
+
+
+
+
+
+
+
+<style type="text/css">
+div.sourceCode { overflow-x: auto; }
+table.sourceCode, tr.sourceCode, td.lineNumbers, td.sourceCode {
+  margin: 0; padding: 0; vertical-align: baseline; border: none; }
+table.sourceCode { width: 100%; line-height: 100%; }
+td.lineNumbers { text-align: right; padding-right: 4px; padding-left: 4px; color: #aaaaaa; border-right: 1px solid #aaaaaa; }
+td.sourceCode { padding-left: 5px; }
+code > span.kw { color: #007020; font-weight: bold; } /* Keyword */
+code > span.dt { color: #902000; } /* DataType */
+code > span.dv { color: #40a070; } /* DecVal */
+code > span.bn { color: #40a070; } /* BaseN */
+code > span.fl { color: #40a070; } /* Float */
+code > span.ch { color: #4070a0; } /* Char */
+code > span.st { color: #4070a0; } /* String */
+code > span.co { color: #60a0b0; font-style: italic; } /* Comment */
+code > span.ot { color: #007020; } /* Other */
+code > span.al { color: #ff0000; font-weight: bold; } /* Alert */
+code > span.fu { color: #06287e; } /* Function */
+code > span.er { color: #ff0000; font-weight: bold; } /* Error */
+code > span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warning */
+code > span.cn { color: #880000; } /* Constant */
+code > span.sc { color: #4070a0; } /* SpecialChar */
+code > span.vs { color: #4070a0; } /* VerbatimString */
+code > span.ss { color: #bb6688; } /* SpecialString */
+code > span.im { } /* Import */
+code > span.va { color: #19177c; } /* Variable */
+code > span.cf { color: #007020; font-weight: bold; } /* ControlFlow */
+code > span.op { color: #666666; } /* Operator */
+code > span.bu { } /* BuiltIn */
+code > span.ex { } /* Extension */
+code > span.pp { color: #bc7a00; } /* Preprocessor */
+code > span.at { color: #7d9029; } /* Attribute */
+code > span.do { color: #ba2121; font-style: italic; } /* Documentation */
+code > span.an { color: #60a0b0; font-weight: bold; font-style: italic; } /* Annotation */
+code > span.cv { color: #60a0b0; font-weight: bold; font-style: italic; } /* CommentVar */
+code > span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Information */
+</style>
+
+<link rel="stylesheet" href="style.css" type="text/css" />
+</head>
+
+<body>
+
+
+
+  <div class="book without-animation with-summary font-size-2 font-family-1" data-basepath=".">
+
+    <div class="book-summary">
+      <nav role="navigation">
+
+<ul class="summary">
+<li><a href="./">Materials for an Intro Regression Course</a></li>
+
+<li class="divider"></li>
+<li class="chapter" data-level="1" data-path="index.html"><a href="index.html"><i class="fa fa-check"></i><b>1</b> Beginning of the Book</a></li>
+<li class="chapter" data-level="2" data-path="01-intro.html"><a href="01-intro.html"><i class="fa fa-check"></i><b>2</b> Introduction</a></li>
+<li class="chapter" data-level="3" data-path="02-get-started.html"><a href="02-get-started.html"><i class="fa fa-check"></i><b>3</b> Getting Started</a></li>
+<li class="chapter" data-level="4" data-path="03-slr.html"><a href="03-slr.html"><i class="fa fa-check"></i><b>4</b> Simple Linear Regression</a><ul>
+<li class="chapter" data-level="4.1" data-path="03-slr.html"><a href="03-slr.html#computing-college-admissions"><i class="fa fa-check"></i><b>4.1</b> Computing: College Admissions</a><ul>
+<li class="chapter" data-level="4.1.1" data-path="03-slr.html"><a href="03-slr.html#packages"><i class="fa fa-check"></i><b>4.1.1</b> Packages</a></li>
+<li class="chapter" data-level="4.1.2" data-path="03-slr.html"><a href="03-slr.html#data"><i class="fa fa-check"></i><b>4.1.2</b> Data</a></li>
+<li class="chapter" data-level="4.1.3" data-path="03-slr.html"><a href="03-slr.html#exercises"><i class="fa fa-check"></i><b>4.1.3</b> Exercises</a></li>
+</ul></li>
+<li class="chapter" data-level="4.2" data-path="03-slr.html"><a href="03-slr.html#in-class-exercise-advertising-analysis"><i class="fa fa-check"></i><b>4.2</b> In-Class Exercise: Advertising Analysis</a><ul>
+<li class="chapter" data-level="4.2.1" data-path="03-slr.html"><a href="03-slr.html#data-and-packages"><i class="fa fa-check"></i><b>4.2.1</b> Data and packages</a></li>
+<li class="chapter" data-level="4.2.2" data-path="03-slr.html"><a href="03-slr.html#analysis"><i class="fa fa-check"></i><b>4.2.2</b> Analysis</a></li>
+</ul></li>
+<li class="chapter" data-level="4.3" data-path="03-slr.html"><a href="03-slr.html#in-class-exercise-beer-data-analysis"><i class="fa fa-check"></i><b>4.3</b> In-Class Exercise: Beer Data Analysis</a></li>
+</ul></li>
+<li class="chapter" data-level="5" data-path="04-anova.html"><a href="04-anova.html"><i class="fa fa-check"></i><b>5</b> Analysis of Variance</a></li>
+<li class="chapter" data-level="6" data-path="05-mlr.html"><a href="05-mlr.html"><i class="fa fa-check"></i><b>6</b> Multiple Linear Regression</a></li>
+<li class="chapter" data-level="7" data-path="06-model-select.html"><a href="06-model-select.html"><i class="fa fa-check"></i><b>7</b> Model Selection</a></li>
+<li class="chapter" data-level="8" data-path="07-logistic.html"><a href="07-logistic.html"><i class="fa fa-check"></i><b>8</b> Logistic Regression</a></li>
+<li class="chapter" data-level="9" data-path="08-multinom-logistic.html"><a href="08-multinom-logistic.html"><i class="fa fa-check"></i><b>9</b> Multinomial Logistic Regression</a></li>
+<li class="chapter" data-level="10" data-path="09-special-topics.html"><a href="09-special-topics.html"><i class="fa fa-check"></i><b>10</b> Special Topics</a></li>
+<li class="chapter" data-level="11" data-path="03-slr.html"><a href="03-slr.html#data"><i class="fa fa-check"></i><b>11</b> Data Sets</a></li>
+<li class="chapter" data-level="12" data-path="99-references.html"><a href="99-references.html"><i class="fa fa-check"></i><b>12</b> References</a></li>
+<li class="divider"></li>
+<li><a href="https://github.com/rstudio/bookdown" target="blank">Published with bookdown</a></li>
+
+</ul>
+
+      </nav>
+    </div>
+
+    <div class="book-body">
+      <div class="body-inner">
+        <div class="book-header" role="navigation">
+          <h1>
+            <i class="fa fa-circle-o-notch fa-spin"></i><a href="./">Intro to Regression Analysis</a>
+          </h1>
+        </div>
+
+        <div class="page-wrapper" tabindex="-1" role="main">
+          <div class="page-inner">
+
+            <section class="normal" id="section-">
+<div id="slr" class="section level1">
+<h1><span class="header-section-number"> 4</span> Simple Linear Regression</h1>
+<div id="computing-college-admissions" class="section level2">
+<h2><span class="header-section-number">4.1</span> Computing: College Admissions</h2>
+<p>The primary goal of today’s lab is to give you practice with some of the tools you will need to conduct regression analysis using R. An additional goal for today is for you to be introduced to your teams and practice collaborating using GitHub and RStudio.</p>
+<div id="packages" class="section level3">
+<h3><span class="header-section-number">4.1.1</span> Packages</h3>
+<p>We will use the following packages in today’s lab.</p>
+</div>
+<div id="data" class="section level3">
+<h3><span class="header-section-number">4.1.2</span> Data</h3>
+<p>In today’s lab, we will analyze the <code>scorecard</code> dataset from the rcfss package. This dataset contains information about 1849 colleges obtained from the Department of Education’s College Scorecard. Load the rcfss library into the global R environment and type <code>?scorecard</code> in the <strong>console</strong> to learn more about the dataset and variable definitions. Today’s analysis will focus on the following variables:</p>
+<table style="width:76%;">
+<colgroup>
+<col width="16%" />
+<col width="59%" />
+</colgroup>
+<tbody>
+<tr class="odd">
+<td><code>type</code></td>
+<td>Type of college (Public, Private - nonprofit, Private - for profit)</td>
+</tr>
+<tr class="even">
+<td><code>cost</code></td>
+<td>The average annual cost of attendance, including tuition and feeds, books and supplies, and living expenses, minus the average grant/scholarship aid</td>
+</tr>
+<tr class="odd">
+<td><code>admrate</code></td>
+<td>Undergraduate admissions rate (from 0 - 100%)</td>
+</tr>
+</tbody>
+</table>
+</div>
+<div id="exercises" class="section level3">
+<h3><span class="header-section-number">4.1.3</span> Exercises</h3>
+<div id="exploratory-data-analysis" class="section level4">
+<h4><span class="header-section-number">4.1.3.1</span> Exploratory Data Analysis</h4>
+<ol style="list-style-type: decimal">
+<li><p>Plot a histogram to examine the distribution of <code>admrate</code>. What is the shape of the distribution?</p></li>
+<li><p>To better understand the distribution of <code>admrate</code>, we would like calculate measures of center and spread of the distribution. Fill in the code below to use the <code>skim</code> function to calculate summary statistics for <code>admrate</code>. Report the appropriate measures of center (mean or median) and spread (standard deviation or IQR) based on the shape of the distribution from Exercise 1.</p></li>
+<li><p>Plot the distribution of <code>cost</code> and calculate the appropriate summary statistics. Describe the distribution of <code>cost</code> (shape, center, and spread) using the plot and appropriate summary statistics.</p></li>
+<li><p>One nice feature of the <code>skim</code> function is that it provides information about the number of observations that are missing values of the variable. How many observations have missing values of <code>admrate</code>? How many observations have missing values of <code>cost</code>?</p></li>
+<li><p>Later in the semester, we will techniques to deal with missing values in the data. For now, however, we will only include complete observations for the remainder of this analysis. We can use the <code>filter</code> function to select only the rows that values for both <code>cost</code> and <code>admrate</code>.</p></li>
+</ol>
+<p>Fill in the code below to create a new dataset called <code>scorecard_new</code> that only includes observations with values for both <code>admrate</code> and <code>cost</code>.</p>
+<p>You will use <code>scorecard_new</code> for the rest of the lab.</p>
+<ol start="6" style="list-style-type: decimal">
+<li><p>Create a scatterplot to display the relationship between <code>cost</code> (response variable) and <code>admrate</code> (explanatory variable). Use the scatterplot to describe the relationship between the two variables.</p></li>
+<li><p>The data contains information about the type of college, and we would like to incorporate this information into the scatterplot. One way to do this is to use a different color marker for each type of college. Fill in the code below the scatterplot from the previous exercise with the marker colors based on the variable <code>type</code>. Describe two new observations from this scatterplot that you didn’t see in the previous plot.</p></li>
+</ol>
+</div>
+<div id="simple-linear-regression" class="section level4">
+<h4><span class="header-section-number">4.1.3.2</span> Simple Linear Regression</h4>
+<ol start="8" style="list-style-type: decimal">
+<li><p>Fit a regression model to describe the relationship between a college’s admission rate and cost. Use the <code>tidy</code> function to display the model.</p></li>
+<li><p>Interpret the slope in the context of the problem. Does the intercept have a meaningful interpretation? If so, write the interpretation in the context of the problem. Otherwise, explain why the interpretation is not meaningful.</p></li>
+<li><p>While the <code>tidy</code> function is used to display the model, we can obtain a one-row summary of the model using the <code>glance</code> function. Use the <code>glance</code> function to get a summary of the model fit in the previous exercise. See the <a href="https://rdrr.io/cran/broom/man/glance.lm.html">documentation for <code>glance</code></a> for the syntax and a list of values output from the function.</p></li>
+<li><p>What is the value of <span class="math inline">\(R^2\)</span>? Interpret this value in the context of the problem. Do you think this is a “good” value of <span class="math inline">\(R^2\)</span>? Explain.</p></li>
+<li><p>What is the value of <span class="math inline">\(\hat{\sigma}\)</span>, the residual standard error.</p></li>
+<li><p>What is the 95% confidence interval for the coefficient of <code>admrate</code>, i.e. the slope? Interpret the interval in the context of the data.</p></li>
+<li><p>We want to test the following hypotheses about the population slope <span class="math inline">\(\beta_1\)</span>:</p></li>
+</ol>
+<p><span class="math display">\[H_0: \beta_1 = 0 \hspace{5mm} \text{versus} \hspace{5mm} H_a: \beta_1 \neq 0\]</span></p>
+<p>State what the null and alternative hypotheses mean in terms of the linear relationship between <code>admrate</code> and <code>cost</code>.</p>
+<ol start="15" style="list-style-type: decimal">
+<li>Consider the confidence interval from Exercise 13 and the hypotheses in Exercise 14. Is the confidence interval consistent with the null or alternative hypothesis? Briefly explain.</li>
+</ol>
+</div>
+</div>
+</div>
+<div id="in-class-exercise-advertising-analysis" class="section level2">
+<h2><span class="header-section-number">4.2</span> In-Class Exercise: Advertising Analysis</h2>
+<p>In this mini analysis, we will work with the <code>Advertising</code> data used in Chapters 2 and 3 of <em>Introduction to Statistical Learning</em>.</p>
+<div id="data-and-packages" class="section level3">
+<h3><span class="header-section-number">4.2.1</span> Data and packages</h3>
+<p>We start with loading the packages we’ll use.</p>
+<p>We will analyze the advertising and sales data for 200 markets. The variables we’ll use are</p>
+<ul>
+<li><code>tv</code>: total spending on TV advertising (in $thousands)</li>
+<li><code>radio</code>: total spending on radio advertising (in $thousands)</li>
+<li><code>newspaper</code>: total spending on newspaper advertising (in $thousands)</li>
+<li><code>sales</code>: total sales (in $millions)</li>
+</ul>
+</div>
+<div id="analysis" class="section level3">
+<h3><span class="header-section-number">4.2.2</span> Analysis</h3>
+<p>We’ll begin the analysis by getting quick view of the data:</p>
+<p>Next, we can calculate summary statistics for each of the variables in the data set.</p>
+<ol style="list-style-type: decimal">
+<li><p>What type of advertising has the smallest median spending?</p></li>
+<li><p>What type of advertising has the largest variation in spending?</p></li>
+<li><p>Describe the shape of the distribution of <code>sales</code>.</p></li>
+</ol>
+<p>We are most interested in understanding how advertising spending affect sales. One way to quantify the relationship between the variables is by calculating the correlation matrix.</p>
+<ol style="list-style-type: decimal">
+<li><p>What is the correlation between <code>radio</code> and <code>sales</code>? Interpret this value.</p></li>
+<li><p>What type of advertising has the strongest linear relationship with <code>sales</code>?</p></li>
+</ol>
+<p>Below are visualizations of <code>sales</code> versus each explanatory variable.</p>
+<p>Since <code>tv</code> appears to have the strongest linear relationship with <code>sales</code>, let’s calculate a simple linear regression model using these two variables.</p>
+<ol style="list-style-type: decimal">
+<li><p>Write the model equation.</p></li>
+<li><p>Interpret the intercept in the context of the problem.</p></li>
+<li><p>Interpret the slope in the context of the problem.</p></li>
+</ol>
+</div>
+</div>
+<div id="in-class-exercise-beer-data-analysis" class="section level2">
+<h2><span class="header-section-number">4.3</span> In-Class Exercise: Beer Data Analysis</h2>
+<p>In this analysis, we will analyze the relationship between the amount of alcohol (<code>PercentAlcohol</code>) and the caloric content (<code>CaloriesPer12Oz</code>) in domestic beers. Let <code>PercentAlcohol</code> be the predictor variable and <code>CaloriesPer12Oz</code> the response variable.</p>
+<p>Due to limited class time, we will not do the exploratory data analysis in this example. In practice, however, you should always start with the exploratory data analysis.</p>
+<p><em>You can add your answers to this R Markdown document</em>.</p>
+<p><em>1. Calculate a regression model to describe the relationship between <code>PercentAlcohol</code> and <code>CaloriesPer12Oz</code>. Display the model output.</em></p>
+<p><strong>2. Does it make sense to interpret the intercept? Why or why not?</strong></p>
+<p>There are non-alocoholic beers, so it is possible to have a meaningful interpretation of the intercept. In our data, however, there are very few beers with less than 3% alcoholic content, so it would not be wise to interpret the intercept. It is not safe to assume the same relationship between <code>PercentAlcohol</code> and <code>CaloriesPer12Oz</code> hold for beers with 0% alcohol; this would be extrapolation.</p>
+<p><strong>3. Interpret the 95% confidence interval for the slope in the context of the data.</strong></p>
+<p>We are 95% confident that the interval (26.557, 30.620) contains the true population slope for <code>PercentAlcohol</code>. This means we are 95% confident that for every 1% increase in alcohol content, the number of calories (per 12 oz) is expected to increase between 26.557 and 30.620 calories.</p>
+<p><strong>4. Find the critical value, <span class="math inline">\(t^*\)</span>, used to calculate the 95% confidence interval. The code below is a guide; uncomment and complete the lines of code to calculate and display the critical value.</strong></p>
+<p>The critical value used to calculate the 95% confident interval for the slope is ______.</p>
+<p><strong>5. Interpret the test statistic in the context of the data</strong></p>
+<p>The estimated slope of 28.577 is 27.78 standard errors above the hypothesized mean of 0, assuming there is no linear relationship between percent alcohol and calories in domestic beers.</p>
+<p><strong>6. How was the p-value calculated? Fill in the code below to calculate the p-value. The code below is a guide; uncomment and complete the lines of code to calculate and display the p-value.</strong></p>
+<p>The p-value is _______. Given there is no linear relationship between <code>PercentAlcohol</code> and <code>CaloriesPer12Oz</code>, the probability of obtaining a test statistic with magnitude ________ or more extreme is _______.</p>
+<p><strong>7. Fill in the code below to calculate the predicted calories and corresponding 90% interval for a single beer with alcohol content of 4.3%.</strong></p>
+<p><strong>8. Fill in the code below to calculate the predicted calories and corresponding 90% interval for the subset of beers with alcohol content of 4.3%.</strong></p>
+
+</div>
+</div>
+            </section>
+
+          </div>
+        </div>
+      </div>
+<a href="02-get-started.html" class="navigation navigation-prev " aria-label="Previous page"><i class="fa fa-angle-left"></i></a>
+<a href="04-anova.html" class="navigation navigation-next " aria-label="Next page"><i class="fa fa-angle-right"></i></a>
+    </div>
+  </div>
+<script src="libs/gitbook-2.6.7/js/app.min.js"></script>
+<script src="libs/gitbook-2.6.7/js/lunr.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-search.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-sharing.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-fontsettings.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-bookdown.js"></script>
+<script src="libs/gitbook-2.6.7/js/jquery.highlight.js"></script>
+<script>
+gitbook.require(["gitbook"], function(gitbook) {
+gitbook.start({
+"sharing": {
+"github": false,
+"facebook": true,
+"twitter": true,
+"google": false,
+"linkedin": false,
+"weibo": false,
+"instapaper": false,
+"vk": false,
+"all": ["facebook", "google", "twitter", "linkedin", "weibo", "instapaper"]
+},
+"fontsettings": {
+"theme": "white",
+"family": "sans",
+"size": 2
+},
+"edit": {
+"link": null,
+"text": null
+},
+"history": {
+"link": null,
+"text": null
+},
+"download": ["introregression.pdf", "introregression.epub"],
+"toc": {
+"collapse": "section",
+"depth": 1,
+"scroll_highlight": true
+},
+"theme": "White",
+"font": "sans"
+});
+});
+</script>
+
+<!-- dynamically load mathjax for compatibility with self-contained -->
+<script>
+  (function () {
+    var script = document.createElement("script");
+    script.type = "text/javascript";
+    var src = "";
+    if (src === "" || src === "true") src = "https://mathjax.rstudio.com/latest/MathJax.js?config=TeX-MML-AM_CHTML";
+    if (location.protocol !== "file:" && /^https?:/.test(src))
+      src = src.replace(/^https?:/, '');
+    script.src = src;
+    document.getElementsByTagName("head")[0].appendChild(script);
+  })();
+</script>
+</body>
+
+</html>

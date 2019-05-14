@@ -24,7 +24,7 @@ All results and interpretations can be easily extended to transformations in mul
 
 *Note*: *log* refers to the natural logarithm. 
 
-## Log-transformation on the response variable
+### Log-transformation on the response variable
 
 Suppose we fit a linear regression model with $\log(y)$, the log-transformed $y$, as the response variable. Under this model, we assume a linear relationship exists between $x$ and $\log(y)$, such that $\log(y) \sim N(\beta_0 + \beta_1 x, \sigma^2)$ for some $\beta_0$, $\beta_1$ and $\sigma^2$. In other words, we can model the relationship between $x$ and $\log(y)$ using the model in (\ref{log-y}).
 
@@ -48,7 +48,7 @@ In order to get back on the original scale, we need to use the exponential funct
 
 In order to interpret the slope and intercept, we need to first understand the relationship between the mean, median and log transformations.
 
-### Mean, Median, and Log Transformations 
+#### Mean, Median, and Log Transformations 
 
 Suppose we have a dataset `y` that contains the following observations:
 
@@ -81,7 +81,7 @@ This is a simple illustration to show
 
 2. $\text{Median}[\log(y)] = \log[\text{Median}(y)]$ - the median and log are commutable
 
-### Interpretaton of model coefficients
+#### Interpretaton of model coefficients
 
 Using (\ref{log-y}), the mean $\log(y)$ for any given value of $x$ is $\beta_0 + \beta_1 x$; however, this does **not** indicate that the mean of $y = \exp\{\beta_0 + \beta_1 x\}$ (see previous section). From the assumptions of linear regression, we assume that for any given value of $x$, the distribution of $\log(y)$ is Normal, and therefore symmetric. Thus the median of $\log(y)$ is equal to the mean of $\log(y)$, i.e $\text{Median}(\log(y)) = \beta_0 + \beta_1 x$. 
 
@@ -108,7 +108,7 @@ Thus, the median of $y$ for $x+1$ is $\exp\{\beta_1\}$ times the median of $y$ f
 
 *Interpretation: When $x$ increases by one unit, the median of $y$ is expected to multiply by a factor of $\exp\{\beta_1\}$.*
 
-## Log-transformation on the predictor variable 
+### Log-transformation on the predictor variable 
 
 Suppose we fit a linear regression model with $\log(x)$, the log-transformed $x$, as the predictor variable. Under this model, we assume a linear relationship exists between $\log(x)$ and $y$, such that $y \sim N(\beta_0 + \beta_1 \log(x), \sigma^2)$ for some $\beta_0$, $\beta_1$ and $\sigma^2$. In other words, we can model the relationship between $\log(x)$ and $y$ using the model in (\ref{log-x}).
 
@@ -135,7 +135,7 @@ Thus the mean of $y$ changes by $\beta_1 \log(C)$ units.
 
 *Interpretation: When $x$ is multiplied by a factor of $C$, the mean of $y$ is expected to change by $\beta_1 \log(C)$ units. For example, if $x$ is doubled, then the mean of $y$ is expected to change by $\beta_1 \log(2)$ units.*
 
-## Log-transformation on the the response and predictor variable
+### Log-transformation on the the response and predictor variable
 
 Suppose we fit a linear regression model with $\log(x)$, the log-transformed $x$, as the predictor variable and $\log(y)$, the log-transformed $y$, as the response variable. Under this model, we assume a linear relationship exists between $\log(x)$ and $\log(y)$, such that $\log(y) \sim N(\beta_0 + \beta_1 \log(x), \sigma^2)$ for some $\beta_0$, $\beta_1$ and $\sigma^2$. In other words, we can model the relationship between $\log(x)$ and $\log(y)$ using the model in (\ref{log-x-y}).
 

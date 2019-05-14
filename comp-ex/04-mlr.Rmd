@@ -6,18 +6,6 @@ knitr::opts_chunk$set(
 )
 ```
 
-<p><span class="marginnote shownote">
-<!--
-<div class="figure">-->
-<img src="img/04-mlr/seattle-home.jpg" alt=" " width="527"  />
-<br><br>
-<img src="img/04-mlr/seattle-home-3.jpg" alt=" " width="527"  />
-
-<!--
-<p class="caption marginnote">--> <!--</p>-->
-<!--</div>--></span></p>
-
-
 The goal of this lab is to use multiple linear regression to understand the variation in the selling price of houses in King County, Washington. You will also gain practice using special predictors, such as categorical predictors and interaction effects, in the model, and you will be introduced to variable transformations.
 
 ### Packages
@@ -49,7 +37,7 @@ The for today's lab contains the price and other characteristics of over 20,000 
 houses <- read_csv("data/KingCountyHouses.csv")
 ```
 
-## Exercises 
+### Exercises 
 
 1. Use data visualization and summary statistics to examine the distribution of `bedrooms`. What is the maximum value? Does this value make sense? If not, what is this an indication of, i.e. how did this value get recorded in the data? Briefly explain.
 
