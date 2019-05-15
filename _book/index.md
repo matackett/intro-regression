@@ -1,7 +1,7 @@
 --- 
 title: "Intro Regression"
 author: "Maria Tackett"
-date: "2019-05-14"
+date: "2019-05-15"
 site: bookdown::bookdown_site
 documentclass: book
 bibliography: [book.bib, packages.bib]
@@ -19,7 +19,7 @@ graphics: yes
 cover-image: "img/introregression-sticker.png"
 url: https\://www.introregression.org/
 apple-touch-icon: "img/introregression-sticker.png"
-favicon: "img/introregression-sticker.png"
+favicon: "img/introreg-icon.png"
 description: "Intro Regression is an electronic book with assignments and in-class activities to help students apply concepts in an intermediate-level regression analysis course. The primary focus of this text is application and computing; there are also supplemental math notes for some topics."
 ---
 

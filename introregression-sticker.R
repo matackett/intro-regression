@@ -33,7 +33,7 @@ bikeshare <-
   bikeshare %>% 
   mutate(cluster=as.factor(bike.cl$cluster))
 
-alpha.level = 0.5
+alpha.level = 0.75
 
 set.seed(1234)
 p <- bikeshare %>%
@@ -59,3 +59,11 @@ sticker(p, package="Intro Regression",p_color=col, p_family="sans-serif",
         p_size= 4.75, s_x=1, s_y=0.75, s_width=1.3, s_height=1, h_fill = "#FFFFFF", 
         h_color=col, h_size =0.8,
         filename="img/introregression-sticker.png")
+
+col = "#008EAA"
+sticker(p, package="",p_color=col, p_family="sans-serif", 
+        p_size= 4.75, s_x=1, s_y=0.95, s_width=1.3, s_height=1, h_fill = "#FFFFFF", 
+        h_color=col, h_size =0.8,
+        filename="img/introreg-icon.png")
+
+
