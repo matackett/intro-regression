@@ -1,4 +1,4 @@
-## ANOVA
+## COMP: Diamonds
 
 ```{r echo = F}
 knitr::opts_chunk$set(

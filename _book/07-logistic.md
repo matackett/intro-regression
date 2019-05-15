@@ -2,7 +2,7 @@
 
 
 
-## Logistic Regression
+## COMP: Spotify
 
 
 

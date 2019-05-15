@@ -1,7 +1,7 @@
 # Analysis of Variance {#anova}
 
 
-## ANOVA
+## COMP: Diamonds
 
 
 

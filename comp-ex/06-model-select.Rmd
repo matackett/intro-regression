@@ -1,4 +1,4 @@
-## Model Selection 
+## COMP: SATs and MLB
 
 ```{r echo = F}
 knitr::opts_chunk$set(

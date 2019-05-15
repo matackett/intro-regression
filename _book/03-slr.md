@@ -1,7 +1,7 @@
 # Simple Linear Regression {#slr}
 
 
-## Computing: College Admissions
+## COMP: College Admissions
 
 
 

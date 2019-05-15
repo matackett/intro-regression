@@ -1,6 +1,4 @@
-# (PART\*) Computing Assignments {-} 
-
-# Intro to R
+# COMPT: Intro to R
 
 ```{r echo = F}
 knitr::opts_chunk$set(

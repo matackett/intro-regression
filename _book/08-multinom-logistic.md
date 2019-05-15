@@ -1,7 +1,7 @@
 # Multinomial Logistic Regression {#multinom-logistic}
 
 
-## Multinomial Logistic Regression 
+## COMP: General Social Survey
 
 
 

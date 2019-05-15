@@ -1,4 +1,4 @@
-## Computing: College Admissions
+## COMP: College Admissions
 
 ```{r echo = F}
 knitr::opts_chunk$set(

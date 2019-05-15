@@ -1,7 +1,7 @@
 # Special Topics {#special}
 
 
-## Putting It All Together 
+## COMP: Regression Start to Finish
 
 
 

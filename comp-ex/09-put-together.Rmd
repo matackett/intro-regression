@@ -1,4 +1,4 @@
-## Putting It All Together 
+## COMP: Regression Start to Finish
 
 ```{r echo = F}
 knitr::opts_chunk$set(

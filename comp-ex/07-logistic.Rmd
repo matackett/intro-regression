@@ -1,4 +1,4 @@
-## Logistic Regression
+## COMP: Spotify
 
 ```{r echo = F}
 knitr::opts_chunk$set(

@@ -1,7 +1,7 @@
 # Multiple Linear Regression {#mlr}
 
 
-## Multiple Linear Regression 
+## COMP: Houses in King County
 
 
 
@@ -103,7 +103,7 @@ The data used in this lab was obtained from [https://github.com/proback/BYSH](ht
 
 
 
-## Data Wrangling & Multiple Linear Regression 
+## COMP: Airbnb in Asheville, NC
 
 
 

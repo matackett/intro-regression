@@ -1,4 +1,4 @@
-## Multiple Linear Regression 
+## COMP: Houses in King County
 
 ```{r echo = F}
 knitr::opts_chunk$set(

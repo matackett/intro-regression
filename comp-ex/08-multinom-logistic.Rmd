@@ -1,4 +1,4 @@
-## Multinomial Logistic Regression 
+## COMP: General Social Survey
 
 ```{r echo = F}
 knitr::opts_chunk$set(

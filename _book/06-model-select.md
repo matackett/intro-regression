@@ -1,7 +1,7 @@
 # Model Selection {#select}
 
 
-## Model Selection 
+## COMP: SATs and MLB
 
 
 
