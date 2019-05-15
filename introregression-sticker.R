@@ -50,12 +50,12 @@ p <- bikeshare %>%
   
 
 # add font to be used in sticker function
-font_add_google("Open Sans", "open")
+font_add_google('Poppins', "sans-serif")
 
 
 # create and save sticker
 col = "#008EAA"
-sticker(p, package="Intro Regression",p_color=col, p_family="open", 
+sticker(p, package="Intro Regression",p_color=col, p_family="sans-serif", 
         p_size= 4.75, s_x=1, s_y=0.75, s_width=1.3, s_height=1, h_fill = "#FFFFFF", 
         h_color=col, h_size =0.8,
         filename="img/introregression-sticker.png")
