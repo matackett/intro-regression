@@ -1,4 +1,4 @@
-## Analyzing Wages 
+## IN-CLASS: Wages
 
 ```{r echo = F}
 knitr::opts_chunk$set(eval = FALSE, 

@@ -149,7 +149,7 @@ Choose the appropriate model based on the results from the test. Use this model 
 
 The "Data" section is largely inspired by [datasciencebox.org](https://datasciencebox.org/).
 
-## Multinomial Logistic Regression 
+## IN-CLASS: Sesame Street
 
 
 

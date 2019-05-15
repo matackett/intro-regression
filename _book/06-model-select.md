@@ -180,7 +180,7 @@ np_bic <- summary_stats %>%
 Part II of this lab was inspired by Lab 6.5 in [An Introduction to Statistical Learning](http://www-bcf.usc.edu/~gareth/ISL/) and [Variable Selection in Regression](https://www.andrew.cmu.edu/user/achoulde/95791/homework/homework3.html).
 
 
-## Model Selection
+## IN-CLASS: SATs by State 
 
 
 

@@ -1,4 +1,4 @@
-## Model Selection
+## IN-CLASS: SATs by State 
 
 ```{r include=FALSE}
 knitr::opts_chunk$set(warning=FALSE,

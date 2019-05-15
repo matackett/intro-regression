@@ -1,4 +1,4 @@
-## Multinomial Logistic Regression 
+## IN-CLASS: Sesame Street
 
 ```{r echo = F}
 knitr::opts_chunk$set(eval = FALSE, 

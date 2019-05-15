@@ -1,5 +1,4 @@
-
-## In-Class Exercise: Beer Data Analysis
+## IN-CLASS: Carbs in Beer
 
 ```{r echo = F}
 knitr::opts_chunk$set(eval = FALSE, 

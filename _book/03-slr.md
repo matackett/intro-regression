@@ -99,7 +99,7 @@ State what the null and alternative hypotheses mean in terms of the linear relat
 
  
 
-## In-Class Exercise: Advertising Analysis
+## IN-CLASS: Advertising & Sales
 
 
 
@@ -212,8 +212,7 @@ ad_model
 
 3. Interpret the slope in the context of the problem.
 
-
-## In-Class Exercise: Beer Data Analysis
+## IN-CLASS: Carbs in Beer
 
 
 

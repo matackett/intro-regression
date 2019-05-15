@@ -1,4 +1,4 @@
-## Exam 01 Review
+## IN-CLASS: Diamonds - A Review Exercise
 
 ```{r include=FALSE}
 knitr::opts_chunk$set(warning=FALSE,

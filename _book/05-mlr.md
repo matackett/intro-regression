@@ -228,7 +228,7 @@ Use the code below to conduct a Nested F test to determine if `room_type` is a s
 
 The data from this lab is from [insideairbnb.com](http://insideairbnb.com/index.html)
 
-## Analyzing Wages 
+## IN-CLASS: Wages
 
 
 

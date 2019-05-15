@@ -1,4 +1,4 @@
-## Movies Analysis 
+## IN-CLASS: Movies on IMDB
 
 ```{r echo = F}
 knitr::opts_chunk$set(eval = F, 

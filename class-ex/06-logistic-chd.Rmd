@@ -1,4 +1,4 @@
-## Logistic Regression
+## IN-CLASS: Risk of Heart Disease
 
 ```{r include=FALSE}
 knitr::opts_chunk$set(warning=FALSE,

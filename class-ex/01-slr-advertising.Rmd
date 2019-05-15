@@ -1,4 +1,4 @@
-## In-Class Exercise: Advertising Analysis
+## IN-CLASS: Advertising & Sales
 
 ```{r echo = F}
 knitr::opts_chunk$set(

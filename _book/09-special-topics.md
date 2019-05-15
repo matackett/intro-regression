@@ -72,7 +72,7 @@ At a minimum, the discussion of the model validation should include the followin
 
 Brief summary of the conclusions drawn from the analysis.
 
-## Dealing with Missing Data
+## IN-CLASS: Missing Data Exercise
 
 
 
