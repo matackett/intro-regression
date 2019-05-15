@@ -184,4 +184,4 @@ coef_int <- model_int$coefficients
 - **What is the estimated slope of `caratCent` for a diamond with `color==J`?**
 
 
-
+***

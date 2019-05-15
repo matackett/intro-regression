@@ -149,6 +149,8 @@ Choose the appropriate model based on the results from the test. Use this model 
 
 The "Data" section is largely inspired by [datasciencebox.org](https://datasciencebox.org/).
 
+***
+
 ## IN-CLASS: Sesame Street
 
 
@@ -244,3 +246,5 @@ anova(model1, model2, test = "Chisq")
 
 Data from [http://www2.stat.duke.edu/~jerry/sta210/sesamelab.html](http://www2.stat.duke.edu/~jerry/sta210/sesamelab.html)
 
+
+***

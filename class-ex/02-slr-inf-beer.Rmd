@@ -80,3 +80,5 @@ predict.lm(model,x0,interval="prediction",conf.level=0.9)
 x0 <-  data.frame(PercentAlcohol=4.3)
 predict.lm(model,x0,interval="confidence",conf.level= 0.9) 
 ```
+
+***

@@ -93,4 +93,4 @@ State what the null and alternative hypotheses mean in terms of the linear relat
 
 15. Consider the confidence interval from Exercise 13 and the hypotheses in Exercise 14. Is the confidence interval consistent with the null or alternative hypothesis? Briefly explain.  
 
- 
+***

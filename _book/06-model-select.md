@@ -179,6 +179,7 @@ np_bic <- summary_stats %>%
 
 Part II of this lab was inspired by Lab 6.5 in [An Introduction to Statistical Learning](http://www-bcf.usc.edu/~gareth/ISL/) and [Variable Selection in Regression](https://www.andrew.cmu.edu/user/achoulde/95791/homework/homework3.html).
 
+***
 
 ## IN-CLASS: SATs by State 
 
@@ -263,6 +264,8 @@ Continue the model selection until you have a final model. Show each step of the
 ### Choosing a final model 
 
 - You likely have at least 2 different models chosen by the various model selection procedures. Which variables will you include in your final model? Why did you choose this to be your final model?
+
+***
 
 ## NOTES: Model Selection Criteria
 

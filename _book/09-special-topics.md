@@ -72,6 +72,8 @@ At a minimum, the discussion of the model validation should include the followin
 
 Brief summary of the conclusions drawn from the analysis.
 
+***
+
 ## IN-CLASS: Missing Data Exercise
 
 
@@ -121,6 +123,7 @@ knitr::kable(tidy(m, conf.int = T),format = "markdown")
 
 
 
+***
 
 
 

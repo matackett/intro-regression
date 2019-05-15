@@ -92,3 +92,5 @@ $$\bar{y}_k \pm t^* \frac{\hat{\sigma}}{\sqrt{n_k}}$$
 12. Based on this analysis, describe the relationship between the color and the mean carat weight in diamonds that cost $1200 or less. *Refer to the diamond documentation to recall what the color scale means.*
 
 *You're done! Commit all remaining changes, use the commit message "Done with Lab 3!", and push. Before you wrap up the assignment, make sure the .Rmd, .html, and .md documents are all updated on your GitHub repo.*
+
+***

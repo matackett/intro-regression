@@ -100,3 +100,5 @@ anova(model1, model2, test = "Chisq")
 
 Data from [http://www2.stat.duke.edu/~jerry/sta210/sesamelab.html](http://www2.stat.duke.edu/~jerry/sta210/sesamelab.html)
 
+
+***

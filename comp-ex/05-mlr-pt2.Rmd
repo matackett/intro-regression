@@ -168,3 +168,5 @@ anova(model1, model2)
 ### Acknowledgement
 
 The data from this lab is from [insideairbnb.com](http://insideairbnb.com/index.html)
+
+***

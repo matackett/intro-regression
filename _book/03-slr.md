@@ -97,7 +97,7 @@ State what the null and alternative hypotheses mean in terms of the linear relat
 
 15. Consider the confidence interval from Exercise 13 and the hypotheses in Exercise 14. Is the confidence interval consistent with the null or alternative hypothesis? Briefly explain.  
 
- 
+***
 
 ## IN-CLASS: Advertising & Sales
 
@@ -212,6 +212,8 @@ ad_model
 
 3. Interpret the slope in the context of the problem.
 
+***
+
 ## IN-CLASS: Carbs in Beer
 
 
@@ -296,6 +298,8 @@ predict.lm(model,x0,interval="prediction",conf.level=0.9)
 x0 <-  data.frame(PercentAlcohol=4.3)
 predict.lm(model,x0,interval="confidence",conf.level= 0.9) 
 ```
+
+***
 
 
 

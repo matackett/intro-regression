@@ -150,4 +150,4 @@ ggplot(data=houses,mapping=aes(x=_____,y=_____,color=as.factor(waterfront))) +
 
 The data used in this lab was obtained from [https://github.com/proback/BYSH](https://github.com/proback/BYSH).
 
-
+***

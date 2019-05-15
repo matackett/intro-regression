@@ -73,3 +73,5 @@ fram_data <- read_csv("data/framingham.csv") %>%
 ### References
 
 - Data obtained from [https://www.kaggle.com/neisha/heart-disease-prediction-using-logistic-regression/data](https://www.kaggle.com/neisha/heart-disease-prediction-using-logistic-regression/data)
+
+***

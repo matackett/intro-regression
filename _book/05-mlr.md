@@ -101,7 +101,7 @@ Fill in the code below to plot the relationship between `logprice` and `bedrooms
 
 The data used in this lab was obtained from [https://github.com/proback/BYSH](https://github.com/proback/BYSH).
 
-
+***
 
 ## COMP: Airbnb in Asheville, NC
 
@@ -228,6 +228,8 @@ Use the code below to conduct a Nested F test to determine if `room_type` is a s
 
 The data from this lab is from [insideairbnb.com](http://insideairbnb.com/index.html)
 
+***
+
 ## IN-CLASS: Wages
 
 
@@ -259,6 +261,8 @@ The data from this lab is from [insideairbnb.com](http://insideairbnb.com/index.
 - Calculate the regression model using `EducCat` instead of `Educ`.
 
 
+
+***
 
 ## NOTES: Matrix Form of Linear Regression
 

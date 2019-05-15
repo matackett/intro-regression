@@ -279,3 +279,5 @@ Is the independence assumption met based on the description of the data? Briefly
 Throughout the semester, we will learn various methods to deal with any violations in regression assumptions. For now, we will just note them.
 
 *You're done! Commit all remaining changes, use the commit message "Done with Lab 1!", and push. Before you wrap up the assignment, make sure all documents are updated on your GitHub repo.*
+
+***

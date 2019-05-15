@@ -112,6 +112,8 @@ The data for the songs can be found in *test_songs.csv*.
 
       - If they were good recommendations, explain how the model and threshold helped you distinguish between songs the user would like and those he wouldn't. 
       - If they were not good recommendations, explain the limitations in your model and/or threshold.
+      
+***
 
 ## IN-CLASS: Risk of Heart Disease
 
@@ -186,3 +188,5 @@ fram_data <- read_csv("data/framingham.csv") %>%
 ### References
 
 - Data obtained from [https://www.kaggle.com/neisha/heart-disease-prediction-using-logistic-regression/data](https://www.kaggle.com/neisha/heart-disease-prediction-using-logistic-regression/data)
+
+***
