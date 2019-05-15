@@ -260,7 +260,7 @@ The data from this lab is from [insideairbnb.com](http://insideairbnb.com/index.
 
 
 
-## Matrix Form of Linear Regression
+## NOTES: Matrix Form of Linear Regression
 
 
 
@@ -434,7 +434,7 @@ E[(\hat{\boldsymbol{\beta}} - \boldsymbol{\beta})(\hat{\boldsymbol{\beta}} - \bo
 
 
 
-## Log Transformations in Linear Regression
+## NOTES: Log Transformations
 
 
 
@@ -596,7 +596,7 @@ Thus, the median of $y$ for $Cx$ is $C^{\beta_1}$ times the median of $y$ for $x
 
 
 
-## Details about Model Diagnostics
+## NOTES: Model Diagnostics
 
 
 

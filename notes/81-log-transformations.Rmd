@@ -1,4 +1,4 @@
-## Log Transformations in Linear Regression
+## NOTES: Log Transformations
 
 ```{r include=FALSE}
 knitr::opts_chunk$set(echo = TRUE,

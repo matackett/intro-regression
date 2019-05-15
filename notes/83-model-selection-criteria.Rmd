@@ -1,4 +1,4 @@
-## Model Selection Criteria: AIC & BIC
+## NOTES: Model Selection Criteria
 
 ```{r include=FALSE}
 knitr::opts_chunk$set(echo = TRUE)

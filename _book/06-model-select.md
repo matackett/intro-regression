@@ -264,7 +264,7 @@ Continue the model selection until you have a final model. Show each step of the
 
 - You likely have at least 2 different models chosen by the various model selection procedures. Which variables will you include in your final model? Why did you choose this to be your final model?
 
-## Model Selection Criteria: AIC & BIC
+## NOTES: Model Selection Criteria
 
 
 

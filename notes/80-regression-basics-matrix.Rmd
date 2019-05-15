@@ -1,4 +1,4 @@
-## Matrix Form of Linear Regression
+## NOTES: Matrix Form of Linear Regression
 
 ```{r include=FALSE}
 knitr::opts_chunk$set(echo = TRUE)
