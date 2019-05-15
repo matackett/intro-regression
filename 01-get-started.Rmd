@@ -1,6 +1,6 @@
 # Getting Started {#getstarted}
 
-## Using This Book
+## How to use this book
 
 Each chapter of this book is a topic that may be covered in an intermediate-level regression analysis course. The topics are arranged based on the way they were taught in STA 210: Regression Analysis; however, the assignments do not have to be used in the order they are presented. Feel free to use the text and adapt it to fit the needs of your course. 
 
@@ -12,9 +12,11 @@ Each chapter includes several sections of assignments and supplmental notes abou
 
 - **HW**: Focus on putting together conceptual knowledge and computing skills. Most homework assingments include two parts: (1) *Concepts & Computations* - guided short-answer exercises that focus on conceptual knowledge and short computational tasks, (2) *Data Analysis* - open-ended question where students perform a complete regression analysis and write results as a narrative. 
 
+- **NOTES**: Supplemental notes providing more mathematical details. To fully understand the notes, the reader should be familiar with basic concepts in linear algebra. 
+
 ***
 
-## Introductory Statistics Review 
+## Intro Statistics Review
 
 The primary audience for this text is students who have completed an introductory statistics course. It is assumed that students are familiar with the concept of statitical inference. This text is also written assuming students have had some exposure to R and the tidyverse syntax. (There is one "Intro to R" assingment included; however, this assignment is not a comprehensive introduction to R.) The following are suggested texts to review statistical concepts and computing: 
 
