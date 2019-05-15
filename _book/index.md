@@ -20,12 +20,12 @@ cover-image: "img/introregression-sticker.png"
 url: https\://www.introregression.org/
 apple-touch-icon: "img/introregression-sticker.png"
 favicon: "img/introregression-sticker.png"
-description: "Intro Regression is an electronic book with assignments and in-class activities to help students apply concepts in an intermediate-level regression analysis course. The primary focus of this text is application and computing; there are also supplemental math notes for some topics."
+description: "An electronic book with assignments and in-class activities to help students apply concepts in an intermediate-level regression analysis course. The primary focus of this text is application and computing; there are also supplemental math notes for some topics."
 ---
 
 
 
-# Welcome to Intro Regression!
+# Welcome to Intro Regression! {-}
 
 <img src="img/introregression-sticker.png" width="30%" style="display: block; margin: auto;" />
 
@@ -33,13 +33,15 @@ This text was originally written as materials  for [STA 210: Regression Analysis
 
 This text is a work-in-progress and will be periodically upated with new material. Please email me (<a href="mailto:maria.tackett@duke.edu">maria.tackett@duke.edu</a>) if you have any questions, feedback, or suggestions. I would also love to hear about your experience if you use the text in your course.
 
+## License {-}
+
 <a rel="license" href="http://creativecommons.org/licenses/by-nc-sa/4.0/"><img alt="Creative Commons License" style="border-width:0" src="https://i.creativecommons.org/l/by-nc-sa/4.0/88x31.png" /></a><br />
 
 This work is licensed under the [Creative Commons Attribution-NonCommercial-ShareAlike 4.0 International License](http://creativecommons.org/licenses/by-nc-sa/4.0/).
 
 ***
 
-## Introductory Statistics Review
+## Introductory Statistics Review {-}
 
 The primary audience for this text is students who have completed an introductory statistics course. It is assumed that students are familiar with the concept of statitical inference. This text is also written assuming students have had some exposure to R and the tidyverse syntax. (There is one "Intro to R" assingment included; however, this assignment is not a comprehensive introduction to R.) The following are suggested texts to review statistical concepts and computing: 
 
@@ -49,7 +51,7 @@ The primary audience for this text is students who have completed an introductor
 
 ***
 
-## Using This Book 
+## Using This Book {-}
 
 Each chapter of this book is a topic that may be covered in an intermediate-level regression analysis course. The topics are arranged based on the way they were taught in STA 210: Regression Analysis; however, the assignments do not have to be used in the order they are presented. Feel free to use the text and adapt it to fit the needs of your course. 
 
