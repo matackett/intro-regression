@@ -161,6 +161,7 @@ E[(\hat{\boldsymbol{\beta}} - \boldsymbol{\beta})(\hat{\boldsymbol{\beta}} - \bo
 \end{aligned}
 \end{equation}
 
+***
 
 
 

@@ -172,8 +172,7 @@ Thus, the median of $y$ for $Cx$ is $C^{\beta_1}$ times the median of $y$ for $x
 
 *Interpretation: When $x$ is multiplied by a factor of $C$, the median of $y$ is expected to multiple by a factor of $C^{\beta_1}$. For example, if $x$ is doubled, then the median of $y$ is expected to multiply by $2^{\beta_1}$.*
 
-
-
+***
 
 
 
