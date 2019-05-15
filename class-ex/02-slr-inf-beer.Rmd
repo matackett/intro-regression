@@ -1,4 +1,4 @@
-## IN-CLASS: Carbs in Beer
+## IN-CLASS: Carbohydrates in Beer
 
 ```{r echo = F}
 knitr::opts_chunk$set(eval = FALSE, 

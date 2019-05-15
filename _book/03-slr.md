@@ -214,7 +214,7 @@ ad_model
 
 ***
 
-## IN-CLASS: Carbs in Beer
+## IN-CLASS: Carbohydrates in Beer
 
 
 
