@@ -19,7 +19,7 @@ graphics: yes
 cover-image: "img/introregression-sticker.png"
 url: https\://www.introregression.org/
 apple-touch-icon: "img/introregression-sticker.png"
-favicon: "img/introreg-icon.png"
+favicon: "img/introregression-sticker.png"
 description: "Intro Regression is an electronic book with assignments and in-class activities to help students apply concepts in an intermediate-level regression analysis course. The primary focus of this text is application and computing; there are also supplemental math notes for some topics."
 ---
 
