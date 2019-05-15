@@ -5,11 +5,11 @@
 
   <meta charset="UTF-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
-  <title>5.5 Log Transformations in Linear Regression | Intro Regression</title>
+  <title>7.1 Logistic Regression | Intro Regression</title>
   <meta name="description" content="An electronic book with assignments and in-class activities to help students apply concepts in an intermediate-level regression analysis course. The primary focus of this text is application and computing; there are also supplemental math notes for some topics.">
   <meta name="generator" content="bookdown  and GitBook 2.6.7">
 
-  <meta property="og:title" content="5.5 Log Transformations in Linear Regression | Intro Regression" />
+  <meta property="og:title" content="7.1 Logistic Regression | Intro Regression" />
   <meta property="og:type" content="book" />
   <meta property="og:url" content="https://www.introregression.org/" />
   <meta property="og:image" content="https://www.introregression.org/img/introregression-sticker.png" />
@@ -17,7 +17,7 @@
   <meta name="github-repo" content="matackett/intro-regression" />
 
   <meta name="twitter:card" content="summary" />
-  <meta name="twitter:title" content="5.5 Log Transformations in Linear Regression | Intro Regression" />
+  <meta name="twitter:title" content="7.1 Logistic Regression | Intro Regression" />
   
   <meta name="twitter:description" content="An electronic book with assignments and in-class activities to help students apply concepts in an intermediate-level regression analysis course. The primary focus of this text is application and computing; there are also supplemental math notes for some topics." />
   <meta name="twitter:image" content="https://www.introregression.org/img/introregression-sticker.png" />
@@ -32,8 +32,8 @@
   <meta name="apple-mobile-web-app-status-bar-style" content="black">
   <link rel="apple-touch-icon-precomposed" sizes="152x152" href="img/introregression-sticker.png">
   <link rel="shortcut icon" href="img/introregression-sticker.png" type="image/x-icon">
-<link rel="prev" href="5-4-matrix-form-of-linear-regression.html">
-<link rel="next" href="5-6-details-about-model-diagnostics.html">
+<link rel="prev" href="7-logistic.html">
+<link rel="next" href="7-2-logistic-regression-1.html">
 <script src="libs/jquery-2.2.3/jquery.min.js"></script>
 <link href="libs/gitbook-2.6.7/css/style.css" rel="stylesheet" />
 <link href="libs/gitbook-2.6.7/css/plugin-table.css" rel="stylesheet" />
@@ -249,111 +249,100 @@ code > span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Inf
           <div class="page-inner">
 
             <section class="normal" id="section-">
-<div id="log-transformations-in-linear-regression" class="section level2">
-<h2><span class="header-section-number">5.5</span> Log Transformations in Linear Regression</h2>
-<p>This document provides details about the model interpretion when the predictor and/or response variables are log-transformed. For simplicity, we will discuss transformations for the simple linear regression model:</p>
-<span class="math display">\[\begin{equation}
-\label{orig}
-y = \beta_0 + \beta_1 x
-\end{equation}\]</span>
-<p>All results and interpretations can be easily extended to transformations in multiple regression models.</p>
-<p><em>Note</em>: <em>log</em> refers to the natural logarithm.</p>
-<div id="log-transformation-on-the-response-variable" class="section level3">
-<h3><span class="header-section-number">5.5.1</span> Log-transformation on the response variable</h3>
-<p>Suppose we fit a linear regression model with <span class="math inline">\(\log(y)\)</span>, the log-transformed <span class="math inline">\(y\)</span>, as the response variable. Under this model, we assume a linear relationship exists between <span class="math inline">\(x\)</span> and <span class="math inline">\(\log(y)\)</span>, such that <span class="math inline">\(\log(y) \sim N(\beta_0 + \beta_1 x, \sigma^2)\)</span> for some <span class="math inline">\(\beta_0\)</span>, <span class="math inline">\(\beta_1\)</span> and <span class="math inline">\(\sigma^2\)</span>. In other words, we can model the relationship between <span class="math inline">\(x\)</span> and <span class="math inline">\(\log(y)\)</span> using the model in ().</p>
-<span class="math display">\[\begin{equation}
-\label{log-y}
-\log(y) = \beta_0 + \beta_1 x
-\end{equation}\]</span>
-<p>If we interpret the model in terms of <span class="math inline">\(\log(y)\)</span>, then we can use the usual interpretations for slope and intercept. When reporting results, however, it is best to give all interpretations in terms of the original response variable <span class="math inline">\(y\)</span>, since interpretations using log-transformed variables are often more difficult to truly understand.</p>
-<p>In order to get back on the original scale, we need to use the exponential function (also known as the anti-log), <span class="math inline">\(\exp\{x\} = e^x\)</span>. Therefore, we use the model in () for interpretations and predictions, we will use () to state our conclusions in terms of <span class="math inline">\(y\)</span>.</p>
-<span class="math display">\[\begin{equation}
-\label{exp-y}
-\begin{aligned}
-&amp;\exp\{\log(y)\} = \exp\{\beta_0 + \beta_1 x\} \\[10pt]
-\Rightarrow &amp;y = \exp\{\beta_0 + \beta_1 x\} \\[10pt]
-\Rightarrow &amp;y = \exp\{\beta_0\}\exp\{\beta_1 x\}
-\end{aligned}
-\end{equation}\]</span>
-<p>In order to interpret the slope and intercept, we need to first understand the relationship between the mean, median and log transformations.</p>
-<div id="mean-median-and-log-transformations" class="section level4">
-<h4><span class="header-section-number">5.5.1.1</span> Mean, Median, and Log Transformations</h4>
-<p>Suppose we have a dataset <code>y</code> that contains the following observations:</p>
-<p>If we log-transform the values of <code>y</code> then calculate the mean and median, we have</p>
-<p>If we calculate the mean and median of <code>y</code>, then log-transform the mean and median, we have</p>
-<p>This is a simple illustration to show</p>
+<div id="logistic-regression" class="section level2">
+<h2><span class="header-section-number">7.1</span> Logistic Regression</h2>
+<p>Over the past ten years, recommendation systems have become increasingly popular as more companies strive to offer customized user experiences. Amazon recommends products you may like based on your browse and purchase history, Netflix recommends movies and TV shows based on your viewing history, and music platforms like Spotify recommend songs you may like based on your listening history. While these recommendation systems are built using a variety of algorithms, they are all trying to achieve the same goal: use the characteristics of the products/movies/music a user is known to like to figure out the products/movies/music the user may like but hasn’t discovered yet.</p>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="co"># See [&quot;How Does Spotify Know You So Well?&quot;](https://medium.com/s/story/spotifys-discover-weekly-how-machine-learning-finds-your-new-music-19a41ab76efe) for more information about Spotify&#39;s recommendation algorithms.</span></code></pre></div>
+<p>In today’s lab, we will focus on using the characteristics of songs a user previously played to determine whether or not a user will like a new song. We will use logistic regression to build a model that predicts the probability a user likes a song using the relevant characteristics of that song.</p>
+<div id="packages-5" class="section level3">
+<h3><span class="header-section-number">7.1.1</span> Packages</h3>
+<p>You will need the following packages for today’s lab:</p>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="kw">library</span>(tidyverse)
+<span class="kw">library</span>(broom)
+## Fill in other packages as needed</code></pre></div>
+</div>
+<div id="data-5" class="section level3">
+<h3><span class="header-section-number">7.1.2</span> Data</h3>
+<p>The data in this lab is from the <a href="https://www.kaggle.com/geomack/spotifyclassification">Spotify Song Attributes</a> data set in Kaggle. This data set contains song characteristics of 2017 songs played by a single user and whether or not he liked the song. Since this dataset contains the song preferences of a single user, the scope of the analysis is limited to this particular user.</p>
+<p>You will use data <code>spotify.csv</code> to build the logistic regression model and test the performance of the model using the songs in <code>test_songs.csv</code>. Click <a href="https://www2.stat.duke.edu/courses/Spring19/sta210.001/labs/data/spotify.csv"><strong>here</strong></a> to download the dataset <code>spotify.csv</code>, and click <a href="https://www2.stat.duke.edu/courses/Spring19/sta210.001/labs/data/test_songs.csv"><strong>here</strong></a> to download the dataset <code>test_songs.csv</code>. Upload both files to the to the <code>data</code> folder in your <code>lab-07</code> project.</p>
+<p>The <a href="https://developer.spotify.com/documentation/web-api/reference/tracks/get-audio-features/">Spotify documentation page</a> contains a description of the variables included in this dataset.</p>
+</div>
+<div id="exercises-5" class="section level3">
+<h3><span class="header-section-number">7.1.3</span> Exercises</h3>
+<div id="exploratory-data-analysis-1" class="section level4">
+<h4><span class="header-section-number">7.1.3.1</span> Exploratory Data Analysis</h4>
 <ol style="list-style-type: decimal">
-<li><p><span class="math inline">\(\text{Mean}[{\log(y)}] \neq \log[\text{Mean}(y)]\)</span> - the mean and log are not commutable</p></li>
-<li><p><span class="math inline">\(\text{Median}[\log(y)] = \log[\text{Median}(y)]\)</span> - the median and log are commutable</p></li>
+<li>Read through the <a href="https://developer.spotify.com/documentation/web-api/reference/tracks/get-audio-features/">Spotify documentation page</a> to learn more about the variables in the dataset. The response variable for this analysis is <code>like</code>, such that 1 indicates that the user likes the song and 0 otherwise. The remaining will be considered as predictor variables in the model.</li>
+</ol>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="co"># Part of the code to make `x` a factor. </span>
+
+<span class="co"># mutate(x = factor(x))</span></code></pre></div>
+<pre><code>- Which potential predictor variables are categorical? You only need to include the variables that are in the dataset.
+- Recode the each of the categorical predictors so they are a `factor` variable type.</code></pre>
+<ol start="2" style="list-style-type: decimal">
+<li><p>Choose a quantitative predictor variable. Make the appropriate plot of the response versus this predictor variable. Describe the relationship between the two variables.</p></li>
+<li><p>Choose a categorical predictor variable. Make the appropriate plot of the response versus this predictor variable. Describe the relationship between the two variables.</p></li>
+<li><p>Let’s consider a potential interaction effect between the variables you choose in Exercises 2 and 3. Make the appropriate plots to examine the potential interaction effect. Do these plots suggest there is a significant interaction effect? Briefly explain.</p></li>
+</ol>
+<p><em>In practice, you should do exploratory data analysis for all potential explanatory variables. We did an abbreviated exploratory data analysis to make the assignment more manageable.</em></p>
+</div>
+<div id="part-ii-logistic-regression-model" class="section level4">
+<h4><span class="header-section-number">7.1.3.2</span> Part II: Logistic Regression Model</h4>
+<ol start="5" style="list-style-type: decimal">
+<li><p>Fit the full model and display the model output. The main objective for the model is to predict whether the user will like a song. Should we use this model for this objective? Briefly explain.</p></li>
+<li><p>Use the <code>step</code> function to perform backward selection. Display the output for the selected model.</p></li>
+<li><p>Briefly describe the criteria used by <code>step</code> to select the final model.</p></li>
+</ol>
+<p>For the remainder of this lab, you will use the model chosen by model selection . In practice; however, you would not just stop with the results from the automated model selection procedure and would examine the model further to see if there are any significant interactions, higher-order terms, or if it could even be simplified.</p>
+<ol start="8" style="list-style-type: decimal">
+<li><p>Consider the variable <code>duration_ms</code>.</p>
+<ul>
+<li>Interpret the coefficient of <code>duration_ms</code> and its 95% confidence interval in terms of the odds of the user liking a song.</li>
+<li>Suppose instead of <code>duration_ms</code>, we use the variable <code>duration_s</code>, the duration of a song in seconds. What would be the effect of <code>duration_s</code> on the odds of the user liking a song? Include the updated coefficient and corresponding 95% confidence interval for <code>duration_s</code>. <em>Assume all other variables in the model are unchanged.</em></li>
+</ul></li>
+<li><p>Interpret <code>mode</code> and its 95% confidence interval in terms of the odds of the user liking a song.</p>
+<ul>
+<li>Based on this model, is there evidence of a significant difference in the user’s preference between songs in a major key versus those in a minor key?</li>
+</ul></li>
 </ol>
 </div>
-<div id="interpretaton-of-model-coefficients" class="section level4">
-<h4><span class="header-section-number">5.5.1.2</span> Interpretaton of model coefficients</h4>
-<p>Using (), the mean <span class="math inline">\(\log(y)\)</span> for any given value of <span class="math inline">\(x\)</span> is <span class="math inline">\(\beta_0 + \beta_1 x\)</span>; however, this does <strong>not</strong> indicate that the mean of <span class="math inline">\(y = \exp\{\beta_0 + \beta_1 x\}\)</span> (see previous section). From the assumptions of linear regression, we assume that for any given value of <span class="math inline">\(x\)</span>, the distribution of <span class="math inline">\(\log(y)\)</span> is Normal, and therefore symmetric. Thus the median of <span class="math inline">\(\log(y)\)</span> is equal to the mean of <span class="math inline">\(\log(y)\)</span>, i.e <span class="math inline">\(\text{Median}(\log(y)) = \beta_0 + \beta_1 x\)</span>.</p>
-<p>Since the log and the median are commutable, <span class="math inline">\(\text{Median}(\log(y)) = \beta_0 + \beta_1 x \Rightarrow \text{Median}(y) = \exp\{\beta_0 + \beta_1 x\}\)</span>. Thus, when we log-transform the response variable, the interpretation of the intercept and slope are in terms of the effect on the <strong>median</strong> of <span class="math inline">\(y\)</span>.</p>
-<p><strong>Intercept</strong>: The intercept is expected median of <span class="math inline">\(y\)</span> when the predictor variable equals 0. Therefore, when <span class="math inline">\(x=0\)</span>,</p>
-<span class="math display">\[\begin{equation}
-\begin{aligned}
-&amp;\log(y) = \beta_0 + \beta_1 \times 0 = \beta_0 \\[10pt]
-\Rightarrow &amp;y = \exp\{\beta_0\}
-\end{aligned}
-\end{equation}\]</span>
-<p><em>Interpretation: When <span class="math inline">\(x=0\)</span>, the median of <span class="math inline">\(y\)</span> is expected to be <span class="math inline">\(\exp\{\beta_0\}\)</span>.</em></p>
-<p><strong>Slope</strong>: The slope is the expected change in the median of <span class="math inline">\(y\)</span> when <span class="math inline">\(x\)</span> increases by 1 unit. The change in the median of <span class="math inline">\(y\)</span> is</p>
-<span class="math display">\[\begin{equation}
-\exp\{[\beta_0 + \beta_1 (x+1)] - [\beta_0 + \beta_1 x]\} = \frac{\exp\{\beta_0 + \beta_1 (x+1)\}}{\exp\{\beta_0 + \beta_1 x\}} = \frac{\exp\{\beta_0\}\exp\{\beta_1 x\}\exp\{\beta_1\}}{\exp\{\beta_0\}\exp\{\beta_1 x\}} = \exp\{\beta_1\}
-\end{equation}\]</span>
-<p>Thus, the median of <span class="math inline">\(y\)</span> for <span class="math inline">\(x+1\)</span> is <span class="math inline">\(\exp\{\beta_1\}\)</span> times the median of <span class="math inline">\(y\)</span> for <span class="math inline">\(x\)</span>.</p>
-<p><em>Interpretation: When <span class="math inline">\(x\)</span> increases by one unit, the median of <span class="math inline">\(y\)</span> is expected to multiply by a factor of <span class="math inline">\(\exp\{\beta_1\}\)</span>.</em></p>
+<div id="part-iii-model-assessment" class="section level4">
+<h4><span class="header-section-number">7.1.3.3</span> Part III: Model Assessment</h4>
+<p>In the next few questions, we will do an abbreviated analysis of the residuals.</p>
+<ol start="10" style="list-style-type: decimal">
+<li><p>Create a binned plot of the residuals versus the predicted probabilities. <em>You will first need to use the <code>augment</code> function with the options <code>type.predict = &quot;response&quot;</code> and <code>type.residuals = &quot;response&quot;</code> to get the predicted probabilities and corresponding residuals.</em></p></li>
+<li><p>Choose a quantitative predictor in the final model. Make the appropriate table or plot to examine the residuals versus this predictor variable.</p></li>
+<li><p>Choose a categorical predictor in the final model. Make the appropriate table or plot to examine the residuals versus this predictor variable.</p></li>
+</ol>
+<p><em>In practice, you should examine plots of residuals versus <u>every</u> predictor variable to make a complete assessment of the model fit. For the sake of time on the lab, you will use these three plots to help make the assessment in Exercise 14.</em></p>
+<ol start="13" style="list-style-type: decimal">
+<li><p>Plot the ROC curve and find the area under the curve.</p></li>
+<li><p>Based on the residual plots and the ROC curve, is this logistic model a good fit for the data? Briefly explain.</p></li>
+</ol>
 </div>
+<div id="part-iv-prediction" class="section level4">
+<h4><span class="header-section-number">7.1.3.4</span> Part IV: Prediction</h4>
+<ol start="15" style="list-style-type: decimal">
+<li>You are part of the data science team at Spotify, and your model will be used to make song recommendations to users. The goal is to recommend songs the user has a high probability of liking.</li>
+</ol>
+<p>As a group, choose a threshold value to distinguish between songs the user will like and those the user won’t like. What is your threshold value? Use the ROC curve to help justify your choice.</p>
+<ol start="16" style="list-style-type: decimal">
+<li><p>Now let’s put your model and decision threshold to the test! Use your model to calculate the predicted probability that the user will like the following two songs:</p>
+<ul>
+<li>“Sign of the Times” by Harry Styles</li>
+<li>“Hotline Bling” by Drake</li>
+</ul></li>
+</ol>
+<p>The data for the songs can be found in <em>test_songs.csv</em>.</p>
+<ol start="17" style="list-style-type: decimal">
+<li><p>Using your decision threshold from Question 15, would you recommend “Sign of the Times” to this user? Would your recommend “Hotline Bling” to this user? Briefly explain your decision.</p></li>
+<li><p>The user likes “Hotline Bling” but doesn’t like “Sign of the Times”. How good were your recommendations based on these two songs?</p>
+<ul>
+<li>If they were good recommendations, explain how the model and threshold helped you distinguish between songs the user would like and those he wouldn’t.</li>
+<li>If they were not good recommendations, explain the limitations in your model and/or threshold.</li>
+</ul></li>
+</ol>
 </div>
-<div id="log-transformation-on-the-predictor-variable" class="section level3">
-<h3><span class="header-section-number">5.5.2</span> Log-transformation on the predictor variable</h3>
-<p>Suppose we fit a linear regression model with <span class="math inline">\(\log(x)\)</span>, the log-transformed <span class="math inline">\(x\)</span>, as the predictor variable. Under this model, we assume a linear relationship exists between <span class="math inline">\(\log(x)\)</span> and <span class="math inline">\(y\)</span>, such that <span class="math inline">\(y \sim N(\beta_0 + \beta_1 \log(x), \sigma^2)\)</span> for some <span class="math inline">\(\beta_0\)</span>, <span class="math inline">\(\beta_1\)</span> and <span class="math inline">\(\sigma^2\)</span>. In other words, we can model the relationship between <span class="math inline">\(\log(x)\)</span> and <span class="math inline">\(y\)</span> using the model in ().</p>
-<span class="math display">\[\begin{equation}
-\label{log-x}
-y = \beta_0 + \beta_1 \log(x)
-\end{equation}\]</span>
-<p><strong>Intercept</strong>: The intercept is the mean of <span class="math inline">\(y\)</span> when <span class="math inline">\(\log(x) = 0\)</span>, i.e. <span class="math inline">\(x = 1\)</span>.</p>
-<p><em>Interpretation: When <span class="math inline">\(x = 1\)</span> <span class="math inline">\((\log(x) = 0)\)</span>, the mean of <span class="math inline">\(y\)</span> is expected to be <span class="math inline">\(\beta_0\)</span>.</em></p>
-<p><strong>Slope</strong>: The slope is interpreted in terms of the change in the mean of <span class="math inline">\(y\)</span> when <span class="math inline">\(x\)</span> is mutliplied by a factor of <span class="math inline">\(C\)</span>, since <span class="math inline">\(\log(Cx) = \log(x) + \log(C)\)</span>. Thus, when <span class="math inline">\(x\)</span> is multiplied by a factor of <span class="math inline">\(C\)</span>, the change in the mean of <span class="math inline">\(y\)</span> is</p>
-<span class="math display">\[\begin{equation}
-\begin{aligned}
-[\beta_0 + \beta_1 \log(Cx)] - [\beta_0 + \beta_1 \log(x)] &amp;= \beta_1 [\log(Cx) - \log(x)] \\[10pt] 
-&amp; = \beta_1[\log(C) + \log(x) - \log(x)] \\[10pt] 
-&amp; = \beta_1 \log(C)
-\end{aligned}
-\end{equation}\]</span>
-<p>Thus the mean of <span class="math inline">\(y\)</span> changes by <span class="math inline">\(\beta_1 \log(C)\)</span> units.</p>
-<p><em>Interpretation: When <span class="math inline">\(x\)</span> is multiplied by a factor of <span class="math inline">\(C\)</span>, the mean of <span class="math inline">\(y\)</span> is expected to change by <span class="math inline">\(\beta_1 \log(C)\)</span> units. For example, if <span class="math inline">\(x\)</span> is doubled, then the mean of <span class="math inline">\(y\)</span> is expected to change by <span class="math inline">\(\beta_1 \log(2)\)</span> units.</em></p>
-</div>
-<div id="log-transformation-on-the-the-response-and-predictor-variable" class="section level3">
-<h3><span class="header-section-number">5.5.3</span> Log-transformation on the the response and predictor variable</h3>
-<p>Suppose we fit a linear regression model with <span class="math inline">\(\log(x)\)</span>, the log-transformed <span class="math inline">\(x\)</span>, as the predictor variable and <span class="math inline">\(\log(y)\)</span>, the log-transformed <span class="math inline">\(y\)</span>, as the response variable. Under this model, we assume a linear relationship exists between <span class="math inline">\(\log(x)\)</span> and <span class="math inline">\(\log(y)\)</span>, such that <span class="math inline">\(\log(y) \sim N(\beta_0 + \beta_1 \log(x), \sigma^2)\)</span> for some <span class="math inline">\(\beta_0\)</span>, <span class="math inline">\(\beta_1\)</span> and <span class="math inline">\(\sigma^2\)</span>. In other words, we can model the relationship between <span class="math inline">\(\log(x)\)</span> and <span class="math inline">\(\log(y)\)</span> using the model in ().</p>
-<span class="math display">\[\begin{equation}
-\label{log-x-y}
-\log(y) = \beta_0 + \beta_1 \log(x)
-\end{equation}\]</span>
-<p>Because the response variable is log-transformed, the interpretations on the original scale will be in terms of the median of <span class="math inline">\(y\)</span> (see the section on the log-transformed response variable for more detail).</p>
-<p><strong>Intercept</strong>: The intercept is the mean of <span class="math inline">\(y\)</span> when <span class="math inline">\(\log(x) = 0\)</span>, i.e. <span class="math inline">\(x = 1\)</span>. Therefore, when <span class="math inline">\(\log(x) = 0\)</span>,</p>
-<span class="math display">\[\begin{equation}
-\begin{aligned}
-&amp;\log(y) = \beta_0 + \beta_1 \times 0 = \beta_0 \\[10pt]
-\Rightarrow &amp;y = \exp\{\beta_0\}
-\end{aligned}
-\end{equation}\]</span>
-<p><em>Interpretation: When <span class="math inline">\(x = 1\)</span> <span class="math inline">\((\log(x) = 0)\)</span>, the median of <span class="math inline">\(y\)</span> is expected to be <span class="math inline">\(\exp\{\beta_0\}\)</span>.</em></p>
-<p><strong>Slope</strong>: The slope is interpreted in terms of the change in the median <span class="math inline">\(y\)</span> when <span class="math inline">\(x\)</span> is mutliplied by a factor of <span class="math inline">\(C\)</span>, since <span class="math inline">\(\log(Cx) = \log(x) + \log(C)\)</span>. Thus, when <span class="math inline">\(x\)</span> is multiplied by a factor of <span class="math inline">\(C\)</span>, the change in the median of <span class="math inline">\(y\)</span> is</p>
-<span class="math display">\[\begin{equation}
-\begin{aligned}
-\exp\{[\beta_0 + \beta_1 \log(Cx)] - [\beta_0 + \beta_1 \log(x)]\} &amp;= 
-\exp\{\beta_1 [\log(Cx) - \log(x)]\} \\[10pt] 
-&amp; = \exp\{\beta_1[\log(C) + \log(x) - \log(x)]\} \\[10pt] 
-&amp; = \exp\{\beta_1 \log(C)\} = C^{\beta_1}
-\end{aligned}
-\end{equation}\]</span>
-<p>Thus, the median of <span class="math inline">\(y\)</span> for <span class="math inline">\(Cx\)</span> is <span class="math inline">\(C^{\beta_1}\)</span> times the median of <span class="math inline">\(y\)</span> for <span class="math inline">\(x\)</span>.</p>
-<p><em>Interpretation: When <span class="math inline">\(x\)</span> is multiplied by a factor of <span class="math inline">\(C\)</span>, the median of <span class="math inline">\(y\)</span> is expected to multiple by a factor of <span class="math inline">\(C^{\beta_1}\)</span>. For example, if <span class="math inline">\(x\)</span> is doubled, then the median of <span class="math inline">\(y\)</span> is expected to multiply by <span class="math inline">\(2^{\beta_1}\)</span>.</em></p>
 </div>
 </div>
             </section>
@@ -361,8 +350,8 @@ y = \beta_0 + \beta_1 \log(x)
           </div>
         </div>
       </div>
-<a href="5-4-matrix-form-of-linear-regression.html" class="navigation navigation-prev " aria-label="Previous page"><i class="fa fa-angle-left"></i></a>
-<a href="5-6-details-about-model-diagnostics.html" class="navigation navigation-next " aria-label="Next page"><i class="fa fa-angle-right"></i></a>
+<a href="7-logistic.html" class="navigation navigation-prev " aria-label="Previous page"><i class="fa fa-angle-left"></i></a>
+<a href="7-2-logistic-regression-1.html" class="navigation navigation-next " aria-label="Next page"><i class="fa fa-angle-right"></i></a>
     </div>
   </div>
 <script src="libs/gitbook-2.6.7/js/app.min.js"></script>

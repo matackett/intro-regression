@@ -5,11 +5,11 @@
 
   <meta charset="UTF-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
-  <title>5.5 Log Transformations in Linear Regression | Intro Regression</title>
+  <title>8.1 Multinomial Logistic Regression | Intro Regression</title>
   <meta name="description" content="An electronic book with assignments and in-class activities to help students apply concepts in an intermediate-level regression analysis course. The primary focus of this text is application and computing; there are also supplemental math notes for some topics.">
   <meta name="generator" content="bookdown  and GitBook 2.6.7">
 
-  <meta property="og:title" content="5.5 Log Transformations in Linear Regression | Intro Regression" />
+  <meta property="og:title" content="8.1 Multinomial Logistic Regression | Intro Regression" />
   <meta property="og:type" content="book" />
   <meta property="og:url" content="https://www.introregression.org/" />
   <meta property="og:image" content="https://www.introregression.org/img/introregression-sticker.png" />
@@ -17,7 +17,7 @@
   <meta name="github-repo" content="matackett/intro-regression" />
 
   <meta name="twitter:card" content="summary" />
-  <meta name="twitter:title" content="5.5 Log Transformations in Linear Regression | Intro Regression" />
+  <meta name="twitter:title" content="8.1 Multinomial Logistic Regression | Intro Regression" />
   
   <meta name="twitter:description" content="An electronic book with assignments and in-class activities to help students apply concepts in an intermediate-level regression analysis course. The primary focus of this text is application and computing; there are also supplemental math notes for some topics." />
   <meta name="twitter:image" content="https://www.introregression.org/img/introregression-sticker.png" />
@@ -32,8 +32,8 @@
   <meta name="apple-mobile-web-app-status-bar-style" content="black">
   <link rel="apple-touch-icon-precomposed" sizes="152x152" href="img/introregression-sticker.png">
   <link rel="shortcut icon" href="img/introregression-sticker.png" type="image/x-icon">
-<link rel="prev" href="5-4-matrix-form-of-linear-regression.html">
-<link rel="next" href="5-6-details-about-model-diagnostics.html">
+<link rel="prev" href="8-multinom-logistic.html">
+<link rel="next" href="8-2-multinomial-logistic-regression-1.html">
 <script src="libs/jquery-2.2.3/jquery.min.js"></script>
 <link href="libs/gitbook-2.6.7/css/style.css" rel="stylesheet" />
 <link href="libs/gitbook-2.6.7/css/plugin-table.css" rel="stylesheet" />
@@ -249,111 +249,121 @@ code > span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Inf
           <div class="page-inner">
 
             <section class="normal" id="section-">
-<div id="log-transformations-in-linear-regression" class="section level2">
-<h2><span class="header-section-number">5.5</span> Log Transformations in Linear Regression</h2>
-<p>This document provides details about the model interpretion when the predictor and/or response variables are log-transformed. For simplicity, we will discuss transformations for the simple linear regression model:</p>
-<span class="math display">\[\begin{equation}
-\label{orig}
-y = \beta_0 + \beta_1 x
-\end{equation}\]</span>
-<p>All results and interpretations can be easily extended to transformations in multiple regression models.</p>
-<p><em>Note</em>: <em>log</em> refers to the natural logarithm.</p>
-<div id="log-transformation-on-the-response-variable" class="section level3">
-<h3><span class="header-section-number">5.5.1</span> Log-transformation on the response variable</h3>
-<p>Suppose we fit a linear regression model with <span class="math inline">\(\log(y)\)</span>, the log-transformed <span class="math inline">\(y\)</span>, as the response variable. Under this model, we assume a linear relationship exists between <span class="math inline">\(x\)</span> and <span class="math inline">\(\log(y)\)</span>, such that <span class="math inline">\(\log(y) \sim N(\beta_0 + \beta_1 x, \sigma^2)\)</span> for some <span class="math inline">\(\beta_0\)</span>, <span class="math inline">\(\beta_1\)</span> and <span class="math inline">\(\sigma^2\)</span>. In other words, we can model the relationship between <span class="math inline">\(x\)</span> and <span class="math inline">\(\log(y)\)</span> using the model in ().</p>
-<span class="math display">\[\begin{equation}
-\label{log-y}
-\log(y) = \beta_0 + \beta_1 x
-\end{equation}\]</span>
-<p>If we interpret the model in terms of <span class="math inline">\(\log(y)\)</span>, then we can use the usual interpretations for slope and intercept. When reporting results, however, it is best to give all interpretations in terms of the original response variable <span class="math inline">\(y\)</span>, since interpretations using log-transformed variables are often more difficult to truly understand.</p>
-<p>In order to get back on the original scale, we need to use the exponential function (also known as the anti-log), <span class="math inline">\(\exp\{x\} = e^x\)</span>. Therefore, we use the model in () for interpretations and predictions, we will use () to state our conclusions in terms of <span class="math inline">\(y\)</span>.</p>
-<span class="math display">\[\begin{equation}
-\label{exp-y}
-\begin{aligned}
-&amp;\exp\{\log(y)\} = \exp\{\beta_0 + \beta_1 x\} \\[10pt]
-\Rightarrow &amp;y = \exp\{\beta_0 + \beta_1 x\} \\[10pt]
-\Rightarrow &amp;y = \exp\{\beta_0\}\exp\{\beta_1 x\}
-\end{aligned}
-\end{equation}\]</span>
-<p>In order to interpret the slope and intercept, we need to first understand the relationship between the mean, median and log transformations.</p>
-<div id="mean-median-and-log-transformations" class="section level4">
-<h4><span class="header-section-number">5.5.1.1</span> Mean, Median, and Log Transformations</h4>
-<p>Suppose we have a dataset <code>y</code> that contains the following observations:</p>
-<p>If we log-transform the values of <code>y</code> then calculate the mean and median, we have</p>
-<p>If we calculate the mean and median of <code>y</code>, then log-transform the mean and median, we have</p>
-<p>This is a simple illustration to show</p>
+<div id="multinomial-logistic-regression" class="section level2">
+<h2><span class="header-section-number">8.1</span> Multinomial Logistic Regression</h2>
+<p>The General Social Survey (GSS) has been used to measure trends in attitudes and behaviors in American society since 1972. In addition to collecting demographic information, the survey includes questions used to gauge attitudes about government spending priorities, confidence in institutions, lifestyle, and many other topics. A full description of the survey may be found <a href="http://www.norc.org/Research/Projects/Pages/general-social-survey.aspx">here</a>.</p>
+<p>In today’s lab, we will use multinomial logistic regression to understand the relationship between a person’s political views and their attitudes towards government spending on mass transportation projects. To do so, we will use data from the 2010 GSS survey. Refer to the <a href="https://www2.stat.duke.edu/courses/Spring19/sta210.001/slides/lec-slides/18-multinomial-logistic-pt2.html#1">Multinomial Logistic Regression notes</a> for help with concepts and code.</p>
+<div id="packages-6" class="section level3">
+<h3><span class="header-section-number">8.1.1</span> Packages</h3>
+<p>You will need the following packages for today’s lab:</p>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="kw">library</span>(tidyverse)
+<span class="kw">library</span>(nnet)
+<span class="kw">library</span>(knitr)
+<span class="kw">library</span>(broom)
+## Fill in other packages as needed</code></pre></div>
+</div>
+<div id="data-6" class="section level3">
+<h3><span class="header-section-number">8.1.2</span> Data</h3>
+<p>The data for this lab is from the 2016 General Social Survey. The original data set contains 2867 observations and 935 variables. Given the size of the dataset, we will handle it differently in our workflow than we’ve handled data in previous assignments.</p>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="co"># [Working with large files](https://help.github.com/en/articles/working-with-large-files)</span></code></pre></div>
+<p>The size of this dataset is 34.3 MB. Compare that to the Spotify dataset from last weeks’ lab which was 149 KB (0.149 MB)! GitHub will not allow you to push files larger than 100 MB and will give you a warning when you push files as large as 50 MB. Though we could push the file we’re working with today to GitHub, it’s large enough that we’d still prefer not to.</p>
+<p>You have may noticed that each repo contains a file called <code>.gitignore</code>. It contains a list of the files you don’t want commit or push to GitHub. If you look at the <code>.gitignore</code> file for today’s lab, you will notice that <code>gss2016.csv</code> is listed at the bottom.</p>
+<ul>
+<li>Click <a href="https://www2.stat.duke.edu/courses/Spring19/sta210.001/labs/data/gss2016.csv"><strong>here</strong></a> to download <code>gss2016.csv</code>.</li>
+<li>Upload <code>gss2016.csv</code> into the data folder of your project.</li>
+<li>Notice that <code>gss2016.csv</code> does not appear in your Git pane. This is because it is being ignored by git, since it is listed in the <code>.gitignore</code> file.</li>
+</ul>
+<p>You will use the following variables in the lab:</p>
+<ul>
+<li><p><code>natmass</code>: Respondent’s answer to the following prompt:</p>
+<p>“We are faced with many problems in this country, none of which can be solved easily or inexpensively. I’m going to name some of these problems, and for each one I’d like you to tell me whether you think we’re spending too much money on it, too little money, or about the right amount…are we spending too much, too little, or about the right amount on mass transportation?”</p></li>
+<li><code>age</code>: Age in years.</li>
+<li><code>sex</code>: Sex recorded as <em>male</em> or <em>female</em></li>
+<li><code>sei10</code>: Socioeconomic index from 0 to 100</li>
+<li><code>region</code>: Region where interview took place</li>
+<li><p><code>polviews</code>: Respondent’s answer to the following prompt:</p>
+<p>“We hear a lot of talk these days about liberals and conservatives. I’m going to show you a seven-point scale on which the political views that people might hold are arranged from extremely liberal - point 1 - to extremely conservative - point 7. Where would you place yourself on this scale?”</p></li>
+</ul>
+<p>Use the code below to read in the data.</p>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r">gss &lt;-<span class="st"> </span><span class="kw">read_csv</span>(<span class="st">&quot;data/gss2016.csv&quot;</span>,
+  <span class="dt">na =</span> <span class="kw">c</span>(<span class="st">&quot;&quot;</span>, <span class="st">&quot;Don&#39;t know&quot;</span>, <span class="st">&quot;No answer&quot;</span>, 
+         <span class="st">&quot;Not applicable&quot;</span>), 
+         <span class="dt">guess_max =</span> <span class="dv">2867</span>) <span class="op">%&gt;%</span>
+<span class="st">  </span><span class="kw">select</span>(natmass, age, sex, sei10, region, polviews) <span class="op">%&gt;%</span>
+<span class="st">  </span><span class="kw">drop_na</span>()</code></pre></div>
+<p>The argument <code>guess_max = 2867</code> tells the <code>read_csv</code> function to use all of the observations in a column to determine its data type. Without this argument, only the first 1,000 observations would be used to make this determination. This becomes important for a variable like <code>age</code>; though <code>age</code> is coded as numeric data for most of the observations, there are some in which <code>age</code> is coded as <code>&quot;89 or older&quot;</code>. Without the <code>guess_max</code> argument, you will get warnings when loading the data.</p>
+<p>Note also that only the variables of interest will be loaded, not the entire dataset. This will make for faster computation and knitting as you work on the lab.</p>
+</div>
+<div id="exercises-6" class="section level3">
+<h3><span class="header-section-number">8.1.3</span> Exercises</h3>
+<div id="part-i-exploratory-data-analysis" class="section level4">
+<h4><span class="header-section-number">8.1.3.1</span> Part I: Exploratory Data Analysis</h4>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="co"># See [Reorder factor levels by hand](https://forcats.tidyverse.org/reference/fct_relevel.html) for documentation about `fct_relevel`.</span></code></pre></div>
 <ol style="list-style-type: decimal">
-<li><p><span class="math inline">\(\text{Mean}[{\log(y)}] \neq \log[\text{Mean}(y)]\)</span> - the mean and log are not commutable</p></li>
-<li><p><span class="math inline">\(\text{Median}[\log(y)] = \log[\text{Median}(y)]\)</span> - the median and log are commutable</p></li>
+<li><p>The variable <code>natmass</code> will be the response variable in the model, and you want to compare more opinionated views to the moderate position. Recode <code>natmass</code> so it is a factor variable with <code>&quot;About right&quot;</code> as the baseline.</p></li>
+<li><p>Recode <code>polviews</code> so it is a factor variable type with levels that are in an order that is consistent with question on the survey. <em>Note how the categories are spelled in the data.</em></p></li>
+</ol>
+<p>Make a plot of the distribution of <code>polviews</code>. Which political view occurs most frequently in this data set?</p>
+<ol start="3" style="list-style-type: decimal">
+<li><p>Make a plot displaying the relationship between <code>natmass</code> and <code>polviews</code>. Use the plot to describe the relationship between a person’s political views and their views on mass transportation spending.</p></li>
+<li><p>You want to use <code>age</code> as a quantitative variable in your model; however, it is currently a character data type because some observations are coded as <code>&quot;89 or older&quot;</code>. Recode <code>age</code> so that is a numeric variable. <em>Note: Before making the variable numeric, you will need to replace the values <code>&quot;89 or older&quot;</code> with a single value.</em></p></li>
 </ol>
 </div>
-<div id="interpretaton-of-model-coefficients" class="section level4">
-<h4><span class="header-section-number">5.5.1.2</span> Interpretaton of model coefficients</h4>
-<p>Using (), the mean <span class="math inline">\(\log(y)\)</span> for any given value of <span class="math inline">\(x\)</span> is <span class="math inline">\(\beta_0 + \beta_1 x\)</span>; however, this does <strong>not</strong> indicate that the mean of <span class="math inline">\(y = \exp\{\beta_0 + \beta_1 x\}\)</span> (see previous section). From the assumptions of linear regression, we assume that for any given value of <span class="math inline">\(x\)</span>, the distribution of <span class="math inline">\(\log(y)\)</span> is Normal, and therefore symmetric. Thus the median of <span class="math inline">\(\log(y)\)</span> is equal to the mean of <span class="math inline">\(\log(y)\)</span>, i.e <span class="math inline">\(\text{Median}(\log(y)) = \beta_0 + \beta_1 x\)</span>.</p>
-<p>Since the log and the median are commutable, <span class="math inline">\(\text{Median}(\log(y)) = \beta_0 + \beta_1 x \Rightarrow \text{Median}(y) = \exp\{\beta_0 + \beta_1 x\}\)</span>. Thus, when we log-transform the response variable, the interpretation of the intercept and slope are in terms of the effect on the <strong>median</strong> of <span class="math inline">\(y\)</span>.</p>
-<p><strong>Intercept</strong>: The intercept is expected median of <span class="math inline">\(y\)</span> when the predictor variable equals 0. Therefore, when <span class="math inline">\(x=0\)</span>,</p>
-<span class="math display">\[\begin{equation}
-\begin{aligned}
-&amp;\log(y) = \beta_0 + \beta_1 \times 0 = \beta_0 \\[10pt]
-\Rightarrow &amp;y = \exp\{\beta_0\}
-\end{aligned}
-\end{equation}\]</span>
-<p><em>Interpretation: When <span class="math inline">\(x=0\)</span>, the median of <span class="math inline">\(y\)</span> is expected to be <span class="math inline">\(\exp\{\beta_0\}\)</span>.</em></p>
-<p><strong>Slope</strong>: The slope is the expected change in the median of <span class="math inline">\(y\)</span> when <span class="math inline">\(x\)</span> increases by 1 unit. The change in the median of <span class="math inline">\(y\)</span> is</p>
-<span class="math display">\[\begin{equation}
-\exp\{[\beta_0 + \beta_1 (x+1)] - [\beta_0 + \beta_1 x]\} = \frac{\exp\{\beta_0 + \beta_1 (x+1)\}}{\exp\{\beta_0 + \beta_1 x\}} = \frac{\exp\{\beta_0\}\exp\{\beta_1 x\}\exp\{\beta_1\}}{\exp\{\beta_0\}\exp\{\beta_1 x\}} = \exp\{\beta_1\}
-\end{equation}\]</span>
-<p>Thus, the median of <span class="math inline">\(y\)</span> for <span class="math inline">\(x+1\)</span> is <span class="math inline">\(\exp\{\beta_1\}\)</span> times the median of <span class="math inline">\(y\)</span> for <span class="math inline">\(x\)</span>.</p>
-<p><em>Interpretation: When <span class="math inline">\(x\)</span> increases by one unit, the median of <span class="math inline">\(y\)</span> is expected to multiply by a factor of <span class="math inline">\(\exp\{\beta_1\}\)</span>.</em></p>
+<div id="part-ii-multinomial-logistic-regression-model" class="section level4">
+<h4><span class="header-section-number">8.1.3.2</span> Part II: Multinomial Logistic Regression Model</h4>
+<ol start="5" style="list-style-type: decimal">
+<li><p>You plan to fit a model using <code>age</code>, <code>sex</code>, <code>sei10</code>, and <code>region</code> to understand variation in opinions about spending on mass transportation. Briefly explain why you should fit a multinomial logistic model.</p></li>
+<li><p>Fit the model described in the previous exercise and display the model output. Make any necessary adjustments to the variables so the intercept will have a meaningful interpretation. Be sure <code>About Right</code> is the baseline level. Be sure the full model displays in the knitted document.</p></li>
+<li><p>Interpret the intercept associated with <u>odds</u> of having an opinion of “Too much” versus “About right”.</p></li>
+<li><p>Consider the relationship between age and one’s opinion about spending on mass transportation.</p>
+<ul>
+<li>Interpret the coefficient of age in terms of the <u>log odds</u> of having an opinion of “Too little” versus “About right”.</li>
+<li>Interpret the coefficient of age in terms of the <u>odds</u> of having an opinion of “Too little” versus “About right”.</li>
+</ul></li>
+<li><p>In general, what is the relationship between an person’s age and their opinions on mass transportation spending?</p></li>
+</ol>
+<p>Now that you have adjusted for some demographic factors, let’s examine whether a person’s political views has a significant impact on their attitude towards spending on mass transportation.</p>
+<ol start="10" style="list-style-type: decimal">
+<li>Conduct the appropriate test to determine if <code>polviews</code> is a significant predictor of attitude towards spending on mass transportation. State the null and alternative hypothesis, display all relevant code and output, and state your conclusion in the context of the problem.</li>
+</ol>
+<p>Choose the appropriate model based on the results from the test. Use this model for the next part of the lab.</p>
+</div>
+<div id="part-iii-model-fit" class="section level4">
+<h4><span class="header-section-number">8.1.3.3</span> Part III: Model Fit</h4>
+<ol start="11" style="list-style-type: decimal">
+<li><p>Calculate the predicted probabilities and residuals from your model.</p></li>
+<li><p>Plot the binned residuals versus the predicted probabilities for each category of <code>natmass.</code> <em>You will have three plots.</em></p></li>
+</ol>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="co"># You can change the size of your plots, so you can fit multiple plots on a single page. Include the arguments `fig.height = ` and `fig.width = ` in the header of the code chunk to change the plot size. </span>
+
+<span class="co"># See [Using R Markdown](https://rstudio.github.io/dygraphs/r-markdown.html) for an example.</span></code></pre></div>
+<ol start="13" style="list-style-type: decimal">
+<li><p>Use binned residual plots to examine the residuals versus each of the quantitative variables.</p>
+<ul>
+<li>Create binned plots of the residuals for each category of <code>natmass</code> versus <code>age</code>. <em>You will have three plots.</em></li>
+<li>Create binned plots of the residuals for each category of <code>natmass</code> versus <code>sei10</code>. <em>You will have three plots.</em></li>
+</ul></li>
+<li><p>To examine the residuals versus each categorical predictor, you will look at the average residuals for each each category of the categorical variables.</p>
+<ul>
+<li>For each level of <code>natmass</code>, calculate the average residuals across categories of <code>sex</code>.</li>
+<li>For each category of <code>natmass</code>, calculate the average residuals across categories of <code>region</code>.</li>
+<li>For each category of <code>natmass</code>, calculate the average residuals across categories of <code>polviews</code>.</li>
+</ul></li>
+<li><p>Based on the analysis of the residuals in Exercises 12 - 14, is the model an appropriate fit for the data? Explain.</p></li>
+</ol>
+<p><em>Regardless of your asssesment of the residuals, use your model for the remainder of the lab.</em></p>
+</div>
+<div id="part-iv-using-the-model" class="section level4">
+<h4><span class="header-section-number">8.1.3.4</span> Part IV: Using the Model</h4>
+<ol start="16" style="list-style-type: decimal">
+<li><p>Use your model to describe the relationship between one’s political views and their attitude towards spending on mass transportation.</p></li>
+<li><p>Use your model to predict the category of <code>natmass</code> for each observation in your dataset. Display a table of the actual versus the predicted <code>natmass</code>. What is the misclassification rate?</p></li>
+</ol>
 </div>
 </div>
-<div id="log-transformation-on-the-predictor-variable" class="section level3">
-<h3><span class="header-section-number">5.5.2</span> Log-transformation on the predictor variable</h3>
-<p>Suppose we fit a linear regression model with <span class="math inline">\(\log(x)\)</span>, the log-transformed <span class="math inline">\(x\)</span>, as the predictor variable. Under this model, we assume a linear relationship exists between <span class="math inline">\(\log(x)\)</span> and <span class="math inline">\(y\)</span>, such that <span class="math inline">\(y \sim N(\beta_0 + \beta_1 \log(x), \sigma^2)\)</span> for some <span class="math inline">\(\beta_0\)</span>, <span class="math inline">\(\beta_1\)</span> and <span class="math inline">\(\sigma^2\)</span>. In other words, we can model the relationship between <span class="math inline">\(\log(x)\)</span> and <span class="math inline">\(y\)</span> using the model in ().</p>
-<span class="math display">\[\begin{equation}
-\label{log-x}
-y = \beta_0 + \beta_1 \log(x)
-\end{equation}\]</span>
-<p><strong>Intercept</strong>: The intercept is the mean of <span class="math inline">\(y\)</span> when <span class="math inline">\(\log(x) = 0\)</span>, i.e. <span class="math inline">\(x = 1\)</span>.</p>
-<p><em>Interpretation: When <span class="math inline">\(x = 1\)</span> <span class="math inline">\((\log(x) = 0)\)</span>, the mean of <span class="math inline">\(y\)</span> is expected to be <span class="math inline">\(\beta_0\)</span>.</em></p>
-<p><strong>Slope</strong>: The slope is interpreted in terms of the change in the mean of <span class="math inline">\(y\)</span> when <span class="math inline">\(x\)</span> is mutliplied by a factor of <span class="math inline">\(C\)</span>, since <span class="math inline">\(\log(Cx) = \log(x) + \log(C)\)</span>. Thus, when <span class="math inline">\(x\)</span> is multiplied by a factor of <span class="math inline">\(C\)</span>, the change in the mean of <span class="math inline">\(y\)</span> is</p>
-<span class="math display">\[\begin{equation}
-\begin{aligned}
-[\beta_0 + \beta_1 \log(Cx)] - [\beta_0 + \beta_1 \log(x)] &amp;= \beta_1 [\log(Cx) - \log(x)] \\[10pt] 
-&amp; = \beta_1[\log(C) + \log(x) - \log(x)] \\[10pt] 
-&amp; = \beta_1 \log(C)
-\end{aligned}
-\end{equation}\]</span>
-<p>Thus the mean of <span class="math inline">\(y\)</span> changes by <span class="math inline">\(\beta_1 \log(C)\)</span> units.</p>
-<p><em>Interpretation: When <span class="math inline">\(x\)</span> is multiplied by a factor of <span class="math inline">\(C\)</span>, the mean of <span class="math inline">\(y\)</span> is expected to change by <span class="math inline">\(\beta_1 \log(C)\)</span> units. For example, if <span class="math inline">\(x\)</span> is doubled, then the mean of <span class="math inline">\(y\)</span> is expected to change by <span class="math inline">\(\beta_1 \log(2)\)</span> units.</em></p>
-</div>
-<div id="log-transformation-on-the-the-response-and-predictor-variable" class="section level3">
-<h3><span class="header-section-number">5.5.3</span> Log-transformation on the the response and predictor variable</h3>
-<p>Suppose we fit a linear regression model with <span class="math inline">\(\log(x)\)</span>, the log-transformed <span class="math inline">\(x\)</span>, as the predictor variable and <span class="math inline">\(\log(y)\)</span>, the log-transformed <span class="math inline">\(y\)</span>, as the response variable. Under this model, we assume a linear relationship exists between <span class="math inline">\(\log(x)\)</span> and <span class="math inline">\(\log(y)\)</span>, such that <span class="math inline">\(\log(y) \sim N(\beta_0 + \beta_1 \log(x), \sigma^2)\)</span> for some <span class="math inline">\(\beta_0\)</span>, <span class="math inline">\(\beta_1\)</span> and <span class="math inline">\(\sigma^2\)</span>. In other words, we can model the relationship between <span class="math inline">\(\log(x)\)</span> and <span class="math inline">\(\log(y)\)</span> using the model in ().</p>
-<span class="math display">\[\begin{equation}
-\label{log-x-y}
-\log(y) = \beta_0 + \beta_1 \log(x)
-\end{equation}\]</span>
-<p>Because the response variable is log-transformed, the interpretations on the original scale will be in terms of the median of <span class="math inline">\(y\)</span> (see the section on the log-transformed response variable for more detail).</p>
-<p><strong>Intercept</strong>: The intercept is the mean of <span class="math inline">\(y\)</span> when <span class="math inline">\(\log(x) = 0\)</span>, i.e. <span class="math inline">\(x = 1\)</span>. Therefore, when <span class="math inline">\(\log(x) = 0\)</span>,</p>
-<span class="math display">\[\begin{equation}
-\begin{aligned}
-&amp;\log(y) = \beta_0 + \beta_1 \times 0 = \beta_0 \\[10pt]
-\Rightarrow &amp;y = \exp\{\beta_0\}
-\end{aligned}
-\end{equation}\]</span>
-<p><em>Interpretation: When <span class="math inline">\(x = 1\)</span> <span class="math inline">\((\log(x) = 0)\)</span>, the median of <span class="math inline">\(y\)</span> is expected to be <span class="math inline">\(\exp\{\beta_0\}\)</span>.</em></p>
-<p><strong>Slope</strong>: The slope is interpreted in terms of the change in the median <span class="math inline">\(y\)</span> when <span class="math inline">\(x\)</span> is mutliplied by a factor of <span class="math inline">\(C\)</span>, since <span class="math inline">\(\log(Cx) = \log(x) + \log(C)\)</span>. Thus, when <span class="math inline">\(x\)</span> is multiplied by a factor of <span class="math inline">\(C\)</span>, the change in the median of <span class="math inline">\(y\)</span> is</p>
-<span class="math display">\[\begin{equation}
-\begin{aligned}
-\exp\{[\beta_0 + \beta_1 \log(Cx)] - [\beta_0 + \beta_1 \log(x)]\} &amp;= 
-\exp\{\beta_1 [\log(Cx) - \log(x)]\} \\[10pt] 
-&amp; = \exp\{\beta_1[\log(C) + \log(x) - \log(x)]\} \\[10pt] 
-&amp; = \exp\{\beta_1 \log(C)\} = C^{\beta_1}
-\end{aligned}
-\end{equation}\]</span>
-<p>Thus, the median of <span class="math inline">\(y\)</span> for <span class="math inline">\(Cx\)</span> is <span class="math inline">\(C^{\beta_1}\)</span> times the median of <span class="math inline">\(y\)</span> for <span class="math inline">\(x\)</span>.</p>
-<p><em>Interpretation: When <span class="math inline">\(x\)</span> is multiplied by a factor of <span class="math inline">\(C\)</span>, the median of <span class="math inline">\(y\)</span> is expected to multiple by a factor of <span class="math inline">\(C^{\beta_1}\)</span>. For example, if <span class="math inline">\(x\)</span> is doubled, then the median of <span class="math inline">\(y\)</span> is expected to multiply by <span class="math inline">\(2^{\beta_1}\)</span>.</em></p>
+<div id="acknowledgements-1" class="section level3">
+<h3><span class="header-section-number">8.1.4</span> Acknowledgements</h3>
+<p>The “Data” section is largely inspired by <a href="https://datasciencebox.org/">datasciencebox.org</a>.</p>
 </div>
 </div>
             </section>
@@ -361,8 +371,8 @@ y = \beta_0 + \beta_1 \log(x)
           </div>
         </div>
       </div>
-<a href="5-4-matrix-form-of-linear-regression.html" class="navigation navigation-prev " aria-label="Previous page"><i class="fa fa-angle-left"></i></a>
-<a href="5-6-details-about-model-diagnostics.html" class="navigation navigation-next " aria-label="Next page"><i class="fa fa-angle-right"></i></a>
+<a href="8-multinom-logistic.html" class="navigation navigation-prev " aria-label="Previous page"><i class="fa fa-angle-left"></i></a>
+<a href="8-2-multinomial-logistic-regression-1.html" class="navigation navigation-next " aria-label="Next page"><i class="fa fa-angle-right"></i></a>
     </div>
   </div>
 <script src="libs/gitbook-2.6.7/js/app.min.js"></script>

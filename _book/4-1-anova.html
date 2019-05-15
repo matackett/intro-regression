@@ -5,11 +5,11 @@
 
   <meta charset="UTF-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
-  <title>5.5 Log Transformations in Linear Regression | Intro Regression</title>
+  <title>4.1 ANOVA | Intro Regression</title>
   <meta name="description" content="An electronic book with assignments and in-class activities to help students apply concepts in an intermediate-level regression analysis course. The primary focus of this text is application and computing; there are also supplemental math notes for some topics.">
   <meta name="generator" content="bookdown  and GitBook 2.6.7">
 
-  <meta property="og:title" content="5.5 Log Transformations in Linear Regression | Intro Regression" />
+  <meta property="og:title" content="4.1 ANOVA | Intro Regression" />
   <meta property="og:type" content="book" />
   <meta property="og:url" content="https://www.introregression.org/" />
   <meta property="og:image" content="https://www.introregression.org/img/introregression-sticker.png" />
@@ -17,7 +17,7 @@
   <meta name="github-repo" content="matackett/intro-regression" />
 
   <meta name="twitter:card" content="summary" />
-  <meta name="twitter:title" content="5.5 Log Transformations in Linear Regression | Intro Regression" />
+  <meta name="twitter:title" content="4.1 ANOVA | Intro Regression" />
   
   <meta name="twitter:description" content="An electronic book with assignments and in-class activities to help students apply concepts in an intermediate-level regression analysis course. The primary focus of this text is application and computing; there are also supplemental math notes for some topics." />
   <meta name="twitter:image" content="https://www.introregression.org/img/introregression-sticker.png" />
@@ -32,8 +32,8 @@
   <meta name="apple-mobile-web-app-status-bar-style" content="black">
   <link rel="apple-touch-icon-precomposed" sizes="152x152" href="img/introregression-sticker.png">
   <link rel="shortcut icon" href="img/introregression-sticker.png" type="image/x-icon">
-<link rel="prev" href="5-4-matrix-form-of-linear-regression.html">
-<link rel="next" href="5-6-details-about-model-diagnostics.html">
+<link rel="prev" href="4-anova.html">
+<link rel="next" href="5-mlr.html">
 <script src="libs/jquery-2.2.3/jquery.min.js"></script>
 <link href="libs/gitbook-2.6.7/css/style.css" rel="stylesheet" />
 <link href="libs/gitbook-2.6.7/css/plugin-table.css" rel="stylesheet" />
@@ -249,120 +249,70 @@ code > span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Inf
           <div class="page-inner">
 
             <section class="normal" id="section-">
-<div id="log-transformations-in-linear-regression" class="section level2">
-<h2><span class="header-section-number">5.5</span> Log Transformations in Linear Regression</h2>
-<p>This document provides details about the model interpretion when the predictor and/or response variables are log-transformed. For simplicity, we will discuss transformations for the simple linear regression model:</p>
-<span class="math display">\[\begin{equation}
-\label{orig}
-y = \beta_0 + \beta_1 x
-\end{equation}\]</span>
-<p>All results and interpretations can be easily extended to transformations in multiple regression models.</p>
-<p><em>Note</em>: <em>log</em> refers to the natural logarithm.</p>
-<div id="log-transformation-on-the-response-variable" class="section level3">
-<h3><span class="header-section-number">5.5.1</span> Log-transformation on the response variable</h3>
-<p>Suppose we fit a linear regression model with <span class="math inline">\(\log(y)\)</span>, the log-transformed <span class="math inline">\(y\)</span>, as the response variable. Under this model, we assume a linear relationship exists between <span class="math inline">\(x\)</span> and <span class="math inline">\(\log(y)\)</span>, such that <span class="math inline">\(\log(y) \sim N(\beta_0 + \beta_1 x, \sigma^2)\)</span> for some <span class="math inline">\(\beta_0\)</span>, <span class="math inline">\(\beta_1\)</span> and <span class="math inline">\(\sigma^2\)</span>. In other words, we can model the relationship between <span class="math inline">\(x\)</span> and <span class="math inline">\(\log(y)\)</span> using the model in ().</p>
-<span class="math display">\[\begin{equation}
-\label{log-y}
-\log(y) = \beta_0 + \beta_1 x
-\end{equation}\]</span>
-<p>If we interpret the model in terms of <span class="math inline">\(\log(y)\)</span>, then we can use the usual interpretations for slope and intercept. When reporting results, however, it is best to give all interpretations in terms of the original response variable <span class="math inline">\(y\)</span>, since interpretations using log-transformed variables are often more difficult to truly understand.</p>
-<p>In order to get back on the original scale, we need to use the exponential function (also known as the anti-log), <span class="math inline">\(\exp\{x\} = e^x\)</span>. Therefore, we use the model in () for interpretations and predictions, we will use () to state our conclusions in terms of <span class="math inline">\(y\)</span>.</p>
-<span class="math display">\[\begin{equation}
-\label{exp-y}
-\begin{aligned}
-&amp;\exp\{\log(y)\} = \exp\{\beta_0 + \beta_1 x\} \\[10pt]
-\Rightarrow &amp;y = \exp\{\beta_0 + \beta_1 x\} \\[10pt]
-\Rightarrow &amp;y = \exp\{\beta_0\}\exp\{\beta_1 x\}
-\end{aligned}
-\end{equation}\]</span>
-<p>In order to interpret the slope and intercept, we need to first understand the relationship between the mean, median and log transformations.</p>
-<div id="mean-median-and-log-transformations" class="section level4">
-<h4><span class="header-section-number">5.5.1.1</span> Mean, Median, and Log Transformations</h4>
-<p>Suppose we have a dataset <code>y</code> that contains the following observations:</p>
-<p>If we log-transform the values of <code>y</code> then calculate the mean and median, we have</p>
-<p>If we calculate the mean and median of <code>y</code>, then log-transform the mean and median, we have</p>
-<p>This is a simple illustration to show</p>
+<div id="anova" class="section level2">
+<h2><span class="header-section-number">4.1</span> ANOVA</h2>
+<p>The goal of this lab is to use Analysis of Variance (ANOVA) to compare means in multiple groups. Additionally, you will be introduced to new R functions used for <a href="https://en.wikipedia.org/wiki/Data_wrangling">wrangling</a> and summarizing data.</p>
+<div id="packages-1" class="section level3">
+<h3><span class="header-section-number">4.1.1</span> Packages</h3>
+<p>We will use the following packages in today’s lab.</p>
+</div>
+<div id="data-1" class="section level3">
+<h3><span class="header-section-number">4.1.2</span> Data</h3>
+<p>In today’s lab, we will analyze the <code>diamonds</code> dataset from the ggplot2 package. Type <code>?diamonds</code> in the console to see a dictionary of the variables in the data set. This analysis will focus on the relationship between a diamond’s carat weight and its color. Before starting the exercises, take a moment to read more about the diamond attributes on the Gemological Institute of America webpage: <a href="https://www.gia.edu/diamond-quality-factor" class="uri">https://www.gia.edu/diamond-quality-factor</a>.</p>
+</div>
+<div id="exercises-1" class="section level3">
+<h3><span class="header-section-number">4.1.3</span> Exercises</h3>
+<p>The diamonds dataset contains the price and other characteristics for over 50,000 diamonds price from $326 to $18823. In this lab, we will analyze the subset of diamonds that are priced $1200 or less.</p>
 <ol style="list-style-type: decimal">
-<li><p><span class="math inline">\(\text{Mean}[{\log(y)}] \neq \log[\text{Mean}(y)]\)</span> - the mean and log are not commutable</p></li>
-<li><p><span class="math inline">\(\text{Median}[\log(y)] = \log[\text{Median}(y)]\)</span> - the median and log are commutable</p></li>
+<li>Create a dataframe called <code>diamonds_low</code> that is the subset of diamonds priced $1200 or less. How many observations are in <code>diamonds_low</code>?</li>
 </ol>
-</div>
-<div id="interpretaton-of-model-coefficients" class="section level4">
-<h4><span class="header-section-number">5.5.1.2</span> Interpretaton of model coefficients</h4>
-<p>Using (), the mean <span class="math inline">\(\log(y)\)</span> for any given value of <span class="math inline">\(x\)</span> is <span class="math inline">\(\beta_0 + \beta_1 x\)</span>; however, this does <strong>not</strong> indicate that the mean of <span class="math inline">\(y = \exp\{\beta_0 + \beta_1 x\}\)</span> (see previous section). From the assumptions of linear regression, we assume that for any given value of <span class="math inline">\(x\)</span>, the distribution of <span class="math inline">\(\log(y)\)</span> is Normal, and therefore symmetric. Thus the median of <span class="math inline">\(\log(y)\)</span> is equal to the mean of <span class="math inline">\(\log(y)\)</span>, i.e <span class="math inline">\(\text{Median}(\log(y)) = \beta_0 + \beta_1 x\)</span>.</p>
-<p>Since the log and the median are commutable, <span class="math inline">\(\text{Median}(\log(y)) = \beta_0 + \beta_1 x \Rightarrow \text{Median}(y) = \exp\{\beta_0 + \beta_1 x\}\)</span>. Thus, when we log-transform the response variable, the interpretation of the intercept and slope are in terms of the effect on the <strong>median</strong> of <span class="math inline">\(y\)</span>.</p>
-<p><strong>Intercept</strong>: The intercept is expected median of <span class="math inline">\(y\)</span> when the predictor variable equals 0. Therefore, when <span class="math inline">\(x=0\)</span>,</p>
-<span class="math display">\[\begin{equation}
-\begin{aligned}
-&amp;\log(y) = \beta_0 + \beta_1 \times 0 = \beta_0 \\[10pt]
-\Rightarrow &amp;y = \exp\{\beta_0\}
-\end{aligned}
-\end{equation}\]</span>
-<p><em>Interpretation: When <span class="math inline">\(x=0\)</span>, the median of <span class="math inline">\(y\)</span> is expected to be <span class="math inline">\(\exp\{\beta_0\}\)</span>.</em></p>
-<p><strong>Slope</strong>: The slope is the expected change in the median of <span class="math inline">\(y\)</span> when <span class="math inline">\(x\)</span> increases by 1 unit. The change in the median of <span class="math inline">\(y\)</span> is</p>
-<span class="math display">\[\begin{equation}
-\exp\{[\beta_0 + \beta_1 (x+1)] - [\beta_0 + \beta_1 x]\} = \frac{\exp\{\beta_0 + \beta_1 (x+1)\}}{\exp\{\beta_0 + \beta_1 x\}} = \frac{\exp\{\beta_0\}\exp\{\beta_1 x\}\exp\{\beta_1\}}{\exp\{\beta_0\}\exp\{\beta_1 x\}} = \exp\{\beta_1\}
-\end{equation}\]</span>
-<p>Thus, the median of <span class="math inline">\(y\)</span> for <span class="math inline">\(x+1\)</span> is <span class="math inline">\(\exp\{\beta_1\}\)</span> times the median of <span class="math inline">\(y\)</span> for <span class="math inline">\(x\)</span>.</p>
-<p><em>Interpretation: When <span class="math inline">\(x\)</span> increases by one unit, the median of <span class="math inline">\(y\)</span> is expected to multiply by a factor of <span class="math inline">\(\exp\{\beta_1\}\)</span>.</em></p>
-</div>
-</div>
-<div id="log-transformation-on-the-predictor-variable" class="section level3">
-<h3><span class="header-section-number">5.5.2</span> Log-transformation on the predictor variable</h3>
-<p>Suppose we fit a linear regression model with <span class="math inline">\(\log(x)\)</span>, the log-transformed <span class="math inline">\(x\)</span>, as the predictor variable. Under this model, we assume a linear relationship exists between <span class="math inline">\(\log(x)\)</span> and <span class="math inline">\(y\)</span>, such that <span class="math inline">\(y \sim N(\beta_0 + \beta_1 \log(x), \sigma^2)\)</span> for some <span class="math inline">\(\beta_0\)</span>, <span class="math inline">\(\beta_1\)</span> and <span class="math inline">\(\sigma^2\)</span>. In other words, we can model the relationship between <span class="math inline">\(\log(x)\)</span> and <span class="math inline">\(y\)</span> using the model in ().</p>
-<span class="math display">\[\begin{equation}
-\label{log-x}
-y = \beta_0 + \beta_1 \log(x)
-\end{equation}\]</span>
-<p><strong>Intercept</strong>: The intercept is the mean of <span class="math inline">\(y\)</span> when <span class="math inline">\(\log(x) = 0\)</span>, i.e. <span class="math inline">\(x = 1\)</span>.</p>
-<p><em>Interpretation: When <span class="math inline">\(x = 1\)</span> <span class="math inline">\((\log(x) = 0)\)</span>, the mean of <span class="math inline">\(y\)</span> is expected to be <span class="math inline">\(\beta_0\)</span>.</em></p>
-<p><strong>Slope</strong>: The slope is interpreted in terms of the change in the mean of <span class="math inline">\(y\)</span> when <span class="math inline">\(x\)</span> is mutliplied by a factor of <span class="math inline">\(C\)</span>, since <span class="math inline">\(\log(Cx) = \log(x) + \log(C)\)</span>. Thus, when <span class="math inline">\(x\)</span> is multiplied by a factor of <span class="math inline">\(C\)</span>, the change in the mean of <span class="math inline">\(y\)</span> is</p>
-<span class="math display">\[\begin{equation}
-\begin{aligned}
-[\beta_0 + \beta_1 \log(Cx)] - [\beta_0 + \beta_1 \log(x)] &amp;= \beta_1 [\log(Cx) - \log(x)] \\[10pt] 
-&amp; = \beta_1[\log(C) + \log(x) - \log(x)] \\[10pt] 
-&amp; = \beta_1 \log(C)
-\end{aligned}
-\end{equation}\]</span>
-<p>Thus the mean of <span class="math inline">\(y\)</span> changes by <span class="math inline">\(\beta_1 \log(C)\)</span> units.</p>
-<p><em>Interpretation: When <span class="math inline">\(x\)</span> is multiplied by a factor of <span class="math inline">\(C\)</span>, the mean of <span class="math inline">\(y\)</span> is expected to change by <span class="math inline">\(\beta_1 \log(C)\)</span> units. For example, if <span class="math inline">\(x\)</span> is doubled, then the mean of <span class="math inline">\(y\)</span> is expected to change by <span class="math inline">\(\beta_1 \log(2)\)</span> units.</em></p>
-</div>
-<div id="log-transformation-on-the-the-response-and-predictor-variable" class="section level3">
-<h3><span class="header-section-number">5.5.3</span> Log-transformation on the the response and predictor variable</h3>
-<p>Suppose we fit a linear regression model with <span class="math inline">\(\log(x)\)</span>, the log-transformed <span class="math inline">\(x\)</span>, as the predictor variable and <span class="math inline">\(\log(y)\)</span>, the log-transformed <span class="math inline">\(y\)</span>, as the response variable. Under this model, we assume a linear relationship exists between <span class="math inline">\(\log(x)\)</span> and <span class="math inline">\(\log(y)\)</span>, such that <span class="math inline">\(\log(y) \sim N(\beta_0 + \beta_1 \log(x), \sigma^2)\)</span> for some <span class="math inline">\(\beta_0\)</span>, <span class="math inline">\(\beta_1\)</span> and <span class="math inline">\(\sigma^2\)</span>. In other words, we can model the relationship between <span class="math inline">\(\log(x)\)</span> and <span class="math inline">\(\log(y)\)</span> using the model in ().</p>
-<span class="math display">\[\begin{equation}
-\label{log-x-y}
-\log(y) = \beta_0 + \beta_1 \log(x)
-\end{equation}\]</span>
-<p>Because the response variable is log-transformed, the interpretations on the original scale will be in terms of the median of <span class="math inline">\(y\)</span> (see the section on the log-transformed response variable for more detail).</p>
-<p><strong>Intercept</strong>: The intercept is the mean of <span class="math inline">\(y\)</span> when <span class="math inline">\(\log(x) = 0\)</span>, i.e. <span class="math inline">\(x = 1\)</span>. Therefore, when <span class="math inline">\(\log(x) = 0\)</span>,</p>
-<span class="math display">\[\begin{equation}
-\begin{aligned}
-&amp;\log(y) = \beta_0 + \beta_1 \times 0 = \beta_0 \\[10pt]
-\Rightarrow &amp;y = \exp\{\beta_0\}
-\end{aligned}
-\end{equation}\]</span>
-<p><em>Interpretation: When <span class="math inline">\(x = 1\)</span> <span class="math inline">\((\log(x) = 0)\)</span>, the median of <span class="math inline">\(y\)</span> is expected to be <span class="math inline">\(\exp\{\beta_0\}\)</span>.</em></p>
-<p><strong>Slope</strong>: The slope is interpreted in terms of the change in the median <span class="math inline">\(y\)</span> when <span class="math inline">\(x\)</span> is mutliplied by a factor of <span class="math inline">\(C\)</span>, since <span class="math inline">\(\log(Cx) = \log(x) + \log(C)\)</span>. Thus, when <span class="math inline">\(x\)</span> is multiplied by a factor of <span class="math inline">\(C\)</span>, the change in the median of <span class="math inline">\(y\)</span> is</p>
-<span class="math display">\[\begin{equation}
-\begin{aligned}
-\exp\{[\beta_0 + \beta_1 \log(Cx)] - [\beta_0 + \beta_1 \log(x)]\} &amp;= 
-\exp\{\beta_1 [\log(Cx) - \log(x)]\} \\[10pt] 
-&amp; = \exp\{\beta_1[\log(C) + \log(x) - \log(x)]\} \\[10pt] 
-&amp; = \exp\{\beta_1 \log(C)\} = C^{\beta_1}
-\end{aligned}
-\end{equation}\]</span>
-<p>Thus, the median of <span class="math inline">\(y\)</span> for <span class="math inline">\(Cx\)</span> is <span class="math inline">\(C^{\beta_1}\)</span> times the median of <span class="math inline">\(y\)</span> for <span class="math inline">\(x\)</span>.</p>
-<p><em>Interpretation: When <span class="math inline">\(x\)</span> is multiplied by a factor of <span class="math inline">\(C\)</span>, the median of <span class="math inline">\(y\)</span> is expected to multiple by a factor of <span class="math inline">\(C^{\beta_1}\)</span>. For example, if <span class="math inline">\(x\)</span> is doubled, then the median of <span class="math inline">\(y\)</span> is expected to multiply by <span class="math inline">\(2^{\beta_1}\)</span>.</em></p>
+<p>When using Analysis of Variance (ANOVA) to compare group means, it is ideal to have approximately the same number of observations in each group. Therefore, we will combine the worst two color groups, I and J, and create a new color category called “I/J”. Since <code>color</code> is an ordinal (<code>&lt;ord&gt;</code>) variable, we need to use the <code>recode_factor</code> function in the dplyr package to create the new category.</p>
+<p>Use the <code>count</code> function before and after making the new color category to ensure the recoding worked as expected.</p>
+<ol start="2" style="list-style-type: decimal">
+<li><p>We begin by plotting the relationship between <code>color</code> and <code>carat</code>. As a group, brainstorm ways to plot the relationship between the two variables, then make one of the plots. Be sure to include informative axes labels and an informative title.</p></li>
+<li><p>Fill in the code below to calculate the mean and variance of <code>carat</code> at each level of <code>color</code>.</p></li>
+</ol>
+<p>Based on the plots and summary statistics, does there appear to be a relationship between carat weight the color of diamonds? In other words, does there appear to be a significant difference in the mean carat weight across colors?</p>
+<ol start="4" style="list-style-type: decimal">
+<li>When using ANOVA to compare means across groups, we make the following assumptions (note how similar they are to the assumptions for regression):</li>
+</ol>
+<ul>
+<li><strong>Normality</strong>: The distribution of <span class="math inline">\(y\)</span> is approximately normal within each category of <span class="math inline">\(x\)</span> - in the <span class="math inline">\(k^{th}\)</span> category, <span class="math inline">\(y \sim (\mu_k, \sigma^2)\)</span> . If the sample size is large, ANOVA is robust to some departures from Normality.</li>
+<li><strong>Independence</strong>: All observations are independent from one another, i.e. one observation does not affect another.</li>
+<li><strong>Constant Variance</strong>: The distribution of <span class="math inline">\(y\)</span> within each category of <span class="math inline">\(x\)</span> has a common variance, <span class="math inline">\(\sigma^2\)</span>. One way to assess if variances are sufficiently equal is to look at the ratio of the maximum group variance to the minimum group variance. If this ratio is less than 2, then we can conclude the variances are approximately equal. This isn’t an exact threshold, but rather a commonly used guideline. <em>Note: There are formal tests for equal variance that are outside the scope of this class.</em></li>
+</ul>
+<p>Are the assumptions for ANOVA met? Comment on each assumption using the summary statistics and/or plots from previous exercises to support your conclusion. You may also calculate any additional summary statistics or make additional plots as needed.</p>
+<p><em>Regardless of your answer to Excerise 4, We will proceed with the analysis in the remainder of this lab as if the assumptions are met.</em></p>
+<ol start="5" style="list-style-type: decimal">
+<li><p>Use the code below to calculate the ANOVA table. The <code>tidy</code> function from the broom package is used to put the ANOVA output in a dataframe, and with the <code>kable</code> function from the knitr package, you can display the results in an easy-to-read table.</p></li>
+<li><p>Use the ANOVA table to calculate the total mean square, i.e. the sample variance of <code>carat</code>. Show your calculations. You can put the calculations in a code chunk to use R like a calculator.</p></li>
+<li><p>What is <span class="math inline">\(\hat{\sigma}^2\)</span>, the estimated variance of <code>carat</code> within each level of <code>color</code>.</p></li>
+<li><p>We can use ANOVA to test if the true mean value of <code>carat</code> is equal for all levels of <code>color</code>, i.e.</p></li>
+</ol>
+<p><span class="math display">\[ H_0: \mu_1 = \mu_2 = \dots = \mu_6\]</span></p>
+<p>State the alternative hypothesis is the context of the data.</p>
+<ol start="9" style="list-style-type: decimal">
+<li><p>Based on the ANOVA table, what is your conclusion from the test of the hypotheses in the previous question? State the conclusion in the context of the data.</p></li>
+<li><p>Use the code below to plot a 95% confidence interval for the mean carat weight at each level of color. Calculate the value of <code>sigma</code> by filling in the estimated variance from Exercise 7.</p></li>
+</ol>
+<p>The formula for the confidence interval for the mean of group <span class="math inline">\(k\)</span> is</p>
+<p><span class="math display">\[\bar{y}_k \pm t^* \frac{\hat{\sigma}}{\sqrt{n_k}}\]</span></p>
+<ol start="11" style="list-style-type: decimal">
+<li><p>For what color level is the mean carat weight the most different from all the others?</p></li>
+<li><p>Based on this analysis, describe the relationship between the color and the mean carat weight in diamonds that cost $1200 or less. <em>Refer to the diamond documentation to recall what the color scale means.</em></p></li>
+</ol>
+<p><em>You’re done! Commit all remaining changes, use the commit message “Done with Lab 3!”, and push. Before you wrap up the assignment, make sure the .Rmd, .html, and .md documents are all updated on your GitHub repo.</em></p>
+
 </div>
 </div>
+<!-- </div> -->
             </section>
 
           </div>
         </div>
       </div>
-<a href="5-4-matrix-form-of-linear-regression.html" class="navigation navigation-prev " aria-label="Previous page"><i class="fa fa-angle-left"></i></a>
-<a href="5-6-details-about-model-diagnostics.html" class="navigation navigation-next " aria-label="Next page"><i class="fa fa-angle-right"></i></a>
+<a href="4-anova.html" class="navigation navigation-prev " aria-label="Previous page"><i class="fa fa-angle-left"></i></a>
+<a href="5-mlr.html" class="navigation navigation-next " aria-label="Next page"><i class="fa fa-angle-right"></i></a>
     </div>
   </div>
 <script src="libs/gitbook-2.6.7/js/app.min.js"></script>

@@ -4,7 +4,7 @@ author: "Maria Tackett"
 date: "`r Sys.Date()`"
 site: bookdown::bookdown_site
 documentclass: book
-bibliography: [book.bib, packages.bib]
+bibliography: ["bib/other.bib", "bib/articles.bib", "bib/packages.bib"]
 biblio-style: apalike
 always_allow_html: yes
 # fontsize: '12pt, krantz2'
@@ -33,11 +33,11 @@ options(knitr.duplicate.label = 'allow')
 knitr::include_graphics("img/introregression-sticker.png")
 ```
 
-This text was originally written as materials  for [STA 210: Regression Analysis](https://www2.stat.duke.edu/courses/Spring19/sta210.001/) at Duke University.The computing aspects of the assignments are written using the `tidyverse` R syntax. If R is not the computing language used in your regression course, the assignments can be adapted to fit the computing language of your choice. 
+The content in this book was originally developed for [STA 210: Regression Analysis](https://www2.stat.duke.edu/courses/Spring19/sta210.001/) at Duke University.The computing aspects of the assignments are written using the `tidyverse` syntax in R; however, the assignments can be adapted to fit the computing language of your choice. All of the files are available in the [Intro Regression GitHub repo](https://github.com/matackett/intro-regression).
 
-This text is a work-in-progress and will be periodically upated with new material. Please email me (<a href="mailto:maria.tackett@duke.edu">maria.tackett@duke.edu</a>) if you have any questions, feedback, or suggestions. I would also love to hear about your experience if you use the text in your course.
+This book is under development and will be periodically upated with new material. Please email me (<a href="mailto:maria.tackett@duke.edu">maria.tackett@duke.edu</a>) if you have any questions, feedback, or suggestions. I would also love to hear about your experience if you use any of the content in your course.
 
-## License {-}
+<font size = "5px">**License**</font>
 
 <a rel="license" href="http://creativecommons.org/licenses/by-nc-sa/4.0/"><img alt="Creative Commons License" style="border-width:0" src="https://i.creativecommons.org/l/by-nc-sa/4.0/88x31.png" /></a><br />
 

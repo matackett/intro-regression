@@ -1,13 +1,10 @@
-# Setting Up Your Course
-
-This chapter is to help instructors set up GitHub and RStudio Cloud for their classrooms. Some of the benefits of using these platforms will be described below; however, please refer to the 2018 paper "Infrastructure and Tools for Teaching Computing Throughout the Statistical Curriculum" for a full discussion about how to integrate these tools into the course curriculum and the benefits for both instructors and students. 
-
+# Notes for Instructors {#instr}
 
 ## Setting up your course
 
 ### GitHub
 
-GitHub can be used as a course management platform that is  a more flexible alternative traditional platforms such as Blackboard and Sakai (&Ccedil;entinkaya-Rundel & Rundel, 2018). It can be used as the central place to share course content and for students to submit assignments. It is structured to promote collaboration, so it is good for courses that include a lot of group assignments. It also gives students practice establishing a workflow that is  more representative of what is currently being used in industry.
+GitHub can be used as a course management platform that is  a more flexible alternative traditional platforms such as Blackboard and Sakai [@cr2018]. It can be used as the central place to share course content and for students to submit assignments. It is structured to promote collaboration, so it is good for courses that include a lot of group assignments. It also gives students practice establishing a workflow that is  more representative of what is currently being used in industry.
 
 Before setting up your course, create an account on [GitHub.com](https://github.com/) if you do not already have one. [*Happy Git with R*](https://happygitwithr.com/github-acct.html) has useful guidelines for making a GitHub username.
 
