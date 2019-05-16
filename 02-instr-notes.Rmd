@@ -6,7 +6,7 @@
 
 GitHub can be used as a course management platform that is  a more flexible alternative traditional platforms such as Blackboard and Sakai [@cr2018]. It can be used as the central place to share course content and for students to submit assignments. It is structured to promote collaboration, so it is good for courses that include a lot of group assignments. It also gives students practice establishing a workflow that is  more representative of what is currently being used in industry.
 
-Before setting up your course, create an account on [GitHub.com](https://github.com/) if you do not already have one. [*Happy Git with R*](https://happygitwithr.com/github-acct.html) has useful guidelines for making a GitHub username.
+Before setting up your course, create an account on [GitHub.com](https://github.com/) if you do not already have one. The chapter [Register a GitHub account](https://happygitwithr.com/github-acct.html) in [@happygit] has helpful guidelines to consider when making a GitHub username. 
 
 To set up your course organization in GitHub:  
 
@@ -14,13 +14,13 @@ To set up your course organization in GitHub:
 
 2.  Apply for the [GitHub Education benefits](https://education.github.com/discount_requests/new) to obtain free private repositories for your course organization. By default any repositories created in the course organization will be private and only visible and accessible  to the student (or group of students) whose assignment it is and the instructor. This is to comply with Family Educational Rights and Privacy Act (FERPA). 
 
-3. Have students create a GitHub username and send it to you. You can share the guidelines from [*Happy Git with R*](https://happygitwithr.com/github-acct.html) to help students create usernames that are applicable beyond their time in your course that can be shared with future employers.
+3. Have students create a GitHub username and send it to you. You can share the guidelines from [@happygit] to help students create usernames that are applicable beyond their time in your course that can be shared with future employers.
 
-    I typically have students provide their GitHub username as part of the "Getting to Know You" survey at the beginning of the semester. It doesn't take long to create a GitHub username, so this could also be done as an activity on one of the first days of class. 
+    I typically have students provide their GitHub username as part of the "Getting to Know You" survey at the beginning of the semester. It doesn't take long to create a GitHub username, so this could also be done as an activity on one of the first few days of class. 
 
-4. Add students to the GitHub course organization using the `ghclass` R package. The section ["Adding students and creating teams"](https://rundel.github.io/ghclass/articles/ghclass.html) on the `ghclass` reference site gives step-by-step instructions for adding new members to the course organization. 
+4. Add students to the GitHub course organization using the `ghclass` R package. The section ["Adding students and creating teams"](https://rundel.github.io/ghclass/articles/ghclass.html) in [@ghclass] provides step-by-step instructions for adding new members to the course organization. 
 
-5. If students will be working in teams, you can add the teams to the GitHub course organization using by following the steps on [`ghclass`](https://rundel.github.io/ghclass/articles/ghclass.html). Any assignment repo for a group assignment will be visible and accessbile to all the members of the team and instructor. 
+5. If students will be working in teams, you can add the teams to the GitHub course organization using by following the steps in [@ghclass]. Any assignment repo for a group assignment will be visible and accessbile to all the members of the team and instructor. 
 
 6. You're done! Now you're ready to create your first assignment, which is described in the sections below. 
 
@@ -57,21 +57,8 @@ RStudio Cloud is a great
 
 *** 
 
-## More Information
+## Additional Resources
 
-- Watch [Tech Talk: Frictionless onboarding to data science with RStudio Cloud](https://www.causeweb.org/cause/ecots/ecots18/tech-talk/4) for more information about using RStudio Cloud in your classroom. 
+- [Tech Talk: Frictionless onboarding to data science with RStudio Cloud](https://www.causeweb.org/cause/ecots/ecots18/tech-talk/4): information about using RStudio Cloud in your classroom. 
 
-- Read [*Happy Git with R*](https://happygitwithr.com/) for more information about using Git, Github and RStudio.
-
-## References 
-
-&Ccedil;etinkaya-Rudel, M., & Rundel, C. (2018). Infrastructure and Tools for Teaching Computing Throughout the Statistical Curriculum. *The American Statistician*, 72, 58-65.
-
-Happy Git with R: https://happygitwithr.com/
-
-ghclass: https://rundel.github.io/ghclass/articles/ghclass.html
-
-Get Started with RStudio Cloud: https://rstudio.cloud/learn/guide#space-members
-
-
-
+- [*Happy Git with R*](https://happygitwithr.com/): information about using Git, Github and RStudio.
