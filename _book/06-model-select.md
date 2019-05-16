@@ -202,7 +202,7 @@ sat_scores <- case1201 %>%
   select(-State) #remove the state variable
 ```
 
-### "Manual" backward selection
+### "Manual" backward selection {-}
 
 - "Manually"" perform backward selection using Adj. $R^2$ as the selection criteria. Show each step of the selection process. To help you get started, the full model and the code for the first set of models to test are below. You will need to find Adj. $R^2$ for each model.
 
@@ -244,7 +244,7 @@ m6 <- lm(SAT ~ Takers + Years + Public + Income + Rank, data = sat_scores)
 Continue the model selection until you have a final model. Show each step of the model selection process.
 
 
-### Backward selection using regsubsets
+### Backward selection using regsubsets {-}
 
 - Use the `regsubsets` function to perform backward selection using Adj. $R^2$ as the selection criteria. 
 
@@ -255,7 +255,7 @@ Continue the model selection until you have a final model. Show each step of the
 
 Are the variables the same as the ones at you chose? Is the Adj. $R^2$ the same? 
 
-### Changing selection criteria
+### Changing selection criteria {-}
 
 - Use the `regsubsets` function to perform backward selection using BIC as the selection criteria. 
 
@@ -276,7 +276,7 @@ What variables were chosen for the follow model? How does this model compare to 
 What variables were chosen for the follow model? How does this model compare to the models chosen from the other selection criteria? 
 
 
-### Different selection procedure
+### Different selection procedure {-}
 
 - Use forward or stepwise selection to choose a model. You can choose the model selection criteria.
 
@@ -288,7 +288,7 @@ What variables were chosen for the follow model? How does this model compare to 
 - How does this model compare to the previous selected models? 
 
 
-### Choosing a final model 
+### Choosing a final model {-}
 
 - You likely have at least 2 different models chosen by the various model selection procedures. Which variables will you include in your final model? Why did you choose this to be your final model?
 
