@@ -97,41 +97,42 @@ Because the dataset is large (i..e has a large number of observations), it is di
 
 1. Type `glimpse(bikeshare)` in the **console** an overview of the `bikeshare` dataset.
 
-    How many observations are in the `bikeshare` dataset? How many variables?
+  How many observations are in the `bikeshare` dataset? How many variables?
 
 2. In this assignment, we will focus the analysis on the following variables: 
 
-|  |  |
-|----------|-------|
-| `season` |1: Winter, 2: Spring, 3: Summer, 4: Fall |
-| `temp` | Temperature (in $^{\circ}C$) &divide; 41 |
-| `count` | total number of bike rentals |
+  |  |  |
+  |----------|-------|
+  | `season` |1: Winter, 2: Spring, 3: Summer, 4: Fall |
+  | `temp` | Temperature (in $^{\circ}C$) &divide; 41 |
+  | `count` | total number of bike rentals |
 
-Before fitting any regression models, we want to do an exploratory data analysis (EDA) to summarize the main characteristics of the data. Much of the EDA is visual, which we'll discuss more in the next exercise. The EDA also consists of calculating summary statistics for the variables in our dataset. It is good practice to examine any variable that may be relevant to the analysis in the EDA, since there may be variables that aren't directly included in the regression model but still provide important context to fully understand the results (i.e. lurking variables). To keep this assignment manageable, we will only examine the three variables `season`, `temp`, and `count`.
 
-There are many ways to calculate summary statistics for each variable, and we will use a few of them throughout the semester. For now, let's use the `skim` function to calculate basic measures of center and spread and get a sketch of the distribution. 
+  Before fitting any regression models, we want to do an exploratory data analysis (EDA) to summarize the main characteristics of the data. Much of the EDA is visual, which we'll discuss more in the next exercise. The EDA also consists of calculating summary statistics for the variables in our dataset. It is good practice to examine any variable that may be relevant to the analysis in the EDA, since there may be variables that aren't directly included in the regression model but still provide important context to fully understand the results (i.e. lurking variables). To keep this assignment manageable, we will only examine the three variables `season`, `temp`, and `count`.
+
+  There are many ways to calculate summary statistics for each variable, and we will use a few of them throughout the semester. For now, let's use the `skim` function to calculate basic measures of center and spread and get a sketch of the distribution. 
 
 
 ```r
-bikeshare %>%
-  select(season,temp,count) %>%
-  skim()
+    bikeshare %>%
+      select(season,temp,count) %>%
+      skim()
 ```
 
-    What is the mean number of bike rentals? 
-    About 25% of the days in the data have a `count` above what value? 
+- What is the mean number of bike rentals? 
+- About 25% of the days in the data have a `count` above what value? 
 
 3. Does it make sense to calculate measures of center and spread for the variable `season`? If so, explain why it makes sense. Otherwise, explain why the `skim` function calculated these summary statistics for the variable `season` even if they don't make sense.
 
-*This is a good place to knit and commit changes with the commit message "Added summary statistics  (Ex 1 - 3)", and push.*
+*Knit and commit changes with the commit message "Added summary statistics  (Ex 1 - 3)", and push.*
 
 #### Visualizing Your Data {-}
 
 4. One important part of EDA is visualizing the data to get a better understanding about the shape of the distribution for each variable and the relationship between variables. There are a lot of ways to make plots in R; we will use the functions available in the `ggplot2` package.
 
-*Note: [https://ggplot2.tidyverse.org/](https://ggplot2.tidyverse.org/) is a great resource as you learn `ggplot()`. Click **Reference** in the top right corner to see a list of the various plot types available in the ggplot2 package.*
+  *Note: [https://ggplot2.tidyverse.org/](https://ggplot2.tidyverse.org/) is a great resource as you learn `ggplot()`. Click **Reference** in the top right corner to see a list of the various plot types available in the ggplot2 package.*
 
-The code below is used to create a histogram to visualize the distribution of `count`. Modify the code by writing an informative title and label for the x-axis.
+  The code below is used to create a histogram to visualize the distribution of `count`. Modify the code by writing an informative title and label for the x-axis.
 
 
 ```r
@@ -143,7 +144,7 @@ ggplot(data=bikeshare, mapping=aes(x=count)) +
 
 5. There may be times you want to customize a plot by changing features such as the color, marker types, etc. When plotting a histogram, one easy way to customize it is by changing the color of the bars. Let's look at two different ways to do this. 
 
-First, using a color of your choice, fill in the code below to include the option `color="_____"` inside of `geom_histogram()` function. Be sure to also include an informative title and label for the x-axis. You can use the [ggplot2 quick reference](http://sape.inf.usi.ch/quick-reference/ggplot2/colour) or [HTML color codes](https://htmlcolorcodes.com/) to help choose a color.
+  First, using a color of your choice, fill in the code below to include the option `color="_____"` inside of `geom_histogram()` function. Be sure to also include an informative title and label for the x-axis. You can use the [ggplot2 quick reference](http://sape.inf.usi.ch/quick-reference/ggplot2/colour) or [HTML color codes](https://htmlcolorcodes.com/) to help choose a color.
 
 
 ```r
@@ -151,6 +152,7 @@ ggplot(data=bikeshare, mapping=aes(x=count)) +
   geom_histogram(color="_______") +
   labs(title="______", x="______")
 ```
+  
 
 Next, instead of `color="_____"`, use `fill="______"` inside of the `geom_histogram` code and fill in the color of your choice. It can be the same color you chose before or a different one.
 
@@ -158,7 +160,7 @@ What is the difference in the two plots? In other words, what is the difference 
 
 6. Describe the distribution of `count`. Your description should include comments about the shape, center, spread, and any potential outliers. Refer to the histogram and the summary statistics from Exercise 2 in your description. 
 
-*This is a another good place to knit and commit changes with the commit message "Added data visualization of count (Ex 4 - 6)", and push.*
+*Knit and commit changes with the commit message "Added data visualization of count (Ex 4 - 6)", and push.*
 
 7. Now that we've examined the variables individually, we want to look at the relationship between the variables. To make interpretation easier, we will use the `mutate` function to create a new variable called `temp_c` that is calculated as `temp * 41`. We will use `temp_c` for the remainder of the analysis, so the temperature can be discussed in terms of degrees Celsius. 
 
@@ -182,7 +184,7 @@ Describe the relationship between the temperature and the number of bike rentals
 
 8. The temperature and number of bike rentals varies greatly depending on the season. Therefore, we would like to create a separate scatterplot of `count` versus `temp_c` for each season. To do so, we will use the `facet_wrap` function, faceting by `season`. Recall from Exercise 2 that `season` is currently stored as an integer. We need to change it to a factor variable type before using it in the `facet_wrap` function. 
 
-Run the code below to see the replationship between temperature and number of bike rentals by season.
+  Run the code below to see the replationship between temperature and number of bike rentals by season.
 
 
 ```r
@@ -201,9 +203,9 @@ ggplot(data=bikeshare, mapping=aes(x=temp_c,y=count)) +
   facet_wrap(~season)
 ```
 
-For which season does the linear relationship between the temperature and the number of bike rentals appear to be the strongest? 
+  For which season does the linear relationship between the temperature and the number of bike rentals appear to be the strongest? 
 
-*This is a another good place to knit and commit changes with the commit message "Added visualization of count vs. temperature (Ex 7 - 8)", and push.*
+*Knit and commit changes with the commit message "Added visualization of count vs. temperature (Ex 7 - 8)", and push.*
 
 ### Simple Linear Regression {-}
 
@@ -225,9 +227,9 @@ winter_model <- lm(Y ~ X, data = my.data)
 tidy(model) #output model
 ```
 
-Interpret the slope. 
+- Interpret the slope. 
 
-Does it make sense to interpret the intercept? If so, write the interpretation of the intercept. Otherwise, explain why not. 
+- Does it make sense to interpret the intercept? If so, write the interpretation of the intercept. Otherwise, explain why not. 
 
 10. We conclude by checking the assumptions for regression. We can use the `mutate` function to add a new variable called `resid` that is the residual for each observation in `winter_data`.
 
@@ -258,9 +260,9 @@ ggplot(data=winter_data, mapping=aes(sample=resid)) +
   labs(title="Normal QQ Plot of Residuals")
 ```
 
-Based on the plots of the residuals and the scatterplot, are the linearity, normality, and constant variance assumptions met? Briefly explain your reasoning for each assumption.
+- Based on the plots of the residuals and the scatterplot, are the linearity, normality, and constant variance assumptions met? Briefly explain your reasoning for each assumption.
 
-Is the independence assumption met? Briefly explain. You can use a description of the data and/or a plot to help you make this assessment.
+- Is the independence assumption met? Briefly explain. You can use a description of the data and/or a plot to help you make this assessment.
 
 Throughout the semester, we will learn various methods to deal with any violations in regression assumptions. For now, we will just note them.
 
