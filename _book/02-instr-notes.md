@@ -1,5 +1,7 @@
 # Notes for Instructors {#instr}
 
+This chapter includes details for setting up RStudio Cloud and GitHub in your course. The information in this chapter is based on the [Infrastructure](https://datasciencebox.org/infrastructure/) page in [@dsbox] and experience from previous courses. 
+
 ## Setting up your course
 
 ### GitHub
@@ -26,7 +28,14 @@ To set up your course organization in GitHub:
 
 ### RStudio Cloud
 
-RStudio Cloud is a great
+There are a few key benefits of using RStudio Cloud rather than having students install RStudio on their local machines: 
+
+- Students can get started working in RStudio immediately, since there is no need for students to install RStudio or configure it with Git. 
+- You can ensure students have the packages (and correct versions!) needed to complete assignments by installing them in the course workspace's base project. 
+- Students can copy any projects you share with everyone in the workspace, which makes in-class activities more feasible. 
+- As an instructor, you can view all student projects making it easier to help students remotely when coding issues occur. 
+
+To set up the workspace for your course: 
 
 1. Go to [rstudio.cloud](https://rstudio.cloud/) and log in or create a new acount. I used the option to log in using my GitHub credentials to keep things simple. 
 
@@ -38,7 +47,7 @@ RStudio Cloud is a great
 
     After the first few weeks of class, you can change the access to the course space to "Invitation     required". At that point you would need to send an invitation to anyone else wanting to join the course workspace.
     
-    See the [RStudio Cloud guide](https://rstudio.cloud/learn/guide#space-members) for more details about adding members and specific member roles. I typically use the following roles in my course: 
+    See the [RStudio Cloud guide](https://rstudio.cloud/learn/guide#space-members) for more details about adding members and specific member roles. Some suggested roles are
     - Primary instructor: Admin role that can manage membership, view, edit and manage all projects in the workspace
     - Secondary instructors / Teaching assistants: Moderator role that can view, edit and manage all projects in the workspace 
     - Students: Contributor role (default) that can create, edit and manage their own projects.
@@ -53,12 +62,31 @@ RStudio Cloud is a great
 
 ### GitHub
 
+1. Create a private assignment repo that contains any starter documents you wish to provide for the students. For example, the repo could contain the following: 
+    
+    - R Markdown template for students to fill in their responses. 
+    - Any data required to complete the assignment in a `/data` sub folder. 
+    - README that includes link to assignment instructions. 
+   
+2. Use the `ghclass` package to create individual or team student repos that are mirrors of the original assignment repo. See [Creating a team assignment](https://rundel.github.io/ghclass/articles/ghclass.html) in [@ghclass] to step-by-step instructions. 
+
+    By default these repos will be private. 
+
+3. Students clone the repo into RStudio to complete the assignment. 
+
 ### RStudio Cloud
+
+1. Create a new project in the course workspace. In the project, include any R Markdown templates, R scripts, data sets, and any other documents the students will need to complete the assignment or activity. 
+
+2. In the project options, click "Everyone" for "Who can view this project". This will make the project visible to every member of the course workspace. 
+
+3. Students can make a copy of the project and can complete the assignment in their copy. 
+
 
 *** 
 
 ## Additional Resources
 
-- [Tech Talk: Frictionless onboarding to data science with RStudio Cloud](https://www.causeweb.org/cause/ecots/ecots18/tech-talk/4): information about using RStudio Cloud in your classroom. 
+- [Tech Talk: Frictionless onboarding to data science with RStudio Cloud](https://www.causeweb.org/cause/ecots/ecots18/tech-talk/4): information on using RStudio Cloud in your classroom. 
 
-- [*Happy Git with R*](https://happygitwithr.com/): information about using Git, Github and RStudio.
+- [*Happy Git with R*](https://happygitwithr.com/): information on using Git, Github and RStudio.

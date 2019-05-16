@@ -250,6 +250,7 @@ code > span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Inf
             <section class="normal" id="section-">
 <div id="instr" class="section level1">
 <h1><span class="header-section-number"> 2</span> Notes for Instructors</h1>
+<p>This chapter includes details for setting up RStudio Cloud and GitHub in your course. The information in this chapter is based on the <a href="https://datasciencebox.org/infrastructure/">Infrastructure</a> page in <span class="citation">(“Data Science in a Box” <a href="#ref-dsbox">2018</a>)</span> and experience from previous courses.</p>
 <div id="setting-up-your-course" class="section level2">
 <h2><span class="header-section-number">2.1</span> Setting up your course</h2>
 <div id="github" class="section level3">
@@ -269,14 +270,21 @@ code > span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Inf
 </div>
 <div id="rstudio-cloud" class="section level3">
 <h3><span class="header-section-number">2.1.2</span> RStudio Cloud</h3>
-<p>RStudio Cloud is a great</p>
+<p>There are a few key benefits of using RStudio Cloud rather than having students install RStudio on their local machines:</p>
+<ul>
+<li>Students can get started working in RStudio immediately, since there is no need for students to install RStudio or configure it with Git.</li>
+<li>You can ensure students have the packages (and correct versions!) needed to complete assignments by installing them in the course workspace’s base project.</li>
+<li>Students can copy any projects you share with everyone in the workspace, which makes in-class activities more feasible.</li>
+<li>As an instructor, you can view all student projects making it easier to help students remotely when coding issues occur.</li>
+</ul>
+<p>To set up the workspace for your course:</p>
 <ol style="list-style-type: decimal">
 <li><p>Go to <a href="https://rstudio.cloud/">rstudio.cloud</a> and log in or create a new acount. I used the option to log in using my GitHub credentials to keep things simple.</p></li>
 <li><p>Click to create a “New Space” and follow the prompts to create a private workspace for your course.</p></li>
 <li><p>By default, the workspace only holds 10 members and 25 projects. If you need more space for course, submit a request by emailing <a href = "mailto: support@rstudio.com">support@rstudio.com</a>.</p></li>
 <li><p>In the course workspace, go to the “Members” menu and click options. Change the access to “Shared” to create a sharing link that can be distributed to your students. Anyone who clicks the link will automatically be added to your course workspace. Students can log in to RStudio Cloud using their Github credentials.</p>
 <p>After the first few weeks of class, you can change the access to the course space to “Invitation required”. At that point you would need to send an invitation to anyone else wanting to join the course workspace.</p>
-See the <a href="https://rstudio.cloud/learn/guide#space-members">RStudio Cloud guide</a> for more details about adding members and specific member roles. I typically use the following roles in my course:
+See the <a href="https://rstudio.cloud/learn/guide#space-members">RStudio Cloud guide</a> for more details about adding members and specific member roles. Some suggested roles are
 <ul>
 <li>Primary instructor: Admin role that can manage membership, view, edit and manage all projects in the workspace</li>
 <li>Secondary instructors / Teaching assistants: Moderator role that can view, edit and manage all projects in the workspace</li>
@@ -294,23 +302,42 @@ See the <a href="https://rstudio.cloud/learn/guide#space-members">RStudio Cloud 
 <h2><span class="header-section-number">2.2</span> Making Assignments</h2>
 <div id="github-1" class="section level3">
 <h3><span class="header-section-number">2.2.1</span> GitHub</h3>
+<ol style="list-style-type: decimal">
+<li><p>Create a private assignment repo that contains any starter documents you wish to provide for the students. For example, the repo could contain the following:</p>
+<ul>
+<li>R Markdown template for students to fill in their responses.</li>
+<li>Any data required to complete the assignment in a <code>/data</code> sub folder.</li>
+<li>README that includes link to assignment instructions.</li>
+</ul></li>
+<li><p>Use the <code>ghclass</code> package to create individual or team student repos that are mirrors of the original assignment repo. See <a href="https://rundel.github.io/ghclass/articles/ghclass.html">Creating a team assignment</a> in <span class="citation">(Rundel and Cetinkaya-Rundel <a href="#ref-ghclass">2018</a>)</span> to step-by-step instructions.</p>
+<p>By default these repos will be private.</p></li>
+<li><p>Students clone the repo into RStudio to complete the assignment.</p></li>
+</ol>
 </div>
 <div id="rstudio-cloud-1" class="section level3">
 <h3><span class="header-section-number">2.2.2</span> RStudio Cloud</h3>
+<ol style="list-style-type: decimal">
+<li><p>Create a new project in the course workspace. In the project, include any R Markdown templates, R scripts, data sets, and any other documents the students will need to complete the assignment or activity.</p></li>
+<li><p>In the project options, click “Everyone” for “Who can view this project”. This will make the project visible to every member of the course workspace.</p></li>
+<li><p>Students can make a copy of the project and can complete the assignment in their copy.</p></li>
+</ol>
 <hr />
 </div>
 </div>
 <div id="additional-resources" class="section level2">
 <h2><span class="header-section-number">2.3</span> Additional Resources</h2>
 <ul>
-<li><p><a href="https://www.causeweb.org/cause/ecots/ecots18/tech-talk/4">Tech Talk: Frictionless onboarding to data science with RStudio Cloud</a>: information about using RStudio Cloud in your classroom.</p></li>
-<li><p><a href="https://happygitwithr.com/"><em>Happy Git with R</em></a>: information about using Git, Github and RStudio.</p></li>
+<li><p><a href="https://www.causeweb.org/cause/ecots/ecots18/tech-talk/4">Tech Talk: Frictionless onboarding to data science with RStudio Cloud</a>: information on using RStudio Cloud in your classroom.</p></li>
+<li><p><a href="https://happygitwithr.com/"><em>Happy Git with R</em></a>: information on using Git, Github and RStudio.</p></li>
 </ul>
 
 </div>
 </div>
 <h3>References</h3>
 <div id="refs" class="references">
+<div id="ref-dsbox">
+<p>“Data Science in a Box.” 2018. <a href="https://datasciencebox.org/" class="uri">https://datasciencebox.org/</a>.</p>
+</div>
 <div id="ref-cr2018">
 <p>Cetinkaya-Rudel, Mine, and Colin Rundel. 2018. “Infrastructure and Tools for Teaching Computing Throughout the Statistical Curriculum.” <em>The American Statistician</em> 72. <a href="https://www.tandfonline.com/doi/abs/10.1080/00031305.2017.1397549" class="uri">https://www.tandfonline.com/doi/abs/10.1080/00031305.2017.1397549</a>.</p>
 </div>
