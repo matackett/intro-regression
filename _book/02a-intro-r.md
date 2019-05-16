@@ -1,10 +1,9 @@
+# Intro to R {#intro-r}
+
+
 ## COMP: Intro to R
 
-```{r echo = F}
-knitr::opts_chunk$set(
-  eval = F
-)
-```
+
 
 ### Introduction {-}
 
@@ -27,7 +26,8 @@ This assignment should be completed **individually**, so you can get practice us
 
 We will use the following packages in today's assignment. 
 
-```{r}
+
+```r
 library(tidyverse)
 library(readr)
 library(skimr)
@@ -36,7 +36,8 @@ library(broom)
 
 If you need to install any of the packages, you can run the code below in the **console**.
 
-```{r,eval=F}
+
+```r
 install.packages("tidyverse") 
 install.packages("readr")
 install.packages("skimr")
@@ -51,9 +52,7 @@ The top of the R Markdown file (between the three dashed lines) is called the  Y
 
 Open the R Markdown (.Rmd) file in your project, change the author name to your name, and knit the document.
 
-```{r echo = FALSE}
-knitr::include_graphics("img/01-intro-r/yaml-raw-to-rendered.png")
-```
+
 
 #### Commiting changes: {-}
 
@@ -61,9 +60,7 @@ Go to the **Git** pane in RStudio.
 
 You should see the changes you made to the Rmd file listed here. Click to select the change (or changes) you made and click **Diff** to see the difference between the last committed state of the document and the current state that now includes your changes (in this case, writing your name in the author field). Now, write a short message in the **Commit message** box (e.g. a message like "Updated author name") and click **Commit**.
 
-```{r echo = FALSE}
-knitr::include_graphics("img/update-author-name-commit.png")
-```
+
 
 You don't have to commit after every change, but should commit states that are meaningful and may be helpful to use later for comparision. In the early assignments, there will be guidance to help you determine when to commit, and you will choose when to commit in later assignments. 
 
@@ -78,7 +75,8 @@ To push your changes to GitHub, click on **Push**. (*Note: If you are using RStu
 Today's data comes from the Capital Bikeshare in Washington D.C [@capitalbikeshare]. The Capital Bikeshare is a system in which customers can rent a bike for little cost, ride it around the city, and return it to a station near their destination. We will read in the data from the file *bikeshare.csv* located in the *data* folder.
 
 
-```{r  eval=FALSE}
+
+```r
 bikeshare <- read_csv("data/bikeshare.csv")
 ```
 
@@ -88,7 +86,8 @@ This dataset contains the number of bike rentals, environmental conditions, and 
 
 Before doing any analysis, we want to understand the basic structure of the data. One way to do this, is to look at the actual dataset. Type the code below in the **console** to view the entire dataset.
 
-```{r eval=FALSE}
+
+```r
 View(bikeshare)
 ```
 
@@ -112,7 +111,8 @@ Before fitting any regression models, we want to do an exploratory data analysis
 
 There are many ways to calculate summary statistics for each variable, and we will use a few of them throughout the semester. For now, let's use the `skim` function to calculate basic measures of center and spread and get a sketch of the distribution. 
 
-```{r eval=FALSE}
+
+```r
 bikeshare %>%
   select(season,temp,count) %>%
   skim()
@@ -133,7 +133,8 @@ bikeshare %>%
 
 The code below is used to create a histogram to visualize the distribution of `count`. Modify the code by writing an informative title and label for the x-axis.
 
-```{r eval=FALSE}
+
+```r
 ggplot(data=bikeshare, mapping=aes(x=count)) + 
   geom_histogram() +
   labs(title="______", x="______")
@@ -144,7 +145,8 @@ ggplot(data=bikeshare, mapping=aes(x=count)) +
 
 First, using a color of your choice, fill in the code below to include the option `color="_____"` inside of `geom_histogram()` function. Be sure to also include an informative title and label for the x-axis. You can use the [ggplot2 quick reference](http://sape.inf.usi.ch/quick-reference/ggplot2/colour) or [HTML color codes](https://htmlcolorcodes.com/) to help choose a color.
 
-```{r eval=FALSE}
+
+```r
 ggplot(data=bikeshare, mapping=aes(x=count)) + 
   geom_histogram(color="_______") +
   labs(title="______", x="______")
@@ -160,14 +162,16 @@ What is the difference in the two plots? In other words, what is the difference 
 
 7. Now that we've examined the variables individually, we want to look at the relationship between the variables. To make interpretation easier, we will use the `mutate` function to create a new variable called `temp_c` that is calculated as `temp * 41`. We will use `temp_c` for the remainder of the analysis, so the temperature can be discussed in terms of degrees Celsius. 
 
-```{r eval=FALSE}
+
+```r
 bikeshare <- bikeshare %>%
   mutate(temp_c = temp * 41)
 ```
 
 Complete the code below to make a scatterplot of the number of bike rentals versus the temperature (in degrees Celsius).
 
-```{r eval=FALSE}
+
+```r
 ggplot(data=bikeshare, mapping=aes(x=temp_c,y=count)) +
   ___________________
 ```
@@ -180,12 +184,14 @@ Describe the relationship between the temperature and the number of bike rentals
 
 Run the code below to see the replationship between temperature and number of bike rentals by season.
 
-```{r eval=FALSE}
+
+```r
 bikeshare <- bikeshare %>%
   mutate(season = as.factor(season))
 ```
 
-```{r eval=FALSE}
+
+```r
 ggplot(data=bikeshare, mapping=aes(x=temp_c,y=count)) + 
   geom_point() +
   labs(title = "Number of Bike Rentals vs. Temperature", 
@@ -203,7 +209,8 @@ For which season does the linear relationship between the temperature and the nu
 
 We want to fit a least-squares regression using the temperature (`temp_c`) to explain variation in the number of bike rentals (`count`) in the **winter** season. We can use the `filter` function to create a subset from the data that only includes days during the winter season. The `<-` assigns the name `winter_data` to our filtered subset. 
 
-```{r eval=FALSE}
+
+```r
 winter_data <- bikeshare %>%
   filter(season=="1")
 ```
@@ -212,7 +219,8 @@ winter_data <- bikeshare %>%
 
 9. Modify the code below to fit a simple linear regression model using the `lm` function; assign it the name `winter_model`. Replace *X*,  *Y*, and *my.data* in the code below with the appropriate values. 
 
-```{r eval=FALSE}
+
+```r
 winter_model <- lm(Y ~ X, data = my.data)
 tidy(model) #output model
 ```
@@ -223,14 +231,16 @@ Does it make sense to interpret the intercept? If so, write the interpretation o
 
 10. We conclude by checking the assumptions for regression. We can use the `mutate` function to add a new variable called `resid` that is the residual for each observation in `winter_data`.
 
-```{r eval=FALSE}
+
+```r
 winter_data <- winter_data %>%
   mutate(resid = residuals(winter_model))
 ```
 
 The code to plot the residuals vs. the predictor variable and make a Normal QQ-plot of residuals is shown below. In addition to these plots, write the code to make a histogram of the residuals. Refer to code from previous exercises to help you plot the histogram.
 
-```{r eval=FALSE}
+
+```r
 ggplot(data=winter_data, mapping=aes(x=temp_c,y=resid)) +
   geom_point() + 
   geom_hline(yintercept=0,color="red")+
@@ -240,7 +250,8 @@ ggplot(data=winter_data, mapping=aes(x=temp_c,y=resid)) +
 ```
 
 
-```{r eval = FALSE}
+
+```r
 ggplot(data=winter_data, mapping=aes(sample=resid)) +
   stat_qq() + 
   stat_qq_line()+
@@ -254,5 +265,111 @@ Is the independence assumption met? Briefly explain. You can use a description o
 Throughout the semester, we will learn various methods to deal with any violations in regression assumptions. For now, we will just note them.
 
 *Knit then commit all remaining changes, write a commit message indiciating you're finished, and push to GitHub. Before you wrap up the assignment, make sure all documents are updated on your GitHub repo.*
+
+***
+
+## IN-CLASS: Movies on IMDB
+
+
+
+In this activity, we will examine the relationship between budget and revenue for movies made in the United States in 1986 to 2016. The data is originally [@imdb].
+
+
+```r
+#load packages
+library(readr)
+library(tidyverse)
+library(DT)
+```
+
+### Data {-}
+
+The dataset `movies.csv` includes basic information about each movie including budget, genre, movie studio, director, etc. A full list of the variables may be found [here](https://github.com/danielgrijalva/movie-stats).
+
+
+```r
+movies <- read_csv("https://raw.githubusercontent.com/danielgrijalva/movie-stats/master/movies.csv")
+```
+
+
+```r
+movies <- movies %>%
+  filter(country=="USA", #use movies in the USA
+         !(genre %in% c("Musical","War","Western"))) #removes genres with < 10 movies
+```
+
+
+```r
+#view the data
+movies
+```
+
+### Analysis {-}
+
+#### Part 1 {-}
+
+We begin by observing how the gross revenue (`gross`) has changed over time. Since we want to visualize the results, we will choose a few genres of interest for the analysis. 
+
+
+```r
+genre_list <- c("Horror", "Drama", "Action", "Animation")
+```
+
+
+```r
+movies %>%
+  filter(genre %in% genre_list) %>% 
+  group_by(genre,year) %>%
+  summarise(avg_gross = mean(gross)) %>%
+  ggplot(mapping = aes(x = year, y = avg_gross, color=genre)) +
+    geom_line() +
+    ylab("Average Gross Revenue (in US Dollars)") +
+    ggtitle("Gross Revenue Over Time")
+```
+
+#### Part 2 {-}
+
+Next, let's see the relationship between a movie's budget and its gross revenue. Because there is a large range of values for budget and revenue, we will plot the log-transformed version of each variable to more easily visualize the relationship. We will talk more about variable transformations later in the semester.
+
+
+```r
+movies %>%
+  filter(genre %in% genre_list, budget > 0) %>% 
+  ggplot(mapping = aes(x=log(budget), y = log(gross), color=genre)) +
+  geom_point() +
+  geom_smooth(method="lm",se=FALSE) + 
+  xlab("Log-transformed Budget")+
+  ylab("Log-transformed Gross Revenue") +
+  facet_wrap(~ genre)
+```
+
+### Next Steps {-}
+
+1. Put your name in the author field in the `YAML` at the top of the .Rmd file. Knit again. (We will talk more about the `YAML` later in future assingments.)
+
+2. Change the genre names in parts 1 and 2 to genres that interest you. The spelling and capitalization must match what's in the data, so you can use the [Appendix](#appendix) to see the correct spelling and capitalization. Knit again.
+
+### Discussion Questions {-}
+
+1. Consider the plot in Part 1. 
+    - Describe how movie revenue has changed over time. 
+    - Suppose we use revenue as a measure of popularity. How has the popularity of each genre changed over time? In other words, are the genres that were most popular in 1986 still the most popular today?
+
+2. Consider the plot in Part 2. 
+    - Which genre(s) tend to have the highest budgets?
+    - In general, what is the relationship between a movie's budget and its total revenue? Are there any genres that show a different relationship between budget and revenue?
+
+### Appendix {-}
+
+Below is a list of genres in the data set:
+
+
+```r
+movies %>% 
+  arrange(genre) %>% 
+  select(genre) %>%
+  distinct() %>%
+  datatable()
+```
 
 ***

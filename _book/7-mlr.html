@@ -5,11 +5,11 @@
 
   <meta charset="UTF-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
-  <title> 6 Multiple Linear Regression | Intro Regression</title>
+  <title> 7 Multiple Linear Regression | Intro Regression</title>
   <meta name="description" content="An electronic book with assignments and in-class activities to help students apply concepts in an intermediate-level regression analysis course. The primary focus of this text is application and computing; there are also supplemental math notes for some topics.">
   <meta name="generator" content="bookdown  and GitBook 2.6.7">
 
-  <meta property="og:title" content=" 6 Multiple Linear Regression | Intro Regression" />
+  <meta property="og:title" content=" 7 Multiple Linear Regression | Intro Regression" />
   <meta property="og:type" content="book" />
   <meta property="og:url" content="https://www.introregression.org/" />
   <meta property="og:image" content="https://www.introregression.org/img/introregression-sticker.png" />
@@ -17,7 +17,7 @@
   <meta name="github-repo" content="matackett/intro-regression" />
 
   <meta name="twitter:card" content="summary" />
-  <meta name="twitter:title" content=" 6 Multiple Linear Regression | Intro Regression" />
+  <meta name="twitter:title" content=" 7 Multiple Linear Regression | Intro Regression" />
   
   <meta name="twitter:description" content="An electronic book with assignments and in-class activities to help students apply concepts in an intermediate-level regression analysis course. The primary focus of this text is application and computing; there are also supplemental math notes for some topics." />
   <meta name="twitter:image" content="https://www.introregression.org/img/introregression-sticker.png" />
@@ -31,8 +31,8 @@
   <meta name="apple-mobile-web-app-status-bar-style" content="black">
   <link rel="apple-touch-icon-precomposed" sizes="152x152" href="img/introregression-sticker.png">
   <link rel="shortcut icon" href="img/introregression-sticker.png" type="image/x-icon">
-<link rel="prev" href="5-anova.html">
-<link rel="next" href="7-select.html">
+<link rel="prev" href="6-anova.html">
+<link rel="next" href="8-select.html">
 <script src="libs/jquery-2.2.3/jquery.min.js"></script>
 <link href="libs/gitbook-2.6.7/css/style.css" rel="stylesheet" />
 <link href="libs/gitbook-2.6.7/css/plugin-table.css" rel="stylesheet" />
@@ -106,7 +106,7 @@ code > span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Inf
 <li class="chapter" data-level="" data-path="index.html"><a href="index.html"><i class="fa fa-check"></i>Welcome to Intro Regression!</a></li>
 <li class="chapter" data-level="1" data-path="1-getstarted.html"><a href="1-getstarted.html"><i class="fa fa-check"></i><b>1</b> Getting Started</a><ul>
 <li class="chapter" data-level="1.1" data-path="1-getstarted.html"><a href="1-getstarted.html#how-to-use-this-book"><i class="fa fa-check"></i><b>1.1</b> How to use this book</a></li>
-<li class="chapter" data-level="1.2" data-path="1-getstarted.html"><a href="1-getstarted.html#review"><i class="fa fa-check"></i><b>1.2</b> Review: Intro Statistics and R</a></li>
+<li class="chapter" data-level="1.2" data-path="1-getstarted.html"><a href="1-getstarted.html#intro-statistics-review"><i class="fa fa-check"></i><b>1.2</b> Intro Statistics Review</a></li>
 </ul></li>
 <li class="chapter" data-level="2" data-path="2-instr.html"><a href="2-instr.html"><i class="fa fa-check"></i><b>2</b> Notes for Instructors</a><ul>
 <li class="chapter" data-level="2.1" data-path="2-instr.html"><a href="2-instr.html#setting-up-your-course"><i class="fa fa-check"></i><b>2.1</b> Setting up your course</a><ul>
@@ -120,128 +120,140 @@ code > span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Inf
 <li class="chapter" data-level="2.3" data-path="2-instr.html"><a href="2-instr.html#additional-resources"><i class="fa fa-check"></i><b>2.3</b> Additional Resources</a></li>
 </ul></li>
 <li class="chapter" data-level="3" data-path="3-intro-r.html"><a href="3-intro-r.html"><i class="fa fa-check"></i><b>3</b> Intro to R</a><ul>
-<li class="chapter" data-level="3.1" data-path="3-intro-r.html"><a href="3-intro-r.html#comp-intro-to-r"><i class="fa fa-check"></i><b>3.1</b> COMP: Intro to R</a><ul>
-<li class="chapter" data-level="" data-path="3-intro-r.html"><a href="3-intro-r.html#introduction"><i class="fa fa-check"></i>Introduction</a></li>
-<li class="chapter" data-level="" data-path="3-intro-r.html"><a href="3-intro-r.html#packages"><i class="fa fa-check"></i>Packages</a></li>
-<li class="chapter" data-level="" data-path="3-intro-r.html"><a href="3-intro-r.html#warm-up"><i class="fa fa-check"></i>Warm up</a></li>
-<li class="chapter" data-level="" data-path="3-intro-r.html"><a href="3-intro-r.html#exercises"><i class="fa fa-check"></i>Exercises</a></li>
-<li class="chapter" data-level="" data-path="3-intro-r.html"><a href="3-intro-r.html#simple-linear-regression"><i class="fa fa-check"></i>Simple Linear Regression</a></li>
+<li class="chapter" data-level="3.1" data-path="3-intro-r.html"><a href="3-intro-r.html#in-class-movies-on-imdb"><i class="fa fa-check"></i><b>3.1</b> IN-CLASS: Movies on IMDB</a></li>
+<li class="chapter" data-level="3.2" data-path="3-intro-r.html"><a href="3-intro-r.html#data"><i class="fa fa-check"></i><b>3.2</b> Data</a></li>
+<li class="chapter" data-level="3.3" data-path="3-intro-r.html"><a href="3-intro-r.html#analysis"><i class="fa fa-check"></i><b>3.3</b> Analysis</a><ul>
+<li class="chapter" data-level="3.3.1" data-path="3-intro-r.html"><a href="3-intro-r.html#part-1"><i class="fa fa-check"></i><b>3.3.1</b> Part 1</a></li>
+<li class="chapter" data-level="3.3.2" data-path="3-intro-r.html"><a href="3-intro-r.html#part-2"><i class="fa fa-check"></i><b>3.3.2</b> Part 2</a></li>
 </ul></li>
-<li class="chapter" data-level="3.2" data-path="3-intro-r.html"><a href="3-intro-r.html#in-class-movies-on-imdb"><i class="fa fa-check"></i><b>3.2</b> IN-CLASS: Movies on IMDB</a><ul>
-<li class="chapter" data-level="" data-path="3-intro-r.html"><a href="3-intro-r.html#data-1"><i class="fa fa-check"></i>Data</a></li>
-<li class="chapter" data-level="" data-path="3-intro-r.html"><a href="3-intro-r.html#analysis"><i class="fa fa-check"></i>Analysis</a></li>
-<li class="chapter" data-level="" data-path="3-intro-r.html"><a href="3-intro-r.html#next-steps"><i class="fa fa-check"></i>Next Steps</a></li>
-<li class="chapter" data-level="" data-path="3-intro-r.html"><a href="3-intro-r.html#discussion-questions"><i class="fa fa-check"></i>Discussion Questions</a></li>
-<li class="chapter" data-level="" data-path="3-intro-r.html"><a href="3-intro-r.html#appendix"><i class="fa fa-check"></i>Appendix</a></li>
+<li class="chapter" data-level="3.4" data-path="3-intro-r.html"><a href="3-intro-r.html#next-steps"><i class="fa fa-check"></i><b>3.4</b> Next Steps</a></li>
+<li class="chapter" data-level="3.5" data-path="3-intro-r.html"><a href="3-intro-r.html#discussion-questions"><i class="fa fa-check"></i><b>3.5</b> Discussion Questions</a></li>
+<li class="chapter" data-level="3.6" data-path="3-intro-r.html"><a href="3-intro-r.html#appendix"><i class="fa fa-check"></i><b>3.6</b> Appendix</a></li>
 </ul></li>
+<li class="chapter" data-level="4" data-path="4-compt-intro-to-r.html"><a href="4-compt-intro-to-r.html"><i class="fa fa-check"></i><b>4</b> COMPT: Intro to R</a><ul>
+<li class="chapter" data-level="4.1" data-path="4-compt-intro-to-r.html"><a href="4-compt-intro-to-r.html#introduction"><i class="fa fa-check"></i><b>4.1</b> Introduction</a><ul>
+<li class="chapter" data-level="4.1.1" data-path="4-compt-intro-to-r.html"><a href="4-compt-intro-to-r.html#topics-covered-in-this-lab"><i class="fa fa-check"></i><b>4.1.1</b> Topics covered in this lab:</a></li>
 </ul></li>
-<li class="chapter" data-level="4" data-path="4-slr.html"><a href="4-slr.html"><i class="fa fa-check"></i><b>4</b> Simple Linear Regression</a><ul>
-<li class="chapter" data-level="4.1" data-path="4-slr.html"><a href="4-slr.html#comp-college-admissions"><i class="fa fa-check"></i><b>4.1</b> COMP: College Admissions</a><ul>
-<li class="chapter" data-level="4.1.1" data-path="4-slr.html"><a href="4-slr.html#packages-1"><i class="fa fa-check"></i><b>4.1.1</b> Packages</a></li>
-<li class="chapter" data-level="4.1.2" data-path="4-slr.html"><a href="4-slr.html#data-2"><i class="fa fa-check"></i><b>4.1.2</b> Data</a></li>
-<li class="chapter" data-level="4.1.3" data-path="4-slr.html"><a href="4-slr.html#exercises-1"><i class="fa fa-check"></i><b>4.1.3</b> Exercises</a></li>
+<li class="chapter" data-level="4.2" data-path="4-compt-intro-to-r.html"><a href="4-compt-intro-to-r.html#packages"><i class="fa fa-check"></i><b>4.2</b> Packages</a></li>
+<li class="chapter" data-level="4.3" data-path="4-compt-intro-to-r.html"><a href="4-compt-intro-to-r.html#warm-up"><i class="fa fa-check"></i><b>4.3</b> Warm up</a></li>
+<li class="chapter" data-level="4.4" data-path="4-compt-intro-to-r.html"><a href="4-compt-intro-to-r.html#project-name"><i class="fa fa-check"></i><b>4.4</b> Project name:</a><ul>
+<li class="chapter" data-level="4.4.1" data-path="4-compt-intro-to-r.html"><a href="4-compt-intro-to-r.html#yaml"><i class="fa fa-check"></i><b>4.4.1</b> YAML:</a></li>
+<li class="chapter" data-level="4.4.2" data-path="4-compt-intro-to-r.html"><a href="4-compt-intro-to-r.html#commiting-changes"><i class="fa fa-check"></i><b>4.4.2</b> Commiting changes:</a></li>
+<li class="chapter" data-level="4.4.3" data-path="4-compt-intro-to-r.html"><a href="4-compt-intro-to-r.html#pushing-changes"><i class="fa fa-check"></i><b>4.4.3</b> Pushing changes:</a></li>
+<li class="chapter" data-level="4.4.4" data-path="4-compt-intro-to-r.html"><a href="4-compt-intro-to-r.html#data-1"><i class="fa fa-check"></i><b>4.4.4</b> Data</a></li>
 </ul></li>
-<li class="chapter" data-level="4.2" data-path="4-slr.html"><a href="4-slr.html#in-class-advertising-sales"><i class="fa fa-check"></i><b>4.2</b> IN-CLASS: Advertising &amp; Sales</a><ul>
-<li class="chapter" data-level="4.2.1" data-path="4-slr.html"><a href="4-slr.html#data-and-packages"><i class="fa fa-check"></i><b>4.2.1</b> Data and packages</a></li>
-<li class="chapter" data-level="4.2.2" data-path="4-slr.html"><a href="4-slr.html#analysis-1"><i class="fa fa-check"></i><b>4.2.2</b> Analysis</a></li>
+<li class="chapter" data-level="4.5" data-path="4-compt-intro-to-r.html"><a href="4-compt-intro-to-r.html#exercises"><i class="fa fa-check"></i><b>4.5</b> Exercises</a><ul>
+<li class="chapter" data-level="4.5.1" data-path="4-compt-intro-to-r.html"><a href="4-compt-intro-to-r.html#visualizing-your-data"><i class="fa fa-check"></i><b>4.5.1</b> Visualizing Your Data</a></li>
 </ul></li>
-<li class="chapter" data-level="4.3" data-path="4-slr.html"><a href="4-slr.html#in-class-carbohydrates-in-beer"><i class="fa fa-check"></i><b>4.3</b> IN-CLASS: Carbohydrates in Beer</a></li>
+<li class="chapter" data-level="4.6" data-path="4-compt-intro-to-r.html"><a href="4-compt-intro-to-r.html#simple-linear-regression"><i class="fa fa-check"></i><b>4.6</b> Simple Linear Regression</a></li>
 </ul></li>
-<li class="chapter" data-level="5" data-path="5-anova.html"><a href="5-anova.html"><i class="fa fa-check"></i><b>5</b> Analysis of Variance</a><ul>
-<li class="chapter" data-level="5.1" data-path="5-anova.html"><a href="5-anova.html#comp-diamonds"><i class="fa fa-check"></i><b>5.1</b> COMP: Diamonds</a><ul>
-<li class="chapter" data-level="5.1.1" data-path="5-anova.html"><a href="5-anova.html#packages-2"><i class="fa fa-check"></i><b>5.1.1</b> Packages</a></li>
-<li class="chapter" data-level="5.1.2" data-path="5-anova.html"><a href="5-anova.html#data-3"><i class="fa fa-check"></i><b>5.1.2</b> Data</a></li>
-<li class="chapter" data-level="5.1.3" data-path="5-anova.html"><a href="5-anova.html#exercises-2"><i class="fa fa-check"></i><b>5.1.3</b> Exercises</a></li>
+<li class="chapter" data-level="5" data-path="5-slr.html"><a href="5-slr.html"><i class="fa fa-check"></i><b>5</b> Simple Linear Regression</a><ul>
+<li class="chapter" data-level="5.1" data-path="5-slr.html"><a href="5-slr.html#comp-college-admissions"><i class="fa fa-check"></i><b>5.1</b> COMP: College Admissions</a><ul>
+<li class="chapter" data-level="5.1.1" data-path="5-slr.html"><a href="5-slr.html#packages-1"><i class="fa fa-check"></i><b>5.1.1</b> Packages</a></li>
+<li class="chapter" data-level="5.1.2" data-path="5-slr.html"><a href="5-slr.html#data-2"><i class="fa fa-check"></i><b>5.1.2</b> Data</a></li>
+<li class="chapter" data-level="5.1.3" data-path="5-slr.html"><a href="5-slr.html#exercises-1"><i class="fa fa-check"></i><b>5.1.3</b> Exercises</a></li>
 </ul></li>
+<li class="chapter" data-level="5.2" data-path="5-slr.html"><a href="5-slr.html#in-class-advertising-sales"><i class="fa fa-check"></i><b>5.2</b> IN-CLASS: Advertising &amp; Sales</a><ul>
+<li class="chapter" data-level="5.2.1" data-path="5-slr.html"><a href="5-slr.html#data-and-packages"><i class="fa fa-check"></i><b>5.2.1</b> Data and packages</a></li>
+<li class="chapter" data-level="5.2.2" data-path="5-slr.html"><a href="5-slr.html#analysis-1"><i class="fa fa-check"></i><b>5.2.2</b> Analysis</a></li>
 </ul></li>
-<li class="chapter" data-level="6" data-path="6-mlr.html"><a href="6-mlr.html"><i class="fa fa-check"></i><b>6</b> Multiple Linear Regression</a><ul>
-<li class="chapter" data-level="6.1" data-path="6-mlr.html"><a href="6-mlr.html#comp-houses-in-king-county"><i class="fa fa-check"></i><b>6.1</b> COMP: Houses in King County</a><ul>
-<li class="chapter" data-level="6.1.1" data-path="6-mlr.html"><a href="6-mlr.html#packages-3"><i class="fa fa-check"></i><b>6.1.1</b> Packages</a></li>
-<li class="chapter" data-level="6.1.2" data-path="6-mlr.html"><a href="6-mlr.html#data-4"><i class="fa fa-check"></i><b>6.1.2</b> Data</a></li>
-<li class="chapter" data-level="6.1.3" data-path="6-mlr.html"><a href="6-mlr.html#exercises-3"><i class="fa fa-check"></i><b>6.1.3</b> Exercises</a></li>
-<li class="chapter" data-level="6.1.4" data-path="6-mlr.html"><a href="6-mlr.html#acknowledgement"><i class="fa fa-check"></i><b>6.1.4</b> Acknowledgement</a></li>
+<li class="chapter" data-level="5.3" data-path="5-slr.html"><a href="5-slr.html#in-class-carbohydrates-in-beer"><i class="fa fa-check"></i><b>5.3</b> IN-CLASS: Carbohydrates in Beer</a></li>
 </ul></li>
-<li class="chapter" data-level="6.2" data-path="6-mlr.html"><a href="6-mlr.html#comp-airbnb-in-asheville-nc"><i class="fa fa-check"></i><b>6.2</b> COMP: Airbnb in Asheville, NC</a><ul>
-<li class="chapter" data-level="6.2.1" data-path="6-mlr.html"><a href="6-mlr.html#packages-4"><i class="fa fa-check"></i><b>6.2.1</b> Packages</a></li>
-<li class="chapter" data-level="6.2.2" data-path="6-mlr.html"><a href="6-mlr.html#data-5"><i class="fa fa-check"></i><b>6.2.2</b> Data</a></li>
-<li class="chapter" data-level="6.2.3" data-path="6-mlr.html"><a href="6-mlr.html#exercises-4"><i class="fa fa-check"></i><b>6.2.3</b> Exercises</a></li>
-<li class="chapter" data-level="6.2.4" data-path="6-mlr.html"><a href="6-mlr.html#acknowledgement-1"><i class="fa fa-check"></i><b>6.2.4</b> Acknowledgement</a></li>
-</ul></li>
-<li class="chapter" data-level="6.3" data-path="6-mlr.html"><a href="6-mlr.html#in-class-wages"><i class="fa fa-check"></i><b>6.3</b> IN-CLASS: Wages</a><ul>
-<li class="chapter" data-level="6.3.1" data-path="6-mlr.html"><a href="6-mlr.html#initial-model"><i class="fa fa-check"></i><b>6.3.1</b> Initial model</a></li>
-<li class="chapter" data-level="6.3.2" data-path="6-mlr.html"><a href="6-mlr.html#model-with-mean-centered-variables"><i class="fa fa-check"></i><b>6.3.2</b> Model with mean-centered variables</a></li>
-<li class="chapter" data-level="6.3.3" data-path="6-mlr.html"><a href="6-mlr.html#model-with-indicator-variables"><i class="fa fa-check"></i><b>6.3.3</b> Model with indicator variables</a></li>
-</ul></li>
-<li class="chapter" data-level="6.4" data-path="6-mlr.html"><a href="6-mlr.html#notes-matrix-form-of-linear-regression"><i class="fa fa-check"></i><b>6.4</b> NOTES: Matrix Form of Linear Regression</a><ul>
-<li class="chapter" data-level="6.4.1" data-path="6-mlr.html"><a href="6-mlr.html#introduction-1"><i class="fa fa-check"></i><b>6.4.1</b> Introduction</a></li>
-<li class="chapter" data-level="6.4.2" data-path="6-mlr.html"><a href="6-mlr.html#matrix-form-for-the-regression-model"><i class="fa fa-check"></i><b>6.4.2</b> Matrix Form for the Regression Model</a></li>
-<li class="chapter" data-level="6.4.3" data-path="6-mlr.html"><a href="6-mlr.html#estimating-the-coefficients"><i class="fa fa-check"></i><b>6.4.3</b> Estimating the Coefficients</a></li>
-<li class="chapter" data-level="6.4.4" data-path="6-mlr.html"><a href="6-mlr.html#variance-covariance-matrix-of-the-coefficients"><i class="fa fa-check"></i><b>6.4.4</b> Variance-covariance matrix of the coefficients</a></li>
-</ul></li>
-<li class="chapter" data-level="6.5" data-path="6-mlr.html"><a href="6-mlr.html#notes-log-transformations"><i class="fa fa-check"></i><b>6.5</b> NOTES: Log Transformations</a><ul>
-<li class="chapter" data-level="6.5.1" data-path="6-mlr.html"><a href="6-mlr.html#log-transformation-on-the-response-variable"><i class="fa fa-check"></i><b>6.5.1</b> Log-transformation on the response variable</a></li>
-<li class="chapter" data-level="6.5.2" data-path="6-mlr.html"><a href="6-mlr.html#log-transformation-on-the-predictor-variable"><i class="fa fa-check"></i><b>6.5.2</b> Log-transformation on the predictor variable</a></li>
-<li class="chapter" data-level="6.5.3" data-path="6-mlr.html"><a href="6-mlr.html#log-transformation-on-the-the-response-and-predictor-variable"><i class="fa fa-check"></i><b>6.5.3</b> Log-transformation on the the response and predictor variable</a></li>
-</ul></li>
-<li class="chapter" data-level="6.6" data-path="6-mlr.html"><a href="6-mlr.html#notes-model-diagnostics"><i class="fa fa-check"></i><b>6.6</b> NOTES: Model Diagnostics</a><ul>
-<li class="chapter" data-level="6.6.1" data-path="6-mlr.html"><a href="6-mlr.html#introduction-2"><i class="fa fa-check"></i><b>6.6.1</b> Introduction</a></li>
-<li class="chapter" data-level="6.6.2" data-path="6-mlr.html"><a href="6-mlr.html#matrix-form-for-the-regression-model-1"><i class="fa fa-check"></i><b>6.6.2</b> Matrix Form for the Regression Model</a></li>
-<li class="chapter" data-level="6.6.3" data-path="6-mlr.html"><a href="6-mlr.html#hat-matrix-leverage"><i class="fa fa-check"></i><b>6.6.3</b> Hat Matrix &amp; Leverage</a></li>
-<li class="chapter" data-level="6.6.4" data-path="6-mlr.html"><a href="6-mlr.html#standardized-residuals"><i class="fa fa-check"></i><b>6.6.4</b> Standardized Residuals</a></li>
-<li class="chapter" data-level="6.6.5" data-path="6-mlr.html"><a href="6-mlr.html#cooks-distance"><i class="fa fa-check"></i><b>6.6.5</b> Cook’s Distance</a></li>
+<li class="chapter" data-level="6" data-path="6-anova.html"><a href="6-anova.html"><i class="fa fa-check"></i><b>6</b> Analysis of Variance</a><ul>
+<li class="chapter" data-level="6.1" data-path="6-anova.html"><a href="6-anova.html#comp-diamonds"><i class="fa fa-check"></i><b>6.1</b> COMP: Diamonds</a><ul>
+<li class="chapter" data-level="6.1.1" data-path="6-anova.html"><a href="6-anova.html#packages-2"><i class="fa fa-check"></i><b>6.1.1</b> Packages</a></li>
+<li class="chapter" data-level="6.1.2" data-path="6-anova.html"><a href="6-anova.html#data-3"><i class="fa fa-check"></i><b>6.1.2</b> Data</a></li>
+<li class="chapter" data-level="6.1.3" data-path="6-anova.html"><a href="6-anova.html#exercises-2"><i class="fa fa-check"></i><b>6.1.3</b> Exercises</a></li>
 </ul></li>
 </ul></li>
-<li class="chapter" data-level="7" data-path="7-select.html"><a href="7-select.html"><i class="fa fa-check"></i><b>7</b> Model Selection</a><ul>
-<li class="chapter" data-level="7.1" data-path="7-select.html"><a href="7-select.html#comp-sats-and-mlb"><i class="fa fa-check"></i><b>7.1</b> COMP: SATs and MLB</a><ul>
-<li class="chapter" data-level="7.1.1" data-path="7-select.html"><a href="7-select.html#packages-5"><i class="fa fa-check"></i><b>7.1.1</b> Packages</a></li>
-<li class="chapter" data-level="7.1.2" data-path="7-select.html"><a href="7-select.html#data-6"><i class="fa fa-check"></i><b>7.1.2</b> Data</a></li>
-<li class="chapter" data-level="7.1.3" data-path="7-select.html"><a href="7-select.html#exercises-5"><i class="fa fa-check"></i><b>7.1.3</b> Exercises</a></li>
-<li class="chapter" data-level="7.1.4" data-path="7-select.html"><a href="7-select.html#acknowledgements"><i class="fa fa-check"></i><b>7.1.4</b> Acknowledgements</a></li>
+<li class="chapter" data-level="7" data-path="7-mlr.html"><a href="7-mlr.html"><i class="fa fa-check"></i><b>7</b> Multiple Linear Regression</a><ul>
+<li class="chapter" data-level="7.1" data-path="7-mlr.html"><a href="7-mlr.html#comp-houses-in-king-county"><i class="fa fa-check"></i><b>7.1</b> COMP: Houses in King County</a><ul>
+<li class="chapter" data-level="7.1.1" data-path="7-mlr.html"><a href="7-mlr.html#packages-3"><i class="fa fa-check"></i><b>7.1.1</b> Packages</a></li>
+<li class="chapter" data-level="7.1.2" data-path="7-mlr.html"><a href="7-mlr.html#data-4"><i class="fa fa-check"></i><b>7.1.2</b> Data</a></li>
+<li class="chapter" data-level="7.1.3" data-path="7-mlr.html"><a href="7-mlr.html#exercises-3"><i class="fa fa-check"></i><b>7.1.3</b> Exercises</a></li>
+<li class="chapter" data-level="7.1.4" data-path="7-mlr.html"><a href="7-mlr.html#acknowledgement"><i class="fa fa-check"></i><b>7.1.4</b> Acknowledgement</a></li>
 </ul></li>
-<li class="chapter" data-level="7.2" data-path="7-select.html"><a href="7-select.html#in-class-sats-by-state"><i class="fa fa-check"></i><b>7.2</b> IN-CLASS: SATs by State</a><ul>
-<li class="chapter" data-level="7.2.1" data-path="7-select.html"><a href="7-select.html#backward-selection-manually"><i class="fa fa-check"></i><b>7.2.1</b> Backward selection “manually”</a></li>
-<li class="chapter" data-level="7.2.2" data-path="7-select.html"><a href="7-select.html#backward-selection-using-regsubsets"><i class="fa fa-check"></i><b>7.2.2</b> Backward selection using regsubsets</a></li>
-<li class="chapter" data-level="7.2.3" data-path="7-select.html"><a href="7-select.html#changing-selection-criteria"><i class="fa fa-check"></i><b>7.2.3</b> Changing selection criteria</a></li>
-<li class="chapter" data-level="7.2.4" data-path="7-select.html"><a href="7-select.html#different-selection-procedure"><i class="fa fa-check"></i><b>7.2.4</b> Different selection procedure</a></li>
-<li class="chapter" data-level="7.2.5" data-path="7-select.html"><a href="7-select.html#choosing-a-final-model"><i class="fa fa-check"></i><b>7.2.5</b> Choosing a final model</a></li>
+<li class="chapter" data-level="7.2" data-path="7-mlr.html"><a href="7-mlr.html#comp-airbnb-in-asheville-nc"><i class="fa fa-check"></i><b>7.2</b> COMP: Airbnb in Asheville, NC</a><ul>
+<li class="chapter" data-level="7.2.1" data-path="7-mlr.html"><a href="7-mlr.html#packages-4"><i class="fa fa-check"></i><b>7.2.1</b> Packages</a></li>
+<li class="chapter" data-level="7.2.2" data-path="7-mlr.html"><a href="7-mlr.html#data-5"><i class="fa fa-check"></i><b>7.2.2</b> Data</a></li>
+<li class="chapter" data-level="7.2.3" data-path="7-mlr.html"><a href="7-mlr.html#exercises-4"><i class="fa fa-check"></i><b>7.2.3</b> Exercises</a></li>
+<li class="chapter" data-level="7.2.4" data-path="7-mlr.html"><a href="7-mlr.html#acknowledgement-1"><i class="fa fa-check"></i><b>7.2.4</b> Acknowledgement</a></li>
 </ul></li>
-<li class="chapter" data-level="7.3" data-path="7-select.html"><a href="7-select.html#notes-model-selection-criteria"><i class="fa fa-check"></i><b>7.3</b> NOTES: Model Selection Criteria</a><ul>
-<li class="chapter" data-level="7.3.1" data-path="7-select.html"><a href="7-select.html#maximum-likelihood-estimation-of-boldsymbolbeta-and-sigma"><i class="fa fa-check"></i><b>7.3.1</b> Maximum Likelihood Estimation of <span class="math inline">\(\boldsymbol{\beta}\)</span> and <span class="math inline">\(\sigma\)</span></a></li>
-<li class="chapter" data-level="7.3.2" data-path="7-select.html"><a href="7-select.html#aic"><i class="fa fa-check"></i><b>7.3.2</b> AIC</a></li>
-<li class="chapter" data-level="7.3.3" data-path="7-select.html"><a href="7-select.html#bic"><i class="fa fa-check"></i><b>7.3.3</b> BIC</a></li>
+<li class="chapter" data-level="7.3" data-path="7-mlr.html"><a href="7-mlr.html#in-class-wages"><i class="fa fa-check"></i><b>7.3</b> IN-CLASS: Wages</a><ul>
+<li class="chapter" data-level="7.3.1" data-path="7-mlr.html"><a href="7-mlr.html#initial-model"><i class="fa fa-check"></i><b>7.3.1</b> Initial model</a></li>
+<li class="chapter" data-level="7.3.2" data-path="7-mlr.html"><a href="7-mlr.html#model-with-mean-centered-variables"><i class="fa fa-check"></i><b>7.3.2</b> Model with mean-centered variables</a></li>
+<li class="chapter" data-level="7.3.3" data-path="7-mlr.html"><a href="7-mlr.html#model-with-indicator-variables"><i class="fa fa-check"></i><b>7.3.3</b> Model with indicator variables</a></li>
 </ul></li>
+<li class="chapter" data-level="7.4" data-path="7-mlr.html"><a href="7-mlr.html#notes-matrix-form-of-linear-regression"><i class="fa fa-check"></i><b>7.4</b> NOTES: Matrix Form of Linear Regression</a><ul>
+<li class="chapter" data-level="7.4.1" data-path="7-mlr.html"><a href="7-mlr.html#introduction-1"><i class="fa fa-check"></i><b>7.4.1</b> Introduction</a></li>
+<li class="chapter" data-level="7.4.2" data-path="7-mlr.html"><a href="7-mlr.html#matrix-form-for-the-regression-model"><i class="fa fa-check"></i><b>7.4.2</b> Matrix Form for the Regression Model</a></li>
+<li class="chapter" data-level="7.4.3" data-path="7-mlr.html"><a href="7-mlr.html#estimating-the-coefficients"><i class="fa fa-check"></i><b>7.4.3</b> Estimating the Coefficients</a></li>
+<li class="chapter" data-level="7.4.4" data-path="7-mlr.html"><a href="7-mlr.html#variance-covariance-matrix-of-the-coefficients"><i class="fa fa-check"></i><b>7.4.4</b> Variance-covariance matrix of the coefficients</a></li>
 </ul></li>
-<li class="chapter" data-level="8" data-path="8-logistic.html"><a href="8-logistic.html"><i class="fa fa-check"></i><b>8</b> Logistic Regression</a><ul>
-<li class="chapter" data-level="8.1" data-path="8-logistic.html"><a href="8-logistic.html#comp-spotify"><i class="fa fa-check"></i><b>8.1</b> COMP: Spotify</a><ul>
-<li class="chapter" data-level="8.1.1" data-path="8-logistic.html"><a href="8-logistic.html#packages-6"><i class="fa fa-check"></i><b>8.1.1</b> Packages</a></li>
-<li class="chapter" data-level="8.1.2" data-path="8-logistic.html"><a href="8-logistic.html#data-7"><i class="fa fa-check"></i><b>8.1.2</b> Data</a></li>
-<li class="chapter" data-level="8.1.3" data-path="8-logistic.html"><a href="8-logistic.html#exercises-6"><i class="fa fa-check"></i><b>8.1.3</b> Exercises</a></li>
+<li class="chapter" data-level="7.5" data-path="7-mlr.html"><a href="7-mlr.html#notes-log-transformations"><i class="fa fa-check"></i><b>7.5</b> NOTES: Log Transformations</a><ul>
+<li class="chapter" data-level="7.5.1" data-path="7-mlr.html"><a href="7-mlr.html#log-transformation-on-the-response-variable"><i class="fa fa-check"></i><b>7.5.1</b> Log-transformation on the response variable</a></li>
+<li class="chapter" data-level="7.5.2" data-path="7-mlr.html"><a href="7-mlr.html#log-transformation-on-the-predictor-variable"><i class="fa fa-check"></i><b>7.5.2</b> Log-transformation on the predictor variable</a></li>
+<li class="chapter" data-level="7.5.3" data-path="7-mlr.html"><a href="7-mlr.html#log-transformation-on-the-the-response-and-predictor-variable"><i class="fa fa-check"></i><b>7.5.3</b> Log-transformation on the the response and predictor variable</a></li>
 </ul></li>
-<li class="chapter" data-level="8.2" data-path="8-logistic.html"><a href="8-logistic.html#in-class-risk-of-heart-disease"><i class="fa fa-check"></i><b>8.2</b> IN-CLASS: Risk of Heart Disease</a><ul>
-<li class="chapter" data-level="8.2.1" data-path="8-logistic.html"><a href="8-logistic.html#references"><i class="fa fa-check"></i><b>8.2.1</b> References</a></li>
-</ul></li>
-</ul></li>
-<li class="chapter" data-level="9" data-path="9-multinom-logistic.html"><a href="9-multinom-logistic.html"><i class="fa fa-check"></i><b>9</b> Multinomial Logistic Regression</a><ul>
-<li class="chapter" data-level="9.1" data-path="9-multinom-logistic.html"><a href="9-multinom-logistic.html#comp-general-social-survey"><i class="fa fa-check"></i><b>9.1</b> COMP: General Social Survey</a><ul>
-<li class="chapter" data-level="9.1.1" data-path="9-multinom-logistic.html"><a href="9-multinom-logistic.html#packages-7"><i class="fa fa-check"></i><b>9.1.1</b> Packages</a></li>
-<li class="chapter" data-level="9.1.2" data-path="9-multinom-logistic.html"><a href="9-multinom-logistic.html#data-8"><i class="fa fa-check"></i><b>9.1.2</b> Data</a></li>
-<li class="chapter" data-level="9.1.3" data-path="9-multinom-logistic.html"><a href="9-multinom-logistic.html#exercises-7"><i class="fa fa-check"></i><b>9.1.3</b> Exercises</a></li>
-<li class="chapter" data-level="9.1.4" data-path="9-multinom-logistic.html"><a href="9-multinom-logistic.html#acknowledgements-1"><i class="fa fa-check"></i><b>9.1.4</b> Acknowledgements</a></li>
-</ul></li>
-<li class="chapter" data-level="9.2" data-path="9-multinom-logistic.html"><a href="9-multinom-logistic.html#in-class-sesame-street"><i class="fa fa-check"></i><b>9.2</b> IN-CLASS: Sesame Street</a><ul>
-<li class="chapter" data-level="9.2.1" data-path="9-multinom-logistic.html"><a href="9-multinom-logistic.html#questions"><i class="fa fa-check"></i><b>9.2.1</b> Questions</a></li>
-<li class="chapter" data-level="9.2.2" data-path="9-multinom-logistic.html"><a href="9-multinom-logistic.html#references-1"><i class="fa fa-check"></i><b>9.2.2</b> References</a></li>
+<li class="chapter" data-level="7.6" data-path="7-mlr.html"><a href="7-mlr.html#notes-model-diagnostics"><i class="fa fa-check"></i><b>7.6</b> NOTES: Model Diagnostics</a><ul>
+<li class="chapter" data-level="7.6.1" data-path="7-mlr.html"><a href="7-mlr.html#introduction-2"><i class="fa fa-check"></i><b>7.6.1</b> Introduction</a></li>
+<li class="chapter" data-level="7.6.2" data-path="7-mlr.html"><a href="7-mlr.html#matrix-form-for-the-regression-model-1"><i class="fa fa-check"></i><b>7.6.2</b> Matrix Form for the Regression Model</a></li>
+<li class="chapter" data-level="7.6.3" data-path="7-mlr.html"><a href="7-mlr.html#hat-matrix-leverage"><i class="fa fa-check"></i><b>7.6.3</b> Hat Matrix &amp; Leverage</a></li>
+<li class="chapter" data-level="7.6.4" data-path="7-mlr.html"><a href="7-mlr.html#standardized-residuals"><i class="fa fa-check"></i><b>7.6.4</b> Standardized Residuals</a></li>
+<li class="chapter" data-level="7.6.5" data-path="7-mlr.html"><a href="7-mlr.html#cooks-distance"><i class="fa fa-check"></i><b>7.6.5</b> Cook’s Distance</a></li>
 </ul></li>
 </ul></li>
-<li class="chapter" data-level="10" data-path="10-special.html"><a href="10-special.html"><i class="fa fa-check"></i><b>10</b> Special Topics</a><ul>
-<li class="chapter" data-level="10.1" data-path="10-special.html"><a href="10-special.html#comp-regression-start-to-finish"><i class="fa fa-check"></i><b>10.1</b> COMP: Regression Start to Finish</a><ul>
-<li class="chapter" data-level="10.1.1" data-path="10-special.html"><a href="10-special.html#packages-8"><i class="fa fa-check"></i><b>10.1.1</b> Packages</a></li>
-<li class="chapter" data-level="10.1.2" data-path="10-special.html"><a href="10-special.html#data-9"><i class="fa fa-check"></i><b>10.1.2</b> Data</a></li>
-<li class="chapter" data-level="10.1.3" data-path="10-special.html"><a href="10-special.html#exercises-8"><i class="fa fa-check"></i><b>10.1.3</b> Exercises</a></li>
+<li class="chapter" data-level="8" data-path="8-select.html"><a href="8-select.html"><i class="fa fa-check"></i><b>8</b> Model Selection</a><ul>
+<li class="chapter" data-level="8.1" data-path="8-select.html"><a href="8-select.html#comp-sats-and-mlb"><i class="fa fa-check"></i><b>8.1</b> COMP: SATs and MLB</a><ul>
+<li class="chapter" data-level="8.1.1" data-path="8-select.html"><a href="8-select.html#packages-5"><i class="fa fa-check"></i><b>8.1.1</b> Packages</a></li>
+<li class="chapter" data-level="8.1.2" data-path="8-select.html"><a href="8-select.html#data-6"><i class="fa fa-check"></i><b>8.1.2</b> Data</a></li>
+<li class="chapter" data-level="8.1.3" data-path="8-select.html"><a href="8-select.html#exercises-5"><i class="fa fa-check"></i><b>8.1.3</b> Exercises</a></li>
+<li class="chapter" data-level="8.1.4" data-path="8-select.html"><a href="8-select.html#acknowledgements"><i class="fa fa-check"></i><b>8.1.4</b> Acknowledgements</a></li>
 </ul></li>
-<li class="chapter" data-level="10.2" data-path="10-special.html"><a href="10-special.html#in-class-missing-data-exercise"><i class="fa fa-check"></i><b>10.2</b> IN-CLASS: Missing Data Exercise</a></li>
+<li class="chapter" data-level="8.2" data-path="8-select.html"><a href="8-select.html#in-class-sats-by-state"><i class="fa fa-check"></i><b>8.2</b> IN-CLASS: SATs by State</a><ul>
+<li class="chapter" data-level="8.2.1" data-path="8-select.html"><a href="8-select.html#backward-selection-manually"><i class="fa fa-check"></i><b>8.2.1</b> Backward selection “manually”</a></li>
+<li class="chapter" data-level="8.2.2" data-path="8-select.html"><a href="8-select.html#backward-selection-using-regsubsets"><i class="fa fa-check"></i><b>8.2.2</b> Backward selection using regsubsets</a></li>
+<li class="chapter" data-level="8.2.3" data-path="8-select.html"><a href="8-select.html#changing-selection-criteria"><i class="fa fa-check"></i><b>8.2.3</b> Changing selection criteria</a></li>
+<li class="chapter" data-level="8.2.4" data-path="8-select.html"><a href="8-select.html#different-selection-procedure"><i class="fa fa-check"></i><b>8.2.4</b> Different selection procedure</a></li>
+<li class="chapter" data-level="8.2.5" data-path="8-select.html"><a href="8-select.html#choosing-a-final-model"><i class="fa fa-check"></i><b>8.2.5</b> Choosing a final model</a></li>
 </ul></li>
-<li class="chapter" data-level="11" data-path="11-datasets.html"><a href="11-datasets.html"><i class="fa fa-check"></i><b>11</b> Data Sets</a></li>
+<li class="chapter" data-level="8.3" data-path="8-select.html"><a href="8-select.html#notes-model-selection-criteria"><i class="fa fa-check"></i><b>8.3</b> NOTES: Model Selection Criteria</a><ul>
+<li class="chapter" data-level="8.3.1" data-path="8-select.html"><a href="8-select.html#maximum-likelihood-estimation-of-boldsymbolbeta-and-sigma"><i class="fa fa-check"></i><b>8.3.1</b> Maximum Likelihood Estimation of <span class="math inline">\(\boldsymbol{\beta}\)</span> and <span class="math inline">\(\sigma\)</span></a></li>
+<li class="chapter" data-level="8.3.2" data-path="8-select.html"><a href="8-select.html#aic"><i class="fa fa-check"></i><b>8.3.2</b> AIC</a></li>
+<li class="chapter" data-level="8.3.3" data-path="8-select.html"><a href="8-select.html#bic"><i class="fa fa-check"></i><b>8.3.3</b> BIC</a></li>
+</ul></li>
+</ul></li>
+<li class="chapter" data-level="9" data-path="9-logistic.html"><a href="9-logistic.html"><i class="fa fa-check"></i><b>9</b> Logistic Regression</a><ul>
+<li class="chapter" data-level="9.1" data-path="9-logistic.html"><a href="9-logistic.html#comp-spotify"><i class="fa fa-check"></i><b>9.1</b> COMP: Spotify</a><ul>
+<li class="chapter" data-level="9.1.1" data-path="9-logistic.html"><a href="9-logistic.html#packages-6"><i class="fa fa-check"></i><b>9.1.1</b> Packages</a></li>
+<li class="chapter" data-level="9.1.2" data-path="9-logistic.html"><a href="9-logistic.html#data-7"><i class="fa fa-check"></i><b>9.1.2</b> Data</a></li>
+<li class="chapter" data-level="9.1.3" data-path="9-logistic.html"><a href="9-logistic.html#exercises-6"><i class="fa fa-check"></i><b>9.1.3</b> Exercises</a></li>
+</ul></li>
+<li class="chapter" data-level="9.2" data-path="9-logistic.html"><a href="9-logistic.html#in-class-risk-of-heart-disease"><i class="fa fa-check"></i><b>9.2</b> IN-CLASS: Risk of Heart Disease</a><ul>
+<li class="chapter" data-level="9.2.1" data-path="9-logistic.html"><a href="9-logistic.html#references"><i class="fa fa-check"></i><b>9.2.1</b> References</a></li>
+</ul></li>
+</ul></li>
+<li class="chapter" data-level="10" data-path="10-multinom-logistic.html"><a href="10-multinom-logistic.html"><i class="fa fa-check"></i><b>10</b> Multinomial Logistic Regression</a><ul>
+<li class="chapter" data-level="10.1" data-path="10-multinom-logistic.html"><a href="10-multinom-logistic.html#comp-general-social-survey"><i class="fa fa-check"></i><b>10.1</b> COMP: General Social Survey</a><ul>
+<li class="chapter" data-level="10.1.1" data-path="10-multinom-logistic.html"><a href="10-multinom-logistic.html#packages-7"><i class="fa fa-check"></i><b>10.1.1</b> Packages</a></li>
+<li class="chapter" data-level="10.1.2" data-path="10-multinom-logistic.html"><a href="10-multinom-logistic.html#data-8"><i class="fa fa-check"></i><b>10.1.2</b> Data</a></li>
+<li class="chapter" data-level="10.1.3" data-path="10-multinom-logistic.html"><a href="10-multinom-logistic.html#exercises-7"><i class="fa fa-check"></i><b>10.1.3</b> Exercises</a></li>
+<li class="chapter" data-level="10.1.4" data-path="10-multinom-logistic.html"><a href="10-multinom-logistic.html#acknowledgements-1"><i class="fa fa-check"></i><b>10.1.4</b> Acknowledgements</a></li>
+</ul></li>
+<li class="chapter" data-level="10.2" data-path="10-multinom-logistic.html"><a href="10-multinom-logistic.html#in-class-sesame-street"><i class="fa fa-check"></i><b>10.2</b> IN-CLASS: Sesame Street</a><ul>
+<li class="chapter" data-level="10.2.1" data-path="10-multinom-logistic.html"><a href="10-multinom-logistic.html#questions"><i class="fa fa-check"></i><b>10.2.1</b> Questions</a></li>
+<li class="chapter" data-level="10.2.2" data-path="10-multinom-logistic.html"><a href="10-multinom-logistic.html#references-1"><i class="fa fa-check"></i><b>10.2.2</b> References</a></li>
+</ul></li>
+</ul></li>
+<li class="chapter" data-level="11" data-path="11-special.html"><a href="11-special.html"><i class="fa fa-check"></i><b>11</b> Special Topics</a><ul>
+<li class="chapter" data-level="11.1" data-path="11-special.html"><a href="11-special.html#comp-regression-start-to-finish"><i class="fa fa-check"></i><b>11.1</b> COMP: Regression Start to Finish</a><ul>
+<li class="chapter" data-level="11.1.1" data-path="11-special.html"><a href="11-special.html#packages-8"><i class="fa fa-check"></i><b>11.1.1</b> Packages</a></li>
+<li class="chapter" data-level="11.1.2" data-path="11-special.html"><a href="11-special.html#data-9"><i class="fa fa-check"></i><b>11.1.2</b> Data</a></li>
+<li class="chapter" data-level="11.1.3" data-path="11-special.html"><a href="11-special.html#exercises-8"><i class="fa fa-check"></i><b>11.1.3</b> Exercises</a></li>
+</ul></li>
+<li class="chapter" data-level="11.2" data-path="11-special.html"><a href="11-special.html#in-class-missing-data-exercise"><i class="fa fa-check"></i><b>11.2</b> IN-CLASS: Missing Data Exercise</a></li>
+</ul></li>
+<li class="chapter" data-level="12" data-path="12-datasets.html"><a href="12-datasets.html"><i class="fa fa-check"></i><b>12</b> Data Sets</a></li>
 <li class="chapter" data-level="" data-path="references-2.html"><a href="references-2.html"><i class="fa fa-check"></i>References</a></li>
 <li class="divider"></li>
 <li><a href="https://github.com/rstudio/bookdown" target="blank">Published with bookdown</a></li>
@@ -264,16 +276,16 @@ code > span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Inf
 
             <section class="normal" id="section-">
 <div id="mlr" class="section level1">
-<h1><span class="header-section-number"> 6</span> Multiple Linear Regression</h1>
+<h1><span class="header-section-number"> 7</span> Multiple Linear Regression</h1>
 <div id="comp-houses-in-king-county" class="section level2">
-<h2><span class="header-section-number">6.1</span> COMP: Houses in King County</h2>
+<h2><span class="header-section-number">7.1</span> COMP: Houses in King County</h2>
 <p>The goal of this lab is to use multiple linear regression to understand the variation in the selling price of houses in King County, Washington. You will also gain practice using special predictors, such as categorical predictors and interaction effects, in the model, and you will be introduced to variable transformations.</p>
 <div id="packages-3" class="section level3">
-<h3><span class="header-section-number">6.1.1</span> Packages</h3>
+<h3><span class="header-section-number">7.1.1</span> Packages</h3>
 <p>We will use the following packages in today’s lab.</p>
 </div>
 <div id="data-4" class="section level3">
-<h3><span class="header-section-number">6.1.2</span> Data</h3>
+<h3><span class="header-section-number">7.1.2</span> Data</h3>
 <p>The for today’s lab contains the price and other characteristics of over 20,000 houses sold in King County, Washington (the county that includes Seattle). The dataset includes the following variables:</p>
 <ul>
 <li><code>price</code>: selling price of the house</li>
@@ -288,7 +300,7 @@ code > span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Inf
 </ul>
 </div>
 <div id="exercises-3" class="section level3">
-<h3><span class="header-section-number">6.1.3</span> Exercises</h3>
+<h3><span class="header-section-number">7.1.3</span> Exercises</h3>
 <ol style="list-style-type: decimal">
 <li><p>Use data visualization and summary statistics to examine the distribution of <code>bedrooms</code>. What is the maximum value? Does this value make sense? If not, what is this an indication of, i.e. how did this value get recorded in the data? Briefly explain.</p></li>
 <li><p>We want to remove observations that have extreme values for bedrooms, i.e. those with values for <code>bedrooms</code> above the 95<sup>th</sup> percentile in the data. What is the 95<sup>th</sup> percentile for <code>bedrooms</code>? Use the <code>summarise</code> function to help you calculate this value.</p></li>
@@ -326,20 +338,20 @@ code > span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Inf
 <p><em>You’re done! Commit all remaining changes, use the commit message “Done with Lab 4!”, and push. Before you wrap up the assignment, make sure the .Rmd and .md documents are updated in your GitHub repo. There is a 10% penalty if the .Rmd file has to be knitted to display graphs, i.e. the graphs are not showing in the .md file on GitHub.</em></p>
 </div>
 <div id="acknowledgement" class="section level3">
-<h3><span class="header-section-number">6.1.4</span> Acknowledgement</h3>
+<h3><span class="header-section-number">7.1.4</span> Acknowledgement</h3>
 <p>The data used in this lab was obtained from <a href="https://github.com/proback/BYSH" class="uri">https://github.com/proback/BYSH</a>.</p>
 <hr />
 </div>
 </div>
 <div id="comp-airbnb-in-asheville-nc" class="section level2">
-<h2><span class="header-section-number">6.2</span> COMP: Airbnb in Asheville, NC</h2>
+<h2><span class="header-section-number">7.2</span> COMP: Airbnb in Asheville, NC</h2>
 <p>When doing statistical analyses in practice, there is often a lot of time spent on cleaning and preparing the data. The goal of today’s lab is to practice cleaning messy data, so it can be used in a regression analysis. You will also practice interpreting the results from a regression model that has numeric and categorical predictors and a log-transformed response variable.</p>
 <div id="packages-4" class="section level3">
-<h3><span class="header-section-number">6.2.1</span> Packages</h3>
+<h3><span class="header-section-number">7.2.1</span> Packages</h3>
 <p>We will use the following packages in today’s lab.</p>
 </div>
 <div id="data-5" class="section level3">
-<h3><span class="header-section-number">6.2.2</span> Data</h3>
+<h3><span class="header-section-number">7.2.2</span> Data</h3>
 <p>Today’s data is about Airbnb listings in Asheville, NC. The data was obtained from <a href="http://insideairbnb.com/index.html">http://insideairbnb.com/</a>; it was originally scraped from <a href="https://www.airbnb.com/">airbnb.com</a>.</p>
 <p>You can see a visualization of some of the data used in today’s lab at <a href="http://insideairbnb.com/asheville/" class="uri">http://insideairbnb.com/asheville/</a>.</p>
 <p>We will use the following variables in this lab:</p>
@@ -358,9 +370,9 @@ code > span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Inf
 </ul>
 </div>
 <div id="exercises-4" class="section level3">
-<h3><span class="header-section-number">6.2.3</span> Exercises</h3>
+<h3><span class="header-section-number">7.2.3</span> Exercises</h3>
 <div id="data-wrangling" class="section level4">
-<h4><span class="header-section-number">6.2.3.1</span> Data wrangling</h4>
+<h4><span class="header-section-number">7.2.3.1</span> Data wrangling</h4>
 <ol style="list-style-type: decimal">
 <li>We would like to use variables from both the <code>basic_info</code> and <code>details</code> data frames in this analysis. Both dataframes have the variable <code>id</code> that uniquely identifies each Airbnb listing. Because we need data from <code>basic_info</code> and <code>details</code>, we only want to include observations that are in both the <code>basic_info</code> and <code>details</code> datasets. Therefore, we will use an <code>inner_join</code> to combine the two data sets. (Note: Both data frames include a variable called <code>id</code> that uniquely identifies each Airbnb listing. R will use this variable to join the two data frames.)</li>
 </ol>
@@ -393,7 +405,7 @@ code > span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Inf
 <p>Filter the <code>airbnb</code> data so that it only includes observations with <code>minimum_nights &lt;= 3</code>. You will use this filtered dataset for the remainder of the lab.</p>
 </div>
 <div id="regression-analysis" class="section level4">
-<h4><span class="header-section-number">6.2.3.2</span> Regression Analysis</h4>
+<h4><span class="header-section-number">7.2.3.2</span> Regression Analysis</h4>
 <ol start="9" style="list-style-type: decimal">
 <li><p>For the response variable, will use the cost to stay at an Airbnb location for 3 nights. Create a new variable called <code>price_3_nights</code> that uses <code>price</code> and <code>cleaning_fee</code> to calculate the total cost to stay at the Airbnb property for 3 nights. Be sure to add this variable to your dataframe.</p></li>
 <li><p>Use histograms to examine the distributions of <code>price_3_nights</code> and <code>log(price_3_nights)</code>. Based on the histograms, which variable should you use for the regression model? Briefly explain.</p></li>
@@ -413,25 +425,25 @@ code > span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Inf
 </div>
 </div>
 <div id="acknowledgement-1" class="section level3">
-<h3><span class="header-section-number">6.2.4</span> Acknowledgement</h3>
+<h3><span class="header-section-number">7.2.4</span> Acknowledgement</h3>
 <p>The data from this lab is from <a href="http://insideairbnb.com/index.html">insideairbnb.com</a></p>
 <hr />
 </div>
 </div>
 <div id="in-class-wages" class="section level2">
-<h2><span class="header-section-number">6.3</span> IN-CLASS: Wages</h2>
+<h2><span class="header-section-number">7.3</span> IN-CLASS: Wages</h2>
 <div id="initial-model" class="section level3">
-<h3><span class="header-section-number">6.3.1</span> Initial model</h3>
+<h3><span class="header-section-number">7.3.1</span> Initial model</h3>
 </div>
 <div id="model-with-mean-centered-variables" class="section level3">
-<h3><span class="header-section-number">6.3.2</span> Model with mean-centered variables</h3>
+<h3><span class="header-section-number">7.3.2</span> Model with mean-centered variables</h3>
 <ul>
 <li><p>Calculate the regression model using the mean-centered variables.</p></li>
 <li><p>How did the model change?</p></li>
 </ul>
 </div>
 <div id="model-with-indicator-variables" class="section level3">
-<h3><span class="header-section-number">6.3.3</span> Model with indicator variables</h3>
+<h3><span class="header-section-number">7.3.3</span> Model with indicator variables</h3>
 <ul>
 <li><p>Use the code below to create a categorical variable for <code>Educ</code>.</p></li>
 <li><p>Calculate the regression model using <code>EducCat</code> instead of <code>Educ</code>.</p></li>
@@ -440,10 +452,10 @@ code > span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Inf
 </div>
 </div>
 <div id="notes-matrix-form-of-linear-regression" class="section level2">
-<h2><span class="header-section-number">6.4</span> NOTES: Matrix Form of Linear Regression</h2>
+<h2><span class="header-section-number">7.4</span> NOTES: Matrix Form of Linear Regression</h2>
 <p>This document provides the details for the matrix form of multiple linear regression. We assume the reader has familiarity with some matrix alegbra. Please see Chapter 1 of <a href="https://www-bcf.usc.edu/~gareth/ISL/"><em>An Introduction to Statistical Learning</em></a> for a brief review of matrix algebra.</p>
 <div id="introduction-1" class="section level3">
-<h3><span class="header-section-number">6.4.1</span> Introduction</h3>
+<h3><span class="header-section-number">7.4.1</span> Introduction</h3>
 <p>Suppose we have <span class="math inline">\(n\)</span> observations. Let the <span class="math inline">\(i^{th}\)</span> be <span class="math inline">\((x_{i1}, \ldots, x_{ip}, y_i)\)</span>, such that <span class="math inline">\(x_{i1}, \ldots, x_{ip}\)</span> are the explanatory variables (predictors) and <span class="math inline">\(y_i\)</span> is the response variable. We assume the data can be modeled using the least-squares regression model, such that the mean response for a given combination of explanatory variables follows the form in ().</p>
 <span class="math display">\[\begin{equation}
 \label{basic_model}
@@ -457,7 +469,7 @@ y_i = \beta_0 + \beta_1 x_{i1} + \dots + \beta_p x_{ip} + \epsilon_i
 <p>such that <span class="math inline">\(\epsilon_i\)</span> is the amount <span class="math inline">\(y_i\)</span> deviates from <span class="math inline">\(\mu\{y|x_{i1}, \ldots, x_{ip}\}\)</span>, the mean response for a given combination of explanatory variables. We assume each <span class="math inline">\(\epsilon_i \sim N(0,\sigma^2)\)</span>, where <span class="math inline">\(\sigma^2\)</span> is a constant variance for the distribution of the response <span class="math inline">\(y\)</span> for any combination of explanatory variables <span class="math inline">\(x_1, \ldots, x_p\)</span>.</p>
 </div>
 <div id="matrix-form-for-the-regression-model" class="section level3">
-<h3><span class="header-section-number">6.4.2</span> Matrix Form for the Regression Model</h3>
+<h3><span class="header-section-number">7.4.2</span> Matrix Form for the Regression Model</h3>
 <p>We can represent the () and () using matrix notation. Let</p>
 <span class="math display">\[\begin{equation}
 \label{matrix notation}
@@ -481,7 +493,7 @@ x_{n1} &amp; x_{n2} &amp; \dots &amp; x_{np} \end{bmatrix}
 \end{equation}\]</span>
 </div>
 <div id="estimating-the-coefficients" class="section level3">
-<h3><span class="header-section-number">6.4.3</span> Estimating the Coefficients</h3>
+<h3><span class="header-section-number">7.4.3</span> Estimating the Coefficients</h3>
 <p>The least-squares model is the one that minimizes the sum of the squared residuals. Therefore, we want to find the coefficients, <span class="math inline">\(\hat{\boldsymbol{\beta}}\)</span> that minimizes</p>
 <span class="math display">\[\begin{equation}
 \label{sum_sq_resid}
@@ -514,7 +526,7 @@ x_{n1} &amp; x_{n2} &amp; \dots &amp; x_{np} \end{bmatrix}
 <p>Thus, the estimate of the model coefficients is <span class="math inline">\(\hat{\boldsymbol{\beta}} = (\mathbf{X}^T\mathbf{X})^{-1}\mathbf{X}^T\mathbf{Y}\)</span>.</p>
 </div>
 <div id="variance-covariance-matrix-of-the-coefficients" class="section level3">
-<h3><span class="header-section-number">6.4.4</span> Variance-covariance matrix of the coefficients</h3>
+<h3><span class="header-section-number">7.4.4</span> Variance-covariance matrix of the coefficients</h3>
 <p>We will use two properties to derive the form of the variance-covarinace matrix of the coefficients:</p>
 <ol style="list-style-type: decimal">
 <li><span class="math inline">\(E[\boldsymbol{\epsilon}\boldsymbol{\epsilon}^T] = \sigma^2I\)</span></li>
@@ -571,7 +583,7 @@ E[(\hat{\boldsymbol{\beta}} - \boldsymbol{\beta})(\hat{\boldsymbol{\beta}} - \bo
 </div>
 </div>
 <div id="notes-log-transformations" class="section level2">
-<h2><span class="header-section-number">6.5</span> NOTES: Log Transformations</h2>
+<h2><span class="header-section-number">7.5</span> NOTES: Log Transformations</h2>
 <p>This document provides details about the model interpretion when the predictor and/or response variables are log-transformed. For simplicity, we will discuss transformations for the simple linear regression model:</p>
 <span class="math display">\[\begin{equation}
 \label{orig}
@@ -580,7 +592,7 @@ y = \beta_0 + \beta_1 x
 <p>All results and interpretations can be easily extended to transformations in multiple regression models.</p>
 <p><em>Note</em>: <em>log</em> refers to the natural logarithm.</p>
 <div id="log-transformation-on-the-response-variable" class="section level3">
-<h3><span class="header-section-number">6.5.1</span> Log-transformation on the response variable</h3>
+<h3><span class="header-section-number">7.5.1</span> Log-transformation on the response variable</h3>
 <p>Suppose we fit a linear regression model with <span class="math inline">\(\log(y)\)</span>, the log-transformed <span class="math inline">\(y\)</span>, as the response variable. Under this model, we assume a linear relationship exists between <span class="math inline">\(x\)</span> and <span class="math inline">\(\log(y)\)</span>, such that <span class="math inline">\(\log(y) \sim N(\beta_0 + \beta_1 x, \sigma^2)\)</span> for some <span class="math inline">\(\beta_0\)</span>, <span class="math inline">\(\beta_1\)</span> and <span class="math inline">\(\sigma^2\)</span>. In other words, we can model the relationship between <span class="math inline">\(x\)</span> and <span class="math inline">\(\log(y)\)</span> using the model in ().</p>
 <span class="math display">\[\begin{equation}
 \label{log-y}
@@ -598,7 +610,7 @@ y = \beta_0 + \beta_1 x
 \end{equation}\]</span>
 <p>In order to interpret the slope and intercept, we need to first understand the relationship between the mean, median and log transformations.</p>
 <div id="mean-median-and-log-transformations" class="section level4">
-<h4><span class="header-section-number">6.5.1.1</span> Mean, Median, and Log Transformations</h4>
+<h4><span class="header-section-number">7.5.1.1</span> Mean, Median, and Log Transformations</h4>
 <p>Suppose we have a dataset <code>y</code> that contains the following observations:</p>
 <p>If we log-transform the values of <code>y</code> then calculate the mean and median, we have</p>
 <p>If we calculate the mean and median of <code>y</code>, then log-transform the mean and median, we have</p>
@@ -609,7 +621,7 @@ y = \beta_0 + \beta_1 x
 </ol>
 </div>
 <div id="interpretaton-of-model-coefficients" class="section level4">
-<h4><span class="header-section-number">6.5.1.2</span> Interpretaton of model coefficients</h4>
+<h4><span class="header-section-number">7.5.1.2</span> Interpretaton of model coefficients</h4>
 <p>Using (), the mean <span class="math inline">\(\log(y)\)</span> for any given value of <span class="math inline">\(x\)</span> is <span class="math inline">\(\beta_0 + \beta_1 x\)</span>; however, this does <strong>not</strong> indicate that the mean of <span class="math inline">\(y = \exp\{\beta_0 + \beta_1 x\}\)</span> (see previous section). From the assumptions of linear regression, we assume that for any given value of <span class="math inline">\(x\)</span>, the distribution of <span class="math inline">\(\log(y)\)</span> is Normal, and therefore symmetric. Thus the median of <span class="math inline">\(\log(y)\)</span> is equal to the mean of <span class="math inline">\(\log(y)\)</span>, i.e <span class="math inline">\(\text{Median}(\log(y)) = \beta_0 + \beta_1 x\)</span>.</p>
 <p>Since the log and the median are commutable, <span class="math inline">\(\text{Median}(\log(y)) = \beta_0 + \beta_1 x \Rightarrow \text{Median}(y) = \exp\{\beta_0 + \beta_1 x\}\)</span>. Thus, when we log-transform the response variable, the interpretation of the intercept and slope are in terms of the effect on the <strong>median</strong> of <span class="math inline">\(y\)</span>.</p>
 <p><strong>Intercept</strong>: The intercept is expected median of <span class="math inline">\(y\)</span> when the predictor variable equals 0. Therefore, when <span class="math inline">\(x=0\)</span>,</p>
@@ -629,7 +641,7 @@ y = \beta_0 + \beta_1 x
 </div>
 </div>
 <div id="log-transformation-on-the-predictor-variable" class="section level3">
-<h3><span class="header-section-number">6.5.2</span> Log-transformation on the predictor variable</h3>
+<h3><span class="header-section-number">7.5.2</span> Log-transformation on the predictor variable</h3>
 <p>Suppose we fit a linear regression model with <span class="math inline">\(\log(x)\)</span>, the log-transformed <span class="math inline">\(x\)</span>, as the predictor variable. Under this model, we assume a linear relationship exists between <span class="math inline">\(\log(x)\)</span> and <span class="math inline">\(y\)</span>, such that <span class="math inline">\(y \sim N(\beta_0 + \beta_1 \log(x), \sigma^2)\)</span> for some <span class="math inline">\(\beta_0\)</span>, <span class="math inline">\(\beta_1\)</span> and <span class="math inline">\(\sigma^2\)</span>. In other words, we can model the relationship between <span class="math inline">\(\log(x)\)</span> and <span class="math inline">\(y\)</span> using the model in ().</p>
 <span class="math display">\[\begin{equation}
 \label{log-x}
@@ -649,7 +661,7 @@ y = \beta_0 + \beta_1 \log(x)
 <p><em>Interpretation: When <span class="math inline">\(x\)</span> is multiplied by a factor of <span class="math inline">\(C\)</span>, the mean of <span class="math inline">\(y\)</span> is expected to change by <span class="math inline">\(\beta_1 \log(C)\)</span> units. For example, if <span class="math inline">\(x\)</span> is doubled, then the mean of <span class="math inline">\(y\)</span> is expected to change by <span class="math inline">\(\beta_1 \log(2)\)</span> units.</em></p>
 </div>
 <div id="log-transformation-on-the-the-response-and-predictor-variable" class="section level3">
-<h3><span class="header-section-number">6.5.3</span> Log-transformation on the the response and predictor variable</h3>
+<h3><span class="header-section-number">7.5.3</span> Log-transformation on the the response and predictor variable</h3>
 <p>Suppose we fit a linear regression model with <span class="math inline">\(\log(x)\)</span>, the log-transformed <span class="math inline">\(x\)</span>, as the predictor variable and <span class="math inline">\(\log(y)\)</span>, the log-transformed <span class="math inline">\(y\)</span>, as the response variable. Under this model, we assume a linear relationship exists between <span class="math inline">\(\log(x)\)</span> and <span class="math inline">\(\log(y)\)</span>, such that <span class="math inline">\(\log(y) \sim N(\beta_0 + \beta_1 \log(x), \sigma^2)\)</span> for some <span class="math inline">\(\beta_0\)</span>, <span class="math inline">\(\beta_1\)</span> and <span class="math inline">\(\sigma^2\)</span>. In other words, we can model the relationship between <span class="math inline">\(\log(x)\)</span> and <span class="math inline">\(\log(y)\)</span> using the model in ().</p>
 <span class="math display">\[\begin{equation}
 \label{log-x-y}
@@ -679,10 +691,10 @@ y = \beta_0 + \beta_1 \log(x)
 </div>
 </div>
 <div id="notes-model-diagnostics" class="section level2">
-<h2><span class="header-section-number">6.6</span> NOTES: Model Diagnostics</h2>
+<h2><span class="header-section-number">7.6</span> NOTES: Model Diagnostics</h2>
 <p>This document discusses some of the mathematical details of the model diagnostics - leverage, standardized residuals, and Cook’s distance. We assume the reader knowledge of the matrix form for multiple linear regression.Please see <a href="https://github.com/STA210-Sp19/supplemental-notes/blob/master/regression-basics-matrix.pdf">Matrix Form of Linear Regression</a> for a review.</p>
 <div id="introduction-2" class="section level3">
-<h3><span class="header-section-number">6.6.1</span> Introduction</h3>
+<h3><span class="header-section-number">7.6.1</span> Introduction</h3>
 <p>Suppose we have <span class="math inline">\(n\)</span> observations. Let the <span class="math inline">\(i^{th}\)</span> be <span class="math inline">\((x_{i1}, \ldots, x_{ip}, y_i)\)</span>, such that <span class="math inline">\(x_{i1}, \ldots, x_{ip}\)</span> are the explanatory variables (predictors) and <span class="math inline">\(y_i\)</span> is the response variable. We assume the data can be modeled using the least-squares regression model, such that the mean response for a given combination of explanatory variables follows the form in ().</p>
 <span class="math display">\[\begin{equation}
 \label{basic_model}
@@ -696,7 +708,7 @@ y_i = \beta_0 + \beta_1 x_{i1} + \dots + \beta_p x_{ip} + \epsilon_i
 <p>such that <span class="math inline">\(\epsilon_i\)</span> is the amount <span class="math inline">\(y_i\)</span> deviates from <span class="math inline">\(\mu\{y|x_{i1}, \ldots, x_{ip}\}\)</span>, the mean response for a given combination of explanatory variables. We assume each <span class="math inline">\(\epsilon_i \sim N(0,\sigma^2)\)</span>, where <span class="math inline">\(\sigma^2\)</span> is a constant variance for the distribution of the response <span class="math inline">\(y\)</span> for any combination of explanatory variables <span class="math inline">\(x_1, \ldots, x_p\)</span>.</p>
 </div>
 <div id="matrix-form-for-the-regression-model-1" class="section level3">
-<h3><span class="header-section-number">6.6.2</span> Matrix Form for the Regression Model</h3>
+<h3><span class="header-section-number">7.6.2</span> Matrix Form for the Regression Model</h3>
 <p>We can represent the () and () using matrix notation. Let</p>
 <span class="math display">\[\begin{equation}
 \label{matrix notation}
@@ -720,7 +732,7 @@ x_{n1} &amp; x_{n2} &amp; \dots &amp; x_{np} \end{bmatrix}
 \end{equation}\]</span>
 </div>
 <div id="hat-matrix-leverage" class="section level3">
-<h3><span class="header-section-number">6.6.3</span> Hat Matrix &amp; Leverage</h3>
+<h3><span class="header-section-number">7.6.3</span> Hat Matrix &amp; Leverage</h3>
 <p>Recall from the notes <a href="https://github.com/STA210-Sp19/supplemental-notes/blob/master/regression-basics-matrix.pdf"><strong>Matrix Form of Linear Regression</strong></a> that <span class="math inline">\(\hat{\boldsymbol{\beta}}\)</span> can be written as the following:</p>
 <span class="math display">\[\begin{equation}
 \label{beta-hat}
@@ -772,7 +784,7 @@ Var(\mathbf{e}) &amp;= \mathbf{e}\mathbf{e}^T \\[10pt]
 <p>where <span class="math inline">\(\hat{\sigma}^2 = \frac{\sum_{i=1}^{n}e_i^2}{n-p-1}\)</span> is the estimated regression variance. Thus, the variance of the <span class="math inline">\(i^{th}\)</span> residual is <span class="math inline">\(Var(e_i) = \hat{\sigma}^2(1-h_{ii})\)</span>. Therefore, the higher the leverage, the smaller the variance of the residual. Because the expected value of the residuals is 0, we conclude that points with high leverage tend to have smaller residuals than points with lower leverage.</p>
 </div>
 <div id="standardized-residuals" class="section level3">
-<h3><span class="header-section-number">6.6.4</span> Standardized Residuals</h3>
+<h3><span class="header-section-number">7.6.4</span> Standardized Residuals</h3>
 <p>In general, we standardize a value by shifting by the expected value and rescaling by the standard deviation (or standard error). Thus, the <span class="math inline">\(i^{th}\)</span> standardized residual takes the form</p>
 <p><span class="math display">\[std.res_i = \frac{e_i - E(e_i)}{SE(e_i)}\]</span></p>
 <p>The expected value of the residuals is 0, i.e. <span class="math inline">\(E(e_i) = 0\)</span>. From (), the standard error of the residual is <span class="math inline">\(SE(e_i) = \hat{\sigma}\sqrt{1-h_{ii}}\)</span>. Therefore,</p>
@@ -782,7 +794,7 @@ std.res_i = \frac{e_i}{\hat{\sigma}\sqrt{1-h_{ii}}}
 \end{equation}\]</span>
 </div>
 <div id="cooks-distance" class="section level3">
-<h3><span class="header-section-number">6.6.5</span> Cook’s Distance</h3>
+<h3><span class="header-section-number">7.6.5</span> Cook’s Distance</h3>
 <p>Cook’s distance is a measure of how much each observation influences the model coefficients, and thus the predicted values. The Cook’s distance for the <span class="math inline">\(i^{th}\)</span> observation can be written as</p>
 <span class="math display">\[\begin{equation}
 \label{cooksd}
@@ -802,8 +814,8 @@ D_i = \frac{1}{p+1}std.res_i^2\Bigg[\frac{h_{ii}}{(1-h_{ii})}\Bigg] = \frac{e_i^
           </div>
         </div>
       </div>
-<a href="5-anova.html" class="navigation navigation-prev " aria-label="Previous page"><i class="fa fa-angle-left"></i></a>
-<a href="7-select.html" class="navigation navigation-next " aria-label="Next page"><i class="fa fa-angle-right"></i></a>
+<a href="6-anova.html" class="navigation navigation-prev " aria-label="Previous page"><i class="fa fa-angle-left"></i></a>
+<a href="8-select.html" class="navigation navigation-next " aria-label="Next page"><i class="fa fa-angle-right"></i></a>
     </div>
   </div>
 <script src="libs/gitbook-2.6.7/js/app.min.js"></script>

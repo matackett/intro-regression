@@ -43,3 +43,7 @@ This book is under development and will be periodically upated with new material
 
 This work is licensed under the [Creative Commons Attribution-NonCommercial-ShareAlike 4.0 International License](http://creativecommons.org/licenses/by-nc-sa/4.0/).
 
+<font size = "5px">**Acknowledgement**</font>
+
+**WRITE SOMETHING ABOUT DATA SCIENCE BOX BEING THE INSPIRATION**
+

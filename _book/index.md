@@ -1,7 +1,7 @@
 --- 
 title: "Intro Regression"
 author: "Maria Tackett"
-date: "Latest update: 2019-05-15"
+date: "Latest update: 2019-05-16"
 site: bookdown::bookdown_site
 documentclass: book
 bibliography: ["bib/other.bib", "bib/articles.bib", "bib/packages.bib"]
@@ -38,4 +38,8 @@ This book is under development and will be periodically upated with new material
 <a rel="license" href="http://creativecommons.org/licenses/by-nc-sa/4.0/"><img alt="Creative Commons License" style="border-width:0" src="https://i.creativecommons.org/l/by-nc-sa/4.0/88x31.png" /></a><br />
 
 This work is licensed under the [Creative Commons Attribution-NonCommercial-ShareAlike 4.0 International License](http://creativecommons.org/licenses/by-nc-sa/4.0/).
+
+<font size = "5px">**Acknowledgement**</font>
+
+**WRITE SOMETHING ABOUT DATA SCIENCE BOX BEING THE INSPIRATION**
 

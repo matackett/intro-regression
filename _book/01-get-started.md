@@ -16,7 +16,7 @@ Each chapter includes several sections of assignments and supplmental notes abou
 
 ***
 
-## Intro Statistics Review
+## Review: Intro Statistics and R {#review}
 
 The primary audience for this text is students who have completed an introductory statistics course. It is assumed that students are familiar with the concept of statitical inference. This text is also written assuming students have had some exposure to R and the tidyverse syntax. (There is one "Intro to R" assingment included; however, this assignment is not a comprehensive introduction to R.) The following are suggested texts to review statistical concepts and computing: 
 
