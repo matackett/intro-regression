@@ -1,7 +1,7 @@
 --- 
 title: "Intro Regression"
 author: "Maria Tackett"
-date: "2019-05-15"
+date: "Latest update: 2019-05-15"
 site: bookdown::bookdown_site
 documentclass: book
 bibliography: ["bib/other.bib", "bib/articles.bib", "bib/packages.bib"]
