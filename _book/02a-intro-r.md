@@ -7,7 +7,7 @@
 
 ### Introduction {-}
 
-The main goal of this assignment is to introduce you to R and RStudio, which we will be using throughout the course both to learn the statistical concepts discussed in the course and to analyze real data and come to informed conclusions. (*Note: R is the name of the programming language itself and RStudio is a convenient interface.*)
+The main goal of this assignment is to introduce you to R and RStudio, which we will be using throughout the course both to learn the statistical concepts discussed in the course and to analyze real data and come to informed conclusions. (*Note: R is the name of the programming language and RStudio is an interface.*)
 
 An additional goal is to introduce you to git, a version control system, and GitHub, a collaboration system that is a place on the internet to host git-based projects. We will be using both of these tools throughout the seemster.
 
