@@ -1,3 +1,8 @@
-This is a minimal example of a book based on R Markdown and **bookdown** (https://github.com/rstudio/bookdown). Please see the page "Get Started" at https://bookdown.org/ for how to compile this example.
+# Intro Regression 
 
-I am making a change.
+![](img/introregression-sticker.png)
+
+Files for http://www.introregression.org
+
+
+
