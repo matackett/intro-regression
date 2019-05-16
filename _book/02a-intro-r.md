@@ -266,7 +266,7 @@ ggplot(data=winter_data, mapping=aes(sample=resid)) +
 
 Throughout the semester, we will learn various methods to deal with any violations in regression assumptions. For now, we will just note them.
 
-*Knit then commit all remaining changes, write a commit message indiciating you're finished, and push to GitHub. Before you wrap up the assignment, make sure all documents are updated on your GitHub repo.*
+*Knit then commit all remaining changes, write a commit message indiciating you're finished, and push to GitHub. Before you finish, make sure all documents are updated on your GitHub repo.*
 
 ***
 

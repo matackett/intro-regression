@@ -6,13 +6,11 @@ knitr::opts_chunk$set(
 )
 ```
 
-The goal of this lab is to use Analysis of Variance (ANOVA) to compare means in multiple groups. Additionally, you will be introduced to new R functions used for [wrangling](https://en.wikipedia.org/wiki/Data_wrangling) and summarizing data.
-
-
+The goal of this assignment is to use Analysis of Variance (ANOVA) to compare means in multiple groups. Additionally, you will be introduced to new R functions used for [data wrangling](https://en.wikipedia.org/wiki/Data_wrangling) and summarizing data.
 
 ### Packages
 
-We will use the following packages in today's lab.
+We will use the following packages in today's assignment:
 
 ```{r}
 library(tidyverse)
@@ -22,12 +20,12 @@ library(broom)
 
 ### Data 
 
-In today's lab, we will analyze the `diamonds` dataset from the ggplot2 package. Type `?diamonds` in the console to see a dictionary of the variables in the data set. This analysis will focus on the relationship between a diamond's carat weight and its color. Before starting the exercises, take a moment to read more about the diamond attributes on the Gemological Institute of America webpage: [https://www.gia.edu/diamond-quality-factor](https://www.gia.edu/diamond-quality-factor).
+In today's assignment, we will analyze the `diamonds` dataset from the ggplot2 package. Type `?diamonds` in the console for more information about the dataset including a data dictionary. This analysis will focus on the relationship between a diamond's carat weight and its color. Before starting the exercises, take a moment to read more about the diamond attributes on the Gemological Institute of America webpage: [https://www.gia.edu/diamond-quality-factor](https://www.gia.edu/diamond-quality-factor).
 
 
 ### Exercises 
 
-The diamonds dataset contains the price and other characteristics for over 50,000 diamonds price from $326 to $18823. In this lab, we will analyze the subset of diamonds that are priced $1200 or less. 
+The diamonds dataset contains the price and other characteristics for over 50,000 diamonds price from $326 to $18823. In this assignment, we will analyze the subset of diamonds that are priced $1200 or less. 
 
 1. Create a dataframe called `diamonds_low` that is the subset of diamonds priced $1200 or less. How many observations are in `diamonds_low`? 
 
@@ -57,25 +55,23 @@ diamonds_low <- diamonds_low %>%
 # Refer to the [ggplot2 Cheat Sheet](https://www.rstudio.com/wp-content/uploads/2015/03/ggplot2-cheatsheet.pdf) and [ggplot2 reference](https://ggplot2.tidyverse.org/reference/index.html) for plot ideas and help with code.
 ```
 
-2. We begin by plotting the relationship between `color` and `carat`. As a group, brainstorm ways to plot the relationship between the two variables, then make one of the plots. Be sure to include informative axes labels and an informative title.
+2. We begin by plotting the relationship between `color` and `carat`. Brainstorm ways to plot the relationship between the two variables, then make one of the plots. Be sure to include informative axes labels and an informative title.
+
+*Note: [ggplot2 Cheat Sheet](https://www.rstudio.com/wp-content/uploads/2015/03/ggplot2-cheatsheet.pdf) and [ggplot2 reference](https://ggplot2.tidyverse.org/reference/index.html) for plot ideas and help with code.*
 
 3. Fill in the code below to calculate the mean and variance of `carat` at each level of `color`. 
 
 ```{r}
-# The `group_by` function is used to do calculation in groups. The `summarise` function is used to reduce variables to values.
-```
-
-```{r}
 diamonds_low %>% 
-  group_by(_______) %>%
-  summarise(n = n(), 
+  group_by(_______) %>% #group_by: perform calculations in groups
+  summarise(n = n(),  #summarise: reduce a colum of variable to a single value
             avg_carat = mean(carat),
             var_carat = _______)
 ```
 
 Based on the plots and summary statistics, does there appear to be a relationship between carat weight the color of diamonds? In other words, does there appear to be a significant difference in the mean carat weight across colors?
 
-4. When using ANOVA to compare means across groups, we make the following assumptions (note how similar they are to the assumptions for regression): 
+4. When using ANOVA to compare means across groups, we make the following assumptions (note their similarity to the assumptions for regression): 
 
   - **Normality**: The distribution of $y$ is approximately normal within each category of $x$ - in the $k^{th}$ category, $y \sim (\mu_k, \sigma^2)$ . If the sample size is large, ANOVA is robust to some departures from Normality. 
   - **Independence**: All observations are independent from one another, i.e. one observation does not affect another.
@@ -83,7 +79,7 @@ Based on the plots and summary statistics, does there appear to be a relationshi
 
 Are the assumptions for ANOVA met? Comment on each assumption using the summary statistics and/or plots from previous exercises to support your conclusion. You may also calculate any additional summary statistics or make additional plots as needed.
   
-*Regardless of your answer to Excerise 4, We will proceed with the analysis in the remainder of this lab as if the assumptions are met.*
+*Regardless of the conclusions about the assumptions, we will proceed with the analysis in the remainder of this assignment as if the assumptions are met.*
 
 5. Use the code below to calculate the ANOVA table. The `tidy` function from the broom package is used to put the ANOVA output in a dataframe, and with the `kable` function from the knitr package, you can display the results in an easy-to-read table.
 
@@ -110,15 +106,11 @@ State the alternative hypothesis is the context of the data.
 
 The formula for the confidence interval for the mean of group $k$ is 
 
-```{r}
-# The critical value $t^*$ is calculated using the *t* distribution with $n-K$ degrees of freedom. 
-```
-
-```{r}
-# The standard error of the mean is calculated using $\hat{\sigma}$, the square root of the variance within each group calculated from the ANOVA table.
-```
-
 $$\bar{y}_k \pm t^* \frac{\hat{\sigma}}{\sqrt{n_k}}$$
+
+*Note: The critical value $t^{*}$ is calculated using the *t* distribution with $n-K$ degrees of freedom.*
+
+*Note: The standard error of the mean is calculated using $\hat{\sigma}$, the square root of the variance within each group calculated from the ANOVA table.*
 
 ```{r eval=FALSE}
 n.groups <- diamonds_low %>% distinct(color) %>% count()
@@ -145,6 +137,7 @@ ggplot(data=conf.intervals,aes(x=color,y=mean_carat)) +
 
 12. Based on this analysis, describe the relationship between the color and the mean carat weight in diamonds that cost $1200 or less. *Refer to the diamond documentation to recall what the color scale means.*
 
-*You're done! Commit all remaining changes, use the commit message "Done with Lab 3!", and push. Before you wrap up the assignment, make sure the .Rmd, .html, and .md documents are all updated on your GitHub repo.*
+
+*Knit then commit all remaining changes, write a commit message indiciating you’re finished, and push to GitHub. Before you finish, make sure all documents are updated on your GitHub repo.*
 
 ***
