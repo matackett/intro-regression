@@ -73,7 +73,7 @@ Once you've committed a set of changes, the next step is to push them to the rep
 
 To push your changes to GitHub, click on **Push**. (*Note: If you are using RStudio Cloud, you may be asked to input your GitHub username and password. We will discuss how to save your GitHub credentials in a later assignment.*)
 
-#### Data {-}
+### Data {-}
 
 Today's data comes from the Capital Bikeshare in Washington D.C [@capitalbikeshare]. The Capital Bikeshare is a system in which customers can rent a bike for little cost, ride it around the city, and return it to a station near their destination. We will read in the data from the file *bikeshare.csv* located in the *data* folder.
 

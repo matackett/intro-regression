@@ -5,12 +5,13 @@
 
 
 
-The goal of today’s lab is to practice forward and backward model selection. In addition to practice with model selection functions in R, you will manually conduct a backward selection procedure to better understand what occurs when you use model selection functions.
+### Introduction {-}
+The goal of today’s assignment is to practice forward and backward model selection. In addition to practice with model selection functions in R, you will manually conduct a backward selection procedure to better understand what occurs when you use model selection functions.
 
 
-### Packages
+#### Packages {-}
 
-You will need the following packages for today's lab: 
+You will need the following packages for today's assignment: 
 
 
 ```r
@@ -22,11 +23,11 @@ library(Sleuth3) #case1201 data
 library(ISLR) #Hitters data
 ```
 
-### Data
+### Data {-}
 
-There are two datasets for this lab.
+There are two datasets for this assignment. You will read more about the datasets in the respective parts of this assignment.
 
-#### Part I
+#### Part I {-}
 
 The dataset for Part I contains the SAT score (out of 1600) and other variables that may be associated with SAT performance for each of the 50 states in the U.S. The data is based on test takers for the 1982 exam. The following variables are in the dataset: 
 
@@ -39,15 +40,15 @@ The dataset for Part I contains the SAT score (out of 1600) and other variables 
 - **`Expend`**: total state expenditure on high schools ($ hundreds per student)
 - **`Rank`**: median percentile rank of test-takers within their high school classes
 
-#### Part II
+#### Part II {-}
 
 The dataset for Part II contains the performance statistics and salaries of Major League Baseball players in the 1986 and 1987 seasons. The data is in the `Hitters` dataset in the `ISLR` package. Type `?Hitters` in the console to see the variables names and their definitions.
 
-### Exercises
+### Exercises {-}
 
-#### Part I
+#### Part I {-}
 
-For the first part of the lab, you will return to the model selection activity you started in class using the SAT data. The data is in the `case1201` data frame in the `Sleuth3` package.
+For the first part of the assignment, you will return to the model selection activity you started in class using the SAT data. The data is in the `case1201` data frame in the `Sleuth3` package.
 
 
 ```r
@@ -104,13 +105,13 @@ m6 <- lm(SAT ~ Takers + Income + Years + Public + Expend, data = sat_scores)
     
 6. Consider the comparisons made in the previous exercise. Are these differences what you would expect given the selection criteria used? Briefly explain.
 
-#### Part II
+#### Part II {-}
 
-The data for this part of the lab is the `Hitters` dataset in the `ISLR` package. Your goal is to fit a regression model that uses the performance statistics of baseball players to predictor their salary. There are 19 potential predictor variables, so you will use the `regsubsets` function to conduct forward selection to choose a final model.
+The data for this part of the assignment is the `Hitters` dataset in the `ISLR` package. Your goal is to fit a regression model that uses the performance statistics of baseball players to predictor their salary. There are 19 potential predictor variables, so you will use the `regsubsets` function to conduct forward selection to choose a final model.
 
 7. Read through the data dictionary for the `Hitters` dataset. You can access it by typing `?Hitters` in the console. What is the difference between the variables `HmRun` and `CHmRun`?
 
-8. Some observations have missing values for `Salary`. Filter the data, so only observations that have values for `Salary` are included. You will use this filtered data for the remainder of the lab.
+8. Some observations have missing values for `Salary`. Filter the data, so only observations that have values for `Salary` are included. You will use this filtered data for the remainder of the assignment.
 
 9. Fill in the code below to conduct forward selection and save the results in an object called `sel_summary` (selection summary).
 
@@ -177,7 +178,7 @@ np_bic <- summary_stats %>%
     
 ### Acknowledgements
 
-Part II of this lab was inspired by Lab 6.5 in [An Introduction to Statistical Learning](http://www-bcf.usc.edu/~gareth/ISL/) and [Variable Selection in Regression](https://www.andrew.cmu.edu/user/achoulde/95791/homework/homework3.html).
+Part II of this assignment was modeled on Lab 6.5 in [An Introduction to Statistical Learning](http://www-bcf.usc.edu/~gareth/ISL/) and [Variable Selection in Regression](https://www.andrew.cmu.edu/user/achoulde/95791/homework/homework3.html).
 
 ***
 
@@ -201,9 +202,9 @@ sat_scores <- case1201 %>%
   select(-State) #remove the state variable
 ```
 
-### Backward selection "manually"
+### "Manual" backward selection
 
-- Manually perform backward selection using Adj. $R^2$ as the selection criteria. Show each step of the selection process. To help you get started, the full model and the code for the first set of models to test are below. You will need to find Adj. $R^2$ for each model.
+- "Manually"" perform backward selection using Adj. $R^2$ as the selection criteria. Show each step of the selection process. To help you get started, the full model and the code for the first set of models to test are below. You will need to find Adj. $R^2$ for each model.
 
 
 ```r
@@ -245,18 +246,44 @@ Continue the model selection until you have a final model. Show each step of the
 
 ### Backward selection using regsubsets
 
-- Use the `regsubsets` function to perform backward selection using Adj. $R^2$ as the selection criteria. Are the variables the same as the ones at you chose? Is the Adj. $R^2$ the same? 
+- Use the `regsubsets` function to perform backward selection using Adj. $R^2$ as the selection criteria. 
+
+
+```r
+# input code for backward selection using Adj R-sq
+```
+
+Are the variables the same as the ones at you chose? Is the Adj. $R^2$ the same? 
 
 ### Changing selection criteria
 
-- Use the `regsubsets` function to perform backward selection using BIC as the selection criteria. What variables were chosen for the follow model? How does this model compare to the one selected using Adj. $R^2$?
+- Use the `regsubsets` function to perform backward selection using BIC as the selection criteria. 
 
-- Use the `step` function to perform backward selection using AIC as the selection criteria. What variables were chosen for the follow model? How does this model compare to the models chosen from the other selection criteria? 
+
+```r
+# input code for backward selection using BIC
+```
+
+What variables were chosen for the follow model? How does this model compare to the one selected using Adj. $R^2$?
+
+- Use the `step` function to perform backward selection using AIC as the selection criteria. 
+
+
+```r
+# input code for backward selection using AIC
+```
+
+What variables were chosen for the follow model? How does this model compare to the models chosen from the other selection criteria? 
 
 
 ### Different selection procedure
 
-- Use forward or stepwise selection to choose a model. Choose the criteria you will use to select the model.
+- Use forward or stepwise selection to choose a model. You can choose the model selection criteria.
+
+
+```r
+# input code for forward or stepwise selection
+```
 
 - How does this model compare to the previous selected models? 
 

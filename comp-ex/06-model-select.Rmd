@@ -6,12 +6,13 @@ knitr::opts_chunk$set(
 )
 ```
 
-The goal of today’s lab is to practice forward and backward model selection. In addition to practice with model selection functions in R, you will manually conduct a backward selection procedure to better understand what occurs when you use model selection functions.
+### Introduction {-}
+The goal of today’s assignment is to practice forward and backward model selection. In addition to practice with model selection functions in R, you will manually conduct a backward selection procedure to better understand what occurs when you use model selection functions.
 
 
-### Packages
+#### Packages {-}
 
-You will need the following packages for today's lab: 
+You will need the following packages for today's assignment: 
 
 ```{r}
 library(tidyverse)
@@ -22,11 +23,11 @@ library(Sleuth3) #case1201 data
 library(ISLR) #Hitters data
 ```
 
-### Data
+### Data {-}
 
-There are two datasets for this lab.
+There are two datasets for this assignment. You will read more about the datasets in the respective parts of this assignment.
 
-#### Part I
+#### Part I {-}
 
 The dataset for Part I contains the SAT score (out of 1600) and other variables that may be associated with SAT performance for each of the 50 states in the U.S. The data is based on test takers for the 1982 exam. The following variables are in the dataset: 
 
@@ -39,15 +40,15 @@ The dataset for Part I contains the SAT score (out of 1600) and other variables 
 - **`Expend`**: total state expenditure on high schools ($ hundreds per student)
 - **`Rank`**: median percentile rank of test-takers within their high school classes
 
-#### Part II
+#### Part II {-}
 
 The dataset for Part II contains the performance statistics and salaries of Major League Baseball players in the 1986 and 1987 seasons. The data is in the `Hitters` dataset in the `ISLR` package. Type `?Hitters` in the console to see the variables names and their definitions.
 
-### Exercises
+### Exercises {-}
 
-#### Part I
+#### Part I {-}
 
-For the first part of the lab, you will return to the model selection activity you started in class using the SAT data. The data is in the `case1201` data frame in the `Sleuth3` package.
+For the first part of the assignment, you will return to the model selection activity you started in class using the SAT data. The data is in the `case1201` data frame in the `Sleuth3` package.
 
 ```{r eval=F}
 sat_scores <- case1201 %>%
@@ -96,13 +97,13 @@ m6 <- lm(SAT ~ Takers + Income + Years + Public + Expend, data = sat_scores)
     
 6. Consider the comparisons made in the previous exercise. Are these differences what you would expect given the selection criteria used? Briefly explain.
 
-#### Part II
+#### Part II {-}
 
-The data for this part of the lab is the `Hitters` dataset in the `ISLR` package. Your goal is to fit a regression model that uses the performance statistics of baseball players to predictor their salary. There are 19 potential predictor variables, so you will use the `regsubsets` function to conduct forward selection to choose a final model.
+The data for this part of the assignment is the `Hitters` dataset in the `ISLR` package. Your goal is to fit a regression model that uses the performance statistics of baseball players to predictor their salary. There are 19 potential predictor variables, so you will use the `regsubsets` function to conduct forward selection to choose a final model.
 
 7. Read through the data dictionary for the `Hitters` dataset. You can access it by typing `?Hitters` in the console. What is the difference between the variables `HmRun` and `CHmRun`?
 
-8. Some observations have missing values for `Salary`. Filter the data, so only observations that have values for `Salary` are included. You will use this filtered data for the remainder of the lab.
+8. Some observations have missing values for `Salary`. Filter the data, so only observations that have values for `Salary` are included. You will use this filtered data for the remainder of the assignment.
 
 9. Fill in the code below to conduct forward selection and save the results in an object called `sel_summary` (selection summary).
 
@@ -164,6 +165,6 @@ np_bic <- summary_stats %>%
     
 ### Acknowledgements
 
-Part II of this lab was inspired by Lab 6.5 in [An Introduction to Statistical Learning](http://www-bcf.usc.edu/~gareth/ISL/) and [Variable Selection in Regression](https://www.andrew.cmu.edu/user/achoulde/95791/homework/homework3.html).
+Part II of this assignment was modeled on Lab 6.5 in [An Introduction to Statistical Learning](http://www-bcf.usc.edu/~gareth/ISL/) and [Variable Selection in Regression](https://www.andrew.cmu.edu/user/achoulde/95791/homework/homework3.html).
 
 ***

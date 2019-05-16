@@ -1,24 +1,26 @@
 # Analysis of Variance {#anova}
 
 
-## COMP: Diamonds
+### COMP: Diamonds
 
 
+
+### Introduction {-}
 
 The goal of this assignment is to use Analysis of Variance (ANOVA) to compare means in multiple groups. Additionally, you will be introduced to new R functions used for [data wrangling](https://en.wikipedia.org/wiki/Data_wrangling) and summarizing data.
 
-### Packages
+#### Packages {-}
 
 We will use the following packages in today's assignment:
 
 
 
-### Data 
+### Data {-}
 
 In today's assignment, we will analyze the `diamonds` dataset from the ggplot2 package. Type `?diamonds` in the console for more information about the dataset including a data dictionary. This analysis will focus on the relationship between a diamond's carat weight and its color. Before starting the exercises, take a moment to read more about the diamond attributes on the Gemological Institute of America webpage: [https://www.gia.edu/diamond-quality-factor](https://www.gia.edu/diamond-quality-factor).
 
 
-### Exercises 
+### Exercises {-}
 
 The diamonds dataset contains the price and other characteristics for over 50,000 diamonds price from $326 to $18823. In this assignment, we will analyze the subset of diamonds that are priced $1200 or less. 
 
