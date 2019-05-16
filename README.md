@@ -1,7 +1,7 @@
 # Intro Regression 
 
 
-![](img/introregression-sticker.png){:width="50%"}
+<img src="img/introgression-sticker" width="150" height="100" />
 
 Files for http://www.introregression.org
 
