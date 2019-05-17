@@ -6,11 +6,13 @@ knitr::opts_chunk$set(
 )
 ```
 
-The primary goal of today's lab is to give you practice with some of the tools you will need to conduct regression analysis using R. An additional goal for today is for you to be introduced to your teams and practice collaborating using GitHub and RStudio. 
+### Introduction {-}
 
-### Packages
+The primary goal of today's assignment is to give you practice with some of the tools you will need to conduct regression analysis using R. An additional goal for today is for you to be introduced to your teams and practice collaborating using GitHub and RStudio. 
 
-We will use the following packages in today's lab. 
+### Packages {-}
+
+We will use the following packages in today's assignment:
 
 ```{r}
 library(tidyverse)
@@ -19,9 +21,9 @@ library(broom)
 library(rcfss)
 ```
 
-### Data 
+### Data {-}
 
-In today's lab, we will analyze the `scorecard` dataset from the rcfss package. This dataset contains information about 1849 colleges obtained from the Department of Education's College Scorecard. Load the rcfss library into the global R environment and type `?scorecard` in the **console** to learn more about the dataset and variable definitions. Today's analysis will focus on the following variables: 
+We will analyze the `scorecard` dataset from the **rcfss** package. This dataset contains information about 1849 colleges obtained from the Department of Education's College Scorecard. Load the rcfss library into the global R environment and type `?scorecard` in the **console** to learn more about the dataset and variable definitions. This analysis will focus on the following variables: 
 
 |  |  |
 |-----------|------------------------------------------|
@@ -29,11 +31,11 @@ In today's lab, we will analyze the `scorecard` dataset from the rcfss package. 
 | `cost` | The average annual cost of attendance, including tuition and feeds, books and supplies, and living expenses, minus the average grant/scholarship aid |
 | `admrate` | Undergraduate admissions rate (from 0 - 100%) |
 
-### Exercises 
+### Exercises {-}
 
-#### Exploratory Data Analysis
+#### Exploratory Data Analysis {-}
 
-1. Plot a histogram to examine the distribution of `admrate`. What is the shape of the distribution? 
+1. Plot a histogram to examine the distribution of `admrate`. Describe the shape of the distribution.
 
 2. To better understand the distribution of `admrate`, we would like calculate measures of center and spread of the distribution. Fill in the code below to use the `skim` function to calculate summary statistics for `admrate`. Report the appropriate measures of center (mean or median) and spread (standard deviation or IQR) based on the shape of the distribution from Exercise 1.
 
@@ -47,7 +49,7 @@ scorecard %>%
 
 4. One nice feature of the `skim` function is that it provides information about the number of observations that are missing values of the variable. How many observations have missing values of `admrate`? How many observations have missing values of `cost`? 
 
-5. Later in the semester, we will techniques to deal with missing values in the data. For now, however, we will only include complete observations for the remainder of this analysis. We can use the `filter` function to select only the rows that values for both `cost` and `admrate`. 
+5. Later in the semester, we will techniques to deal with missing values in the data. For now, however, only include complete observations for the remainder of this analysis. You can use the `filter` function to select only the rows that values for both `cost` and `admrate`. (*Note: Learn more about the `filter` function in [Section 5.2 of R for Data Science] (https://r4ds.had.co.nz/transform.html#filter-rows-with-filter).*)
 
 Fill in the code below to create a new dataset called `scorecard_new` that only includes observations with values for both `admrate` and `cost`.
 
@@ -57,10 +59,10 @@ __________ <- scorecard %>%
 ```
 
 ```{r}
-# Learn more about the `filter` function in [Section 5.2 of R for Data Science] (https://r4ds.had.co.nz/transform.html#filter-rows-with-filter)
+# 
 ```
 
-You will use `scorecard_new` for the rest of the lab. 
+**You will use `scorecard_new` for the rest of the assignment.**
 
 6. Create a scatterplot to display the relationship between `cost` (response variable) and `admrate` (explanatory variable). Use the scatterplot to describe the relationship between the two variables.
 
@@ -71,7 +73,7 @@ ggplot(data=scorecard_new, mapping=aes(x=admrate, y=cost, color=type)) +
   _____________________
 ```
 
-#### Simple Linear Regression
+#### Simple Linear Regression {-}
 
 8. Fit a regression model to describe the relationship between a college's admission rate and cost. Use the `tidy` function to display the model.
 
@@ -91,6 +93,9 @@ $$H_0: \beta_1 = 0 \hspace{5mm} \text{versus} \hspace{5mm} H_a: \beta_1 \neq 0$$
 
 State what the null and alternative hypotheses mean in terms of the linear relationship between `admrate` and `cost`.
 
-15. Consider the confidence interval from Exercise 13 and the hypotheses in Exercise 14. Is the confidence interval consistent with the null or alternative hypothesis? Briefly explain.  
+15. Consider the confidence interval from Exercise 13 and the hypotheses in Exercise 14. Does this confidence interval seem to be consistent with the null or alternative hypothesis? Briefly explain.  
+
+*Knit then commit all remaining changes, write a commit message indiciating you’re finished, and push to GitHub. Before you finish, make sure all documents are updated on your GitHub repo.*
+
 
 ***

@@ -7,78 +7,77 @@ knitr::opts_chunk$set(eval = FALSE,
                       )
 ```
 
+### Packages {-}
 ```{r}
 library(tidyverse)
 library(readr)
 library(broom)
 ```
 
+
+### Data {-}
 ```{r}
 beer <- read_csv("data/beer.csv")
 ```
 
 In this analysis, we will analyze the relationship between the amount of alcohol (`PercentAlcohol`) and the caloric content (`CaloriesPer12Oz`) in domestic beers. Let `PercentAlcohol` be the predictor variable and `CaloriesPer12Oz` the response variable. 
 
-Due to limited class time, we will not do the exploratory data analysis in this example. In practice, however, you should always start with the exploratory data analysis.
+### Exercises {-}
 
-*You can add your answers to this R Markdown document*.
+**Due to limited class time, we will not do the exploratory data analysis in this example. In practice, however, you should always start with the exploratory data analysis.**
 
-*1. Calculate a regression model to describe the relationship between `PercentAlcohol` and `CaloriesPer12Oz`. Display the model output.*
+
+1. Fit a regression model to describe the relationship between `PercentAlcohol` and `CaloriesPer12Oz`. Display the model output.
 
 ```{r}
-model <- lm(CaloriesPer12Oz ~ PercentAlcohol, data=beer)
-model %>% 
-  tidy(conf.int=TRUE)
+# code for regression model
 ```
 
-**2. Does it make sense to interpret the intercept? Why or why not?**
+2. Does it make sense to interpret the intercept? Why or why not?
 
-There are non-alocoholic beers, so it is possible to have a meaningful interpretation of the intercept. In our data, however, there are very few beers with less than 3% alcoholic content, so it would not be wise to interpret the intercept. It is not safe to assume the same relationship between `PercentAlcohol` and `CaloriesPer12Oz` hold for beers with 0% alcohol; this would be extrapolation. 
+3. Interpret the 95% confidence interval for the slope in the context of the data.
 
-**3. Interpret the 95% confidence interval for the slope in the context of the data.**
-
-We are 95% confident that the interval (26.557, 30.620) contains the true population slope for `PercentAlcohol`. This means we are 95% confident that for every 1% increase in alcohol content, the number of calories (per 12 oz) is expected to increase between 26.557 and 30.620 calories. 
-
-**4. Find the critical value, $t^*$, used to calculate the 95% confidence interval. The code below is a guide; uncomment and complete the lines of code to calculate and display the critical value.**
+4. Calculate the critical value, $t^*$, used to calculate the 95% confidence interval. The code below is a guide; uncomment and complete the lines of code to calculate and display the critical value.
 
 ```{r}
 n <- nrow(beer)
 
-df <- n-2
-crit_val <- qt(0.975,df)
+#df <- _________  
+
+#crit_val <- qt(_____,df)
+#crit_val
 ```
 
-The critical value used to calculate the 95% confident interval for the slope is ______. 
+The critical value used to calculate the 95% confident interval for the slope is ____. 
 
-**5. Interpret the test statistic in the context of the data**
+5. Interpret the test statistic in the context of the data.
 
-The estimated slope of 28.577 is 27.78 standard errors above the hypothesized mean of 0, assuming there is no linear relationship between percent alcohol and calories in domestic beers.
-
-**6. How was the p-value calculated? Fill in the code below to calculate the p-value. The code below is a guide; uncomment and complete the lines of code to calculate and display the p-value.**
+6. How was the p-value calculated? Fill in the code below to calculate the p-value. The code below is a guide; uncomment and complete the lines of code to calculate and display the p-value.
 
 ```{r}
-test_statistic <- 27.778990
+#test_statistic <- _______
 
-prob <- 1 - pt(abs(test_statistic),df)
+#prob <- 1 - pt(abs(test_statistic),df)
 
-p_value <- 2 * prob
+#p_value <- 2 * prob
+#p_value
 ```
 
-The p-value is _______. Given there is no linear relationship between `PercentAlcohol` and `CaloriesPer12Oz`, the probability of obtaining a test statistic with magnitude ________ or more extreme is _______.
+The p-value is ____ . Given there is no linear relationship between `PercentAlcohol` and `CaloriesPer12Oz`, the probability of obtaining a test statistic with magnitude ____ or more extreme is ____.
 
-**7. Fill in the code below to calculate the predicted calories and corresponding 90% interval for a single beer with alcohol content of 4.3%.**
-
-```{r}
-x0 <-  data.frame(PercentAlcohol=4.3)
-predict.lm(model,x0,interval="prediction",conf.level=0.9) 
-```
-
-
-**8. Fill in the code below to calculate the predicted calories and corresponding 90% interval for the subset of beers with alcohol content of 4.3%.**
+7. Fill in the code below to calculate the predicted calories and corresponding 90% interval for a single beer with alcohol content of 4.3%.
 
 ```{r}
 x0 <-  data.frame(PercentAlcohol=4.3)
-predict.lm(model,x0,interval="confidence",conf.level= 0.9) 
+#predict.lm(model,x0,interval="________",conf.level=________) #<<
+```
+
+
+8. Fill in the code below to calculate the predicted calories and corresponding 90% interval for the subset of beers with alcohol content of 4.3%.
+
+```{r}
+x0 <-  data.frame(PercentAlcohol=4.3)
+#predict.lm(model,x0,interval="________",conf.level=________) #<<
 ```
 
 ***

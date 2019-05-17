@@ -6,11 +6,11 @@ knitr::opts_chunk$set(
 )
 ```
 
-In this mini analysis, we will work with the `Advertising` data used in Chapters 2 and 3 of *Introduction to Statistical Learning*.
+In this mini analysis, we will work with the `Advertising` data used in Chapters 2 and 3 of [@islr].
 
-### Data and packages
 
-We start with loading the packages we'll use.
+### Packages {-}
+
 
 ```{r message=FALSE}
 library(readr)
@@ -19,18 +19,19 @@ library(skimr)
 library(broom)
 ```
 
+### Data {-}
 ```{r}
 advertising <- read_csv("data/advertising.csv")
 ```
 
-We will analyze the advertising and sales data for 200 markets. The variables we'll use are 
+This dataset contains the advertising spending and sales for 200 markets. The variables are
 
 - `tv`: total spending on TV advertising (in $thousands)
 - `radio`: total spending on radio advertising (in $thousands)
 - `newspaper`: total spending on newspaper advertising (in $thousands)
 - `sales`: total sales (in $millions)
 
-### Analysis
+### Exercises {-}
 
 We'll begin the analysis by getting quick view of the data: 
 
@@ -102,7 +103,7 @@ ad_model
 
 1. Write the model equation. 
 
-2. Interpret the intercept in the context of the problem. 
+2. Does it make sense to interpret the intercept? If so, interpret the intercept in the context of the problem. Otherwise, briefly explain why not.
 
 3. Interpret the slope in the context of the problem.
 

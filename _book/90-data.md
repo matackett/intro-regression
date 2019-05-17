@@ -2,10 +2,10 @@
 
 | Data Set 	| Description 	| Chapter 	| Original Source 	|
 |----------	|-------------	|---------	|-----------------	|
-| [`advertising.csv`](https://raw.githubusercontent.com/matackett/intro-regression/master/data/advertising.csv)    	|     test    	| test    	| test            	|
+| [`advertising.csv`](https://raw.githubusercontent.com/matackett/intro-regression/master/data/advertising.csv)    	| Sales and advertising spending for 200 markets   	| Simple Linear Regression  	| [@islr]        	|
 | [`airbnb_basic.csv`](https://raw.githubusercontent.com/matackett/intro-regression/master/data/airbnb_basic.csv)     	|     test    	| test    	| test            	|
 | [`airbnb_details.csv`](https://raw.githubusercontent.com/matackett/intro-regression/master/data/airbnb_details.csv)     	|     test    	| test    	| test            	|
-| [`beer.csv`](https://raw.githubusercontent.com/matackett/intro-regression/master/data/beer.csv)  	|  test	|test|test            	|
+| [`beer.csv`](https://raw.githubusercontent.com/matackett/intro-regression/master/data/beer.csv)  	| Total carbohydrates and caloric content in beer	| Simple Linear REgression |       	|
 | [`bikeshare.csv`](https://raw.githubusercontent.com/matackett/intro-regression/master/data/bikeshare.csv)|  Daily information about the Capital Bikeshare and environmental conditions in 2011 and 2012. |Intro to R| https://www.capitalbikeshare.com/       	|
 |  [`evals_mod.csv`](https://raw.githubusercontent.com/matackett/intro-regression/master/data/evals-mod.csv)    	|     test    	| test    	| test            	|
 | [`fivethirtyeight-recent-grads.R`](https://raw.githubusercontent.com/matackett/intro-regression/master/data/fivethirtyeight-recent-grads.R)     	|     test    	| test    	| test            	|

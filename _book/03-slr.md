@@ -5,11 +5,13 @@
 
 
 
-The primary goal of today's lab is to give you practice with some of the tools you will need to conduct regression analysis using R. An additional goal for today is for you to be introduced to your teams and practice collaborating using GitHub and RStudio. 
+### Introduction {-}
 
-### Packages
+The primary goal of today's assignment is to give you practice with some of the tools you will need to conduct regression analysis using R. An additional goal for today is for you to be introduced to your teams and practice collaborating using GitHub and RStudio. 
 
-We will use the following packages in today's lab. 
+### Packages {-}
+
+We will use the following packages in today's assignment:
 
 
 ```r
@@ -19,9 +21,9 @@ library(broom)
 library(rcfss)
 ```
 
-### Data 
+### Data {-}
 
-In today's lab, we will analyze the `scorecard` dataset from the rcfss package. This dataset contains information about 1849 colleges obtained from the Department of Education's College Scorecard. Load the rcfss library into the global R environment and type `?scorecard` in the **console** to learn more about the dataset and variable definitions. Today's analysis will focus on the following variables: 
+We will analyze the `scorecard` dataset from the **rcfss** package. This dataset contains information about 1849 colleges obtained from the Department of Education's College Scorecard. Load the rcfss library into the global R environment and type `?scorecard` in the **console** to learn more about the dataset and variable definitions. This analysis will focus on the following variables: 
 
 |  |  |
 |-----------|------------------------------------------|
@@ -29,11 +31,11 @@ In today's lab, we will analyze the `scorecard` dataset from the rcfss package. 
 | `cost` | The average annual cost of attendance, including tuition and feeds, books and supplies, and living expenses, minus the average grant/scholarship aid |
 | `admrate` | Undergraduate admissions rate (from 0 - 100%) |
 
-### Exercises 
+### Exercises {-}
 
-#### Exploratory Data Analysis
+#### Exploratory Data Analysis {-}
 
-1. Plot a histogram to examine the distribution of `admrate`. What is the shape of the distribution? 
+1. Plot a histogram to examine the distribution of `admrate`. Describe the shape of the distribution.
 
 2. To better understand the distribution of `admrate`, we would like calculate measures of center and spread of the distribution. Fill in the code below to use the `skim` function to calculate summary statistics for `admrate`. Report the appropriate measures of center (mean or median) and spread (standard deviation or IQR) based on the shape of the distribution from Exercise 1.
 
@@ -48,7 +50,7 @@ scorecard %>%
 
 4. One nice feature of the `skim` function is that it provides information about the number of observations that are missing values of the variable. How many observations have missing values of `admrate`? How many observations have missing values of `cost`? 
 
-5. Later in the semester, we will techniques to deal with missing values in the data. For now, however, we will only include complete observations for the remainder of this analysis. We can use the `filter` function to select only the rows that values for both `cost` and `admrate`. 
+5. Later in the semester, we will techniques to deal with missing values in the data. For now, however, only include complete observations for the remainder of this analysis. You can use the `filter` function to select only the rows that values for both `cost` and `admrate`. (*Note: Learn more about the `filter` function in [Section 5.2 of R for Data Science] (https://r4ds.had.co.nz/transform.html#filter-rows-with-filter).*)
 
 Fill in the code below to create a new dataset called `scorecard_new` that only includes observations with values for both `admrate` and `cost`.
 
@@ -60,10 +62,10 @@ __________ <- scorecard %>%
 
 
 ```r
-# Learn more about the `filter` function in [Section 5.2 of R for Data Science] (https://r4ds.had.co.nz/transform.html#filter-rows-with-filter)
+# 
 ```
 
-You will use `scorecard_new` for the rest of the lab. 
+**You will use `scorecard_new` for the rest of the assignment.**
 
 6. Create a scatterplot to display the relationship between `cost` (response variable) and `admrate` (explanatory variable). Use the scatterplot to describe the relationship between the two variables.
 
@@ -75,7 +77,7 @@ ggplot(data=scorecard_new, mapping=aes(x=admrate, y=cost, color=type)) +
   _____________________
 ```
 
-#### Simple Linear Regression
+#### Simple Linear Regression {-}
 
 8. Fit a regression model to describe the relationship between a college's admission rate and cost. Use the `tidy` function to display the model.
 
@@ -95,7 +97,10 @@ $$H_0: \beta_1 = 0 \hspace{5mm} \text{versus} \hspace{5mm} H_a: \beta_1 \neq 0$$
 
 State what the null and alternative hypotheses mean in terms of the linear relationship between `admrate` and `cost`.
 
-15. Consider the confidence interval from Exercise 13 and the hypotheses in Exercise 14. Is the confidence interval consistent with the null or alternative hypothesis? Briefly explain.  
+15. Consider the confidence interval from Exercise 13 and the hypotheses in Exercise 14. Does this confidence interval seem to be consistent with the null or alternative hypothesis? Briefly explain.  
+
+*Knit then commit all remaining changes, write a commit message indiciating you’re finished, and push to GitHub. Before you finish, make sure all documents are updated on your GitHub repo.*
+
 
 ***
 
@@ -103,11 +108,11 @@ State what the null and alternative hypotheses mean in terms of the linear relat
 
 
 
-In this mini analysis, we will work with the `Advertising` data used in Chapters 2 and 3 of *Introduction to Statistical Learning*.
+In this mini analysis, we will work with the `Advertising` data used in Chapters 2 and 3 of [@islr].
 
-### Data and packages
 
-We start with loading the packages we'll use.
+### Packages {-}
+
 
 
 ```r
@@ -117,19 +122,20 @@ library(skimr)
 library(broom)
 ```
 
+### Data {-}
 
 ```r
 advertising <- read_csv("data/advertising.csv")
 ```
 
-We will analyze the advertising and sales data for 200 markets. The variables we'll use are 
+This dataset contains the advertising spending and sales for 200 markets. The variables are
 
 - `tv`: total spending on TV advertising (in $thousands)
 - `radio`: total spending on radio advertising (in $thousands)
 - `newspaper`: total spending on newspaper advertising (in $thousands)
 - `sales`: total sales (in $millions)
 
-### Analysis
+### Exercises {-}
 
 We'll begin the analysis by getting quick view of the data: 
 
@@ -208,7 +214,7 @@ ad_model
 
 1. Write the model equation. 
 
-2. Interpret the intercept in the context of the problem. 
+2. Does it make sense to interpret the intercept? If so, interpret the intercept in the context of the problem. Otherwise, briefly explain why not.
 
 3. Interpret the slope in the context of the problem.
 
@@ -218,6 +224,7 @@ ad_model
 
 
 
+### Packages {-}
 
 ```r
 library(tidyverse)
@@ -226,77 +233,75 @@ library(broom)
 ```
 
 
+### Data {-}
+
 ```r
 beer <- read_csv("data/beer.csv")
 ```
 
 In this analysis, we will analyze the relationship between the amount of alcohol (`PercentAlcohol`) and the caloric content (`CaloriesPer12Oz`) in domestic beers. Let `PercentAlcohol` be the predictor variable and `CaloriesPer12Oz` the response variable. 
 
-Due to limited class time, we will not do the exploratory data analysis in this example. In practice, however, you should always start with the exploratory data analysis.
+### Exercises {-}
 
-*You can add your answers to this R Markdown document*.
+**Due to limited class time, we will not do the exploratory data analysis in this example. In practice, however, you should always start with the exploratory data analysis.**
 
-*1. Calculate a regression model to describe the relationship between `PercentAlcohol` and `CaloriesPer12Oz`. Display the model output.*
+
+1. Fit a regression model to describe the relationship between `PercentAlcohol` and `CaloriesPer12Oz`. Display the model output.
 
 
 ```r
-model <- lm(CaloriesPer12Oz ~ PercentAlcohol, data=beer)
-model %>% 
-  tidy(conf.int=TRUE)
+# code for regression model
 ```
 
-**2. Does it make sense to interpret the intercept? Why or why not?**
+2. Does it make sense to interpret the intercept? Why or why not?
 
-There are non-alocoholic beers, so it is possible to have a meaningful interpretation of the intercept. In our data, however, there are very few beers with less than 3% alcoholic content, so it would not be wise to interpret the intercept. It is not safe to assume the same relationship between `PercentAlcohol` and `CaloriesPer12Oz` hold for beers with 0% alcohol; this would be extrapolation. 
+3. Interpret the 95% confidence interval for the slope in the context of the data.
 
-**3. Interpret the 95% confidence interval for the slope in the context of the data.**
-
-We are 95% confident that the interval (26.557, 30.620) contains the true population slope for `PercentAlcohol`. This means we are 95% confident that for every 1% increase in alcohol content, the number of calories (per 12 oz) is expected to increase between 26.557 and 30.620 calories. 
-
-**4. Find the critical value, $t^*$, used to calculate the 95% confidence interval. The code below is a guide; uncomment and complete the lines of code to calculate and display the critical value.**
+4. Calculate the critical value, $t^*$, used to calculate the 95% confidence interval. The code below is a guide; uncomment and complete the lines of code to calculate and display the critical value.
 
 
 ```r
 n <- nrow(beer)
 
-df <- n-2
-crit_val <- qt(0.975,df)
+#df <- _________  
+
+#crit_val <- qt(_____,df)
+#crit_val
 ```
 
-The critical value used to calculate the 95% confident interval for the slope is ______. 
+The critical value used to calculate the 95% confident interval for the slope is ____. 
 
-**5. Interpret the test statistic in the context of the data**
+5. Interpret the test statistic in the context of the data.
 
-The estimated slope of 28.577 is 27.78 standard errors above the hypothesized mean of 0, assuming there is no linear relationship between percent alcohol and calories in domestic beers.
-
-**6. How was the p-value calculated? Fill in the code below to calculate the p-value. The code below is a guide; uncomment and complete the lines of code to calculate and display the p-value.**
+6. How was the p-value calculated? Fill in the code below to calculate the p-value. The code below is a guide; uncomment and complete the lines of code to calculate and display the p-value.
 
 
 ```r
-test_statistic <- 27.778990
+#test_statistic <- _______
 
-prob <- 1 - pt(abs(test_statistic),df)
+#prob <- 1 - pt(abs(test_statistic),df)
 
-p_value <- 2 * prob
+#p_value <- 2 * prob
+#p_value
 ```
 
-The p-value is _______. Given there is no linear relationship between `PercentAlcohol` and `CaloriesPer12Oz`, the probability of obtaining a test statistic with magnitude ________ or more extreme is _______.
+The p-value is ____ . Given there is no linear relationship between `PercentAlcohol` and `CaloriesPer12Oz`, the probability of obtaining a test statistic with magnitude ____ or more extreme is ____.
 
-**7. Fill in the code below to calculate the predicted calories and corresponding 90% interval for a single beer with alcohol content of 4.3%.**
-
-
-```r
-x0 <-  data.frame(PercentAlcohol=4.3)
-predict.lm(model,x0,interval="prediction",conf.level=0.9) 
-```
-
-
-**8. Fill in the code below to calculate the predicted calories and corresponding 90% interval for the subset of beers with alcohol content of 4.3%.**
+7. Fill in the code below to calculate the predicted calories and corresponding 90% interval for a single beer with alcohol content of 4.3%.
 
 
 ```r
 x0 <-  data.frame(PercentAlcohol=4.3)
-predict.lm(model,x0,interval="confidence",conf.level= 0.9) 
+#predict.lm(model,x0,interval="________",conf.level=________) #<<
+```
+
+
+8. Fill in the code below to calculate the predicted calories and corresponding 90% interval for the subset of beers with alcohol content of 4.3%.
+
+
+```r
+x0 <-  data.frame(PercentAlcohol=4.3)
+#predict.lm(model,x0,interval="________",conf.level=________) #<<
 ```
 
 ***
