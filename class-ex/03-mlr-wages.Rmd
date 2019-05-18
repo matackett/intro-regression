@@ -7,6 +7,7 @@ knitr::opts_chunk$set(eval = FALSE,
                       )
 ```
 
+### Packages {-}
 ```{r}
 library(tidyverse)
 library(knitr)
@@ -14,13 +15,17 @@ library(broom)
 library(Sleuth3)
 ```
 
+### Data {-}
+
 ```{r}
 wages <- case1202 %>% 
   mutate(Female = ifelse(Sex=="Female",1,0)) %>%
   select(-Sal77,-Sex)
 ```
 
-### Initial model
+### Exercises {-}
+
+#### Initial model {-}
 
 ```{r}
 model <- lm(Bsal ~ Senior + Age + Educ + Exper + Female, 
@@ -28,7 +33,7 @@ model <- lm(Bsal ~ Senior + Age + Educ + Exper + Female,
 tidy(model,conf.int=TRUE)
 ```
 
-### Model with mean-centered variables
+#### Model with mean-centered variables {-}
 
 ```{r}
 wages <- wages %>%
@@ -38,15 +43,15 @@ wages <- wages %>%
          ExperCent = Exper - mean(Exper))
 ```
 
-- Calculate the regression model using the mean-centered variables. 
+- Fit the regression model using the mean-centered variables. 
 
 ```{r}
-
+# regression model with mean-centered variables
 ```
 
 - How did the model change?
 
-### Model with indicator variables
+#### Model with indicator variables {-}
 
 - Use the code below to create a categorical variable for `Educ`.
 

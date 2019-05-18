@@ -155,9 +155,11 @@ The "Data" section is largely inspired by [datasciencebox.org](https://datascien
 
 
 
+### Packages {-}
 
 
 
+### Data {-}
 The main objective of this analysis is to understand how encouragement affects the frequency that children watch *Sesame Street*. We will use the following variables: 
 
 **Response:**
@@ -202,7 +204,7 @@ sesame <- sesame %>%
 ```
 <br>
 
-### Questions
+### Exercises {-}
 
 1. We will build a model to predict how often a child in this study watched *Sesame Street*. What type of model should we build? Why? 
 
@@ -242,7 +244,7 @@ anova(model1, model2, test = "Chisq")
 
 7. How would you assess the appropriateness of the model flit? Describe the plots, tables, and/or calculations you would create to assess model fit. 
 
-### References
+### References {-}
 
 Data from [http://www2.stat.duke.edu/~jerry/sta210/sesamelab.html](http://www2.stat.duke.edu/~jerry/sta210/sesamelab.html)
 

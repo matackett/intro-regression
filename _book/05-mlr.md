@@ -234,25 +234,30 @@ The data from this lab is from [insideairbnb.com](http://insideairbnb.com/index.
 
 
 
+### Packages {-}
+
+
+### Data {-}
 
 
 
+### Exercises {-}
 
-### Initial model
-
-
-
-### Model with mean-centered variables
+#### Initial model {-}
 
 
 
-- Calculate the regression model using the mean-centered variables. 
+#### Model with mean-centered variables {-}
+
+
+
+- Fit the regression model using the mean-centered variables. 
 
 
 
 - How did the model change?
 
-### Model with indicator variables
+#### Model with indicator variables {-}
 
 - Use the code below to create a categorical variable for `Educ`.
 

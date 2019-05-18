@@ -121,6 +121,8 @@ The data for the songs can be found in *test_songs.csv*.
 
 The goal of this exercise is to walk through a logistic regression analysis. It will give you a basic idea of the analysis steps and thought-process; however, due to class time constraints, this analysis is not exhaustive.
 
+### Packages {-}
+
 
 ```r
 library(tidyverse)
@@ -129,6 +131,7 @@ library(rms)
 ## add any other packages as needed 
 ```
 
+### Data {-}
 This data is from an ongoing cardiovascular study on residents of the town of Framingham, Massachusetts. The goal is to predict whether a patient has a 10-year risk of future coronary heart disease. The dataset includes the following: 
 
 - `male`: 0 = Female; 1 = Male
@@ -165,6 +168,7 @@ fram_data <- read_csv("data/framingham.csv") %>%
   )
 ```
 
+### Exercises {-}
 - Fit a full model (main effects only) with `TenYearCHD` as the response. Display the model output. 
 
 - Based on the goal of the analysis, should the full model be the final model? Why or why not? 
@@ -185,7 +189,7 @@ fram_data <- read_csv("data/framingham.csv") %>%
 - A doctor plans to use the results from your model to help select patients for a new heart disease prevention program. She asks you which threshold would be best to select patients for this program. What threshold would you recommend to the doctor? Why?
     
 
-### References
+### References {-}
 
 - Data obtained from [https://www.kaggle.com/neisha/heart-disease-prediction-using-logistic-regression/data](https://www.kaggle.com/neisha/heart-disease-prediction-using-logistic-regression/data)
 
