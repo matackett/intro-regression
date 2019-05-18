@@ -7,13 +7,13 @@
 
 The goal of this lab is to use multiple linear regression to understand the variation in the selling price of houses in King County, Washington. You will also gain practice using special predictors, such as categorical predictors and interaction effects, in the model, and you will be introduced to variable transformations.
 
-### Packages
+### Packages {-}
 
 We will use the following packages in today's lab.
 
 
 
-### Data 
+### Data {-}
 
 The for today's lab contains the price and other characteristics of over 20,000 houses sold in King County, Washington (the county that includes Seattle). The dataset includes the following variables:
 
@@ -30,7 +30,7 @@ The for today's lab contains the price and other characteristics of over 20,000 
 
 
 
-### Exercises 
+### Exercises {-}
 
 1. Use data visualization and summary statistics to examine the distribution of `bedrooms`. What is the maximum value? Does this value make sense? If not, what is this an indication of, i.e. how did this value get recorded in the data? Briefly explain.
 
@@ -93,11 +93,11 @@ Fill in the code below to plot the relationship between `logprice` and `bedrooms
 
 
 
-**We will talk more about interaction effects in Monday's lecture. In HW 03, you explore potential interaction effects using this housing data.**
+**We will talk more about interaction effects soon. In HW 03, you explore potential interaction effects using this housing data.**
 
-*You're done! Commit all remaining changes, use the commit message "Done with Lab 4!", and push. Before you wrap up the assignment, make sure the .Rmd and .md  documents are updated in your GitHub repo. There is a 10% penalty if the .Rmd file has to be knitted to display graphs, i.e. the graphs are not showing in the .md file on GitHub.*
+*Knit then commit all remaining changes, write a commit message indiciating you’re finished, and push to GitHub. Before you finish, make sure all documents are updated on your GitHub repo.*
 
-### Acknowledgement
+### Acknowledgement {-}
 
 The data used in this lab was obtained from [https://github.com/proback/BYSH](https://github.com/proback/BYSH).
 
@@ -109,13 +109,13 @@ The data used in this lab was obtained from [https://github.com/proback/BYSH](ht
 
 When doing statistical analyses in practice, there is often a lot of time spent on cleaning and preparing the data. The goal of today's lab is to practice cleaning messy data, so it can be used in a regression analysis. You will also practice interpreting the results from a regression model that has numeric and categorical predictors and a log-transformed response variable. 
 
-### Packages
+### Packages {-}
 
 We will use the following packages in today's lab.
 
 
 
-### Data 
+### Data {-}
 
 Today's data is about Airbnb listings in Asheville, NC. The data was obtained from [http://insideairbnb.com/](http://insideairbnb.com/index.html); it was originally scraped from [airbnb.com](https://www.airbnb.com/).  
 
@@ -137,9 +137,9 @@ We will use the following variables in this lab:
 
 
 
-### Exercises 
+### Exercises  {-}
 
-#### Data wrangling
+#### Data wrangling {-}
 
 1. We would like to use variables from both the `basic_info` and `details` data frames in this analysis. Both dataframes have the variable `id` that uniquely identifies each Airbnb listing. Because we need data from `basic_info` and `details`, we only want to include observations that are in both the `basic_info` and `details` datasets. Therefore, we will use an `inner_join` to combine the two data sets. (Note: Both data frames include a variable called `id` that uniquely identifies each Airbnb listing. R will use this variable to join the two data frames.)
 
@@ -199,7 +199,7 @@ Use the code below to check that `prop_type_simp` was correctly made.
 Filter the `airbnb` data so that it only includes observations with  `minimum_nights <= 3`. You will use this filtered dataset for the remainder of the lab.
 
 
-#### Regression Analysis
+#### Regression Analysis {-}
 
 9. For the response variable, will use the cost to stay at an Airbnb location for 3 nights. Create a new variable called `price_3_nights` that uses `price` and `cleaning_fee` to calculate the total cost to stay at the Airbnb property for 3 nights. Be sure to add this variable to your dataframe.
 
@@ -222,9 +222,9 @@ Use the code below to conduct a Nested F test to determine if `room_type` is a s
 
 15. Suppose you are planning to visit Asheville over spring break, and you want to stay in an Airbnb. You find an Airbnb that is an apartment with a private room, has 10 reviews, and an average rating of 90. Use `model2` to predict the total cost to stay at this Airbnb for 3 nights. Include the appropriate 95% interval with your prediction. Report the prediction and interval in terms of `price_3_nights`. 
 
-*You're done! Commit all remaining changes, use the commit message "Done with Lab 5!", and push. Before you wrap up the assignment, make sure the .Rmd and .md  documents are updated in your GitHub repo. There is a 10% penalty if the .Rmd file has to be knitted to display graphs, i.e. the graphs are not showing in the .md file on GitHub.*
+*Knit then commit all remaining changes, write a commit message indiciating you’re finished, and push to GitHub. Before you finish, make sure all documents are updated on your GitHub repo.*
 
-### Acknowledgement
+### Acknowledgement {-}
 
 The data from this lab is from [insideairbnb.com](http://insideairbnb.com/index.html)
 

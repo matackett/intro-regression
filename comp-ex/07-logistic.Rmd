@@ -6,6 +6,8 @@ knitr::opts_chunk$set(
 )
 ```
 
+### Introduction {-}
+
 Over the past ten years, recommendation systems have become increasingly popular as more companies strive to offer customized user experiences. Amazon recommends products you may like based on your browse and purchase history, Netflix recommends movies and TV shows based on your viewing history, and music platforms like Spotify recommend songs you may like based on your listening history. While these recommendation systems are built using a variety of algorithms, they are all trying to achieve the same goal: use the characteristics of the products/movies/music a user is known to like to figure out the products/movies/music the user may like but hasn't discovered yet. 
 
 ```{r}
@@ -14,7 +16,7 @@ Over the past ten years, recommendation systems have become increasingly popular
 
 In today's lab, we will focus on using the characteristics of songs a user previously played to determine whether or not a user will like a new song. We will use logistic regression to build a model that predicts the probability a user likes a song using the relevant characteristics of that song.
 
-### Packages
+### Packages {-}
 
 You will need the following packages for today's lab: 
 
@@ -24,7 +26,7 @@ library(broom)
 ## Fill in other packages as needed
 ```
 
-### Data
+### Data {-}
 
 The data in this lab is from the [Spotify Song Attributes](https://www.kaggle.com/geomack/spotifyclassification) data set in Kaggle. This data set contains song characteristics of 2017 songs played by a single user and whether or not he liked the song. Since this dataset contains the song preferences of a single user, the scope of the analysis is limited to this particular user.
 
@@ -33,9 +35,9 @@ Click [**here**](https://www2.stat.duke.edu/courses/Spring19/sta210.001/labs/dat
 
 The  [Spotify documentation page](https://developer.spotify.com/documentation/web-api/reference/tracks/get-audio-features/) contains a description of the variables included in this dataset.
 
-### Exercises
+### Exercises {-}
 
-#### Exploratory Data Analysis
+#### Exploratory Data Analysis {-}
     
 1. Read through the [Spotify documentation page](https://developer.spotify.com/documentation/web-api/reference/tracks/get-audio-features/) to learn more about the variables in the dataset. The response variable for this analysis is `like`, such that 1 indicates that the user likes the song and 0 otherwise. The remaining will be considered as predictor variables in the model.
 ```{r}
@@ -55,7 +57,7 @@ The  [Spotify documentation page](https://developer.spotify.com/documentation/we
 
 *In practice, you should do exploratory data analysis for all potential explanatory variables. We did an abbreviated exploratory data analysis to make the assignment more manageable.*
 
-#### Part II: Logistic Regression Model
+#### Part II: Logistic Regression Model {-}
 
 5. Fit the full model and display the model output. The main objective for the model is to predict whether the user will like a song. Should we use this model for this objective? Briefly explain.  
 
@@ -74,7 +76,7 @@ For the remainder of this lab, you will use the model chosen by model selection 
 
     - Based on this model, is there evidence of a significant difference in the user's preference between songs in a major key versus those in a minor key? 
     
-#### Part III: Model Assessment
+#### Part III: Model Assessment {-}
 
 In the next few questions, we will do an abbreviated analysis of the residuals. 
 
@@ -90,7 +92,7 @@ In the next few questions, we will do an abbreviated analysis of the residuals.
 
 14. Based on the residual plots and the ROC curve, is this logistic model a good fit for the data? Briefly explain.
 
-#### Part IV: Prediction
+#### Part IV: Prediction {-}
 
 15. You are part of the data science team at Spotify, and your model will be used to make song recommendations to users. The goal is to recommend songs the user has a high probability of liking. 
 

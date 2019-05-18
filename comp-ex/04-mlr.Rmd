@@ -8,7 +8,7 @@ knitr::opts_chunk$set(
 
 The goal of this lab is to use multiple linear regression to understand the variation in the selling price of houses in King County, Washington. You will also gain practice using special predictors, such as categorical predictors and interaction effects, in the model, and you will be introduced to variable transformations.
 
-### Packages
+### Packages {-}
 
 We will use the following packages in today's lab.
 
@@ -18,7 +18,7 @@ library(knitr)
 library(broom)
 ```
 
-### Data 
+### Data {-}
 
 The for today's lab contains the price and other characteristics of over 20,000 houses sold in King County, Washington (the county that includes Seattle). The dataset includes the following variables:
 
@@ -37,7 +37,7 @@ The for today's lab contains the price and other characteristics of over 20,000 
 houses <- read_csv("data/KingCountyHouses.csv")
 ```
 
-### Exercises 
+### Exercises {-}
 
 1. Use data visualization and summary statistics to examine the distribution of `bedrooms`. What is the maximum value? Does this value make sense? If not, what is this an indication of, i.e. how did this value get recorded in the data? Briefly explain.
 
@@ -142,11 +142,11 @@ ggplot(data=houses,mapping=aes(x=_____,y=_____,color=as.factor(waterfront))) +
        color="Waterfront")
 ```
 
-**We will talk more about interaction effects in Monday's lecture. In HW 03, you explore potential interaction effects using this housing data.**
+**We will talk more about interaction effects soon. In HW 03, you explore potential interaction effects using this housing data.**
 
-*You're done! Commit all remaining changes, use the commit message "Done with Lab 4!", and push. Before you wrap up the assignment, make sure the .Rmd and .md  documents are updated in your GitHub repo. There is a 10% penalty if the .Rmd file has to be knitted to display graphs, i.e. the graphs are not showing in the .md file on GitHub.*
+*Knit then commit all remaining changes, write a commit message indiciating you’re finished, and push to GitHub. Before you finish, make sure all documents are updated on your GitHub repo.*
 
-### Acknowledgement
+### Acknowledgement {-}
 
 The data used in this lab was obtained from [https://github.com/proback/BYSH](https://github.com/proback/BYSH).
 

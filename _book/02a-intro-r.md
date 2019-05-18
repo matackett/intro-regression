@@ -268,6 +268,10 @@ Throughout the semester, we will learn various methods to deal with any violatio
 
 *Knit then commit all remaining changes, write a commit message indiciating you're finished, and push to GitHub. Before you finish, make sure all documents are updated on your GitHub repo.*
 
+### Acknowledgement {-}
+
+This assignment was modeled on the "Hello R" lab from [Data Science in a Box](www.datasciencebox.org).
+
 ***
 
 ## IN-CLASS: Movies on IMDB

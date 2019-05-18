@@ -5,11 +5,12 @@
 
 
 
+### Introduction {-}
 In this lab, you will put together everything you've learned thus far. Unlike previous lab assignments, your lab write up will be in the form of a small report (rather than numbered exercises). Though this analysis will not be as in-depth as your analysis in the final project, this assignment will give your group practice organizing the results of a statistical analysis to tell a complete narrative. 
 
 You will also practice imputing missing data and using k-fold cross validation to assess your model's performance on test data.
 
-### Packages
+### Packages {-}
 
 You will need the following packages for today's lab: 
 
@@ -20,13 +21,13 @@ library(dslabs)
 ## Fill in other packages as needed
 ```
 
-### Data
+### Data {-}
 
 The data for this lab is the `gapminder` dataset in the **dslabs** package. This dataset contains health and income data for 184 countries during the years 1960 to 2016. After loading the dslabs package, you can type `?gapminder` in the console to to see the variables in the dataset. 
 
 **You will only use data from 2011 in this lab.** 
 
-### Exercises
+### Exercises {-}
 
 The goal of this analysis is to build a regression model that could be used to predict a country's gross domestic product (`gdp`) using the other characteristics included in the data. 
 

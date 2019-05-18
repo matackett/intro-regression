@@ -163,7 +163,7 @@ np_bic <- summary_stats %>%
     - Which model selection criteria did you use ($BIC$, $Adj. R^2$, $R^2$)? Why?
     - What other factors did you consider besides the value of the model selection criteria? 
     
-### Acknowledgements
+### Acknowledgements {-}
 
 Part II of this assignment was modeled on Lab 6.5 in [An Introduction to Statistical Learning](http://www-bcf.usc.edu/~gareth/ISL/) and [Variable Selection in Regression](https://www.andrew.cmu.edu/user/achoulde/95791/homework/homework3.html).
 
