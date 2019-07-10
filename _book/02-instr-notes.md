@@ -14,13 +14,13 @@ To set up your course organization in GitHub:
 
 1. [Create a new organization](https://help.github.com/en/enterprise/2.16/admin/user-management/creating-organizations) in GitHub. To keep things simple, you can name the organization based on the course number and semester. For example, the organization name for my most recent Regression Analysis course was STA210-Sp19.
 
-2.  Apply for the [GitHub Education benefits](https://education.github.com/discount_requests/new) to obtain free private repositories for your course organization. By default any repositories created in the course organization will be private and only visible and accessible  to the student (or group of students) whose assignment it is and the instructor. This is to comply with Family Educational Rights and Privacy Act (FERPA). 
+2.  Apply for the [GitHub Education benefits](https://education.github.com/discount_requests/new) to obtain free private repositories for your course organization. By default any repositories created in the course organization will be private and thus only visible and accessible to the student (or group of students if it's a team assignment) who owns the assignment and the instructor. This is to comply with Family Educational Rights and Privacy Act (FERPA).
 
-3. Have students create a GitHub username and send it to you. You can share the guidelines from [@happygit] to help students create usernames that are applicable beyond their time in your course that can be shared with future employers.
+3. Now you're ready to add students to the GitHub course organization. Have students create a GitHub username and send it to you. You can share the guidelines from [@happygit] to help students create usernames that are applicable beyond their time in your course that can be shared with future employers.
 
     I typically have students provide their GitHub username as part of the "Getting to Know You" survey at the beginning of the semester. It doesn't take long to create a GitHub username, so this could also be done as an activity on one of the first few days of class. 
 
-4. Add students to the GitHub course organization using the `ghclass` R package. The section ["Adding students and creating teams"](https://rundel.github.io/ghclass/articles/ghclass.html) in [@ghclass] provides step-by-step instructions for adding new members to the course organization. 
+4. Add students to the GitHub course organization using the `ghclass` R package. The section ["Adding students and creating teams"](https://rundel.github.io/ghclass/articles/ghclass.html) in @ghclass provides step-by-step instructions for adding new members to the course organization. 
 
 5. If students will be working in teams, you can add the teams to the GitHub course organization using by following the steps in [@ghclass]. Any assignment repo for a group assignment will be visible and accessbile to all the members of the team and instructor. 
 

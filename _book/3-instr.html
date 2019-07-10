@@ -6,26 +6,25 @@
   <meta charset="UTF-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <title> 3 Notes for Instructors | Intro Regression</title>
-  <meta name="description" content="An electronic book with assignments and in-class activities to help students apply concepts in an intermediate-level regression analysis course. The primary focus of this text is application and computing; there are also supplemental math notes for some topics.">
+  <meta name="description" content="An electronic book with assignments and in-class activities to help students apply concepts in an intermediate-level regression analysis course. The primary focus is application and computing; there are also supplemental math notes on some topics.">
   <meta name="generator" content="bookdown  and GitBook 2.6.7">
 
   <meta property="og:title" content=" 3 Notes for Instructors | Intro Regression" />
   <meta property="og:type" content="book" />
   <meta property="og:url" content="https://www.introregression.org/" />
   <meta property="og:image" content="https://www.introregression.org/img/introregression-sticker.png" />
-  <meta property="og:description" content="An electronic book with assignments and in-class activities to help students apply concepts in an intermediate-level regression analysis course. The primary focus of this text is application and computing; there are also supplemental math notes for some topics." />
+  <meta property="og:description" content="An electronic book with assignments and in-class activities to help students apply concepts in an intermediate-level regression analysis course. The primary focus is application and computing; there are also supplemental math notes on some topics." />
   <meta name="github-repo" content="matackett/intro-regression" />
 
   <meta name="twitter:card" content="summary" />
   <meta name="twitter:title" content=" 3 Notes for Instructors | Intro Regression" />
   
-  <meta name="twitter:description" content="An electronic book with assignments and in-class activities to help students apply concepts in an intermediate-level regression analysis course. The primary focus of this text is application and computing; there are also supplemental math notes for some topics." />
+  <meta name="twitter:description" content="An electronic book with assignments and in-class activities to help students apply concepts in an intermediate-level regression analysis course. The primary focus is application and computing; there are also supplemental math notes on some topics." />
   <meta name="twitter:image" content="https://www.introregression.org/img/introregression-sticker.png" />
 
 <meta name="author" content="Maria Tackett">
 
 
-<meta name="date" content="2019-05-15">
 
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <meta name="apple-mobile-web-app-capable" content="yes">
@@ -33,7 +32,7 @@
   <link rel="apple-touch-icon-precomposed" sizes="152x152" href="img/introregression-sticker.png">
   <link rel="shortcut icon" href="img/introregression-sticker.png" type="image/x-icon">
 <link rel="prev" href="2-getstarted.html">
-<link rel="next" href="4-slr.html">
+<link rel="next" href="4-intro-r.html">
 <script src="libs/jquery-2.2.3/jquery.min.js"></script>
 <link href="libs/gitbook-2.6.7/css/style.css" rel="stylesheet" />
 <link href="libs/gitbook-2.6.7/css/plugin-table.css" rel="stylesheet" />
@@ -70,7 +69,7 @@
 <li class="chapter" data-level="1" data-path="index.html"><a href="index.html"><i class="fa fa-check"></i><b>1</b> fontsize: ‘12pt, krantz2’</a></li>
 <li class="chapter" data-level="2" data-path="2-getstarted.html"><a href="2-getstarted.html"><i class="fa fa-check"></i><b>2</b> Getting Started</a><ul>
 <li class="chapter" data-level="2.1" data-path="2-getstarted.html"><a href="2-getstarted.html#how-to-use-this-book"><i class="fa fa-check"></i><b>2.1</b> How to use this book</a></li>
-<li class="chapter" data-level="2.2" data-path="2-getstarted.html"><a href="2-getstarted.html#intro-statistics-review"><i class="fa fa-check"></i><b>2.2</b> Intro Statistics Review</a></li>
+<li class="chapter" data-level="2.2" data-path="2-getstarted.html"><a href="2-getstarted.html#review"><i class="fa fa-check"></i><b>2.2</b> Review: Intro Statistics and R</a></li>
 </ul></li>
 <li class="chapter" data-level="3" data-path="3-instr.html"><a href="3-instr.html"><i class="fa fa-check"></i><b>3</b> Notes for Instructors</a><ul>
 <li class="chapter" data-level="3.1" data-path="3-instr.html"><a href="3-instr.html#setting-up-your-course"><i class="fa fa-check"></i><b>3.1</b> Setting up your course</a><ul>
@@ -83,113 +82,144 @@
 </ul></li>
 <li class="chapter" data-level="3.3" data-path="3-instr.html"><a href="3-instr.html#additional-resources"><i class="fa fa-check"></i><b>3.3</b> Additional Resources</a></li>
 </ul></li>
-<li class="chapter" data-level="4" data-path="4-slr.html"><a href="4-slr.html"><i class="fa fa-check"></i><b>4</b> Simple Linear Regression</a><ul>
-<li class="chapter" data-level="4.1" data-path="4-slr.html"><a href="4-slr.html#comp-college-admissions"><i class="fa fa-check"></i><b>4.1</b> COMP: College Admissions</a><ul>
-<li class="chapter" data-level="4.1.1" data-path="4-slr.html"><a href="4-slr.html#packages"><i class="fa fa-check"></i><b>4.1.1</b> Packages</a></li>
-<li class="chapter" data-level="4.1.2" data-path="4-slr.html"><a href="4-slr.html#data"><i class="fa fa-check"></i><b>4.1.2</b> Data</a></li>
-<li class="chapter" data-level="4.1.3" data-path="4-slr.html"><a href="4-slr.html#exercises"><i class="fa fa-check"></i><b>4.1.3</b> Exercises</a></li>
+<li class="chapter" data-level="4" data-path="4-intro-r.html"><a href="4-intro-r.html"><i class="fa fa-check"></i><b>4</b> Intro to R</a><ul>
+<li class="chapter" data-level="4.1" data-path="4-intro-r.html"><a href="4-intro-r.html#comp-intro-to-r"><i class="fa fa-check"></i><b>4.1</b> COMP: Intro to R</a><ul>
+<li class="chapter" data-level="" data-path="4-intro-r.html"><a href="4-intro-r.html#introduction"><i class="fa fa-check"></i>Introduction</a></li>
+<li class="chapter" data-level="" data-path="4-intro-r.html"><a href="4-intro-r.html#packages"><i class="fa fa-check"></i>Packages</a></li>
+<li class="chapter" data-level="" data-path="4-intro-r.html"><a href="4-intro-r.html#warm-up"><i class="fa fa-check"></i>Warm up</a></li>
+<li class="chapter" data-level="" data-path="4-intro-r.html"><a href="4-intro-r.html#data"><i class="fa fa-check"></i>Data</a></li>
+<li class="chapter" data-level="" data-path="4-intro-r.html"><a href="4-intro-r.html#exercises"><i class="fa fa-check"></i>Exercises</a></li>
+<li class="chapter" data-level="" data-path="4-intro-r.html"><a href="4-intro-r.html#simple-linear-regression"><i class="fa fa-check"></i>Simple Linear Regression</a></li>
+<li class="chapter" data-level="" data-path="4-intro-r.html"><a href="4-intro-r.html#acknowledgement"><i class="fa fa-check"></i>Acknowledgement</a></li>
 </ul></li>
-<li class="chapter" data-level="4.2" data-path="4-slr.html"><a href="4-slr.html#in-class-advertising-sales"><i class="fa fa-check"></i><b>4.2</b> IN-CLASS: Advertising &amp; Sales</a><ul>
-<li class="chapter" data-level="4.2.1" data-path="4-slr.html"><a href="4-slr.html#data-and-packages"><i class="fa fa-check"></i><b>4.2.1</b> Data and packages</a></li>
-<li class="chapter" data-level="4.2.2" data-path="4-slr.html"><a href="4-slr.html#analysis"><i class="fa fa-check"></i><b>4.2.2</b> Analysis</a></li>
-</ul></li>
-<li class="chapter" data-level="4.3" data-path="4-slr.html"><a href="4-slr.html#in-class-carbohydrates-in-beer"><i class="fa fa-check"></i><b>4.3</b> IN-CLASS: Carbohydrates in Beer</a></li>
-</ul></li>
-<li class="chapter" data-level="5" data-path="5-anova.html"><a href="5-anova.html"><i class="fa fa-check"></i><b>5</b> Analysis of Variance</a><ul>
-<li class="chapter" data-level="5.1" data-path="5-anova.html"><a href="5-anova.html#comp-diamonds"><i class="fa fa-check"></i><b>5.1</b> COMP: Diamonds</a><ul>
-<li class="chapter" data-level="5.1.1" data-path="5-anova.html"><a href="5-anova.html#packages-1"><i class="fa fa-check"></i><b>5.1.1</b> Packages</a></li>
-<li class="chapter" data-level="5.1.2" data-path="5-anova.html"><a href="5-anova.html#data-1"><i class="fa fa-check"></i><b>5.1.2</b> Data</a></li>
-<li class="chapter" data-level="5.1.3" data-path="5-anova.html"><a href="5-anova.html#exercises-1"><i class="fa fa-check"></i><b>5.1.3</b> Exercises</a></li>
-</ul></li>
-</ul></li>
-<li class="chapter" data-level="6" data-path="6-mlr.html"><a href="6-mlr.html"><i class="fa fa-check"></i><b>6</b> Multiple Linear Regression</a><ul>
-<li class="chapter" data-level="6.1" data-path="6-mlr.html"><a href="6-mlr.html#comp-houses-in-king-county"><i class="fa fa-check"></i><b>6.1</b> COMP: Houses in King County</a><ul>
-<li class="chapter" data-level="6.1.1" data-path="6-mlr.html"><a href="6-mlr.html#packages-2"><i class="fa fa-check"></i><b>6.1.1</b> Packages</a></li>
-<li class="chapter" data-level="6.1.2" data-path="6-mlr.html"><a href="6-mlr.html#data-2"><i class="fa fa-check"></i><b>6.1.2</b> Data</a></li>
-<li class="chapter" data-level="6.1.3" data-path="6-mlr.html"><a href="6-mlr.html#exercises-2"><i class="fa fa-check"></i><b>6.1.3</b> Exercises</a></li>
-<li class="chapter" data-level="6.1.4" data-path="6-mlr.html"><a href="6-mlr.html#acknowledgement"><i class="fa fa-check"></i><b>6.1.4</b> Acknowledgement</a></li>
-</ul></li>
-<li class="chapter" data-level="6.2" data-path="6-mlr.html"><a href="6-mlr.html#comp-airbnb-in-asheville-nc"><i class="fa fa-check"></i><b>6.2</b> COMP: Airbnb in Asheville, NC</a><ul>
-<li class="chapter" data-level="6.2.1" data-path="6-mlr.html"><a href="6-mlr.html#packages-3"><i class="fa fa-check"></i><b>6.2.1</b> Packages</a></li>
-<li class="chapter" data-level="6.2.2" data-path="6-mlr.html"><a href="6-mlr.html#data-3"><i class="fa fa-check"></i><b>6.2.2</b> Data</a></li>
-<li class="chapter" data-level="6.2.3" data-path="6-mlr.html"><a href="6-mlr.html#exercises-3"><i class="fa fa-check"></i><b>6.2.3</b> Exercises</a></li>
-<li class="chapter" data-level="6.2.4" data-path="6-mlr.html"><a href="6-mlr.html#acknowledgement-1"><i class="fa fa-check"></i><b>6.2.4</b> Acknowledgement</a></li>
-</ul></li>
-<li class="chapter" data-level="6.3" data-path="6-mlr.html"><a href="6-mlr.html#in-class-wages"><i class="fa fa-check"></i><b>6.3</b> IN-CLASS: Wages</a><ul>
-<li class="chapter" data-level="6.3.1" data-path="6-mlr.html"><a href="6-mlr.html#initial-model"><i class="fa fa-check"></i><b>6.3.1</b> Initial model</a></li>
-<li class="chapter" data-level="6.3.2" data-path="6-mlr.html"><a href="6-mlr.html#model-with-mean-centered-variables"><i class="fa fa-check"></i><b>6.3.2</b> Model with mean-centered variables</a></li>
-<li class="chapter" data-level="6.3.3" data-path="6-mlr.html"><a href="6-mlr.html#model-with-indicator-variables"><i class="fa fa-check"></i><b>6.3.3</b> Model with indicator variables</a></li>
-</ul></li>
-<li class="chapter" data-level="6.4" data-path="6-mlr.html"><a href="6-mlr.html#notes-matrix-form-of-linear-regression"><i class="fa fa-check"></i><b>6.4</b> NOTES: Matrix Form of Linear Regression</a><ul>
-<li class="chapter" data-level="6.4.1" data-path="6-mlr.html"><a href="6-mlr.html#introduction"><i class="fa fa-check"></i><b>6.4.1</b> Introduction</a></li>
-<li class="chapter" data-level="6.4.2" data-path="6-mlr.html"><a href="6-mlr.html#matrix-form-for-the-regression-model"><i class="fa fa-check"></i><b>6.4.2</b> Matrix Form for the Regression Model</a></li>
-<li class="chapter" data-level="6.4.3" data-path="6-mlr.html"><a href="6-mlr.html#estimating-the-coefficients"><i class="fa fa-check"></i><b>6.4.3</b> Estimating the Coefficients</a></li>
-<li class="chapter" data-level="6.4.4" data-path="6-mlr.html"><a href="6-mlr.html#variance-covariance-matrix-of-the-coefficients"><i class="fa fa-check"></i><b>6.4.4</b> Variance-covariance matrix of the coefficients</a></li>
-</ul></li>
-<li class="chapter" data-level="6.5" data-path="6-mlr.html"><a href="6-mlr.html#notes-log-transformations"><i class="fa fa-check"></i><b>6.5</b> NOTES: Log Transformations</a><ul>
-<li class="chapter" data-level="6.5.1" data-path="6-mlr.html"><a href="6-mlr.html#log-transformation-on-the-response-variable"><i class="fa fa-check"></i><b>6.5.1</b> Log-transformation on the response variable</a></li>
-<li class="chapter" data-level="6.5.2" data-path="6-mlr.html"><a href="6-mlr.html#log-transformation-on-the-predictor-variable"><i class="fa fa-check"></i><b>6.5.2</b> Log-transformation on the predictor variable</a></li>
-<li class="chapter" data-level="6.5.3" data-path="6-mlr.html"><a href="6-mlr.html#log-transformation-on-the-the-response-and-predictor-variable"><i class="fa fa-check"></i><b>6.5.3</b> Log-transformation on the the response and predictor variable</a></li>
-</ul></li>
-<li class="chapter" data-level="6.6" data-path="6-mlr.html"><a href="6-mlr.html#notes-model-diagnostics"><i class="fa fa-check"></i><b>6.6</b> NOTES: Model Diagnostics</a><ul>
-<li class="chapter" data-level="6.6.1" data-path="6-mlr.html"><a href="6-mlr.html#introduction-1"><i class="fa fa-check"></i><b>6.6.1</b> Introduction</a></li>
-<li class="chapter" data-level="6.6.2" data-path="6-mlr.html"><a href="6-mlr.html#matrix-form-for-the-regression-model-1"><i class="fa fa-check"></i><b>6.6.2</b> Matrix Form for the Regression Model</a></li>
-<li class="chapter" data-level="6.6.3" data-path="6-mlr.html"><a href="6-mlr.html#hat-matrix-leverage"><i class="fa fa-check"></i><b>6.6.3</b> Hat Matrix &amp; Leverage</a></li>
-<li class="chapter" data-level="6.6.4" data-path="6-mlr.html"><a href="6-mlr.html#standardized-residuals"><i class="fa fa-check"></i><b>6.6.4</b> Standardized Residuals</a></li>
-<li class="chapter" data-level="6.6.5" data-path="6-mlr.html"><a href="6-mlr.html#cooks-distance"><i class="fa fa-check"></i><b>6.6.5</b> Cook’s Distance</a></li>
+<li class="chapter" data-level="4.2" data-path="4-intro-r.html"><a href="4-intro-r.html#in-class-movies-on-imdb"><i class="fa fa-check"></i><b>4.2</b> IN-CLASS: Movies on IMDB</a><ul>
+<li class="chapter" data-level="" data-path="4-intro-r.html"><a href="4-intro-r.html#data-1"><i class="fa fa-check"></i>Data</a></li>
+<li class="chapter" data-level="" data-path="4-intro-r.html"><a href="4-intro-r.html#analysis"><i class="fa fa-check"></i>Analysis</a></li>
+<li class="chapter" data-level="" data-path="4-intro-r.html"><a href="4-intro-r.html#next-steps"><i class="fa fa-check"></i>Next Steps</a></li>
+<li class="chapter" data-level="" data-path="4-intro-r.html"><a href="4-intro-r.html#discussion-questions"><i class="fa fa-check"></i>Discussion Questions</a></li>
+<li class="chapter" data-level="" data-path="4-intro-r.html"><a href="4-intro-r.html#appendix"><i class="fa fa-check"></i>Appendix</a></li>
 </ul></li>
 </ul></li>
-<li class="chapter" data-level="7" data-path="7-select.html"><a href="7-select.html"><i class="fa fa-check"></i><b>7</b> Model Selection</a><ul>
-<li class="chapter" data-level="7.1" data-path="7-select.html"><a href="7-select.html#comp-sats-and-mlb"><i class="fa fa-check"></i><b>7.1</b> COMP: SATs and MLB</a><ul>
-<li class="chapter" data-level="7.1.1" data-path="7-select.html"><a href="7-select.html#packages-4"><i class="fa fa-check"></i><b>7.1.1</b> Packages</a></li>
-<li class="chapter" data-level="7.1.2" data-path="7-select.html"><a href="7-select.html#data-4"><i class="fa fa-check"></i><b>7.1.2</b> Data</a></li>
-<li class="chapter" data-level="7.1.3" data-path="7-select.html"><a href="7-select.html#exercises-4"><i class="fa fa-check"></i><b>7.1.3</b> Exercises</a></li>
-<li class="chapter" data-level="7.1.4" data-path="7-select.html"><a href="7-select.html#acknowledgements"><i class="fa fa-check"></i><b>7.1.4</b> Acknowledgements</a></li>
+<li class="chapter" data-level="5" data-path="5-slr.html"><a href="5-slr.html"><i class="fa fa-check"></i><b>5</b> Simple Linear Regression</a><ul>
+<li class="chapter" data-level="5.1" data-path="5-slr.html"><a href="5-slr.html#comp-college-admissions"><i class="fa fa-check"></i><b>5.1</b> COMP: College Admissions</a><ul>
+<li class="chapter" data-level="" data-path="5-slr.html"><a href="5-slr.html#introduction-1"><i class="fa fa-check"></i>Introduction</a></li>
+<li class="chapter" data-level="" data-path="5-slr.html"><a href="5-slr.html#packages-1"><i class="fa fa-check"></i>Packages</a></li>
+<li class="chapter" data-level="" data-path="5-slr.html"><a href="5-slr.html#data-2"><i class="fa fa-check"></i>Data</a></li>
+<li class="chapter" data-level="" data-path="5-slr.html"><a href="5-slr.html#exercises-1"><i class="fa fa-check"></i>Exercises</a></li>
 </ul></li>
-<li class="chapter" data-level="7.2" data-path="7-select.html"><a href="7-select.html#in-class-sats-by-state"><i class="fa fa-check"></i><b>7.2</b> IN-CLASS: SATs by State</a><ul>
-<li class="chapter" data-level="7.2.1" data-path="7-select.html"><a href="7-select.html#backward-selection-manually"><i class="fa fa-check"></i><b>7.2.1</b> Backward selection “manually”</a></li>
-<li class="chapter" data-level="7.2.2" data-path="7-select.html"><a href="7-select.html#backward-selection-using-regsubsets"><i class="fa fa-check"></i><b>7.2.2</b> Backward selection using regsubsets</a></li>
-<li class="chapter" data-level="7.2.3" data-path="7-select.html"><a href="7-select.html#changing-selection-criteria"><i class="fa fa-check"></i><b>7.2.3</b> Changing selection criteria</a></li>
-<li class="chapter" data-level="7.2.4" data-path="7-select.html"><a href="7-select.html#different-selection-procedure"><i class="fa fa-check"></i><b>7.2.4</b> Different selection procedure</a></li>
-<li class="chapter" data-level="7.2.5" data-path="7-select.html"><a href="7-select.html#choosing-a-final-model"><i class="fa fa-check"></i><b>7.2.5</b> Choosing a final model</a></li>
+<li class="chapter" data-level="5.2" data-path="5-slr.html"><a href="5-slr.html#in-class-advertising-sales"><i class="fa fa-check"></i><b>5.2</b> IN-CLASS: Advertising &amp; Sales</a><ul>
+<li class="chapter" data-level="" data-path="5-slr.html"><a href="5-slr.html#packages-2"><i class="fa fa-check"></i>Packages</a></li>
+<li class="chapter" data-level="" data-path="5-slr.html"><a href="5-slr.html#data-3"><i class="fa fa-check"></i>Data</a></li>
+<li class="chapter" data-level="" data-path="5-slr.html"><a href="5-slr.html#exercises-2"><i class="fa fa-check"></i>Exercises</a></li>
 </ul></li>
-<li class="chapter" data-level="7.3" data-path="7-select.html"><a href="7-select.html#notes-model-selection-criteria"><i class="fa fa-check"></i><b>7.3</b> NOTES: Model Selection Criteria</a><ul>
-<li class="chapter" data-level="7.3.1" data-path="7-select.html"><a href="7-select.html#maximum-likelihood-estimation-of-boldsymbolbeta-and-sigma"><i class="fa fa-check"></i><b>7.3.1</b> Maximum Likelihood Estimation of <span class="math inline">\(\boldsymbol{\beta}\)</span> and <span class="math inline">\(\sigma\)</span></a></li>
-<li class="chapter" data-level="7.3.2" data-path="7-select.html"><a href="7-select.html#aic"><i class="fa fa-check"></i><b>7.3.2</b> AIC</a></li>
-<li class="chapter" data-level="7.3.3" data-path="7-select.html"><a href="7-select.html#bic"><i class="fa fa-check"></i><b>7.3.3</b> BIC</a></li>
+<li class="chapter" data-level="5.3" data-path="5-slr.html"><a href="5-slr.html#in-class-carbohydrates-in-beer"><i class="fa fa-check"></i><b>5.3</b> IN-CLASS: Carbohydrates in Beer</a><ul>
+<li class="chapter" data-level="" data-path="5-slr.html"><a href="5-slr.html#packages-3"><i class="fa fa-check"></i>Packages</a></li>
+<li class="chapter" data-level="" data-path="5-slr.html"><a href="5-slr.html#data-4"><i class="fa fa-check"></i>Data</a></li>
+<li class="chapter" data-level="" data-path="5-slr.html"><a href="5-slr.html#exercises-3"><i class="fa fa-check"></i>Exercises</a></li>
 </ul></li>
 </ul></li>
-<li class="chapter" data-level="8" data-path="8-logistic.html"><a href="8-logistic.html"><i class="fa fa-check"></i><b>8</b> Logistic Regression</a><ul>
-<li class="chapter" data-level="8.1" data-path="8-logistic.html"><a href="8-logistic.html#comp-spotify"><i class="fa fa-check"></i><b>8.1</b> COMP: Spotify</a><ul>
-<li class="chapter" data-level="8.1.1" data-path="8-logistic.html"><a href="8-logistic.html#packages-5"><i class="fa fa-check"></i><b>8.1.1</b> Packages</a></li>
-<li class="chapter" data-level="8.1.2" data-path="8-logistic.html"><a href="8-logistic.html#data-5"><i class="fa fa-check"></i><b>8.1.2</b> Data</a></li>
-<li class="chapter" data-level="8.1.3" data-path="8-logistic.html"><a href="8-logistic.html#exercises-5"><i class="fa fa-check"></i><b>8.1.3</b> Exercises</a></li>
+<li class="chapter" data-level="6" data-path="6-anova.html"><a href="6-anova.html"><i class="fa fa-check"></i><b>6</b> Analysis of Variance</a><ul>
+<li class="chapter" data-level="6.0.1" data-path="6-anova.html"><a href="6-anova.html#comp-diamonds"><i class="fa fa-check"></i><b>6.0.1</b> COMP: Diamonds</a></li>
+<li class="chapter" data-level="" data-path="6-anova.html"><a href="6-anova.html#introduction-2"><i class="fa fa-check"></i>Introduction</a></li>
+<li class="chapter" data-level="" data-path="6-anova.html"><a href="6-anova.html#data-5"><i class="fa fa-check"></i>Data</a></li>
+<li class="chapter" data-level="" data-path="6-anova.html"><a href="6-anova.html#exercises-4"><i class="fa fa-check"></i>Exercises</a></li>
 </ul></li>
-<li class="chapter" data-level="8.2" data-path="8-logistic.html"><a href="8-logistic.html#in-class-risk-of-heart-disease"><i class="fa fa-check"></i><b>8.2</b> IN-CLASS: Risk of Heart Disease</a><ul>
-<li class="chapter" data-level="8.2.1" data-path="8-logistic.html"><a href="8-logistic.html#references"><i class="fa fa-check"></i><b>8.2.1</b> References</a></li>
+<li class="chapter" data-level="7" data-path="7-mlr.html"><a href="7-mlr.html"><i class="fa fa-check"></i><b>7</b> Multiple Linear Regression</a><ul>
+<li class="chapter" data-level="7.1" data-path="7-mlr.html"><a href="7-mlr.html#comp-houses-in-king-county"><i class="fa fa-check"></i><b>7.1</b> COMP: Houses in King County</a><ul>
+<li class="chapter" data-level="" data-path="7-mlr.html"><a href="7-mlr.html#packages-5"><i class="fa fa-check"></i>Packages</a></li>
+<li class="chapter" data-level="" data-path="7-mlr.html"><a href="7-mlr.html#data-6"><i class="fa fa-check"></i>Data</a></li>
+<li class="chapter" data-level="" data-path="7-mlr.html"><a href="7-mlr.html#exercises-5"><i class="fa fa-check"></i>Exercises</a></li>
+<li class="chapter" data-level="" data-path="7-mlr.html"><a href="7-mlr.html#acknowledgement-1"><i class="fa fa-check"></i>Acknowledgement</a></li>
+</ul></li>
+<li class="chapter" data-level="7.2" data-path="7-mlr.html"><a href="7-mlr.html#comp-airbnb-in-asheville-nc"><i class="fa fa-check"></i><b>7.2</b> COMP: Airbnb in Asheville, NC</a><ul>
+<li class="chapter" data-level="" data-path="7-mlr.html"><a href="7-mlr.html#packages-6"><i class="fa fa-check"></i>Packages</a></li>
+<li class="chapter" data-level="" data-path="7-mlr.html"><a href="7-mlr.html#data-7"><i class="fa fa-check"></i>Data</a></li>
+<li class="chapter" data-level="" data-path="7-mlr.html"><a href="7-mlr.html#exercises-6"><i class="fa fa-check"></i>Exercises</a></li>
+<li class="chapter" data-level="" data-path="7-mlr.html"><a href="7-mlr.html#acknowledgement-2"><i class="fa fa-check"></i>Acknowledgement</a></li>
+</ul></li>
+<li class="chapter" data-level="7.3" data-path="7-mlr.html"><a href="7-mlr.html#in-class-wages"><i class="fa fa-check"></i><b>7.3</b> IN-CLASS: Wages</a><ul>
+<li class="chapter" data-level="" data-path="7-mlr.html"><a href="7-mlr.html#packages-7"><i class="fa fa-check"></i>Packages</a></li>
+<li class="chapter" data-level="" data-path="7-mlr.html"><a href="7-mlr.html#data-8"><i class="fa fa-check"></i>Data</a></li>
+<li class="chapter" data-level="" data-path="7-mlr.html"><a href="7-mlr.html#exercises-7"><i class="fa fa-check"></i>Exercises</a></li>
+</ul></li>
+<li class="chapter" data-level="7.4" data-path="7-mlr.html"><a href="7-mlr.html#notes-matrix-form-of-linear-regression"><i class="fa fa-check"></i><b>7.4</b> NOTES: Matrix Form of Linear Regression</a><ul>
+<li class="chapter" data-level="7.4.1" data-path="7-mlr.html"><a href="7-mlr.html#introduction-3"><i class="fa fa-check"></i><b>7.4.1</b> Introduction</a></li>
+<li class="chapter" data-level="7.4.2" data-path="7-mlr.html"><a href="7-mlr.html#matrix-form-for-the-regression-model"><i class="fa fa-check"></i><b>7.4.2</b> Matrix Form for the Regression Model</a></li>
+<li class="chapter" data-level="7.4.3" data-path="7-mlr.html"><a href="7-mlr.html#estimating-the-coefficients"><i class="fa fa-check"></i><b>7.4.3</b> Estimating the Coefficients</a></li>
+<li class="chapter" data-level="7.4.4" data-path="7-mlr.html"><a href="7-mlr.html#variance-covariance-matrix-of-the-coefficients"><i class="fa fa-check"></i><b>7.4.4</b> Variance-covariance matrix of the coefficients</a></li>
+</ul></li>
+<li class="chapter" data-level="7.5" data-path="7-mlr.html"><a href="7-mlr.html#notes-log-transformations"><i class="fa fa-check"></i><b>7.5</b> NOTES: Log Transformations</a><ul>
+<li class="chapter" data-level="7.5.1" data-path="7-mlr.html"><a href="7-mlr.html#log-transformation-on-the-response-variable"><i class="fa fa-check"></i><b>7.5.1</b> Log-transformation on the response variable</a></li>
+<li class="chapter" data-level="7.5.2" data-path="7-mlr.html"><a href="7-mlr.html#log-transformation-on-the-predictor-variable"><i class="fa fa-check"></i><b>7.5.2</b> Log-transformation on the predictor variable</a></li>
+<li class="chapter" data-level="7.5.3" data-path="7-mlr.html"><a href="7-mlr.html#log-transformation-on-the-the-response-and-predictor-variable"><i class="fa fa-check"></i><b>7.5.3</b> Log-transformation on the the response and predictor variable</a></li>
+</ul></li>
+<li class="chapter" data-level="7.6" data-path="7-mlr.html"><a href="7-mlr.html#notes-model-diagnostics"><i class="fa fa-check"></i><b>7.6</b> NOTES: Model Diagnostics</a><ul>
+<li class="chapter" data-level="7.6.1" data-path="7-mlr.html"><a href="7-mlr.html#introduction-4"><i class="fa fa-check"></i><b>7.6.1</b> Introduction</a></li>
+<li class="chapter" data-level="7.6.2" data-path="7-mlr.html"><a href="7-mlr.html#matrix-form-for-the-regression-model-1"><i class="fa fa-check"></i><b>7.6.2</b> Matrix Form for the Regression Model</a></li>
+<li class="chapter" data-level="7.6.3" data-path="7-mlr.html"><a href="7-mlr.html#hat-matrix-leverage"><i class="fa fa-check"></i><b>7.6.3</b> Hat Matrix &amp; Leverage</a></li>
+<li class="chapter" data-level="7.6.4" data-path="7-mlr.html"><a href="7-mlr.html#standardized-residuals"><i class="fa fa-check"></i><b>7.6.4</b> Standardized Residuals</a></li>
+<li class="chapter" data-level="7.6.5" data-path="7-mlr.html"><a href="7-mlr.html#cooks-distance"><i class="fa fa-check"></i><b>7.6.5</b> Cook’s Distance</a></li>
 </ul></li>
 </ul></li>
-<li class="chapter" data-level="9" data-path="9-multinom-logistic.html"><a href="9-multinom-logistic.html"><i class="fa fa-check"></i><b>9</b> Multinomial Logistic Regression</a><ul>
-<li class="chapter" data-level="9.1" data-path="9-multinom-logistic.html"><a href="9-multinom-logistic.html#comp-general-social-survey"><i class="fa fa-check"></i><b>9.1</b> COMP: General Social Survey</a><ul>
-<li class="chapter" data-level="9.1.1" data-path="9-multinom-logistic.html"><a href="9-multinom-logistic.html#packages-6"><i class="fa fa-check"></i><b>9.1.1</b> Packages</a></li>
-<li class="chapter" data-level="9.1.2" data-path="9-multinom-logistic.html"><a href="9-multinom-logistic.html#data-6"><i class="fa fa-check"></i><b>9.1.2</b> Data</a></li>
-<li class="chapter" data-level="9.1.3" data-path="9-multinom-logistic.html"><a href="9-multinom-logistic.html#exercises-6"><i class="fa fa-check"></i><b>9.1.3</b> Exercises</a></li>
-<li class="chapter" data-level="9.1.4" data-path="9-multinom-logistic.html"><a href="9-multinom-logistic.html#acknowledgements-1"><i class="fa fa-check"></i><b>9.1.4</b> Acknowledgements</a></li>
+<li class="chapter" data-level="8" data-path="8-select.html"><a href="8-select.html"><i class="fa fa-check"></i><b>8</b> Model Selection</a><ul>
+<li class="chapter" data-level="8.1" data-path="8-select.html"><a href="8-select.html#comp-sats-and-mlb"><i class="fa fa-check"></i><b>8.1</b> COMP: SATs and MLB</a><ul>
+<li class="chapter" data-level="" data-path="8-select.html"><a href="8-select.html#introduction-5"><i class="fa fa-check"></i>Introduction</a></li>
+<li class="chapter" data-level="" data-path="8-select.html"><a href="8-select.html#data-9"><i class="fa fa-check"></i>Data</a></li>
+<li class="chapter" data-level="" data-path="8-select.html"><a href="8-select.html#exercises-8"><i class="fa fa-check"></i>Exercises</a></li>
+<li class="chapter" data-level="" data-path="8-select.html"><a href="8-select.html#acknowledgements"><i class="fa fa-check"></i>Acknowledgements</a></li>
 </ul></li>
-<li class="chapter" data-level="9.2" data-path="9-multinom-logistic.html"><a href="9-multinom-logistic.html#in-class-sesame-street"><i class="fa fa-check"></i><b>9.2</b> IN-CLASS: Sesame Street</a><ul>
-<li class="chapter" data-level="9.2.1" data-path="9-multinom-logistic.html"><a href="9-multinom-logistic.html#questions"><i class="fa fa-check"></i><b>9.2.1</b> Questions</a></li>
-<li class="chapter" data-level="9.2.2" data-path="9-multinom-logistic.html"><a href="9-multinom-logistic.html#references-1"><i class="fa fa-check"></i><b>9.2.2</b> References</a></li>
+<li class="chapter" data-level="8.2" data-path="8-select.html"><a href="8-select.html#in-class-sats-by-state"><i class="fa fa-check"></i><b>8.2</b> IN-CLASS: SATs by State</a><ul>
+<li class="chapter" data-level="" data-path="8-select.html"><a href="8-select.html#manual-backward-selection"><i class="fa fa-check"></i>“Manual” backward selection</a></li>
+<li class="chapter" data-level="" data-path="8-select.html"><a href="8-select.html#backward-selection-using-regsubsets"><i class="fa fa-check"></i>Backward selection using regsubsets</a></li>
+<li class="chapter" data-level="" data-path="8-select.html"><a href="8-select.html#changing-selection-criteria"><i class="fa fa-check"></i>Changing selection criteria</a></li>
+<li class="chapter" data-level="" data-path="8-select.html"><a href="8-select.html#different-selection-procedure"><i class="fa fa-check"></i>Different selection procedure</a></li>
+<li class="chapter" data-level="" data-path="8-select.html"><a href="8-select.html#choosing-a-final-model"><i class="fa fa-check"></i>Choosing a final model</a></li>
+</ul></li>
+<li class="chapter" data-level="8.3" data-path="8-select.html"><a href="8-select.html#notes-model-selection-criteria"><i class="fa fa-check"></i><b>8.3</b> NOTES: Model Selection Criteria</a><ul>
+<li class="chapter" data-level="8.3.1" data-path="8-select.html"><a href="8-select.html#maximum-likelihood-estimation-of-boldsymbolbeta-and-sigma"><i class="fa fa-check"></i><b>8.3.1</b> Maximum Likelihood Estimation of <span class="math inline">\(\boldsymbol{\beta}\)</span> and <span class="math inline">\(\sigma\)</span></a></li>
+<li class="chapter" data-level="8.3.2" data-path="8-select.html"><a href="8-select.html#aic"><i class="fa fa-check"></i><b>8.3.2</b> AIC</a></li>
+<li class="chapter" data-level="8.3.3" data-path="8-select.html"><a href="8-select.html#bic"><i class="fa fa-check"></i><b>8.3.3</b> BIC</a></li>
 </ul></li>
 </ul></li>
-<li class="chapter" data-level="10" data-path="10-special.html"><a href="10-special.html"><i class="fa fa-check"></i><b>10</b> Special Topics</a><ul>
-<li class="chapter" data-level="10.1" data-path="10-special.html"><a href="10-special.html#comp-regression-start-to-finish"><i class="fa fa-check"></i><b>10.1</b> COMP: Regression Start to Finish</a><ul>
-<li class="chapter" data-level="10.1.1" data-path="10-special.html"><a href="10-special.html#packages-7"><i class="fa fa-check"></i><b>10.1.1</b> Packages</a></li>
-<li class="chapter" data-level="10.1.2" data-path="10-special.html"><a href="10-special.html#data-7"><i class="fa fa-check"></i><b>10.1.2</b> Data</a></li>
-<li class="chapter" data-level="10.1.3" data-path="10-special.html"><a href="10-special.html#exercises-7"><i class="fa fa-check"></i><b>10.1.3</b> Exercises</a></li>
+<li class="chapter" data-level="9" data-path="9-logistic.html"><a href="9-logistic.html"><i class="fa fa-check"></i><b>9</b> Logistic Regression</a><ul>
+<li class="chapter" data-level="9.1" data-path="9-logistic.html"><a href="9-logistic.html#comp-spotify"><i class="fa fa-check"></i><b>9.1</b> COMP: Spotify</a><ul>
+<li class="chapter" data-level="" data-path="9-logistic.html"><a href="9-logistic.html#introduction-6"><i class="fa fa-check"></i>Introduction</a></li>
+<li class="chapter" data-level="" data-path="9-logistic.html"><a href="9-logistic.html#packages-9"><i class="fa fa-check"></i>Packages</a></li>
+<li class="chapter" data-level="" data-path="9-logistic.html"><a href="9-logistic.html#data-10"><i class="fa fa-check"></i>Data</a></li>
+<li class="chapter" data-level="" data-path="9-logistic.html"><a href="9-logistic.html#exercises-9"><i class="fa fa-check"></i>Exercises</a></li>
 </ul></li>
-<li class="chapter" data-level="10.2" data-path="10-special.html"><a href="10-special.html#in-class-missing-data-exercise"><i class="fa fa-check"></i><b>10.2</b> IN-CLASS: Missing Data Exercise</a></li>
+<li class="chapter" data-level="9.2" data-path="9-logistic.html"><a href="9-logistic.html#in-class-risk-of-heart-disease"><i class="fa fa-check"></i><b>9.2</b> IN-CLASS: Risk of Heart Disease</a><ul>
+<li class="chapter" data-level="" data-path="9-logistic.html"><a href="9-logistic.html#packages-10"><i class="fa fa-check"></i>Packages</a></li>
+<li class="chapter" data-level="" data-path="9-logistic.html"><a href="9-logistic.html#data-11"><i class="fa fa-check"></i>Data</a></li>
+<li class="chapter" data-level="" data-path="9-logistic.html"><a href="9-logistic.html#exercises-10"><i class="fa fa-check"></i>Exercises</a></li>
+<li class="chapter" data-level="" data-path="9-logistic.html"><a href="9-logistic.html#references"><i class="fa fa-check"></i>References</a></li>
 </ul></li>
-<li class="chapter" data-level="11" data-path="11-datasets.html"><a href="11-datasets.html"><i class="fa fa-check"></i><b>11</b> Data Sets</a></li>
+</ul></li>
+<li class="chapter" data-level="10" data-path="10-multinom-logistic.html"><a href="10-multinom-logistic.html"><i class="fa fa-check"></i><b>10</b> Multinomial Logistic Regression</a><ul>
+<li class="chapter" data-level="10.1" data-path="10-multinom-logistic.html"><a href="10-multinom-logistic.html#comp-general-social-survey"><i class="fa fa-check"></i><b>10.1</b> COMP: General Social Survey</a><ul>
+<li class="chapter" data-level="" data-path="10-multinom-logistic.html"><a href="10-multinom-logistic.html#introduction-7"><i class="fa fa-check"></i>Introduction</a></li>
+<li class="chapter" data-level="" data-path="10-multinom-logistic.html"><a href="10-multinom-logistic.html#packages-11"><i class="fa fa-check"></i>Packages</a></li>
+<li class="chapter" data-level="" data-path="10-multinom-logistic.html"><a href="10-multinom-logistic.html#data-12"><i class="fa fa-check"></i>Data</a></li>
+<li class="chapter" data-level="" data-path="10-multinom-logistic.html"><a href="10-multinom-logistic.html#exercises-11"><i class="fa fa-check"></i>Exercises</a></li>
+<li class="chapter" data-level="" data-path="10-multinom-logistic.html"><a href="10-multinom-logistic.html#acknowledgements-1"><i class="fa fa-check"></i>Acknowledgements</a></li>
+</ul></li>
+<li class="chapter" data-level="10.2" data-path="10-multinom-logistic.html"><a href="10-multinom-logistic.html#in-class-sesame-street"><i class="fa fa-check"></i><b>10.2</b> IN-CLASS: Sesame Street</a><ul>
+<li class="chapter" data-level="" data-path="10-multinom-logistic.html"><a href="10-multinom-logistic.html#packages-12"><i class="fa fa-check"></i>Packages</a></li>
+<li class="chapter" data-level="" data-path="10-multinom-logistic.html"><a href="10-multinom-logistic.html#data-13"><i class="fa fa-check"></i>Data</a></li>
+<li class="chapter" data-level="" data-path="10-multinom-logistic.html"><a href="10-multinom-logistic.html#exercises-12"><i class="fa fa-check"></i>Exercises</a></li>
+<li class="chapter" data-level="" data-path="10-multinom-logistic.html"><a href="10-multinom-logistic.html#references-1"><i class="fa fa-check"></i>References</a></li>
+</ul></li>
+</ul></li>
+<li class="chapter" data-level="11" data-path="11-special.html"><a href="11-special.html"><i class="fa fa-check"></i><b>11</b> Special Topics</a><ul>
+<li class="chapter" data-level="11.1" data-path="11-special.html"><a href="11-special.html#comp-regression-start-to-finish"><i class="fa fa-check"></i><b>11.1</b> COMP: Regression Start to Finish</a><ul>
+<li class="chapter" data-level="" data-path="11-special.html"><a href="11-special.html#introduction-8"><i class="fa fa-check"></i>Introduction</a></li>
+<li class="chapter" data-level="" data-path="11-special.html"><a href="11-special.html#packages-13"><i class="fa fa-check"></i>Packages</a></li>
+<li class="chapter" data-level="" data-path="11-special.html"><a href="11-special.html#data-14"><i class="fa fa-check"></i>Data</a></li>
+<li class="chapter" data-level="" data-path="11-special.html"><a href="11-special.html#exercises-13"><i class="fa fa-check"></i>Exercises</a></li>
+</ul></li>
+<li class="chapter" data-level="11.2" data-path="11-special.html"><a href="11-special.html#in-class-missing-data-exercise"><i class="fa fa-check"></i><b>11.2</b> IN-CLASS: Missing Data Exercise</a></li>
+</ul></li>
+<li class="chapter" data-level="12" data-path="12-datasets.html"><a href="12-datasets.html"><i class="fa fa-check"></i><b>12</b> Data Sets</a></li>
 <li class="chapter" data-level="" data-path="references-2.html"><a href="references-2.html"><i class="fa fa-check"></i>References</a></li>
 <li class="divider"></li>
 <li><a href="https://github.com/rstudio/bookdown" target="blank">Published with bookdown</a></li>
@@ -223,10 +253,10 @@
 <p>To set up your course organization in GitHub:</p>
 <ol style="list-style-type: decimal">
 <li><p><a href="https://help.github.com/en/enterprise/2.16/admin/user-management/creating-organizations">Create a new organization</a> in GitHub. To keep things simple, you can name the organization based on the course number and semester. For example, the organization name for my most recent Regression Analysis course was STA210-Sp19.</p></li>
-<li><p>Apply for the <a href="https://education.github.com/discount_requests/new">GitHub Education benefits</a> to obtain free private repositories for your course organization. By default any repositories created in the course organization will be private and only visible and accessible to the student (or group of students) whose assignment it is and the instructor. This is to comply with Family Educational Rights and Privacy Act (FERPA).</p></li>
-<li><p>Have students create a GitHub username and send it to you. You can share the guidelines from <span class="citation">(Bryan and Hester <a href="#ref-happygit">2019</a>)</span> to help students create usernames that are applicable beyond their time in your course that can be shared with future employers.</p>
+<li><p>Apply for the <a href="https://education.github.com/discount_requests/new">GitHub Education benefits</a> to obtain free private repositories for your course organization. By default any repositories created in the course organization will be private and thus only visible and accessible to the student (or group of students if it’s a team assignment) who owns the assignment and the instructor. This is to comply with Family Educational Rights and Privacy Act (FERPA).</p></li>
+<li><p>Now you’re ready to add students to the GitHub course organization. Have students create a GitHub username and send it to you. You can share the guidelines from <span class="citation">(Bryan and Hester <a href="#ref-happygit">2019</a>)</span> to help students create usernames that are applicable beyond their time in your course that can be shared with future employers.</p>
 <p>I typically have students provide their GitHub username as part of the “Getting to Know You” survey at the beginning of the semester. It doesn’t take long to create a GitHub username, so this could also be done as an activity on one of the first few days of class.</p></li>
-<li><p>Add students to the GitHub course organization using the <code>ghclass</code> R package. The section <a href="https://rundel.github.io/ghclass/articles/ghclass.html">“Adding students and creating teams”</a> in <span class="citation">(Rundel and Cetinkaya-Rundel <a href="#ref-ghclass">2018</a>)</span> provides step-by-step instructions for adding new members to the course organization.</p></li>
+<li><p>Add students to the GitHub course organization using the <code>ghclass</code> R package. The section <a href="https://rundel.github.io/ghclass/articles/ghclass.html">“Adding students and creating teams”</a> in <span class="citation">Rundel and Cetinkaya-Rundel (<a href="#ref-ghclass">2018</a>)</span> provides step-by-step instructions for adding new members to the course organization.</p></li>
 <li><p>If students will be working in teams, you can add the teams to the GitHub course organization using by following the steps in <span class="citation">(Rundel and Cetinkaya-Rundel <a href="#ref-ghclass">2018</a>)</span>. Any assignment repo for a group assignment will be visible and accessbile to all the members of the team and instructor.</p></li>
 <li><p>You’re done! Now you’re ready to create your first assignment, which is described in the sections below.</p></li>
 </ol>
@@ -290,8 +320,8 @@ See the <a href="https://rstudio.cloud/learn/guide#space-members">RStudio Cloud 
 <div id="additional-resources" class="section level2">
 <h2><span class="header-section-number">3.3</span> Additional Resources</h2>
 <ul>
-<li><p><a href="https://www.causeweb.org/cause/ecots/ecots18/tech-talk/4">Tech Talk: Frictionless onboarding to data science with RStudio Cloud</a>: information about using RStudio Cloud in your classroom.</p></li>
-<li><p><a href="https://happygitwithr.com/"><em>Happy Git with R</em></a>: information about using Git, Github and RStudio.</p></li>
+<li><p><a href="https://www.causeweb.org/cause/ecots/ecots18/tech-talk/4">Tech Talk: Frictionless onboarding to data science with RStudio Cloud</a>: information on using RStudio Cloud in your classroom.</p></li>
+<li><p><a href="https://happygitwithr.com/"><em>Happy Git with R</em></a>: information on using Git, Github and RStudio.</p></li>
 </ul>
 
 </div>
@@ -317,7 +347,7 @@ See the <a href="https://rstudio.cloud/learn/guide#space-members">RStudio Cloud 
         </div>
       </div>
 <a href="2-getstarted.html" class="navigation navigation-prev " aria-label="Previous page"><i class="fa fa-angle-left"></i></a>
-<a href="4-slr.html" class="navigation navigation-next " aria-label="Next page"><i class="fa fa-angle-right"></i></a>
+<a href="4-intro-r.html" class="navigation navigation-next " aria-label="Next page"><i class="fa fa-angle-right"></i></a>
     </div>
   </div>
 <script src="libs/gitbook-2.6.7/js/app.min.js"></script>
