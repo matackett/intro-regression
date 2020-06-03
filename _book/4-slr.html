@@ -1,13 +1,12 @@
 <!DOCTYPE html>
-<html >
-
+<html lang="" xml:lang="">
 <head>
 
-  <meta charset="UTF-8">
-  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta charset="utf-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
   <title> 4 Simple Linear Regression | Intro Regression</title>
-  <meta name="description" content="An electronic book with assignments and in-class activities to help students apply concepts in an intermediate-level regression analysis course. The primary focus is application and computing; there are also supplemental math notes on some topics.">
-  <meta name="generator" content="bookdown  and GitBook 2.6.7">
+  <meta name="description" content="An electronic book with assignments and in-class activities to help students apply concepts in an intermediate-level regression analysis course. The primary focus is application and computing; there are also supplemental math notes on some topics." />
+  <meta name="generator" content="bookdown 0.19 and GitBook 2.6.7" />
 
   <meta property="og:title" content=" 4 Simple Linear Regression | Intro Regression" />
   <meta property="og:type" content="book" />
@@ -22,17 +21,17 @@
   <meta name="twitter:description" content="An electronic book with assignments and in-class activities to help students apply concepts in an intermediate-level regression analysis course. The primary focus is application and computing; there are also supplemental math notes on some topics." />
   <meta name="twitter:image" content="https://www.introregression.org/img/introregression-sticker.png" />
 
-<meta name="author" content="Maria Tackett">
+<meta name="author" content="Maria Tackett" />
 
 
 
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <meta name="apple-mobile-web-app-capable" content="yes">
-  <meta name="apple-mobile-web-app-status-bar-style" content="black">
-  <link rel="apple-touch-icon-precomposed" sizes="152x152" href="img/introregression-sticker.png">
-  <link rel="shortcut icon" href="img/introregression-sticker.png" type="image/x-icon">
-<link rel="prev" href="3-intro-r.html">
-<link rel="next" href="5-anova.html">
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="apple-mobile-web-app-capable" content="yes" />
+  <meta name="apple-mobile-web-app-status-bar-style" content="black" />
+  <link rel="apple-touch-icon-precomposed" sizes="152x152" href="img/introregression-sticker.png" />
+  <link rel="shortcut icon" href="img/introregression-sticker.png" type="image/x-icon" />
+<link rel="prev" href="3-intro-r.html"/>
+<link rel="next" href="5-anova.html"/>
 <script src="libs/jquery-2.2.3/jquery.min.js"></script>
 <link href="libs/gitbook-2.6.7/css/style.css" rel="stylesheet" />
 <link href="libs/gitbook-2.6.7/css/plugin-table.css" rel="stylesheet" />
@@ -40,6 +39,9 @@
 <link href="libs/gitbook-2.6.7/css/plugin-highlight.css" rel="stylesheet" />
 <link href="libs/gitbook-2.6.7/css/plugin-search.css" rel="stylesheet" />
 <link href="libs/gitbook-2.6.7/css/plugin-fontsettings.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-clipboard.css" rel="stylesheet" />
+
+
 
 
 
@@ -50,41 +52,68 @@
 
 
 <style type="text/css">
-div.sourceCode { overflow-x: auto; }
-table.sourceCode, tr.sourceCode, td.lineNumbers, td.sourceCode {
-  margin: 0; padding: 0; vertical-align: baseline; border: none; }
-table.sourceCode { width: 100%; line-height: 100%; }
-td.lineNumbers { text-align: right; padding-right: 4px; padding-left: 4px; color: #aaaaaa; border-right: 1px solid #aaaaaa; }
-td.sourceCode { padding-left: 5px; }
-code > span.kw { color: #007020; font-weight: bold; } /* Keyword */
-code > span.dt { color: #902000; } /* DataType */
-code > span.dv { color: #40a070; } /* DecVal */
-code > span.bn { color: #40a070; } /* BaseN */
-code > span.fl { color: #40a070; } /* Float */
-code > span.ch { color: #4070a0; } /* Char */
-code > span.st { color: #4070a0; } /* String */
-code > span.co { color: #60a0b0; font-style: italic; } /* Comment */
-code > span.ot { color: #007020; } /* Other */
-code > span.al { color: #ff0000; font-weight: bold; } /* Alert */
-code > span.fu { color: #06287e; } /* Function */
-code > span.er { color: #ff0000; font-weight: bold; } /* Error */
-code > span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warning */
-code > span.cn { color: #880000; } /* Constant */
-code > span.sc { color: #4070a0; } /* SpecialChar */
-code > span.vs { color: #4070a0; } /* VerbatimString */
-code > span.ss { color: #bb6688; } /* SpecialString */
-code > span.im { } /* Import */
-code > span.va { color: #19177c; } /* Variable */
-code > span.cf { color: #007020; font-weight: bold; } /* ControlFlow */
-code > span.op { color: #666666; } /* Operator */
-code > span.bu { } /* BuiltIn */
-code > span.ex { } /* Extension */
-code > span.pp { color: #bc7a00; } /* Preprocessor */
-code > span.at { color: #7d9029; } /* Attribute */
-code > span.do { color: #ba2121; font-style: italic; } /* Documentation */
-code > span.an { color: #60a0b0; font-weight: bold; font-style: italic; } /* Annotation */
-code > span.cv { color: #60a0b0; font-weight: bold; font-style: italic; } /* CommentVar */
-code > span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Information */
+code.sourceCode > span { display: inline-block; line-height: 1.25; }
+code.sourceCode > span { color: inherit; text-decoration: inherit; }
+code.sourceCode > span:empty { height: 1.2em; }
+.sourceCode { overflow: visible; }
+code.sourceCode { white-space: pre; position: relative; }
+pre.sourceCode { margin: 0; }
+@media screen {
+div.sourceCode { overflow: auto; }
+}
+@media print {
+code.sourceCode { white-space: pre-wrap; }
+code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
+}
+pre.numberSource code
+  { counter-reset: source-line 0; }
+pre.numberSource code > span
+  { position: relative; left: -4em; counter-increment: source-line; }
+pre.numberSource code > span > a:first-child::before
+  { content: counter(source-line);
+    position: relative; left: -1em; text-align: right; vertical-align: baseline;
+    border: none; display: inline-block;
+    -webkit-touch-callout: none; -webkit-user-select: none;
+    -khtml-user-select: none; -moz-user-select: none;
+    -ms-user-select: none; user-select: none;
+    padding: 0 4px; width: 4em;
+    color: #aaaaaa;
+  }
+pre.numberSource { margin-left: 3em; border-left: 1px solid #aaaaaa;  padding-left: 4px; }
+div.sourceCode
+  {   }
+@media screen {
+code.sourceCode > span > a:first-child::before { text-decoration: underline; }
+}
+code span.al { color: #ff0000; font-weight: bold; } /* Alert */
+code span.an { color: #60a0b0; font-weight: bold; font-style: italic; } /* Annotation */
+code span.at { color: #7d9029; } /* Attribute */
+code span.bn { color: #40a070; } /* BaseN */
+code span.bu { } /* BuiltIn */
+code span.cf { color: #007020; font-weight: bold; } /* ControlFlow */
+code span.ch { color: #4070a0; } /* Char */
+code span.cn { color: #880000; } /* Constant */
+code span.co { color: #60a0b0; font-style: italic; } /* Comment */
+code span.cv { color: #60a0b0; font-weight: bold; font-style: italic; } /* CommentVar */
+code span.do { color: #ba2121; font-style: italic; } /* Documentation */
+code span.dt { color: #902000; } /* DataType */
+code span.dv { color: #40a070; } /* DecVal */
+code span.er { color: #ff0000; font-weight: bold; } /* Error */
+code span.ex { } /* Extension */
+code span.fl { color: #40a070; } /* Float */
+code span.fu { color: #06287e; } /* Function */
+code span.im { } /* Import */
+code span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Information */
+code span.kw { color: #007020; font-weight: bold; } /* Keyword */
+code span.op { color: #666666; } /* Operator */
+code span.ot { color: #007020; } /* Other */
+code span.pp { color: #bc7a00; } /* Preprocessor */
+code span.sc { color: #4070a0; } /* SpecialChar */
+code span.ss { color: #bb6688; } /* SpecialString */
+code span.st { color: #4070a0; } /* String */
+code span.va { color: #19177c; } /* Variable */
+code span.vs { color: #4070a0; } /* VerbatimString */
+code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warning */
 </style>
 
 <link rel="stylesheet" href="style.css" type="text/css" />
@@ -154,6 +183,9 @@ code > span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Inf
 <li class="chapter" data-level="" data-path="4-slr.html"><a href="4-slr.html#data-4"><i class="fa fa-check"></i>Data</a></li>
 <li class="chapter" data-level="" data-path="4-slr.html"><a href="4-slr.html#exercises-3"><i class="fa fa-check"></i>Exercises</a></li>
 </ul></li>
+<li class="chapter" data-level="4.4" data-path="4-slr.html"><a href="4-slr.html#slr-notes"><i class="fa fa-check"></i><b>4.4</b> SLR Notes</a></li>
+<li class="chapter" data-level="4.5" data-path="4-slr.html"><a href="4-slr.html#r-markdown"><i class="fa fa-check"></i><b>4.5</b> R Markdown</a></li>
+<li class="chapter" data-level="4.6" data-path="4-slr.html"><a href="4-slr.html#including-plots"><i class="fa fa-check"></i><b>4.6</b> Including Plots</a></li>
 </ul></li>
 <li class="chapter" data-level="5" data-path="5-anova.html"><a href="5-anova.html"><i class="fa fa-check"></i><b>5</b> Analysis of Variance</a><ul>
 <li class="chapter" data-level="5.0.1" data-path="5-anova.html"><a href="5-anova.html#comp-diamonds"><i class="fa fa-check"></i><b>5.0.1</b> COMP: Diamonds</a></li>
@@ -289,18 +321,18 @@ code > span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Inf
 <div id="packages-1" class="section level3 unnumbered">
 <h3>Packages</h3>
 <p>We will use the following packages in today’s assignment:</p>
-<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="kw">library</span>(tidyverse)
-<span class="kw">library</span>(skimr)
-<span class="kw">library</span>(broom)
-<span class="kw">library</span>(rcfss)</code></pre></div>
+<div class="sourceCode" id="cb25"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb25-1"><a href="4-slr.html#cb25-1"></a><span class="kw">library</span>(tidyverse)</span>
+<span id="cb25-2"><a href="4-slr.html#cb25-2"></a><span class="kw">library</span>(skimr)</span>
+<span id="cb25-3"><a href="4-slr.html#cb25-3"></a><span class="kw">library</span>(broom)</span>
+<span id="cb25-4"><a href="4-slr.html#cb25-4"></a><span class="kw">library</span>(rcfss)</span></code></pre></div>
 </div>
 <div id="data-2" class="section level3 unnumbered">
 <h3>Data</h3>
 <p>We will analyze the <code>scorecard</code> dataset from the <strong>rcfss</strong> package. This dataset contains information about 1849 colleges obtained from the Department of Education’s College Scorecard. Load the rcfss library into the global R environment and type <code>?scorecard</code> in the <strong>console</strong> to learn more about the dataset and variable definitions. This analysis will focus on the following variables:</p>
-<table style="width:76%;">
+<table>
 <colgroup>
-<col width="16%" />
-<col width="59%" />
+<col width="20%" />
+<col width="79%" />
 </colgroup>
 <tbody>
 <tr class="odd">
@@ -326,25 +358,25 @@ code > span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Inf
 <li><p>Plot a histogram to examine the distribution of <code>admrate</code>. Describe the shape of the distribution.</p></li>
 <li><p>To better understand the distribution of <code>admrate</code>, we would like calculate measures of center and spread of the distribution. Fill in the code below to use the <code>skim</code> function to calculate summary statistics for <code>admrate</code>. Report the appropriate measures of center (mean or median) and spread (standard deviation or IQR) based on the shape of the distribution from Exercise 1.</p></li>
 </ol>
-<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r">scorecard <span class="op">%&gt;%</span>
-<span class="st">  </span><span class="kw">select</span>(admrate) <span class="op">%&gt;%</span>
-<span class="st">  </span><span class="kw">skim</span>()</code></pre></div>
+<div class="sourceCode" id="cb26"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb26-1"><a href="4-slr.html#cb26-1"></a>scorecard <span class="op">%&gt;%</span></span>
+<span id="cb26-2"><a href="4-slr.html#cb26-2"></a><span class="st">  </span><span class="kw">select</span>(admrate) <span class="op">%&gt;%</span></span>
+<span id="cb26-3"><a href="4-slr.html#cb26-3"></a><span class="st">  </span><span class="kw">skim</span>()</span></code></pre></div>
 <ol start="3" style="list-style-type: decimal">
 <li><p>Plot the distribution of <code>cost</code> and calculate the appropriate summary statistics. Describe the distribution of <code>cost</code> (shape, center, and spread) using the plot and appropriate summary statistics.</p></li>
 <li><p>One nice feature of the <code>skim</code> function is that it provides information about the number of observations that are missing values of the variable. How many observations have missing values of <code>admrate</code>? How many observations have missing values of <code>cost</code>?</p></li>
 <li><p>Later in the semester, we will techniques to deal with missing values in the data. For now, however, only include complete observations for the remainder of this analysis. You can use the <code>filter</code> function to select only the rows that values for both <code>cost</code> and <code>admrate</code>. (<em>Note: Learn more about the <code>filter</code> function in [Section 5.2 of R for Data Science] (<a href="https://r4ds.had.co.nz/transform.html#filter-rows-with-filter" class="uri">https://r4ds.had.co.nz/transform.html#filter-rows-with-filter</a>).</em>)</p></li>
 </ol>
 <p>Fill in the code below to create a new dataset called <code>scorecard_new</code> that only includes observations with values for both <code>admrate</code> and <code>cost</code>.</p>
-<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r">__________ &lt;-<span class="st"> </span>scorecard <span class="op">%&gt;%</span>
-<span class="st">  </span><span class="kw">filter</span>(<span class="op">!</span><span class="kw">is.na</span>(admrate),________)</code></pre></div>
-<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="co"># </span></code></pre></div>
+<div class="sourceCode" id="cb27"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb27-1"><a href="4-slr.html#cb27-1"></a>__________ &lt;-<span class="st"> </span>scorecard <span class="op">%&gt;%</span></span>
+<span id="cb27-2"><a href="4-slr.html#cb27-2"></a><span class="st">  </span><span class="kw">filter</span>(<span class="op">!</span><span class="kw">is.na</span>(admrate),________)</span></code></pre></div>
+<div class="sourceCode" id="cb28"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb28-1"><a href="4-slr.html#cb28-1"></a><span class="co"># </span></span></code></pre></div>
 <p><strong>You will use <code>scorecard_new</code> for the rest of the assignment.</strong></p>
 <ol start="6" style="list-style-type: decimal">
 <li><p>Create a scatterplot to display the relationship between <code>cost</code> (response variable) and <code>admrate</code> (explanatory variable). Use the scatterplot to describe the relationship between the two variables.</p></li>
 <li><p>The data contains information about the type of college, and we would like to incorporate this information into the scatterplot. One way to do this is to use a different color marker for each type of college. Fill in the code below the scatterplot from the previous exercise with the marker colors based on the variable <code>type</code>. Describe two new observations from this scatterplot that you didn’t see in the previous plot.</p></li>
 </ol>
-<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="kw">ggplot</span>(<span class="dt">data=</span>scorecard_new, <span class="dt">mapping=</span><span class="kw">aes</span>(<span class="dt">x=</span>admrate, <span class="dt">y=</span>cost, <span class="dt">color=</span>type)) <span class="op">+</span><span class="st"> </span>
-<span class="st">  </span>_____________________</code></pre></div>
+<div class="sourceCode" id="cb29"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb29-1"><a href="4-slr.html#cb29-1"></a><span class="kw">ggplot</span>(<span class="dt">data=</span>scorecard_new, <span class="dt">mapping=</span><span class="kw">aes</span>(<span class="dt">x=</span>admrate, <span class="dt">y=</span>cost, <span class="dt">color=</span>type)) <span class="op">+</span><span class="st"> </span></span>
+<span id="cb29-2"><a href="4-slr.html#cb29-2"></a><span class="st">  </span>_____________________</span></code></pre></div>
 </div>
 <div id="simple-linear-regression-1" class="section level4 unnumbered">
 <h4>Simple Linear Regression</h4>
@@ -369,17 +401,17 @@ code > span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Inf
 </div>
 <div id="in-class-advertising-sales" class="section level2">
 <h2><span class="header-section-number">4.2</span> IN-CLASS: Advertising &amp; Sales</h2>
-<p>In this mini analysis, we will work with the <code>Advertising</code> data used in Chapters 2 and 3 of <span class="citation">(James et al. <a href="#ref-islr">2017</a>)</span>.</p>
+<p>In this mini analysis, we will work with the <code>Advertising</code> data used in Chapters 2 and 3 of <span class="citation">(James et al. <a href="#ref-islr" role="doc-biblioref">2017</a>)</span>.</p>
 <div id="packages-2" class="section level3 unnumbered">
 <h3>Packages</h3>
-<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="kw">library</span>(readr)
-<span class="kw">library</span>(tidyverse)
-<span class="kw">library</span>(skimr)
-<span class="kw">library</span>(broom)</code></pre></div>
+<div class="sourceCode" id="cb30"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb30-1"><a href="4-slr.html#cb30-1"></a><span class="kw">library</span>(readr)</span>
+<span id="cb30-2"><a href="4-slr.html#cb30-2"></a><span class="kw">library</span>(tidyverse)</span>
+<span id="cb30-3"><a href="4-slr.html#cb30-3"></a><span class="kw">library</span>(skimr)</span>
+<span id="cb30-4"><a href="4-slr.html#cb30-4"></a><span class="kw">library</span>(broom)</span></code></pre></div>
 </div>
 <div id="data-3" class="section level3 unnumbered">
 <h3>Data</h3>
-<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r">advertising &lt;-<span class="st"> </span><span class="kw">read_csv</span>(<span class="st">&quot;data/advertising.csv&quot;</span>)</code></pre></div>
+<div class="sourceCode" id="cb31"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb31-1"><a href="4-slr.html#cb31-1"></a>advertising &lt;-<span class="st"> </span><span class="kw">read_csv</span>(<span class="st">&quot;data/advertising.csv&quot;</span>)</span></code></pre></div>
 <p>This dataset contains the advertising spending and sales for 200 markets. The variables are</p>
 <ul>
 <li><code>tv</code>: total spending on TV advertising (in $thousands)</li>
@@ -391,46 +423,46 @@ code > span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Inf
 <div id="exercises-2" class="section level3 unnumbered">
 <h3>Exercises</h3>
 <p>We’ll begin the analysis by getting quick view of the data:</p>
-<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="kw">glimpse</span>(advertising)</code></pre></div>
+<div class="sourceCode" id="cb32"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb32-1"><a href="4-slr.html#cb32-1"></a><span class="kw">glimpse</span>(advertising)</span></code></pre></div>
 <p>Next, we can calculate summary statistics for each of the variables in the data set.</p>
-<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r">advertising <span class="op">%&gt;%</span><span class="st"> </span><span class="kw">skim</span>()</code></pre></div>
+<div class="sourceCode" id="cb33"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb33-1"><a href="4-slr.html#cb33-1"></a>advertising <span class="op">%&gt;%</span><span class="st"> </span><span class="kw">skim</span>()</span></code></pre></div>
 <ol style="list-style-type: decimal">
 <li><p>What type of advertising has the smallest median spending?</p></li>
 <li><p>What type of advertising has the largest variation in spending?</p></li>
 <li><p>Describe the shape of the distribution of <code>sales</code>.</p></li>
 </ol>
 <p>We are most interested in understanding how advertising spending affect sales. One way to quantify the relationship between the variables is by calculating the correlation matrix.</p>
-<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r">advertising <span class="op">%&gt;%</span><span class="st"> </span>
-<span class="st">  </span><span class="kw">cor</span>()</code></pre></div>
+<div class="sourceCode" id="cb34"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb34-1"><a href="4-slr.html#cb34-1"></a>advertising <span class="op">%&gt;%</span><span class="st"> </span></span>
+<span id="cb34-2"><a href="4-slr.html#cb34-2"></a><span class="st">  </span><span class="kw">cor</span>()</span></code></pre></div>
 <ol style="list-style-type: decimal">
 <li><p>What is the correlation between <code>radio</code> and <code>sales</code>? Interpret this value.</p></li>
 <li><p>What type of advertising has the strongest linear relationship with <code>sales</code>?</p></li>
 </ol>
 <p>Below are visualizations of <code>sales</code> versus each explanatory variable.</p>
-<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r">advertising <span class="op">%&gt;%</span>
-<span class="st">  </span><span class="kw">ggplot</span>(<span class="dt">mapping =</span> <span class="kw">aes</span>(<span class="dt">x=</span>tv,<span class="dt">y=</span>sales)) <span class="op">+</span><span class="st"> </span>
-<span class="st">  </span><span class="kw">geom_point</span>(<span class="dt">alpha=</span><span class="fl">0.7</span>) <span class="op">+</span><span class="st"> </span>
-<span class="st">  </span><span class="kw">geom_smooth</span>(<span class="dt">method=</span><span class="st">&quot;lm&quot;</span>,<span class="dt">se=</span><span class="ot">FALSE</span>,<span class="dt">color=</span><span class="st">&quot;blue&quot;</span>) <span class="op">+</span><span class="st"> </span>
-<span class="st">  </span><span class="kw">labs</span>(<span class="dt">title =</span> <span class="st">&quot;Sales vs. TV Advertising&quot;</span>, 
-       <span class="dt">x=</span> <span class="st">&quot;TV Advertising (in $thousands)&quot;</span>, 
-       <span class="dt">y=</span><span class="st">&quot;_____&quot;</span>) <span class="co">#fill in the Y axis label</span></code></pre></div>
-<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r">advertising <span class="op">%&gt;%</span>
-<span class="st">  </span><span class="kw">ggplot</span>(<span class="dt">mapping =</span> <span class="kw">aes</span>(<span class="dt">x=</span>radio,<span class="dt">y=</span>sales)) <span class="op">+</span><span class="st"> </span>
-<span class="st">  </span><span class="kw">geom_point</span>(<span class="dt">alpha=</span><span class="fl">0.7</span>) <span class="op">+</span><span class="st"> </span>
-<span class="st">  </span><span class="kw">geom_smooth</span>(<span class="dt">method=</span><span class="st">&quot;lm&quot;</span>,<span class="dt">se=</span><span class="ot">FALSE</span>,<span class="dt">color=</span><span class="st">&quot;red&quot;</span>) <span class="op">+</span><span class="st"> </span>
-<span class="st">  </span><span class="kw">labs</span>(<span class="dt">title =</span> <span class="st">&quot;Sales vs. TV Advertising&quot;</span>, 
-       <span class="dt">x=</span> <span class="st">&quot;Radio Advertising (in $thousands)&quot;</span>, 
-       <span class="dt">y=</span><span class="st">&quot;Sales (in $millions)&quot;</span>)</code></pre></div>
-<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r">advertising <span class="op">%&gt;%</span>
-<span class="st">  </span><span class="kw">ggplot</span>(<span class="dt">mapping =</span> <span class="kw">aes</span>(<span class="dt">x=</span>newspaper,<span class="dt">y=</span>sales)) <span class="op">+</span><span class="st"> </span>
-<span class="st">  </span><span class="kw">geom_point</span>(<span class="dt">alpha=</span><span class="fl">0.7</span>) <span class="op">+</span><span class="st"> </span>
-<span class="st">  </span><span class="kw">geom_smooth</span>(<span class="dt">method=</span><span class="st">&quot;lm&quot;</span>,<span class="dt">se=</span><span class="ot">FALSE</span>,<span class="dt">color=</span><span class="st">&quot;purple&quot;</span>) <span class="op">+</span><span class="st"> </span>
-<span class="st">  </span><span class="kw">labs</span>(<span class="dt">title =</span> <span class="st">&quot;Sales vs. Newspaper Advertising&quot;</span>, 
-       <span class="dt">x=</span> <span class="st">&quot;Newspaper Advertising (in $thousands)&quot;</span>, 
-       <span class="dt">y=</span><span class="st">&quot;Sales (in $millions)&quot;</span>)</code></pre></div>
+<div class="sourceCode" id="cb35"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb35-1"><a href="4-slr.html#cb35-1"></a>advertising <span class="op">%&gt;%</span></span>
+<span id="cb35-2"><a href="4-slr.html#cb35-2"></a><span class="st">  </span><span class="kw">ggplot</span>(<span class="dt">mapping =</span> <span class="kw">aes</span>(<span class="dt">x=</span>tv,<span class="dt">y=</span>sales)) <span class="op">+</span><span class="st"> </span></span>
+<span id="cb35-3"><a href="4-slr.html#cb35-3"></a><span class="st">  </span><span class="kw">geom_point</span>(<span class="dt">alpha=</span><span class="fl">0.7</span>) <span class="op">+</span><span class="st"> </span></span>
+<span id="cb35-4"><a href="4-slr.html#cb35-4"></a><span class="st">  </span><span class="kw">geom_smooth</span>(<span class="dt">method=</span><span class="st">&quot;lm&quot;</span>,<span class="dt">se=</span><span class="ot">FALSE</span>,<span class="dt">color=</span><span class="st">&quot;blue&quot;</span>) <span class="op">+</span><span class="st"> </span></span>
+<span id="cb35-5"><a href="4-slr.html#cb35-5"></a><span class="st">  </span><span class="kw">labs</span>(<span class="dt">title =</span> <span class="st">&quot;Sales vs. TV Advertising&quot;</span>, </span>
+<span id="cb35-6"><a href="4-slr.html#cb35-6"></a>       <span class="dt">x=</span> <span class="st">&quot;TV Advertising (in $thousands)&quot;</span>, </span>
+<span id="cb35-7"><a href="4-slr.html#cb35-7"></a>       <span class="dt">y=</span><span class="st">&quot;_____&quot;</span>) <span class="co">#fill in the Y axis label</span></span></code></pre></div>
+<div class="sourceCode" id="cb36"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb36-1"><a href="4-slr.html#cb36-1"></a>advertising <span class="op">%&gt;%</span></span>
+<span id="cb36-2"><a href="4-slr.html#cb36-2"></a><span class="st">  </span><span class="kw">ggplot</span>(<span class="dt">mapping =</span> <span class="kw">aes</span>(<span class="dt">x=</span>radio,<span class="dt">y=</span>sales)) <span class="op">+</span><span class="st"> </span></span>
+<span id="cb36-3"><a href="4-slr.html#cb36-3"></a><span class="st">  </span><span class="kw">geom_point</span>(<span class="dt">alpha=</span><span class="fl">0.7</span>) <span class="op">+</span><span class="st"> </span></span>
+<span id="cb36-4"><a href="4-slr.html#cb36-4"></a><span class="st">  </span><span class="kw">geom_smooth</span>(<span class="dt">method=</span><span class="st">&quot;lm&quot;</span>,<span class="dt">se=</span><span class="ot">FALSE</span>,<span class="dt">color=</span><span class="st">&quot;red&quot;</span>) <span class="op">+</span><span class="st"> </span></span>
+<span id="cb36-5"><a href="4-slr.html#cb36-5"></a><span class="st">  </span><span class="kw">labs</span>(<span class="dt">title =</span> <span class="st">&quot;Sales vs. TV Advertising&quot;</span>, </span>
+<span id="cb36-6"><a href="4-slr.html#cb36-6"></a>       <span class="dt">x=</span> <span class="st">&quot;Radio Advertising (in $thousands)&quot;</span>, </span>
+<span id="cb36-7"><a href="4-slr.html#cb36-7"></a>       <span class="dt">y=</span><span class="st">&quot;Sales (in $millions)&quot;</span>)</span></code></pre></div>
+<div class="sourceCode" id="cb37"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb37-1"><a href="4-slr.html#cb37-1"></a>advertising <span class="op">%&gt;%</span></span>
+<span id="cb37-2"><a href="4-slr.html#cb37-2"></a><span class="st">  </span><span class="kw">ggplot</span>(<span class="dt">mapping =</span> <span class="kw">aes</span>(<span class="dt">x=</span>newspaper,<span class="dt">y=</span>sales)) <span class="op">+</span><span class="st"> </span></span>
+<span id="cb37-3"><a href="4-slr.html#cb37-3"></a><span class="st">  </span><span class="kw">geom_point</span>(<span class="dt">alpha=</span><span class="fl">0.7</span>) <span class="op">+</span><span class="st"> </span></span>
+<span id="cb37-4"><a href="4-slr.html#cb37-4"></a><span class="st">  </span><span class="kw">geom_smooth</span>(<span class="dt">method=</span><span class="st">&quot;lm&quot;</span>,<span class="dt">se=</span><span class="ot">FALSE</span>,<span class="dt">color=</span><span class="st">&quot;purple&quot;</span>) <span class="op">+</span><span class="st"> </span></span>
+<span id="cb37-5"><a href="4-slr.html#cb37-5"></a><span class="st">  </span><span class="kw">labs</span>(<span class="dt">title =</span> <span class="st">&quot;Sales vs. Newspaper Advertising&quot;</span>, </span>
+<span id="cb37-6"><a href="4-slr.html#cb37-6"></a>       <span class="dt">x=</span> <span class="st">&quot;Newspaper Advertising (in $thousands)&quot;</span>, </span>
+<span id="cb37-7"><a href="4-slr.html#cb37-7"></a>       <span class="dt">y=</span><span class="st">&quot;Sales (in $millions)&quot;</span>)</span></code></pre></div>
 <p>Since <code>tv</code> appears to have the strongest linear relationship with <code>sales</code>, let’s calculate a simple linear regression model using these two variables.</p>
-<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r">ad_model &lt;-<span class="st"> </span><span class="kw">lm</span>(sales <span class="op">~</span><span class="st"> </span>tv, <span class="dt">data=</span>advertising)
-ad_model</code></pre></div>
+<div class="sourceCode" id="cb38"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb38-1"><a href="4-slr.html#cb38-1"></a>ad_model &lt;-<span class="st"> </span><span class="kw">lm</span>(sales <span class="op">~</span><span class="st"> </span>tv, <span class="dt">data=</span>advertising)</span>
+<span id="cb38-2"><a href="4-slr.html#cb38-2"></a>ad_model</span></code></pre></div>
 <ol style="list-style-type: decimal">
 <li><p>Write the model equation.</p></li>
 <li><p>Does it make sense to interpret the intercept? If so, interpret the intercept in the context of the problem. Otherwise, briefly explain why not.</p></li>
@@ -443,13 +475,13 @@ ad_model</code></pre></div>
 <h2><span class="header-section-number">4.3</span> IN-CLASS: Carbohydrates in Beer</h2>
 <div id="packages-3" class="section level3 unnumbered">
 <h3>Packages</h3>
-<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="kw">library</span>(tidyverse)
-<span class="kw">library</span>(readr)
-<span class="kw">library</span>(broom)</code></pre></div>
+<div class="sourceCode" id="cb39"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb39-1"><a href="4-slr.html#cb39-1"></a><span class="kw">library</span>(tidyverse)</span>
+<span id="cb39-2"><a href="4-slr.html#cb39-2"></a><span class="kw">library</span>(readr)</span>
+<span id="cb39-3"><a href="4-slr.html#cb39-3"></a><span class="kw">library</span>(broom)</span></code></pre></div>
 </div>
 <div id="data-4" class="section level3 unnumbered">
 <h3>Data</h3>
-<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r">beer &lt;-<span class="st"> </span><span class="kw">read_csv</span>(<span class="st">&quot;data/beer.csv&quot;</span>)</code></pre></div>
+<div class="sourceCode" id="cb40"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb40-1"><a href="4-slr.html#cb40-1"></a>beer &lt;-<span class="st"> </span><span class="kw">read_csv</span>(<span class="st">&quot;data/beer.csv&quot;</span>)</span></code></pre></div>
 <p>In this analysis, we will analyze the relationship between the amount of alcohol (<code>PercentAlcohol</code>) and the caloric content (<code>CaloriesPer12Oz</code>) in domestic beers. Let <code>PercentAlcohol</code> be the predictor variable and <code>CaloriesPer12Oz</code> the response variable.</p>
 </div>
 <div id="exercises-3" class="section level3 unnumbered">
@@ -458,43 +490,58 @@ ad_model</code></pre></div>
 <ol style="list-style-type: decimal">
 <li>Fit a regression model to describe the relationship between <code>PercentAlcohol</code> and <code>CaloriesPer12Oz</code>. Display the model output.</li>
 </ol>
-<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="co"># code for regression model</span></code></pre></div>
+<div class="sourceCode" id="cb41"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb41-1"><a href="4-slr.html#cb41-1"></a><span class="co"># code for regression model</span></span></code></pre></div>
 <ol start="2" style="list-style-type: decimal">
 <li><p>Does it make sense to interpret the intercept? Why or why not?</p></li>
 <li><p>Interpret the 95% confidence interval for the slope in the context of the data.</p></li>
 <li><p>Calculate the critical value, <span class="math inline">\(t^*\)</span>, used to calculate the 95% confidence interval. The code below is a guide; uncomment and complete the lines of code to calculate and display the critical value.</p></li>
 </ol>
-<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r">n &lt;-<span class="st"> </span><span class="kw">nrow</span>(beer)
-
-<span class="co">#df &lt;- _________  </span>
-
-<span class="co">#crit_val &lt;- qt(_____,df)</span>
-<span class="co">#crit_val</span></code></pre></div>
+<div class="sourceCode" id="cb42"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb42-1"><a href="4-slr.html#cb42-1"></a>n &lt;-<span class="st"> </span><span class="kw">nrow</span>(beer)</span>
+<span id="cb42-2"><a href="4-slr.html#cb42-2"></a></span>
+<span id="cb42-3"><a href="4-slr.html#cb42-3"></a><span class="co">#df &lt;- _________  </span></span>
+<span id="cb42-4"><a href="4-slr.html#cb42-4"></a></span>
+<span id="cb42-5"><a href="4-slr.html#cb42-5"></a><span class="co">#crit_val &lt;- qt(_____,df)</span></span>
+<span id="cb42-6"><a href="4-slr.html#cb42-6"></a><span class="co">#crit_val</span></span></code></pre></div>
 <p>The critical value used to calculate the 95% confident interval for the slope is ____.</p>
 <ol start="5" style="list-style-type: decimal">
 <li><p>Interpret the test statistic in the context of the data.</p></li>
 <li><p>How was the p-value calculated? Fill in the code below to calculate the p-value. The code below is a guide; uncomment and complete the lines of code to calculate and display the p-value.</p></li>
 </ol>
-<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="co">#test_statistic &lt;- _______</span>
-
-<span class="co">#prob &lt;- 1 - pt(abs(test_statistic),df)</span>
-
-<span class="co">#p_value &lt;- 2 * prob</span>
-<span class="co">#p_value</span></code></pre></div>
+<div class="sourceCode" id="cb43"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb43-1"><a href="4-slr.html#cb43-1"></a><span class="co">#test_statistic &lt;- _______</span></span>
+<span id="cb43-2"><a href="4-slr.html#cb43-2"></a></span>
+<span id="cb43-3"><a href="4-slr.html#cb43-3"></a><span class="co">#prob &lt;- 1 - pt(abs(test_statistic),df)</span></span>
+<span id="cb43-4"><a href="4-slr.html#cb43-4"></a></span>
+<span id="cb43-5"><a href="4-slr.html#cb43-5"></a><span class="co">#p_value &lt;- 2 * prob</span></span>
+<span id="cb43-6"><a href="4-slr.html#cb43-6"></a><span class="co">#p_value</span></span></code></pre></div>
 <p>The p-value is ____ . Given there is no linear relationship between <code>PercentAlcohol</code> and <code>CaloriesPer12Oz</code>, the probability of obtaining a test statistic with magnitude ____ or more extreme is ____.</p>
 <ol start="7" style="list-style-type: decimal">
 <li>Fill in the code below to calculate the predicted calories and corresponding 90% interval for a single beer with alcohol content of 4.3%.</li>
 </ol>
-<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r">x0 &lt;-<span class="st">  </span><span class="kw">data.frame</span>(<span class="dt">PercentAlcohol=</span><span class="fl">4.3</span>)
-<span class="co">#predict.lm(model,x0,interval=&quot;________&quot;,conf.level=________) #&lt;&lt;</span></code></pre></div>
+<div class="sourceCode" id="cb44"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb44-1"><a href="4-slr.html#cb44-1"></a>x0 &lt;-<span class="st">  </span><span class="kw">data.frame</span>(<span class="dt">PercentAlcohol=</span><span class="fl">4.3</span>)</span>
+<span id="cb44-2"><a href="4-slr.html#cb44-2"></a><span class="co">#predict.lm(model,x0,interval=&quot;________&quot;,conf.level=________) #&lt;&lt;</span></span></code></pre></div>
 <ol start="8" style="list-style-type: decimal">
 <li>Fill in the code below to calculate the predicted calories and corresponding 90% interval for the subset of beers with alcohol content of 4.3%.</li>
 </ol>
-<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r">x0 &lt;-<span class="st">  </span><span class="kw">data.frame</span>(<span class="dt">PercentAlcohol=</span><span class="fl">4.3</span>)
-<span class="co">#predict.lm(model,x0,interval=&quot;________&quot;,conf.level=________) #&lt;&lt;</span></code></pre></div>
+<div class="sourceCode" id="cb45"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb45-1"><a href="4-slr.html#cb45-1"></a>x0 &lt;-<span class="st">  </span><span class="kw">data.frame</span>(<span class="dt">PercentAlcohol=</span><span class="fl">4.3</span>)</span>
+<span id="cb45-2"><a href="4-slr.html#cb45-2"></a><span class="co">#predict.lm(model,x0,interval=&quot;________&quot;,conf.level=________) #&lt;&lt;</span></span></code></pre></div>
 <hr />
-
 </div>
+</div>
+<div id="slr-notes" class="section level2">
+<h2><span class="header-section-number">4.4</span> SLR Notes</h2>
+</div>
+<div id="r-markdown" class="section level2">
+<h2><span class="header-section-number">4.5</span> R Markdown</h2>
+<p>This is an R Markdown document. Markdown is a simple formatting syntax for authoring HTML, PDF, and MS Word documents. For more details on using R Markdown see <a href="http://rmarkdown.rstudio.com" class="uri">http://rmarkdown.rstudio.com</a>.</p>
+<p>When you click the <strong>Knit</strong> button a document will be generated that includes both content as well as the output of any embedded R code chunks within the document. You can embed an R code chunk like this:</p>
+<div class="sourceCode" id="cb46"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb46-1"><a href="4-slr.html#cb46-1"></a><span class="kw">summary</span>(cars)</span></code></pre></div>
+</div>
+<div id="including-plots" class="section level2">
+<h2><span class="header-section-number">4.6</span> Including Plots</h2>
+<p>You can also embed plots, for example:</p>
+<p>Note that the <code>echo = FALSE</code> parameter was added to the code chunk to prevent printing of the R code that generated the plot.</p>
+<p>I hope that notes work. Let’s try to embed the slides.</p>
+
 </div>
 </div>
 <h3>References</h3>
@@ -514,11 +561,13 @@ ad_model</code></pre></div>
   </div>
 <script src="libs/gitbook-2.6.7/js/app.min.js"></script>
 <script src="libs/gitbook-2.6.7/js/lunr.js"></script>
+<script src="libs/gitbook-2.6.7/js/clipboard.min.js"></script>
 <script src="libs/gitbook-2.6.7/js/plugin-search.js"></script>
 <script src="libs/gitbook-2.6.7/js/plugin-sharing.js"></script>
 <script src="libs/gitbook-2.6.7/js/plugin-fontsettings.js"></script>
 <script src="libs/gitbook-2.6.7/js/plugin-bookdown.js"></script>
 <script src="libs/gitbook-2.6.7/js/jquery.highlight.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-clipboard.js"></script>
 <script>
 gitbook.require(["gitbook"], function(gitbook) {
 gitbook.start({
@@ -526,12 +575,11 @@ gitbook.start({
 "github": false,
 "facebook": true,
 "twitter": true,
-"google": false,
 "linkedin": false,
 "weibo": false,
 "instapaper": false,
 "vk": false,
-"all": ["facebook", "google", "twitter", "linkedin", "weibo", "instapaper"]
+"all": ["facebook", "twitter", "linkedin", "weibo", "instapaper"]
 },
 "fontsettings": {
 "theme": "white",
@@ -543,6 +591,10 @@ gitbook.start({
 "text": null
 },
 "history": {
+"link": null,
+"text": null
+},
+"view": {
 "link": null,
 "text": null
 },
@@ -561,10 +613,11 @@ gitbook.start({
   (function () {
     var script = document.createElement("script");
     script.type = "text/javascript";
-    var src = "";
+    var src = "true";
     if (src === "" || src === "true") src = "https://mathjax.rstudio.com/latest/MathJax.js?config=TeX-MML-AM_CHTML";
-    if (location.protocol !== "file:" && /^https?:/.test(src))
-      src = src.replace(/^https?:/, '');
+    if (location.protocol !== "file:")
+      if (/^https?:/.test(src))
+        src = src.replace(/^https?:/, '');
     script.src = src;
     document.getElementsByTagName("head")[0].appendChild(script);
   })();

@@ -1,13 +1,12 @@
 <!DOCTYPE html>
-<html >
-
+<html lang="" xml:lang="">
 <head>
 
-  <meta charset="UTF-8">
-  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta charset="utf-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
   <title> 2 Notes for Instructors | Intro Regression</title>
-  <meta name="description" content="An electronic book with assignments and in-class activities to help students apply concepts in an intermediate-level regression analysis course. The primary focus is application and computing; there are also supplemental math notes on some topics.">
-  <meta name="generator" content="bookdown  and GitBook 2.6.7">
+  <meta name="description" content="An electronic book with assignments and in-class activities to help students apply concepts in an intermediate-level regression analysis course. The primary focus is application and computing; there are also supplemental math notes on some topics." />
+  <meta name="generator" content="bookdown 0.19 and GitBook 2.6.7" />
 
   <meta property="og:title" content=" 2 Notes for Instructors | Intro Regression" />
   <meta property="og:type" content="book" />
@@ -22,17 +21,17 @@
   <meta name="twitter:description" content="An electronic book with assignments and in-class activities to help students apply concepts in an intermediate-level regression analysis course. The primary focus is application and computing; there are also supplemental math notes on some topics." />
   <meta name="twitter:image" content="https://www.introregression.org/img/introregression-sticker.png" />
 
-<meta name="author" content="Maria Tackett">
+<meta name="author" content="Maria Tackett" />
 
 
 
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <meta name="apple-mobile-web-app-capable" content="yes">
-  <meta name="apple-mobile-web-app-status-bar-style" content="black">
-  <link rel="apple-touch-icon-precomposed" sizes="152x152" href="img/introregression-sticker.png">
-  <link rel="shortcut icon" href="img/introregression-sticker.png" type="image/x-icon">
-<link rel="prev" href="1-getstarted.html">
-<link rel="next" href="3-intro-r.html">
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="apple-mobile-web-app-capable" content="yes" />
+  <meta name="apple-mobile-web-app-status-bar-style" content="black" />
+  <link rel="apple-touch-icon-precomposed" sizes="152x152" href="img/introregression-sticker.png" />
+  <link rel="shortcut icon" href="img/introregression-sticker.png" type="image/x-icon" />
+<link rel="prev" href="1-getstarted.html"/>
+<link rel="next" href="3-intro-r.html"/>
 <script src="libs/jquery-2.2.3/jquery.min.js"></script>
 <link href="libs/gitbook-2.6.7/css/style.css" rel="stylesheet" />
 <link href="libs/gitbook-2.6.7/css/plugin-table.css" rel="stylesheet" />
@@ -40,6 +39,9 @@
 <link href="libs/gitbook-2.6.7/css/plugin-highlight.css" rel="stylesheet" />
 <link href="libs/gitbook-2.6.7/css/plugin-search.css" rel="stylesheet" />
 <link href="libs/gitbook-2.6.7/css/plugin-fontsettings.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-clipboard.css" rel="stylesheet" />
+
+
 
 
 
@@ -50,41 +52,68 @@
 
 
 <style type="text/css">
-div.sourceCode { overflow-x: auto; }
-table.sourceCode, tr.sourceCode, td.lineNumbers, td.sourceCode {
-  margin: 0; padding: 0; vertical-align: baseline; border: none; }
-table.sourceCode { width: 100%; line-height: 100%; }
-td.lineNumbers { text-align: right; padding-right: 4px; padding-left: 4px; color: #aaaaaa; border-right: 1px solid #aaaaaa; }
-td.sourceCode { padding-left: 5px; }
-code > span.kw { color: #007020; font-weight: bold; } /* Keyword */
-code > span.dt { color: #902000; } /* DataType */
-code > span.dv { color: #40a070; } /* DecVal */
-code > span.bn { color: #40a070; } /* BaseN */
-code > span.fl { color: #40a070; } /* Float */
-code > span.ch { color: #4070a0; } /* Char */
-code > span.st { color: #4070a0; } /* String */
-code > span.co { color: #60a0b0; font-style: italic; } /* Comment */
-code > span.ot { color: #007020; } /* Other */
-code > span.al { color: #ff0000; font-weight: bold; } /* Alert */
-code > span.fu { color: #06287e; } /* Function */
-code > span.er { color: #ff0000; font-weight: bold; } /* Error */
-code > span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warning */
-code > span.cn { color: #880000; } /* Constant */
-code > span.sc { color: #4070a0; } /* SpecialChar */
-code > span.vs { color: #4070a0; } /* VerbatimString */
-code > span.ss { color: #bb6688; } /* SpecialString */
-code > span.im { } /* Import */
-code > span.va { color: #19177c; } /* Variable */
-code > span.cf { color: #007020; font-weight: bold; } /* ControlFlow */
-code > span.op { color: #666666; } /* Operator */
-code > span.bu { } /* BuiltIn */
-code > span.ex { } /* Extension */
-code > span.pp { color: #bc7a00; } /* Preprocessor */
-code > span.at { color: #7d9029; } /* Attribute */
-code > span.do { color: #ba2121; font-style: italic; } /* Documentation */
-code > span.an { color: #60a0b0; font-weight: bold; font-style: italic; } /* Annotation */
-code > span.cv { color: #60a0b0; font-weight: bold; font-style: italic; } /* CommentVar */
-code > span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Information */
+code.sourceCode > span { display: inline-block; line-height: 1.25; }
+code.sourceCode > span { color: inherit; text-decoration: inherit; }
+code.sourceCode > span:empty { height: 1.2em; }
+.sourceCode { overflow: visible; }
+code.sourceCode { white-space: pre; position: relative; }
+pre.sourceCode { margin: 0; }
+@media screen {
+div.sourceCode { overflow: auto; }
+}
+@media print {
+code.sourceCode { white-space: pre-wrap; }
+code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
+}
+pre.numberSource code
+  { counter-reset: source-line 0; }
+pre.numberSource code > span
+  { position: relative; left: -4em; counter-increment: source-line; }
+pre.numberSource code > span > a:first-child::before
+  { content: counter(source-line);
+    position: relative; left: -1em; text-align: right; vertical-align: baseline;
+    border: none; display: inline-block;
+    -webkit-touch-callout: none; -webkit-user-select: none;
+    -khtml-user-select: none; -moz-user-select: none;
+    -ms-user-select: none; user-select: none;
+    padding: 0 4px; width: 4em;
+    color: #aaaaaa;
+  }
+pre.numberSource { margin-left: 3em; border-left: 1px solid #aaaaaa;  padding-left: 4px; }
+div.sourceCode
+  {   }
+@media screen {
+code.sourceCode > span > a:first-child::before { text-decoration: underline; }
+}
+code span.al { color: #ff0000; font-weight: bold; } /* Alert */
+code span.an { color: #60a0b0; font-weight: bold; font-style: italic; } /* Annotation */
+code span.at { color: #7d9029; } /* Attribute */
+code span.bn { color: #40a070; } /* BaseN */
+code span.bu { } /* BuiltIn */
+code span.cf { color: #007020; font-weight: bold; } /* ControlFlow */
+code span.ch { color: #4070a0; } /* Char */
+code span.cn { color: #880000; } /* Constant */
+code span.co { color: #60a0b0; font-style: italic; } /* Comment */
+code span.cv { color: #60a0b0; font-weight: bold; font-style: italic; } /* CommentVar */
+code span.do { color: #ba2121; font-style: italic; } /* Documentation */
+code span.dt { color: #902000; } /* DataType */
+code span.dv { color: #40a070; } /* DecVal */
+code span.er { color: #ff0000; font-weight: bold; } /* Error */
+code span.ex { } /* Extension */
+code span.fl { color: #40a070; } /* Float */
+code span.fu { color: #06287e; } /* Function */
+code span.im { } /* Import */
+code span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Information */
+code span.kw { color: #007020; font-weight: bold; } /* Keyword */
+code span.op { color: #666666; } /* Operator */
+code span.ot { color: #007020; } /* Other */
+code span.pp { color: #bc7a00; } /* Preprocessor */
+code span.sc { color: #4070a0; } /* SpecialChar */
+code span.ss { color: #bb6688; } /* SpecialString */
+code span.st { color: #4070a0; } /* String */
+code span.va { color: #19177c; } /* Variable */
+code span.vs { color: #4070a0; } /* VerbatimString */
+code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warning */
 </style>
 
 <link rel="stylesheet" href="style.css" type="text/css" />
@@ -154,6 +183,9 @@ code > span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Inf
 <li class="chapter" data-level="" data-path="4-slr.html"><a href="4-slr.html#data-4"><i class="fa fa-check"></i>Data</a></li>
 <li class="chapter" data-level="" data-path="4-slr.html"><a href="4-slr.html#exercises-3"><i class="fa fa-check"></i>Exercises</a></li>
 </ul></li>
+<li class="chapter" data-level="4.4" data-path="4-slr.html"><a href="4-slr.html#slr-notes"><i class="fa fa-check"></i><b>4.4</b> SLR Notes</a></li>
+<li class="chapter" data-level="4.5" data-path="4-slr.html"><a href="4-slr.html#r-markdown"><i class="fa fa-check"></i><b>4.5</b> R Markdown</a></li>
+<li class="chapter" data-level="4.6" data-path="4-slr.html"><a href="4-slr.html#including-plots"><i class="fa fa-check"></i><b>4.6</b> Including Plots</a></li>
 </ul></li>
 <li class="chapter" data-level="5" data-path="5-anova.html"><a href="5-anova.html"><i class="fa fa-check"></i><b>5</b> Analysis of Variance</a><ul>
 <li class="chapter" data-level="5.0.1" data-path="5-anova.html"><a href="5-anova.html#comp-diamonds"><i class="fa fa-check"></i><b>5.0.1</b> COMP: Diamonds</a></li>
@@ -280,21 +312,21 @@ code > span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Inf
             <section class="normal" id="section-">
 <div id="instr" class="section level1">
 <h1><span class="header-section-number"> 2</span> Notes for Instructors</h1>
-<p>This chapter includes details for setting up RStudio Cloud and GitHub in your course. The information in this chapter is based on the <a href="https://datasciencebox.org/infrastructure/">Infrastructure</a> page in <span class="citation">(“Data Science in a Box” <a href="#ref-dsbox">2018</a>)</span> and experience from previous courses.</p>
+<p>This chapter includes details for setting up RStudio Cloud and GitHub in your course. The information in this chapter is based on the <a href="https://datasciencebox.org/infrastructure/">Infrastructure</a> page in <span class="citation">(“Data Science in a Box” <a href="#ref-dsbox" role="doc-biblioref">2018</a>)</span> and experience from previous courses.</p>
 <div id="setting-up-your-course" class="section level2">
 <h2><span class="header-section-number">2.1</span> Setting up your course</h2>
 <div id="github" class="section level3">
 <h3><span class="header-section-number">2.1.1</span> GitHub</h3>
-<p>GitHub can be used as a course management platform that is a more flexible alternative traditional platforms such as Blackboard and Sakai <span class="citation">(Cetinkaya-Rudel and Rundel <a href="#ref-cr2018">2018</a>)</span>. It can be used as the central place to share course content and for students to submit assignments. It is structured to promote collaboration, so it is good for courses that include a lot of group assignments. It also gives students practice establishing a workflow that is more representative of what is currently being used in industry.</p>
-<p>Before setting up your course, create an account on <a href="https://github.com/">GitHub.com</a> if you do not already have one. The chapter <a href="https://happygitwithr.com/github-acct.html">Register a GitHub account</a> in <span class="citation">(Bryan and Hester <a href="#ref-happygit">2019</a>)</span> has helpful guidelines to consider when making a GitHub username.</p>
+<p>GitHub can be used as a course management platform that is a more flexible alternative traditional platforms such as Blackboard and Sakai <span class="citation">(Cetinkaya-Rudel and Rundel <a href="#ref-cr2018" role="doc-biblioref">2018</a>)</span>. It can be used as the central place to share course content and for students to submit assignments. It is structured to promote collaboration, so it is good for courses that include a lot of group assignments. It also gives students practice establishing a workflow that is more representative of what is currently being used in industry.</p>
+<p>Before setting up your course, create an account on <a href="https://github.com/">GitHub.com</a> if you do not already have one. The chapter <a href="https://happygitwithr.com/github-acct.html">Register a GitHub account</a> in <span class="citation">(Bryan and Hester <a href="#ref-happygit" role="doc-biblioref">2019</a>)</span> has helpful guidelines to consider when making a GitHub username.</p>
 <p>To set up your course organization in GitHub:</p>
 <ol style="list-style-type: decimal">
 <li><p><a href="https://help.github.com/en/enterprise/2.16/admin/user-management/creating-organizations">Create a new organization</a> in GitHub. To keep things simple, you can name the organization based on the course number and semester. For example, the organization name for my most recent Regression Analysis course was STA210-Sp19.</p></li>
 <li><p>Apply for the <a href="https://education.github.com/discount_requests/new">GitHub Education benefits</a> to obtain free private repositories for your course organization. By default any repositories created in the course organization will be private and thus only visible and accessible to the student (or group of students if it’s a team assignment) who owns the assignment and the instructor. This is to comply with Family Educational Rights and Privacy Act (FERPA).</p></li>
-<li><p>Now you’re ready to add students to the GitHub course organization. Have students create a GitHub username and send it to you. You can share the guidelines from <span class="citation">(Bryan and Hester <a href="#ref-happygit">2019</a>)</span> to help students create usernames that are applicable beyond their time in your course that can be shared with future employers.</p>
+<li><p>Now you’re ready to add students to the GitHub course organization. Have students create a GitHub username and send it to you. You can share the guidelines from <span class="citation">(Bryan and Hester <a href="#ref-happygit" role="doc-biblioref">2019</a>)</span> to help students create usernames that are applicable beyond their time in your course that can be shared with future employers.</p>
 <p>I typically have students provide their GitHub username as part of the “Getting to Know You” survey at the beginning of the semester. It doesn’t take long to create a GitHub username, so this could also be done as an activity on one of the first few days of class.</p></li>
-<li><p>Add students to the GitHub course organization using the <code>ghclass</code> R package. The section <a href="https://rundel.github.io/ghclass/articles/ghclass.html">“Adding students and creating teams”</a> in <span class="citation">Rundel and Cetinkaya-Rundel (<a href="#ref-ghclass">2018</a>)</span> provides step-by-step instructions for adding new members to the course organization.</p></li>
-<li><p>If students will be working in teams, you can add the teams to the GitHub course organization using by following the steps in <span class="citation">(Rundel and Cetinkaya-Rundel <a href="#ref-ghclass">2018</a>)</span>. Any assignment repo for a group assignment will be visible and accessbile to all the members of the team and instructor.</p></li>
+<li><p>Add students to the GitHub course organization using the <code>ghclass</code> R package. The section <a href="https://rundel.github.io/ghclass/articles/ghclass.html">“Adding students and creating teams”</a> in <span class="citation">Rundel and Cetinkaya-Rundel (<a href="#ref-ghclass" role="doc-biblioref">2018</a>)</span> provides step-by-step instructions for adding new members to the course organization.</p></li>
+<li><p>If students will be working in teams, you can add the teams to the GitHub course organization using by following the steps in <span class="citation">(Rundel and Cetinkaya-Rundel <a href="#ref-ghclass" role="doc-biblioref">2018</a>)</span>. Any assignment repo for a group assignment will be visible and accessbile to all the members of the team and instructor.</p></li>
 <li><p>You’re done! Now you’re ready to create your first assignment, which is described in the sections below.</p></li>
 </ol>
 </div>
@@ -314,7 +346,7 @@ code > span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Inf
 <li><p>By default, the workspace only holds 10 members and 25 projects. If you need more space for course, submit a request by emailing <a href = "mailto: support@rstudio.com">support@rstudio.com</a>.</p></li>
 <li><p>In the course workspace, go to the “Members” menu and click options. Change the access to “Shared” to create a sharing link that can be distributed to your students. Anyone who clicks the link will automatically be added to your course workspace. Students can log in to RStudio Cloud using their Github credentials.</p>
 <p>After the first few weeks of class, you can change the access to the course space to “Invitation required”. At that point you would need to send an invitation to anyone else wanting to join the course workspace.</p>
-See the <a href="https://rstudio.cloud/learn/guide#space-members">RStudio Cloud guide</a> for more details about adding members and specific member roles. Some suggested roles are
+<p>See the <a href="https://rstudio.cloud/learn/guide#space-members">RStudio Cloud guide</a> for more details about adding members and specific member roles. Some suggested roles are</p>
 <ul>
 <li>Primary instructor: Admin role that can manage membership, view, edit and manage all projects in the workspace</li>
 <li>Secondary instructors / Teaching assistants: Moderator role that can view, edit and manage all projects in the workspace</li>
@@ -339,7 +371,7 @@ See the <a href="https://rstudio.cloud/learn/guide#space-members">RStudio Cloud 
 <li>Any data required to complete the assignment in a <code>/data</code> sub folder.</li>
 <li>README that includes link to assignment instructions.</li>
 </ul></li>
-<li><p>Use the <code>ghclass</code> package to create individual or team student repos that are mirrors of the original assignment repo. See <a href="https://rundel.github.io/ghclass/articles/ghclass.html">Creating a team assignment</a> in <span class="citation">(Rundel and Cetinkaya-Rundel <a href="#ref-ghclass">2018</a>)</span> to step-by-step instructions.</p>
+<li><p>Use the <code>ghclass</code> package to create individual or team student repos that are mirrors of the original assignment repo. See <a href="https://rundel.github.io/ghclass/articles/ghclass.html">Creating a team assignment</a> in <span class="citation">(Rundel and Cetinkaya-Rundel <a href="#ref-ghclass" role="doc-biblioref">2018</a>)</span> to step-by-step instructions.</p>
 <p>By default these repos will be private.</p></li>
 <li><p>Students clone the repo into RStudio to complete the assignment.</p></li>
 </ol>
@@ -365,17 +397,17 @@ See the <a href="https://rstudio.cloud/learn/guide#space-members">RStudio Cloud 
 </div>
 <h3>References</h3>
 <div id="refs" class="references">
-<div id="ref-dsbox">
-<p>“Data Science in a Box.” 2018. <a href="https://datasciencebox.org/" class="uri">https://datasciencebox.org/</a>.</p>
+<div id="ref-happygit">
+<p>Bryan, Jenny, and Jim Hester. 2019. <em>Happy Git with R</em>. <a href="https://happygitwithr.com/">https://happygitwithr.com/</a>.</p>
 </div>
 <div id="ref-cr2018">
-<p>Cetinkaya-Rudel, Mine, and Colin Rundel. 2018. “Infrastructure and Tools for Teaching Computing Throughout the Statistical Curriculum.” <em>The American Statistician</em> 72. <a href="https://www.tandfonline.com/doi/abs/10.1080/00031305.2017.1397549" class="uri">https://www.tandfonline.com/doi/abs/10.1080/00031305.2017.1397549</a>.</p>
+<p>Cetinkaya-Rudel, Mine, and Colin Rundel. 2018. “Infrastructure and Tools for Teaching Computing Throughout the Statistical Curriculum.” <em>The American Statistician</em> 72. <a href="https://www.tandfonline.com/doi/abs/10.1080/00031305.2017.1397549">https://www.tandfonline.com/doi/abs/10.1080/00031305.2017.1397549</a>.</p>
 </div>
-<div id="ref-happygit">
-<p>Bryan, Jenny, and Jim Hester. 2019. <em>Happy Git with R</em>. <a href="https://happygitwithr.com/" class="uri">https://happygitwithr.com/</a>.</p>
+<div id="ref-dsbox">
+<p>“Data Science in a Box.” 2018. <a href="https://datasciencebox.org/">https://datasciencebox.org/</a>.</p>
 </div>
 <div id="ref-ghclass">
-<p>Rundel, Colin, and Mine Cetinkaya-Rundel. 2018. <em>Tools for Managing Github Class Organization Accounts</em>. <a href="https://rundel.github.io/ghclass/index.html" class="uri">https://rundel.github.io/ghclass/index.html</a>.</p>
+<p>Rundel, Colin, and Mine Cetinkaya-Rundel. 2018. <em>Tools for Managing Github Class Organization Accounts</em>. <a href="https://rundel.github.io/ghclass/index.html">https://rundel.github.io/ghclass/index.html</a>.</p>
 </div>
 </div>
             </section>
@@ -389,11 +421,13 @@ See the <a href="https://rstudio.cloud/learn/guide#space-members">RStudio Cloud 
   </div>
 <script src="libs/gitbook-2.6.7/js/app.min.js"></script>
 <script src="libs/gitbook-2.6.7/js/lunr.js"></script>
+<script src="libs/gitbook-2.6.7/js/clipboard.min.js"></script>
 <script src="libs/gitbook-2.6.7/js/plugin-search.js"></script>
 <script src="libs/gitbook-2.6.7/js/plugin-sharing.js"></script>
 <script src="libs/gitbook-2.6.7/js/plugin-fontsettings.js"></script>
 <script src="libs/gitbook-2.6.7/js/plugin-bookdown.js"></script>
 <script src="libs/gitbook-2.6.7/js/jquery.highlight.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-clipboard.js"></script>
 <script>
 gitbook.require(["gitbook"], function(gitbook) {
 gitbook.start({
@@ -401,12 +435,11 @@ gitbook.start({
 "github": false,
 "facebook": true,
 "twitter": true,
-"google": false,
 "linkedin": false,
 "weibo": false,
 "instapaper": false,
 "vk": false,
-"all": ["facebook", "google", "twitter", "linkedin", "weibo", "instapaper"]
+"all": ["facebook", "twitter", "linkedin", "weibo", "instapaper"]
 },
 "fontsettings": {
 "theme": "white",
@@ -418,6 +451,10 @@ gitbook.start({
 "text": null
 },
 "history": {
+"link": null,
+"text": null
+},
+"view": {
 "link": null,
 "text": null
 },
@@ -436,10 +473,11 @@ gitbook.start({
   (function () {
     var script = document.createElement("script");
     script.type = "text/javascript";
-    var src = "";
+    var src = "true";
     if (src === "" || src === "true") src = "https://mathjax.rstudio.com/latest/MathJax.js?config=TeX-MML-AM_CHTML";
-    if (location.protocol !== "file:" && /^https?:/.test(src))
-      src = src.replace(/^https?:/, '');
+    if (location.protocol !== "file:")
+      if (/^https?:/.test(src))
+        src = src.replace(/^https?:/, '');
     script.src = src;
     document.getElementsByTagName("head")[0].appendChild(script);
   })();

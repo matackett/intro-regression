@@ -1,0 +1,16 @@
+## SLR Notes 
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE, eval = T)
+```
+
+This is text to see what is happening. 
+
+```{r pressure}
+plot(pressure)
+```
+
+I would like to embed slides into the docs. 
+
+<iframe seamless width="672" height="400px" frameborde="0" src="../slides/03-slr.html"></iframe>
+

@@ -1,13 +1,12 @@
 <!DOCTYPE html>
-<html >
-
+<html lang="" xml:lang="">
 <head>
 
-  <meta charset="UTF-8">
-  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta charset="utf-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
   <title> 9 Multinomial Logistic Regression | Intro Regression</title>
-  <meta name="description" content="An electronic book with assignments and in-class activities to help students apply concepts in an intermediate-level regression analysis course. The primary focus is application and computing; there are also supplemental math notes on some topics.">
-  <meta name="generator" content="bookdown  and GitBook 2.6.7">
+  <meta name="description" content="An electronic book with assignments and in-class activities to help students apply concepts in an intermediate-level regression analysis course. The primary focus is application and computing; there are also supplemental math notes on some topics." />
+  <meta name="generator" content="bookdown 0.19 and GitBook 2.6.7" />
 
   <meta property="og:title" content=" 9 Multinomial Logistic Regression | Intro Regression" />
   <meta property="og:type" content="book" />
@@ -22,17 +21,17 @@
   <meta name="twitter:description" content="An electronic book with assignments and in-class activities to help students apply concepts in an intermediate-level regression analysis course. The primary focus is application and computing; there are also supplemental math notes on some topics." />
   <meta name="twitter:image" content="https://www.introregression.org/img/introregression-sticker.png" />
 
-<meta name="author" content="Maria Tackett">
+<meta name="author" content="Maria Tackett" />
 
 
 
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <meta name="apple-mobile-web-app-capable" content="yes">
-  <meta name="apple-mobile-web-app-status-bar-style" content="black">
-  <link rel="apple-touch-icon-precomposed" sizes="152x152" href="img/introregression-sticker.png">
-  <link rel="shortcut icon" href="img/introregression-sticker.png" type="image/x-icon">
-<link rel="prev" href="8-logistic.html">
-<link rel="next" href="10-special.html">
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="apple-mobile-web-app-capable" content="yes" />
+  <meta name="apple-mobile-web-app-status-bar-style" content="black" />
+  <link rel="apple-touch-icon-precomposed" sizes="152x152" href="img/introregression-sticker.png" />
+  <link rel="shortcut icon" href="img/introregression-sticker.png" type="image/x-icon" />
+<link rel="prev" href="8-logistic.html"/>
+<link rel="next" href="10-special.html"/>
 <script src="libs/jquery-2.2.3/jquery.min.js"></script>
 <link href="libs/gitbook-2.6.7/css/style.css" rel="stylesheet" />
 <link href="libs/gitbook-2.6.7/css/plugin-table.css" rel="stylesheet" />
@@ -40,6 +39,9 @@
 <link href="libs/gitbook-2.6.7/css/plugin-highlight.css" rel="stylesheet" />
 <link href="libs/gitbook-2.6.7/css/plugin-search.css" rel="stylesheet" />
 <link href="libs/gitbook-2.6.7/css/plugin-fontsettings.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-clipboard.css" rel="stylesheet" />
+
+
 
 
 
@@ -50,41 +52,68 @@
 
 
 <style type="text/css">
-div.sourceCode { overflow-x: auto; }
-table.sourceCode, tr.sourceCode, td.lineNumbers, td.sourceCode {
-  margin: 0; padding: 0; vertical-align: baseline; border: none; }
-table.sourceCode { width: 100%; line-height: 100%; }
-td.lineNumbers { text-align: right; padding-right: 4px; padding-left: 4px; color: #aaaaaa; border-right: 1px solid #aaaaaa; }
-td.sourceCode { padding-left: 5px; }
-code > span.kw { color: #007020; font-weight: bold; } /* Keyword */
-code > span.dt { color: #902000; } /* DataType */
-code > span.dv { color: #40a070; } /* DecVal */
-code > span.bn { color: #40a070; } /* BaseN */
-code > span.fl { color: #40a070; } /* Float */
-code > span.ch { color: #4070a0; } /* Char */
-code > span.st { color: #4070a0; } /* String */
-code > span.co { color: #60a0b0; font-style: italic; } /* Comment */
-code > span.ot { color: #007020; } /* Other */
-code > span.al { color: #ff0000; font-weight: bold; } /* Alert */
-code > span.fu { color: #06287e; } /* Function */
-code > span.er { color: #ff0000; font-weight: bold; } /* Error */
-code > span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warning */
-code > span.cn { color: #880000; } /* Constant */
-code > span.sc { color: #4070a0; } /* SpecialChar */
-code > span.vs { color: #4070a0; } /* VerbatimString */
-code > span.ss { color: #bb6688; } /* SpecialString */
-code > span.im { } /* Import */
-code > span.va { color: #19177c; } /* Variable */
-code > span.cf { color: #007020; font-weight: bold; } /* ControlFlow */
-code > span.op { color: #666666; } /* Operator */
-code > span.bu { } /* BuiltIn */
-code > span.ex { } /* Extension */
-code > span.pp { color: #bc7a00; } /* Preprocessor */
-code > span.at { color: #7d9029; } /* Attribute */
-code > span.do { color: #ba2121; font-style: italic; } /* Documentation */
-code > span.an { color: #60a0b0; font-weight: bold; font-style: italic; } /* Annotation */
-code > span.cv { color: #60a0b0; font-weight: bold; font-style: italic; } /* CommentVar */
-code > span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Information */
+code.sourceCode > span { display: inline-block; line-height: 1.25; }
+code.sourceCode > span { color: inherit; text-decoration: inherit; }
+code.sourceCode > span:empty { height: 1.2em; }
+.sourceCode { overflow: visible; }
+code.sourceCode { white-space: pre; position: relative; }
+pre.sourceCode { margin: 0; }
+@media screen {
+div.sourceCode { overflow: auto; }
+}
+@media print {
+code.sourceCode { white-space: pre-wrap; }
+code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
+}
+pre.numberSource code
+  { counter-reset: source-line 0; }
+pre.numberSource code > span
+  { position: relative; left: -4em; counter-increment: source-line; }
+pre.numberSource code > span > a:first-child::before
+  { content: counter(source-line);
+    position: relative; left: -1em; text-align: right; vertical-align: baseline;
+    border: none; display: inline-block;
+    -webkit-touch-callout: none; -webkit-user-select: none;
+    -khtml-user-select: none; -moz-user-select: none;
+    -ms-user-select: none; user-select: none;
+    padding: 0 4px; width: 4em;
+    color: #aaaaaa;
+  }
+pre.numberSource { margin-left: 3em; border-left: 1px solid #aaaaaa;  padding-left: 4px; }
+div.sourceCode
+  {   }
+@media screen {
+code.sourceCode > span > a:first-child::before { text-decoration: underline; }
+}
+code span.al { color: #ff0000; font-weight: bold; } /* Alert */
+code span.an { color: #60a0b0; font-weight: bold; font-style: italic; } /* Annotation */
+code span.at { color: #7d9029; } /* Attribute */
+code span.bn { color: #40a070; } /* BaseN */
+code span.bu { } /* BuiltIn */
+code span.cf { color: #007020; font-weight: bold; } /* ControlFlow */
+code span.ch { color: #4070a0; } /* Char */
+code span.cn { color: #880000; } /* Constant */
+code span.co { color: #60a0b0; font-style: italic; } /* Comment */
+code span.cv { color: #60a0b0; font-weight: bold; font-style: italic; } /* CommentVar */
+code span.do { color: #ba2121; font-style: italic; } /* Documentation */
+code span.dt { color: #902000; } /* DataType */
+code span.dv { color: #40a070; } /* DecVal */
+code span.er { color: #ff0000; font-weight: bold; } /* Error */
+code span.ex { } /* Extension */
+code span.fl { color: #40a070; } /* Float */
+code span.fu { color: #06287e; } /* Function */
+code span.im { } /* Import */
+code span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Information */
+code span.kw { color: #007020; font-weight: bold; } /* Keyword */
+code span.op { color: #666666; } /* Operator */
+code span.ot { color: #007020; } /* Other */
+code span.pp { color: #bc7a00; } /* Preprocessor */
+code span.sc { color: #4070a0; } /* SpecialChar */
+code span.ss { color: #bb6688; } /* SpecialString */
+code span.st { color: #4070a0; } /* String */
+code span.va { color: #19177c; } /* Variable */
+code span.vs { color: #4070a0; } /* VerbatimString */
+code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warning */
 </style>
 
 <link rel="stylesheet" href="style.css" type="text/css" />
@@ -154,6 +183,9 @@ code > span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Inf
 <li class="chapter" data-level="" data-path="4-slr.html"><a href="4-slr.html#data-4"><i class="fa fa-check"></i>Data</a></li>
 <li class="chapter" data-level="" data-path="4-slr.html"><a href="4-slr.html#exercises-3"><i class="fa fa-check"></i>Exercises</a></li>
 </ul></li>
+<li class="chapter" data-level="4.4" data-path="4-slr.html"><a href="4-slr.html#slr-notes"><i class="fa fa-check"></i><b>4.4</b> SLR Notes</a></li>
+<li class="chapter" data-level="4.5" data-path="4-slr.html"><a href="4-slr.html#r-markdown"><i class="fa fa-check"></i><b>4.5</b> R Markdown</a></li>
+<li class="chapter" data-level="4.6" data-path="4-slr.html"><a href="4-slr.html#including-plots"><i class="fa fa-check"></i><b>4.6</b> Including Plots</a></li>
 </ul></li>
 <li class="chapter" data-level="5" data-path="5-anova.html"><a href="5-anova.html"><i class="fa fa-check"></i><b>5</b> Analysis of Variance</a><ul>
 <li class="chapter" data-level="5.0.1" data-path="5-anova.html"><a href="5-anova.html#comp-diamonds"><i class="fa fa-check"></i><b>5.0.1</b> COMP: Diamonds</a></li>
@@ -290,16 +322,16 @@ code > span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Inf
 <div id="packages-11" class="section level3 unnumbered">
 <h3>Packages</h3>
 <p>You will need the following packages for today’s lab:</p>
-<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="kw">library</span>(tidyverse)
-<span class="kw">library</span>(nnet)
-<span class="kw">library</span>(knitr)
-<span class="kw">library</span>(broom)
-## Fill in other packages as needed</code></pre></div>
+<div class="sourceCode" id="cb80"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb80-1"><a href="9-multinom-logistic.html#cb80-1"></a><span class="kw">library</span>(tidyverse)</span>
+<span id="cb80-2"><a href="9-multinom-logistic.html#cb80-2"></a><span class="kw">library</span>(nnet)</span>
+<span id="cb80-3"><a href="9-multinom-logistic.html#cb80-3"></a><span class="kw">library</span>(knitr)</span>
+<span id="cb80-4"><a href="9-multinom-logistic.html#cb80-4"></a><span class="kw">library</span>(broom)</span>
+<span id="cb80-5"><a href="9-multinom-logistic.html#cb80-5"></a><span class="co">## Fill in other packages as needed</span></span></code></pre></div>
 </div>
 <div id="data-12" class="section level3 unnumbered">
 <h3>Data</h3>
 <p>The data for this lab is from the 2016 General Social Survey. The original data set contains 2867 observations and 935 variables. Given the size of the dataset, we will handle it differently in our workflow than we’ve handled data in previous assignments.</p>
-<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="co"># [Working with large files](https://help.github.com/en/articles/working-with-large-files)</span></code></pre></div>
+<div class="sourceCode" id="cb81"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb81-1"><a href="9-multinom-logistic.html#cb81-1"></a><span class="co"># [Working with large files](https://help.github.com/en/articles/working-with-large-files)</span></span></code></pre></div>
 <p>The size of this dataset is 34.3 MB. Compare that to the Spotify dataset from last weeks’ lab which was 149 KB (0.149 MB)! GitHub will not allow you to push files larger than 100 MB and will give you a warning when you push files as large as 50 MB. Though we could push the file we’re working with today to GitHub, it’s large enough that we’d still prefer not to.</p>
 <p>You have may noticed that each repo contains a file called <code>.gitignore</code>. It contains a list of the files you don’t want commit or push to GitHub. If you look at the <code>.gitignore</code> file for today’s lab, you will notice that <code>gss2016.csv</code> is listed at the bottom.</p>
 <ul>
@@ -311,36 +343,36 @@ code > span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Inf
 <ul>
 <li><p><code>natmass</code>: Respondent’s answer to the following prompt:</p>
 <p>“We are faced with many problems in this country, none of which can be solved easily or inexpensively. I’m going to name some of these problems, and for each one I’d like you to tell me whether you think we’re spending too much money on it, too little money, or about the right amount…are we spending too much, too little, or about the right amount on mass transportation?”</p></li>
-<li><code>age</code>: Age in years.</li>
-<li><code>sex</code>: Sex recorded as <em>male</em> or <em>female</em></li>
-<li><code>sei10</code>: Socioeconomic index from 0 to 100</li>
-<li><code>region</code>: Region where interview took place</li>
+<li><p><code>age</code>: Age in years.</p></li>
+<li><p><code>sex</code>: Sex recorded as <em>male</em> or <em>female</em></p></li>
+<li><p><code>sei10</code>: Socioeconomic index from 0 to 100</p></li>
+<li><p><code>region</code>: Region where interview took place</p></li>
 <li><p><code>polviews</code>: Respondent’s answer to the following prompt:</p>
 <p>“We hear a lot of talk these days about liberals and conservatives. I’m going to show you a seven-point scale on which the political views that people might hold are arranged from extremely liberal - point 1 - to extremely conservative - point 7. Where would you place yourself on this scale?”</p></li>
 </ul>
 <p>Use the code below to read in the data.</p>
-<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r">gss &lt;-<span class="st"> </span><span class="kw">read_csv</span>(<span class="st">&quot;data/gss2016.csv&quot;</span>,
-  <span class="dt">na =</span> <span class="kw">c</span>(<span class="st">&quot;&quot;</span>, <span class="st">&quot;Don&#39;t know&quot;</span>, <span class="st">&quot;No answer&quot;</span>, 
-         <span class="st">&quot;Not applicable&quot;</span>), 
-         <span class="dt">guess_max =</span> <span class="dv">2867</span>) <span class="op">%&gt;%</span>
-<span class="st">  </span><span class="kw">select</span>(natmass, age, sex, sei10, region, polviews) <span class="op">%&gt;%</span>
-<span class="st">  </span><span class="kw">drop_na</span>()</code></pre></div>
-<p>The argument <code>guess_max = 2867</code> tells the <code>read_csv</code> function to use all of the observations in a column to determine its data type. Without this argument, only the first 1,000 observations would be used to make this determination. This becomes important for a variable like <code>age</code>; though <code>age</code> is coded as numeric data for most of the observations, there are some in which <code>age</code> is coded as <code>&quot;89 or older&quot;</code>. Without the <code>guess_max</code> argument, you will get warnings when loading the data.</p>
+<div class="sourceCode" id="cb82"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb82-1"><a href="9-multinom-logistic.html#cb82-1"></a>gss &lt;-<span class="st"> </span><span class="kw">read_csv</span>(<span class="st">&quot;data/gss2016.csv&quot;</span>,</span>
+<span id="cb82-2"><a href="9-multinom-logistic.html#cb82-2"></a>  <span class="dt">na =</span> <span class="kw">c</span>(<span class="st">&quot;&quot;</span>, <span class="st">&quot;Don&#39;t know&quot;</span>, <span class="st">&quot;No answer&quot;</span>, </span>
+<span id="cb82-3"><a href="9-multinom-logistic.html#cb82-3"></a>         <span class="st">&quot;Not applicable&quot;</span>), </span>
+<span id="cb82-4"><a href="9-multinom-logistic.html#cb82-4"></a>         <span class="dt">guess_max =</span> <span class="dv">2867</span>) <span class="op">%&gt;%</span></span>
+<span id="cb82-5"><a href="9-multinom-logistic.html#cb82-5"></a><span class="st">  </span><span class="kw">select</span>(natmass, age, sex, sei10, region, polviews) <span class="op">%&gt;%</span></span>
+<span id="cb82-6"><a href="9-multinom-logistic.html#cb82-6"></a><span class="st">  </span><span class="kw">drop_na</span>()</span></code></pre></div>
+<p>The argument <code>guess_max = 2867</code> tells the <code>read_csv</code> function to use all of the observations in a column to determine its data type. Without this argument, only the first 1,000 observations would be used to make this determination. This becomes important for a variable like <code>age</code>; though <code>age</code> is coded as numeric data for most of the observations, there are some in which <code>age</code> is coded as <code>"89 or older"</code>. Without the <code>guess_max</code> argument, you will get warnings when loading the data.</p>
 <p>Note also that only the variables of interest will be loaded, not the entire dataset. This will make for faster computation and knitting as you work on the lab.</p>
 </div>
 <div id="exercises-11" class="section level3 unnumbered">
 <h3>Exercises</h3>
 <div id="part-i-exploratory-data-analysis" class="section level4 unnumbered">
 <h4>Part I: Exploratory Data Analysis</h4>
-<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="co"># See [Reorder factor levels by hand](https://forcats.tidyverse.org/reference/fct_relevel.html) for documentation about `fct_relevel`.</span></code></pre></div>
+<div class="sourceCode" id="cb83"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb83-1"><a href="9-multinom-logistic.html#cb83-1"></a><span class="co"># See [Reorder factor levels by hand](https://forcats.tidyverse.org/reference/fct_relevel.html) for documentation about `fct_relevel`.</span></span></code></pre></div>
 <ol style="list-style-type: decimal">
-<li><p>The variable <code>natmass</code> will be the response variable in the model, and you want to compare more opinionated views to the moderate position. Recode <code>natmass</code> so it is a factor variable with <code>&quot;About right&quot;</code> as the baseline.</p></li>
+<li><p>The variable <code>natmass</code> will be the response variable in the model, and you want to compare more opinionated views to the moderate position. Recode <code>natmass</code> so it is a factor variable with <code>"About right"</code> as the baseline.</p></li>
 <li><p>Recode <code>polviews</code> so it is a factor variable type with levels that are in an order that is consistent with question on the survey. <em>Note how the categories are spelled in the data.</em></p></li>
 </ol>
 <p>Make a plot of the distribution of <code>polviews</code>. Which political view occurs most frequently in this data set?</p>
 <ol start="3" style="list-style-type: decimal">
 <li><p>Make a plot displaying the relationship between <code>natmass</code> and <code>polviews</code>. Use the plot to describe the relationship between a person’s political views and their views on mass transportation spending.</p></li>
-<li><p>You want to use <code>age</code> as a quantitative variable in your model; however, it is currently a character data type because some observations are coded as <code>&quot;89 or older&quot;</code>. Recode <code>age</code> so that is a numeric variable. <em>Note: Before making the variable numeric, you will need to replace the values <code>&quot;89 or older&quot;</code> with a single value.</em></p></li>
+<li><p>You want to use <code>age</code> as a quantitative variable in your model; however, it is currently a character data type because some observations are coded as <code>"89 or older"</code>. Recode <code>age</code> so that is a numeric variable. <em>Note: Before making the variable numeric, you will need to replace the values <code>"89 or older"</code> with a single value.</em></p></li>
 </ol>
 </div>
 <div id="part-ii-multinomial-logistic-regression-model" class="section level4 unnumbered">
@@ -368,9 +400,9 @@ code > span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Inf
 <li><p>Calculate the predicted probabilities and residuals from your model.</p></li>
 <li><p>Plot the binned residuals versus the predicted probabilities for each category of <code>natmass.</code> <em>You will have three plots.</em></p></li>
 </ol>
-<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="co"># You can change the size of your plots, so you can fit multiple plots on a single page. Include the arguments `fig.height = ` and `fig.width = ` in the header of the code chunk to change the plot size. </span>
-
-<span class="co"># See [Using R Markdown](https://rstudio.github.io/dygraphs/r-markdown.html) for an example.</span></code></pre></div>
+<div class="sourceCode" id="cb84"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb84-1"><a href="9-multinom-logistic.html#cb84-1"></a><span class="co"># You can change the size of your plots, so you can fit multiple plots on a single page. Include the arguments `fig.height = ` and `fig.width = ` in the header of the code chunk to change the plot size. </span></span>
+<span id="cb84-2"><a href="9-multinom-logistic.html#cb84-2"></a></span>
+<span id="cb84-3"><a href="9-multinom-logistic.html#cb84-3"></a><span class="co"># See [Using R Markdown](https://rstudio.github.io/dygraphs/r-markdown.html) for an example.</span></span></code></pre></div>
 <ol start="13" style="list-style-type: decimal">
 <li><p>Use binned residual plots to examine the residuals versus each of the quantitative variables.</p>
 <ul>
@@ -414,9 +446,11 @@ code > span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Inf
 <li><font class="vocab"><code>viewcat</code></font>
 <ul>
 <li>1: rarely watched show</li>
-<li>2: once or twice a week</li>
+<li>2: once or twice a week
+<ul>
 <li>3: three to five times a week</li>
 <li>4: watched show on average more than five times a week</li>
+</ul></li>
 </ul></li>
 </ul>
 <p><strong>Predictors:</strong></p>
@@ -434,16 +468,16 @@ code > span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Inf
 <li>5: from Spanish speaking home</li>
 </ul></li>
 </ul>
-<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="co"># read in dataset</span>
-sesame &lt;-<span class="st"> </span><span class="kw">read_csv</span>(<span class="st">&quot;data/sesame.csv&quot;</span>)</code></pre></div>
-<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="co"># mean-center relevant continuous variables, make categorical variables factors</span>
-sesame &lt;-<span class="st"> </span>sesame <span class="op">%&gt;%</span><span class="st"> </span>
-<span class="st">  </span><span class="kw">mutate</span>(<span class="dt">viewcat =</span> <span class="kw">as.factor</span>(viewcat), 
-         <span class="dt">site =</span> <span class="kw">as.factor</span>(site), 
-         <span class="dt">prenumbCent =</span> prenumb <span class="op">-</span><span class="st"> </span><span class="kw">mean</span>(prenumb), 
-         <span class="dt">preletCent =</span> prelet <span class="op">-</span><span class="st"> </span><span class="kw">mean</span>(prelet), 
-         <span class="dt">ageCent =</span> age <span class="op">-</span><span class="st"> </span><span class="kw">mean</span>(age),
-         <span class="dt">viewenc =</span> <span class="kw">ifelse</span>(viewenc <span class="op">==</span><span class="st"> </span><span class="dv">1</span>, <span class="st">&quot;Encouraged&quot;</span>, <span class="st">&quot;Not Encouraged&quot;</span>))</code></pre></div>
+<div class="sourceCode" id="cb85"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb85-1"><a href="9-multinom-logistic.html#cb85-1"></a><span class="co"># read in dataset</span></span>
+<span id="cb85-2"><a href="9-multinom-logistic.html#cb85-2"></a>sesame &lt;-<span class="st"> </span><span class="kw">read_csv</span>(<span class="st">&quot;data/sesame.csv&quot;</span>)</span></code></pre></div>
+<div class="sourceCode" id="cb86"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb86-1"><a href="9-multinom-logistic.html#cb86-1"></a><span class="co"># mean-center relevant continuous variables, make categorical variables factors</span></span>
+<span id="cb86-2"><a href="9-multinom-logistic.html#cb86-2"></a>sesame &lt;-<span class="st"> </span>sesame <span class="op">%&gt;%</span><span class="st"> </span></span>
+<span id="cb86-3"><a href="9-multinom-logistic.html#cb86-3"></a><span class="st">  </span><span class="kw">mutate</span>(<span class="dt">viewcat =</span> <span class="kw">as.factor</span>(viewcat), </span>
+<span id="cb86-4"><a href="9-multinom-logistic.html#cb86-4"></a>         <span class="dt">site =</span> <span class="kw">as.factor</span>(site), </span>
+<span id="cb86-5"><a href="9-multinom-logistic.html#cb86-5"></a>         <span class="dt">prenumbCent =</span> prenumb <span class="op">-</span><span class="st"> </span><span class="kw">mean</span>(prenumb), </span>
+<span id="cb86-6"><a href="9-multinom-logistic.html#cb86-6"></a>         <span class="dt">preletCent =</span> prelet <span class="op">-</span><span class="st"> </span><span class="kw">mean</span>(prelet), </span>
+<span id="cb86-7"><a href="9-multinom-logistic.html#cb86-7"></a>         <span class="dt">ageCent =</span> age <span class="op">-</span><span class="st"> </span><span class="kw">mean</span>(age),</span>
+<span id="cb86-8"><a href="9-multinom-logistic.html#cb86-8"></a>         <span class="dt">viewenc =</span> <span class="kw">ifelse</span>(viewenc <span class="op">==</span><span class="st"> </span><span class="dv">1</span>, <span class="st">&quot;Encouraged&quot;</span>, <span class="st">&quot;Not Encouraged&quot;</span>))</span></code></pre></div>
 <p><br></p>
 </div>
 <div id="exercises-12" class="section level3 unnumbered">
@@ -452,10 +486,10 @@ sesame &lt;-<span class="st"> </span>sesame <span class="op">%&gt;%</span><span 
 <li><p>We will build a model to predict how often a child in this study watched <em>Sesame Street</em>. What type of model should we build? Why?</p></li>
 <li><p>Describe how you would conduct exploratory data analysis. What plots and/or summary statistics would you include? What information would you learn from the exploratory data analysis?</p></li>
 </ol>
-<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r">model1 &lt;-<span class="st"> </span><span class="kw">multinom</span>(viewcat <span class="op">~</span><span class="st"> </span>site <span class="op">+</span><span class="st"> </span>viewenc <span class="op">+</span><span class="st"> </span>prenumbCent <span class="op">+</span><span class="st"> </span>preletCent <span class="op">+</span><span class="st"> </span>ageCent,
-                   <span class="dt">data =</span> sesame)
-<span class="kw">kable</span>(<span class="kw">tidy</span>(model1, <span class="dt">conf.int=</span><span class="ot">TRUE</span>, <span class="dt">exponentiate =</span> <span class="ot">FALSE</span>),
-      <span class="dt">format =</span> <span class="st">&quot;markdown&quot;</span>)</code></pre></div>
+<div class="sourceCode" id="cb87"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb87-1"><a href="9-multinom-logistic.html#cb87-1"></a>model1 &lt;-<span class="st"> </span><span class="kw">multinom</span>(viewcat <span class="op">~</span><span class="st"> </span>site <span class="op">+</span><span class="st"> </span>viewenc <span class="op">+</span><span class="st"> </span>prenumbCent <span class="op">+</span><span class="st"> </span>preletCent <span class="op">+</span><span class="st"> </span>ageCent,</span>
+<span id="cb87-2"><a href="9-multinom-logistic.html#cb87-2"></a>                   <span class="dt">data =</span> sesame)</span>
+<span id="cb87-3"><a href="9-multinom-logistic.html#cb87-3"></a><span class="kw">kable</span>(<span class="kw">tidy</span>(model1, <span class="dt">conf.int=</span><span class="ot">TRUE</span>, <span class="dt">exponentiate =</span> <span class="ot">FALSE</span>),</span>
+<span id="cb87-4"><a href="9-multinom-logistic.html#cb87-4"></a>      <span class="dt">format =</span> <span class="st">&quot;markdown&quot;</span>)</span></code></pre></div>
 <p><br></p>
 <ol start="3" style="list-style-type: decimal">
 <li><p>Interpret the intercept associated with the odds of <code>viewcat == 2</code> versus <code>viewcat == 1</code>.</p></li>
@@ -463,18 +497,18 @@ sesame &lt;-<span class="st"> </span>sesame <span class="op">%&gt;%</span><span 
 <li><p>The primary objective of the experiment was to understand the effect of encouragement <code>viewenc</code> on viewership. Does encouragement have a significant effect on viewership? If so, describe the effect. Otherwise, explain why not.</p></li>
 <li><p>We want to test if there are any significant interactions with <code>viewenc</code> and the pretests. We create a model that includes the variables from <code>model1</code> along with <code>viewenc*preletCent</code> and <code>viewenc*prenumbCent</code>.</p></li>
 </ol>
-<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r">model2 &lt;-<span class="st"> </span><span class="kw">multinom</span>(viewcat <span class="op">~</span><span class="st"> </span>site <span class="op">+</span><span class="st"> </span>viewenc <span class="op">+</span><span class="st"> </span>prenumbCent <span class="op">+</span><span class="st"> </span>preletCent <span class="op">+</span><span class="st"> </span>ageCent <span class="op">+</span><span class="st"> </span>
-<span class="st">                     </span>viewenc<span class="op">*</span>preletCent <span class="op">+</span><span class="st"> </span>viewenc<span class="op">*</span>prenumbCent,
-                   <span class="dt">data =</span> sesame)</code></pre></div>
+<div class="sourceCode" id="cb88"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb88-1"><a href="9-multinom-logistic.html#cb88-1"></a>model2 &lt;-<span class="st"> </span><span class="kw">multinom</span>(viewcat <span class="op">~</span><span class="st"> </span>site <span class="op">+</span><span class="st"> </span>viewenc <span class="op">+</span><span class="st"> </span>prenumbCent <span class="op">+</span><span class="st"> </span>preletCent <span class="op">+</span><span class="st"> </span>ageCent <span class="op">+</span><span class="st"> </span></span>
+<span id="cb88-2"><a href="9-multinom-logistic.html#cb88-2"></a><span class="st">                     </span>viewenc<span class="op">*</span>preletCent <span class="op">+</span><span class="st"> </span>viewenc<span class="op">*</span>prenumbCent,</span>
+<span id="cb88-3"><a href="9-multinom-logistic.html#cb88-3"></a>                   <span class="dt">data =</span> sesame)</span></code></pre></div>
 <p>The results from the drop-in-deviance test are shown below. Is there evidence of a significant interaction effect? Explain.</p>
-<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="kw">anova</span>(model1, model2, <span class="dt">test =</span> <span class="st">&quot;Chisq&quot;</span>)</code></pre></div>
+<div class="sourceCode" id="cb89"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb89-1"><a href="9-multinom-logistic.html#cb89-1"></a><span class="kw">anova</span>(model1, model2, <span class="dt">test =</span> <span class="st">&quot;Chisq&quot;</span>)</span></code></pre></div>
 <ol start="7" style="list-style-type: decimal">
 <li>How would you assess the appropriateness of the model flit? Describe the plots, tables, and/or calculations you would create to assess model fit.</li>
 </ol>
 </div>
 <div id="references-1" class="section level3 unnumbered">
 <h3>References</h3>
-<p>Data from <a href="http://www2.stat.duke.edu/~jerry/sta210/sesamelab.html" class="uri">http://www2.stat.duke.edu/~jerry/sta210/sesamelab.html</a></p>
+<p>Data from <a href="http://www2.stat.duke.edu/~jerry/sta210/sesamelab.html">http://www2.stat.duke.edu/~jerry/sta210/sesamelab.html</a></p>
 <hr />
 
 </div>
@@ -491,11 +525,13 @@ sesame &lt;-<span class="st"> </span>sesame <span class="op">%&gt;%</span><span 
   </div>
 <script src="libs/gitbook-2.6.7/js/app.min.js"></script>
 <script src="libs/gitbook-2.6.7/js/lunr.js"></script>
+<script src="libs/gitbook-2.6.7/js/clipboard.min.js"></script>
 <script src="libs/gitbook-2.6.7/js/plugin-search.js"></script>
 <script src="libs/gitbook-2.6.7/js/plugin-sharing.js"></script>
 <script src="libs/gitbook-2.6.7/js/plugin-fontsettings.js"></script>
 <script src="libs/gitbook-2.6.7/js/plugin-bookdown.js"></script>
 <script src="libs/gitbook-2.6.7/js/jquery.highlight.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-clipboard.js"></script>
 <script>
 gitbook.require(["gitbook"], function(gitbook) {
 gitbook.start({
@@ -503,12 +539,11 @@ gitbook.start({
 "github": false,
 "facebook": true,
 "twitter": true,
-"google": false,
 "linkedin": false,
 "weibo": false,
 "instapaper": false,
 "vk": false,
-"all": ["facebook", "google", "twitter", "linkedin", "weibo", "instapaper"]
+"all": ["facebook", "twitter", "linkedin", "weibo", "instapaper"]
 },
 "fontsettings": {
 "theme": "white",
@@ -520,6 +555,10 @@ gitbook.start({
 "text": null
 },
 "history": {
+"link": null,
+"text": null
+},
+"view": {
 "link": null,
 "text": null
 },
@@ -538,10 +577,11 @@ gitbook.start({
   (function () {
     var script = document.createElement("script");
     script.type = "text/javascript";
-    var src = "";
+    var src = "true";
     if (src === "" || src === "true") src = "https://mathjax.rstudio.com/latest/MathJax.js?config=TeX-MML-AM_CHTML";
-    if (location.protocol !== "file:" && /^https?:/.test(src))
-      src = src.replace(/^https?:/, '');
+    if (location.protocol !== "file:")
+      if (/^https?:/.test(src))
+        src = src.replace(/^https?:/, '');
     script.src = src;
     document.getElementsByTagName("head")[0].appendChild(script);
   })();

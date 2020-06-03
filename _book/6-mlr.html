@@ -1,13 +1,12 @@
 <!DOCTYPE html>
-<html >
-
+<html lang="" xml:lang="">
 <head>
 
-  <meta charset="UTF-8">
-  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta charset="utf-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
   <title> 6 Multiple Linear Regression | Intro Regression</title>
-  <meta name="description" content="An electronic book with assignments and in-class activities to help students apply concepts in an intermediate-level regression analysis course. The primary focus is application and computing; there are also supplemental math notes on some topics.">
-  <meta name="generator" content="bookdown  and GitBook 2.6.7">
+  <meta name="description" content="An electronic book with assignments and in-class activities to help students apply concepts in an intermediate-level regression analysis course. The primary focus is application and computing; there are also supplemental math notes on some topics." />
+  <meta name="generator" content="bookdown 0.19 and GitBook 2.6.7" />
 
   <meta property="og:title" content=" 6 Multiple Linear Regression | Intro Regression" />
   <meta property="og:type" content="book" />
@@ -22,17 +21,17 @@
   <meta name="twitter:description" content="An electronic book with assignments and in-class activities to help students apply concepts in an intermediate-level regression analysis course. The primary focus is application and computing; there are also supplemental math notes on some topics." />
   <meta name="twitter:image" content="https://www.introregression.org/img/introregression-sticker.png" />
 
-<meta name="author" content="Maria Tackett">
+<meta name="author" content="Maria Tackett" />
 
 
 
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <meta name="apple-mobile-web-app-capable" content="yes">
-  <meta name="apple-mobile-web-app-status-bar-style" content="black">
-  <link rel="apple-touch-icon-precomposed" sizes="152x152" href="img/introregression-sticker.png">
-  <link rel="shortcut icon" href="img/introregression-sticker.png" type="image/x-icon">
-<link rel="prev" href="5-anova.html">
-<link rel="next" href="7-select.html">
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="apple-mobile-web-app-capable" content="yes" />
+  <meta name="apple-mobile-web-app-status-bar-style" content="black" />
+  <link rel="apple-touch-icon-precomposed" sizes="152x152" href="img/introregression-sticker.png" />
+  <link rel="shortcut icon" href="img/introregression-sticker.png" type="image/x-icon" />
+<link rel="prev" href="5-anova.html"/>
+<link rel="next" href="7-select.html"/>
 <script src="libs/jquery-2.2.3/jquery.min.js"></script>
 <link href="libs/gitbook-2.6.7/css/style.css" rel="stylesheet" />
 <link href="libs/gitbook-2.6.7/css/plugin-table.css" rel="stylesheet" />
@@ -40,6 +39,9 @@
 <link href="libs/gitbook-2.6.7/css/plugin-highlight.css" rel="stylesheet" />
 <link href="libs/gitbook-2.6.7/css/plugin-search.css" rel="stylesheet" />
 <link href="libs/gitbook-2.6.7/css/plugin-fontsettings.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-clipboard.css" rel="stylesheet" />
+
+
 
 
 
@@ -50,41 +52,68 @@
 
 
 <style type="text/css">
-div.sourceCode { overflow-x: auto; }
-table.sourceCode, tr.sourceCode, td.lineNumbers, td.sourceCode {
-  margin: 0; padding: 0; vertical-align: baseline; border: none; }
-table.sourceCode { width: 100%; line-height: 100%; }
-td.lineNumbers { text-align: right; padding-right: 4px; padding-left: 4px; color: #aaaaaa; border-right: 1px solid #aaaaaa; }
-td.sourceCode { padding-left: 5px; }
-code > span.kw { color: #007020; font-weight: bold; } /* Keyword */
-code > span.dt { color: #902000; } /* DataType */
-code > span.dv { color: #40a070; } /* DecVal */
-code > span.bn { color: #40a070; } /* BaseN */
-code > span.fl { color: #40a070; } /* Float */
-code > span.ch { color: #4070a0; } /* Char */
-code > span.st { color: #4070a0; } /* String */
-code > span.co { color: #60a0b0; font-style: italic; } /* Comment */
-code > span.ot { color: #007020; } /* Other */
-code > span.al { color: #ff0000; font-weight: bold; } /* Alert */
-code > span.fu { color: #06287e; } /* Function */
-code > span.er { color: #ff0000; font-weight: bold; } /* Error */
-code > span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warning */
-code > span.cn { color: #880000; } /* Constant */
-code > span.sc { color: #4070a0; } /* SpecialChar */
-code > span.vs { color: #4070a0; } /* VerbatimString */
-code > span.ss { color: #bb6688; } /* SpecialString */
-code > span.im { } /* Import */
-code > span.va { color: #19177c; } /* Variable */
-code > span.cf { color: #007020; font-weight: bold; } /* ControlFlow */
-code > span.op { color: #666666; } /* Operator */
-code > span.bu { } /* BuiltIn */
-code > span.ex { } /* Extension */
-code > span.pp { color: #bc7a00; } /* Preprocessor */
-code > span.at { color: #7d9029; } /* Attribute */
-code > span.do { color: #ba2121; font-style: italic; } /* Documentation */
-code > span.an { color: #60a0b0; font-weight: bold; font-style: italic; } /* Annotation */
-code > span.cv { color: #60a0b0; font-weight: bold; font-style: italic; } /* CommentVar */
-code > span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Information */
+code.sourceCode > span { display: inline-block; line-height: 1.25; }
+code.sourceCode > span { color: inherit; text-decoration: inherit; }
+code.sourceCode > span:empty { height: 1.2em; }
+.sourceCode { overflow: visible; }
+code.sourceCode { white-space: pre; position: relative; }
+pre.sourceCode { margin: 0; }
+@media screen {
+div.sourceCode { overflow: auto; }
+}
+@media print {
+code.sourceCode { white-space: pre-wrap; }
+code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
+}
+pre.numberSource code
+  { counter-reset: source-line 0; }
+pre.numberSource code > span
+  { position: relative; left: -4em; counter-increment: source-line; }
+pre.numberSource code > span > a:first-child::before
+  { content: counter(source-line);
+    position: relative; left: -1em; text-align: right; vertical-align: baseline;
+    border: none; display: inline-block;
+    -webkit-touch-callout: none; -webkit-user-select: none;
+    -khtml-user-select: none; -moz-user-select: none;
+    -ms-user-select: none; user-select: none;
+    padding: 0 4px; width: 4em;
+    color: #aaaaaa;
+  }
+pre.numberSource { margin-left: 3em; border-left: 1px solid #aaaaaa;  padding-left: 4px; }
+div.sourceCode
+  {   }
+@media screen {
+code.sourceCode > span > a:first-child::before { text-decoration: underline; }
+}
+code span.al { color: #ff0000; font-weight: bold; } /* Alert */
+code span.an { color: #60a0b0; font-weight: bold; font-style: italic; } /* Annotation */
+code span.at { color: #7d9029; } /* Attribute */
+code span.bn { color: #40a070; } /* BaseN */
+code span.bu { } /* BuiltIn */
+code span.cf { color: #007020; font-weight: bold; } /* ControlFlow */
+code span.ch { color: #4070a0; } /* Char */
+code span.cn { color: #880000; } /* Constant */
+code span.co { color: #60a0b0; font-style: italic; } /* Comment */
+code span.cv { color: #60a0b0; font-weight: bold; font-style: italic; } /* CommentVar */
+code span.do { color: #ba2121; font-style: italic; } /* Documentation */
+code span.dt { color: #902000; } /* DataType */
+code span.dv { color: #40a070; } /* DecVal */
+code span.er { color: #ff0000; font-weight: bold; } /* Error */
+code span.ex { } /* Extension */
+code span.fl { color: #40a070; } /* Float */
+code span.fu { color: #06287e; } /* Function */
+code span.im { } /* Import */
+code span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Information */
+code span.kw { color: #007020; font-weight: bold; } /* Keyword */
+code span.op { color: #666666; } /* Operator */
+code span.ot { color: #007020; } /* Other */
+code span.pp { color: #bc7a00; } /* Preprocessor */
+code span.sc { color: #4070a0; } /* SpecialChar */
+code span.ss { color: #bb6688; } /* SpecialString */
+code span.st { color: #4070a0; } /* String */
+code span.va { color: #19177c; } /* Variable */
+code span.vs { color: #4070a0; } /* VerbatimString */
+code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warning */
 </style>
 
 <link rel="stylesheet" href="style.css" type="text/css" />
@@ -154,6 +183,9 @@ code > span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Inf
 <li class="chapter" data-level="" data-path="4-slr.html"><a href="4-slr.html#data-4"><i class="fa fa-check"></i>Data</a></li>
 <li class="chapter" data-level="" data-path="4-slr.html"><a href="4-slr.html#exercises-3"><i class="fa fa-check"></i>Exercises</a></li>
 </ul></li>
+<li class="chapter" data-level="4.4" data-path="4-slr.html"><a href="4-slr.html#slr-notes"><i class="fa fa-check"></i><b>4.4</b> SLR Notes</a></li>
+<li class="chapter" data-level="4.5" data-path="4-slr.html"><a href="4-slr.html#r-markdown"><i class="fa fa-check"></i><b>4.5</b> R Markdown</a></li>
+<li class="chapter" data-level="4.6" data-path="4-slr.html"><a href="4-slr.html#including-plots"><i class="fa fa-check"></i><b>4.6</b> Including Plots</a></li>
 </ul></li>
 <li class="chapter" data-level="5" data-path="5-anova.html"><a href="5-anova.html"><i class="fa fa-check"></i><b>5</b> Analysis of Variance</a><ul>
 <li class="chapter" data-level="5.0.1" data-path="5-anova.html"><a href="5-anova.html#comp-diamonds"><i class="fa fa-check"></i><b>5.0.1</b> COMP: Diamonds</a></li>
@@ -342,7 +374,7 @@ code > span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Inf
 </div>
 <div id="acknowledgement-1" class="section level3 unnumbered">
 <h3>Acknowledgement</h3>
-<p>The data used in this lab was obtained from <a href="https://github.com/proback/BYSH" class="uri">https://github.com/proback/BYSH</a>.</p>
+<p>The data used in this lab was obtained from <a href="https://github.com/proback/BYSH">https://github.com/proback/BYSH</a>.</p>
 <hr />
 </div>
 </div>
@@ -356,7 +388,7 @@ code > span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Inf
 <div id="data-7" class="section level3 unnumbered">
 <h3>Data</h3>
 <p>Today’s data is about Airbnb listings in Asheville, NC. The data was obtained from <a href="http://insideairbnb.com/index.html">http://insideairbnb.com/</a>; it was originally scraped from <a href="https://www.airbnb.com/">airbnb.com</a>.</p>
-<p>You can see a visualization of some of the data used in today’s lab at <a href="http://insideairbnb.com/asheville/" class="uri">http://insideairbnb.com/asheville/</a>.</p>
+<p>You can see a visualization of some of the data used in today’s lab at <a href="http://insideairbnb.com/asheville/">http://insideairbnb.com/asheville/</a>.</p>
 <p>We will use the following variables in this lab:</p>
 <ul>
 <li><code>price</code>: Cost per night (in U.S. dollars)</li>
@@ -469,21 +501,21 @@ code > span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Inf
 <div id="introduction-3" class="section level3">
 <h3><span class="header-section-number">6.4.1</span> Introduction</h3>
 <p>Suppose we have <span class="math inline">\(n\)</span> observations. Let the <span class="math inline">\(i^{th}\)</span> be <span class="math inline">\((x_{i1}, \ldots, x_{ip}, y_i)\)</span>, such that <span class="math inline">\(x_{i1}, \ldots, x_{ip}\)</span> are the explanatory variables (predictors) and <span class="math inline">\(y_i\)</span> is the response variable. We assume the data can be modeled using the least-squares regression model, such that the mean response for a given combination of explanatory variables follows the form in ().</p>
-<span class="math display">\[\begin{equation}
+<p><span class="math display">\[\begin{equation}
 \label{basic_model}
 y = \beta_0 + \beta_1 x_1 + \dots + \beta_p x_p 
-\end{equation}\]</span>
+\end{equation}\]</span></p>
 <p>We can write the response for the <span class="math inline">\(i^{th}\)</span> observation as shown in ()</p>
-<span class="math display">\[\begin{equation}
+<p><span class="math display">\[\begin{equation}
 \label{ind_response}
 y_i = \beta_0 + \beta_1 x_{i1} + \dots + \beta_p x_{ip} + \epsilon_i 
-\end{equation}\]</span>
+\end{equation}\]</span></p>
 <p>such that <span class="math inline">\(\epsilon_i\)</span> is the amount <span class="math inline">\(y_i\)</span> deviates from <span class="math inline">\(\mu\{y|x_{i1}, \ldots, x_{ip}\}\)</span>, the mean response for a given combination of explanatory variables. We assume each <span class="math inline">\(\epsilon_i \sim N(0,\sigma^2)\)</span>, where <span class="math inline">\(\sigma^2\)</span> is a constant variance for the distribution of the response <span class="math inline">\(y\)</span> for any combination of explanatory variables <span class="math inline">\(x_1, \ldots, x_p\)</span>.</p>
 </div>
 <div id="matrix-form-for-the-regression-model" class="section level3">
 <h3><span class="header-section-number">6.4.2</span> Matrix Form for the Regression Model</h3>
 <p>We can represent the () and () using matrix notation. Let</p>
-<span class="math display">\[\begin{equation}
+<p><span class="math display">\[\begin{equation}
 \label{matrix notation}
 \mathbf{Y} = \begin{bmatrix}y_1 \\ y_2 \\ \vdots \\y_n\end{bmatrix} 
 \hspace{15mm}
@@ -495,37 +527,37 @@ x_{n1} &amp; x_{n2} &amp; \dots &amp; x_{np} \end{bmatrix}
 \boldsymbol{\beta}= \begin{bmatrix}\beta_0 \\ \beta_1 \\ \vdots \\ \beta_p \end{bmatrix} 
 \hspace{15mm}
 \boldsymbol{\epsilon}= \begin{bmatrix}\epsilon_1 \\ \epsilon_2 \\ \vdots \\ \epsilon_n \end{bmatrix}
-\end{equation}\]</span>
+\end{equation}\]</span></p>
 <p>Thus,</p>
 <p><span class="math display">\[\mathbf{Y} = \mathbf{X}\boldsymbol{\beta} + \mathbf{\epsilon}\]</span></p>
 <p>Therefore the estimated response for a given combination of explanatory variables and the associated residuals can be written as</p>
-<span class="math display">\[\begin{equation}
+<p><span class="math display">\[\begin{equation}
 \label{matrix_mean}
 \hat{\mathbf{Y}} = \mathbf{X}\hat{\boldsymbol{\beta}} \hspace{10mm} \mathbf{e} = \mathbf{Y} - \mathbf{X}\hat{\boldsymbol{\beta}}
-\end{equation}\]</span>
+\end{equation}\]</span></p>
 </div>
 <div id="estimating-the-coefficients" class="section level3">
 <h3><span class="header-section-number">6.4.3</span> Estimating the Coefficients</h3>
 <p>The least-squares model is the one that minimizes the sum of the squared residuals. Therefore, we want to find the coefficients, <span class="math inline">\(\hat{\boldsymbol{\beta}}\)</span> that minimizes</p>
-<span class="math display">\[\begin{equation}
+<p><span class="math display">\[\begin{equation}
 \label{sum_sq_resid}
 \sum\limits_{i=1}^{n} e_{i}^2 = \mathbf{e}^T\mathbf{e} = (\mathbf{Y} - \mathbf{X}\hat{\boldsymbol{\beta}})^T(\mathbf{Y} - \mathbf{X}\hat{\boldsymbol{\beta}})
-\end{equation}\]</span>
+\end{equation}\]</span></p>
 <p>where <span class="math inline">\(\mathbf{e}^T\)</span>, the transpose of the matrix <span class="math inline">\(\mathbf{e}\)</span>.</p>
-<span class="math display">\[\begin{equation}
+<p><span class="math display">\[\begin{equation}
 \label{model_equation}
 (\mathbf{Y} - \mathbf{X}\hat{\boldsymbol{\beta}})^T(\mathbf{Y} - \mathbf{X}\hat{\boldsymbol{\beta}}) = (\mathbf{Y}^T\mathbf{Y} - 
 \mathbf{Y}^T \mathbf{X}\hat{\boldsymbol{\beta}} - (\hat{\boldsymbol{\beta}}{}^{T}\mathbf{X}^T\mathbf{Y} +
 \hat{\boldsymbol{\beta}}{}^{T}\mathbf{X}^T\mathbf{X}
 \hat{\boldsymbol{\beta}})
-\end{equation}\]</span>
-<p>Note that <span class="math inline">\((\mathbf{Y^T}\mathbf{X}\hat{\boldsymbol{\beta}})^T = \hat{\boldsymbol{\beta}}{}^{T}\mathbf{X}^T\mathbf{Y}\)</span>. Since these are both constants (i.e. <span class="math inline">\(1\times 1\)</span> vectors), <span class="math inline">\(\mathbf{Y^T}\mathbf{X}\hat{\boldsymbol{\beta}} = \hat{\boldsymbol{\beta}}{}^{T}\mathbf{X}^T\mathbf{Y}\)</span>. Thus, () becomes</p>
-<span class="math display">\[\begin{equation}
+\end{equation}\]</span></p>
+<p>Note that <span class="math inline">\((\mathbf{Y^T}\mathbf{X}\hat{\boldsymbol{\beta}})^T = \hat{\boldsymbol{\beta}}{}^{T}\mathbf{X}^T\mathbf{Y}\)</span>. Since these are both constants (i.e. <span class="math inline">\(1\times 1\)</span> vectors), <span class="math inline">\(\mathbf{Y^T}\mathbf{X}\hat{\boldsymbol{\beta}} = \hat{\boldsymbol{\beta}}{}^{T}\mathbf{X}^T\mathbf{Y}\)</span>. Thus, () becomes</p>
+<p><span class="math display">\[\begin{equation}
 \mathbf{Y}^T\mathbf{Y} - 2 \mathbf{X}^T\hat{\boldsymbol{\beta}}{}^{T}\mathbf{Y} + \hat{\boldsymbol{\beta}}{}^{T}\mathbf{X}^T\mathbf{X}
 \hat{\boldsymbol{\beta}}
-\end{equation}\]</span>
+\end{equation}\]</span></p>
 <p>Since we want to find the <span class="math inline">\(\hat{\boldsymbol{\beta}}\)</span> that minimizes (), will find the value of <span class="math inline">\(\hat{\boldsymbol{\beta}}\)</span> such that the derivative with respect to <span class="math inline">\(\hat{\boldsymbol{\beta}}\)</span> is equal to 0.</p>
-<span class="math display">\[\begin{equation}
+<p><span class="math display">\[\begin{equation}
 \begin{aligned}
 \frac{\partial \mathbf{e}^T\mathbf{e}}{\partial \hat{\boldsymbol{\beta}}} &amp; = \frac{\partial}{\partial \hat{\boldsymbol{\beta}}}(\mathbf{Y}^T\mathbf{Y} - 2 \mathbf{X}^T\hat{\boldsymbol{\beta}}{}^T\mathbf{Y} + \hat{\boldsymbol{\beta}}{}^{T}\mathbf{X}^T\mathbf{X}\hat{\boldsymbol{\beta}}) = 0 \\[10pt]
 &amp;\Rightarrow - 2 \mathbf{X}^T\mathbf{Y} + 2 \mathbf{X}^T\mathbf{X}\hat{\boldsymbol{\beta}} = 0 \\[10pt]
@@ -534,7 +566,7 @@ x_{n1} &amp; x_{n2} &amp; \dots &amp; x_{np} \end{bmatrix}
 &amp; \Rightarrow (\mathbf{X}^T\mathbf{X})^{-1}\mathbf{X}^T\mathbf{Y} = (\mathbf{X}^T\mathbf{X})^{-1}\mathbf{X}^T\mathbf{X}\hat{\boldsymbol{\beta}} \\[10pt]
 &amp; \Rightarrow (\mathbf{X}^T\mathbf{X})^{-1}\mathbf{X}^T\mathbf{Y} = \mathbf{I}\hat{\boldsymbol{\beta}}
 \end{aligned}
-\end{equation}\]</span>
+\end{equation}\]</span></p>
 <p>Thus, the estimate of the model coefficients is <span class="math inline">\(\hat{\boldsymbol{\beta}} = (\mathbf{X}^T\mathbf{X})^{-1}\mathbf{X}^T\mathbf{Y}\)</span>.</p>
 </div>
 <div id="variance-covariance-matrix-of-the-coefficients" class="section level3">
@@ -544,7 +576,7 @@ x_{n1} &amp; x_{n2} &amp; \dots &amp; x_{np} \end{bmatrix}
 <li><span class="math inline">\(E[\boldsymbol{\epsilon}\boldsymbol{\epsilon}^T] = \sigma^2I\)</span></li>
 <li><span class="math inline">\(\hat{\boldsymbol{\beta}} = \boldsymbol{\beta} + (\mathbf{X}^T\mathbf{X})^{-1}\epsilon\)</span></li>
 </ol>
-First, we will show that <span class="math inline">\(E[\boldsymbol{\epsilon}\boldsymbol{\epsilon}^T] = \sigma^2I\)</span>
+<p>First, we will show that <span class="math inline">\(E[\boldsymbol{\epsilon}\boldsymbol{\epsilon}^T] = \sigma^2I\)</span>
 <span class="math display">\[\begin{equation}
 \label{expected_error}
 \begin{aligned}
@@ -560,27 +592,27 @@ E[\epsilon_2 \epsilon_1] &amp; E[\epsilon_2^2] &amp; \dots &amp; E[\epsilon_2 \e
 E[\epsilon_n \epsilon_1] &amp; E[\epsilon_n \epsilon_2] &amp; \dots &amp; E[\epsilon_n^2]
 \end{bmatrix}
 \end{aligned}
-\end{equation}\]</span>
-<p>Recall, the regression assumption that the errors <span class="math inline">\(\epsilon_i&#39;s\)</span> are Normally distributed with mean 0 and variance <span class="math inline">\(\sigma^2\)</span>. Thus, <span class="math inline">\(E(\epsilon_i^2) = Var(\epsilon_i) = \sigma^2\)</span> for all <span class="math inline">\(i\)</span>. Additionally, recall the regression assumption that the errors are uncorrelated, i.e. <span class="math inline">\(E(\epsilon_i \epsilon_j) = Cov(\epsilon_i, \epsilon_j) = 0\)</span> for all <span class="math inline">\(i,j\)</span>. Using these assumptions, we can write () as</p>
-<span class="math display">\[\begin{equation}
+\end{equation}\]</span></p>
+<p>Recall, the regression assumption that the errors <span class="math inline">\(\epsilon_i&#39;s\)</span> are Normally distributed with mean 0 and variance <span class="math inline">\(\sigma^2\)</span>. Thus, <span class="math inline">\(E(\epsilon_i^2) = Var(\epsilon_i) = \sigma^2\)</span> for all <span class="math inline">\(i\)</span>. Additionally, recall the regression assumption that the errors are uncorrelated, i.e. <span class="math inline">\(E(\epsilon_i \epsilon_j) = Cov(\epsilon_i, \epsilon_j) = 0\)</span> for all <span class="math inline">\(i,j\)</span>. Using these assumptions, we can write () as</p>
+<p><span class="math display">\[\begin{equation}
 E[\mathbf{\epsilon}\mathbf{\epsilon}^T]  = \begin{bmatrix} \sigma^2  &amp; 0 &amp; \dots &amp; 0 \\
 0 &amp; \sigma^2  &amp; \dots &amp; 0 \\
 \vdots &amp; \vdots &amp; \ddots &amp; \vdots \\
 0 &amp; 0 &amp; \dots &amp; \sigma^2
 \end{bmatrix} = \sigma^2 \mathbf{I}
-\end{equation}\]</span>
+\end{equation}\]</span></p>
 <p>where <span class="math inline">\(\mathbf{I}\)</span> is the <span class="math inline">\(n \times n\)</span> identity matrix.</p>
 <p>Next, we show that <span class="math inline">\(\hat{\boldsymbol{\beta}} = \boldsymbol{\beta} + (\mathbf{X}^T\mathbf{X})^{-1}\epsilon\)</span>.</p>
 <p>Recall that the <span class="math inline">\(\hat{\boldsymbol{\beta}} = (\mathbf{X}^T\mathbf{X})^{-1}\mathbf{X}^T\mathbf{Y}\)</span> and <span class="math inline">\(\mathbf{Y} = \mathbf{X}\mathbf{\beta} + \mathbf{\epsilon}\)</span>. Then,</p>
-<span class="math display">\[\begin{equation}
+<p><span class="math display">\[\begin{equation}
 \begin{aligned}
 \hat{\boldsymbol{\beta}} &amp;= (\mathbf{X}^T\mathbf{X})^{-1}\mathbf{X}^T\mathbf{Y} \\[10pt]
 &amp;= (\mathbf{X}^T\mathbf{X})^{-1}\mathbf{X}^T(\mathbf{X}\boldsymbol{\beta} + \boldsymbol{\epsilon}) \\[10pt]
 &amp;= \boldsymbol{\beta} + (\mathbf{X}^T\mathbf{X})^{-1}\mathbf{X}^T \mathbf{\epsilon} \\
 \end{aligned}
-\end{equation}\]</span>
+\end{equation}\]</span></p>
 <p>Using these two properties, we derive the form of the variance-covariance matrix for the coefficients. Note that the covariance matrix is <span class="math inline">\(E[(\hat{\boldsymbol{\beta}} - \boldsymbol{\beta})(\hat{\boldsymbol{\beta}} - \boldsymbol{\beta})^T]\)</span></p>
-<span class="math display">\[\begin{equation}
+<p><span class="math display">\[\begin{equation}
 \begin{aligned}
 E[(\hat{\boldsymbol{\beta}} - \boldsymbol{\beta})(\hat{\boldsymbol{\beta}} - \boldsymbol{\beta})^T] &amp;= E[(\boldsymbol{\beta} + (\mathbf{X}^T\mathbf{X})^{-1} \mathbf{X}^T \boldsymbol{\epsilon} - \boldsymbol{\beta})(\boldsymbol{\beta} + (\mathbf{X}^T\mathbf{X})^{-1} \mathbf{X}^T \boldsymbol{\epsilon} - \boldsymbol{\beta})^T]\\[10pt]
 &amp; = E[(\mathbf{X}^T\mathbf{X})^{-1} \mathbf{X}^T \boldsymbol{\epsilon}\boldsymbol{\epsilon}^T\mathbf{X}(\mathbf{X}^T\mathbf{X})^{-1}] \\[10pt]
@@ -590,36 +622,36 @@ E[(\hat{\boldsymbol{\beta}} - \boldsymbol{\beta})(\hat{\boldsymbol{\beta}} - \bo
 &amp; = \sigma^2\mathbf{I}(\mathbf{X}^T\mathbf{X})^{-1}\\[10pt]
 &amp;  = \sigma^2(\mathbf{X}^T\mathbf{X})^{-1} \\
 \end{aligned}
-\end{equation}\]</span>
+\end{equation}\]</span></p>
 <hr />
 </div>
 </div>
 <div id="notes-log-transformations" class="section level2">
 <h2><span class="header-section-number">6.5</span> NOTES: Log Transformations</h2>
 <p>This document provides details about the model interpretion when the predictor and/or response variables are log-transformed. For simplicity, we will discuss transformations for the simple linear regression model:</p>
-<span class="math display">\[\begin{equation}
+<p><span class="math display">\[\begin{equation}
 \label{orig}
 y = \beta_0 + \beta_1 x
-\end{equation}\]</span>
+\end{equation}\]</span></p>
 <p>All results and interpretations can be easily extended to transformations in multiple regression models.</p>
 <p><em>Note</em>: <em>log</em> refers to the natural logarithm.</p>
 <div id="log-transformation-on-the-response-variable" class="section level3">
 <h3><span class="header-section-number">6.5.1</span> Log-transformation on the response variable</h3>
 <p>Suppose we fit a linear regression model with <span class="math inline">\(\log(y)\)</span>, the log-transformed <span class="math inline">\(y\)</span>, as the response variable. Under this model, we assume a linear relationship exists between <span class="math inline">\(x\)</span> and <span class="math inline">\(\log(y)\)</span>, such that <span class="math inline">\(\log(y) \sim N(\beta_0 + \beta_1 x, \sigma^2)\)</span> for some <span class="math inline">\(\beta_0\)</span>, <span class="math inline">\(\beta_1\)</span> and <span class="math inline">\(\sigma^2\)</span>. In other words, we can model the relationship between <span class="math inline">\(x\)</span> and <span class="math inline">\(\log(y)\)</span> using the model in ().</p>
-<span class="math display">\[\begin{equation}
+<p><span class="math display">\[\begin{equation}
 \label{log-y}
 \log(y) = \beta_0 + \beta_1 x
-\end{equation}\]</span>
+\end{equation}\]</span></p>
 <p>If we interpret the model in terms of <span class="math inline">\(\log(y)\)</span>, then we can use the usual interpretations for slope and intercept. When reporting results, however, it is best to give all interpretations in terms of the original response variable <span class="math inline">\(y\)</span>, since interpretations using log-transformed variables are often more difficult to truly understand.</p>
 <p>In order to get back on the original scale, we need to use the exponential function (also known as the anti-log), <span class="math inline">\(\exp\{x\} = e^x\)</span>. Therefore, we use the model in () for interpretations and predictions, we will use () to state our conclusions in terms of <span class="math inline">\(y\)</span>.</p>
-<span class="math display">\[\begin{equation}
+<p><span class="math display">\[\begin{equation}
 \label{exp-y}
 \begin{aligned}
 &amp;\exp\{\log(y)\} = \exp\{\beta_0 + \beta_1 x\} \\[10pt]
 \Rightarrow &amp;y = \exp\{\beta_0 + \beta_1 x\} \\[10pt]
 \Rightarrow &amp;y = \exp\{\beta_0\}\exp\{\beta_1 x\}
 \end{aligned}
-\end{equation}\]</span>
+\end{equation}\]</span></p>
 <p>In order to interpret the slope and intercept, we need to first understand the relationship between the mean, median and log transformations.</p>
 <div id="mean-median-and-log-transformations" class="section level4">
 <h4><span class="header-section-number">6.5.1.1</span> Mean, Median, and Log Transformations</h4>
@@ -637,17 +669,17 @@ y = \beta_0 + \beta_1 x
 <p>Using (), the mean <span class="math inline">\(\log(y)\)</span> for any given value of <span class="math inline">\(x\)</span> is <span class="math inline">\(\beta_0 + \beta_1 x\)</span>; however, this does <strong>not</strong> indicate that the mean of <span class="math inline">\(y = \exp\{\beta_0 + \beta_1 x\}\)</span> (see previous section). From the assumptions of linear regression, we assume that for any given value of <span class="math inline">\(x\)</span>, the distribution of <span class="math inline">\(\log(y)\)</span> is Normal, and therefore symmetric. Thus the median of <span class="math inline">\(\log(y)\)</span> is equal to the mean of <span class="math inline">\(\log(y)\)</span>, i.e <span class="math inline">\(\text{Median}(\log(y)) = \beta_0 + \beta_1 x\)</span>.</p>
 <p>Since the log and the median are commutable, <span class="math inline">\(\text{Median}(\log(y)) = \beta_0 + \beta_1 x \Rightarrow \text{Median}(y) = \exp\{\beta_0 + \beta_1 x\}\)</span>. Thus, when we log-transform the response variable, the interpretation of the intercept and slope are in terms of the effect on the <strong>median</strong> of <span class="math inline">\(y\)</span>.</p>
 <p><strong>Intercept</strong>: The intercept is expected median of <span class="math inline">\(y\)</span> when the predictor variable equals 0. Therefore, when <span class="math inline">\(x=0\)</span>,</p>
-<span class="math display">\[\begin{equation}
+<p><span class="math display">\[\begin{equation}
 \begin{aligned}
 &amp;\log(y) = \beta_0 + \beta_1 \times 0 = \beta_0 \\[10pt]
 \Rightarrow &amp;y = \exp\{\beta_0\}
 \end{aligned}
-\end{equation}\]</span>
+\end{equation}\]</span></p>
 <p><em>Interpretation: When <span class="math inline">\(x=0\)</span>, the median of <span class="math inline">\(y\)</span> is expected to be <span class="math inline">\(\exp\{\beta_0\}\)</span>.</em></p>
 <p><strong>Slope</strong>: The slope is the expected change in the median of <span class="math inline">\(y\)</span> when <span class="math inline">\(x\)</span> increases by 1 unit. The change in the median of <span class="math inline">\(y\)</span> is</p>
-<span class="math display">\[\begin{equation}
+<p><span class="math display">\[\begin{equation}
 \exp\{[\beta_0 + \beta_1 (x+1)] - [\beta_0 + \beta_1 x]\} = \frac{\exp\{\beta_0 + \beta_1 (x+1)\}}{\exp\{\beta_0 + \beta_1 x\}} = \frac{\exp\{\beta_0\}\exp\{\beta_1 x\}\exp\{\beta_1\}}{\exp\{\beta_0\}\exp\{\beta_1 x\}} = \exp\{\beta_1\}
-\end{equation}\]</span>
+\end{equation}\]</span></p>
 <p>Thus, the median of <span class="math inline">\(y\)</span> for <span class="math inline">\(x+1\)</span> is <span class="math inline">\(\exp\{\beta_1\}\)</span> times the median of <span class="math inline">\(y\)</span> for <span class="math inline">\(x\)</span>.</p>
 <p><em>Interpretation: When <span class="math inline">\(x\)</span> increases by one unit, the median of <span class="math inline">\(y\)</span> is expected to multiply by a factor of <span class="math inline">\(\exp\{\beta_1\}\)</span>.</em></p>
 </div>
@@ -655,48 +687,48 @@ y = \beta_0 + \beta_1 x
 <div id="log-transformation-on-the-predictor-variable" class="section level3">
 <h3><span class="header-section-number">6.5.2</span> Log-transformation on the predictor variable</h3>
 <p>Suppose we fit a linear regression model with <span class="math inline">\(\log(x)\)</span>, the log-transformed <span class="math inline">\(x\)</span>, as the predictor variable. Under this model, we assume a linear relationship exists between <span class="math inline">\(\log(x)\)</span> and <span class="math inline">\(y\)</span>, such that <span class="math inline">\(y \sim N(\beta_0 + \beta_1 \log(x), \sigma^2)\)</span> for some <span class="math inline">\(\beta_0\)</span>, <span class="math inline">\(\beta_1\)</span> and <span class="math inline">\(\sigma^2\)</span>. In other words, we can model the relationship between <span class="math inline">\(\log(x)\)</span> and <span class="math inline">\(y\)</span> using the model in ().</p>
-<span class="math display">\[\begin{equation}
+<p><span class="math display">\[\begin{equation}
 \label{log-x}
 y = \beta_0 + \beta_1 \log(x)
-\end{equation}\]</span>
-<p><strong>Intercept</strong>: The intercept is the mean of <span class="math inline">\(y\)</span> when <span class="math inline">\(\log(x) = 0\)</span>, i.e. <span class="math inline">\(x = 1\)</span>.</p>
+\end{equation}\]</span></p>
+<p><strong>Intercept</strong>: The intercept is the mean of <span class="math inline">\(y\)</span> when <span class="math inline">\(\log(x) = 0\)</span>, i.e. <span class="math inline">\(x = 1\)</span>.</p>
 <p><em>Interpretation: When <span class="math inline">\(x = 1\)</span> <span class="math inline">\((\log(x) = 0)\)</span>, the mean of <span class="math inline">\(y\)</span> is expected to be <span class="math inline">\(\beta_0\)</span>.</em></p>
 <p><strong>Slope</strong>: The slope is interpreted in terms of the change in the mean of <span class="math inline">\(y\)</span> when <span class="math inline">\(x\)</span> is mutliplied by a factor of <span class="math inline">\(C\)</span>, since <span class="math inline">\(\log(Cx) = \log(x) + \log(C)\)</span>. Thus, when <span class="math inline">\(x\)</span> is multiplied by a factor of <span class="math inline">\(C\)</span>, the change in the mean of <span class="math inline">\(y\)</span> is</p>
-<span class="math display">\[\begin{equation}
+<p><span class="math display">\[\begin{equation}
 \begin{aligned}
 [\beta_0 + \beta_1 \log(Cx)] - [\beta_0 + \beta_1 \log(x)] &amp;= \beta_1 [\log(Cx) - \log(x)] \\[10pt] 
 &amp; = \beta_1[\log(C) + \log(x) - \log(x)] \\[10pt] 
 &amp; = \beta_1 \log(C)
 \end{aligned}
-\end{equation}\]</span>
+\end{equation}\]</span></p>
 <p>Thus the mean of <span class="math inline">\(y\)</span> changes by <span class="math inline">\(\beta_1 \log(C)\)</span> units.</p>
 <p><em>Interpretation: When <span class="math inline">\(x\)</span> is multiplied by a factor of <span class="math inline">\(C\)</span>, the mean of <span class="math inline">\(y\)</span> is expected to change by <span class="math inline">\(\beta_1 \log(C)\)</span> units. For example, if <span class="math inline">\(x\)</span> is doubled, then the mean of <span class="math inline">\(y\)</span> is expected to change by <span class="math inline">\(\beta_1 \log(2)\)</span> units.</em></p>
 </div>
 <div id="log-transformation-on-the-the-response-and-predictor-variable" class="section level3">
 <h3><span class="header-section-number">6.5.3</span> Log-transformation on the the response and predictor variable</h3>
 <p>Suppose we fit a linear regression model with <span class="math inline">\(\log(x)\)</span>, the log-transformed <span class="math inline">\(x\)</span>, as the predictor variable and <span class="math inline">\(\log(y)\)</span>, the log-transformed <span class="math inline">\(y\)</span>, as the response variable. Under this model, we assume a linear relationship exists between <span class="math inline">\(\log(x)\)</span> and <span class="math inline">\(\log(y)\)</span>, such that <span class="math inline">\(\log(y) \sim N(\beta_0 + \beta_1 \log(x), \sigma^2)\)</span> for some <span class="math inline">\(\beta_0\)</span>, <span class="math inline">\(\beta_1\)</span> and <span class="math inline">\(\sigma^2\)</span>. In other words, we can model the relationship between <span class="math inline">\(\log(x)\)</span> and <span class="math inline">\(\log(y)\)</span> using the model in ().</p>
-<span class="math display">\[\begin{equation}
+<p><span class="math display">\[\begin{equation}
 \label{log-x-y}
 \log(y) = \beta_0 + \beta_1 \log(x)
-\end{equation}\]</span>
+\end{equation}\]</span></p>
 <p>Because the response variable is log-transformed, the interpretations on the original scale will be in terms of the median of <span class="math inline">\(y\)</span> (see the section on the log-transformed response variable for more detail).</p>
-<p><strong>Intercept</strong>: The intercept is the mean of <span class="math inline">\(y\)</span> when <span class="math inline">\(\log(x) = 0\)</span>, i.e. <span class="math inline">\(x = 1\)</span>. Therefore, when <span class="math inline">\(\log(x) = 0\)</span>,</p>
-<span class="math display">\[\begin{equation}
+<p><strong>Intercept</strong>: The intercept is the mean of <span class="math inline">\(y\)</span> when <span class="math inline">\(\log(x) = 0\)</span>, i.e. <span class="math inline">\(x = 1\)</span>. Therefore, when <span class="math inline">\(\log(x) = 0\)</span>,</p>
+<p><span class="math display">\[\begin{equation}
 \begin{aligned}
 &amp;\log(y) = \beta_0 + \beta_1 \times 0 = \beta_0 \\[10pt]
 \Rightarrow &amp;y = \exp\{\beta_0\}
 \end{aligned}
-\end{equation}\]</span>
+\end{equation}\]</span></p>
 <p><em>Interpretation: When <span class="math inline">\(x = 1\)</span> <span class="math inline">\((\log(x) = 0)\)</span>, the median of <span class="math inline">\(y\)</span> is expected to be <span class="math inline">\(\exp\{\beta_0\}\)</span>.</em></p>
 <p><strong>Slope</strong>: The slope is interpreted in terms of the change in the median <span class="math inline">\(y\)</span> when <span class="math inline">\(x\)</span> is mutliplied by a factor of <span class="math inline">\(C\)</span>, since <span class="math inline">\(\log(Cx) = \log(x) + \log(C)\)</span>. Thus, when <span class="math inline">\(x\)</span> is multiplied by a factor of <span class="math inline">\(C\)</span>, the change in the median of <span class="math inline">\(y\)</span> is</p>
-<span class="math display">\[\begin{equation}
+<p><span class="math display">\[\begin{equation}
 \begin{aligned}
 \exp\{[\beta_0 + \beta_1 \log(Cx)] - [\beta_0 + \beta_1 \log(x)]\} &amp;= 
 \exp\{\beta_1 [\log(Cx) - \log(x)]\} \\[10pt] 
 &amp; = \exp\{\beta_1[\log(C) + \log(x) - \log(x)]\} \\[10pt] 
 &amp; = \exp\{\beta_1 \log(C)\} = C^{\beta_1}
 \end{aligned}
-\end{equation}\]</span>
+\end{equation}\]</span></p>
 <p>Thus, the median of <span class="math inline">\(y\)</span> for <span class="math inline">\(Cx\)</span> is <span class="math inline">\(C^{\beta_1}\)</span> times the median of <span class="math inline">\(y\)</span> for <span class="math inline">\(x\)</span>.</p>
 <p><em>Interpretation: When <span class="math inline">\(x\)</span> is multiplied by a factor of <span class="math inline">\(C\)</span>, the median of <span class="math inline">\(y\)</span> is expected to multiple by a factor of <span class="math inline">\(C^{\beta_1}\)</span>. For example, if <span class="math inline">\(x\)</span> is doubled, then the median of <span class="math inline">\(y\)</span> is expected to multiply by <span class="math inline">\(2^{\beta_1}\)</span>.</em></p>
 <hr />
@@ -708,21 +740,21 @@ y = \beta_0 + \beta_1 \log(x)
 <div id="introduction-4" class="section level3">
 <h3><span class="header-section-number">6.6.1</span> Introduction</h3>
 <p>Suppose we have <span class="math inline">\(n\)</span> observations. Let the <span class="math inline">\(i^{th}\)</span> be <span class="math inline">\((x_{i1}, \ldots, x_{ip}, y_i)\)</span>, such that <span class="math inline">\(x_{i1}, \ldots, x_{ip}\)</span> are the explanatory variables (predictors) and <span class="math inline">\(y_i\)</span> is the response variable. We assume the data can be modeled using the least-squares regression model, such that the mean response for a given combination of explanatory variables follows the form in ().</p>
-<span class="math display">\[\begin{equation}
+<p><span class="math display">\[\begin{equation}
 \label{basic_model}
 y = \beta_0 + \beta_1 x_1 + \dots + \beta_p x_p 
-\end{equation}\]</span>
+\end{equation}\]</span></p>
 <p>We can write the response for the <span class="math inline">\(i^{th}\)</span> observation as shown in ()</p>
-<span class="math display">\[\begin{equation}
+<p><span class="math display">\[\begin{equation}
 \label{ind_response}
 y_i = \beta_0 + \beta_1 x_{i1} + \dots + \beta_p x_{ip} + \epsilon_i 
-\end{equation}\]</span>
+\end{equation}\]</span></p>
 <p>such that <span class="math inline">\(\epsilon_i\)</span> is the amount <span class="math inline">\(y_i\)</span> deviates from <span class="math inline">\(\mu\{y|x_{i1}, \ldots, x_{ip}\}\)</span>, the mean response for a given combination of explanatory variables. We assume each <span class="math inline">\(\epsilon_i \sim N(0,\sigma^2)\)</span>, where <span class="math inline">\(\sigma^2\)</span> is a constant variance for the distribution of the response <span class="math inline">\(y\)</span> for any combination of explanatory variables <span class="math inline">\(x_1, \ldots, x_p\)</span>.</p>
 </div>
 <div id="matrix-form-for-the-regression-model-1" class="section level3">
 <h3><span class="header-section-number">6.6.2</span> Matrix Form for the Regression Model</h3>
 <p>We can represent the () and () using matrix notation. Let</p>
-<span class="math display">\[\begin{equation}
+<p><span class="math display">\[\begin{equation}
 \label{matrix notation}
 \mathbf{Y} = \begin{bmatrix}y_1 \\ y_2 \\ \vdots \\y_n\end{bmatrix} 
 \hspace{15mm}
@@ -734,35 +766,35 @@ x_{n1} &amp; x_{n2} &amp; \dots &amp; x_{np} \end{bmatrix}
 \boldsymbol{\beta}= \begin{bmatrix}\beta_0 \\ \beta_1 \\ \vdots \\ \beta_p \end{bmatrix} 
 \hspace{15mm}
 \boldsymbol{\epsilon}= \begin{bmatrix}\epsilon_1 \\ \epsilon_2 \\ \vdots \\ \epsilon_n \end{bmatrix}
-\end{equation}\]</span>
+\end{equation}\]</span></p>
 <p>Thus,</p>
 <p><span class="math display">\[\mathbf{Y} = \mathbf{X}\boldsymbol{\beta} + \mathbf{\epsilon}\]</span></p>
 <p>Therefore the estimated response for a given combination of explanatory variables and the associated residuals can be written as</p>
-<span class="math display">\[\begin{equation}
+<p><span class="math display">\[\begin{equation}
 \label{matrix_mean}
 \hat{\mathbf{Y}} = \mathbf{X}\hat{\boldsymbol{\beta}} \hspace{10mm} \mathbf{e} = \mathbf{Y} - \mathbf{X}\hat{\boldsymbol{\beta}}
-\end{equation}\]</span>
+\end{equation}\]</span></p>
 </div>
 <div id="hat-matrix-leverage" class="section level3">
 <h3><span class="header-section-number">6.6.3</span> Hat Matrix &amp; Leverage</h3>
 <p>Recall from the notes <a href="https://github.com/STA210-Sp19/supplemental-notes/blob/master/regression-basics-matrix.pdf"><strong>Matrix Form of Linear Regression</strong></a> that <span class="math inline">\(\hat{\boldsymbol{\beta}}\)</span> can be written as the following:</p>
-<span class="math display">\[\begin{equation}
+<p><span class="math display">\[\begin{equation}
 \label{beta-hat}
 \hat{\boldsymbol{\beta}} = (\mathbf{X}^T\mathbf{X})^{-1}\mathbf{X}^T\mathbf{Y}
-\end{equation}\]</span>
+\end{equation}\]</span></p>
 <p>Combining () and (), we can write <span class="math inline">\(\hat{\mathbf{Y}}\)</span> as the following:</p>
-<span class="math display">\[\begin{equation}
+<p><span class="math display">\[\begin{equation}
 \label{y-hat}
 \begin{aligned}
 \hat{\mathbf{Y}} &amp;= \mathbf{X}\hat{\boldsymbol{\beta}} \\[10pt]
 &amp;= \mathbf{X}(\mathbf{X}^T\mathbf{X})^{-1}\mathbf{X}^T\mathbf{Y}\\
 \end{aligned}
-\end{equation}\]</span>
+\end{equation}\]</span></p>
 <p>We define the <strong>hat matrix</strong> as an <span class="math inline">\(n \times n\)</span> matrix of the form <span class="math inline">\(\mathbf{H} = \mathbf{X}(\mathbf{X}^T\mathbf{X})^{-1}\mathbf{X}^T\)</span>. Thus () becomes</p>
-<span class="math display">\[\begin{equation}
+<p><span class="math display">\[\begin{equation}
 \label{y-hat-matrix}
 \hat{\mathbf{Y}} = \mathbf{H}\mathbf{Y}
-\end{equation}\]</span>
+\end{equation}\]</span></p>
 <p>The diagonal elements of the hat matrix are a measure of how far the predictor variables of each observation are from the means of the predictor variables. For example, <span class="math inline">\(h_{ii}\)</span> is a measure of how far the values of the predictor variables for the <span class="math inline">\(i^{th}\)</span> observation, <span class="math inline">\(x_{i1}, x_{i2}, \ldots, x_{ip}\)</span>, are from the mean values of the predictor variables, <span class="math inline">\(\bar{x}_1, \bar{x}_2, \ldots, \bar{x}_p\)</span>. In the case of simple linear regression, the <span class="math inline">\(i^{th}\)</span> diagonal, <span class="math inline">\(h_{ii}\)</span>, can be written as</p>
 <p><span class="math display">\[h_{ii} =  \frac{1}{n} + \frac{(x_i - \bar{x})^2}{\sum_{j=1}^{n}(x_j-\bar{x})^2}\]</span></p>
 <p>We call these diagonal elements, the <strong>leverage</strong> of each observation.</p>
@@ -774,16 +806,16 @@ x_{n1} &amp; x_{n2} &amp; \dots &amp; x_{np} \end{bmatrix}
 </ul>
 <p>Using these properties, we consider a point to have <strong>high leverage</strong> if it has a leverage value that is more than 2 times the average. In other words, observations with leverage greater than <span class="math inline">\(\frac{2(p+1)}{n}\)</span> are considered to be <strong>high leverage</strong> points, i.e. outliers in the predictor variables. We are interested in flagging high leverage points, because they may have an influence on the regression coefficients.</p>
 <p>When there are high leverage points in the data, the regression line will tend towards those points; therefore, one property of high leverage points is that they tend to have small residuals. We will show this by rewriting the residuals from () using ().</p>
-<span class="math display">\[\begin{equation}
+<p><span class="math display">\[\begin{equation}
 \label{resid-hat}
 \begin{aligned}
 \mathbf{e} &amp;= \mathbf{Y} - \hat{\mathbf{Y}} \\[10pt]
 &amp; = \mathbf{Y} - \mathbf{H}\mathbf{Y} \\[10pt]
 &amp;= (1-\mathbf{H})\mathbf{Y}
 \end{aligned}
-\end{equation}\]</span>
-<p>Note that the identity matrix and hat matrix are <strong>idempotent</strong>, i.e. <span class="math inline">\(\mathbf{I}\mathbf{I} = \mathbf{I}\)</span>, <span class="math inline">\(\mathbf{H}\mathbf{H} = \mathbf{H}\)</span>. Thus, <span class="math inline">\((\mathbf{I} - \mathbf{H}\)</span> is also idempotent. These matrices are also symmetric. Using these properties and (), we have that the variance-covariance matrix of the residuals <span class="math inline">\(\boldsymbol{e}\)</span>, is</p>
-<span class="math display">\[\begin{equation}
+\end{equation}\]</span></p>
+<p>Note that the identity matrix and hat matrix are <strong>idempotent</strong>, i.e. <span class="math inline">\(\mathbf{I}\mathbf{I} = \mathbf{I}\)</span>, <span class="math inline">\(\mathbf{H}\mathbf{H} = \mathbf{H}\)</span>. Thus, <span class="math inline">\((\mathbf{I} - \mathbf{H}\)</span> is also idempotent. These matrices are also symmetric. Using these properties and (), we have that the variance-covariance matrix of the residuals <span class="math inline">\(\boldsymbol{e}\)</span>, is</p>
+<p><span class="math display">\[\begin{equation}
 \label{resid-var}
 \begin{aligned}
 Var(\mathbf{e}) &amp;= \mathbf{e}\mathbf{e}^T \\[10pt]
@@ -792,31 +824,31 @@ Var(\mathbf{e}) &amp;= \mathbf{e}\mathbf{e}^T \\[10pt]
 &amp;= \hat{\sigma}^2(1-\mathbf{H})(1-\mathbf{H})  \\[10pt]
 &amp;= \hat{\sigma}^2(1-\mathbf{H})
 \end{aligned}
-\end{equation}\]</span>
+\end{equation}\]</span></p>
 <p>where <span class="math inline">\(\hat{\sigma}^2 = \frac{\sum_{i=1}^{n}e_i^2}{n-p-1}\)</span> is the estimated regression variance. Thus, the variance of the <span class="math inline">\(i^{th}\)</span> residual is <span class="math inline">\(Var(e_i) = \hat{\sigma}^2(1-h_{ii})\)</span>. Therefore, the higher the leverage, the smaller the variance of the residual. Because the expected value of the residuals is 0, we conclude that points with high leverage tend to have smaller residuals than points with lower leverage.</p>
 </div>
 <div id="standardized-residuals" class="section level3">
 <h3><span class="header-section-number">6.6.4</span> Standardized Residuals</h3>
 <p>In general, we standardize a value by shifting by the expected value and rescaling by the standard deviation (or standard error). Thus, the <span class="math inline">\(i^{th}\)</span> standardized residual takes the form</p>
 <p><span class="math display">\[std.res_i = \frac{e_i - E(e_i)}{SE(e_i)}\]</span></p>
-<p>The expected value of the residuals is 0, i.e. <span class="math inline">\(E(e_i) = 0\)</span>. From (), the standard error of the residual is <span class="math inline">\(SE(e_i) = \hat{\sigma}\sqrt{1-h_{ii}}\)</span>. Therefore,</p>
-<span class="math display">\[\begin{equation}
+<p>The expected value of the residuals is 0, i.e. <span class="math inline">\(E(e_i) = 0\)</span>. From (), the standard error of the residual is <span class="math inline">\(SE(e_i) = \hat{\sigma}\sqrt{1-h_{ii}}\)</span>. Therefore,</p>
+<p><span class="math display">\[\begin{equation}
 \label{std.resid.}
 std.res_i = \frac{e_i}{\hat{\sigma}\sqrt{1-h_{ii}}}
-\end{equation}\]</span>
+\end{equation}\]</span></p>
 </div>
 <div id="cooks-distance" class="section level3">
 <h3><span class="header-section-number">6.6.5</span> Cook’s Distance</h3>
 <p>Cook’s distance is a measure of how much each observation influences the model coefficients, and thus the predicted values. The Cook’s distance for the <span class="math inline">\(i^{th}\)</span> observation can be written as</p>
-<span class="math display">\[\begin{equation}
+<p><span class="math display">\[\begin{equation}
 \label{cooksd}
 D_i = \frac{(\hat{\mathbf{Y}} -\hat{\mathbf{Y}}_{(i)})^T(\hat{\mathbf{Y}} -\hat{\mathbf{Y}}_{(i)})}{(p+1)\hat{\sigma}}
-\end{equation}\]</span>
+\end{equation}\]</span></p>
 <p>where <span class="math inline">\(\hat{\mathbf{Y}}_{(i)}\)</span> is the vector of predicted values from the model fitted when the <span class="math inline">\(i^{th}\)</span> observation is deleted. Cook’s Distance can be calculated without deleting observations one at a time, since () below is mathematically equivalent to ().</p>
-<span class="math display">\[\begin{equation}
+<p><span class="math display">\[\begin{equation}
 \label{cooksd-v2}
 D_i = \frac{1}{p+1}std.res_i^2\Bigg[\frac{h_{ii}}{(1-h_{ii})}\Bigg] = \frac{e_i^2}{(p+1)\hat{\sigma}^2(1-h_{ii})}\Bigg[\frac{h_{ii}}{(1-h_{ii})}\Bigg]
-\end{equation}\]</span>
+\end{equation}\]</span></p>
 
 </div>
 </div>
@@ -832,11 +864,13 @@ D_i = \frac{1}{p+1}std.res_i^2\Bigg[\frac{h_{ii}}{(1-h_{ii})}\Bigg] = \frac{e_i^
   </div>
 <script src="libs/gitbook-2.6.7/js/app.min.js"></script>
 <script src="libs/gitbook-2.6.7/js/lunr.js"></script>
+<script src="libs/gitbook-2.6.7/js/clipboard.min.js"></script>
 <script src="libs/gitbook-2.6.7/js/plugin-search.js"></script>
 <script src="libs/gitbook-2.6.7/js/plugin-sharing.js"></script>
 <script src="libs/gitbook-2.6.7/js/plugin-fontsettings.js"></script>
 <script src="libs/gitbook-2.6.7/js/plugin-bookdown.js"></script>
 <script src="libs/gitbook-2.6.7/js/jquery.highlight.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-clipboard.js"></script>
 <script>
 gitbook.require(["gitbook"], function(gitbook) {
 gitbook.start({
@@ -844,12 +878,11 @@ gitbook.start({
 "github": false,
 "facebook": true,
 "twitter": true,
-"google": false,
 "linkedin": false,
 "weibo": false,
 "instapaper": false,
 "vk": false,
-"all": ["facebook", "google", "twitter", "linkedin", "weibo", "instapaper"]
+"all": ["facebook", "twitter", "linkedin", "weibo", "instapaper"]
 },
 "fontsettings": {
 "theme": "white",
@@ -861,6 +894,10 @@ gitbook.start({
 "text": null
 },
 "history": {
+"link": null,
+"text": null
+},
+"view": {
 "link": null,
 "text": null
 },
@@ -879,10 +916,11 @@ gitbook.start({
   (function () {
     var script = document.createElement("script");
     script.type = "text/javascript";
-    var src = "";
+    var src = "true";
     if (src === "" || src === "true") src = "https://mathjax.rstudio.com/latest/MathJax.js?config=TeX-MML-AM_CHTML";
-    if (location.protocol !== "file:" && /^https?:/.test(src))
-      src = src.replace(/^https?:/, '');
+    if (location.protocol !== "file:")
+      if (/^https?:/.test(src))
+        src = src.replace(/^https?:/, '');
     script.src = src;
     document.getElementsByTagName("head")[0].appendChild(script);
   })();

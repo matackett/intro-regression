@@ -1,13 +1,12 @@
 <!DOCTYPE html>
-<html >
-
+<html lang="" xml:lang="">
 <head>
 
-  <meta charset="UTF-8">
-  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta charset="utf-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
   <title> 7 Model Selection | Intro Regression</title>
-  <meta name="description" content="An electronic book with assignments and in-class activities to help students apply concepts in an intermediate-level regression analysis course. The primary focus is application and computing; there are also supplemental math notes on some topics.">
-  <meta name="generator" content="bookdown  and GitBook 2.6.7">
+  <meta name="description" content="An electronic book with assignments and in-class activities to help students apply concepts in an intermediate-level regression analysis course. The primary focus is application and computing; there are also supplemental math notes on some topics." />
+  <meta name="generator" content="bookdown 0.19 and GitBook 2.6.7" />
 
   <meta property="og:title" content=" 7 Model Selection | Intro Regression" />
   <meta property="og:type" content="book" />
@@ -22,17 +21,17 @@
   <meta name="twitter:description" content="An electronic book with assignments and in-class activities to help students apply concepts in an intermediate-level regression analysis course. The primary focus is application and computing; there are also supplemental math notes on some topics." />
   <meta name="twitter:image" content="https://www.introregression.org/img/introregression-sticker.png" />
 
-<meta name="author" content="Maria Tackett">
+<meta name="author" content="Maria Tackett" />
 
 
 
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <meta name="apple-mobile-web-app-capable" content="yes">
-  <meta name="apple-mobile-web-app-status-bar-style" content="black">
-  <link rel="apple-touch-icon-precomposed" sizes="152x152" href="img/introregression-sticker.png">
-  <link rel="shortcut icon" href="img/introregression-sticker.png" type="image/x-icon">
-<link rel="prev" href="6-mlr.html">
-<link rel="next" href="8-logistic.html">
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="apple-mobile-web-app-capable" content="yes" />
+  <meta name="apple-mobile-web-app-status-bar-style" content="black" />
+  <link rel="apple-touch-icon-precomposed" sizes="152x152" href="img/introregression-sticker.png" />
+  <link rel="shortcut icon" href="img/introregression-sticker.png" type="image/x-icon" />
+<link rel="prev" href="6-mlr.html"/>
+<link rel="next" href="8-logistic.html"/>
 <script src="libs/jquery-2.2.3/jquery.min.js"></script>
 <link href="libs/gitbook-2.6.7/css/style.css" rel="stylesheet" />
 <link href="libs/gitbook-2.6.7/css/plugin-table.css" rel="stylesheet" />
@@ -40,6 +39,9 @@
 <link href="libs/gitbook-2.6.7/css/plugin-highlight.css" rel="stylesheet" />
 <link href="libs/gitbook-2.6.7/css/plugin-search.css" rel="stylesheet" />
 <link href="libs/gitbook-2.6.7/css/plugin-fontsettings.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-clipboard.css" rel="stylesheet" />
+
+
 
 
 
@@ -50,41 +52,68 @@
 
 
 <style type="text/css">
-div.sourceCode { overflow-x: auto; }
-table.sourceCode, tr.sourceCode, td.lineNumbers, td.sourceCode {
-  margin: 0; padding: 0; vertical-align: baseline; border: none; }
-table.sourceCode { width: 100%; line-height: 100%; }
-td.lineNumbers { text-align: right; padding-right: 4px; padding-left: 4px; color: #aaaaaa; border-right: 1px solid #aaaaaa; }
-td.sourceCode { padding-left: 5px; }
-code > span.kw { color: #007020; font-weight: bold; } /* Keyword */
-code > span.dt { color: #902000; } /* DataType */
-code > span.dv { color: #40a070; } /* DecVal */
-code > span.bn { color: #40a070; } /* BaseN */
-code > span.fl { color: #40a070; } /* Float */
-code > span.ch { color: #4070a0; } /* Char */
-code > span.st { color: #4070a0; } /* String */
-code > span.co { color: #60a0b0; font-style: italic; } /* Comment */
-code > span.ot { color: #007020; } /* Other */
-code > span.al { color: #ff0000; font-weight: bold; } /* Alert */
-code > span.fu { color: #06287e; } /* Function */
-code > span.er { color: #ff0000; font-weight: bold; } /* Error */
-code > span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warning */
-code > span.cn { color: #880000; } /* Constant */
-code > span.sc { color: #4070a0; } /* SpecialChar */
-code > span.vs { color: #4070a0; } /* VerbatimString */
-code > span.ss { color: #bb6688; } /* SpecialString */
-code > span.im { } /* Import */
-code > span.va { color: #19177c; } /* Variable */
-code > span.cf { color: #007020; font-weight: bold; } /* ControlFlow */
-code > span.op { color: #666666; } /* Operator */
-code > span.bu { } /* BuiltIn */
-code > span.ex { } /* Extension */
-code > span.pp { color: #bc7a00; } /* Preprocessor */
-code > span.at { color: #7d9029; } /* Attribute */
-code > span.do { color: #ba2121; font-style: italic; } /* Documentation */
-code > span.an { color: #60a0b0; font-weight: bold; font-style: italic; } /* Annotation */
-code > span.cv { color: #60a0b0; font-weight: bold; font-style: italic; } /* CommentVar */
-code > span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Information */
+code.sourceCode > span { display: inline-block; line-height: 1.25; }
+code.sourceCode > span { color: inherit; text-decoration: inherit; }
+code.sourceCode > span:empty { height: 1.2em; }
+.sourceCode { overflow: visible; }
+code.sourceCode { white-space: pre; position: relative; }
+pre.sourceCode { margin: 0; }
+@media screen {
+div.sourceCode { overflow: auto; }
+}
+@media print {
+code.sourceCode { white-space: pre-wrap; }
+code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
+}
+pre.numberSource code
+  { counter-reset: source-line 0; }
+pre.numberSource code > span
+  { position: relative; left: -4em; counter-increment: source-line; }
+pre.numberSource code > span > a:first-child::before
+  { content: counter(source-line);
+    position: relative; left: -1em; text-align: right; vertical-align: baseline;
+    border: none; display: inline-block;
+    -webkit-touch-callout: none; -webkit-user-select: none;
+    -khtml-user-select: none; -moz-user-select: none;
+    -ms-user-select: none; user-select: none;
+    padding: 0 4px; width: 4em;
+    color: #aaaaaa;
+  }
+pre.numberSource { margin-left: 3em; border-left: 1px solid #aaaaaa;  padding-left: 4px; }
+div.sourceCode
+  {   }
+@media screen {
+code.sourceCode > span > a:first-child::before { text-decoration: underline; }
+}
+code span.al { color: #ff0000; font-weight: bold; } /* Alert */
+code span.an { color: #60a0b0; font-weight: bold; font-style: italic; } /* Annotation */
+code span.at { color: #7d9029; } /* Attribute */
+code span.bn { color: #40a070; } /* BaseN */
+code span.bu { } /* BuiltIn */
+code span.cf { color: #007020; font-weight: bold; } /* ControlFlow */
+code span.ch { color: #4070a0; } /* Char */
+code span.cn { color: #880000; } /* Constant */
+code span.co { color: #60a0b0; font-style: italic; } /* Comment */
+code span.cv { color: #60a0b0; font-weight: bold; font-style: italic; } /* CommentVar */
+code span.do { color: #ba2121; font-style: italic; } /* Documentation */
+code span.dt { color: #902000; } /* DataType */
+code span.dv { color: #40a070; } /* DecVal */
+code span.er { color: #ff0000; font-weight: bold; } /* Error */
+code span.ex { } /* Extension */
+code span.fl { color: #40a070; } /* Float */
+code span.fu { color: #06287e; } /* Function */
+code span.im { } /* Import */
+code span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Information */
+code span.kw { color: #007020; font-weight: bold; } /* Keyword */
+code span.op { color: #666666; } /* Operator */
+code span.ot { color: #007020; } /* Other */
+code span.pp { color: #bc7a00; } /* Preprocessor */
+code span.sc { color: #4070a0; } /* SpecialChar */
+code span.ss { color: #bb6688; } /* SpecialString */
+code span.st { color: #4070a0; } /* String */
+code span.va { color: #19177c; } /* Variable */
+code span.vs { color: #4070a0; } /* VerbatimString */
+code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warning */
 </style>
 
 <link rel="stylesheet" href="style.css" type="text/css" />
@@ -154,6 +183,9 @@ code > span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Inf
 <li class="chapter" data-level="" data-path="4-slr.html"><a href="4-slr.html#data-4"><i class="fa fa-check"></i>Data</a></li>
 <li class="chapter" data-level="" data-path="4-slr.html"><a href="4-slr.html#exercises-3"><i class="fa fa-check"></i>Exercises</a></li>
 </ul></li>
+<li class="chapter" data-level="4.4" data-path="4-slr.html"><a href="4-slr.html#slr-notes"><i class="fa fa-check"></i><b>4.4</b> SLR Notes</a></li>
+<li class="chapter" data-level="4.5" data-path="4-slr.html"><a href="4-slr.html#r-markdown"><i class="fa fa-check"></i><b>4.5</b> R Markdown</a></li>
+<li class="chapter" data-level="4.6" data-path="4-slr.html"><a href="4-slr.html#including-plots"><i class="fa fa-check"></i><b>4.6</b> Including Plots</a></li>
 </ul></li>
 <li class="chapter" data-level="5" data-path="5-anova.html"><a href="5-anova.html"><i class="fa fa-check"></i><b>5</b> Analysis of Variance</a><ul>
 <li class="chapter" data-level="5.0.1" data-path="5-anova.html"><a href="5-anova.html#comp-diamonds"><i class="fa fa-check"></i><b>5.0.1</b> COMP: Diamonds</a></li>
@@ -288,12 +320,12 @@ code > span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Inf
 <div id="packages-8" class="section level4 unnumbered">
 <h4>Packages</h4>
 <p>You will need the following packages for today’s assignment:</p>
-<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="kw">library</span>(tidyverse)
-<span class="kw">library</span>(knitr)
-<span class="kw">library</span>(broom)
-<span class="kw">library</span>(leaps)
-<span class="kw">library</span>(Sleuth3) <span class="co">#case1201 data</span>
-<span class="kw">library</span>(ISLR) <span class="co">#Hitters data</span></code></pre></div>
+<div class="sourceCode" id="cb47"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb47-1"><a href="7-select.html#cb47-1"></a><span class="kw">library</span>(tidyverse)</span>
+<span id="cb47-2"><a href="7-select.html#cb47-2"></a><span class="kw">library</span>(knitr)</span>
+<span id="cb47-3"><a href="7-select.html#cb47-3"></a><span class="kw">library</span>(broom)</span>
+<span id="cb47-4"><a href="7-select.html#cb47-4"></a><span class="kw">library</span>(leaps)</span>
+<span id="cb47-5"><a href="7-select.html#cb47-5"></a><span class="kw">library</span>(Sleuth3) <span class="co">#case1201 data</span></span>
+<span id="cb47-6"><a href="7-select.html#cb47-6"></a><span class="kw">library</span>(ISLR) <span class="co">#Hitters data</span></span></code></pre></div>
 </div>
 </div>
 <div id="data-9" class="section level3 unnumbered">
@@ -323,23 +355,23 @@ code > span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Inf
 <div id="part-i-1" class="section level4 unnumbered">
 <h4>Part I</h4>
 <p>For the first part of the assignment, you will return to the model selection activity you started in class using the SAT data. The data is in the <code>case1201</code> data frame in the <code>Sleuth3</code> package.</p>
-<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r">sat_scores &lt;-<span class="st"> </span>case1201 <span class="op">%&gt;%</span>
-<span class="st">  </span><span class="kw">select</span>(<span class="op">-</span>State) </code></pre></div>
+<div class="sourceCode" id="cb48"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb48-1"><a href="7-select.html#cb48-1"></a>sat_scores &lt;-<span class="st"> </span>case1201 <span class="op">%&gt;%</span></span>
+<span id="cb48-2"><a href="7-select.html#cb48-2"></a><span class="st">  </span><span class="kw">select</span>(<span class="op">-</span>State) </span></code></pre></div>
 <ol style="list-style-type: decimal">
 <li>Manually perform backward selection using <span class="math inline">\(Adj. R^2\)</span> as the selection criterion. To help you get started, the full model and the code for the first set of models to test are below. Show each step of the selection process. Display the coefficients and <span class="math inline">\(Adj. R^2\)</span> of your final model.</li>
 </ol>
-<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r">full_model &lt;-<span class="st"> </span><span class="kw">lm</span>(SAT <span class="op">~</span><span class="st"> </span>., <span class="dt">data =</span> sat_scores)</code></pre></div>
-<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r">m1 &lt;-<span class="st"> </span><span class="kw">lm</span>(SAT <span class="op">~</span><span class="st"> </span>Income <span class="op">+</span><span class="st"> </span>Years <span class="op">+</span><span class="st"> </span>Public <span class="op">+</span><span class="st"> </span>Expend <span class="op">+</span><span class="st"> </span>Rank, <span class="dt">data =</span> sat_scores)</code></pre></div>
-<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r">m2 &lt;-<span class="st"> </span><span class="kw">lm</span>(SAT <span class="op">~</span><span class="st"> </span>Takers <span class="op">+</span><span class="st"> </span>Years <span class="op">+</span><span class="st"> </span>Public <span class="op">+</span><span class="st"> </span>Expend <span class="op">+</span><span class="st"> </span>Rank, <span class="dt">data =</span> sat_scores)</code></pre></div>
-<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r">m3 &lt;-<span class="st"> </span><span class="kw">lm</span>(SAT <span class="op">~</span><span class="st"> </span>Takers <span class="op">+</span><span class="st"> </span>Income <span class="op">+</span><span class="st"> </span>Public <span class="op">+</span><span class="st"> </span>Expend <span class="op">+</span><span class="st"> </span>Rank, <span class="dt">data =</span> sat_scores)</code></pre></div>
-<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r">m4 &lt;-<span class="st"> </span><span class="kw">lm</span>(SAT <span class="op">~</span><span class="st"> </span>Takers <span class="op">+</span><span class="st"> </span>Income <span class="op">+</span><span class="st"> </span>Years <span class="op">+</span><span class="st"> </span>Expend <span class="op">+</span><span class="st"> </span>Rank, <span class="dt">data =</span> sat_scores)</code></pre></div>
-<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r">m5 &lt;-<span class="st"> </span><span class="kw">lm</span>(SAT <span class="op">~</span><span class="st"> </span>Takers <span class="op">+</span><span class="st"> </span>Income <span class="op">+</span><span class="st"> </span>Years <span class="op">+</span><span class="st"> </span>Public <span class="op">+</span><span class="st"> </span>Rank, <span class="dt">data =</span> sat_scores)</code></pre></div>
-<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r">m6 &lt;-<span class="st"> </span><span class="kw">lm</span>(SAT <span class="op">~</span><span class="st"> </span>Takers <span class="op">+</span><span class="st"> </span>Income <span class="op">+</span><span class="st"> </span>Years <span class="op">+</span><span class="st"> </span>Public <span class="op">+</span><span class="st"> </span>Expend, <span class="dt">data =</span> sat_scores)</code></pre></div>
+<div class="sourceCode" id="cb49"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb49-1"><a href="7-select.html#cb49-1"></a>full_model &lt;-<span class="st"> </span><span class="kw">lm</span>(SAT <span class="op">~</span><span class="st"> </span>., <span class="dt">data =</span> sat_scores)</span></code></pre></div>
+<div class="sourceCode" id="cb50"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb50-1"><a href="7-select.html#cb50-1"></a>m1 &lt;-<span class="st"> </span><span class="kw">lm</span>(SAT <span class="op">~</span><span class="st"> </span>Income <span class="op">+</span><span class="st"> </span>Years <span class="op">+</span><span class="st"> </span>Public <span class="op">+</span><span class="st"> </span>Expend <span class="op">+</span><span class="st"> </span>Rank, <span class="dt">data =</span> sat_scores)</span></code></pre></div>
+<div class="sourceCode" id="cb51"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb51-1"><a href="7-select.html#cb51-1"></a>m2 &lt;-<span class="st"> </span><span class="kw">lm</span>(SAT <span class="op">~</span><span class="st"> </span>Takers <span class="op">+</span><span class="st"> </span>Years <span class="op">+</span><span class="st"> </span>Public <span class="op">+</span><span class="st"> </span>Expend <span class="op">+</span><span class="st"> </span>Rank, <span class="dt">data =</span> sat_scores)</span></code></pre></div>
+<div class="sourceCode" id="cb52"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb52-1"><a href="7-select.html#cb52-1"></a>m3 &lt;-<span class="st"> </span><span class="kw">lm</span>(SAT <span class="op">~</span><span class="st"> </span>Takers <span class="op">+</span><span class="st"> </span>Income <span class="op">+</span><span class="st"> </span>Public <span class="op">+</span><span class="st"> </span>Expend <span class="op">+</span><span class="st"> </span>Rank, <span class="dt">data =</span> sat_scores)</span></code></pre></div>
+<div class="sourceCode" id="cb53"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb53-1"><a href="7-select.html#cb53-1"></a>m4 &lt;-<span class="st"> </span><span class="kw">lm</span>(SAT <span class="op">~</span><span class="st"> </span>Takers <span class="op">+</span><span class="st"> </span>Income <span class="op">+</span><span class="st"> </span>Years <span class="op">+</span><span class="st"> </span>Expend <span class="op">+</span><span class="st"> </span>Rank, <span class="dt">data =</span> sat_scores)</span></code></pre></div>
+<div class="sourceCode" id="cb54"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb54-1"><a href="7-select.html#cb54-1"></a>m5 &lt;-<span class="st"> </span><span class="kw">lm</span>(SAT <span class="op">~</span><span class="st"> </span>Takers <span class="op">+</span><span class="st"> </span>Income <span class="op">+</span><span class="st"> </span>Years <span class="op">+</span><span class="st"> </span>Public <span class="op">+</span><span class="st"> </span>Rank, <span class="dt">data =</span> sat_scores)</span></code></pre></div>
+<div class="sourceCode" id="cb55"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb55-1"><a href="7-select.html#cb55-1"></a>m6 &lt;-<span class="st"> </span><span class="kw">lm</span>(SAT <span class="op">~</span><span class="st"> </span>Takers <span class="op">+</span><span class="st"> </span>Income <span class="op">+</span><span class="st"> </span>Years <span class="op">+</span><span class="st"> </span>Public <span class="op">+</span><span class="st"> </span>Expend, <span class="dt">data =</span> sat_scores)</span></code></pre></div>
 <ol start="2" style="list-style-type: decimal">
 <li><p>What is the best 5-variable model? Display the model output.</p></li>
 <li><p>Use the <code>regsubsets</code> function to perform backward selection. What is the final model when <span class="math inline">\(Adj. R^2\)</span> is the selection criterion? Display the coefficients and the <span class="math inline">\(Adj. R^2\)</span> of the final model. <em>This should be the same result you got in Exercise 1.</em></p></li>
 <li><p>What is the final model when <span class="math inline">\(BIC\)</span> is the selection criterion? Display the coefficients and the <span class="math inline">\(BIC\)</span> of the final model.</p></li>
-<li>Compare the final models selected by <span class="math inline">\(Adj. R^2\)</span> and <span class="math inline">\(BIC\)</span>.
+<li><p>Compare the final models selected by <span class="math inline">\(Adj. R^2\)</span> and <span class="math inline">\(BIC\)</span>.</p>
 <ul>
 <li>Do the models have the same number of predictors? Briefly explain.</li>
 <li>Are the same predictor variables in each model? Briefly explain.</li>
@@ -355,19 +387,19 @@ code > span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Inf
 <li><p>Some observations have missing values for <code>Salary</code>. Filter the data, so only observations that have values for <code>Salary</code> are included. You will use this filtered data for the remainder of the assignment.</p></li>
 <li><p>Fill in the code below to conduct forward selection and save the results in an object called <code>sel_summary</code> (selection summary).</p></li>
 </ol>
-<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="co"># The `nvmax` option indicates the maximum-sized variable subsets to consider in the model selection.</span></code></pre></div>
-<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r">regfit_forward &lt;-<span class="st"> </span><span class="kw">regsubsets</span>(_______, ________, <span class="dt">method=</span><span class="st">&quot;forward&quot;</span>, <span class="dt">nvmax =</span> <span class="dv">19</span>)
-sel_summary &lt;-<span class="st"> </span><span class="kw">summary</span>(_______)</code></pre></div>
+<div class="sourceCode" id="cb56"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb56-1"><a href="7-select.html#cb56-1"></a><span class="co"># The `nvmax` option indicates the maximum-sized variable subsets to consider in the model selection.</span></span></code></pre></div>
+<div class="sourceCode" id="cb57"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb57-1"><a href="7-select.html#cb57-1"></a>regfit_forward &lt;-<span class="st"> </span><span class="kw">regsubsets</span>(_______, ________, <span class="dt">method=</span><span class="st">&quot;forward&quot;</span>, <span class="dt">nvmax =</span> <span class="dv">19</span>)</span>
+<span id="cb57-2"><a href="7-select.html#cb57-2"></a>sel_summary &lt;-<span class="st"> </span><span class="kw">summary</span>(_______)</span></code></pre></div>
 <ol start="10" style="list-style-type: decimal">
 <li>The object <code>sel_summary</code> contains the summary statistics for the best fit model containing <span class="math inline">\(k\)</span> predictors, where <span class="math inline">\(k = 1, \ldots, 19\)</span>. The object <code>sel_summary</code> is a list object, so it is cumbersome to extract the relevant summary statistics. Therefore, you can create a data frame called <code>summary_stats</code> such that each row represents the best fit model with <span class="math inline">\(k\)</span> predictors and each column is a summary statistic. For example, the second row contains the summary statistics of the best fit model that contains 2 variables.</li>
 </ol>
 <p>Fill in the code below to create the data frame <code>summary_stats</code> that includes the <span class="math inline">\(BIC\)</span>, <span class="math inline">\(R^2\)</span>, <span class="math inline">\(Adj. R^2\)</span>, and residual sum of squares (RSS) for each model in <code>sel_summary</code>. The data frame <code>summary_stats</code> will also include the column <code>np</code>, the number of predictors in the model represented on each row.</p>
-<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r">summary_stats &lt;-<span class="st"> </span><span class="kw">data.frame</span>(<span class="dt">bic =</span> sel_summary<span class="op">$</span>bic, 
-                       <span class="dt">adjr2 =</span> _______, 
-                       <span class="dt">rsq =</span> _______,
-                       <span class="dt">rss =</span> _______) <span class="op">%&gt;%</span>
-<span class="st">  </span><span class="kw">mutate</span>(<span class="dt">np =</span> <span class="kw">row_number</span>()) <span class="co">#number of variables</span></code></pre></div>
-<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="co"># See the [ggplot2 documentation](https://ggplot2.tidyverse.org/reference/geom_abline.html#arguments) for code to add a vertical line.</span></code></pre></div>
+<div class="sourceCode" id="cb58"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb58-1"><a href="7-select.html#cb58-1"></a>summary_stats &lt;-<span class="st"> </span><span class="kw">data.frame</span>(<span class="dt">bic =</span> sel_summary<span class="op">$</span>bic, </span>
+<span id="cb58-2"><a href="7-select.html#cb58-2"></a>                       <span class="dt">adjr2 =</span> _______, </span>
+<span id="cb58-3"><a href="7-select.html#cb58-3"></a>                       <span class="dt">rsq =</span> _______,</span>
+<span id="cb58-4"><a href="7-select.html#cb58-4"></a>                       <span class="dt">rss =</span> _______) <span class="op">%&gt;%</span></span>
+<span id="cb58-5"><a href="7-select.html#cb58-5"></a><span class="st">  </span><span class="kw">mutate</span>(<span class="dt">np =</span> <span class="kw">row_number</span>()) <span class="co">#number of variables</span></span></code></pre></div>
+<div class="sourceCode" id="cb59"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb59-1"><a href="7-select.html#cb59-1"></a><span class="co"># See the [ggplot2 documentation](https://ggplot2.tidyverse.org/reference/geom_abline.html#arguments) for code to add a vertical line.</span></span></code></pre></div>
 <ol start="11" style="list-style-type: decimal">
 <li>Use the data in the <code>summary_stats</code> data frame to plot <span class="math inline">\(BIC\)</span> versus the number of predictors. Include a vertical line on your plot that shows the number of predictors for the overall final model you would select based on <span class="math inline">\(BIC\)</span>. Be sure your plot has clear and informative title and axes labels.
 <ul>
@@ -376,24 +408,24 @@ sel_summary &lt;-<span class="st"> </span><span class="kw">summary</span>(______
 </ul></li>
 </ol>
 <p><em>You can fill in the code below with either <code>max</code> or <code>min</code> to find the number of predictors in the final model selected based on <span class="math inline">\(BIC\)</span>.</em></p>
-<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r">np_bic &lt;-<span class="st"> </span>summary_stats <span class="op">%&gt;%</span>
-<span class="st">  </span><span class="kw">filter</span>(bic <span class="op">==</span><span class="st"> </span><span class="kw">_____</span>(bic)) <span class="op">%&gt;%</span>
-<span class="st">  </span><span class="kw">select</span>(np) <span class="op">%&gt;%</span><span class="st"> </span>
-<span class="st">  </span><span class="kw">pull</span>()</code></pre></div>
+<div class="sourceCode" id="cb60"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb60-1"><a href="7-select.html#cb60-1"></a>np_bic &lt;-<span class="st"> </span>summary_stats <span class="op">%&gt;%</span></span>
+<span id="cb60-2"><a href="7-select.html#cb60-2"></a><span class="st">  </span><span class="kw">filter</span>(bic <span class="op">==</span><span class="st"> </span><span class="kw">_____</span>(bic)) <span class="op">%&gt;%</span></span>
+<span id="cb60-3"><a href="7-select.html#cb60-3"></a><span class="st">  </span><span class="kw">select</span>(np) <span class="op">%&gt;%</span><span class="st"> </span></span>
+<span id="cb60-4"><a href="7-select.html#cb60-4"></a><span class="st">  </span><span class="kw">pull</span>()</span></code></pre></div>
 <ol start="12" style="list-style-type: decimal">
-<li>Use the data in the <code>summary_stats</code> data frame to plot <span class="math inline">\(Adj. R^2\)</span> versus the number of predictors. Include a vertical line on your plot that shows the number of predictors for the final model you would select based on <span class="math inline">\(Adj. R^2\)</span>. Be sure your plot has clear and informative title and axes labels.
+<li><p>Use the data in the <code>summary_stats</code> data frame to plot <span class="math inline">\(Adj. R^2\)</span> versus the number of predictors. Include a vertical line on your plot that shows the number of predictors for the final model you would select based on <span class="math inline">\(Adj. R^2\)</span>. Be sure your plot has clear and informative title and axes labels.</p>
 <ul>
 <li>How does <span class="math inline">\(Adj. R^2\)</span> change as the number of predictors increases?</li>
 <li>How many predictors are in the final model selected based on <span class="math inline">\(Adj. R^2\)</span>?</li>
 </ul></li>
-<li>Use the data in the <code>summary_stats</code> data frame to plot <span class="math inline">\(R^2\)</span> versus the number of predictors. Include a vertical line on your plot that shows the number of predictors for the final model selected based on <span class="math inline">\(R^2\)</span>. Be sure your plot has clear and informative title and axes labels.
+<li><p>Use the data in the <code>summary_stats</code> data frame to plot <span class="math inline">\(R^2\)</span> versus the number of predictors. Include a vertical line on your plot that shows the number of predictors for the final model selected based on <span class="math inline">\(R^2\)</span>. Be sure your plot has clear and informative title and axes labels.</p>
 <ul>
 <li>How does <span class="math inline">\(R^2\)</span> change as the number of predictors increases?</li>
 <li>How many predictors are in the final model selected based on <span class="math inline">\(R^2\)</span>?</li>
 </ul></li>
 <li><p>Should <span class="math inline">\(R^2\)</span> be used as a model selection criterion? Briefly explain why or why not using your answers to Exercises 11 - 13.</p></li>
 <li><p>Choose a final model to predict a baseball player’s <code>Salary</code> from his performance statistics. Display the variables, their coefficients, and the summary statistics from the <code>summary_stats</code> data frame for this model.</p></li>
-<li>Briefly explain why you chose the model in the previous exercise.
+<li><p>Briefly explain why you chose the model in the previous exercise.</p>
 <ul>
 <li>Which model selection criteria did you use (<span class="math inline">\(BIC\)</span>, <span class="math inline">\(Adj. R^2\)</span>, <span class="math inline">\(R^2\)</span>)? Why?</li>
 <li>What other factors did you consider besides the value of the model selection criteria?</li>
@@ -409,25 +441,25 @@ sel_summary &lt;-<span class="st"> </span><span class="kw">summary</span>(______
 </div>
 <div id="in-class-sats-by-state" class="section level2">
 <h2><span class="header-section-number">7.2</span> IN-CLASS: SATs by State</h2>
-<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="kw">library</span>(tidyverse)
-<span class="kw">library</span>(knitr)
-<span class="kw">library</span>(broom)
-<span class="kw">library</span>(Sleuth3)
-<span class="kw">library</span>(leaps)</code></pre></div>
-<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r">sat_scores &lt;-<span class="st"> </span>case1201 <span class="op">%&gt;%</span>
-<span class="st">  </span><span class="kw">select</span>(<span class="op">-</span>State) <span class="co">#remove the state variable</span></code></pre></div>
+<div class="sourceCode" id="cb61"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb61-1"><a href="7-select.html#cb61-1"></a><span class="kw">library</span>(tidyverse)</span>
+<span id="cb61-2"><a href="7-select.html#cb61-2"></a><span class="kw">library</span>(knitr)</span>
+<span id="cb61-3"><a href="7-select.html#cb61-3"></a><span class="kw">library</span>(broom)</span>
+<span id="cb61-4"><a href="7-select.html#cb61-4"></a><span class="kw">library</span>(Sleuth3)</span>
+<span id="cb61-5"><a href="7-select.html#cb61-5"></a><span class="kw">library</span>(leaps)</span></code></pre></div>
+<div class="sourceCode" id="cb62"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb62-1"><a href="7-select.html#cb62-1"></a>sat_scores &lt;-<span class="st"> </span>case1201 <span class="op">%&gt;%</span></span>
+<span id="cb62-2"><a href="7-select.html#cb62-2"></a><span class="st">  </span><span class="kw">select</span>(<span class="op">-</span>State) <span class="co">#remove the state variable</span></span></code></pre></div>
 <div id="manual-backward-selection" class="section level3 unnumbered">
 <h3>“Manual” backward selection</h3>
 <ul>
-<li>“Manually”&quot; perform backward selection using Adj. <span class="math inline">\(R^2\)</span> as the selection criteria. Show each step of the selection process. To help you get started, the full model and the code for the first set of models to test are below. You will need to find Adj. <span class="math inline">\(R^2\)</span> for each model.</li>
+<li>“Manually”" perform backward selection using Adj. <span class="math inline">\(R^2\)</span> as the selection criteria. Show each step of the selection process. To help you get started, the full model and the code for the first set of models to test are below. You will need to find Adj. <span class="math inline">\(R^2\)</span> for each model.</li>
 </ul>
-<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r">full_model &lt;-<span class="st"> </span><span class="kw">lm</span>(SAT <span class="op">~</span><span class="st"> </span>., <span class="dt">data =</span> sat_scores)</code></pre></div>
-<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r">m1 &lt;-<span class="st"> </span><span class="kw">lm</span>(SAT <span class="op">~</span><span class="st"> </span>Income <span class="op">+</span><span class="st"> </span>Years <span class="op">+</span><span class="st"> </span>Public <span class="op">+</span><span class="st"> </span>Expend <span class="op">+</span><span class="st"> </span>Rank, <span class="dt">data =</span> sat_scores)</code></pre></div>
-<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r">m2 &lt;-<span class="st"> </span><span class="kw">lm</span>(SAT <span class="op">~</span><span class="st"> </span>Takers <span class="op">+</span><span class="st"> </span>Years <span class="op">+</span><span class="st"> </span>Public <span class="op">+</span><span class="st"> </span>Expend <span class="op">+</span><span class="st"> </span>Rank, <span class="dt">data =</span> sat_scores)</code></pre></div>
-<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r">m3 &lt;-<span class="st"> </span><span class="kw">lm</span>(SAT <span class="op">~</span><span class="st"> </span>Takers <span class="op">+</span><span class="st"> </span>Income <span class="op">+</span><span class="st"> </span>Public <span class="op">+</span><span class="st"> </span>Expend <span class="op">+</span><span class="st"> </span>Rank, <span class="dt">data =</span> sat_scores)</code></pre></div>
-<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r">m4 &lt;-<span class="st"> </span><span class="kw">lm</span>(SAT <span class="op">~</span><span class="st"> </span>Takers <span class="op">+</span><span class="st"> </span>Years <span class="op">+</span><span class="st"> </span>Income <span class="op">+</span><span class="st"> </span>Expend <span class="op">+</span><span class="st"> </span>Rank, <span class="dt">data =</span> sat_scores)</code></pre></div>
-<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r">m5 &lt;-<span class="st"> </span><span class="kw">lm</span>(SAT <span class="op">~</span><span class="st"> </span>Takers <span class="op">+</span><span class="st"> </span>Years <span class="op">+</span><span class="st"> </span>Public <span class="op">+</span><span class="st"> </span>Income <span class="op">+</span><span class="st"> </span>Expend, <span class="dt">data =</span> sat_scores)</code></pre></div>
-<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r">m6 &lt;-<span class="st"> </span><span class="kw">lm</span>(SAT <span class="op">~</span><span class="st"> </span>Takers <span class="op">+</span><span class="st"> </span>Years <span class="op">+</span><span class="st"> </span>Public <span class="op">+</span><span class="st"> </span>Income <span class="op">+</span><span class="st"> </span>Rank, <span class="dt">data =</span> sat_scores)</code></pre></div>
+<div class="sourceCode" id="cb63"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb63-1"><a href="7-select.html#cb63-1"></a>full_model &lt;-<span class="st"> </span><span class="kw">lm</span>(SAT <span class="op">~</span><span class="st"> </span>., <span class="dt">data =</span> sat_scores)</span></code></pre></div>
+<div class="sourceCode" id="cb64"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb64-1"><a href="7-select.html#cb64-1"></a>m1 &lt;-<span class="st"> </span><span class="kw">lm</span>(SAT <span class="op">~</span><span class="st"> </span>Income <span class="op">+</span><span class="st"> </span>Years <span class="op">+</span><span class="st"> </span>Public <span class="op">+</span><span class="st"> </span>Expend <span class="op">+</span><span class="st"> </span>Rank, <span class="dt">data =</span> sat_scores)</span></code></pre></div>
+<div class="sourceCode" id="cb65"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb65-1"><a href="7-select.html#cb65-1"></a>m2 &lt;-<span class="st"> </span><span class="kw">lm</span>(SAT <span class="op">~</span><span class="st"> </span>Takers <span class="op">+</span><span class="st"> </span>Years <span class="op">+</span><span class="st"> </span>Public <span class="op">+</span><span class="st"> </span>Expend <span class="op">+</span><span class="st"> </span>Rank, <span class="dt">data =</span> sat_scores)</span></code></pre></div>
+<div class="sourceCode" id="cb66"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb66-1"><a href="7-select.html#cb66-1"></a>m3 &lt;-<span class="st"> </span><span class="kw">lm</span>(SAT <span class="op">~</span><span class="st"> </span>Takers <span class="op">+</span><span class="st"> </span>Income <span class="op">+</span><span class="st"> </span>Public <span class="op">+</span><span class="st"> </span>Expend <span class="op">+</span><span class="st"> </span>Rank, <span class="dt">data =</span> sat_scores)</span></code></pre></div>
+<div class="sourceCode" id="cb67"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb67-1"><a href="7-select.html#cb67-1"></a>m4 &lt;-<span class="st"> </span><span class="kw">lm</span>(SAT <span class="op">~</span><span class="st"> </span>Takers <span class="op">+</span><span class="st"> </span>Years <span class="op">+</span><span class="st"> </span>Income <span class="op">+</span><span class="st"> </span>Expend <span class="op">+</span><span class="st"> </span>Rank, <span class="dt">data =</span> sat_scores)</span></code></pre></div>
+<div class="sourceCode" id="cb68"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb68-1"><a href="7-select.html#cb68-1"></a>m5 &lt;-<span class="st"> </span><span class="kw">lm</span>(SAT <span class="op">~</span><span class="st"> </span>Takers <span class="op">+</span><span class="st"> </span>Years <span class="op">+</span><span class="st"> </span>Public <span class="op">+</span><span class="st"> </span>Income <span class="op">+</span><span class="st"> </span>Expend, <span class="dt">data =</span> sat_scores)</span></code></pre></div>
+<div class="sourceCode" id="cb69"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb69-1"><a href="7-select.html#cb69-1"></a>m6 &lt;-<span class="st"> </span><span class="kw">lm</span>(SAT <span class="op">~</span><span class="st"> </span>Takers <span class="op">+</span><span class="st"> </span>Years <span class="op">+</span><span class="st"> </span>Public <span class="op">+</span><span class="st"> </span>Income <span class="op">+</span><span class="st"> </span>Rank, <span class="dt">data =</span> sat_scores)</span></code></pre></div>
 <p>Continue the model selection until you have a final model. Show each step of the model selection process.</p>
 </div>
 <div id="backward-selection-using-regsubsets" class="section level3 unnumbered">
@@ -435,7 +467,7 @@ sel_summary &lt;-<span class="st"> </span><span class="kw">summary</span>(______
 <ul>
 <li>Use the <code>regsubsets</code> function to perform backward selection using Adj. <span class="math inline">\(R^2\)</span> as the selection criteria.</li>
 </ul>
-<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="co"># input code for backward selection using Adj R-sq</span></code></pre></div>
+<div class="sourceCode" id="cb70"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb70-1"><a href="7-select.html#cb70-1"></a><span class="co"># input code for backward selection using Adj R-sq</span></span></code></pre></div>
 <p>Are the variables the same as the ones at you chose? Is the Adj. <span class="math inline">\(R^2\)</span> the same?</p>
 </div>
 <div id="changing-selection-criteria" class="section level3 unnumbered">
@@ -443,12 +475,12 @@ sel_summary &lt;-<span class="st"> </span><span class="kw">summary</span>(______
 <ul>
 <li>Use the <code>regsubsets</code> function to perform backward selection using BIC as the selection criteria.</li>
 </ul>
-<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="co"># input code for backward selection using BIC</span></code></pre></div>
+<div class="sourceCode" id="cb71"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb71-1"><a href="7-select.html#cb71-1"></a><span class="co"># input code for backward selection using BIC</span></span></code></pre></div>
 <p>What variables were chosen for the follow model? How does this model compare to the one selected using Adj. <span class="math inline">\(R^2\)</span>?</p>
 <ul>
 <li>Use the <code>step</code> function to perform backward selection using AIC as the selection criteria.</li>
 </ul>
-<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="co"># input code for backward selection using AIC</span></code></pre></div>
+<div class="sourceCode" id="cb72"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb72-1"><a href="7-select.html#cb72-1"></a><span class="co"># input code for backward selection using AIC</span></span></code></pre></div>
 <p>What variables were chosen for the follow model? How does this model compare to the models chosen from the other selection criteria?</p>
 </div>
 <div id="different-selection-procedure" class="section level3 unnumbered">
@@ -456,7 +488,7 @@ sel_summary &lt;-<span class="st"> </span><span class="kw">summary</span>(______
 <ul>
 <li>Use forward or stepwise selection to choose a model. You can choose the model selection criteria.</li>
 </ul>
-<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="co"># input code for forward or stepwise selection</span></code></pre></div>
+<div class="sourceCode" id="cb73"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb73-1"><a href="7-select.html#cb73-1"></a><span class="co"># input code for forward or stepwise selection</span></span></code></pre></div>
 <ul>
 <li>How does this model compare to the previous selected models?</li>
 </ul>
@@ -476,41 +508,41 @@ sel_summary &lt;-<span class="st"> </span><span class="kw">summary</span>(______
 <h3><span class="header-section-number">7.3.1</span> Maximum Likelihood Estimation of <span class="math inline">\(\boldsymbol{\beta}\)</span> and <span class="math inline">\(\sigma\)</span></h3>
 <p>To understand the formulas for AIC and BIC, we will first briefly explain the likelihood function and maximum likelihood estimates for regression.</p>
 <p>Let <span class="math inline">\(\mathbf{Y}\)</span> be <span class="math inline">\(n \times 1\)</span> matrix of responses, <span class="math inline">\(\mathbf{X}\)</span>, the <span class="math inline">\(n \times (p+1)\)</span> matrix of predictors, and <span class="math inline">\(\boldsymbol{\beta}\)</span>, <span class="math inline">\((p+1) \times 1\)</span> matrix of coefficients. If the multiple linear regression model is correct then,</p>
-<span class="math display">\[\begin{equation}
+<p><span class="math display">\[\begin{equation}
 \label{norm-assumption}
 \mathbf{Y} \sim N(\mathbf{X}\boldsymbol{\beta}, \sigma^2)
-\end{equation}\]</span>
+\end{equation}\]</span></p>
 <p>When we do linear regression, our goal is to estimate the unknown parameters <span class="math inline">\(\boldsymbol{\beta}\)</span> and <span class="math inline">\(\sigma^2\)</span> from (). In <a href="https://github.com/STA210-Sp19/supplemental-notes/blob/master/regression-basics-matrix.pdf">Matrix Form of Linear Regression</a>, we showed a way to estimate these parameters using matrix alegbra. Another approach for estimating <span class="math inline">\(\boldsymbol{\beta}\)</span> and <span class="math inline">\(\sigma^2\)</span> is using <em>maximum likelihood estimation</em>.</p>
 <p>A <strong>likelihood function</strong> is used to summarise the evidence from the data in support of each possible value of a model parameter. Using (), we will write the likelihood function for linear regression as</p>
-<span class="math display">\[\begin{equation}
+<p><span class="math display">\[\begin{equation}
 \label{lr}
 L(\mathbf{X}, \mathbf{Y}|\boldsymbol{\beta}, \sigma^2) = \prod\limits_{i=1}^n (2\pi \sigma^2)^{-\frac{1}{2}} \exp\bigg\{-\frac{1}{2\sigma^2}\sum\limits_{i=1}^n(Y_i - \mathbf{X}_i \boldsymbol{\beta})^T(Y_i - \mathbf{X}_i \boldsymbol{\beta})\bigg\}
-\end{equation}\]</span>
-<p>where <span class="math inline">\(Y_i\)</span> is the <span class="math inline">\(i^{th}\)</span> response and <span class="math inline">\(\mathbf{X}_i\)</span> is the vector of predictors for the <span class="math inline">\(i^{th}\)</span> observation. One approach estimating <span class="math inline">\(\boldsymbol{\beta}\)</span> and <span class="math inline">\(\sigma^2\)</span> is to find the values of those parameters that maximize the likelihood in (), i.e. <strong>maximum likelhood estimation</strong>. To make the calculations more manageable, instead of maximizing the likelihood function, we will instead maximize its logarithm, i.e. the log-likelihood function. The values of the parameters that maximize the log-likelihood function are those that maximize the likelihood function. The log-likelihood function we will maximize is</p>
-<span class="math display">\[\begin{equation}
+\end{equation}\]</span></p>
+<p>where <span class="math inline">\(Y_i\)</span> is the <span class="math inline">\(i^{th}\)</span> response and <span class="math inline">\(\mathbf{X}_i\)</span> is the vector of predictors for the <span class="math inline">\(i^{th}\)</span> observation. One approach estimating <span class="math inline">\(\boldsymbol{\beta}\)</span> and <span class="math inline">\(\sigma^2\)</span> is to find the values of those parameters that maximize the likelihood in (), i.e. <strong>maximum likelhood estimation</strong>. To make the calculations more manageable, instead of maximizing the likelihood function, we will instead maximize its logarithm, i.e. the log-likelihood function. The values of the parameters that maximize the log-likelihood function are those that maximize the likelihood function. The log-likelihood function we will maximize is</p>
+<p><span class="math display">\[\begin{equation}
 \label{logL}
 \begin{aligned}
 \log L(\mathbf{X}, \mathbf{Y}|\boldsymbol{\beta}, \sigma^2) &amp;= \sum\limits_{i=1}^n -\frac{1}{2}\log(2\pi\sigma^2) -\frac{1}{2\sigma^2}\sum\limits_{i=1}^n(Y_i - \mathbf{X}_i \boldsymbol{\beta})^T(Y_i - \mathbf{X}_i \boldsymbol{\beta}) \\[10pt]
 &amp;= -\frac{n}{2}\log(2\pi\sigma^2) - \frac{1}{2\sigma^2}(\mathbf{Y} - \mathbf{X} \boldsymbol{\beta})^T(\mathbf{Y} - \mathbf{X} \boldsymbol{\beta})\\
 \end{aligned}
-\end{equation}\]</span>
+\end{equation}\]</span></p>
 <p>[–insert details MLES–]</p>
 <p>The maximum likelihood estimate of <span class="math inline">\(\boldsymbol{\beta}\)</span> and <span class="math inline">\(\sigma^2\)</span> are</p>
-<span class="math display">\[\begin{equation}
+<p><span class="math display">\[\begin{equation}
 \label{mle}
 \hat{\boldsymbol{\beta}} = (\mathbf{X}^T\mathbf{X})^{-1}\mathbf{X}^T\mathbf{Y} \hspace{10mm} \hat{\sigma}^2 = \frac{1}{n}(\mathbf{Y} - \mathbf{X} \boldsymbol{\beta})^T(\mathbf{Y} - \mathbf{X} \boldsymbol{\beta}) = \frac{1}{n}RSS
-\end{equation}\]</span>
+\end{equation}\]</span></p>
 <p>where <span class="math inline">\(RSS\)</span> is the residual sum of squares. Note that the maximum likelihood estimate is not exactly equal to the estimate of <span class="math inline">\(\sigma^2\)</span> we typically use <span class="math inline">\(\frac{RSS}{n-p-1}\)</span>. This is because the maximum likelihood estimate of <span class="math inline">\(\sigma^2\)</span> in () is a <em>biased</em> estimator of <span class="math inline">\(\sigma^2\)</span>. When <span class="math inline">\(n\)</span> is much larger than the number of predictors <span class="math inline">\(p\)</span>, then the differences in these two estimates are trivial.</p>
 </div>
 <div id="aic" class="section level3">
 <h3><span class="header-section-number">7.3.2</span> AIC</h3>
 <p>Akaike’s Information Criterion (AIC) is</p>
-<span class="math display">\[\begin{equation}
+<p><span class="math display">\[\begin{equation}
 \label{aic}
 AIC = -2 \log L + 2(p+1)
-\end{equation}\]</span>
+\end{equation}\]</span></p>
 <p>where <span class="math inline">\(\log L\)</span> is the log-likelihood. This is the general form of AIC that can be applied to a variety of models, but for now, let’s focus on AIC for mutliple linear regression.</p>
-<span class="math display">\[\begin{equation}
+<p><span class="math display">\[\begin{equation}
 \label{aic-reg}
 \begin{aligned}
 AIC &amp;= -2 \log L + 2(p+1) \\[10pt]
@@ -518,7 +550,7 @@ AIC &amp;= -2 \log L + 2(p+1) \\[10pt]
 &amp;= n\log\big(2\pi\frac{RSS}{n}\big) + \frac{1}{RSS/n}RSS \\[10pt]
 &amp;= n\log(2\pi) + n\log(RSS) - n\log(n) + 2(p+1)
 \end{aligned}
-\end{equation}\]</span>
+\end{equation}\]</span></p>
 </div>
 <div id="bic" class="section level3">
 <h3><span class="header-section-number">7.3.3</span> BIC</h3>
@@ -538,11 +570,13 @@ AIC &amp;= -2 \log L + 2(p+1) \\[10pt]
   </div>
 <script src="libs/gitbook-2.6.7/js/app.min.js"></script>
 <script src="libs/gitbook-2.6.7/js/lunr.js"></script>
+<script src="libs/gitbook-2.6.7/js/clipboard.min.js"></script>
 <script src="libs/gitbook-2.6.7/js/plugin-search.js"></script>
 <script src="libs/gitbook-2.6.7/js/plugin-sharing.js"></script>
 <script src="libs/gitbook-2.6.7/js/plugin-fontsettings.js"></script>
 <script src="libs/gitbook-2.6.7/js/plugin-bookdown.js"></script>
 <script src="libs/gitbook-2.6.7/js/jquery.highlight.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-clipboard.js"></script>
 <script>
 gitbook.require(["gitbook"], function(gitbook) {
 gitbook.start({
@@ -550,12 +584,11 @@ gitbook.start({
 "github": false,
 "facebook": true,
 "twitter": true,
-"google": false,
 "linkedin": false,
 "weibo": false,
 "instapaper": false,
 "vk": false,
-"all": ["facebook", "google", "twitter", "linkedin", "weibo", "instapaper"]
+"all": ["facebook", "twitter", "linkedin", "weibo", "instapaper"]
 },
 "fontsettings": {
 "theme": "white",
@@ -567,6 +600,10 @@ gitbook.start({
 "text": null
 },
 "history": {
+"link": null,
+"text": null
+},
+"view": {
 "link": null,
 "text": null
 },
@@ -585,10 +622,11 @@ gitbook.start({
   (function () {
     var script = document.createElement("script");
     script.type = "text/javascript";
-    var src = "";
+    var src = "true";
     if (src === "" || src === "true") src = "https://mathjax.rstudio.com/latest/MathJax.js?config=TeX-MML-AM_CHTML";
-    if (location.protocol !== "file:" && /^https?:/.test(src))
-      src = src.replace(/^https?:/, '');
+    if (location.protocol !== "file:")
+      if (/^https?:/.test(src))
+        src = src.replace(/^https?:/, '');
     script.src = src;
     document.getElementsByTagName("head")[0].appendChild(script);
   })();

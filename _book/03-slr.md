@@ -306,5 +306,27 @@ x0 <-  data.frame(PercentAlcohol=4.3)
 
 ***
 
+## SLR Notes 
+
+
+
+This is text to see what is happening. 
+
+
+```r
+plot(pressure)
+```
+
+I would like to embed slides into the docs. 
+
+
+```r
+knitr::include_url("https://www2.stat.duke.edu/courses/Spring20/sta210.001/slides/lab-slides/02-lab-slides.html#1")
+```
+
+<iframe seamless width="100%" height="100%" frameborde="0" src="https://www2.stat.duke.edu/courses/Spring20/sta210.001/slides/lab-slides/02-lab-slides.html#1"></iframe>
+
+
+
 
 
