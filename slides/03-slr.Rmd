@@ -5,14 +5,17 @@ date: "01.22.20"
 output:
   xaringan::moon_reader:
     mathjax: "https://cdn.bootcss.com/mathjax/2.7.1/MathJax.js?config=TeX-MML-AM_HTMLorMML"
-    css: "sta210-slides.css"
-    logo: img/sta210-sticker-icon.png
+    css: "slides.css"
+    logo: "img/introregression-sticker.png"
     lib_dir: libs
     nature:
       highlightStyle: github
       highlightLines: true
       countIncrementalSlides: false
       slideNumberFormat: "%current%"
+      ratio: 16:9
+editor_options: 
+  chunk_output_type: console
 ---
 
 ```{r setup, include=FALSE}
@@ -139,13 +142,13 @@ Can the ratings from movie critics be used to predict what movies the audience w
 --
 
 ```{r, echo=FALSE,out.width = '70%',fig.align='center'}
-knitr::include_graphics("img/03/movie-rating-1.png")
+knitr::include_graphics("img/slr/movie-rating-1.png")
 ```
 
 --
 
 ```{r, echo=FALSE,out.width = '70%',fig.align='center'}
-knitr::include_graphics("img/03/movie-rating-2.png")
+knitr::include_graphics("img/slr/movie-rating-2.png")
 ```
 
 ---
@@ -359,7 +362,7 @@ $$Y = \beta_0 + \beta_1 X + \epsilon$$
 
 $$Y|X \sim N(\beta_0 + \beta_1 X,\sigma^2)$$
 
-```{r, echo=FALSE,out.width = '80%',fig.align='center'}
+```{r, eval = F, echo=FALSE,out.width = '80%',fig.align='center'}
 knitr::include_graphics("img/02/regression.png")
 ```
 
@@ -578,7 +581,7 @@ We can use plots of the residuals to check the assumptions for regression.
 
 ### Plots of Residuals
 
-```{r, echo=FALSE,out.width = '80%',fig.align='center'}
+```{r, eval = F, echo=FALSE,out.width = '80%',fig.align='center'}
 knitr::include_graphics("img/02/resid_plots.png")
 ```
 
@@ -609,7 +612,7 @@ ggplot(data=movie_scores,mapping=aes(x=critics, y=residuals)) +
 
 ### Normal QQ-Plot
 
-```{r, echo=FALSE,out.width = '100%',fig.align='center'}
+```{r, eval = F, echo=FALSE,out.width = '100%',fig.align='center'}
 knitr::include_graphics("img/02/normal_qqplot.png")
 ```
 

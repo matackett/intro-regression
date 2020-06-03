@@ -1,0 +1,799 @@
+<!DOCTYPE html>
+<html lang="" xml:lang="">
+  <head>
+    <title>Simple Linear Regression</title>
+    <meta charset="utf-8" />
+    <meta name="author" content="Prof. Maria Tackett" />
+    <link href="libs/countdown/countdown.css" rel="stylesheet" />
+    <script src="libs/countdown/countdown.js"></script>
+    <link rel="stylesheet" href="slides.css" type="text/css" />
+  </head>
+  <body>
+    <textarea id="source">
+class: center, middle, inverse, title-slide
+
+# Simple Linear Regression
+### Prof. Maria Tackett
+### 01.22.20
+
+---
+
+
+
+
+class: middle, center
+
+### [Click for PDF of slides](03-slr.pdf)
+
+---
+
+### Announcements 
+
+- Lab 01 due **TODAY at 11:59p**
+
+- HW 01 due **Wed, Jan 29 at 11:59p**
+
+- Lab groups start tomorrow!
+
+- Daily engagement survey starts today at the end of class (check your email)
+
+- [Reading for today &amp; Monday](https://www2.stat.duke.edu/courses/Spring20/sta210.001/reading/reading-02.html)
+
+- Check email for info about Jan 29 class
+
+---
+
+### Check in
+
+- Any questions from last class?
+
+- Any questions about the lab?
+
+- Any questions about course logistics?
+
+---
+
+### In-class exercise: 
+
+.question[
+
+- Answer the questions: http://bit.ly/sta210-sp20-indep
+
+- Use **NetId@duke.edu** for your email address.
+
+- You are welcome (and encouraged!) to discuss these questions with 1 - 2 people around you, but **each person** must submit a response.
+]
+
+<div class="countdown blink-colon noupdate-5" id="timer_5ed7e92b" style="right:0;bottom:0;" data-warnwhen="30">
+<code class="countdown-time"><span class="countdown-digits minutes">03</span><span class="countdown-digits colon">:</span><span class="countdown-digits seconds">00</span></code>
+</div>
+
+---
+
+
+### Today's Agenda
+
+- Simple Linear Regression 
+    - Estimating &amp; interpreting coefficients
+    - Assessing model fit: `\(R^2\)`
+    - Residuals and model assumptions
+    - Prediction
+
+---
+
+### Packages and Data
+
+
+```r
+library(tidyverse)
+library(broom)
+library(modelr)
+library(knitr)
+library(fivethirtyeight) #fandango dataset
+library(cowplot) #plot_grid() function
+```
+
+
+
+```r
+movie_scores &lt;- fandango %&gt;%
+  rename(critics = rottentomatoes, 
+         audience = rottentomatoes_user)
+```
+
+---
+
+class: middle, center
+
+
+### Motivating Regression Analysis
+
+---
+
+### rottentomatoes.com
+
+Can the ratings from movie critics be used to predict what movies the audience will like? 
+
+--
+
+&lt;img src="img/slr/movie-rating-1.png" width="70%" style="display: block; margin: auto;" /&gt;
+
+--
+
+&lt;img src="img/slr/movie-rating-2.png" width="70%" style="display: block; margin: auto;" /&gt;
+
+---
+
+### Critic vs. Audience Ratings
+
+- To answer this question, we will analyze the critic and audience scores from rottentomatoes.com.  
+    - The data was first used in the article [Be Suspicious of Online Movie Ratings, Especially Fandango's](https://fivethirtyeight.com/features/fandango-movies-ratings/).
+
+- Variables: 
+    - **`critics`**: Tomatometer score for the film (0 - 100)
+    - **`audience`**: Audience score for the film (0 - 100)
+---
+
+### `glimpse` of the data
+
+.small[
+
+```r
+glimpse(movie_scores)
+```
+
+```
+## Rows: 146
+## Columns: 23
+## $ film                       &lt;chr&gt; "Avengers: Age of Ultron", "Cinderella", "…
+## $ year                       &lt;dbl&gt; 2015, 2015, 2015, 2015, 2015, 2015, 2015, …
+## $ critics                    &lt;int&gt; 74, 85, 80, 18, 14, 63, 42, 86, 99, 89, 84…
+## $ audience                   &lt;int&gt; 86, 80, 90, 84, 28, 62, 53, 64, 82, 87, 77…
+## $ metacritic                 &lt;int&gt; 66, 67, 64, 22, 29, 50, 53, 81, 81, 80, 71…
+## $ metacritic_user            &lt;dbl&gt; 7.1, 7.5, 8.1, 4.7, 3.4, 6.8, 7.6, 6.8, 8.…
+## $ imdb                       &lt;dbl&gt; 7.8, 7.1, 7.8, 5.4, 5.1, 7.2, 6.9, 6.5, 7.…
+## $ fandango_stars             &lt;dbl&gt; 5.0, 5.0, 5.0, 5.0, 3.5, 4.5, 4.0, 4.0, 4.…
+## $ fandango_ratingvalue       &lt;dbl&gt; 4.5, 4.5, 4.5, 4.5, 3.0, 4.0, 3.5, 3.5, 4.…
+## $ rt_norm                    &lt;dbl&gt; 3.70, 4.25, 4.00, 0.90, 0.70, 3.15, 2.10, …
+## $ rt_user_norm               &lt;dbl&gt; 4.30, 4.00, 4.50, 4.20, 1.40, 3.10, 2.65, …
+## $ metacritic_norm            &lt;dbl&gt; 3.30, 3.35, 3.20, 1.10, 1.45, 2.50, 2.65, …
+## $ metacritic_user_nom        &lt;dbl&gt; 3.55, 3.75, 4.05, 2.35, 1.70, 3.40, 3.80, …
+## $ imdb_norm                  &lt;dbl&gt; 3.90, 3.55, 3.90, 2.70, 2.55, 3.60, 3.45, …
+## $ rt_norm_round              &lt;dbl&gt; 3.5, 4.5, 4.0, 1.0, 0.5, 3.0, 2.0, 4.5, 5.…
+## $ rt_user_norm_round         &lt;dbl&gt; 4.5, 4.0, 4.5, 4.0, 1.5, 3.0, 2.5, 3.0, 4.…
+## $ metacritic_norm_round      &lt;dbl&gt; 3.5, 3.5, 3.0, 1.0, 1.5, 2.5, 2.5, 4.0, 4.…
+## $ metacritic_user_norm_round &lt;dbl&gt; 3.5, 4.0, 4.0, 2.5, 1.5, 3.5, 4.0, 3.5, 4.…
+## $ imdb_norm_round            &lt;dbl&gt; 4.0, 3.5, 4.0, 2.5, 2.5, 3.5, 3.5, 3.5, 3.…
+## $ metacritic_user_vote_count &lt;int&gt; 1330, 249, 627, 31, 88, 34, 17, 124, 62, 5…
+## $ imdb_user_vote_count       &lt;int&gt; 271107, 65709, 103660, 3136, 19560, 39373,…
+## $ fandango_votes             &lt;int&gt; 14846, 12640, 12055, 1793, 1021, 397, 252,…
+## $ fandango_difference        &lt;dbl&gt; 0.5, 0.5, 0.5, 0.5, 0.5, 0.5, 0.5, 0.5, 0.…
+```
+]
+
+---
+
+.small[
+
+```r
+p1 &lt;- ggplot(data = movie_scores,mapping = aes(x = critics)) +
+  geom_histogram()
+p2 &lt;- ggplot(data = movie_scores,mapping = aes(x = audience)) +
+  geom_histogram()
+plot_grid(p1, p2, ncol = 2)
+```
+
+&lt;img src="03-slr_files/figure-html/unnamed-chunk-5-1.png" style="display: block; margin: auto;" /&gt;
+]
+
+---
+
+.small[
+
+```r
+ggplot(data = movie_scores, mapping = aes(x = critics, y = audience)) +
+  geom_point() + 
+  labs(title = "Audience Score vs. Critics Score")
+```
+
+&lt;img src="03-slr_files/figure-html/unnamed-chunk-6-1.png" style="display: block; margin: auto;" /&gt;
+]
+
+---
+.small[
+
+```r
+ggplot(data = movie_scores, mapping = aes(x = critics, y = audience)) + 
+  geom_point() + 
+  geom_smooth(method = "lm", se = FALSE) +
+  labs(title = "Audience Score vs. Critics Score")
+```
+
+&lt;img src="03-slr_files/figure-html/unnamed-chunk-7-1.png" style="display: block; margin: auto;" /&gt;
+]
+
+---
+
+### Terminology
+
+- **`audience`** is the &lt;font class="vocab"&gt;response variable `\((Y)\)`&lt;/font&gt;
+    - variable whose variation we want to understand and/or variable we wish to predict
+    - also known as *dependent*, *outcome*, *target* variable
+
+&lt;br&gt;
+
+- **`critics`** is the &lt;font class="vocab"&gt;predictor variable `\((X)\)`&lt;/font&gt;
+    - variable used to account for variation in the response
+    - also known as *independent*
+  
+---
+
+### Model 
+
+.alert[
+`$$\text{audience} = f(critics) + \epsilon$$`
+]
+
+We want to estimate `\(f\)`. How do we do it? 
+  
+---
+
+### General form of model
+
+.alert[
+`$$Y = f(\mathbf{X}) + \epsilon$$`
+]
+
+- `\(Y\)`: quantitative response variable
+
+- `\(\mathbf{X} = (X_1, X_2, \ldots, X_p)\)`: predictor variables
+
+- `\(f\)`: fixed but unknown function
+    - systematic information `\(\mathbf{X}\)` provides about `\(Y\)`
+
+- `\(\epsilon\)`: random error term with mean 0 that is independent of `\(\mathbf{X}\)` 
+   
+---
+
+### How to estimate `\(f\)`?
+
+In general, we will use the following steps to estimate `\(f\)`
+
+- Choose the functional form of `\(f\)`, i.e. &lt;font class="vocab"&gt;choose the appropriate model given the data&lt;/font&gt;
+    - Ex: `\(f\)` is a linear model
+    `$$f(\mathbf{X}) = \beta_0 + \beta_1 X_1 + \dots + \beta_p X_p + \epsilon$$`
+&lt;br&gt; 
+
+--
+
+- Use the data to fit the model, i.e. &lt;font class="vocab"&gt;estimate the model parameters&lt;/font&gt;
+    - Ex: Use a method to estimate the model parameters `\(\beta_0, \beta_1, \ldots, \beta_p\)`
+
+---
+
+### Why estimate `\(f\)`?
+
+Suppose we have the model
+
+`$$\text{audience} = \beta_0 + \beta_1 \times \text{critics} + \epsilon$$`
+&lt;br&gt;&lt;br&gt;
+
+--
+
+.question[
+
+- What is one question you can answer using this model?
+
+- Submit your response at: http://bit.ly/sta210-sp20-q
+
+- Use **NetId@duke.edu** for your email address.
+
+- You are welcome (and encouraged!) to discuss these questions with 1 - 2 people around you, but **each person** must submit a response.
+]
+
+<div class="countdown blink-colon noupdate-5" id="timer_5ed7e805" style="right:0;bottom:0;" data-warnwhen="30">
+<code class="countdown-time"><span class="countdown-digits minutes">03</span><span class="countdown-digits colon">:</span><span class="countdown-digits seconds">00</span></code>
+</div>
+
+
+---
+
+### Why estimate `\(f\)`?
+
+There are two types of questions we may wish to answer using our model:
+
+- &lt;font class="vocab"&gt;Prediction: &lt;/font&gt; What is the expected `\(Y\)`  given particular values of  `\(X_1, X_2, \ldots, X_p\)`? 
+--
+
+    - Ex: What is the expected audience score for a movie that receives a critic score of 70%? 
+
+--
+
+- &lt;font class="vocab"&gt;Inference: &lt;/font&gt; What is the relationship between `\(\mathbf{X}\)` and `\(Y\)`. How does `\(Y\)` change as a function of `\(\mathbf{X}\)`?
+--
+
+    - Ex: How much can we expect the audience score to change for each additional point in the critic score?
+
+---
+
+### Course Outline
+
+- **Unit 1: Quantitative Response Variables**
+    - Simple Linear Regression 
+    - Multiple Linear Regression
+
+&lt;br&gt;
+
+- **Unit 2: Categorical Response Variable**
+    - Logistic Regression 
+    - Multinomial Logistic Regression 
+
+&lt;br&gt;
+
+- **Unit 3: Looking Ahead**
+    - Log-linear models
+    - Weighted least squares
+    - Missing data
+    - Special topics 
+
+---
+
+class: middle, center
+
+### Simple Linear Regression
+
+---
+
+### Least-Squares Regression
+
+- There is some true relationship between `\(X\)` and `\(Y\)` that exists in the population
+
+`$$Y = f(X) + \epsilon$$`
+
+--
+
+- If `\(f\)` is approximated by a linear function, then we can write the relationship as 
+
+`$$Y = \beta_0 + \beta_1 X + \epsilon$$` 
+
+--
+
+- We'll estimate the slope and intercept of this linear function using &lt;font class = "vocab"&gt;least-squares regression&lt;/font&gt;
+
+--
+
+- We'll use statistical inference to determine if the relationship we observe in the data is statistically significant or if it's due to random chance (we'll talk about this more next class)
+
+---
+
+### Regression Model 
+
+`$$Y|X \sim N(\beta_0 + \beta_1 X,\sigma^2)$$`
+
+
+
+- `\(\sigma\)`: the standard deviation of `\(Y\)` as a function of `\(X\)` 
+
+- **&lt;i&gt;Assumption&lt;/i&gt;:** `\(\sigma\)` is equal for all values of `\(X\)`
+
+---
+
+### Regression Model
+
+.alert[
+`$$Y|X \sim N(\beta_0 + \beta_1 X, \sigma^2)$$`
+]
+
+--
+
+- For a single observation `\((x_i, y_i)\)`
+
+`$$y_i = \beta_0 + \beta_1 x_i + \epsilon_i \hspace{10mm} \epsilon_i \sim N(0,\sigma^2)$$`
+&lt;br&gt;&lt;br&gt;
+--
+
+- We want to use the `\(n\)` observations `\((x_1,y_1), \ldots, (x_n, y_n)\)` to estimate `\(\beta_0\)` and `\(\beta_1\)`. We will use *least-squares regression* estimates.
+
+---
+
+### Residuals
+
+&lt;img src="03-slr_files/figure-html/unnamed-chunk-10-1.png" style="display: block; margin: auto;" /&gt;
+
+The .vocab[residual] is the difference between the observed and predicted response.
+
+---
+
+### Residual Sum of Squares
+
+- The residual for the `\(i^{th}\)` observation is 
+
+`$$e_i = y_i - \hat{y}_i =  y_i - (\hat{\beta}_0 + \hat{\beta}_1 x_i)$$`
+
+--
+
+- The *residual sum of squares* is 
+
+`$$RSS = e^2_1 + e^2_2 + \dots + e^2_n$$`
+
+--
+
+
+- The .vocab[least-squares regression] approach chooses coefficients `\(\hat{\beta}_0\)` and `\(\hat{\beta}_1\)` to minimize RSS.
+
+---
+
+### Estimating Coefficients
+
+- .vocab[Slope:]
+
+`$$\hat\beta_1 = \frac{\sum\limits_{i=1}^n(x_i-\bar{x})(y_i - \bar{y})}{\sum\limits_{i=1}^n(x_i-\bar{x})^2} = r\frac{s_y}{s_x}$$`
+such that `\(r\)` is the correlation between `\(x\)` And `\(y\)`.
+&lt;br&gt;&lt;br&gt;
+
+- .vocab[Intercept:] `\(\hat{\beta}_0 = \bar{y} - \hat{\beta}_1\bar{x}\)`
+
+&lt;br&gt;&lt;br&gt;
+*Optional: [Deriving the Least-Squares Estimates for Simple Linear Regression](https://github.com/sta210-sp20/supplemental-notes/blob/master/slr-derivations.pdf)*
+
+---
+
+### Least-Squares Model
+
+
+```r
+model &lt;- lm(audience ~ critics, data = movie_scores)
+tidy(model) %&gt;%
+  kable(format = "markdown", digits = 3)
+```
+
+
+
+|term        | estimate| std.error| statistic| p.value|
+|:-----------|--------:|---------:|---------:|-------:|
+|(Intercept) |   32.316|     2.343|    13.795|       0|
+|critics     |    0.519|     0.035|    15.028|       0|
+&lt;br&gt;&lt;br&gt;
+
+`$$\hat{\text{audience}} =  32.316 + 0.519 \times \text{critics}$$`
+
+---
+
+
+
+### Interpreting Slope &amp; Intercept 
+
+- &lt;font class="vocab"&gt;Slope: &lt;/font&gt; Increase in the mean response for every one unit increase in the predictor variable
+
+- &lt;font class="vocab"&gt;Intercept: &lt;/font&gt; Mean response when the explanatory variable equals 0
+&lt;br&gt;&lt;br&gt;
+
+--
+
+- The regression equation for the Rotten Tomatoes data is
+`$$\hat{\text{audience}} =  32.316 + 0.519 \times \text{critics}$$`
+
+.instructions[
+Write the interpretation of the slope and intercept
+]
+
+---
+
+### Nonsensical Intercept 
+
+- Sometimes it doesn't make sense to interpret the intercept
+  + When predictor variable doesn't take values close to 0
+  + When the intercept is negative even though the response variable should always be positive
+  
+- The intercept helps the line fit the data as closely as possible
+
+- It is fine to have a nonsensical intercept if it helps the model give better overall predictions 
+
+---
+
+### Does it make sense to interpret the intercept?
+
+- Example 1: 
+    - **Explanatory**: number of home runs in a baseball game
+    - **Response**: attendance at the next baseball game
+&lt;br&gt;&lt;br&gt;
+
+
+- Example 2:
+    - **Explanatory**: height of a person
+    - **Response**: weight of a person 
+    
+---
+
+class: middle, center
+
+### Assessing Model Fit
+
+---
+
+### `\(R^2\)`
+We can use the coefficient of determination, `\(R^2\)`, to measure how well the model fits the data 
+- `\(R^2\)` is the proportion of variation in `\(Y\)` that is explained by the regression line (reported as percentage)
+- It is difficult to determine what's a "good" value of `\(R^2\)`. It depends on the context of the data.
+
+---
+
+### Calculating `\(R^2\)`
+.instructions[
+`$$R^2 = \frac{\text{TSS} - \text{RSS}}{\text{TSS}} = 1 - \frac{\text{RSS}}{\text{TSS}}$$`
+]
+- &lt;font class="vocab"&gt;Total Sum of Squares: &lt;/font&gt;Total variation in the `\(Y\)`'s before fitting the regression 
+`$$\text{TSS}= \sum\limits_{i=1}^{n}(y_i - \bar{y})^2 = (n-1)s^2_y$$`
+
+- &lt;font class="vocab"&gt;Residual Sum of Squares (RSS): &lt;/font&gt;Total variation in the `\(Y\)`'s around the regression line (sum of squared residuals)
+`$$\text{RSS} = \sum\limits_{i=1}^{n}[y_i - (\hat{\beta}_0 + \hat{\beta}_1x_i)]^2$$`
+
+---
+
+### Rotten Tomatoes Data
+
+
+```r
+rsquare(model,movie_scores)
+```
+
+```
+## [1] 0.6106479
+```
+
+.alert[
+The critics score explains about 61.06% of the variation in audience scores on rottentomatoes.com.
+]
+
+---
+
+class: middle, center
+
+### Checking Model Assumptions 
+
+---
+
+### Assumptions for Regression 
+
+1. &lt;font class="vocab"&gt;Linearity: &lt;/font&gt;The plot of the mean value for `\(y\)` against `\(x\)` falls on a straight line
+
+2. &lt;font class="vocab"&gt;Constant Variance: &lt;/font&gt;The regression variance is the same for all values of `\(x\)`
+
+3. &lt;font class="vocab"&gt;Normality: &lt;/font&gt; For a given `\(x\)`, the distribution of `\(y\)` around its mean is Normal
+
+4. &lt;font class="vocab"&gt;Independence: &lt;/font&gt;All observations are independent
+
+---
+
+### Checking Assumptions 
+
+We can use plots of the residuals to check the assumptions for regression.
+
+1. Scatterplot of `\(Y\)` vs. `\(X\)` (linearity). 
+    - Check this before fitting the regression model.
+
+2. Plot of residuals vs. predictor variable (constant variance, linearity)
+
+3. Histogram and Normal QQ-Plot of residuals (Normality)
+
+---
+
+### Residuals vs. Predictor
+
+- When all the assumptions are true, the values of the residuals reflect random (chance) error
+
+- We can look at a plot of the residuals vs. the predictor variable
+
+- There should be no distinguishable pattern in the residuals plot, i.e. the residuals should be randomly scattered 
+
+- A non-random pattern suggests assumptions might be violated 
+
+---
+
+### Plots of Residuals
+
+
+
+---
+
+
+```r
+movie_scores &lt;- movie_scores %&gt;% mutate(residuals=resid(model))
+```
+
+```r
+ggplot(data=movie_scores,mapping=aes(x=critics, y=residuals)) + 
+  geom_point() + 
+  geom_hline(yintercept=0,color="red")+
+  labs(title="Residuals vs. Critics Score")
+```
+
+&lt;img src="03-slr_files/figure-html/unnamed-chunk-15-1.png" style="display: block; margin: auto;" /&gt;
+
+---
+
+### Checking Normality
+
+- Examine the distribution of the residuals to determine if the Normality assumption is satisfied 
+
+
+- Plot the residuals in a histogram and a Normal QQ plot to visualize their distribution and assess Normality
+
+- Most inference methods for regression are robust to some departures from Normality
+
+---
+
+### Normal QQ-Plot
+
+
+
+---
+
+
+```r
+ggplot(data=movie_scores,mapping=aes(x=residuals)) + 
+  geom_histogram() + 
+  labs(title="Distribution of Residuals") 
+```
+
+&lt;img src="03-slr_files/figure-html/unnamed-chunk-17-1.png" style="display: block; margin: auto;" /&gt;
+
+---
+
+
+```r
+ggplot(data=movie_scores,mapping=aes(sample=residuals)) + 
+  stat_qq() + 
+  stat_qq_line() +
+  labs(title="Normal QQ Plot of Residuals")
+```
+
+&lt;img src="03-slr_files/figure-html/unnamed-chunk-18-1.png" style="display: block; margin: auto;" /&gt;
+
+
+---
+
+### Checking Independence
+
+- Often, we can conclude that the independence assumption is sufficiently met based on a description of the data and how it was collected. 
+
+- Two common violations of the independence assumption: 
+    - &lt;font class="vocab"&gt;Serial Effect&lt;/font&gt;: If the data were collected over time, the residuals should be plotted in time order to determine if there is serial correlation 
+
+    - &lt;font class="vocab"&gt;Cluster Effect&lt;/font&gt;: You can plot the residuals vs. a group identifier or use different markers (colors/shapes) in the residual plot to determine if there is a cluster effect. 
+
+---
+
+### Recap 
+
+- Motivating Regression Analysis
+
+- Simple Linear Regression 
+    - Estimating &amp; interpreting coefficients
+    - Assessing model fit: `\(R^2\)`
+    - Residuals and model assumptions
+    </textarea>
+<style data-target="print-only">@media screen {.remark-slide-container{display:block;}.remark-slide-scaler{box-shadow:none;}}</style>
+<script src="https://remarkjs.com/downloads/remark-latest.min.js"></script>
+<script>var slideshow = remark.create({
+"highlightStyle": "github",
+"highlightLines": true,
+"countIncrementalSlides": false,
+"slideNumberFormat": "%current%",
+"ratio": "16:9"
+});
+if (window.HTMLWidgets) slideshow.on('afterShowSlide', function (slide) {
+  window.dispatchEvent(new Event('resize'));
+});
+(function(d) {
+  var s = d.createElement("style"), r = d.querySelector(".remark-slide-scaler");
+  if (!r) return;
+  s.type = "text/css"; s.innerHTML = "@page {size: " + r.style.width + " " + r.style.height +"; }";
+  d.head.appendChild(s);
+})(document);
+
+(function(d) {
+  var el = d.getElementsByClassName("remark-slides-area");
+  if (!el) return;
+  var slide, slides = slideshow.getSlides(), els = el[0].children;
+  for (var i = 1; i < slides.length; i++) {
+    slide = slides[i];
+    if (slide.properties.continued === "true" || slide.properties.count === "false") {
+      els[i - 1].className += ' has-continuation';
+    }
+  }
+  var s = d.createElement("style");
+  s.type = "text/css"; s.innerHTML = "@media print { .has-continuation { display: none; } }";
+  d.head.appendChild(s);
+})(document);
+// delete the temporary CSS (for displaying all slides initially) when the user
+// starts to view slides
+(function() {
+  var deleted = false;
+  slideshow.on('beforeShowSlide', function(slide) {
+    if (deleted) return;
+    var sheets = document.styleSheets, node;
+    for (var i = 0; i < sheets.length; i++) {
+      node = sheets[i].ownerNode;
+      if (node.dataset["target"] !== "print-only") continue;
+      node.parentNode.removeChild(node);
+    }
+    deleted = true;
+  });
+})();
+(function() {
+  "use strict"
+  // Replace <script> tags in slides area to make them executable
+  var scripts = document.querySelectorAll(
+    '.remark-slides-area .remark-slide-container script'
+  );
+  if (!scripts.length) return;
+  for (var i = 0; i < scripts.length; i++) {
+    var s = document.createElement('script');
+    var code = document.createTextNode(scripts[i].textContent);
+    s.appendChild(code);
+    var scriptAttrs = scripts[i].attributes;
+    for (var j = 0; j < scriptAttrs.length; j++) {
+      s.setAttribute(scriptAttrs[j].name, scriptAttrs[j].value);
+    }
+    scripts[i].parentElement.replaceChild(s, scripts[i]);
+  }
+})();
+(function() {
+  var links = document.getElementsByTagName('a');
+  for (var i = 0; i < links.length; i++) {
+    if (/^(https?:)?\/\//.test(links[i].getAttribute('href'))) {
+      links[i].target = '_blank';
+    }
+  }
+})();
+// adds .remark-code-has-line-highlighted class to <pre> parent elements
+// of code chunks containing highlighted lines with class .remark-code-line-highlighted
+(function(d) {
+  const hlines = d.querySelectorAll('.remark-code-line-highlighted');
+  const preParents = [];
+  const findPreParent = function(line, p = 0) {
+    if (p > 1) return null; // traverse up no further than grandparent
+    const el = line.parentElement;
+    return el.tagName === "PRE" ? el : findPreParent(el, ++p);
+  };
+
+  for (let line of hlines) {
+    let pre = findPreParent(line);
+    if (pre && !preParents.includes(pre)) preParents.push(pre);
+  }
+  preParents.forEach(p => p.classList.add("remark-code-has-line-highlighted"));
+})(document);</script>
+
+<script>
+slideshow._releaseMath = function(el) {
+  var i, text, code, codes = el.getElementsByTagName('code');
+  for (i = 0; i < codes.length;) {
+    code = codes[i];
+    if (code.parentNode.tagName !== 'PRE' && code.childElementCount === 0) {
+      text = code.textContent;
+      if (/^\\\((.|\s)+\\\)$/.test(text) || /^\\\[(.|\s)+\\\]$/.test(text) ||
+          /^\$\$(.|\s)+\$\$$/.test(text) ||
+          /^\\begin\{([^}]+)\}(.|\s)+\\end\{[^}]+\}$/.test(text)) {
+        code.outerHTML = code.innerHTML;  // remove <code></code>
+        continue;
+      }
+    }
+    i++;
+  }
+};
+slideshow._releaseMath(document);
+</script>
+<!-- dynamically load mathjax for compatibility with self-contained -->
+<script>
+(function () {
+  var script = document.createElement('script');
+  script.type = 'text/javascript';
+  script.src  = 'https://cdn.bootcss.com/mathjax/2.7.1/MathJax.js?config=TeX-MML-AM_HTMLorMML';
+  if (location.protocol !== 'file:' && /^https?:/.test(script.src))
+    script.src  = script.src.replace(/^https?:/, '');
+  document.getElementsByTagName('head')[0].appendChild(script);
+})();
+</script>
+  </body>
+</html>
