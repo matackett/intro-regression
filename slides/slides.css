@@ -4,36 +4,45 @@
 @import url(https://fonts.googleapis.com/icon?family=Material+Icons);
 
 html{
-  font-size: 16pt; 
+  font-size: 22pt; 
+  color: #53565A;
 }
 
 p {
-  font-size: 16pt;
+  font-size: 22pt;
+  color: #53565A;
 }
 
 body { 
-  font-family: 'Open Sans'; sans-serif;
+  font-family: 'Open Sans', sans-serif;
   font-weight: 400;
-  color: #333333;
-  font-size: 16pt;
+  color: #53565A;
+  font-size: 22pt;
 }
+
 h2 {
   font-family: 'Open Sans', sans-serif;
   font-weight: bold;
-  color: #00897B;
-  margin: 0.25em 0 0.5em 0;
+  color:  #008eaa;
 }
-h1, h3 {
+
+h3 {
   font-family: 'Open Sans', sans-serif;
   font-weight: bold;
-  color: #00897B;
+  color:  #008eaa;
+}
+
+h1 {
+  font-family: 'Open Sans', sans-serif;
+  font-weight: bold;
+  color:  #008eaa;
 }
 
 a, a > code {
   font-family: 'Open Sans', sans-serif;
   color: #993399;
   text-decoration: underline;
-  font-size: 16pt;
+  font-size: 22pt;
 }
 
 .footnote {
@@ -43,12 +52,17 @@ a, a > code {
   font-size: 90%;
 }
 .remark-code, .remark-inline-code { 
-  font-family: 'Source Code Pro', 'Lucida Console', Monaco, monospace; 
+  font-family: 'Source Code Pro', 'Lucida Console', Monaco, monospace;
+  font-weight: bold; 
+  color: #53565A;
 }
-.remark-code-line-highlighted     { background-color: #ffff88; }
+.remark-code-line-highlighted { 
+  background-color: #ffff88; 
+  
+}
 
 .inverse {
-  background-color: #00897B;
+  background-color:  #008eaa;
   color: #ffffff;
   /* text-shadow: 0 0 20px #333; */
 }
@@ -89,12 +103,24 @@ a, a > code {
 .pull-right ~ * {
   clear: both;
 }
+
+
+.pull-slight-right {
+  float: right;
+  width: 30%;
+}
+
+.pull-slight-left {
+   float:width;
+    width: 30%;
+}
+
 ul {
   list-style-type: square;
 }
 li{
   margin: 10px 0;
-  font-size: 16pt;
+  font-size: 22pt;
 }
 .large { font-size: 130% }
 .midi { font-size: 90% }
@@ -155,22 +181,30 @@ thead, tfoot, tr:nth-child(even) { background: #eee }
     width: 700px;
 }
 
+/*Vocabularly words*/
 .vocab {
-  color: #993399;
+  color: #aa008e;
   font-weight: bold;
-  font-size: 16pt;
+  font-size: 22pt;
 }
 
-.vocab2 {
-  color: #00897B;
+/*Words to emphasize, but not necessarily vocab.*/
+.emph {
+  color: #aa008e;
   font-weight: bold;
-  font-size: 16pt;
+  font-size: 22pt;
 }
+
+/*Use handwriting font for examples*/
+.worked-ex {
+  color: orange;
+}
+
 
 .vocab3 {
   color: #022CFA;
   font-weight: bold;
-  font-size: 16pt;
+  font-size: 22pt;
 }
 
 .question {
@@ -182,67 +216,103 @@ thead, tfoot, tr:nth-child(even) { background: #eee }
   font-size: 90%;
   /*color: #1E5C65;*/
 }
+
 .alert {
-  border-right: solid 5px #A7D5E830;
-  background-color: #A7D5E830;
-  padding: 1px 16px;
+  border-radius: 25px;
+  border: solid 5px #c6d47f;
+  background-color: #dce5b2;
+  padding: 10px 16px;
   margin-top: 12px;
   margin-bottom: 12px;
-}
-.instructions {
-  border-left: solid 5px #D7E7EC;
-  background-color: #D7E7EC;
-  font-size: 90%;
-  padding: 1px 16px;
-  margin-top: 12px;
-  margin-bottom: 12px;
+  /*font-size: 90%;*/
+  
 }
 
-.instructions li::before {
-  content: ">"; 
-  color: #f6e1fa;
-  display: inline-block; 
-  margin-left: -1.5em
+/*Box for equations*/
+.eq {
+  border-radius: 25px;
+  border: solid 5px #c6d47f;
+  background-color: #dce5b2;
+  padding: 10px 16px;
+  margin-top: 12px;
+  margin-bottom: 12px;
+  /*font-size: 90%;*/
+}
+
+.small-box-work {
+  border-radius: 25px;
+  border: solid 5px #a6a6a6;
+  background-color: #e5e5e5;
+  padding: 5px 5px;
+  margin-top: 12px;
+  margin-bottom: 12px;
+  font-size: 90%;
 }
 
 .remark-slide-number {
   font-size: 12pt;
 }
 
+/*
 div.my-footer {
     background-color: #ffffff;
-    border-top: 1px solid #875687;
+    border-top: 1px solid #333333;
     position: absolute;
     bottom: 0px;
     left: 80px;
     height: 35px;
     width: 100%;
 }
+
 div.my-footer span {
     font-size: 12pt;
     position: absolute;
-    color: #C1C6C8;
+    color: #333333;
     left: 20px;
     bottom: 10px;
 }
 div.my-footer a {
     font-size: 12pt;
-    color: #C1C6C8;
+    color: #333333;
+    text-decoration: none;
+}
+*/
+
+/*Title slide formatting*/
+
+.title-slide {
+  background-color: #008eaa;
+  background-image: url("img/introregression-sticker.png");
+  background-position: 90% 80%;
+  background-size: 250px;
+
 }
 
-/*Add logo to footer*/
-.remark-slide-content:after {
+.title-slide .remark-slide-content:after {
     content: "";
     position: absolute;
     bottom: 5px;
-    right: 1100px;
-    height: 60px;
-    width: 81px;
-    background-repeat: no-repeat;
-    background-size: contain;
-    background-image: url("img/introregression-sticker.png");
+    right: 810px;
 }
 
 .title-slide .remark-slide-number {
   display: none;
+}
+
+.title-slide h1 {  
+  text-align: left;
+  font-weight: bold;
+  color: #ffffff;
+}
+
+.title-slide h2 {  
+  text-align: left;
+  font-weight: bold;
+  color: #ffffff;
+}
+
+.title-slide h3 {
+  text-align: left;
+  color: #ffffff;
+  font-weight: normal;
 }

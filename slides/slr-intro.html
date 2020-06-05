@@ -1,0 +1,379 @@
+<!DOCTYPE html>
+<html lang="" xml:lang="">
+  <head>
+    <title>Simple Linear Regression</title>
+    <meta charset="utf-8" />
+    <meta name="author" content="   Dr. Maria Tackett" />
+    <link rel="stylesheet" href="slides.css" type="text/css" />
+  </head>
+  <body>
+    <textarea id="source">
+
+
+
+
+
+class: title-slide 
+
+&lt;br&gt;&lt;br&gt;
+
+# Simple Linear Regression 
+## Introduction 
+
+&lt;br&gt;&lt;br&gt;&lt;br&gt;
+
+### Dr. Maria Tackett
+
+---
+
+### Topics 
+
+- FiLL IN!
+- 
+looking at relationship between a predictor and response variable 
+
+
+
+
+
+???
+
+I want to see how the presenter notes work
+
+---
+
+## Movie ratings data 
+
+The data set contains the "Tomatometer" score (**`critics`**) and audience score (**`audience`**) for 146 movies rated on rottentomatoes.com.
+
+&lt;img src="slr-intro_files/figure-html/unnamed-chunk-2-1.png" style="display: block; margin: auto;" /&gt;
+
+---
+
+## Movie ratings data 
+
+We want to fit a line to describe the relationship between the critics score and audience score.
+
+&lt;img src="slr-intro_files/figure-html/unnamed-chunk-3-1.png" style="display: block; margin: auto;" /&gt;
+
+---
+
+## Terminology
+
+.pull-left[
+The .vocab[response, `\(Y\)`], is the variable describing the outcome of interest.
+
+&lt;br&gt; 
+
+The .vocab[predictor, `\(X\)`], is the variable used to  understand some of the variability in the response. 
+]
+
+.pull-right[
+&lt;img src="slr-intro_files/figure-html/unnamed-chunk-4-1.png" style="display: block; margin: auto;" /&gt;
+]
+
+## Why do we fit a line? 
+
+.pull-left[
+- .emph[Prediction]: What is the expected `\(Y\)`  given particular values of  `\(X_1, X_2, \ldots, X_p\)`? 
+--
+
+    - Ex: What is the expected audience score for a movie that receives a critic score of 70%? 
+
+--
+
+- .emph[Inference]: What is the relationship between `\(\mathbf{X}\)` and `\(Y\)`. How does `\(Y\)` change as a function of `\(\mathbf{X}\)`?
+--
+
+    - Ex: How much can we expect the audience score to change for each additional point in the critic sco
+]
+
+.pull-right[
+&lt;img src="slr-intro_files/figure-html/unnamed-chunk-5-1.png" style="display: block; margin: auto;" /&gt;
+]
+
+---
+
+## General model 
+
+We can use a .emph[statistical model] to describe the relationship between `\(Y\)` and `\(X\)`. 
+
+.eq[
+`$$Y = f(X) + \epsilon$$`
+]
+
+---
+
+## General model 
+
+We can use a .emph[statistical model] to describe the relationship between `\(Y\)` and `\(X\)`. 
+
+.eq[
+`$$\begin{aligned} Y &amp;= \color{red}{\text{Model}} + \text{Error} \\[10pt]
+&amp;= \color{red}{f(X)} + \epsilon \\[10pt]
+&amp;= \color{red}{\mu_{Y|X}} + \epsilon \end{aligned}$$`
+]
+
+---
+
+## Simple Linear Regression
+
+When we have a quantitative response `\(Y\)` and a single quantitative predictor `\(X\)`, we can use .vocab[simple linear regression] model to describe the mean of `\(Y\)` given `\(X\)`
+.eq[
+`$$\begin{aligned} Y &amp;= \color{red}{\text{Model}} + \text{Error} \\[10pt]
+&amp;= \color{red}{f(X)} + \epsilon \\[10pt]
+&amp;= \color{red}{\mu_{Y|X}} + \epsilon \\[10pt]
+&amp;= \color{red}{\beta_0 + \beta_1 X} + \epsilon \end{aligned}$$`
+]
+
+--
+
+`$$\text{audience} = \color{red}{\beta_0 + \beta_1 ~ \text{critics}} + \epsilon$$`
+---
+
+## Which line do we choose?
+
+&lt;img src="slr-intro_files/figure-html/unnamed-chunk-6-1.png" style="display: block; margin: auto;" /&gt;
+
+---
+
+## Residuals
+
+&lt;img src="slr-intro_files/figure-html/unnamed-chunk-7-1.png" style="display: block; margin: auto;" /&gt;
+
+.center[
+.vocab[residual] = observed response - predicted response
+]
+
+---
+
+## Least squares line
+
+- The residual for the `\(i^{th}\)` observation is
+
+`$$e_i = \text{observed} - \text{predicted}
+= y_i - \hat{y}_i$$`
+--
+
+- The .vocab[sum of squared residuals] is 
+
+`$$e^2_1 + e^2_2 + \dots + e^2_n$$`
+
+--
+
+- The .vocab[least squares line] is the one that minimizes the sum of squared residuals
+
+---
+
+## Estimating slope and intercept
+
+.eq[
+`$$\hat{Y} = \hat{\beta}_0 + \hat{\beta}_1 X$$` 
+]
+
+.pull-left[
+.small-box-work[
+.vocab[Slope] 
+`$$\begin{aligned}\hat{\beta_1} &amp;= r \frac{s_Y}{s_X} \\[10pt]
+&amp;= 0.7814 \times \frac{20.0244}{30.1688} \\[10pt]
+&amp;= 0.5187\end{aligned}$$`
+]
+]
+
+.pull-right[
+.small-box-work[
+.vocab[Intercept] 
+`$$\begin{aligned}\hat{\beta}_0 &amp;= \bar{Y} - \hat{\beta}_1\bar{X} \\[10pt]
+&amp;= 63.8767 - 0.5186 \times 60.8493 \\[10pt]
+&amp;= 32.296\end{aligned}$$`
+]
+]
+
+
+
+---
+
+## Interpreting slope &amp; intercept
+
+&lt;table&gt;
+ &lt;thead&gt;
+  &lt;tr&gt;
+   &lt;th style="text-align:left;"&gt; term &lt;/th&gt;
+   &lt;th style="text-align:right;"&gt; estimate &lt;/th&gt;
+   &lt;th style="text-align:right;"&gt; std.error &lt;/th&gt;
+   &lt;th style="text-align:right;"&gt; statistic &lt;/th&gt;
+   &lt;th style="text-align:right;"&gt; p.value &lt;/th&gt;
+  &lt;/tr&gt;
+ &lt;/thead&gt;
+&lt;tbody&gt;
+  &lt;tr&gt;
+   &lt;td style="text-align:left;"&gt; (Intercept) &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 32.316 &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 2.343 &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 13.795 &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 0 &lt;/td&gt;
+  &lt;/tr&gt;
+  &lt;tr&gt;
+   &lt;td style="text-align:left;"&gt; critics &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 0.519 &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 0.035 &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 15.028 &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 0 &lt;/td&gt;
+  &lt;/tr&gt;
+&lt;/tbody&gt;
+&lt;/table&gt;
+
+.pull-left[
+.vocab[Slope]: Increase in the mean response for every one unit increase in the predictor variable
+
+-.vocab[Intercept]: Mean response when the explanatory variable equals 0
+
+]
+
+.pull-right[
+&lt;img src="slr-intro_files/figure-html/unnamed-chunk-10-1.png" style="display: block; margin: auto;" /&gt;
+]
+
+---
+
+## Interpreting intercept
+
+✅ If the predictor can take values equal to or very close to zero, then interpret the intercept.
+
+🛑 If the predictor can take values equal to or very close to zero, then **&lt;u&gt;do not&lt;/u&gt;** interpret the intercept.
+
+
+&lt;br&gt;&lt;br&gt;
+
+.alert[
+Even if the intercept doesn't have a reasonable interpretation, we still need it so the line fits the data as closely as possible. 
+]
+
+---
+
+## Recap
+    </textarea>
+<style data-target="print-only">@media screen {.remark-slide-container{display:block;}.remark-slide-scaler{box-shadow:none;}}</style>
+<script src="https://remarkjs.com/downloads/remark-latest.min.js"></script>
+<script>var slideshow = remark.create({
+"highlightStyle": "github",
+"highlightLines": true,
+"countIncrementalSlides": false,
+"ratio": "16:9",
+"slideNumberFormat": ""
+});
+if (window.HTMLWidgets) slideshow.on('afterShowSlide', function (slide) {
+  window.dispatchEvent(new Event('resize'));
+});
+(function(d) {
+  var s = d.createElement("style"), r = d.querySelector(".remark-slide-scaler");
+  if (!r) return;
+  s.type = "text/css"; s.innerHTML = "@page {size: " + r.style.width + " " + r.style.height +"; }";
+  d.head.appendChild(s);
+})(document);
+
+(function(d) {
+  var el = d.getElementsByClassName("remark-slides-area");
+  if (!el) return;
+  var slide, slides = slideshow.getSlides(), els = el[0].children;
+  for (var i = 1; i < slides.length; i++) {
+    slide = slides[i];
+    if (slide.properties.continued === "true" || slide.properties.count === "false") {
+      els[i - 1].className += ' has-continuation';
+    }
+  }
+  var s = d.createElement("style");
+  s.type = "text/css"; s.innerHTML = "@media print { .has-continuation { display: none; } }";
+  d.head.appendChild(s);
+})(document);
+// delete the temporary CSS (for displaying all slides initially) when the user
+// starts to view slides
+(function() {
+  var deleted = false;
+  slideshow.on('beforeShowSlide', function(slide) {
+    if (deleted) return;
+    var sheets = document.styleSheets, node;
+    for (var i = 0; i < sheets.length; i++) {
+      node = sheets[i].ownerNode;
+      if (node.dataset["target"] !== "print-only") continue;
+      node.parentNode.removeChild(node);
+    }
+    deleted = true;
+  });
+})();
+(function() {
+  "use strict"
+  // Replace <script> tags in slides area to make them executable
+  var scripts = document.querySelectorAll(
+    '.remark-slides-area .remark-slide-container script'
+  );
+  if (!scripts.length) return;
+  for (var i = 0; i < scripts.length; i++) {
+    var s = document.createElement('script');
+    var code = document.createTextNode(scripts[i].textContent);
+    s.appendChild(code);
+    var scriptAttrs = scripts[i].attributes;
+    for (var j = 0; j < scriptAttrs.length; j++) {
+      s.setAttribute(scriptAttrs[j].name, scriptAttrs[j].value);
+    }
+    scripts[i].parentElement.replaceChild(s, scripts[i]);
+  }
+})();
+(function() {
+  var links = document.getElementsByTagName('a');
+  for (var i = 0; i < links.length; i++) {
+    if (/^(https?:)?\/\//.test(links[i].getAttribute('href'))) {
+      links[i].target = '_blank';
+    }
+  }
+})();
+// adds .remark-code-has-line-highlighted class to <pre> parent elements
+// of code chunks containing highlighted lines with class .remark-code-line-highlighted
+(function(d) {
+  const hlines = d.querySelectorAll('.remark-code-line-highlighted');
+  const preParents = [];
+  const findPreParent = function(line, p = 0) {
+    if (p > 1) return null; // traverse up no further than grandparent
+    const el = line.parentElement;
+    return el.tagName === "PRE" ? el : findPreParent(el, ++p);
+  };
+
+  for (let line of hlines) {
+    let pre = findPreParent(line);
+    if (pre && !preParents.includes(pre)) preParents.push(pre);
+  }
+  preParents.forEach(p => p.classList.add("remark-code-has-line-highlighted"));
+})(document);</script>
+
+<script>
+slideshow._releaseMath = function(el) {
+  var i, text, code, codes = el.getElementsByTagName('code');
+  for (i = 0; i < codes.length;) {
+    code = codes[i];
+    if (code.parentNode.tagName !== 'PRE' && code.childElementCount === 0) {
+      text = code.textContent;
+      if (/^\\\((.|\s)+\\\)$/.test(text) || /^\\\[(.|\s)+\\\]$/.test(text) ||
+          /^\$\$(.|\s)+\$\$$/.test(text) ||
+          /^\\begin\{([^}]+)\}(.|\s)+\\end\{[^}]+\}$/.test(text)) {
+        code.outerHTML = code.innerHTML;  // remove <code></code>
+        continue;
+      }
+    }
+    i++;
+  }
+};
+slideshow._releaseMath(document);
+</script>
+<!-- dynamically load mathjax for compatibility with self-contained -->
+<script>
+(function () {
+  var script = document.createElement('script');
+  script.type = 'text/javascript';
+  script.src  = 'https://cdn.bootcss.com/mathjax/2.7.1/MathJax.js?config=TeX-MML-AM_HTMLorMML';
+  if (location.protocol !== 'file:' && /^https?:/.test(script.src))
+    script.src  = script.src.replace(/^https?:/, '');
+  document.getElementsByTagName('head')[0].appendChild(script);
+})();
+</script>
+  </body>
+</html>

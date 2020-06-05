@@ -1,0 +1,310 @@
+---
+title: "Simple Linear Regression"
+subtitle: "Introduction"
+author: "<br><br> Dr. Maria Tackett"
+output:
+  xaringan::moon_reader:
+    mathjax: "https://cdn.bootcss.com/mathjax/2.7.1/MathJax.js?config=TeX-MML-AM_HTMLorMML"
+    css: "slides.css"
+    logo: "img/introregression-sticker.png"
+    lib_dir: libs
+    nature:
+      highlightStyle: github
+      highlightLines: true
+      countIncrementalSlides: false
+      ratio: 16:9
+      slideNumberFormat: ""
+    seal: false #make custom title slide
+editor_options: 
+  chunk_output_type: console
+---
+
+```{r child = "setup.Rmd"}
+```
+
+class: title-slide 
+
+<br><br>
+
+# Simple Linear Regression 
+## Introduction 
+
+<br><br><br>
+
+### Dr. Maria Tackett
+
+---
+
+### Topics 
+
+- FiLL IN!
+- 
+looking at relationship between a predictor and response variable 
+
+```{r packages, echo = F}
+library(tidyverse)
+library(broom)
+library(knitr)
+library(fivethirtyeight) #fandango dataset
+```
+
+```{r data}
+movie_scores <- fandango %>%
+  rename(critics = rottentomatoes, 
+         audience = rottentomatoes_user)
+```
+
+???
+
+I want to see how the presenter notes work
+
+---
+
+## Movie ratings data 
+
+The data set contains the "Tomatometer" score (**`critics`**) and audience score (**`audience`**) for 146 movies rated on rottentomatoes.com.
+
+```{r}
+ggplot(data = movie_scores, mapping = aes(x = critics, y = audience)) +
+  geom_point(alpha = 0.5) + 
+  labs(x = "Critics Score" , 
+       y = "Audience Score") +
+  theme_bw()
+```
+
+---
+
+## Movie ratings data 
+
+We want to fit a line to describe the relationship between the critics score and audience score.
+
+```{r}
+ggplot(data = movie_scores, mapping = aes(x = critics, y = audience)) +
+  geom_point(alpha = 0.5) + 
+  geom_smooth(method = "lm", color = "red", se = FALSE) +
+  labs(x = "Critics Score" , 
+       y = "Audience Score") +
+  theme_bw()
+```
+
+---
+
+## Terminology
+
+.pull-left[
+The .vocab[response, $Y$], is the variable describing the outcome of interest.
+
+<br> 
+
+The .vocab[predictor, $X$], is the variable used to  understand some of the variability in the response. 
+]
+
+.pull-right[
+```{r}
+ggplot(data = movie_scores, mapping = aes(x = critics, y = audience)) +
+  geom_point(alpha = 0.5) + 
+  geom_smooth(method = "lm", color = "red", se = FALSE) +
+  labs(x = "Critics Score (Predictor)" , 
+       y = "Audience Score (Response)") +
+  theme_bw()
+```
+]
+
+## Why do we fit a line? 
+
+.pull-left[
+- .emph[Prediction]: What is the expected $Y$  given particular values of  $X_1, X_2, \ldots, X_p$? 
+--
+
+    - Ex: What is the expected audience score for a movie that receives a critic score of 70%? 
+
+--
+
+- .emph[Inference]: What is the relationship between $\mathbf{X}$ and $Y$. How does $Y$ change as a function of $\mathbf{X}$?
+--
+
+    - Ex: How much can we expect the audience score to change for each additional point in the critic sco
+]
+
+.pull-right[
+```{r}
+ggplot(data = movie_scores, mapping = aes(x = critics, y = audience)) +
+  geom_point(alpha = 0.5) + 
+  geom_smooth(method = "lm", color = "red", se = FALSE) +
+  labs(x = "Critics Score (Predictor)" , 
+       y = "Audience Score (Response)") +
+  theme_bw()
+```
+]
+
+---
+
+## General model 
+
+We can use a .emph[statistical model] to describe the relationship between $Y$ and $X$. 
+
+.eq[
+$$Y = f(X) + \epsilon$$
+]
+
+---
+
+## General model 
+
+We can use a .emph[statistical model] to describe the relationship between $Y$ and $X$. 
+
+.eq[
+$$\begin{aligned} Y &= \color{red}{\text{Model}} + \text{Error} \\[10pt]
+&= \color{red}{f(X)} + \epsilon \\[10pt]
+&= \color{red}{\mu_{Y|X}} + \epsilon \end{aligned}$$
+]
+
+---
+
+## Simple Linear Regression
+
+When we have a quantitative response $Y$ and a single quantitative predictor $X$, we can use .vocab[simple linear regression] model to describe the mean of $Y$ given $X$
+.eq[
+$$\begin{aligned} Y &= \color{red}{\text{Model}} + \text{Error} \\[10pt]
+&= \color{red}{f(X)} + \epsilon \\[10pt]
+&= \color{red}{\mu_{Y|X}} + \epsilon \\[10pt]
+&= \color{red}{\beta_0 + \beta_1 X} + \epsilon \end{aligned}$$
+]
+
+--
+
+$$\text{audience} = \color{red}{\beta_0 + \beta_1 ~ \text{critics}} + \epsilon$$
+---
+
+## Which line do we choose?
+
+```{r}
+ggplot(data = movie_scores, mapping = aes(x = critics, y = audience)) +
+  geom_point(alpha = 0.4) + 
+  geom_abline(intercept = 32.296, slope = 0.5187, color = "red", size = 1) +
+  geom_abline(intercept = 25, slope = 0.7, color = "steel blue") +
+  geom_abline(intercept = 21, slope = 0.9, color = "steel blue") +
+  geom_abline(intercept = 35, slope = 0.3, color = "steel blue") +
+  labs(x = "Critics Score (Predictor)" , 
+       y = "Audience Score (Response)") +
+  theme_bw()
+```
+
+---
+
+## Residuals
+
+```{r echo=F, warning=FALSE, message=FALSE}
+m <- lm(audience ~ critics,data=movie_scores)
+ggplot(data=movie_scores,mapping=aes(x=critics,y=audience)) + 
+  geom_point(alpha=0.5) + 
+  geom_smooth(method="lm", color = "black", se=FALSE) + 
+  geom_segment(aes(x=critics, xend=critics, y=audience, yend=predict(m)), color = "red") +
+  labs(x = "Critics Score (Predictor)" , 
+       y = "Audience Score (Response)")+
+  theme_bw() + 
+  theme(legend.position = "none")
+```
+
+.center[
+.vocab[residual] = observed response - predicted response
+]
+
+---
+
+## Least squares line
+
+- The residual for the $i^{th}$ observation is
+
+$$e_i = \text{observed} - \text{predicted}
+= y_i - \hat{y}_i$$
+--
+
+- The .vocab[sum of squared residuals] is 
+
+$$e^2_1 + e^2_2 + \dots + e^2_n$$
+
+--
+
+- The .vocab[least squares line] is the one that minimizes the sum of squared residuals
+
+---
+
+## Estimating slope and intercept
+
+.eq[
+$$\hat{Y} = \hat{\beta}_0 + \hat{\beta}_1 X$$ 
+]
+
+.pull-left[
+.small-box-work[
+.vocab[Slope] 
+$$\begin{aligned}\hat{\beta_1} &= r \frac{s_Y}{s_X} \\[10pt]
+&= 0.7814 \times \frac{20.0244}{30.1688} \\[10pt]
+&= 0.5187\end{aligned}$$
+]
+]
+
+.pull-right[
+.small-box-work[
+.vocab[Intercept] 
+$$\begin{aligned}\hat{\beta}_0 &= \bar{Y} - \hat{\beta}_1\bar{X} \\[10pt]
+&= 63.8767 - 0.5186 \times 60.8493 \\[10pt]
+&= 32.296\end{aligned}$$
+]
+]
+
+```{r}
+sx <- round(sqrt(var(movie_scores$critics)),4)
+sy <- round(sqrt(var(movie_scores$audience)),4)
+r <- round(cor(movie_scores$critics, movie_scores$audience),4)
+xbar <- round(mean(movie_scores$critics),4)
+ybar <- round(mean(movie_scores$audience),4)
+```
+
+---
+
+## Interpreting slope & intercept
+
+```{r}
+model <- lm(audience ~ critics, data = movie_scores)
+tidy(model) %>%
+  kable(format = "html", digits = 3)
+```
+
+.pull-left[
+.vocab[Slope]: Increase in the mean response for every one unit increase in the predictor variable
+
+-.vocab[Intercept]: Mean response when the explanatory variable equals 0
+
+]
+
+.pull-right[
+```{r}
+ggplot(data = movie_scores, mapping = aes(x = critics, y = audience)) +
+  geom_point(alpha = 0.5) + 
+  geom_smooth(method = "lm", color = "red", se = FALSE) +
+  labs(x = "Critics Score (Predictor)" , 
+       y = "Audience Score (Response)") +
+  theme_bw()
+```
+]
+
+---
+
+## Interpreting intercept
+
+`r emo::ji("white_check_mark")` If the predictor can take values equal to or very close to zero, then interpret the intercept.
+
+`r emo::ji("stop_sign")` If the predictor can take values equal to or very close to zero, then **<u>do not</u>** interpret the intercept.
+
+
+<br><br>
+
+.alert[
+Even if the intercept doesn't have a reasonable interpretation, we still need it so the line fits the data as closely as possible. 
+]
+
+---
+
+## Recap
