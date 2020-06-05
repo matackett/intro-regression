@@ -100,7 +100,7 @@ The .vocab[predictor, $X$], is the variable used to  understand some of the vari
 ]
 
 .pull-right[
-```{r}
+```{r, fig.height = 4}
 ggplot(data = movie_scores, mapping = aes(x = critics, y = audience)) +
   geom_point(alpha = 0.5) + 
   geom_smooth(method = "lm", color = "red", se = FALSE) +
@@ -110,53 +110,73 @@ ggplot(data = movie_scores, mapping = aes(x = critics, y = audience)) +
 ```
 ]
 
-## Why do we fit a line? 
+---
+## Regression model 
+
+A .emph[regression model] is an function that describes the relationship between $Y$ and $X$. 
+
+.eq[
+$$\begin{aligned} Y &= \color{black}{\textbf{Model}} + \text{Error} \\[8pt]
+&= \color{black}{\mathbf{f(X)}} + \epsilon \\[8pt]
+&= \color{black}{\boldsymbol{\mu_{Y|X}}} + \epsilon \end{aligned}$$
+]
+
+---
+
+class: middle
 
 .pull-left[
-- .emph[Prediction]: What is the expected $Y$  given particular values of  $X_1, X_2, \ldots, X_p$? 
---
-
-    - Ex: What is the expected audience score for a movie that receives a critic score of 70%? 
-
---
-
-- .emph[Inference]: What is the relationship between $\mathbf{X}$ and $Y$. How does $Y$ change as a function of $\mathbf{X}$?
---
-
-    - Ex: How much can we expect the audience score to change for each additional point in the critic sco
+.small-box[
+$$\begin{aligned} Y &= \color{purple}{\textbf{Model}} + \text{Error} \\[8pt]
+&= \color{purple}{\mathbf{f(X)}} + \epsilon \\[8pt]
+&= \color{purple}{\boldsymbol{\mu_{Y|X}}} + \epsilon \end{aligned}$$
+]
 ]
 
 .pull-right[
-```{r}
+```{r, fig.height = 4}
+m <- lm(audience ~ critics,data=movie_scores)
 ggplot(data = movie_scores, mapping = aes(x = critics, y = audience)) +
   geom_point(alpha = 0.5) + 
-  geom_smooth(method = "lm", color = "red", se = FALSE) +
-  labs(x = "Critics Score (Predictor)" , 
-       y = "Audience Score (Response)") +
-  theme_bw()
+  geom_smooth(method = "lm", color = "purple", se = FALSE) +
+  labs(x = "X" , 
+       y = "Y") +
+  theme_bw() +
+  theme(axis.text = element_blank(),
+  axis.ticks.x = element_blank(), 
+  axis.ticks.y = element_blank()
+  ) 
 ```
 ]
 
 ---
 
-## General model 
+class: middle
 
-We can use a .emph[statistical model] to describe the relationship between $Y$ and $X$. 
-
-.eq[
-$$Y = f(X) + \epsilon$$
+.pull-left[
+.small-box[
+$$\begin{aligned} Y &= \color{purple}{\textbf{Model}} + \color{blue}{\textbf{Error}} \\[8pt]
+&= \color{purple}{\mathbf{f(X)}} + \color{blue}{\boldsymbol{\epsilon}} \\[8pt]
+&= \color{purple}{\boldsymbol{\mu_{Y|X}}} + \color{blue}{\boldsymbol{\epsilon}} \\[8pt]
+ \end{aligned}$$
+]
 ]
 
----
-
-## General model 
-
-We can use a .emph[statistical model] to describe the relationship between $Y$ and $X$. 
-
-.eq[
-$$\begin{aligned} Y &= \color{red}{\text{Model}} + \text{Error} \\[10pt]
-&= \color{red}{f(X)} + \epsilon \\[10pt]
-&= \color{red}{\mu_{Y|X}} + \epsilon \end{aligned}$$
+.pull-right[
+```{r, fig.height = 4}
+m <- lm(audience ~ critics,data=movie_scores)
+ggplot(data = movie_scores, mapping = aes(x = critics, y = audience)) +
+  geom_point(alpha = 0.5) + 
+  geom_smooth(method = "lm", color = "purple", se = FALSE) +
+  geom_segment(aes(x=critics, xend=critics, y=audience, yend=predict(m)), color = "blue") +
+  labs(x = "X" , 
+       y = "Y") +
+  theme_bw() +
+  theme(axis.text = element_blank(),
+  axis.ticks.x = element_blank(), 
+  axis.ticks.y = element_blank()
+  ) 
+```
 ]
 
 ---

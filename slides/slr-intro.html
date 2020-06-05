@@ -72,20 +72,27 @@ The .vocab[predictor, `\(X\)`], is the variable used to  understand some of the 
 &lt;img src="slr-intro_files/figure-html/unnamed-chunk-4-1.png" style="display: block; margin: auto;" /&gt;
 ]
 
-## Why do we fit a line? 
+---
+## Regression model 
+
+A .emph[regression model] is an function that describes the relationship between `\(Y\)` and `\(X\)`. 
+
+.eq[
+`$$\begin{aligned} Y &amp;= \color{black}{\textbf{Model}} + \text{Error} \\[8pt]
+&amp;= \color{black}{\mathbf{f(X)}} + \epsilon \\[8pt]
+&amp;= \color{black}{\boldsymbol{\mu_{Y|X}}} + \epsilon \end{aligned}$$`
+]
+
+---
+
+class: middle
 
 .pull-left[
-- .emph[Prediction]: What is the expected `\(Y\)`  given particular values of  `\(X_1, X_2, \ldots, X_p\)`? 
---
-
-    - Ex: What is the expected audience score for a movie that receives a critic score of 70%? 
-
---
-
-- .emph[Inference]: What is the relationship between `\(\mathbf{X}\)` and `\(Y\)`. How does `\(Y\)` change as a function of `\(\mathbf{X}\)`?
---
-
-    - Ex: How much can we expect the audience score to change for each additional point in the critic sco
+.small-box[
+`$$\begin{aligned} Y &amp;= \color{purple}{\textbf{Model}} + \text{Error} \\[8pt]
+&amp;= \color{purple}{\mathbf{f(X)}} + \epsilon \\[8pt]
+&amp;= \color{purple}{\boldsymbol{\mu_{Y|X}}} + \epsilon \end{aligned}$$`
+]
 ]
 
 .pull-right[
@@ -94,24 +101,19 @@ The .vocab[predictor, `\(X\)`], is the variable used to  understand some of the 
 
 ---
 
-## General model 
+class: middle
 
-We can use a .emph[statistical model] to describe the relationship between `\(Y\)` and `\(X\)`. 
-
-.eq[
-`$$Y = f(X) + \epsilon$$`
+.pull-left[
+.small-box[
+`$$\begin{aligned} Y &amp;= \color{purple}{\textbf{Model}} + \color{blue}{\textbf{Error}} \\[8pt]
+&amp;= \color{purple}{\mathbf{f(X)}} + \color{blue}{\boldsymbol{\epsilon}} \\[8pt]
+&amp;= \color{purple}{\boldsymbol{\mu_{Y|X}}} + \color{blue}{\boldsymbol{\epsilon}} \\[8pt]
+ \end{aligned}$$`
+]
 ]
 
----
-
-## General model 
-
-We can use a .emph[statistical model] to describe the relationship between `\(Y\)` and `\(X\)`. 
-
-.eq[
-`$$\begin{aligned} Y &amp;= \color{red}{\text{Model}} + \text{Error} \\[10pt]
-&amp;= \color{red}{f(X)} + \epsilon \\[10pt]
-&amp;= \color{red}{\mu_{Y|X}} + \epsilon \end{aligned}$$`
+.pull-right[
+&lt;img src="slr-intro_files/figure-html/unnamed-chunk-6-1.png" style="display: block; margin: auto;" /&gt;
 ]
 
 ---
@@ -133,13 +135,13 @@ When we have a quantitative response `\(Y\)` and a single quantitative predictor
 
 ## Which line do we choose?
 
-&lt;img src="slr-intro_files/figure-html/unnamed-chunk-6-1.png" style="display: block; margin: auto;" /&gt;
+&lt;img src="slr-intro_files/figure-html/unnamed-chunk-7-1.png" style="display: block; margin: auto;" /&gt;
 
 ---
 
 ## Residuals
 
-&lt;img src="slr-intro_files/figure-html/unnamed-chunk-7-1.png" style="display: block; margin: auto;" /&gt;
+&lt;img src="slr-intro_files/figure-html/unnamed-chunk-8-1.png" style="display: block; margin: auto;" /&gt;
 
 .center[
 .vocab[residual] = observed response - predicted response
@@ -231,7 +233,7 @@ When we have a quantitative response `\(Y\)` and a single quantitative predictor
 ]
 
 .pull-right[
-&lt;img src="slr-intro_files/figure-html/unnamed-chunk-10-1.png" style="display: block; margin: auto;" /&gt;
+&lt;img src="slr-intro_files/figure-html/unnamed-chunk-11-1.png" style="display: block; margin: auto;" /&gt;
 ]
 
 ---
