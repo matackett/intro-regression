@@ -1,5 +1,6 @@
 ## SLR Notes 
 
+<!--
 ```{r setup, include=FALSE}
 knitr::opts_chunk$set(echo = TRUE, eval = T)
 ```
@@ -52,3 +53,4 @@ also known as independent
 <br><br>
 *Optional: [Deriving the Least-Squares Estimates for Simple Linear Regression](https://github.com/sta210-sp20/supplemental-notes/blob/master/slr-derivations.pdf)*
 
+-->
