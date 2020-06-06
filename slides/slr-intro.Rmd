@@ -45,6 +45,7 @@ looking at relationship between a predictor and response variable
 library(tidyverse)
 library(broom)
 library(knitr)
+library(kableExtra)
 library(fivethirtyeight) #fandango dataset
 ```
 
@@ -92,11 +93,11 @@ ggplot(data = movie_scores, mapping = aes(x = critics, y = audience)) +
 ## Terminology
 
 .pull-left[
-The .vocab[response, $Y$], is the variable describing the outcome of interest.
+The .vocab[response, *Y*], is the variable describing the outcome of interest.
 
 <br> 
 
-The .vocab[predictor, $X$], is the variable used to  understand some of the variability in the response. 
+The .vocab[predictor, *X*], is the variable we use to help understand the variability in the response.
 ]
 
 .pull-right[
@@ -111,9 +112,10 @@ ggplot(data = movie_scores, mapping = aes(x = critics, y = audience)) +
 ]
 
 ---
+
 ## Regression model 
 
-A .emph[regression model] is an function that describes the relationship between $Y$ and $X$. 
+A .emph[regression model] is an function that describes the relationship between the response, $Y$, and the predictor, $X$. 
 
 .eq[
 $$\begin{aligned} Y &= \color{black}{\textbf{Model}} + \text{Error} \\[8pt]
@@ -123,7 +125,7 @@ $$\begin{aligned} Y &= \color{black}{\textbf{Model}} + \text{Error} \\[8pt]
 
 ---
 
-class: middle
+class: middle, center
 
 .pull-left[
 .small-box[
@@ -155,9 +157,9 @@ class: middle
 
 .pull-left[
 .small-box[
-$$\begin{aligned} Y &= \color{purple}{\textbf{Model}} + \color{blue}{\textbf{Error}} \\[8pt]
-&= \color{purple}{\mathbf{f(X)}} + \color{blue}{\boldsymbol{\epsilon}} \\[8pt]
-&= \color{purple}{\boldsymbol{\mu_{Y|X}}} + \color{blue}{\boldsymbol{\epsilon}} \\[8pt]
+$$\begin{aligned} Y &= \color{purple}{\textbf{Model}} + \color{blue}{\textbf{Error}} \\[5pt]
+&= \color{purple}{\mathbf{f(X)}} + \color{blue}{\boldsymbol{\epsilon}} \\[5pt]
+&= \color{purple}{\boldsymbol{\mu_{Y|X}}} + \color{blue}{\boldsymbol{\epsilon}} \\[5pt]
  \end{aligned}$$
 ]
 ]
@@ -181,24 +183,40 @@ ggplot(data = movie_scores, mapping = aes(x = critics, y = audience)) +
 
 ---
 
-## Simple Linear Regression
+## Simple linear regression
 
-When we have a quantitative response $Y$ and a single quantitative predictor $X$, we can use .vocab[simple linear regression] model to describe the mean of $Y$ given $X$
+When we have a quantitative response $Y$ and a single quantitative predictor $X$, we can use a .vocab[simple linear regression] model to describe the mean of $Y$ given $X$
 .eq[
-$$\begin{aligned} Y &= \color{red}{\text{Model}} + \text{Error} \\[10pt]
-&= \color{red}{f(X)} + \epsilon \\[10pt]
-&= \color{red}{\mu_{Y|X}} + \epsilon \\[10pt]
-&= \color{red}{\beta_0 + \beta_1 X} + \epsilon \end{aligned}$$
+$$\begin{aligned} Y &= \mathbf{\beta_0 + \beta_1 X} + \epsilon \end{aligned}$$
 ]
 
---
+$$\boldsymbol{\beta}_1: \text{Slope} \hspace{20mm} \boldsymbol{\beta}_0: \text{Intercept}$$
 
-$$\text{audience} = \color{red}{\beta_0 + \beta_1 ~ \text{critics}} + \epsilon$$
 ---
 
-## Which line do we choose?
+class: middle, center
 
-```{r}
+.eq[
+$$\Large{\hat{Y} = \hat{\beta}_0 + \hat{\beta}_1 X}$$
+]
+
+
+
+---
+
+class: middle
+
+.eq[
+$$\Large{\hat{Y} = \hat{\beta}_0 + \hat{\beta}_1 X}$$
+]
+
+---
+
+class: middle, center
+
+How do we choose values for $\hat{\beta}_1$ and $\hat{\beta}_0$?
+
+```{r fig.height = 2.5}
 ggplot(data = movie_scores, mapping = aes(x = critics, y = audience)) +
   geom_point(alpha = 0.4) + 
   geom_abline(intercept = 32.296, slope = 0.5187, color = "red", size = 1) +
@@ -210,24 +228,26 @@ ggplot(data = movie_scores, mapping = aes(x = critics, y = audience)) +
   theme_bw()
 ```
 
+
+
 ---
 
 ## Residuals
 
-```{r echo=F, warning=FALSE, message=FALSE}
+```{r echo=F, warning=FALSE, message=FALSE, fig.height = 2.5}
 m <- lm(audience ~ critics,data=movie_scores)
 ggplot(data=movie_scores,mapping=aes(x=critics,y=audience)) + 
   geom_point(alpha=0.5) + 
-  geom_smooth(method="lm", color = "black", se=FALSE) + 
-  geom_segment(aes(x=critics, xend=critics, y=audience, yend=predict(m)), color = "red") +
+  geom_smooth(method="lm", color = "red", se=FALSE) + 
+  geom_segment(aes(x=critics, xend=critics, y=audience, yend=predict(m)), color = "steel blue") +
   labs(x = "Critics Score (Predictor)" , 
        y = "Audience Score (Response)")+
   theme_bw() + 
   theme(legend.position = "none")
 ```
 
-.center[
-.vocab[residual] = observed response - predicted response
+.eq[
+$$\text{residual} = \text{observed} - \text{predicted} = y - \hat{y}$$ 
 ]
 
 ---
@@ -250,30 +270,6 @@ $$e^2_1 + e^2_2 + \dots + e^2_n$$
 
 ---
 
-## Estimating slope and intercept
-
-.eq[
-$$\hat{Y} = \hat{\beta}_0 + \hat{\beta}_1 X$$ 
-]
-
-.pull-left[
-.small-box-work[
-.vocab[Slope] 
-$$\begin{aligned}\hat{\beta_1} &= r \frac{s_Y}{s_X} \\[10pt]
-&= 0.7814 \times \frac{20.0244}{30.1688} \\[10pt]
-&= 0.5187\end{aligned}$$
-]
-]
-
-.pull-right[
-.small-box-work[
-.vocab[Intercept] 
-$$\begin{aligned}\hat{\beta}_0 &= \bar{Y} - \hat{\beta}_1\bar{X} \\[10pt]
-&= 63.8767 - 0.5186 \times 60.8493 \\[10pt]
-&= 32.296\end{aligned}$$
-]
-]
-
 ```{r}
 sx <- round(sqrt(var(movie_scores$critics)),4)
 sy <- round(sqrt(var(movie_scores$audience)),4)
@@ -282,47 +278,90 @@ xbar <- round(mean(movie_scores$critics),4)
 ybar <- round(mean(movie_scores$audience),4)
 ```
 
+## Estimating the slope
+.eq[
+$$\large{\hat{\beta}_1 = r \frac{s_Y}{s_X}}$$
+]
+
+--
+
+.pull-slight-left[
+.small-box-work[
+$$\begin{aligned} &s_X = 30.169 \\[5pt]
+&s_Y =  20.024 \\[5pt]
+&r = 0.781 \end{aligned}$$
+]
+]
+
+--
+
+.pull-right[
+.small-box-work[
+$$\begin{aligned}\hat{\beta}_1 &= 0.781 \times \frac{20.024}{30.169} \\[10pt]
+&= \mathbf{0.518}\end{aligned}$$
+]
+]
+
+---
+
+## Estimating the intercept
+
+.eq[
+
+$$\large{\hat{\beta}_0 = \bar{Y} - \hat{\beta}_1\bar{X}}$$
+]
+
+--
+
+.pull-slight-left[
+.small-box-work[
+$$\begin{aligned}&\bar{x} = 60.850 \\[5pt]
+&\bar{y} = 63.877 \\[5pt]
+&\hat{\beta}_1 = 0.518 \end{aligned}$$
+]
+]
+
+--
+
+.pull-more-right[
+.small-box-work[
+$$\begin{aligned}\hat{\beta}_0 &= 63.877 - 0.519 \times 60.850 \\[10pt]
+&= \mathbf{32.296}\end{aligned}$$
+]
+]
+
 ---
 
 ## Interpreting slope & intercept
 
-```{r}
-model <- lm(audience ~ critics, data = movie_scores)
-tidy(model) %>%
-  kable(format = "html", digits = 3)
-```
-
-.pull-left[
-.vocab[Slope]: Increase in the mean response for every one unit increase in the predictor variable
-
--.vocab[Intercept]: Mean response when the explanatory variable equals 0
-
+.eq[
+$$\hat{\text{audience}} = 32.296 + 0.518 \times \text{critics}$$
 ]
 
-.pull-right[
-```{r}
-ggplot(data = movie_scores, mapping = aes(x = critics, y = audience)) +
-  geom_point(alpha = 0.5) + 
-  geom_smooth(method = "lm", color = "red", se = FALSE) +
-  labs(x = "Critics Score (Predictor)" , 
-       y = "Audience Score (Response)") +
-  theme_bw()
-```
-]
+<br>
+
+--
+
+.vocab[Slope]: For each additional point in the critics score, we expect the audience score to increase by 0.518 point, on average.
+
+--
+
+.vocab[Intercept]: If the critics score is 0, we expect the audience score to be 32.296. 
 
 ---
 
-## Interpreting intercept
+## Does it make sense to interpret the intercept?
 
-`r emo::ji("white_check_mark")` If the predictor can take values equal to or very close to zero, then interpret the intercept.
+`r emo::ji("white_check_mark")` **Interpret the intercept if**
+-  predictor can feasibly take values equal to or near zero.
+- there are values near zero in the data.
 
-`r emo::ji("stop_sign")` If the predictor can take values equal to or very close to zero, then **<u>do not</u>** interpret the intercept.
+`r emo::ji("stop_sign")` Otherwise, don't interpret the intercept!
 
-
-<br><br>
+<br>
 
 .alert[
-Even if the intercept doesn't have a reasonable interpretation, we still need it so the line fits the data as closely as possible. 
+Even if the intercept doesn't have a reasonable interpretation, we still need it in the regression equation so the line fits the data as closely as possible. 
 ]
 
 ---

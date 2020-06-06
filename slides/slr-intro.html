@@ -4,6 +4,7 @@
     <title>Simple Linear Regression</title>
     <meta charset="utf-8" />
     <meta name="author" content="   Dr. Maria Tackett" />
+    <script src="libs/kePrint/kePrint.js"></script>
     <link rel="stylesheet" href="slides.css" type="text/css" />
   </head>
   <body>
@@ -61,11 +62,11 @@ We want to fit a line to describe the relationship between the critics score and
 ## Terminology
 
 .pull-left[
-The .vocab[response, `\(Y\)`], is the variable describing the outcome of interest.
+The .vocab[response, *Y*], is the variable describing the outcome of interest.
 
 &lt;br&gt; 
 
-The .vocab[predictor, `\(X\)`], is the variable used to  understand some of the variability in the response. 
+The .vocab[predictor, *X*], is the variable we use to help understand the variability in the response.
 ]
 
 .pull-right[
@@ -73,9 +74,10 @@ The .vocab[predictor, `\(X\)`], is the variable used to  understand some of the 
 ]
 
 ---
+
 ## Regression model 
 
-A .emph[regression model] is an function that describes the relationship between `\(Y\)` and `\(X\)`. 
+A .emph[regression model] is an function that describes the relationship between the response, `\(Y\)`, and the predictor, `\(X\)`. 
 
 .eq[
 `$$\begin{aligned} Y &amp;= \color{black}{\textbf{Model}} + \text{Error} \\[8pt]
@@ -85,7 +87,7 @@ A .emph[regression model] is an function that describes the relationship between
 
 ---
 
-class: middle
+class: middle, center
 
 .pull-left[
 .small-box[
@@ -105,9 +107,9 @@ class: middle
 
 .pull-left[
 .small-box[
-`$$\begin{aligned} Y &amp;= \color{purple}{\textbf{Model}} + \color{blue}{\textbf{Error}} \\[8pt]
-&amp;= \color{purple}{\mathbf{f(X)}} + \color{blue}{\boldsymbol{\epsilon}} \\[8pt]
-&amp;= \color{purple}{\boldsymbol{\mu_{Y|X}}} + \color{blue}{\boldsymbol{\epsilon}} \\[8pt]
+`$$\begin{aligned} Y &amp;= \color{purple}{\textbf{Model}} + \color{blue}{\textbf{Error}} \\[5pt]
+&amp;= \color{purple}{\mathbf{f(X)}} + \color{blue}{\boldsymbol{\epsilon}} \\[5pt]
+&amp;= \color{purple}{\boldsymbol{\mu_{Y|X}}} + \color{blue}{\boldsymbol{\epsilon}} \\[5pt]
  \end{aligned}$$`
 ]
 ]
@@ -118,24 +120,42 @@ class: middle
 
 ---
 
-## Simple Linear Regression
+## Simple linear regression
 
-When we have a quantitative response `\(Y\)` and a single quantitative predictor `\(X\)`, we can use .vocab[simple linear regression] model to describe the mean of `\(Y\)` given `\(X\)`
+When we have a quantitative response `\(Y\)` and a single quantitative predictor `\(X\)`, we can use a .vocab[simple linear regression] model to describe the mean of `\(Y\)` given `\(X\)`
 .eq[
-`$$\begin{aligned} Y &amp;= \color{red}{\text{Model}} + \text{Error} \\[10pt]
-&amp;= \color{red}{f(X)} + \epsilon \\[10pt]
-&amp;= \color{red}{\mu_{Y|X}} + \epsilon \\[10pt]
-&amp;= \color{red}{\beta_0 + \beta_1 X} + \epsilon \end{aligned}$$`
+`$$\begin{aligned} Y &amp;= \mathbf{\beta_0 + \beta_1 X} + \epsilon \end{aligned}$$`
 ]
 
---
+`$$\boldsymbol{\beta}_1: \text{Slope} \hspace{20mm} \boldsymbol{\beta}_0: \text{Intercept}$$`
 
-`$$\text{audience} = \color{red}{\beta_0 + \beta_1 ~ \text{critics}} + \epsilon$$`
 ---
 
-## Which line do we choose?
+class: middle, center
+
+.eq[
+`$$\Large{\hat{Y} = \hat{\beta}_0 + \hat{\beta}_1 X}$$`
+]
+
+
+
+---
+
+class: middle
+
+.eq[
+`$$\Large{\hat{Y} = \hat{\beta}_0 + \hat{\beta}_1 X}$$`
+]
+
+---
+
+class: middle, center
+
+How do we choose values for `\(\hat{\beta}_1\)` and `\(\hat{\beta}_0\)`?
 
 &lt;img src="slr-intro_files/figure-html/unnamed-chunk-7-1.png" style="display: block; margin: auto;" /&gt;
+
+
 
 ---
 
@@ -143,8 +163,8 @@ When we have a quantitative response `\(Y\)` and a single quantitative predictor
 
 &lt;img src="slr-intro_files/figure-html/unnamed-chunk-8-1.png" style="display: block; margin: auto;" /&gt;
 
-.center[
-.vocab[residual] = observed response - predicted response
+.eq[
+`$$\text{residual} = \text{observed} - \text{predicted} = y - \hat{y}$$` 
 ]
 
 ---
@@ -167,37 +187,68 @@ When we have a quantitative response `\(Y\)` and a single quantitative predictor
 
 ---
 
-## Estimating slope and intercept
 
+
+## Estimating the slope
 .eq[
-`$$\hat{Y} = \hat{\beta}_0 + \hat{\beta}_1 X$$` 
+`$$\large{\hat{\beta}_1 = r \frac{s_Y}{s_X}}$$`
 ]
 
-.pull-left[
+--
+
+.pull-slight-left[
 .small-box-work[
-.vocab[Slope] 
-`$$\begin{aligned}\hat{\beta_1} &amp;= r \frac{s_Y}{s_X} \\[10pt]
-&amp;= 0.7814 \times \frac{20.0244}{30.1688} \\[10pt]
-&amp;= 0.5187\end{aligned}$$`
+`$$\begin{aligned} &amp;s_X = 30.1688 \\[5pt]
+&amp;s_Y =  20.0244 \\[5pt]
+&amp;r = 0.7814 \end{aligned}$$`
 ]
 ]
+
+--
 
 .pull-right[
 .small-box-work[
-.vocab[Intercept] 
-`$$\begin{aligned}\hat{\beta}_0 &amp;= \bar{Y} - \hat{\beta}_1\bar{X} \\[10pt]
-&amp;= 63.8767 - 0.5186 \times 60.8493 \\[10pt]
-&amp;= 32.296\end{aligned}$$`
+`$$\begin{aligned}\hat{\beta}_1 &amp;= 0.7814 \times \frac{20.0244}{30.1688} \\[10pt]
+&amp;= \mathbf{0.5187}\end{aligned}$$`
 ]
 ]
 
+---
 
+## Estimating the intercept
+
+.eq[
+
+`$$\large{\hat{\beta}_0 = \bar{Y} - \hat{\beta}_1\bar{X}}$$`
+]
+
+--
+
+.pull-slight-left[
+.small-box-work[
+`$$\begin{aligned}&amp;\bar{x} = 60.8493 \\[5pt]
+&amp;\bar{y} = 63.8767 \\[5pt]
+&amp;\hat{\beta}_1 = 0.5187\end{aligned}$$`
+]
+]
+
+--
+
+.pull-more-right[
+.small-box-work[
+`$$\begin{aligned}\hat{\beta}_0 &amp;= 63.8767 - 0.5186 \times 60.8493 \\[10pt]
+&amp;= \mathbf{32.296}\end{aligned}$$`
+]
+]
 
 ---
 
 ## Interpreting slope &amp; intercept
 
-&lt;table&gt;
+`$$\hat{\text{audience}} = 32.316 + 0.519 \times \text{critics}$$`
+
+.large[
+&lt;table class="table" style="font-size: 20px; margin-left: auto; margin-right: auto;"&gt;
  &lt;thead&gt;
   &lt;tr&gt;
    &lt;th style="text-align:left;"&gt; term &lt;/th&gt;
@@ -224,31 +275,32 @@ When we have a quantitative response `\(Y\)` and a single quantitative predictor
   &lt;/tr&gt;
 &lt;/tbody&gt;
 &lt;/table&gt;
-
-.pull-left[
-.vocab[Slope]: Increase in the mean response for every one unit increase in the predictor variable
-
--.vocab[Intercept]: Mean response when the explanatory variable equals 0
-
 ]
 
-.pull-right[
-&lt;img src="slr-intro_files/figure-html/unnamed-chunk-11-1.png" style="display: block; margin: auto;" /&gt;
-]
+&lt;br&gt;
+
+--
+
+.vocab[Slope]: For each additional point in the critics score, we expect the audience score to increase by 0.519 point, on average.
+
+--
+
+.vocab[Intercept]: If the critics score is 0, we expect the audience score to be 32.316. 
 
 ---
 
-## Interpreting intercept
+## Does it make sense to interpret the intercept?
 
-✅ If the predictor can take values equal to or very close to zero, then interpret the intercept.
+✅ **Interpret the intercept if**
+-  predictor can feasibly take values equal to or near zero.
+- there are values near zero in the data.
 
-🛑 If the predictor can take values equal to or very close to zero, then **&lt;u&gt;do not&lt;/u&gt;** interpret the intercept.
+🛑 Otherwise, don't interpret the intercept!
 
-
-&lt;br&gt;&lt;br&gt;
+&lt;br&gt;
 
 .alert[
-Even if the intercept doesn't have a reasonable interpretation, we still need it so the line fits the data as closely as possible. 
+Even if the intercept doesn't have a reasonable interpretation, we still need it in the regression equation so the line fits the data as closely as possible. 
 ]
 
 ---
