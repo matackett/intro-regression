@@ -111,8 +111,13 @@ a, a > code {
 }
 
 .pull-slight-left {
-   float:width;
-    width: 30%;
+   float: left;
+    width: 32%;
+}
+
+.pull-more-right {
+  float: right;
+  width: 62%;
 }
 
 ul {
@@ -233,7 +238,7 @@ thead, tfoot, tr:nth-child(even) { background: #eee }
   border-radius: 25px;
   border: solid 5px #c6d47f;
   background-color: #dce5b2;
-  padding: 10px 16px;
+  padding: 7px 13px;
   margin-top: 12px;
   margin-bottom: 12px;
   /*font-size: 90%;*/
