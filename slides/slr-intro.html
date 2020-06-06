@@ -4,7 +4,6 @@
     <title>Simple Linear Regression</title>
     <meta charset="utf-8" />
     <meta name="author" content="   Dr. Maria Tackett" />
-    <script src="libs/kePrint/kePrint.js"></script>
     <link rel="stylesheet" href="slides.css" type="text/css" />
   </head>
   <body>
@@ -27,11 +26,13 @@ class: title-slide
 
 ---
 
-### Topics 
+## Topics 
 
-- FiLL IN!
-- 
-looking at relationship between a predictor and response variable 
+- Use simple linear regression to describe the relationship between a quantitative predictor and quantitative response variable.
+
+- Estimate the slope and intercept of the line using the least squares method.
+
+- Interpret the slope and intercept of the line.
 
 
 
@@ -198,9 +199,9 @@ How do we choose values for `\(\hat{\beta}_1\)` and `\(\hat{\beta}_0\)`?
 
 .pull-slight-left[
 .small-box-work[
-`$$\begin{aligned} &amp;s_X = 30.1688 \\[5pt]
-&amp;s_Y =  20.0244 \\[5pt]
-&amp;r = 0.7814 \end{aligned}$$`
+`$$\begin{aligned} &amp;s_X = 30.169 \\[5pt]
+&amp;s_Y =  20.024 \\[5pt]
+&amp;r = 0.781 \end{aligned}$$`
 ]
 ]
 
@@ -208,8 +209,8 @@ How do we choose values for `\(\hat{\beta}_1\)` and `\(\hat{\beta}_0\)`?
 
 .pull-right[
 .small-box-work[
-`$$\begin{aligned}\hat{\beta}_1 &amp;= 0.7814 \times \frac{20.0244}{30.1688} \\[10pt]
-&amp;= \mathbf{0.5187}\end{aligned}$$`
+`$$\begin{aligned}\hat{\beta}_1 &amp;= 0.781 \times \frac{20.024}{30.169} \\[10pt]
+&amp;= \mathbf{0.518}\end{aligned}$$`
 ]
 ]
 
@@ -226,9 +227,9 @@ How do we choose values for `\(\hat{\beta}_1\)` and `\(\hat{\beta}_0\)`?
 
 .pull-slight-left[
 .small-box-work[
-`$$\begin{aligned}&amp;\bar{x} = 60.8493 \\[5pt]
-&amp;\bar{y} = 63.8767 \\[5pt]
-&amp;\hat{\beta}_1 = 0.5187\end{aligned}$$`
+`$$\begin{aligned}&amp;\bar{x} = 60.850 \\[5pt]
+&amp;\bar{y} = 63.877 \\[5pt]
+&amp;\hat{\beta}_1 = 0.518 \end{aligned}$$`
 ]
 ]
 
@@ -236,7 +237,7 @@ How do we choose values for `\(\hat{\beta}_1\)` and `\(\hat{\beta}_0\)`?
 
 .pull-more-right[
 .small-box-work[
-`$$\begin{aligned}\hat{\beta}_0 &amp;= 63.8767 - 0.5186 \times 60.8493 \\[10pt]
+`$$\begin{aligned}\hat{\beta}_0 &amp;= 63.877 - 0.518 \times 60.850 \\[10pt]
 &amp;= \mathbf{32.296}\end{aligned}$$`
 ]
 ]
@@ -245,67 +246,42 @@ How do we choose values for `\(\hat{\beta}_1\)` and `\(\hat{\beta}_0\)`?
 
 ## Interpreting slope &amp; intercept
 
-`$$\hat{\text{audience}} = 32.316 + 0.519 \times \text{critics}$$`
-
-.large[
-&lt;table class="table" style="font-size: 20px; margin-left: auto; margin-right: auto;"&gt;
- &lt;thead&gt;
-  &lt;tr&gt;
-   &lt;th style="text-align:left;"&gt; term &lt;/th&gt;
-   &lt;th style="text-align:right;"&gt; estimate &lt;/th&gt;
-   &lt;th style="text-align:right;"&gt; std.error &lt;/th&gt;
-   &lt;th style="text-align:right;"&gt; statistic &lt;/th&gt;
-   &lt;th style="text-align:right;"&gt; p.value &lt;/th&gt;
-  &lt;/tr&gt;
- &lt;/thead&gt;
-&lt;tbody&gt;
-  &lt;tr&gt;
-   &lt;td style="text-align:left;"&gt; (Intercept) &lt;/td&gt;
-   &lt;td style="text-align:right;"&gt; 32.316 &lt;/td&gt;
-   &lt;td style="text-align:right;"&gt; 2.343 &lt;/td&gt;
-   &lt;td style="text-align:right;"&gt; 13.795 &lt;/td&gt;
-   &lt;td style="text-align:right;"&gt; 0 &lt;/td&gt;
-  &lt;/tr&gt;
-  &lt;tr&gt;
-   &lt;td style="text-align:left;"&gt; critics &lt;/td&gt;
-   &lt;td style="text-align:right;"&gt; 0.519 &lt;/td&gt;
-   &lt;td style="text-align:right;"&gt; 0.035 &lt;/td&gt;
-   &lt;td style="text-align:right;"&gt; 15.028 &lt;/td&gt;
-   &lt;td style="text-align:right;"&gt; 0 &lt;/td&gt;
-  &lt;/tr&gt;
-&lt;/tbody&gt;
-&lt;/table&gt;
+.eq[
+`$$\hat{\text{audience}} = 32.296 + 0.518 \times \text{critics}$$`
 ]
 
 &lt;br&gt;
 
 --
 
-.vocab[Slope]: For each additional point in the critics score, we expect the audience score to increase by 0.519 point, on average.
+.vocab[Slope]: For each additional point in the critics score, we expect the audience score to increase by 0.518 point, on average.
 
 --
 
-.vocab[Intercept]: If the critics score is 0, we expect the audience score to be 32.316. 
+.vocab[Intercept]: If the critics score is 0, we expect the audience score to be 32.296. 
 
 ---
 
 ## Does it make sense to interpret the intercept?
 
 ✅ **Interpret the intercept if**
--  predictor can feasibly take values equal to or near zero.
-- there are values near zero in the data.
+  -  predictor can feasibly take values equal to or near zero.
+  - there are values near zero in the data.
 
+&lt;br&gt; 
 🛑 Otherwise, don't interpret the intercept!
-
-&lt;br&gt;
-
-.alert[
-Even if the intercept doesn't have a reasonable interpretation, we still need it in the regression equation so the line fits the data as closely as possible. 
-]
 
 ---
 
 ## Recap
+
+- Use simple linear regression to describe the relationship between a quantitative predictor and quantitative response variable.
+
+- Use the least squares method to estimate the slope and intercept.
+
+- **Interpretations**:
+  - **Slope**: For each additional value of `\(x\)`, we expect y to change by `\(\hat{\beta}_1\)`, on average. 
+  - **Intercept**: If `\(x\)` is 0, then we expect `\(y\)` to be `\(\hat{\beta}_0\)`.
     </textarea>
 <style data-target="print-only">@media screen {.remark-slide-container{display:block;}.remark-slide-scaler{box-shadow:none;}}</style>
 <script src="https://remarkjs.com/downloads/remark-latest.min.js"></script>

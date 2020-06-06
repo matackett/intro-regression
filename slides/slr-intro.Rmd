@@ -35,11 +35,13 @@ class: title-slide
 
 ---
 
-### Topics 
+## Topics 
 
-- FiLL IN!
-- 
-looking at relationship between a predictor and response variable 
+- Use simple linear regression to describe the relationship between a quantitative predictor and quantitative response variable.
+
+- Estimate the slope and intercept of the line using the least squares method.
+
+- Interpret the slope and intercept of the line.
 
 ```{r packages, echo = F}
 library(tidyverse)
@@ -325,7 +327,7 @@ $$\begin{aligned}&\bar{x} = 60.850 \\[5pt]
 
 .pull-more-right[
 .small-box-work[
-$$\begin{aligned}\hat{\beta}_0 &= 63.877 - 0.519 \times 60.850 \\[10pt]
+$$\begin{aligned}\hat{\beta}_0 &= 63.877 - 0.518 \times 60.850 \\[10pt]
 &= \mathbf{32.296}\end{aligned}$$
 ]
 ]
@@ -353,17 +355,22 @@ $$\hat{\text{audience}} = 32.296 + 0.518 \times \text{critics}$$
 ## Does it make sense to interpret the intercept?
 
 `r emo::ji("white_check_mark")` **Interpret the intercept if**
--  predictor can feasibly take values equal to or near zero.
-- there are values near zero in the data.
+  -  predictor can feasibly take values equal to or near zero.
+  - there are values near zero in the data.
 
+<br> 
 `r emo::ji("stop_sign")` Otherwise, don't interpret the intercept!
-
-<br>
-
-.alert[
-Even if the intercept doesn't have a reasonable interpretation, we still need it in the regression equation so the line fits the data as closely as possible. 
-]
 
 ---
 
 ## Recap
+
+- Use simple linear regression to describe the relationship between a quantitative predictor and quantitative response variable.
+
+- Use the least squares method to estimate the slope and intercept.
+
+- **Interpretations**:
+  - **Slope**: For each additional value of $x$, we expect y to change by $\hat{\beta}_1$, on average. 
+  - **Intercept**: If $x$ is 0, then we expect $y$ to be $\hat{\beta}_0$.
+ 
+
