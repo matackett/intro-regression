@@ -33,8 +33,5 @@ The content in this book was originally developed for [STA 210: Regression Analy
 
 This book is under development and will be periodically upated with new material. Please email me (<a href="mailto:maria.tackett@duke.edu">maria.tackett@duke.edu</a>) if you have any questions, feedback, or suggestions. I would also love to hear about your experience if you use any of the content in your course.
 
-<font size = "5px">**License**</font>
-
-<a rel="license" href="http://creativecommons.org/licenses/by-nc-sa/4.0/"><img alt="Creative Commons License" style="border-width:0" src="https://i.creativecommons.org/l/by-nc-sa/4.0/88x31.png" /></a><br />
-
-This work is licensed under the [Creative Commons Attribution-NonCommercial-ShareAlike 4.0 International License](http://creativecommons.org/licenses/by-nc-sa/4.0/).
+<hr> 
+<a rel="license" href="http://creativecommons.org/licenses/by-nc-sa/4.0/"><img alt="Creative Commons License" style="border-width:0" src="https://i.creativecommons.org/l/by-nc-sa/4.0/88x31.png" /></a><br />This work is licensed under a <a rel="license" href="http://creativecommons.org/licenses/by-nc-sa/4.0/">Creative Commons Attribution-NonCommercial-ShareAlike 4.0 International License</a>.
