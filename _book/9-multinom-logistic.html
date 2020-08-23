@@ -5,20 +5,20 @@
   <meta charset="utf-8" />
   <meta http-equiv="X-UA-Compatible" content="IE=edge" />
   <title> 9 Multinomial Logistic Regression | Intro Regression</title>
-  <meta name="description" content="An electronic book with assignments and in-class activities to help students apply concepts in an intermediate-level regression analysis course. The primary focus is application and computing; there are also supplemental math notes on some topics." />
-  <meta name="generator" content="bookdown 0.19 and GitBook 2.6.7" />
+  <meta name="description" content="An electronic book to accompany a second-semester undegraduate regression analysis course. The primary focus is application and computing using R. Some topics include supplemental math notes." />
+  <meta name="generator" content="bookdown 0.20 and GitBook 2.6.7" />
 
   <meta property="og:title" content=" 9 Multinomial Logistic Regression | Intro Regression" />
   <meta property="og:type" content="book" />
   <meta property="og:url" content="https://www.introregression.org/" />
   <meta property="og:image" content="https://www.introregression.org/img/introregression-sticker.png" />
-  <meta property="og:description" content="An electronic book with assignments and in-class activities to help students apply concepts in an intermediate-level regression analysis course. The primary focus is application and computing; there are also supplemental math notes on some topics." />
+  <meta property="og:description" content="An electronic book to accompany a second-semester undegraduate regression analysis course. The primary focus is application and computing using R. Some topics include supplemental math notes." />
   <meta name="github-repo" content="matackett/intro-regression" />
 
   <meta name="twitter:card" content="summary" />
   <meta name="twitter:title" content=" 9 Multinomial Logistic Regression | Intro Regression" />
   
-  <meta name="twitter:description" content="An electronic book with assignments and in-class activities to help students apply concepts in an intermediate-level regression analysis course. The primary focus is application and computing; there are also supplemental math notes on some topics." />
+  <meta name="twitter:description" content="An electronic book to accompany a second-semester undegraduate regression analysis course. The primary focus is application and computing using R. Some topics include supplemental math notes." />
   <meta name="twitter:image" content="https://www.introregression.org/img/introregression-sticker.png" />
 
 <meta name="author" content="Maria Tackett" />
@@ -49,6 +49,7 @@
 
 
 
+<script src="libs/accessible-code-block-0.0.1/empty-anchor.js"></script>
 
 
 <style type="text/css">
@@ -167,129 +168,27 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 </ul></li>
 </ul></li>
 <li class="chapter" data-level="4" data-path="4-slr.html"><a href="4-slr.html"><i class="fa fa-check"></i><b>4</b> Simple Linear Regression</a><ul>
-<li class="chapter" data-level="4.1" data-path="4-slr.html"><a href="4-slr.html#comp-college-admissions"><i class="fa fa-check"></i><b>4.1</b> COMP: College Admissions</a><ul>
-<li class="chapter" data-level="" data-path="4-slr.html"><a href="4-slr.html#introduction-1"><i class="fa fa-check"></i>Introduction</a></li>
-<li class="chapter" data-level="" data-path="4-slr.html"><a href="4-slr.html#packages-1"><i class="fa fa-check"></i>Packages</a></li>
-<li class="chapter" data-level="" data-path="4-slr.html"><a href="4-slr.html#data-2"><i class="fa fa-check"></i>Data</a></li>
-<li class="chapter" data-level="" data-path="4-slr.html"><a href="4-slr.html#exercises-1"><i class="fa fa-check"></i>Exercises</a></li>
+<li class="chapter" data-level="4.1" data-path="3-intro-r.html"><a href="3-intro-r.html#simple-linear-regression"><i class="fa fa-check"></i><b>4.1</b> Simple Linear Regression</a><ul>
+<li class="chapter" data-level="4.1.1" data-path="4-slr.html"><a href="4-slr.html#getting-started"><i class="fa fa-check"></i><b>4.1.1</b> Getting started</a></li>
+<li class="chapter" data-level="4.1.2" data-path="4-slr.html"><a href="4-slr.html#foundation"><i class="fa fa-check"></i><b>4.1.2</b> Foundation</a></li>
+<li class="chapter" data-level="4.1.3" data-path="4-slr.html"><a href="4-slr.html#inference"><i class="fa fa-check"></i><b>4.1.3</b> Inference</a></li>
 </ul></li>
-<li class="chapter" data-level="4.2" data-path="4-slr.html"><a href="4-slr.html#in-class-advertising-sales"><i class="fa fa-check"></i><b>4.2</b> IN-CLASS: Advertising &amp; Sales</a><ul>
-<li class="chapter" data-level="" data-path="4-slr.html"><a href="4-slr.html#packages-2"><i class="fa fa-check"></i>Packages</a></li>
-<li class="chapter" data-level="" data-path="4-slr.html"><a href="4-slr.html#data-3"><i class="fa fa-check"></i>Data</a></li>
-<li class="chapter" data-level="" data-path="4-slr.html"><a href="4-slr.html#exercises-2"><i class="fa fa-check"></i>Exercises</a></li>
+<li class="chapter" data-level="4.2" data-path="4-slr.html"><a href="4-slr.html#simple-linear-regression-1"><i class="fa fa-check"></i><b>4.2</b> Simple Linear Regression</a><ul>
+<li class="chapter" data-level="4.2.1" data-path="4-slr.html"><a href="4-slr.html#introduce-data"><i class="fa fa-check"></i><b>4.2.1</b> Introduce data</a></li>
+<li class="chapter" data-level="4.2.2" data-path="4-slr.html"><a href="4-slr.html#prediction"><i class="fa fa-check"></i><b>4.2.2</b> Prediction</a></li>
+<li class="chapter" data-level="4.2.3" data-path="4-slr.html"><a href="4-slr.html#checking-conditions"><i class="fa fa-check"></i><b>4.2.3</b> Checking conditions</a></li>
+<li class="chapter" data-level="4.2.4" data-path="4-slr.html"><a href="4-slr.html#partioning-variability"><i class="fa fa-check"></i><b>4.2.4</b> Partioning variability</a></li>
 </ul></li>
-<li class="chapter" data-level="4.3" data-path="4-slr.html"><a href="4-slr.html#in-class-carbohydrates-in-beer"><i class="fa fa-check"></i><b>4.3</b> IN-CLASS: Carbohydrates in Beer</a><ul>
-<li class="chapter" data-level="" data-path="4-slr.html"><a href="4-slr.html#packages-3"><i class="fa fa-check"></i>Packages</a></li>
-<li class="chapter" data-level="" data-path="4-slr.html"><a href="4-slr.html#data-4"><i class="fa fa-check"></i>Data</a></li>
-<li class="chapter" data-level="" data-path="4-slr.html"><a href="4-slr.html#exercises-3"><i class="fa fa-check"></i>Exercises</a></li>
+<li class="chapter" data-level="4.3" data-path="4-slr.html"><a href="4-slr.html#deriving-beta_1-and-beta_0"><i class="fa fa-check"></i><b>4.3</b> Deriving <span class="math inline">\(\beta_1\)</span> and <span class="math inline">\(\beta_0\)</span></a></li>
 </ul></li>
-<li class="chapter" data-level="4.4" data-path="4-slr.html"><a href="4-slr.html#slr-notes"><i class="fa fa-check"></i><b>4.4</b> SLR Notes</a></li>
-<li class="chapter" data-level="4.5" data-path="4-slr.html"><a href="4-slr.html#r-markdown"><i class="fa fa-check"></i><b>4.5</b> R Markdown</a></li>
-<li class="chapter" data-level="4.6" data-path="4-slr.html"><a href="4-slr.html#including-plots"><i class="fa fa-check"></i><b>4.6</b> Including Plots</a></li>
-</ul></li>
-<li class="chapter" data-level="5" data-path="5-anova.html"><a href="5-anova.html"><i class="fa fa-check"></i><b>5</b> Analysis of Variance</a><ul>
-<li class="chapter" data-level="5.0.1" data-path="5-anova.html"><a href="5-anova.html#comp-diamonds"><i class="fa fa-check"></i><b>5.0.1</b> COMP: Diamonds</a></li>
-<li class="chapter" data-level="" data-path="5-anova.html"><a href="5-anova.html#introduction-2"><i class="fa fa-check"></i>Introduction</a></li>
-<li class="chapter" data-level="" data-path="5-anova.html"><a href="5-anova.html#data-5"><i class="fa fa-check"></i>Data</a></li>
-<li class="chapter" data-level="" data-path="5-anova.html"><a href="5-anova.html#exercises-4"><i class="fa fa-check"></i>Exercises</a></li>
-</ul></li>
-<li class="chapter" data-level="6" data-path="6-mlr.html"><a href="6-mlr.html"><i class="fa fa-check"></i><b>6</b> Multiple Linear Regression</a><ul>
-<li class="chapter" data-level="6.1" data-path="6-mlr.html"><a href="6-mlr.html#comp-houses-in-king-county"><i class="fa fa-check"></i><b>6.1</b> COMP: Houses in King County</a><ul>
-<li class="chapter" data-level="" data-path="6-mlr.html"><a href="6-mlr.html#packages-5"><i class="fa fa-check"></i>Packages</a></li>
-<li class="chapter" data-level="" data-path="6-mlr.html"><a href="6-mlr.html#data-6"><i class="fa fa-check"></i>Data</a></li>
-<li class="chapter" data-level="" data-path="6-mlr.html"><a href="6-mlr.html#exercises-5"><i class="fa fa-check"></i>Exercises</a></li>
-<li class="chapter" data-level="" data-path="6-mlr.html"><a href="6-mlr.html#acknowledgement-1"><i class="fa fa-check"></i>Acknowledgement</a></li>
-</ul></li>
-<li class="chapter" data-level="6.2" data-path="6-mlr.html"><a href="6-mlr.html#comp-airbnb-in-asheville-nc"><i class="fa fa-check"></i><b>6.2</b> COMP: Airbnb in Asheville, NC</a><ul>
-<li class="chapter" data-level="" data-path="6-mlr.html"><a href="6-mlr.html#packages-6"><i class="fa fa-check"></i>Packages</a></li>
-<li class="chapter" data-level="" data-path="6-mlr.html"><a href="6-mlr.html#data-7"><i class="fa fa-check"></i>Data</a></li>
-<li class="chapter" data-level="" data-path="6-mlr.html"><a href="6-mlr.html#exercises-6"><i class="fa fa-check"></i>Exercises</a></li>
-<li class="chapter" data-level="" data-path="6-mlr.html"><a href="6-mlr.html#acknowledgement-2"><i class="fa fa-check"></i>Acknowledgement</a></li>
-</ul></li>
-<li class="chapter" data-level="6.3" data-path="6-mlr.html"><a href="6-mlr.html#in-class-wages"><i class="fa fa-check"></i><b>6.3</b> IN-CLASS: Wages</a><ul>
-<li class="chapter" data-level="" data-path="6-mlr.html"><a href="6-mlr.html#packages-7"><i class="fa fa-check"></i>Packages</a></li>
-<li class="chapter" data-level="" data-path="6-mlr.html"><a href="6-mlr.html#data-8"><i class="fa fa-check"></i>Data</a></li>
-<li class="chapter" data-level="" data-path="6-mlr.html"><a href="6-mlr.html#exercises-7"><i class="fa fa-check"></i>Exercises</a></li>
-</ul></li>
-<li class="chapter" data-level="6.4" data-path="6-mlr.html"><a href="6-mlr.html#notes-matrix-form-of-linear-regression"><i class="fa fa-check"></i><b>6.4</b> NOTES: Matrix Form of Linear Regression</a><ul>
-<li class="chapter" data-level="6.4.1" data-path="6-mlr.html"><a href="6-mlr.html#introduction-3"><i class="fa fa-check"></i><b>6.4.1</b> Introduction</a></li>
-<li class="chapter" data-level="6.4.2" data-path="6-mlr.html"><a href="6-mlr.html#matrix-form-for-the-regression-model"><i class="fa fa-check"></i><b>6.4.2</b> Matrix Form for the Regression Model</a></li>
-<li class="chapter" data-level="6.4.3" data-path="6-mlr.html"><a href="6-mlr.html#estimating-the-coefficients"><i class="fa fa-check"></i><b>6.4.3</b> Estimating the Coefficients</a></li>
-<li class="chapter" data-level="6.4.4" data-path="6-mlr.html"><a href="6-mlr.html#variance-covariance-matrix-of-the-coefficients"><i class="fa fa-check"></i><b>6.4.4</b> Variance-covariance matrix of the coefficients</a></li>
-</ul></li>
-<li class="chapter" data-level="6.5" data-path="6-mlr.html"><a href="6-mlr.html#notes-log-transformations"><i class="fa fa-check"></i><b>6.5</b> NOTES: Log Transformations</a><ul>
-<li class="chapter" data-level="6.5.1" data-path="6-mlr.html"><a href="6-mlr.html#log-transformation-on-the-response-variable"><i class="fa fa-check"></i><b>6.5.1</b> Log-transformation on the response variable</a></li>
-<li class="chapter" data-level="6.5.2" data-path="6-mlr.html"><a href="6-mlr.html#log-transformation-on-the-predictor-variable"><i class="fa fa-check"></i><b>6.5.2</b> Log-transformation on the predictor variable</a></li>
-<li class="chapter" data-level="6.5.3" data-path="6-mlr.html"><a href="6-mlr.html#log-transformation-on-the-the-response-and-predictor-variable"><i class="fa fa-check"></i><b>6.5.3</b> Log-transformation on the the response and predictor variable</a></li>
-</ul></li>
-<li class="chapter" data-level="6.6" data-path="6-mlr.html"><a href="6-mlr.html#notes-model-diagnostics"><i class="fa fa-check"></i><b>6.6</b> NOTES: Model Diagnostics</a><ul>
-<li class="chapter" data-level="6.6.1" data-path="6-mlr.html"><a href="6-mlr.html#introduction-4"><i class="fa fa-check"></i><b>6.6.1</b> Introduction</a></li>
-<li class="chapter" data-level="6.6.2" data-path="6-mlr.html"><a href="6-mlr.html#matrix-form-for-the-regression-model-1"><i class="fa fa-check"></i><b>6.6.2</b> Matrix Form for the Regression Model</a></li>
-<li class="chapter" data-level="6.6.3" data-path="6-mlr.html"><a href="6-mlr.html#hat-matrix-leverage"><i class="fa fa-check"></i><b>6.6.3</b> Hat Matrix &amp; Leverage</a></li>
-<li class="chapter" data-level="6.6.4" data-path="6-mlr.html"><a href="6-mlr.html#standardized-residuals"><i class="fa fa-check"></i><b>6.6.4</b> Standardized Residuals</a></li>
-<li class="chapter" data-level="6.6.5" data-path="6-mlr.html"><a href="6-mlr.html#cooks-distance"><i class="fa fa-check"></i><b>6.6.5</b> Cook’s Distance</a></li>
-</ul></li>
-</ul></li>
-<li class="chapter" data-level="7" data-path="7-select.html"><a href="7-select.html"><i class="fa fa-check"></i><b>7</b> Model Selection</a><ul>
-<li class="chapter" data-level="7.1" data-path="7-select.html"><a href="7-select.html#comp-sats-and-mlb"><i class="fa fa-check"></i><b>7.1</b> COMP: SATs and MLB</a><ul>
-<li class="chapter" data-level="" data-path="7-select.html"><a href="7-select.html#introduction-5"><i class="fa fa-check"></i>Introduction</a></li>
-<li class="chapter" data-level="" data-path="7-select.html"><a href="7-select.html#data-9"><i class="fa fa-check"></i>Data</a></li>
-<li class="chapter" data-level="" data-path="7-select.html"><a href="7-select.html#exercises-8"><i class="fa fa-check"></i>Exercises</a></li>
-<li class="chapter" data-level="" data-path="7-select.html"><a href="7-select.html#acknowledgements"><i class="fa fa-check"></i>Acknowledgements</a></li>
-</ul></li>
-<li class="chapter" data-level="7.2" data-path="7-select.html"><a href="7-select.html#in-class-sats-by-state"><i class="fa fa-check"></i><b>7.2</b> IN-CLASS: SATs by State</a><ul>
-<li class="chapter" data-level="" data-path="7-select.html"><a href="7-select.html#manual-backward-selection"><i class="fa fa-check"></i>“Manual” backward selection</a></li>
-<li class="chapter" data-level="" data-path="7-select.html"><a href="7-select.html#backward-selection-using-regsubsets"><i class="fa fa-check"></i>Backward selection using regsubsets</a></li>
-<li class="chapter" data-level="" data-path="7-select.html"><a href="7-select.html#changing-selection-criteria"><i class="fa fa-check"></i>Changing selection criteria</a></li>
-<li class="chapter" data-level="" data-path="7-select.html"><a href="7-select.html#different-selection-procedure"><i class="fa fa-check"></i>Different selection procedure</a></li>
-<li class="chapter" data-level="" data-path="7-select.html"><a href="7-select.html#choosing-a-final-model"><i class="fa fa-check"></i>Choosing a final model</a></li>
-</ul></li>
-<li class="chapter" data-level="7.3" data-path="7-select.html"><a href="7-select.html#notes-model-selection-criteria"><i class="fa fa-check"></i><b>7.3</b> NOTES: Model Selection Criteria</a><ul>
-<li class="chapter" data-level="7.3.1" data-path="7-select.html"><a href="7-select.html#maximum-likelihood-estimation-of-boldsymbolbeta-and-sigma"><i class="fa fa-check"></i><b>7.3.1</b> Maximum Likelihood Estimation of <span class="math inline">\(\boldsymbol{\beta}\)</span> and <span class="math inline">\(\sigma\)</span></a></li>
-<li class="chapter" data-level="7.3.2" data-path="7-select.html"><a href="7-select.html#aic"><i class="fa fa-check"></i><b>7.3.2</b> AIC</a></li>
-<li class="chapter" data-level="7.3.3" data-path="7-select.html"><a href="7-select.html#bic"><i class="fa fa-check"></i><b>7.3.3</b> BIC</a></li>
-</ul></li>
-</ul></li>
-<li class="chapter" data-level="8" data-path="8-logistic.html"><a href="8-logistic.html"><i class="fa fa-check"></i><b>8</b> Logistic Regression</a><ul>
-<li class="chapter" data-level="8.1" data-path="8-logistic.html"><a href="8-logistic.html#comp-spotify"><i class="fa fa-check"></i><b>8.1</b> COMP: Spotify</a><ul>
-<li class="chapter" data-level="" data-path="8-logistic.html"><a href="8-logistic.html#introduction-6"><i class="fa fa-check"></i>Introduction</a></li>
-<li class="chapter" data-level="" data-path="8-logistic.html"><a href="8-logistic.html#packages-9"><i class="fa fa-check"></i>Packages</a></li>
-<li class="chapter" data-level="" data-path="8-logistic.html"><a href="8-logistic.html#data-10"><i class="fa fa-check"></i>Data</a></li>
-<li class="chapter" data-level="" data-path="8-logistic.html"><a href="8-logistic.html#exercises-9"><i class="fa fa-check"></i>Exercises</a></li>
-</ul></li>
-<li class="chapter" data-level="8.2" data-path="8-logistic.html"><a href="8-logistic.html#in-class-risk-of-heart-disease"><i class="fa fa-check"></i><b>8.2</b> IN-CLASS: Risk of Heart Disease</a><ul>
-<li class="chapter" data-level="" data-path="8-logistic.html"><a href="8-logistic.html#packages-10"><i class="fa fa-check"></i>Packages</a></li>
-<li class="chapter" data-level="" data-path="8-logistic.html"><a href="8-logistic.html#data-11"><i class="fa fa-check"></i>Data</a></li>
-<li class="chapter" data-level="" data-path="8-logistic.html"><a href="8-logistic.html#exercises-10"><i class="fa fa-check"></i>Exercises</a></li>
-<li class="chapter" data-level="" data-path="8-logistic.html"><a href="8-logistic.html#references"><i class="fa fa-check"></i>References</a></li>
-</ul></li>
-</ul></li>
-<li class="chapter" data-level="9" data-path="9-multinom-logistic.html"><a href="9-multinom-logistic.html"><i class="fa fa-check"></i><b>9</b> Multinomial Logistic Regression</a><ul>
-<li class="chapter" data-level="9.1" data-path="9-multinom-logistic.html"><a href="9-multinom-logistic.html#comp-general-social-survey"><i class="fa fa-check"></i><b>9.1</b> COMP: General Social Survey</a><ul>
-<li class="chapter" data-level="" data-path="9-multinom-logistic.html"><a href="9-multinom-logistic.html#introduction-7"><i class="fa fa-check"></i>Introduction</a></li>
-<li class="chapter" data-level="" data-path="9-multinom-logistic.html"><a href="9-multinom-logistic.html#packages-11"><i class="fa fa-check"></i>Packages</a></li>
-<li class="chapter" data-level="" data-path="9-multinom-logistic.html"><a href="9-multinom-logistic.html#data-12"><i class="fa fa-check"></i>Data</a></li>
-<li class="chapter" data-level="" data-path="9-multinom-logistic.html"><a href="9-multinom-logistic.html#exercises-11"><i class="fa fa-check"></i>Exercises</a></li>
-<li class="chapter" data-level="" data-path="9-multinom-logistic.html"><a href="9-multinom-logistic.html#acknowledgements-1"><i class="fa fa-check"></i>Acknowledgements</a></li>
-</ul></li>
-<li class="chapter" data-level="9.2" data-path="9-multinom-logistic.html"><a href="9-multinom-logistic.html#in-class-sesame-street"><i class="fa fa-check"></i><b>9.2</b> IN-CLASS: Sesame Street</a><ul>
-<li class="chapter" data-level="" data-path="9-multinom-logistic.html"><a href="9-multinom-logistic.html#packages-12"><i class="fa fa-check"></i>Packages</a></li>
-<li class="chapter" data-level="" data-path="9-multinom-logistic.html"><a href="9-multinom-logistic.html#data-13"><i class="fa fa-check"></i>Data</a></li>
-<li class="chapter" data-level="" data-path="9-multinom-logistic.html"><a href="9-multinom-logistic.html#exercises-12"><i class="fa fa-check"></i>Exercises</a></li>
-<li class="chapter" data-level="" data-path="9-multinom-logistic.html"><a href="9-multinom-logistic.html#references-1"><i class="fa fa-check"></i>References</a></li>
-</ul></li>
-</ul></li>
-<li class="chapter" data-level="10" data-path="10-special.html"><a href="10-special.html"><i class="fa fa-check"></i><b>10</b> Special Topics</a><ul>
-<li class="chapter" data-level="10.1" data-path="10-special.html"><a href="10-special.html#comp-regression-start-to-finish"><i class="fa fa-check"></i><b>10.1</b> COMP: Regression Start to Finish</a><ul>
-<li class="chapter" data-level="" data-path="10-special.html"><a href="10-special.html#introduction-8"><i class="fa fa-check"></i>Introduction</a></li>
-<li class="chapter" data-level="" data-path="10-special.html"><a href="10-special.html#packages-13"><i class="fa fa-check"></i>Packages</a></li>
-<li class="chapter" data-level="" data-path="10-special.html"><a href="10-special.html#data-14"><i class="fa fa-check"></i>Data</a></li>
-<li class="chapter" data-level="" data-path="10-special.html"><a href="10-special.html#exercises-13"><i class="fa fa-check"></i>Exercises</a></li>
-</ul></li>
-<li class="chapter" data-level="10.2" data-path="10-special.html"><a href="10-special.html#in-class-missing-data-exercise"><i class="fa fa-check"></i><b>10.2</b> IN-CLASS: Missing Data Exercise</a></li>
-</ul></li>
+<li class="chapter" data-level="5" data-path="5-anova.html"><a href="5-anova.html"><i class="fa fa-check"></i><b>5</b> Analysis of Variance</a></li>
+<li class="chapter" data-level="6" data-path="6-mlr.html"><a href="6-mlr.html"><i class="fa fa-check"></i><b>6</b> Multiple Linear Regression</a></li>
+<li class="chapter" data-level="7" data-path="7-select.html"><a href="7-select.html"><i class="fa fa-check"></i><b>7</b> Model Selection</a></li>
+<li class="chapter" data-level="8" data-path="8-logistic.html"><a href="8-logistic.html"><i class="fa fa-check"></i><b>8</b> Logistic Regression</a></li>
+<li class="chapter" data-level="9" data-path="9-multinom-logistic.html"><a href="9-multinom-logistic.html"><i class="fa fa-check"></i><b>9</b> Multinomial Logistic Regression</a></li>
+<li class="chapter" data-level="10" data-path="10-special.html"><a href="10-special.html"><i class="fa fa-check"></i><b>10</b> Special Topics</a></li>
 <li class="chapter" data-level="11" data-path="11-datasets.html"><a href="11-datasets.html"><i class="fa fa-check"></i><b>11</b> Data Sets</a></li>
-<li class="chapter" data-level="" data-path="references-2.html"><a href="references-2.html"><i class="fa fa-check"></i>References</a></li>
+<li class="chapter" data-level="" data-path="references.html"><a href="references.html"><i class="fa fa-check"></i>References</a></li>
 <li class="divider"></li>
 <li><a href="https://github.com/rstudio/bookdown" target="blank">Published with bookdown</a></li>
 
@@ -312,207 +211,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
             <section class="normal" id="section-">
 <div id="multinom-logistic" class="section level1">
 <h1><span class="header-section-number"> 9</span> Multinomial Logistic Regression</h1>
-<div id="comp-general-social-survey" class="section level2">
-<h2><span class="header-section-number">9.1</span> COMP: General Social Survey</h2>
-<div id="introduction-7" class="section level3 unnumbered">
-<h3>Introduction</h3>
-<p>The General Social Survey (GSS) has been used to measure trends in attitudes and behaviors in American society since 1972. In addition to collecting demographic information, the survey includes questions used to gauge attitudes about government spending priorities, confidence in institutions, lifestyle, and many other topics. A full description of the survey may be found <a href="http://www.norc.org/Research/Projects/Pages/general-social-survey.aspx">here</a>.</p>
-<p>In today’s lab, we will use multinomial logistic regression to understand the relationship between a person’s political views and their attitudes towards government spending on mass transportation projects. To do so, we will use data from the 2010 GSS survey. Refer to the <a href="https://www2.stat.duke.edu/courses/Spring19/sta210.001/slides/lec-slides/18-multinomial-logistic-pt2.html#1">Multinomial Logistic Regression notes</a> for help with concepts and code.</p>
-</div>
-<div id="packages-11" class="section level3 unnumbered">
-<h3>Packages</h3>
-<p>You will need the following packages for today’s lab:</p>
-<div class="sourceCode" id="cb80"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb80-1"><a href="9-multinom-logistic.html#cb80-1"></a><span class="kw">library</span>(tidyverse)</span>
-<span id="cb80-2"><a href="9-multinom-logistic.html#cb80-2"></a><span class="kw">library</span>(nnet)</span>
-<span id="cb80-3"><a href="9-multinom-logistic.html#cb80-3"></a><span class="kw">library</span>(knitr)</span>
-<span id="cb80-4"><a href="9-multinom-logistic.html#cb80-4"></a><span class="kw">library</span>(broom)</span>
-<span id="cb80-5"><a href="9-multinom-logistic.html#cb80-5"></a><span class="co">## Fill in other packages as needed</span></span></code></pre></div>
-</div>
-<div id="data-12" class="section level3 unnumbered">
-<h3>Data</h3>
-<p>The data for this lab is from the 2016 General Social Survey. The original data set contains 2867 observations and 935 variables. Given the size of the dataset, we will handle it differently in our workflow than we’ve handled data in previous assignments.</p>
-<div class="sourceCode" id="cb81"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb81-1"><a href="9-multinom-logistic.html#cb81-1"></a><span class="co"># [Working with large files](https://help.github.com/en/articles/working-with-large-files)</span></span></code></pre></div>
-<p>The size of this dataset is 34.3 MB. Compare that to the Spotify dataset from last weeks’ lab which was 149 KB (0.149 MB)! GitHub will not allow you to push files larger than 100 MB and will give you a warning when you push files as large as 50 MB. Though we could push the file we’re working with today to GitHub, it’s large enough that we’d still prefer not to.</p>
-<p>You have may noticed that each repo contains a file called <code>.gitignore</code>. It contains a list of the files you don’t want commit or push to GitHub. If you look at the <code>.gitignore</code> file for today’s lab, you will notice that <code>gss2016.csv</code> is listed at the bottom.</p>
-<ul>
-<li>Click <a href="https://www2.stat.duke.edu/courses/Spring19/sta210.001/labs/data/gss2016.csv"><strong>here</strong></a> to download <code>gss2016.csv</code>.</li>
-<li>Upload <code>gss2016.csv</code> into the data folder of your project.</li>
-<li>Notice that <code>gss2016.csv</code> does not appear in your Git pane. This is because it is being ignored by git, since it is listed in the <code>.gitignore</code> file.</li>
-</ul>
-<p>You will use the following variables in the lab:</p>
-<ul>
-<li><p><code>natmass</code>: Respondent’s answer to the following prompt:</p>
-<p>“We are faced with many problems in this country, none of which can be solved easily or inexpensively. I’m going to name some of these problems, and for each one I’d like you to tell me whether you think we’re spending too much money on it, too little money, or about the right amount…are we spending too much, too little, or about the right amount on mass transportation?”</p></li>
-<li><p><code>age</code>: Age in years.</p></li>
-<li><p><code>sex</code>: Sex recorded as <em>male</em> or <em>female</em></p></li>
-<li><p><code>sei10</code>: Socioeconomic index from 0 to 100</p></li>
-<li><p><code>region</code>: Region where interview took place</p></li>
-<li><p><code>polviews</code>: Respondent’s answer to the following prompt:</p>
-<p>“We hear a lot of talk these days about liberals and conservatives. I’m going to show you a seven-point scale on which the political views that people might hold are arranged from extremely liberal - point 1 - to extremely conservative - point 7. Where would you place yourself on this scale?”</p></li>
-</ul>
-<p>Use the code below to read in the data.</p>
-<div class="sourceCode" id="cb82"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb82-1"><a href="9-multinom-logistic.html#cb82-1"></a>gss &lt;-<span class="st"> </span><span class="kw">read_csv</span>(<span class="st">&quot;data/gss2016.csv&quot;</span>,</span>
-<span id="cb82-2"><a href="9-multinom-logistic.html#cb82-2"></a>  <span class="dt">na =</span> <span class="kw">c</span>(<span class="st">&quot;&quot;</span>, <span class="st">&quot;Don&#39;t know&quot;</span>, <span class="st">&quot;No answer&quot;</span>, </span>
-<span id="cb82-3"><a href="9-multinom-logistic.html#cb82-3"></a>         <span class="st">&quot;Not applicable&quot;</span>), </span>
-<span id="cb82-4"><a href="9-multinom-logistic.html#cb82-4"></a>         <span class="dt">guess_max =</span> <span class="dv">2867</span>) <span class="op">%&gt;%</span></span>
-<span id="cb82-5"><a href="9-multinom-logistic.html#cb82-5"></a><span class="st">  </span><span class="kw">select</span>(natmass, age, sex, sei10, region, polviews) <span class="op">%&gt;%</span></span>
-<span id="cb82-6"><a href="9-multinom-logistic.html#cb82-6"></a><span class="st">  </span><span class="kw">drop_na</span>()</span></code></pre></div>
-<p>The argument <code>guess_max = 2867</code> tells the <code>read_csv</code> function to use all of the observations in a column to determine its data type. Without this argument, only the first 1,000 observations would be used to make this determination. This becomes important for a variable like <code>age</code>; though <code>age</code> is coded as numeric data for most of the observations, there are some in which <code>age</code> is coded as <code>"89 or older"</code>. Without the <code>guess_max</code> argument, you will get warnings when loading the data.</p>
-<p>Note also that only the variables of interest will be loaded, not the entire dataset. This will make for faster computation and knitting as you work on the lab.</p>
-</div>
-<div id="exercises-11" class="section level3 unnumbered">
-<h3>Exercises</h3>
-<div id="part-i-exploratory-data-analysis" class="section level4 unnumbered">
-<h4>Part I: Exploratory Data Analysis</h4>
-<div class="sourceCode" id="cb83"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb83-1"><a href="9-multinom-logistic.html#cb83-1"></a><span class="co"># See [Reorder factor levels by hand](https://forcats.tidyverse.org/reference/fct_relevel.html) for documentation about `fct_relevel`.</span></span></code></pre></div>
-<ol style="list-style-type: decimal">
-<li><p>The variable <code>natmass</code> will be the response variable in the model, and you want to compare more opinionated views to the moderate position. Recode <code>natmass</code> so it is a factor variable with <code>"About right"</code> as the baseline.</p></li>
-<li><p>Recode <code>polviews</code> so it is a factor variable type with levels that are in an order that is consistent with question on the survey. <em>Note how the categories are spelled in the data.</em></p></li>
-</ol>
-<p>Make a plot of the distribution of <code>polviews</code>. Which political view occurs most frequently in this data set?</p>
-<ol start="3" style="list-style-type: decimal">
-<li><p>Make a plot displaying the relationship between <code>natmass</code> and <code>polviews</code>. Use the plot to describe the relationship between a person’s political views and their views on mass transportation spending.</p></li>
-<li><p>You want to use <code>age</code> as a quantitative variable in your model; however, it is currently a character data type because some observations are coded as <code>"89 or older"</code>. Recode <code>age</code> so that is a numeric variable. <em>Note: Before making the variable numeric, you will need to replace the values <code>"89 or older"</code> with a single value.</em></p></li>
-</ol>
-</div>
-<div id="part-ii-multinomial-logistic-regression-model" class="section level4 unnumbered">
-<h4>Part II: Multinomial Logistic Regression Model</h4>
-<ol start="5" style="list-style-type: decimal">
-<li><p>You plan to fit a model using <code>age</code>, <code>sex</code>, <code>sei10</code>, and <code>region</code> to understand variation in opinions about spending on mass transportation. Briefly explain why you should fit a multinomial logistic model.</p></li>
-<li><p>Fit the model described in the previous exercise and display the model output. Make any necessary adjustments to the variables so the intercept will have a meaningful interpretation. Be sure <code>About Right</code> is the baseline level. Be sure the full model displays in the knitted document.</p></li>
-<li><p>Interpret the intercept associated with <u>odds</u> of having an opinion of “Too much” versus “About right”.</p></li>
-<li><p>Consider the relationship between age and one’s opinion about spending on mass transportation.</p>
-<ul>
-<li>Interpret the coefficient of age in terms of the <u>log odds</u> of having an opinion of “Too little” versus “About right”.</li>
-<li>Interpret the coefficient of age in terms of the <u>odds</u> of having an opinion of “Too little” versus “About right”.</li>
-</ul></li>
-<li><p>In general, what is the relationship between an person’s age and their opinions on mass transportation spending?</p></li>
-</ol>
-<p>Now that you have adjusted for some demographic factors, let’s examine whether a person’s political views has a significant impact on their attitude towards spending on mass transportation.</p>
-<ol start="10" style="list-style-type: decimal">
-<li>Conduct the appropriate test to determine if <code>polviews</code> is a significant predictor of attitude towards spending on mass transportation. State the null and alternative hypothesis, display all relevant code and output, and state your conclusion in the context of the problem.</li>
-</ol>
-<p>Choose the appropriate model based on the results from the test. Use this model for the next part of the lab.</p>
-</div>
-<div id="part-iii-model-fit" class="section level4 unnumbered">
-<h4>Part III: Model Fit</h4>
-<ol start="11" style="list-style-type: decimal">
-<li><p>Calculate the predicted probabilities and residuals from your model.</p></li>
-<li><p>Plot the binned residuals versus the predicted probabilities for each category of <code>natmass.</code> <em>You will have three plots.</em></p></li>
-</ol>
-<div class="sourceCode" id="cb84"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb84-1"><a href="9-multinom-logistic.html#cb84-1"></a><span class="co"># You can change the size of your plots, so you can fit multiple plots on a single page. Include the arguments `fig.height = ` and `fig.width = ` in the header of the code chunk to change the plot size. </span></span>
-<span id="cb84-2"><a href="9-multinom-logistic.html#cb84-2"></a></span>
-<span id="cb84-3"><a href="9-multinom-logistic.html#cb84-3"></a><span class="co"># See [Using R Markdown](https://rstudio.github.io/dygraphs/r-markdown.html) for an example.</span></span></code></pre></div>
-<ol start="13" style="list-style-type: decimal">
-<li><p>Use binned residual plots to examine the residuals versus each of the quantitative variables.</p>
-<ul>
-<li>Create binned plots of the residuals for each category of <code>natmass</code> versus <code>age</code>. <em>You will have three plots.</em></li>
-<li>Create binned plots of the residuals for each category of <code>natmass</code> versus <code>sei10</code>. <em>You will have three plots.</em></li>
-</ul></li>
-<li><p>To examine the residuals versus each categorical predictor, you will look at the average residuals for each each category of the categorical variables.</p>
-<ul>
-<li>For each level of <code>natmass</code>, calculate the average residuals across categories of <code>sex</code>.</li>
-<li>For each category of <code>natmass</code>, calculate the average residuals across categories of <code>region</code>.</li>
-<li>For each category of <code>natmass</code>, calculate the average residuals across categories of <code>polviews</code>.</li>
-</ul></li>
-<li><p>Based on the analysis of the residuals in Exercises 12 - 14, is the model an appropriate fit for the data? Explain.</p></li>
-</ol>
-<p><em>Regardless of your asssesment of the residuals, use your model for the remainder of the lab.</em></p>
-</div>
-<div id="part-iv-using-the-model" class="section level4 unnumbered">
-<h4>Part IV: Using the Model</h4>
-<ol start="16" style="list-style-type: decimal">
-<li><p>Use your model to describe the relationship between one’s political views and their attitude towards spending on mass transportation.</p></li>
-<li><p>Use your model to predict the category of <code>natmass</code> for each observation in your dataset. Display a table of the actual versus the predicted <code>natmass</code>. What is the misclassification rate?</p></li>
-</ol>
-</div>
-</div>
-<div id="acknowledgements-1" class="section level3 unnumbered">
-<h3>Acknowledgements</h3>
-<p>The “Data” section is modeled from <a href="https://datasciencebox.org/">datasciencebox.org</a>.</p>
-<hr />
-</div>
-</div>
-<div id="in-class-sesame-street" class="section level2">
-<h2><span class="header-section-number">9.2</span> IN-CLASS: Sesame Street</h2>
-<div id="packages-12" class="section level3 unnumbered">
-<h3>Packages</h3>
-</div>
-<div id="data-13" class="section level3 unnumbered">
-<h3>Data</h3>
-<p>The main objective of this analysis is to understand how encouragement affects the frequency that children watch <em>Sesame Street</em>. We will use the following variables:</p>
-<p><strong>Response:</strong></p>
-<ul>
-<li><font class="vocab"><code>viewcat</code></font>
-<ul>
-<li>1: rarely watched show</li>
-<li>2: once or twice a week
-<ul>
-<li>3: three to five times a week</li>
-<li>4: watched show on average more than five times a week</li>
-</ul></li>
-</ul></li>
-</ul>
-<p><strong>Predictors:</strong></p>
-<ul>
-<li><font class="vocab"><code>age</code>:</font> child’s age in months</li>
-<li><font class="vocab"><code>prenumb</code>: </font>score on numbers pretest (0 to 54)</li>
-<li><font class="vocab"><code>prelet</code>: </font>score on letters pretest (0 to 58)</li>
-<li><font class="vocab"><code>viewenc</code>:</font> 1: encouraged to watch, 2: not encouraged</li>
-<li><font class="vocab"><code>site:</code></font>
-<ul>
-<li>1: three to five year old from disadvantaged inner city area</li>
-<li>2: four year old from advantaged suburban area</li>
-<li>3: from advantaged rural area</li>
-<li>4: from disadvantaged rural area</li>
-<li>5: from Spanish speaking home</li>
-</ul></li>
-</ul>
-<div class="sourceCode" id="cb85"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb85-1"><a href="9-multinom-logistic.html#cb85-1"></a><span class="co"># read in dataset</span></span>
-<span id="cb85-2"><a href="9-multinom-logistic.html#cb85-2"></a>sesame &lt;-<span class="st"> </span><span class="kw">read_csv</span>(<span class="st">&quot;data/sesame.csv&quot;</span>)</span></code></pre></div>
-<div class="sourceCode" id="cb86"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb86-1"><a href="9-multinom-logistic.html#cb86-1"></a><span class="co"># mean-center relevant continuous variables, make categorical variables factors</span></span>
-<span id="cb86-2"><a href="9-multinom-logistic.html#cb86-2"></a>sesame &lt;-<span class="st"> </span>sesame <span class="op">%&gt;%</span><span class="st"> </span></span>
-<span id="cb86-3"><a href="9-multinom-logistic.html#cb86-3"></a><span class="st">  </span><span class="kw">mutate</span>(<span class="dt">viewcat =</span> <span class="kw">as.factor</span>(viewcat), </span>
-<span id="cb86-4"><a href="9-multinom-logistic.html#cb86-4"></a>         <span class="dt">site =</span> <span class="kw">as.factor</span>(site), </span>
-<span id="cb86-5"><a href="9-multinom-logistic.html#cb86-5"></a>         <span class="dt">prenumbCent =</span> prenumb <span class="op">-</span><span class="st"> </span><span class="kw">mean</span>(prenumb), </span>
-<span id="cb86-6"><a href="9-multinom-logistic.html#cb86-6"></a>         <span class="dt">preletCent =</span> prelet <span class="op">-</span><span class="st"> </span><span class="kw">mean</span>(prelet), </span>
-<span id="cb86-7"><a href="9-multinom-logistic.html#cb86-7"></a>         <span class="dt">ageCent =</span> age <span class="op">-</span><span class="st"> </span><span class="kw">mean</span>(age),</span>
-<span id="cb86-8"><a href="9-multinom-logistic.html#cb86-8"></a>         <span class="dt">viewenc =</span> <span class="kw">ifelse</span>(viewenc <span class="op">==</span><span class="st"> </span><span class="dv">1</span>, <span class="st">&quot;Encouraged&quot;</span>, <span class="st">&quot;Not Encouraged&quot;</span>))</span></code></pre></div>
-<p><br></p>
-</div>
-<div id="exercises-12" class="section level3 unnumbered">
-<h3>Exercises</h3>
-<ol style="list-style-type: decimal">
-<li><p>We will build a model to predict how often a child in this study watched <em>Sesame Street</em>. What type of model should we build? Why?</p></li>
-<li><p>Describe how you would conduct exploratory data analysis. What plots and/or summary statistics would you include? What information would you learn from the exploratory data analysis?</p></li>
-</ol>
-<div class="sourceCode" id="cb87"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb87-1"><a href="9-multinom-logistic.html#cb87-1"></a>model1 &lt;-<span class="st"> </span><span class="kw">multinom</span>(viewcat <span class="op">~</span><span class="st"> </span>site <span class="op">+</span><span class="st"> </span>viewenc <span class="op">+</span><span class="st"> </span>prenumbCent <span class="op">+</span><span class="st"> </span>preletCent <span class="op">+</span><span class="st"> </span>ageCent,</span>
-<span id="cb87-2"><a href="9-multinom-logistic.html#cb87-2"></a>                   <span class="dt">data =</span> sesame)</span>
-<span id="cb87-3"><a href="9-multinom-logistic.html#cb87-3"></a><span class="kw">kable</span>(<span class="kw">tidy</span>(model1, <span class="dt">conf.int=</span><span class="ot">TRUE</span>, <span class="dt">exponentiate =</span> <span class="ot">FALSE</span>),</span>
-<span id="cb87-4"><a href="9-multinom-logistic.html#cb87-4"></a>      <span class="dt">format =</span> <span class="st">&quot;markdown&quot;</span>)</span></code></pre></div>
-<p><br></p>
-<ol start="3" style="list-style-type: decimal">
-<li><p>Interpret the intercept associated with the odds of <code>viewcat == 2</code> versus <code>viewcat == 1</code>.</p></li>
-<li><p>Interpret the effect of the numbers pretest score on the odds of viewership.</p></li>
-<li><p>The primary objective of the experiment was to understand the effect of encouragement <code>viewenc</code> on viewership. Does encouragement have a significant effect on viewership? If so, describe the effect. Otherwise, explain why not.</p></li>
-<li><p>We want to test if there are any significant interactions with <code>viewenc</code> and the pretests. We create a model that includes the variables from <code>model1</code> along with <code>viewenc*preletCent</code> and <code>viewenc*prenumbCent</code>.</p></li>
-</ol>
-<div class="sourceCode" id="cb88"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb88-1"><a href="9-multinom-logistic.html#cb88-1"></a>model2 &lt;-<span class="st"> </span><span class="kw">multinom</span>(viewcat <span class="op">~</span><span class="st"> </span>site <span class="op">+</span><span class="st"> </span>viewenc <span class="op">+</span><span class="st"> </span>prenumbCent <span class="op">+</span><span class="st"> </span>preletCent <span class="op">+</span><span class="st"> </span>ageCent <span class="op">+</span><span class="st"> </span></span>
-<span id="cb88-2"><a href="9-multinom-logistic.html#cb88-2"></a><span class="st">                     </span>viewenc<span class="op">*</span>preletCent <span class="op">+</span><span class="st"> </span>viewenc<span class="op">*</span>prenumbCent,</span>
-<span id="cb88-3"><a href="9-multinom-logistic.html#cb88-3"></a>                   <span class="dt">data =</span> sesame)</span></code></pre></div>
-<p>The results from the drop-in-deviance test are shown below. Is there evidence of a significant interaction effect? Explain.</p>
-<div class="sourceCode" id="cb89"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb89-1"><a href="9-multinom-logistic.html#cb89-1"></a><span class="kw">anova</span>(model1, model2, <span class="dt">test =</span> <span class="st">&quot;Chisq&quot;</span>)</span></code></pre></div>
-<ol start="7" style="list-style-type: decimal">
-<li>How would you assess the appropriateness of the model flit? Describe the plots, tables, and/or calculations you would create to assess model fit.</li>
-</ol>
-</div>
-<div id="references-1" class="section level3 unnumbered">
-<h3>References</h3>
-<p>Data from <a href="http://www2.stat.duke.edu/~jerry/sta210/sesamelab.html">http://www2.stat.duke.edu/~jerry/sta210/sesamelab.html</a></p>
-<hr />
 
-</div>
-</div>
 </div>
             </section>
 

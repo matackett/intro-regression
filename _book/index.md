@@ -1,26 +1,23 @@
 --- 
 title: "Intro Regression"
 author: "Maria Tackett"
-date: "Latest update: 2020-06-03"
+date: "Latest update: 2020-08-23"
 site: bookdown::bookdown_site
 documentclass: book
 bibliography: ["bib/other.bib", "bib/articles.bib", "bib/packages.bib"]
 biblio-style: apalike
 always_allow_html: yes
-# fontsize: '12pt, krantz2'
-# monofont: "Source Code Pro"
-# monofontoptions: "Scale=0.7"
+fontsize: '12pt, krantz2'
+monofont: "Source Code Pro"
 link-citations: yes
 colorlinks: yes
-# lot: yes
-# lof: yes
 github-repo: "matackett/intro-regression"
 graphics: yes
 cover-image: "img/introregression-sticker.png"
-url: https\://www.introregression.org/
+url: https://www.introregression.org/
 apple-touch-icon: "img/introregression-sticker.png"
 favicon: "img/introregression-sticker.png"
-description: "An electronic book with assignments and in-class activities to help students apply concepts in an intermediate-level regression analysis course. The primary focus is application and computing; there are also supplemental math notes on some topics."
+description: "An electronic book to accompany a second-semester undegraduate regression analysis course. The primary focus is application and computing using R. Some topics include supplemental math notes."
 ---
 
 

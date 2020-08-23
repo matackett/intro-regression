@@ -1,10 +1,9 @@
 bookdown::gitbook:
   css: style.css
-  split_by: "chapter+number"
+  split_by: "chapter"
   config:
     toc:
-      toc_depth: 1
-      collapse: section
+      collapse: subsection
       scroll_highlight: true
       before: |
         <li><a href="./">Intro Regression</a></li>

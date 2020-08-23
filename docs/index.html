@@ -1,39 +1,37 @@
 <!DOCTYPE html>
-<html >
-
+<html lang="" xml:lang="">
 <head>
 
-  <meta charset="UTF-8">
-  <meta http-equiv="X-UA-Compatible" content="IE=edge">
-  <title>Intro to Regression Analysis</title>
-  <meta name="description" content="This document contains lab assignments and other materials for an intermediate-level regression course.">
-  <meta name="generator" content="bookdown  and GitBook 2.6.7">
+  <meta charset="utf-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <title>Intro Regression</title>
+  <meta name="description" content="An electronic book to accompany a second-semester undegraduate regression analysis course. The primary focus is application and computing using R. Some topics include supplemental math notes." />
+  <meta name="generator" content="bookdown 0.20 and GitBook 2.6.7" />
 
-  <meta property="og:title" content="Intro to Regression Analysis" />
+  <meta property="og:title" content="Intro Regression" />
   <meta property="og:type" content="book" />
   <meta property="og:url" content="https://www.introregression.org/" />
-  
-  <meta property="og:description" content="This document contains lab assignments and other materials for an intermediate-level regression course." />
+  <meta property="og:image" content="https://www.introregression.org/img/introregression-sticker.png" />
+  <meta property="og:description" content="An electronic book to accompany a second-semester undegraduate regression analysis course. The primary focus is application and computing using R. Some topics include supplemental math notes." />
   <meta name="github-repo" content="matackett/intro-regression" />
 
   <meta name="twitter:card" content="summary" />
-  <meta name="twitter:title" content="Intro to Regression Analysis" />
+  <meta name="twitter:title" content="Intro Regression" />
   
-  <meta name="twitter:description" content="This document contains lab assignments and other materials for an intermediate-level regression course." />
-  
+  <meta name="twitter:description" content="An electronic book to accompany a second-semester undegraduate regression analysis course. The primary focus is application and computing using R. Some topics include supplemental math notes." />
+  <meta name="twitter:image" content="https://www.introregression.org/img/introregression-sticker.png" />
 
-<meta name="author" content="Maria Tackett">
+<meta name="author" content="Maria Tackett" />
 
 
-<meta name="date" content="2019-05-14">
 
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <meta name="apple-mobile-web-app-capable" content="yes">
-  <meta name="apple-mobile-web-app-status-bar-style" content="black">
-  
-  
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="apple-mobile-web-app-capable" content="yes" />
+  <meta name="apple-mobile-web-app-status-bar-style" content="black" />
+  <link rel="apple-touch-icon-precomposed" sizes="152x152" href="img/introregression-sticker.png" />
+  <link rel="shortcut icon" href="img/introregression-sticker.png" type="image/x-icon" />
 
-<link rel="next" href="intro.html">
+<link rel="next" href="getstarted.html"/>
 <script src="libs/jquery-2.2.3/jquery.min.js"></script>
 <link href="libs/gitbook-2.6.7/css/style.css" rel="stylesheet" />
 <link href="libs/gitbook-2.6.7/css/plugin-table.css" rel="stylesheet" />
@@ -41,6 +39,7 @@
 <link href="libs/gitbook-2.6.7/css/plugin-highlight.css" rel="stylesheet" />
 <link href="libs/gitbook-2.6.7/css/plugin-search.css" rel="stylesheet" />
 <link href="libs/gitbook-2.6.7/css/plugin-fontsettings.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-clipboard.css" rel="stylesheet" />
 
 
 
@@ -50,43 +49,9 @@
 
 
 
-<style type="text/css">
-div.sourceCode { overflow-x: auto; }
-table.sourceCode, tr.sourceCode, td.lineNumbers, td.sourceCode {
-  margin: 0; padding: 0; vertical-align: baseline; border: none; }
-table.sourceCode { width: 100%; line-height: 100%; }
-td.lineNumbers { text-align: right; padding-right: 4px; padding-left: 4px; color: #aaaaaa; border-right: 1px solid #aaaaaa; }
-td.sourceCode { padding-left: 5px; }
-code > span.kw { color: #007020; font-weight: bold; } /* Keyword */
-code > span.dt { color: #902000; } /* DataType */
-code > span.dv { color: #40a070; } /* DecVal */
-code > span.bn { color: #40a070; } /* BaseN */
-code > span.fl { color: #40a070; } /* Float */
-code > span.ch { color: #4070a0; } /* Char */
-code > span.st { color: #4070a0; } /* String */
-code > span.co { color: #60a0b0; font-style: italic; } /* Comment */
-code > span.ot { color: #007020; } /* Other */
-code > span.al { color: #ff0000; font-weight: bold; } /* Alert */
-code > span.fu { color: #06287e; } /* Function */
-code > span.er { color: #ff0000; font-weight: bold; } /* Error */
-code > span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warning */
-code > span.cn { color: #880000; } /* Constant */
-code > span.sc { color: #4070a0; } /* SpecialChar */
-code > span.vs { color: #4070a0; } /* VerbatimString */
-code > span.ss { color: #bb6688; } /* SpecialString */
-code > span.im { } /* Import */
-code > span.va { color: #19177c; } /* Variable */
-code > span.cf { color: #007020; font-weight: bold; } /* ControlFlow */
-code > span.op { color: #666666; } /* Operator */
-code > span.bu { } /* BuiltIn */
-code > span.ex { } /* Extension */
-code > span.pp { color: #bc7a00; } /* Preprocessor */
-code > span.at { color: #7d9029; } /* Attribute */
-code > span.do { color: #ba2121; font-style: italic; } /* Documentation */
-code > span.an { color: #60a0b0; font-weight: bold; font-style: italic; } /* Annotation */
-code > span.cv { color: #60a0b0; font-weight: bold; font-style: italic; } /* CommentVar */
-code > span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Information */
-</style>
+<script src="libs/accessible-code-block-0.0.1/empty-anchor.js"></script>
+
+
 
 <link rel="stylesheet" href="style.css" type="text/css" />
 </head>
@@ -101,32 +66,30 @@ code > span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Inf
       <nav role="navigation">
 
 <ul class="summary">
-<li><a href="./">Broadening Your Statistical Horizons</a></li>
+<li><a href="./">Intro Regression</a></li>
 
 <li class="divider"></li>
-<li class="chapter" data-level="1" data-path="index.html"><a href="index.html"><i class="fa fa-check"></i><b>1</b> Beginning of the Book</a></li>
-<li class="chapter" data-level="2" data-path="intro.html"><a href="intro.html"><i class="fa fa-check"></i><b>2</b> Introduction</a></li>
-<li class="chapter" data-level="3" data-path="getstarted.html"><a href="getstarted.html"><i class="fa fa-check"></i><b>3</b> Getting Started</a></li>
-<li class="chapter" data-level="4" data-path="slr.html"><a href="slr.html"><i class="fa fa-check"></i><b>4</b> Simple Linear Regression</a><ul>
-<li class="chapter" data-level="4.1" data-path="slr.html"><a href="slr.html#computing-college-admissions"><i class="fa fa-check"></i><b>4.1</b> Computing: College Admissions</a><ul>
-<li class="chapter" data-level="4.1.1" data-path="slr.html"><a href="slr.html#packages"><i class="fa fa-check"></i><b>4.1.1</b> Packages</a></li>
-<li class="chapter" data-level="4.1.2" data-path="slr.html"><a href="slr.html#data"><i class="fa fa-check"></i><b>4.1.2</b> Data</a></li>
-<li class="chapter" data-level="4.1.3" data-path="slr.html"><a href="slr.html#exercises"><i class="fa fa-check"></i><b>4.1.3</b> Exercises</a></li>
+<li class="chapter" data-level="" data-path="index.html"><a href="index.html"><i class="fa fa-check"></i>Welcome to Intro Regression!</a></li>
+<li class="chapter" data-level="1" data-path="getstarted.html"><a href="getstarted.html"><i class="fa fa-check"></i><b>1</b> Getting Started</a><ul>
+<li class="chapter" data-level="1.1" data-path="getstarted.html"><a href="getstarted.html#how-to-use-this-book"><i class="fa fa-check"></i><b>1.1</b> How to use this book</a></li>
+<li class="chapter" data-level="1.2" data-path="getstarted.html"><a href="getstarted.html#review"><i class="fa fa-check"></i><b>1.2</b> Review: Intro Statistics and R</a></li>
 </ul></li>
-<li class="chapter" data-level="4.2" data-path="slr.html"><a href="slr.html#in-class-exercise-advertising-analysis"><i class="fa fa-check"></i><b>4.2</b> In-Class Exercise: Advertising Analysis</a><ul>
-<li class="chapter" data-level="4.2.1" data-path="slr.html"><a href="slr.html#data-and-packages"><i class="fa fa-check"></i><b>4.2.1</b> Data and packages</a></li>
-<li class="chapter" data-level="4.2.2" data-path="slr.html"><a href="slr.html#analysis"><i class="fa fa-check"></i><b>4.2.2</b> Analysis</a></li>
+<li class="chapter" data-level="2" data-path="slr.html"><a href="slr.html"><i class="fa fa-check"></i><b>2</b> Simple Linear Regression</a><ul>
+<li class="chapter" data-level="2.1" data-path="slr.html"><a href="slr.html#getting-started"><i class="fa fa-check"></i><b>2.1</b> Getting started</a></li>
+<li class="chapter" data-level="2.2" data-path="slr.html"><a href="slr.html#foundation"><i class="fa fa-check"></i><b>2.2</b> Foundation</a></li>
+<li class="chapter" data-level="2.3" data-path="slr.html"><a href="slr.html#inference"><i class="fa fa-check"></i><b>2.3</b> Inference</a></li>
+<li class="chapter" data-level="2.4" data-path="slr.html"><a href="slr.html#prediction"><i class="fa fa-check"></i><b>2.4</b> Prediction</a></li>
+<li class="chapter" data-level="2.5" data-path="slr.html"><a href="slr.html#checking-conditions"><i class="fa fa-check"></i><b>2.5</b> Checking conditions</a></li>
+<li class="chapter" data-level="2.6" data-path="slr.html"><a href="slr.html#partioning-variability"><i class="fa fa-check"></i><b>2.6</b> Partioning variability</a></li>
+<li class="chapter" data-level="2.7" data-path="slr.html"><a href="slr.html#derivation-for-slope-and-intercept"><i class="fa fa-check"></i><b>2.7</b> Derivation for slope and intercept</a></li>
 </ul></li>
-<li class="chapter" data-level="4.3" data-path="slr.html"><a href="slr.html#in-class-exercise-beer-data-analysis"><i class="fa fa-check"></i><b>4.3</b> In-Class Exercise: Beer Data Analysis</a></li>
-</ul></li>
-<li class="chapter" data-level="5" data-path="anova.html"><a href="anova.html"><i class="fa fa-check"></i><b>5</b> Analysis of Variance</a></li>
-<li class="chapter" data-level="6" data-path="mlr.html"><a href="mlr.html"><i class="fa fa-check"></i><b>6</b> Multiple Linear Regression</a></li>
-<li class="chapter" data-level="7" data-path="select.html"><a href="select.html"><i class="fa fa-check"></i><b>7</b> Model Selection</a></li>
-<li class="chapter" data-level="8" data-path="logistic.html"><a href="logistic.html"><i class="fa fa-check"></i><b>8</b> Logistic Regression</a></li>
-<li class="chapter" data-level="9" data-path="multinom-logistic.html"><a href="multinom-logistic.html"><i class="fa fa-check"></i><b>9</b> Multinomial Logistic Regression</a></li>
-<li class="chapter" data-level="10" data-path="special.html"><a href="special.html"><i class="fa fa-check"></i><b>10</b> Special Topics</a></li>
-<li class="chapter" data-level="11" data-path="slr.html"><a href="slr.html#data"><i class="fa fa-check"></i><b>11</b> Data Sets</a></li>
-<li class="chapter" data-level="12" data-path="refs.html"><a href="refs.html"><i class="fa fa-check"></i><b>12</b> References</a></li>
+<li class="chapter" data-level="3" data-path="anova.html"><a href="anova.html"><i class="fa fa-check"></i><b>3</b> Analysis of Variance</a></li>
+<li class="chapter" data-level="4" data-path="mlr.html"><a href="mlr.html"><i class="fa fa-check"></i><b>4</b> Multiple Linear Regression</a></li>
+<li class="chapter" data-level="5" data-path="select.html"><a href="select.html"><i class="fa fa-check"></i><b>5</b> Model Selection</a></li>
+<li class="chapter" data-level="6" data-path="logistic.html"><a href="logistic.html"><i class="fa fa-check"></i><b>6</b> Logistic Regression</a></li>
+<li class="chapter" data-level="7" data-path="multinom-logistic.html"><a href="multinom-logistic.html"><i class="fa fa-check"></i><b>7</b> Multinomial Logistic Regression</a></li>
+<li class="chapter" data-level="8" data-path="special.html"><a href="special.html"><i class="fa fa-check"></i><b>8</b> Special Topics</a></li>
+<li class="chapter" data-level="9" data-path="datasets.html"><a href="datasets.html"><i class="fa fa-check"></i><b>9</b> Data Sets</a></li>
 <li class="divider"></li>
 <li><a href="https://github.com/rstudio/bookdown" target="blank">Published with bookdown</a></li>
 
@@ -139,7 +102,7 @@ code > span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Inf
       <div class="body-inner">
         <div class="book-header" role="navigation">
           <h1>
-            <i class="fa fa-circle-o-notch fa-spin"></i><a href="./">Intro to Regression Analysis</a>
+            <i class="fa fa-circle-o-notch fa-spin"></i><a href="./">Intro Regression</a>
           </h1>
         </div>
 
@@ -148,16 +111,17 @@ code > span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Inf
 
             <section class="normal" id="section-">
 <div id="header">
-<h1 class="title">Intro to Regression Analysis</h1>
+<h1 class="title">Intro Regression</h1>
 <p class="author"><em>Maria Tackett</em></p>
-<p class="date"><em>2019-05-14</em></p>
+<p class="date"><em>Latest update: 2020-08-23</em></p>
 </div>
-<div id="beginning-of-the-book" class="section level1">
-<h1><span class="header-section-number"> 1</span> Beginning of the Book</h1>
-<p>This is the introduction to the book.</p>
-<center>
-<a rel="license" href="http://creativecommons.org/licenses/by-nc-sa/4.0/"><img alt="Creative Commons License" style="border-width:0" src="https://i.creativecommons.org/l/by-nc-sa/4.0/88x31.png" /></a><br />
-</center>
+<div id="welcome-to-intro-regression" class="section level1 unnumbered">
+<h1>Welcome to Intro Regression!</h1>
+<p><img src="img/introregression-sticker.png" width="30%" style="display: block; margin: auto;" /></p>
+<p>The content in this book was originally developed for <a href="https://www2.stat.duke.edu/courses/Spring19/sta210.001/">STA 210: Regression Analysis</a> at Duke University.The computing aspects of the assignments are written using the <code>tidyverse</code> syntax in R; however, the assignments can be adapted to fit the computing language of your choice. All of the files are available in the <a href="https://github.com/matackett/intro-regression">Intro Regression GitHub repo</a>.</p>
+<p>This book is under development and will be periodically upated with new material. Please email me (<a href="mailto:maria.tackett@duke.edu">maria.tackett@duke.edu</a>) if you have any questions, feedback, or suggestions. I would also love to hear about your experience if you use any of the content in your course.</p>
+<p><font size = "5px"><strong>License</strong></font></p>
+<p><a rel="license" href="http://creativecommons.org/licenses/by-nc-sa/4.0/"><img alt="Creative Commons License" style="border-width:0" src="https://i.creativecommons.org/l/by-nc-sa/4.0/88x31.png" /></a><br /></p>
 <p>This work is licensed under the <a href="http://creativecommons.org/licenses/by-nc-sa/4.0/">Creative Commons Attribution-NonCommercial-ShareAlike 4.0 International License</a>.</p>
 
 </div>
@@ -167,16 +131,18 @@ code > span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Inf
         </div>
       </div>
 
-<a href="intro.html" class="navigation navigation-next navigation-unique" aria-label="Next page"><i class="fa fa-angle-right"></i></a>
+<a href="getstarted.html" class="navigation navigation-next navigation-unique" aria-label="Next page"><i class="fa fa-angle-right"></i></a>
     </div>
   </div>
 <script src="libs/gitbook-2.6.7/js/app.min.js"></script>
 <script src="libs/gitbook-2.6.7/js/lunr.js"></script>
+<script src="libs/gitbook-2.6.7/js/clipboard.min.js"></script>
 <script src="libs/gitbook-2.6.7/js/plugin-search.js"></script>
 <script src="libs/gitbook-2.6.7/js/plugin-sharing.js"></script>
 <script src="libs/gitbook-2.6.7/js/plugin-fontsettings.js"></script>
 <script src="libs/gitbook-2.6.7/js/plugin-bookdown.js"></script>
 <script src="libs/gitbook-2.6.7/js/jquery.highlight.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-clipboard.js"></script>
 <script>
 gitbook.require(["gitbook"], function(gitbook) {
 gitbook.start({
@@ -184,12 +150,11 @@ gitbook.start({
 "github": false,
 "facebook": true,
 "twitter": true,
-"google": false,
 "linkedin": false,
 "weibo": false,
 "instapaper": false,
 "vk": false,
-"all": ["facebook", "google", "twitter", "linkedin", "weibo", "instapaper"]
+"all": ["facebook", "twitter", "linkedin", "weibo", "instapaper"]
 },
 "fontsettings": {
 "theme": "white",
@@ -204,10 +169,13 @@ gitbook.start({
 "link": null,
 "text": null
 },
-"download": null,
+"view": {
+"link": null,
+"text": null
+},
+"download": ["bookdown-intro-regression.pdf", "bookdown-intro-regression.epub"],
 "toc": {
 "collapse": "subsection",
-"depth": 1,
 "scroll_highlight": true
 }
 });
@@ -219,10 +187,11 @@ gitbook.start({
   (function () {
     var script = document.createElement("script");
     script.type = "text/javascript";
-    var src = "";
+    var src = "true";
     if (src === "" || src === "true") src = "https://mathjax.rstudio.com/latest/MathJax.js?config=TeX-MML-AM_CHTML";
-    if (location.protocol !== "file:" && /^https?:/.test(src))
-      src = src.replace(/^https?:/, '');
+    if (location.protocol !== "file:")
+      if (/^https?:/.test(src))
+        src = src.replace(/^https?:/, '');
     script.src = src;
     document.getElementsByTagName("head")[0].appendChild(script);
   })();

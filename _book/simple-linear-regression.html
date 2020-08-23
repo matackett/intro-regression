@@ -1,0 +1,278 @@
+<!DOCTYPE html>
+<html lang="" xml:lang="">
+<head>
+
+  <meta charset="utf-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <title>Chapter 2 Simple Linear Regression | Intro Regression</title>
+  <meta name="description" content="An electronic book to accompany a second-semester undegraduate regression analysis course. The primary focus is application and computing using R. Some topics include supplemental math notes." />
+  <meta name="generator" content="bookdown 0.20 and GitBook 2.6.7" />
+
+  <meta property="og:title" content="Chapter 2 Simple Linear Regression | Intro Regression" />
+  <meta property="og:type" content="book" />
+  <meta property="og:url" content="https://www.introregression.org/" />
+  <meta property="og:image" content="https://www.introregression.org/img/introregression-sticker.png" />
+  <meta property="og:description" content="An electronic book to accompany a second-semester undegraduate regression analysis course. The primary focus is application and computing using R. Some topics include supplemental math notes." />
+  <meta name="github-repo" content="matackett/intro-regression" />
+
+  <meta name="twitter:card" content="summary" />
+  <meta name="twitter:title" content="Chapter 2 Simple Linear Regression | Intro Regression" />
+  
+  <meta name="twitter:description" content="An electronic book to accompany a second-semester undegraduate regression analysis course. The primary focus is application and computing using R. Some topics include supplemental math notes." />
+  <meta name="twitter:image" content="https://www.introregression.org/img/introregression-sticker.png" />
+
+<meta name="author" content="Maria Tackett" />
+
+
+
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="apple-mobile-web-app-capable" content="yes" />
+  <meta name="apple-mobile-web-app-status-bar-style" content="black" />
+  <link rel="apple-touch-icon-precomposed" sizes="152x152" href="img/introregression-sticker.png" />
+  <link rel="shortcut icon" href="img/introregression-sticker.png" type="image/x-icon" />
+<link rel="prev" href="getstarted.html"/>
+<link rel="next" href="anova.html"/>
+<script src="libs/jquery-2.2.3/jquery.min.js"></script>
+<link href="libs/gitbook-2.6.7/css/style.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-table.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-bookdown.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-highlight.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-search.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-fontsettings.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-clipboard.css" rel="stylesheet" />
+
+
+
+
+
+
+
+
+
+<script src="libs/accessible-code-block-0.0.1/empty-anchor.js"></script>
+
+
+
+<link rel="stylesheet" href="style.css" type="text/css" />
+</head>
+
+<body>
+
+
+
+  <div class="book without-animation with-summary font-size-2 font-family-1" data-basepath=".">
+
+    <div class="book-summary">
+      <nav role="navigation">
+
+<ul class="summary">
+<li><a href="./">Intro Regression</a></li>
+
+<li class="divider"></li>
+<li class="chapter" data-level="" data-path="index.html"><a href="index.html"><i class="fa fa-check"></i>Welcome to Intro Regression!</a></li>
+<li class="chapter" data-level="1" data-path="getstarted.html"><a href="getstarted.html"><i class="fa fa-check"></i><b>1</b> Getting Started</a><ul>
+<li class="chapter" data-level="1.1" data-path="getstarted.html"><a href="getstarted.html#how-to-use-this-book"><i class="fa fa-check"></i><b>1.1</b> How to use this book</a></li>
+<li class="chapter" data-level="1.2" data-path="getstarted.html"><a href="getstarted.html#review"><i class="fa fa-check"></i><b>1.2</b> Review: Intro Statistics and R</a></li>
+</ul></li>
+<li class="chapter" data-level="2" data-path="simple-linear-regression.html"><a href="simple-linear-regression.html"><i class="fa fa-check"></i><b>2</b> Simple Linear Regression</a><ul>
+<li class="chapter" data-level="2.1" data-path="simple-linear-regression.html"><a href="simple-linear-regression.html#getting-started"><i class="fa fa-check"></i><b>2.1</b> Getting started</a></li>
+<li class="chapter" data-level="2.2" data-path="simple-linear-regression.html"><a href="simple-linear-regression.html#foundation"><i class="fa fa-check"></i><b>2.2</b> Foundation</a></li>
+<li class="chapter" data-level="2.3" data-path="simple-linear-regression.html"><a href="simple-linear-regression.html#inference"><i class="fa fa-check"></i><b>2.3</b> Inference</a></li>
+<li class="chapter" data-level="2.4" data-path="simple-linear-regression.html"><a href="simple-linear-regression.html#prediction"><i class="fa fa-check"></i><b>2.4</b> Prediction</a></li>
+<li class="chapter" data-level="2.5" data-path="simple-linear-regression.html"><a href="simple-linear-regression.html#checking-conditions"><i class="fa fa-check"></i><b>2.5</b> Checking conditions</a></li>
+<li class="chapter" data-level="2.6" data-path="simple-linear-regression.html"><a href="simple-linear-regression.html#partioning-variability"><i class="fa fa-check"></i><b>2.6</b> Partioning variability</a></li>
+<li class="chapter" data-level="2.7" data-path="simple-linear-regression.html"><a href="simple-linear-regression.html#derivation-for-hatbeta_0-and-hatbeta_1"><i class="fa fa-check"></i><b>2.7</b> Derivation for <span class="math inline">\(\hat{\beta}_0\)</span> and <span class="math inline">\(\hat{\beta}_1\)</span></a></li>
+</ul></li>
+<li class="chapter" data-level="3" data-path="anova.html"><a href="anova.html"><i class="fa fa-check"></i><b>3</b> Analysis of Variance</a></li>
+<li class="chapter" data-level="4" data-path="mlr.html"><a href="mlr.html"><i class="fa fa-check"></i><b>4</b> Multiple Linear Regression</a></li>
+<li class="chapter" data-level="5" data-path="select.html"><a href="select.html"><i class="fa fa-check"></i><b>5</b> Model Selection</a></li>
+<li class="chapter" data-level="6" data-path="logistic.html"><a href="logistic.html"><i class="fa fa-check"></i><b>6</b> Logistic Regression</a></li>
+<li class="chapter" data-level="7" data-path="multinom-logistic.html"><a href="multinom-logistic.html"><i class="fa fa-check"></i><b>7</b> Multinomial Logistic Regression</a></li>
+<li class="chapter" data-level="8" data-path="special.html"><a href="special.html"><i class="fa fa-check"></i><b>8</b> Special Topics</a></li>
+<li class="chapter" data-level="9" data-path="datasets.html"><a href="datasets.html"><i class="fa fa-check"></i><b>9</b> Data Sets</a></li>
+<li class="divider"></li>
+<li><a href="https://github.com/rstudio/bookdown" target="blank">Published with bookdown</a></li>
+
+</ul>
+
+      </nav>
+    </div>
+
+    <div class="book-body">
+      <div class="body-inner">
+        <div class="book-header" role="navigation">
+          <h1>
+            <i class="fa fa-circle-o-notch fa-spin"></i><a href="./">Intro Regression</a>
+          </h1>
+        </div>
+
+        <div class="page-wrapper" tabindex="-1" role="main">
+          <div class="page-inner">
+
+            <section class="normal" id="section-">
+<div id="simple-linear-regression" class="section level1">
+<h1><span class="header-section-number">Chapter 2</span> Simple Linear Regression</h1>
+<div id="getting-started" class="section level2">
+<h2><span class="header-section-number">2.1</span> Getting started</h2>
+<p>Putting text here</p>
+</div>
+<div id="foundation" class="section level2">
+<h2><span class="header-section-number">2.2</span> Foundation</h2>
+<p>Putting text here</p>
+</div>
+<div id="inference" class="section level2">
+<h2><span class="header-section-number">2.3</span> Inference</h2>
+<p>Putting text here</p>
+</div>
+<div id="prediction" class="section level2">
+<h2><span class="header-section-number">2.4</span> Prediction</h2>
+</div>
+<div id="checking-conditions" class="section level2">
+<h2><span class="header-section-number">2.5</span> Checking conditions</h2>
+</div>
+<div id="partioning-variability" class="section level2">
+<h2><span class="header-section-number">2.6</span> Partioning variability</h2>
+</div>
+<div id="derivation-for-hatbeta_0-and-hatbeta_1" class="section level2">
+<h2><span class="header-section-number">2.7</span> Derivation for <span class="math inline">\(\hat{\beta}_0\)</span> and <span class="math inline">\(\hat{\beta}_1\)</span></h2>
+<p>This document contains the mathematical details for deriving the least-squares estimates for slope (<span class="math inline">\(\beta_1\)</span>) and intercept (<span class="math inline">\(\beta_0\)</span>). We obtain the estimates, <span class="math inline">\(\hat{\beta}_1\)</span> and <span class="math inline">\(\hat{\beta}_0\)</span> by finding the values that minimize the sum of squared residuals ().</p>
+<p><span class="math display">\[\begin{equation}
+\label{ssr}
+SSR = \sum\limits_{i=1}^{n}[y_i - \hat{y}_i]^2 = [y_i - (\hat{\beta}_0 + \hat{\beta}_1 x_i)]^2 = [y_i - (\hat{\beta}_0 - \hat{\beta}_1 x_i]^2
+\end{equation}\]</span></p>
+<p>Recall that we can find the values of <span class="math inline">\(\hat{\beta}_1\)</span> and <span class="math inline">\(\hat{\beta}_0\)</span> that minimize () by taking the partial derivatives of () and setting them to 0. Thus, the values of <span class="math inline">\(\hat{\beta}_1\)</span> and <span class="math inline">\(\hat{\beta}_0\)</span> that minimize the respective partial derivative also minimize the sum of squared residuals. The partial derivatives are</p>
+<p><span class="math display">\[\begin{equation}
+\label{par-deriv}
+\begin{aligned}
+&amp;\frac{\partial \text{SSR}}{\partial \hat{\beta}_1} = -2 \sum\limits_{i=1}^{n}x_i(y_i - \hat{\beta}_0 - \hat{\beta}_1 x_i)  \\[10pt]
+&amp;\frac{\partial \text{SSR}}{\partial \hat{\beta}_0} = -2 \sum\limits_{i=1}^{n}(y_i - \hat{\beta}_0 - \hat{\beta}_1 x_i)
+\end{aligned}
+\end{equation}\]</span></p>
+<p>Let’s begin by deriving <span class="math inline">\(\hat{\beta}_0\)</span>.</p>
+<p><span class="math display">\[\begin{equation}
+\label{est-beta0}
+\begin{aligned}
+\frac{\partial \text{SSR}}{\partial \hat{\beta}_0} &amp;= -2 \sum\limits_{i=1}^{n}(y_i - \hat{\beta}_0 - \hat{\beta}_1 x_i) = 0 \\[10pt]
+&amp;\Rightarrow -\sum\limits_{i=1}^{n}(y_i + \hat{\beta}_0 + \hat{\beta}_1 x_i) = 0 \\[10pt]
+&amp;\Rightarrow - \sum\limits_{i=1}^{n}y_i + n\hat{\beta}_0 + \hat{\beta}_1\sum\limits_{i=1}^{n}x_i = 0 \\[10pt]
+&amp;\Rightarrow n\hat{\beta}_0  = \sum\limits_{i=1}^{n}y_i - \hat{\beta}_1\sum\limits_{i=1}^{n}x_i \\[10pt]
+&amp;\Rightarrow \hat{\beta}_0  = \frac{1}{n}\Big(\sum\limits_{i=1}^{n}y_i - \hat{\beta}_1\sum\limits_{i=1}^{n}x_i\Big)\\[10pt]
+&amp;\Rightarrow \hat{\beta}_0  = \bar{y} - \hat{\beta}_1 \bar{x} \\[10pt]
+\end{aligned}
+\end{equation}\]</span></p>
+<p>Now, we can derive <span class="math inline">\(\hat{\beta}_1\)</span> using the <span class="math inline">\(\hat{\beta}_0\)</span> we just derived</p>
+<p><span class="math display">\[\begin{equation}
+\label{est-beta1-pt1}
+\begin{aligned}
+&amp;\frac{\partial \text{SSR}}{\partial \hat{\beta}_1} = -2 \sum\limits_{i=1}^{n}x_i(y_i - \hat{\beta}_0 - \hat{\beta}_1 x_i) = 0  \\[10pt]
+&amp;\Rightarrow -\sum\limits_{i=1}^{n}x_iy_i + \hat{\beta}_0\sum\limits_{i=1}^{n}x_i + \hat{\beta}_1\sum\limits_{i=1}^{n}x_i^2 = 0 \\[10pt]
+\text{(Fill in }\hat{\beta}_0\text{)}&amp;\Rightarrow -\sum\limits_{i=1}^{n}x_iy_i + (\bar{y} - \hat{\beta}_1\bar{x})\sum\limits_{i=1}^{n}x_i + \hat{\beta}_1\sum\limits_{i=1}^{n}x_i^2 = 0 \\[10pt]
+&amp;\Rightarrow  (\bar{y} - \hat{\beta}_1\bar{x})\sum\limits_{i=1}^{n}x_i + \hat{\beta}_1\sum\limits_{i=1}^{n}x_i^2 = \sum\limits_{i=1}^{n}x_iy_i \\[10pt]
+&amp;\Rightarrow \bar{y}\sum\limits_{i=1}^{n}x_i - \hat{\beta}_1\bar{x}\sum\limits_{i=1}^{n}x_i + \hat{\beta}_1\sum\limits_{i=1}^{n}x_i^2 = \sum\limits_{i=1}^{n}x_iy_i \\[10pt]
+&amp;\Rightarrow n\bar{y}\bar{x} - \hat{\beta}_1n\bar{x}^2 + \hat{\beta}_1\sum\limits_{i=1}^{n}x_i^2 = \sum\limits_{i=1}^{n}x_iy_i \\[10pt]
+&amp;\Rightarrow \hat{\beta}_1\sum\limits_{i=1}^{n}x_i^2 - \hat{\beta}_1n\bar{x}^2  = \sum\limits_{i=1}^{n}x_iy_i - n\bar{y}\bar{x} \\[10pt]
+&amp;\Rightarrow \hat{\beta}_1\Big(\sum\limits_{i=1}^{n}x_i^2 -n\bar{x}^2\Big)  = \sum\limits_{i=1}^{n}x_iy_i - n\bar{y}\bar{x} \\[10pt] 
+&amp;\hat{\beta}_1 = \frac{\sum\limits_{i=1}^{n}x_iy_i - n\bar{y}\bar{x}}{\sum\limits_{i=1}^{n}x_i^2 -n\bar{x}^2}
+\end{aligned}
+\end{equation}\]</span></p>
+<p>To write <span class="math inline">\(\hat{\beta}_1\)</span> in a form that’s more recognizable, we will use the following:</p>
+<p><span class="math display">\[\begin{equation}
+\label{cov}
+\sum x_iy_i - n\bar{y}\bar{x} = \sum(x - \bar{x})(y - \bar{y}) = (n-1)\text{Cov}(x,y)
+\end{equation}\]</span></p>
+<p><span class="math display">\[\begin{equation}
+\label{var_x}
+\sum x_i^2 - n\bar{x}^2 - \sum(x - \bar{x})^2 = (n-1)s_x^2
+\end{equation}\]</span></p>
+<p>where <span class="math inline">\(\text{Cov}(x,y)\)</span> is the covariance of <span class="math inline">\(x\)</span> and <span class="math inline">\(y\)</span>, and <span class="math inline">\(s_x^2\)</span> is the sample variance of <span class="math inline">\(x\)</span> (<span class="math inline">\(s_x\)</span> is the sample standard deviation).</p>
+<p>Thus, applying () and (), we have</p>
+<p><span class="math display">\[\begin{equation}
+\label{est-beta1-pt2}
+\begin{aligned}
+\hat{\beta}_1 &amp;= \frac{\sum\limits_{i=1}^{n}x_iy_i - n\bar{y}\bar{x}}{\sum\limits_{i=1}^{n}x_i^2 -n\bar{x}^2} \\[10pt]
+&amp;= \frac{\sum\limits_{i=1}^{n}(x-\bar{x})(y-\bar{y})}{\sum\limits_{i=1}^{n}(x-\bar{x})^2}\\[10pt]
+&amp;= \frac{(n-1)\text{Cov}(x,y)}{(n-1)s_x^2}\\[10pt]
+&amp;= \frac{\text{Cov}(x,y)}{s_x^2}
+\end{aligned}
+\end{equation}\]</span></p>
+<p>The correlation between <span class="math inline">\(x\)</span> and <span class="math inline">\(y\)</span> is <span class="math inline">\(r = \frac{\text{Cov}(x,y)}{s_x s_y}\)</span>. Thus, <span class="math inline">\(\text{Cov}(x,y) = r s_xs_y\)</span>. Plugging this into (), we have</p>
+<p><span class="math display">\[\begin{equation}
+\hat{\beta}_1 = \frac{\text{Cov}(x,y)}{s_x^2} = r\frac{s_ys_x}{s_x^2} = r\frac{s_y}{s_x}
+\end{equation}\]</span></p>
+
+</div>
+</div>
+            </section>
+
+          </div>
+        </div>
+      </div>
+<a href="getstarted.html" class="navigation navigation-prev " aria-label="Previous page"><i class="fa fa-angle-left"></i></a>
+<a href="anova.html" class="navigation navigation-next " aria-label="Next page"><i class="fa fa-angle-right"></i></a>
+    </div>
+  </div>
+<script src="libs/gitbook-2.6.7/js/app.min.js"></script>
+<script src="libs/gitbook-2.6.7/js/lunr.js"></script>
+<script src="libs/gitbook-2.6.7/js/clipboard.min.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-search.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-sharing.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-fontsettings.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-bookdown.js"></script>
+<script src="libs/gitbook-2.6.7/js/jquery.highlight.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-clipboard.js"></script>
+<script>
+gitbook.require(["gitbook"], function(gitbook) {
+gitbook.start({
+"sharing": {
+"github": false,
+"facebook": true,
+"twitter": true,
+"linkedin": false,
+"weibo": false,
+"instapaper": false,
+"vk": false,
+"all": ["facebook", "twitter", "linkedin", "weibo", "instapaper"]
+},
+"fontsettings": {
+"theme": "white",
+"family": "sans",
+"size": 2
+},
+"edit": {
+"link": null,
+"text": null
+},
+"history": {
+"link": null,
+"text": null
+},
+"view": {
+"link": null,
+"text": null
+},
+"download": null,
+"toc": {
+"collapse": "subsection",
+"scroll_highlight": true
+}
+});
+});
+</script>
+
+<!-- dynamically load mathjax for compatibility with self-contained -->
+<script>
+  (function () {
+    var script = document.createElement("script");
+    script.type = "text/javascript";
+    var src = "true";
+    if (src === "" || src === "true") src = "https://mathjax.rstudio.com/latest/MathJax.js?config=TeX-MML-AM_CHTML";
+    if (location.protocol !== "file:")
+      if (/^https?:/.test(src))
+        src = src.replace(/^https?:/, '');
+    script.src = src;
+    document.getElementsByTagName("head")[0].appendChild(script);
+  })();
+</script>
+</body>
+
+</html>

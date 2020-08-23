@@ -5,20 +5,20 @@
   <meta charset="utf-8" />
   <meta http-equiv="X-UA-Compatible" content="IE=edge" />
   <title> 4 Simple Linear Regression | Intro Regression</title>
-  <meta name="description" content="An electronic book with assignments and in-class activities to help students apply concepts in an intermediate-level regression analysis course. The primary focus is application and computing; there are also supplemental math notes on some topics." />
-  <meta name="generator" content="bookdown 0.19 and GitBook 2.6.7" />
+  <meta name="description" content="An electronic book to accompany a second-semester undegraduate regression analysis course. The primary focus is application and computing using R. Some topics include supplemental math notes." />
+  <meta name="generator" content="bookdown 0.20 and GitBook 2.6.7" />
 
   <meta property="og:title" content=" 4 Simple Linear Regression | Intro Regression" />
   <meta property="og:type" content="book" />
   <meta property="og:url" content="https://www.introregression.org/" />
   <meta property="og:image" content="https://www.introregression.org/img/introregression-sticker.png" />
-  <meta property="og:description" content="An electronic book with assignments and in-class activities to help students apply concepts in an intermediate-level regression analysis course. The primary focus is application and computing; there are also supplemental math notes on some topics." />
+  <meta property="og:description" content="An electronic book to accompany a second-semester undegraduate regression analysis course. The primary focus is application and computing using R. Some topics include supplemental math notes." />
   <meta name="github-repo" content="matackett/intro-regression" />
 
   <meta name="twitter:card" content="summary" />
   <meta name="twitter:title" content=" 4 Simple Linear Regression | Intro Regression" />
   
-  <meta name="twitter:description" content="An electronic book with assignments and in-class activities to help students apply concepts in an intermediate-level regression analysis course. The primary focus is application and computing; there are also supplemental math notes on some topics." />
+  <meta name="twitter:description" content="An electronic book to accompany a second-semester undegraduate regression analysis course. The primary focus is application and computing using R. Some topics include supplemental math notes." />
   <meta name="twitter:image" content="https://www.introregression.org/img/introregression-sticker.png" />
 
 <meta name="author" content="Maria Tackett" />
@@ -49,72 +49,9 @@
 
 
 
+<script src="libs/accessible-code-block-0.0.1/empty-anchor.js"></script>
 
 
-<style type="text/css">
-code.sourceCode > span { display: inline-block; line-height: 1.25; }
-code.sourceCode > span { color: inherit; text-decoration: inherit; }
-code.sourceCode > span:empty { height: 1.2em; }
-.sourceCode { overflow: visible; }
-code.sourceCode { white-space: pre; position: relative; }
-pre.sourceCode { margin: 0; }
-@media screen {
-div.sourceCode { overflow: auto; }
-}
-@media print {
-code.sourceCode { white-space: pre-wrap; }
-code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
-}
-pre.numberSource code
-  { counter-reset: source-line 0; }
-pre.numberSource code > span
-  { position: relative; left: -4em; counter-increment: source-line; }
-pre.numberSource code > span > a:first-child::before
-  { content: counter(source-line);
-    position: relative; left: -1em; text-align: right; vertical-align: baseline;
-    border: none; display: inline-block;
-    -webkit-touch-callout: none; -webkit-user-select: none;
-    -khtml-user-select: none; -moz-user-select: none;
-    -ms-user-select: none; user-select: none;
-    padding: 0 4px; width: 4em;
-    color: #aaaaaa;
-  }
-pre.numberSource { margin-left: 3em; border-left: 1px solid #aaaaaa;  padding-left: 4px; }
-div.sourceCode
-  {   }
-@media screen {
-code.sourceCode > span > a:first-child::before { text-decoration: underline; }
-}
-code span.al { color: #ff0000; font-weight: bold; } /* Alert */
-code span.an { color: #60a0b0; font-weight: bold; font-style: italic; } /* Annotation */
-code span.at { color: #7d9029; } /* Attribute */
-code span.bn { color: #40a070; } /* BaseN */
-code span.bu { } /* BuiltIn */
-code span.cf { color: #007020; font-weight: bold; } /* ControlFlow */
-code span.ch { color: #4070a0; } /* Char */
-code span.cn { color: #880000; } /* Constant */
-code span.co { color: #60a0b0; font-style: italic; } /* Comment */
-code span.cv { color: #60a0b0; font-weight: bold; font-style: italic; } /* CommentVar */
-code span.do { color: #ba2121; font-style: italic; } /* Documentation */
-code span.dt { color: #902000; } /* DataType */
-code span.dv { color: #40a070; } /* DecVal */
-code span.er { color: #ff0000; font-weight: bold; } /* Error */
-code span.ex { } /* Extension */
-code span.fl { color: #40a070; } /* Float */
-code span.fu { color: #06287e; } /* Function */
-code span.im { } /* Import */
-code span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Information */
-code span.kw { color: #007020; font-weight: bold; } /* Keyword */
-code span.op { color: #666666; } /* Operator */
-code span.ot { color: #007020; } /* Other */
-code span.pp { color: #bc7a00; } /* Preprocessor */
-code span.sc { color: #4070a0; } /* SpecialChar */
-code span.ss { color: #bb6688; } /* SpecialString */
-code span.st { color: #4070a0; } /* String */
-code span.va { color: #19177c; } /* Variable */
-code span.vs { color: #4070a0; } /* VerbatimString */
-code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warning */
-</style>
 
 <link rel="stylesheet" href="style.css" type="text/css" />
 </head>
@@ -167,129 +104,16 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 </ul></li>
 </ul></li>
 <li class="chapter" data-level="4" data-path="4-slr.html"><a href="4-slr.html"><i class="fa fa-check"></i><b>4</b> Simple Linear Regression</a><ul>
-<li class="chapter" data-level="4.1" data-path="4-slr.html"><a href="4-slr.html#comp-college-admissions"><i class="fa fa-check"></i><b>4.1</b> COMP: College Admissions</a><ul>
-<li class="chapter" data-level="" data-path="4-slr.html"><a href="4-slr.html#introduction-1"><i class="fa fa-check"></i>Introduction</a></li>
-<li class="chapter" data-level="" data-path="4-slr.html"><a href="4-slr.html#packages-1"><i class="fa fa-check"></i>Packages</a></li>
-<li class="chapter" data-level="" data-path="4-slr.html"><a href="4-slr.html#data-2"><i class="fa fa-check"></i>Data</a></li>
-<li class="chapter" data-level="" data-path="4-slr.html"><a href="4-slr.html#exercises-1"><i class="fa fa-check"></i>Exercises</a></li>
+<li class="chapter" data-level="4.1" data-path="4-slr.html"><a href="4-slr.html#derivation-for-hatbeta_0-and-hatbeta_1"><i class="fa fa-check"></i><b>4.1</b> Derivation for <span class="math inline">\(\hat{\beta}_0\)</span> and <span class="math inline">\(\hat{\beta}_1\)</span></a></li>
 </ul></li>
-<li class="chapter" data-level="4.2" data-path="4-slr.html"><a href="4-slr.html#in-class-advertising-sales"><i class="fa fa-check"></i><b>4.2</b> IN-CLASS: Advertising &amp; Sales</a><ul>
-<li class="chapter" data-level="" data-path="4-slr.html"><a href="4-slr.html#packages-2"><i class="fa fa-check"></i>Packages</a></li>
-<li class="chapter" data-level="" data-path="4-slr.html"><a href="4-slr.html#data-3"><i class="fa fa-check"></i>Data</a></li>
-<li class="chapter" data-level="" data-path="4-slr.html"><a href="4-slr.html#exercises-2"><i class="fa fa-check"></i>Exercises</a></li>
-</ul></li>
-<li class="chapter" data-level="4.3" data-path="4-slr.html"><a href="4-slr.html#in-class-carbohydrates-in-beer"><i class="fa fa-check"></i><b>4.3</b> IN-CLASS: Carbohydrates in Beer</a><ul>
-<li class="chapter" data-level="" data-path="4-slr.html"><a href="4-slr.html#packages-3"><i class="fa fa-check"></i>Packages</a></li>
-<li class="chapter" data-level="" data-path="4-slr.html"><a href="4-slr.html#data-4"><i class="fa fa-check"></i>Data</a></li>
-<li class="chapter" data-level="" data-path="4-slr.html"><a href="4-slr.html#exercises-3"><i class="fa fa-check"></i>Exercises</a></li>
-</ul></li>
-<li class="chapter" data-level="4.4" data-path="4-slr.html"><a href="4-slr.html#slr-notes"><i class="fa fa-check"></i><b>4.4</b> SLR Notes</a></li>
-<li class="chapter" data-level="4.5" data-path="4-slr.html"><a href="4-slr.html#r-markdown"><i class="fa fa-check"></i><b>4.5</b> R Markdown</a></li>
-<li class="chapter" data-level="4.6" data-path="4-slr.html"><a href="4-slr.html#including-plots"><i class="fa fa-check"></i><b>4.6</b> Including Plots</a></li>
-</ul></li>
-<li class="chapter" data-level="5" data-path="5-anova.html"><a href="5-anova.html"><i class="fa fa-check"></i><b>5</b> Analysis of Variance</a><ul>
-<li class="chapter" data-level="5.0.1" data-path="5-anova.html"><a href="5-anova.html#comp-diamonds"><i class="fa fa-check"></i><b>5.0.1</b> COMP: Diamonds</a></li>
-<li class="chapter" data-level="" data-path="5-anova.html"><a href="5-anova.html#introduction-2"><i class="fa fa-check"></i>Introduction</a></li>
-<li class="chapter" data-level="" data-path="5-anova.html"><a href="5-anova.html#data-5"><i class="fa fa-check"></i>Data</a></li>
-<li class="chapter" data-level="" data-path="5-anova.html"><a href="5-anova.html#exercises-4"><i class="fa fa-check"></i>Exercises</a></li>
-</ul></li>
-<li class="chapter" data-level="6" data-path="6-mlr.html"><a href="6-mlr.html"><i class="fa fa-check"></i><b>6</b> Multiple Linear Regression</a><ul>
-<li class="chapter" data-level="6.1" data-path="6-mlr.html"><a href="6-mlr.html#comp-houses-in-king-county"><i class="fa fa-check"></i><b>6.1</b> COMP: Houses in King County</a><ul>
-<li class="chapter" data-level="" data-path="6-mlr.html"><a href="6-mlr.html#packages-5"><i class="fa fa-check"></i>Packages</a></li>
-<li class="chapter" data-level="" data-path="6-mlr.html"><a href="6-mlr.html#data-6"><i class="fa fa-check"></i>Data</a></li>
-<li class="chapter" data-level="" data-path="6-mlr.html"><a href="6-mlr.html#exercises-5"><i class="fa fa-check"></i>Exercises</a></li>
-<li class="chapter" data-level="" data-path="6-mlr.html"><a href="6-mlr.html#acknowledgement-1"><i class="fa fa-check"></i>Acknowledgement</a></li>
-</ul></li>
-<li class="chapter" data-level="6.2" data-path="6-mlr.html"><a href="6-mlr.html#comp-airbnb-in-asheville-nc"><i class="fa fa-check"></i><b>6.2</b> COMP: Airbnb in Asheville, NC</a><ul>
-<li class="chapter" data-level="" data-path="6-mlr.html"><a href="6-mlr.html#packages-6"><i class="fa fa-check"></i>Packages</a></li>
-<li class="chapter" data-level="" data-path="6-mlr.html"><a href="6-mlr.html#data-7"><i class="fa fa-check"></i>Data</a></li>
-<li class="chapter" data-level="" data-path="6-mlr.html"><a href="6-mlr.html#exercises-6"><i class="fa fa-check"></i>Exercises</a></li>
-<li class="chapter" data-level="" data-path="6-mlr.html"><a href="6-mlr.html#acknowledgement-2"><i class="fa fa-check"></i>Acknowledgement</a></li>
-</ul></li>
-<li class="chapter" data-level="6.3" data-path="6-mlr.html"><a href="6-mlr.html#in-class-wages"><i class="fa fa-check"></i><b>6.3</b> IN-CLASS: Wages</a><ul>
-<li class="chapter" data-level="" data-path="6-mlr.html"><a href="6-mlr.html#packages-7"><i class="fa fa-check"></i>Packages</a></li>
-<li class="chapter" data-level="" data-path="6-mlr.html"><a href="6-mlr.html#data-8"><i class="fa fa-check"></i>Data</a></li>
-<li class="chapter" data-level="" data-path="6-mlr.html"><a href="6-mlr.html#exercises-7"><i class="fa fa-check"></i>Exercises</a></li>
-</ul></li>
-<li class="chapter" data-level="6.4" data-path="6-mlr.html"><a href="6-mlr.html#notes-matrix-form-of-linear-regression"><i class="fa fa-check"></i><b>6.4</b> NOTES: Matrix Form of Linear Regression</a><ul>
-<li class="chapter" data-level="6.4.1" data-path="6-mlr.html"><a href="6-mlr.html#introduction-3"><i class="fa fa-check"></i><b>6.4.1</b> Introduction</a></li>
-<li class="chapter" data-level="6.4.2" data-path="6-mlr.html"><a href="6-mlr.html#matrix-form-for-the-regression-model"><i class="fa fa-check"></i><b>6.4.2</b> Matrix Form for the Regression Model</a></li>
-<li class="chapter" data-level="6.4.3" data-path="6-mlr.html"><a href="6-mlr.html#estimating-the-coefficients"><i class="fa fa-check"></i><b>6.4.3</b> Estimating the Coefficients</a></li>
-<li class="chapter" data-level="6.4.4" data-path="6-mlr.html"><a href="6-mlr.html#variance-covariance-matrix-of-the-coefficients"><i class="fa fa-check"></i><b>6.4.4</b> Variance-covariance matrix of the coefficients</a></li>
-</ul></li>
-<li class="chapter" data-level="6.5" data-path="6-mlr.html"><a href="6-mlr.html#notes-log-transformations"><i class="fa fa-check"></i><b>6.5</b> NOTES: Log Transformations</a><ul>
-<li class="chapter" data-level="6.5.1" data-path="6-mlr.html"><a href="6-mlr.html#log-transformation-on-the-response-variable"><i class="fa fa-check"></i><b>6.5.1</b> Log-transformation on the response variable</a></li>
-<li class="chapter" data-level="6.5.2" data-path="6-mlr.html"><a href="6-mlr.html#log-transformation-on-the-predictor-variable"><i class="fa fa-check"></i><b>6.5.2</b> Log-transformation on the predictor variable</a></li>
-<li class="chapter" data-level="6.5.3" data-path="6-mlr.html"><a href="6-mlr.html#log-transformation-on-the-the-response-and-predictor-variable"><i class="fa fa-check"></i><b>6.5.3</b> Log-transformation on the the response and predictor variable</a></li>
-</ul></li>
-<li class="chapter" data-level="6.6" data-path="6-mlr.html"><a href="6-mlr.html#notes-model-diagnostics"><i class="fa fa-check"></i><b>6.6</b> NOTES: Model Diagnostics</a><ul>
-<li class="chapter" data-level="6.6.1" data-path="6-mlr.html"><a href="6-mlr.html#introduction-4"><i class="fa fa-check"></i><b>6.6.1</b> Introduction</a></li>
-<li class="chapter" data-level="6.6.2" data-path="6-mlr.html"><a href="6-mlr.html#matrix-form-for-the-regression-model-1"><i class="fa fa-check"></i><b>6.6.2</b> Matrix Form for the Regression Model</a></li>
-<li class="chapter" data-level="6.6.3" data-path="6-mlr.html"><a href="6-mlr.html#hat-matrix-leverage"><i class="fa fa-check"></i><b>6.6.3</b> Hat Matrix &amp; Leverage</a></li>
-<li class="chapter" data-level="6.6.4" data-path="6-mlr.html"><a href="6-mlr.html#standardized-residuals"><i class="fa fa-check"></i><b>6.6.4</b> Standardized Residuals</a></li>
-<li class="chapter" data-level="6.6.5" data-path="6-mlr.html"><a href="6-mlr.html#cooks-distance"><i class="fa fa-check"></i><b>6.6.5</b> Cook’s Distance</a></li>
-</ul></li>
-</ul></li>
-<li class="chapter" data-level="7" data-path="7-select.html"><a href="7-select.html"><i class="fa fa-check"></i><b>7</b> Model Selection</a><ul>
-<li class="chapter" data-level="7.1" data-path="7-select.html"><a href="7-select.html#comp-sats-and-mlb"><i class="fa fa-check"></i><b>7.1</b> COMP: SATs and MLB</a><ul>
-<li class="chapter" data-level="" data-path="7-select.html"><a href="7-select.html#introduction-5"><i class="fa fa-check"></i>Introduction</a></li>
-<li class="chapter" data-level="" data-path="7-select.html"><a href="7-select.html#data-9"><i class="fa fa-check"></i>Data</a></li>
-<li class="chapter" data-level="" data-path="7-select.html"><a href="7-select.html#exercises-8"><i class="fa fa-check"></i>Exercises</a></li>
-<li class="chapter" data-level="" data-path="7-select.html"><a href="7-select.html#acknowledgements"><i class="fa fa-check"></i>Acknowledgements</a></li>
-</ul></li>
-<li class="chapter" data-level="7.2" data-path="7-select.html"><a href="7-select.html#in-class-sats-by-state"><i class="fa fa-check"></i><b>7.2</b> IN-CLASS: SATs by State</a><ul>
-<li class="chapter" data-level="" data-path="7-select.html"><a href="7-select.html#manual-backward-selection"><i class="fa fa-check"></i>“Manual” backward selection</a></li>
-<li class="chapter" data-level="" data-path="7-select.html"><a href="7-select.html#backward-selection-using-regsubsets"><i class="fa fa-check"></i>Backward selection using regsubsets</a></li>
-<li class="chapter" data-level="" data-path="7-select.html"><a href="7-select.html#changing-selection-criteria"><i class="fa fa-check"></i>Changing selection criteria</a></li>
-<li class="chapter" data-level="" data-path="7-select.html"><a href="7-select.html#different-selection-procedure"><i class="fa fa-check"></i>Different selection procedure</a></li>
-<li class="chapter" data-level="" data-path="7-select.html"><a href="7-select.html#choosing-a-final-model"><i class="fa fa-check"></i>Choosing a final model</a></li>
-</ul></li>
-<li class="chapter" data-level="7.3" data-path="7-select.html"><a href="7-select.html#notes-model-selection-criteria"><i class="fa fa-check"></i><b>7.3</b> NOTES: Model Selection Criteria</a><ul>
-<li class="chapter" data-level="7.3.1" data-path="7-select.html"><a href="7-select.html#maximum-likelihood-estimation-of-boldsymbolbeta-and-sigma"><i class="fa fa-check"></i><b>7.3.1</b> Maximum Likelihood Estimation of <span class="math inline">\(\boldsymbol{\beta}\)</span> and <span class="math inline">\(\sigma\)</span></a></li>
-<li class="chapter" data-level="7.3.2" data-path="7-select.html"><a href="7-select.html#aic"><i class="fa fa-check"></i><b>7.3.2</b> AIC</a></li>
-<li class="chapter" data-level="7.3.3" data-path="7-select.html"><a href="7-select.html#bic"><i class="fa fa-check"></i><b>7.3.3</b> BIC</a></li>
-</ul></li>
-</ul></li>
-<li class="chapter" data-level="8" data-path="8-logistic.html"><a href="8-logistic.html"><i class="fa fa-check"></i><b>8</b> Logistic Regression</a><ul>
-<li class="chapter" data-level="8.1" data-path="8-logistic.html"><a href="8-logistic.html#comp-spotify"><i class="fa fa-check"></i><b>8.1</b> COMP: Spotify</a><ul>
-<li class="chapter" data-level="" data-path="8-logistic.html"><a href="8-logistic.html#introduction-6"><i class="fa fa-check"></i>Introduction</a></li>
-<li class="chapter" data-level="" data-path="8-logistic.html"><a href="8-logistic.html#packages-9"><i class="fa fa-check"></i>Packages</a></li>
-<li class="chapter" data-level="" data-path="8-logistic.html"><a href="8-logistic.html#data-10"><i class="fa fa-check"></i>Data</a></li>
-<li class="chapter" data-level="" data-path="8-logistic.html"><a href="8-logistic.html#exercises-9"><i class="fa fa-check"></i>Exercises</a></li>
-</ul></li>
-<li class="chapter" data-level="8.2" data-path="8-logistic.html"><a href="8-logistic.html#in-class-risk-of-heart-disease"><i class="fa fa-check"></i><b>8.2</b> IN-CLASS: Risk of Heart Disease</a><ul>
-<li class="chapter" data-level="" data-path="8-logistic.html"><a href="8-logistic.html#packages-10"><i class="fa fa-check"></i>Packages</a></li>
-<li class="chapter" data-level="" data-path="8-logistic.html"><a href="8-logistic.html#data-11"><i class="fa fa-check"></i>Data</a></li>
-<li class="chapter" data-level="" data-path="8-logistic.html"><a href="8-logistic.html#exercises-10"><i class="fa fa-check"></i>Exercises</a></li>
-<li class="chapter" data-level="" data-path="8-logistic.html"><a href="8-logistic.html#references"><i class="fa fa-check"></i>References</a></li>
-</ul></li>
-</ul></li>
-<li class="chapter" data-level="9" data-path="9-multinom-logistic.html"><a href="9-multinom-logistic.html"><i class="fa fa-check"></i><b>9</b> Multinomial Logistic Regression</a><ul>
-<li class="chapter" data-level="9.1" data-path="9-multinom-logistic.html"><a href="9-multinom-logistic.html#comp-general-social-survey"><i class="fa fa-check"></i><b>9.1</b> COMP: General Social Survey</a><ul>
-<li class="chapter" data-level="" data-path="9-multinom-logistic.html"><a href="9-multinom-logistic.html#introduction-7"><i class="fa fa-check"></i>Introduction</a></li>
-<li class="chapter" data-level="" data-path="9-multinom-logistic.html"><a href="9-multinom-logistic.html#packages-11"><i class="fa fa-check"></i>Packages</a></li>
-<li class="chapter" data-level="" data-path="9-multinom-logistic.html"><a href="9-multinom-logistic.html#data-12"><i class="fa fa-check"></i>Data</a></li>
-<li class="chapter" data-level="" data-path="9-multinom-logistic.html"><a href="9-multinom-logistic.html#exercises-11"><i class="fa fa-check"></i>Exercises</a></li>
-<li class="chapter" data-level="" data-path="9-multinom-logistic.html"><a href="9-multinom-logistic.html#acknowledgements-1"><i class="fa fa-check"></i>Acknowledgements</a></li>
-</ul></li>
-<li class="chapter" data-level="9.2" data-path="9-multinom-logistic.html"><a href="9-multinom-logistic.html#in-class-sesame-street"><i class="fa fa-check"></i><b>9.2</b> IN-CLASS: Sesame Street</a><ul>
-<li class="chapter" data-level="" data-path="9-multinom-logistic.html"><a href="9-multinom-logistic.html#packages-12"><i class="fa fa-check"></i>Packages</a></li>
-<li class="chapter" data-level="" data-path="9-multinom-logistic.html"><a href="9-multinom-logistic.html#data-13"><i class="fa fa-check"></i>Data</a></li>
-<li class="chapter" data-level="" data-path="9-multinom-logistic.html"><a href="9-multinom-logistic.html#exercises-12"><i class="fa fa-check"></i>Exercises</a></li>
-<li class="chapter" data-level="" data-path="9-multinom-logistic.html"><a href="9-multinom-logistic.html#references-1"><i class="fa fa-check"></i>References</a></li>
-</ul></li>
-</ul></li>
-<li class="chapter" data-level="10" data-path="10-special.html"><a href="10-special.html"><i class="fa fa-check"></i><b>10</b> Special Topics</a><ul>
-<li class="chapter" data-level="10.1" data-path="10-special.html"><a href="10-special.html#comp-regression-start-to-finish"><i class="fa fa-check"></i><b>10.1</b> COMP: Regression Start to Finish</a><ul>
-<li class="chapter" data-level="" data-path="10-special.html"><a href="10-special.html#introduction-8"><i class="fa fa-check"></i>Introduction</a></li>
-<li class="chapter" data-level="" data-path="10-special.html"><a href="10-special.html#packages-13"><i class="fa fa-check"></i>Packages</a></li>
-<li class="chapter" data-level="" data-path="10-special.html"><a href="10-special.html#data-14"><i class="fa fa-check"></i>Data</a></li>
-<li class="chapter" data-level="" data-path="10-special.html"><a href="10-special.html#exercises-13"><i class="fa fa-check"></i>Exercises</a></li>
-</ul></li>
-<li class="chapter" data-level="10.2" data-path="10-special.html"><a href="10-special.html#in-class-missing-data-exercise"><i class="fa fa-check"></i><b>10.2</b> IN-CLASS: Missing Data Exercise</a></li>
-</ul></li>
+<li class="chapter" data-level="5" data-path="5-anova.html"><a href="5-anova.html"><i class="fa fa-check"></i><b>5</b> Analysis of Variance</a></li>
+<li class="chapter" data-level="6" data-path="6-mlr.html"><a href="6-mlr.html"><i class="fa fa-check"></i><b>6</b> Multiple Linear Regression</a></li>
+<li class="chapter" data-level="7" data-path="7-select.html"><a href="7-select.html"><i class="fa fa-check"></i><b>7</b> Model Selection</a></li>
+<li class="chapter" data-level="8" data-path="8-logistic.html"><a href="8-logistic.html"><i class="fa fa-check"></i><b>8</b> Logistic Regression</a></li>
+<li class="chapter" data-level="9" data-path="9-multinom-logistic.html"><a href="9-multinom-logistic.html"><i class="fa fa-check"></i><b>9</b> Multinomial Logistic Regression</a></li>
+<li class="chapter" data-level="10" data-path="10-special.html"><a href="10-special.html"><i class="fa fa-check"></i><b>10</b> Special Topics</a></li>
 <li class="chapter" data-level="11" data-path="11-datasets.html"><a href="11-datasets.html"><i class="fa fa-check"></i><b>11</b> Data Sets</a></li>
-<li class="chapter" data-level="" data-path="references-2.html"><a href="references-2.html"><i class="fa fa-check"></i>References</a></li>
+<li class="chapter" data-level="" data-path="references.html"><a href="references.html"><i class="fa fa-check"></i>References</a></li>
 <li class="divider"></li>
 <li><a href="https://github.com/rstudio/bookdown" target="blank">Published with bookdown</a></li>
 
@@ -312,242 +136,73 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
             <section class="normal" id="section-">
 <div id="slr" class="section level1">
 <h1><span class="header-section-number"> 4</span> Simple Linear Regression</h1>
-<div id="comp-college-admissions" class="section level2">
-<h2><span class="header-section-number">4.1</span> COMP: College Admissions</h2>
-<div id="introduction-1" class="section level3 unnumbered">
-<h3>Introduction</h3>
-<p>The primary goal of today’s assignment is to give you practice with some of the tools you will need to conduct regression analysis using R. An additional goal for today is for you to be introduced to your teams and practice collaborating using GitHub and RStudio.</p>
-</div>
-<div id="packages-1" class="section level3 unnumbered">
-<h3>Packages</h3>
-<p>We will use the following packages in today’s assignment:</p>
-<div class="sourceCode" id="cb25"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb25-1"><a href="4-slr.html#cb25-1"></a><span class="kw">library</span>(tidyverse)</span>
-<span id="cb25-2"><a href="4-slr.html#cb25-2"></a><span class="kw">library</span>(skimr)</span>
-<span id="cb25-3"><a href="4-slr.html#cb25-3"></a><span class="kw">library</span>(broom)</span>
-<span id="cb25-4"><a href="4-slr.html#cb25-4"></a><span class="kw">library</span>(rcfss)</span></code></pre></div>
-</div>
-<div id="data-2" class="section level3 unnumbered">
-<h3>Data</h3>
-<p>We will analyze the <code>scorecard</code> dataset from the <strong>rcfss</strong> package. This dataset contains information about 1849 colleges obtained from the Department of Education’s College Scorecard. Load the rcfss library into the global R environment and type <code>?scorecard</code> in the <strong>console</strong> to learn more about the dataset and variable definitions. This analysis will focus on the following variables:</p>
-<table>
-<colgroup>
-<col width="20%" />
-<col width="79%" />
-</colgroup>
-<tbody>
-<tr class="odd">
-<td><code>type</code></td>
-<td>Type of college (Public, Private - nonprofit, Private - for profit)</td>
-</tr>
-<tr class="even">
-<td><code>cost</code></td>
-<td>The average annual cost of attendance, including tuition and feeds, books and supplies, and living expenses, minus the average grant/scholarship aid</td>
-</tr>
-<tr class="odd">
-<td><code>admrate</code></td>
-<td>Undergraduate admissions rate (from 0 - 100%)</td>
-</tr>
-</tbody>
-</table>
-</div>
-<div id="exercises-1" class="section level3 unnumbered">
-<h3>Exercises</h3>
-<div id="exploratory-data-analysis" class="section level4 unnumbered">
-<h4>Exploratory Data Analysis</h4>
-<ol style="list-style-type: decimal">
-<li><p>Plot a histogram to examine the distribution of <code>admrate</code>. Describe the shape of the distribution.</p></li>
-<li><p>To better understand the distribution of <code>admrate</code>, we would like calculate measures of center and spread of the distribution. Fill in the code below to use the <code>skim</code> function to calculate summary statistics for <code>admrate</code>. Report the appropriate measures of center (mean or median) and spread (standard deviation or IQR) based on the shape of the distribution from Exercise 1.</p></li>
-</ol>
-<div class="sourceCode" id="cb26"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb26-1"><a href="4-slr.html#cb26-1"></a>scorecard <span class="op">%&gt;%</span></span>
-<span id="cb26-2"><a href="4-slr.html#cb26-2"></a><span class="st">  </span><span class="kw">select</span>(admrate) <span class="op">%&gt;%</span></span>
-<span id="cb26-3"><a href="4-slr.html#cb26-3"></a><span class="st">  </span><span class="kw">skim</span>()</span></code></pre></div>
-<ol start="3" style="list-style-type: decimal">
-<li><p>Plot the distribution of <code>cost</code> and calculate the appropriate summary statistics. Describe the distribution of <code>cost</code> (shape, center, and spread) using the plot and appropriate summary statistics.</p></li>
-<li><p>One nice feature of the <code>skim</code> function is that it provides information about the number of observations that are missing values of the variable. How many observations have missing values of <code>admrate</code>? How many observations have missing values of <code>cost</code>?</p></li>
-<li><p>Later in the semester, we will techniques to deal with missing values in the data. For now, however, only include complete observations for the remainder of this analysis. You can use the <code>filter</code> function to select only the rows that values for both <code>cost</code> and <code>admrate</code>. (<em>Note: Learn more about the <code>filter</code> function in [Section 5.2 of R for Data Science] (<a href="https://r4ds.had.co.nz/transform.html#filter-rows-with-filter" class="uri">https://r4ds.had.co.nz/transform.html#filter-rows-with-filter</a>).</em>)</p></li>
-</ol>
-<p>Fill in the code below to create a new dataset called <code>scorecard_new</code> that only includes observations with values for both <code>admrate</code> and <code>cost</code>.</p>
-<div class="sourceCode" id="cb27"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb27-1"><a href="4-slr.html#cb27-1"></a>__________ &lt;-<span class="st"> </span>scorecard <span class="op">%&gt;%</span></span>
-<span id="cb27-2"><a href="4-slr.html#cb27-2"></a><span class="st">  </span><span class="kw">filter</span>(<span class="op">!</span><span class="kw">is.na</span>(admrate),________)</span></code></pre></div>
-<div class="sourceCode" id="cb28"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb28-1"><a href="4-slr.html#cb28-1"></a><span class="co"># </span></span></code></pre></div>
-<p><strong>You will use <code>scorecard_new</code> for the rest of the assignment.</strong></p>
-<ol start="6" style="list-style-type: decimal">
-<li><p>Create a scatterplot to display the relationship between <code>cost</code> (response variable) and <code>admrate</code> (explanatory variable). Use the scatterplot to describe the relationship between the two variables.</p></li>
-<li><p>The data contains information about the type of college, and we would like to incorporate this information into the scatterplot. One way to do this is to use a different color marker for each type of college. Fill in the code below the scatterplot from the previous exercise with the marker colors based on the variable <code>type</code>. Describe two new observations from this scatterplot that you didn’t see in the previous plot.</p></li>
-</ol>
-<div class="sourceCode" id="cb29"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb29-1"><a href="4-slr.html#cb29-1"></a><span class="kw">ggplot</span>(<span class="dt">data=</span>scorecard_new, <span class="dt">mapping=</span><span class="kw">aes</span>(<span class="dt">x=</span>admrate, <span class="dt">y=</span>cost, <span class="dt">color=</span>type)) <span class="op">+</span><span class="st"> </span></span>
-<span id="cb29-2"><a href="4-slr.html#cb29-2"></a><span class="st">  </span>_____________________</span></code></pre></div>
-</div>
-<div id="simple-linear-regression-1" class="section level4 unnumbered">
-<h4>Simple Linear Regression</h4>
-<ol start="8" style="list-style-type: decimal">
-<li><p>Fit a regression model to describe the relationship between a college’s admission rate and cost. Use the <code>tidy</code> function to display the model.</p></li>
-<li><p>Interpret the slope in the context of the problem. Does the intercept have a meaningful interpretation? If so, write the interpretation in the context of the problem. Otherwise, explain why the interpretation is not meaningful.</p></li>
-<li><p>While the <code>tidy</code> function is used to display the model, we can obtain a one-row summary of the model using the <code>glance</code> function. Use the <code>glance</code> function to get a summary of the model fit in the previous exercise. See the <a href="https://rdrr.io/cran/broom/man/glance.lm.html">documentation for <code>glance</code></a> for the syntax and a list of values output from the function.</p></li>
-<li><p>What is the value of <span class="math inline">\(R^2\)</span>? Interpret this value in the context of the problem. Do you think this is a “good” value of <span class="math inline">\(R^2\)</span>? Explain.</p></li>
-<li><p>What is the value of <span class="math inline">\(\hat{\sigma}\)</span>, the residual standard error.</p></li>
-<li><p>What is the 95% confidence interval for the coefficient of <code>admrate</code>, i.e. the slope? Interpret the interval in the context of the data.</p></li>
-<li><p>We want to test the following hypotheses about the population slope <span class="math inline">\(\beta_1\)</span>:</p></li>
-</ol>
-<p><span class="math display">\[H_0: \beta_1 = 0 \hspace{5mm} \text{versus} \hspace{5mm} H_a: \beta_1 \neq 0\]</span></p>
-<p>State what the null and alternative hypotheses mean in terms of the linear relationship between <code>admrate</code> and <code>cost</code>.</p>
-<ol start="15" style="list-style-type: decimal">
-<li>Consider the confidence interval from Exercise 13 and the hypotheses in Exercise 14. Does this confidence interval seem to be consistent with the null or alternative hypothesis? Briefly explain.</li>
-</ol>
-<p><em>Knit then commit all remaining changes, write a commit message indiciating you’re finished, and push to GitHub. Before you finish, make sure all documents are updated on your GitHub repo.</em></p>
-<hr />
-</div>
-</div>
-</div>
-<div id="in-class-advertising-sales" class="section level2">
-<h2><span class="header-section-number">4.2</span> IN-CLASS: Advertising &amp; Sales</h2>
-<p>In this mini analysis, we will work with the <code>Advertising</code> data used in Chapters 2 and 3 of <span class="citation">(James et al. <a href="#ref-islr" role="doc-biblioref">2017</a>)</span>.</p>
-<div id="packages-2" class="section level3 unnumbered">
-<h3>Packages</h3>
-<div class="sourceCode" id="cb30"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb30-1"><a href="4-slr.html#cb30-1"></a><span class="kw">library</span>(readr)</span>
-<span id="cb30-2"><a href="4-slr.html#cb30-2"></a><span class="kw">library</span>(tidyverse)</span>
-<span id="cb30-3"><a href="4-slr.html#cb30-3"></a><span class="kw">library</span>(skimr)</span>
-<span id="cb30-4"><a href="4-slr.html#cb30-4"></a><span class="kw">library</span>(broom)</span></code></pre></div>
-</div>
-<div id="data-3" class="section level3 unnumbered">
-<h3>Data</h3>
-<div class="sourceCode" id="cb31"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb31-1"><a href="4-slr.html#cb31-1"></a>advertising &lt;-<span class="st"> </span><span class="kw">read_csv</span>(<span class="st">&quot;data/advertising.csv&quot;</span>)</span></code></pre></div>
-<p>This dataset contains the advertising spending and sales for 200 markets. The variables are</p>
-<ul>
-<li><code>tv</code>: total spending on TV advertising (in $thousands)</li>
-<li><code>radio</code>: total spending on radio advertising (in $thousands)</li>
-<li><code>newspaper</code>: total spending on newspaper advertising (in $thousands)</li>
-<li><code>sales</code>: total sales (in $millions)</li>
-</ul>
-</div>
-<div id="exercises-2" class="section level3 unnumbered">
-<h3>Exercises</h3>
-<p>We’ll begin the analysis by getting quick view of the data:</p>
-<div class="sourceCode" id="cb32"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb32-1"><a href="4-slr.html#cb32-1"></a><span class="kw">glimpse</span>(advertising)</span></code></pre></div>
-<p>Next, we can calculate summary statistics for each of the variables in the data set.</p>
-<div class="sourceCode" id="cb33"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb33-1"><a href="4-slr.html#cb33-1"></a>advertising <span class="op">%&gt;%</span><span class="st"> </span><span class="kw">skim</span>()</span></code></pre></div>
-<ol style="list-style-type: decimal">
-<li><p>What type of advertising has the smallest median spending?</p></li>
-<li><p>What type of advertising has the largest variation in spending?</p></li>
-<li><p>Describe the shape of the distribution of <code>sales</code>.</p></li>
-</ol>
-<p>We are most interested in understanding how advertising spending affect sales. One way to quantify the relationship between the variables is by calculating the correlation matrix.</p>
-<div class="sourceCode" id="cb34"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb34-1"><a href="4-slr.html#cb34-1"></a>advertising <span class="op">%&gt;%</span><span class="st"> </span></span>
-<span id="cb34-2"><a href="4-slr.html#cb34-2"></a><span class="st">  </span><span class="kw">cor</span>()</span></code></pre></div>
-<ol style="list-style-type: decimal">
-<li><p>What is the correlation between <code>radio</code> and <code>sales</code>? Interpret this value.</p></li>
-<li><p>What type of advertising has the strongest linear relationship with <code>sales</code>?</p></li>
-</ol>
-<p>Below are visualizations of <code>sales</code> versus each explanatory variable.</p>
-<div class="sourceCode" id="cb35"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb35-1"><a href="4-slr.html#cb35-1"></a>advertising <span class="op">%&gt;%</span></span>
-<span id="cb35-2"><a href="4-slr.html#cb35-2"></a><span class="st">  </span><span class="kw">ggplot</span>(<span class="dt">mapping =</span> <span class="kw">aes</span>(<span class="dt">x=</span>tv,<span class="dt">y=</span>sales)) <span class="op">+</span><span class="st"> </span></span>
-<span id="cb35-3"><a href="4-slr.html#cb35-3"></a><span class="st">  </span><span class="kw">geom_point</span>(<span class="dt">alpha=</span><span class="fl">0.7</span>) <span class="op">+</span><span class="st"> </span></span>
-<span id="cb35-4"><a href="4-slr.html#cb35-4"></a><span class="st">  </span><span class="kw">geom_smooth</span>(<span class="dt">method=</span><span class="st">&quot;lm&quot;</span>,<span class="dt">se=</span><span class="ot">FALSE</span>,<span class="dt">color=</span><span class="st">&quot;blue&quot;</span>) <span class="op">+</span><span class="st"> </span></span>
-<span id="cb35-5"><a href="4-slr.html#cb35-5"></a><span class="st">  </span><span class="kw">labs</span>(<span class="dt">title =</span> <span class="st">&quot;Sales vs. TV Advertising&quot;</span>, </span>
-<span id="cb35-6"><a href="4-slr.html#cb35-6"></a>       <span class="dt">x=</span> <span class="st">&quot;TV Advertising (in $thousands)&quot;</span>, </span>
-<span id="cb35-7"><a href="4-slr.html#cb35-7"></a>       <span class="dt">y=</span><span class="st">&quot;_____&quot;</span>) <span class="co">#fill in the Y axis label</span></span></code></pre></div>
-<div class="sourceCode" id="cb36"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb36-1"><a href="4-slr.html#cb36-1"></a>advertising <span class="op">%&gt;%</span></span>
-<span id="cb36-2"><a href="4-slr.html#cb36-2"></a><span class="st">  </span><span class="kw">ggplot</span>(<span class="dt">mapping =</span> <span class="kw">aes</span>(<span class="dt">x=</span>radio,<span class="dt">y=</span>sales)) <span class="op">+</span><span class="st"> </span></span>
-<span id="cb36-3"><a href="4-slr.html#cb36-3"></a><span class="st">  </span><span class="kw">geom_point</span>(<span class="dt">alpha=</span><span class="fl">0.7</span>) <span class="op">+</span><span class="st"> </span></span>
-<span id="cb36-4"><a href="4-slr.html#cb36-4"></a><span class="st">  </span><span class="kw">geom_smooth</span>(<span class="dt">method=</span><span class="st">&quot;lm&quot;</span>,<span class="dt">se=</span><span class="ot">FALSE</span>,<span class="dt">color=</span><span class="st">&quot;red&quot;</span>) <span class="op">+</span><span class="st"> </span></span>
-<span id="cb36-5"><a href="4-slr.html#cb36-5"></a><span class="st">  </span><span class="kw">labs</span>(<span class="dt">title =</span> <span class="st">&quot;Sales vs. TV Advertising&quot;</span>, </span>
-<span id="cb36-6"><a href="4-slr.html#cb36-6"></a>       <span class="dt">x=</span> <span class="st">&quot;Radio Advertising (in $thousands)&quot;</span>, </span>
-<span id="cb36-7"><a href="4-slr.html#cb36-7"></a>       <span class="dt">y=</span><span class="st">&quot;Sales (in $millions)&quot;</span>)</span></code></pre></div>
-<div class="sourceCode" id="cb37"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb37-1"><a href="4-slr.html#cb37-1"></a>advertising <span class="op">%&gt;%</span></span>
-<span id="cb37-2"><a href="4-slr.html#cb37-2"></a><span class="st">  </span><span class="kw">ggplot</span>(<span class="dt">mapping =</span> <span class="kw">aes</span>(<span class="dt">x=</span>newspaper,<span class="dt">y=</span>sales)) <span class="op">+</span><span class="st"> </span></span>
-<span id="cb37-3"><a href="4-slr.html#cb37-3"></a><span class="st">  </span><span class="kw">geom_point</span>(<span class="dt">alpha=</span><span class="fl">0.7</span>) <span class="op">+</span><span class="st"> </span></span>
-<span id="cb37-4"><a href="4-slr.html#cb37-4"></a><span class="st">  </span><span class="kw">geom_smooth</span>(<span class="dt">method=</span><span class="st">&quot;lm&quot;</span>,<span class="dt">se=</span><span class="ot">FALSE</span>,<span class="dt">color=</span><span class="st">&quot;purple&quot;</span>) <span class="op">+</span><span class="st"> </span></span>
-<span id="cb37-5"><a href="4-slr.html#cb37-5"></a><span class="st">  </span><span class="kw">labs</span>(<span class="dt">title =</span> <span class="st">&quot;Sales vs. Newspaper Advertising&quot;</span>, </span>
-<span id="cb37-6"><a href="4-slr.html#cb37-6"></a>       <span class="dt">x=</span> <span class="st">&quot;Newspaper Advertising (in $thousands)&quot;</span>, </span>
-<span id="cb37-7"><a href="4-slr.html#cb37-7"></a>       <span class="dt">y=</span><span class="st">&quot;Sales (in $millions)&quot;</span>)</span></code></pre></div>
-<p>Since <code>tv</code> appears to have the strongest linear relationship with <code>sales</code>, let’s calculate a simple linear regression model using these two variables.</p>
-<div class="sourceCode" id="cb38"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb38-1"><a href="4-slr.html#cb38-1"></a>ad_model &lt;-<span class="st"> </span><span class="kw">lm</span>(sales <span class="op">~</span><span class="st"> </span>tv, <span class="dt">data=</span>advertising)</span>
-<span id="cb38-2"><a href="4-slr.html#cb38-2"></a>ad_model</span></code></pre></div>
-<ol style="list-style-type: decimal">
-<li><p>Write the model equation.</p></li>
-<li><p>Does it make sense to interpret the intercept? If so, interpret the intercept in the context of the problem. Otherwise, briefly explain why not.</p></li>
-<li><p>Interpret the slope in the context of the problem.</p></li>
-</ol>
-<hr />
-</div>
-</div>
-<div id="in-class-carbohydrates-in-beer" class="section level2">
-<h2><span class="header-section-number">4.3</span> IN-CLASS: Carbohydrates in Beer</h2>
-<div id="packages-3" class="section level3 unnumbered">
-<h3>Packages</h3>
-<div class="sourceCode" id="cb39"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb39-1"><a href="4-slr.html#cb39-1"></a><span class="kw">library</span>(tidyverse)</span>
-<span id="cb39-2"><a href="4-slr.html#cb39-2"></a><span class="kw">library</span>(readr)</span>
-<span id="cb39-3"><a href="4-slr.html#cb39-3"></a><span class="kw">library</span>(broom)</span></code></pre></div>
-</div>
-<div id="data-4" class="section level3 unnumbered">
-<h3>Data</h3>
-<div class="sourceCode" id="cb40"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb40-1"><a href="4-slr.html#cb40-1"></a>beer &lt;-<span class="st"> </span><span class="kw">read_csv</span>(<span class="st">&quot;data/beer.csv&quot;</span>)</span></code></pre></div>
-<p>In this analysis, we will analyze the relationship between the amount of alcohol (<code>PercentAlcohol</code>) and the caloric content (<code>CaloriesPer12Oz</code>) in domestic beers. Let <code>PercentAlcohol</code> be the predictor variable and <code>CaloriesPer12Oz</code> the response variable.</p>
-</div>
-<div id="exercises-3" class="section level3 unnumbered">
-<h3>Exercises</h3>
-<p><strong>Due to limited class time, we will not do the exploratory data analysis in this example. In practice, however, you should always start with the exploratory data analysis.</strong></p>
-<ol style="list-style-type: decimal">
-<li>Fit a regression model to describe the relationship between <code>PercentAlcohol</code> and <code>CaloriesPer12Oz</code>. Display the model output.</li>
-</ol>
-<div class="sourceCode" id="cb41"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb41-1"><a href="4-slr.html#cb41-1"></a><span class="co"># code for regression model</span></span></code></pre></div>
-<ol start="2" style="list-style-type: decimal">
-<li><p>Does it make sense to interpret the intercept? Why or why not?</p></li>
-<li><p>Interpret the 95% confidence interval for the slope in the context of the data.</p></li>
-<li><p>Calculate the critical value, <span class="math inline">\(t^*\)</span>, used to calculate the 95% confidence interval. The code below is a guide; uncomment and complete the lines of code to calculate and display the critical value.</p></li>
-</ol>
-<div class="sourceCode" id="cb42"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb42-1"><a href="4-slr.html#cb42-1"></a>n &lt;-<span class="st"> </span><span class="kw">nrow</span>(beer)</span>
-<span id="cb42-2"><a href="4-slr.html#cb42-2"></a></span>
-<span id="cb42-3"><a href="4-slr.html#cb42-3"></a><span class="co">#df &lt;- _________  </span></span>
-<span id="cb42-4"><a href="4-slr.html#cb42-4"></a></span>
-<span id="cb42-5"><a href="4-slr.html#cb42-5"></a><span class="co">#crit_val &lt;- qt(_____,df)</span></span>
-<span id="cb42-6"><a href="4-slr.html#cb42-6"></a><span class="co">#crit_val</span></span></code></pre></div>
-<p>The critical value used to calculate the 95% confident interval for the slope is ____.</p>
-<ol start="5" style="list-style-type: decimal">
-<li><p>Interpret the test statistic in the context of the data.</p></li>
-<li><p>How was the p-value calculated? Fill in the code below to calculate the p-value. The code below is a guide; uncomment and complete the lines of code to calculate and display the p-value.</p></li>
-</ol>
-<div class="sourceCode" id="cb43"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb43-1"><a href="4-slr.html#cb43-1"></a><span class="co">#test_statistic &lt;- _______</span></span>
-<span id="cb43-2"><a href="4-slr.html#cb43-2"></a></span>
-<span id="cb43-3"><a href="4-slr.html#cb43-3"></a><span class="co">#prob &lt;- 1 - pt(abs(test_statistic),df)</span></span>
-<span id="cb43-4"><a href="4-slr.html#cb43-4"></a></span>
-<span id="cb43-5"><a href="4-slr.html#cb43-5"></a><span class="co">#p_value &lt;- 2 * prob</span></span>
-<span id="cb43-6"><a href="4-slr.html#cb43-6"></a><span class="co">#p_value</span></span></code></pre></div>
-<p>The p-value is ____ . Given there is no linear relationship between <code>PercentAlcohol</code> and <code>CaloriesPer12Oz</code>, the probability of obtaining a test statistic with magnitude ____ or more extreme is ____.</p>
-<ol start="7" style="list-style-type: decimal">
-<li>Fill in the code below to calculate the predicted calories and corresponding 90% interval for a single beer with alcohol content of 4.3%.</li>
-</ol>
-<div class="sourceCode" id="cb44"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb44-1"><a href="4-slr.html#cb44-1"></a>x0 &lt;-<span class="st">  </span><span class="kw">data.frame</span>(<span class="dt">PercentAlcohol=</span><span class="fl">4.3</span>)</span>
-<span id="cb44-2"><a href="4-slr.html#cb44-2"></a><span class="co">#predict.lm(model,x0,interval=&quot;________&quot;,conf.level=________) #&lt;&lt;</span></span></code></pre></div>
-<ol start="8" style="list-style-type: decimal">
-<li>Fill in the code below to calculate the predicted calories and corresponding 90% interval for the subset of beers with alcohol content of 4.3%.</li>
-</ol>
-<div class="sourceCode" id="cb45"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb45-1"><a href="4-slr.html#cb45-1"></a>x0 &lt;-<span class="st">  </span><span class="kw">data.frame</span>(<span class="dt">PercentAlcohol=</span><span class="fl">4.3</span>)</span>
-<span id="cb45-2"><a href="4-slr.html#cb45-2"></a><span class="co">#predict.lm(model,x0,interval=&quot;________&quot;,conf.level=________) #&lt;&lt;</span></span></code></pre></div>
-<hr />
-</div>
-</div>
-<div id="slr-notes" class="section level2">
-<h2><span class="header-section-number">4.4</span> SLR Notes</h2>
-</div>
-<div id="r-markdown" class="section level2">
-<h2><span class="header-section-number">4.5</span> R Markdown</h2>
-<p>This is an R Markdown document. Markdown is a simple formatting syntax for authoring HTML, PDF, and MS Word documents. For more details on using R Markdown see <a href="http://rmarkdown.rstudio.com" class="uri">http://rmarkdown.rstudio.com</a>.</p>
-<p>When you click the <strong>Knit</strong> button a document will be generated that includes both content as well as the output of any embedded R code chunks within the document. You can embed an R code chunk like this:</p>
-<div class="sourceCode" id="cb46"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb46-1"><a href="4-slr.html#cb46-1"></a><span class="kw">summary</span>(cars)</span></code></pre></div>
-</div>
-<div id="including-plots" class="section level2">
-<h2><span class="header-section-number">4.6</span> Including Plots</h2>
-<p>You can also embed plots, for example:</p>
-<p>Note that the <code>echo = FALSE</code> parameter was added to the code chunk to prevent printing of the R code that generated the plot.</p>
-<p>I hope that notes work. Let’s try to embed the slides.</p>
+<div id="derivation-for-hatbeta_0-and-hatbeta_1" class="section level2">
+<h2><span class="header-section-number">4.1</span> Derivation for <span class="math inline">\(\hat{\beta}_0\)</span> and <span class="math inline">\(\hat{\beta}_1\)</span></h2>
+<p>This document contains the mathematical details for deriving the least-squares estimates for slope (<span class="math inline">\(\beta_1\)</span>) and intercept (<span class="math inline">\(\beta_0\)</span>). We obtain the estimates, <span class="math inline">\(\hat{\beta}_1\)</span> and <span class="math inline">\(\hat{\beta}_0\)</span> by finding the values that minimize the sum of squared residuals ().</p>
+<p><span class="math display">\[\begin{equation}
+\label{ssr}
+SSR = \sum\limits_{i=1}^{n}[y_i - \hat{y}_i]^2 = [y_i - (\hat{\beta}_0 + \hat{\beta}_1 x_i)]^2 = [y_i - (\hat{\beta}_0 - \hat{\beta}_1 x_i]^2
+\end{equation}\]</span></p>
+<p>Recall that we can find the values of <span class="math inline">\(\hat{\beta}_1\)</span> and <span class="math inline">\(\hat{\beta}_0\)</span> that minimize () by taking the partial derivatives of () and setting them to 0. Thus, the values of <span class="math inline">\(\hat{\beta}_1\)</span> and <span class="math inline">\(\hat{\beta}_0\)</span> that minimize the respective partial derivative also minimize the sum of squared residuals. The partial derivatives are</p>
+<p><span class="math display">\[\begin{equation}
+\label{par-deriv}
+\begin{aligned}
+&amp;\frac{\partial \text{SSR}}{\partial \hat{\beta}_1} = -2 \sum\limits_{i=1}^{n}x_i(y_i - \hat{\beta}_0 - \hat{\beta}_1 x_i)  \\[10pt]
+&amp;\frac{\partial \text{SSR}}{\partial \hat{\beta}_0} = -2 \sum\limits_{i=1}^{n}(y_i - \hat{\beta}_0 - \hat{\beta}_1 x_i)
+\end{aligned}
+\end{equation}\]</span></p>
+<p>Let’s begin by deriving <span class="math inline">\(\hat{\beta}_0\)</span>.</p>
+<p><span class="math display">\[\begin{equation}
+\label{est-beta0}
+\begin{aligned}
+\frac{\partial \text{SSR}}{\partial \hat{\beta}_0} &amp;= -2 \sum\limits_{i=1}^{n}(y_i - \hat{\beta}_0 - \hat{\beta}_1 x_i) = 0 \\[10pt]
+&amp;\Rightarrow -\sum\limits_{i=1}^{n}(y_i + \hat{\beta}_0 + \hat{\beta}_1 x_i) = 0 \\[10pt]
+&amp;\Rightarrow - \sum\limits_{i=1}^{n}y_i + n\hat{\beta}_0 + \hat{\beta}_1\sum\limits_{i=1}^{n}x_i = 0 \\[10pt]
+&amp;\Rightarrow n\hat{\beta}_0  = \sum\limits_{i=1}^{n}y_i - \hat{\beta}_1\sum\limits_{i=1}^{n}x_i \\[10pt]
+&amp;\Rightarrow \hat{\beta}_0  = \frac{1}{n}\Big(\sum\limits_{i=1}^{n}y_i - \hat{\beta}_1\sum\limits_{i=1}^{n}x_i\Big)\\[10pt]
+&amp;\Rightarrow \hat{\beta}_0  = \bar{y} - \hat{\beta}_1 \bar{x} \\[10pt]
+\end{aligned}
+\end{equation}\]</span></p>
+<p>Now, we can derive <span class="math inline">\(\hat{\beta}_1\)</span> using the <span class="math inline">\(\hat{\beta}_0\)</span> we just derived</p>
+<p><span class="math display">\[\begin{equation}
+\label{est-beta1-pt1}
+\begin{aligned}
+&amp;\frac{\partial \text{SSR}}{\partial \hat{\beta}_1} = -2 \sum\limits_{i=1}^{n}x_i(y_i - \hat{\beta}_0 - \hat{\beta}_1 x_i) = 0  \\[10pt]
+&amp;\Rightarrow -\sum\limits_{i=1}^{n}x_iy_i + \hat{\beta}_0\sum\limits_{i=1}^{n}x_i + \hat{\beta}_1\sum\limits_{i=1}^{n}x_i^2 = 0 \\[10pt]
+\text{(Fill in }\hat{\beta}_0\text{)}&amp;\Rightarrow -\sum\limits_{i=1}^{n}x_iy_i + (\bar{y} - \hat{\beta}_1\bar{x})\sum\limits_{i=1}^{n}x_i + \hat{\beta}_1\sum\limits_{i=1}^{n}x_i^2 = 0 \\[10pt]
+&amp;\Rightarrow  (\bar{y} - \hat{\beta}_1\bar{x})\sum\limits_{i=1}^{n}x_i + \hat{\beta}_1\sum\limits_{i=1}^{n}x_i^2 = \sum\limits_{i=1}^{n}x_iy_i \\[10pt]
+&amp;\Rightarrow \bar{y}\sum\limits_{i=1}^{n}x_i - \hat{\beta}_1\bar{x}\sum\limits_{i=1}^{n}x_i + \hat{\beta}_1\sum\limits_{i=1}^{n}x_i^2 = \sum\limits_{i=1}^{n}x_iy_i \\[10pt]
+&amp;\Rightarrow n\bar{y}\bar{x} - \hat{\beta}_1n\bar{x}^2 + \hat{\beta}_1\sum\limits_{i=1}^{n}x_i^2 = \sum\limits_{i=1}^{n}x_iy_i \\[10pt]
+&amp;\Rightarrow \hat{\beta}_1\sum\limits_{i=1}^{n}x_i^2 - \hat{\beta}_1n\bar{x}^2  = \sum\limits_{i=1}^{n}x_iy_i - n\bar{y}\bar{x} \\[10pt]
+&amp;\Rightarrow \hat{\beta}_1\Big(\sum\limits_{i=1}^{n}x_i^2 -n\bar{x}^2\Big)  = \sum\limits_{i=1}^{n}x_iy_i - n\bar{y}\bar{x} \\[10pt] 
+&amp;\hat{\beta}_1 = \frac{\sum\limits_{i=1}^{n}x_iy_i - n\bar{y}\bar{x}}{\sum\limits_{i=1}^{n}x_i^2 -n\bar{x}^2}
+\end{aligned}
+\end{equation}\]</span></p>
+<p>To write <span class="math inline">\(\hat{\beta}_1\)</span> in a form that’s more recognizable, we will use the following:</p>
+<p><span class="math display">\[\begin{equation}
+\label{cov}
+\sum x_iy_i - n\bar{y}\bar{x} = \sum(x - \bar{x})(y - \bar{y}) = (n-1)\text{Cov}(x,y)
+\end{equation}\]</span></p>
+<p><span class="math display">\[\begin{equation}
+\label{var_x}
+\sum x_i^2 - n\bar{x}^2 - \sum(x - \bar{x})^2 = (n-1)s_x^2
+\end{equation}\]</span></p>
+<p>where <span class="math inline">\(\text{Cov}(x,y)\)</span> is the covariance of <span class="math inline">\(x\)</span> and <span class="math inline">\(y\)</span>, and <span class="math inline">\(s_x^2\)</span> is the sample variance of <span class="math inline">\(x\)</span> (<span class="math inline">\(s_x\)</span> is the sample standard deviation).</p>
+<p>Thus, applying () and (), we have</p>
+<p><span class="math display">\[\begin{equation}
+\label{est-beta1-pt2}
+\begin{aligned}
+\hat{\beta}_1 &amp;= \frac{\sum\limits_{i=1}^{n}x_iy_i - n\bar{y}\bar{x}}{\sum\limits_{i=1}^{n}x_i^2 -n\bar{x}^2} \\[10pt]
+&amp;= \frac{\sum\limits_{i=1}^{n}(x-\bar{x})(y-\bar{y})}{\sum\limits_{i=1}^{n}(x-\bar{x})^2}\\[10pt]
+&amp;= \frac{(n-1)\text{Cov}(x,y)}{(n-1)s_x^2}\\[10pt]
+&amp;= \frac{\text{Cov}(x,y)}{s_x^2}
+\end{aligned}
+\end{equation}\]</span></p>
+<p>The correlation between <span class="math inline">\(x\)</span> and <span class="math inline">\(y\)</span> is <span class="math inline">\(r = \frac{\text{Cov}(x,y)}{s_x s_y}\)</span>. Thus, <span class="math inline">\(\text{Cov}(x,y) = r s_xs_y\)</span>. Plugging this into (), we have</p>
+<p><span class="math display">\[\begin{equation}
+\hat{\beta}_1 = \frac{\text{Cov}(x,y)}{s_x^2} = r\frac{s_ys_x}{s_x^2} = r\frac{s_y}{s_x}
+\end{equation}\]</span></p>
 
-</div>
-</div>
-<h3>References</h3>
-<div id="refs" class="references">
-<div id="ref-islr">
-<p>James, Gareth, Daniela Witten, Trevor Hastie, and Robert Tibshirani. 2017. <em>An Introduction to Statistical Learning</em>. 8th ed. New York, NY: Springer.</p>
 </div>
 </div>
             </section>

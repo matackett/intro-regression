@@ -5,20 +5,20 @@
   <meta charset="utf-8" />
   <meta http-equiv="X-UA-Compatible" content="IE=edge" />
   <title> 8 Logistic Regression | Intro Regression</title>
-  <meta name="description" content="An electronic book with assignments and in-class activities to help students apply concepts in an intermediate-level regression analysis course. The primary focus is application and computing; there are also supplemental math notes on some topics." />
-  <meta name="generator" content="bookdown 0.19 and GitBook 2.6.7" />
+  <meta name="description" content="An electronic book to accompany a second-semester undegraduate regression analysis course. The primary focus is application and computing using R. Some topics include supplemental math notes." />
+  <meta name="generator" content="bookdown 0.20 and GitBook 2.6.7" />
 
   <meta property="og:title" content=" 8 Logistic Regression | Intro Regression" />
   <meta property="og:type" content="book" />
   <meta property="og:url" content="https://www.introregression.org/" />
   <meta property="og:image" content="https://www.introregression.org/img/introregression-sticker.png" />
-  <meta property="og:description" content="An electronic book with assignments and in-class activities to help students apply concepts in an intermediate-level regression analysis course. The primary focus is application and computing; there are also supplemental math notes on some topics." />
+  <meta property="og:description" content="An electronic book to accompany a second-semester undegraduate regression analysis course. The primary focus is application and computing using R. Some topics include supplemental math notes." />
   <meta name="github-repo" content="matackett/intro-regression" />
 
   <meta name="twitter:card" content="summary" />
   <meta name="twitter:title" content=" 8 Logistic Regression | Intro Regression" />
   
-  <meta name="twitter:description" content="An electronic book with assignments and in-class activities to help students apply concepts in an intermediate-level regression analysis course. The primary focus is application and computing; there are also supplemental math notes on some topics." />
+  <meta name="twitter:description" content="An electronic book to accompany a second-semester undegraduate regression analysis course. The primary focus is application and computing using R. Some topics include supplemental math notes." />
   <meta name="twitter:image" content="https://www.introregression.org/img/introregression-sticker.png" />
 
 <meta name="author" content="Maria Tackett" />
@@ -49,6 +49,7 @@
 
 
 
+<script src="libs/accessible-code-block-0.0.1/empty-anchor.js"></script>
 
 
 <style type="text/css">
@@ -167,129 +168,27 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 </ul></li>
 </ul></li>
 <li class="chapter" data-level="4" data-path="4-slr.html"><a href="4-slr.html"><i class="fa fa-check"></i><b>4</b> Simple Linear Regression</a><ul>
-<li class="chapter" data-level="4.1" data-path="4-slr.html"><a href="4-slr.html#comp-college-admissions"><i class="fa fa-check"></i><b>4.1</b> COMP: College Admissions</a><ul>
-<li class="chapter" data-level="" data-path="4-slr.html"><a href="4-slr.html#introduction-1"><i class="fa fa-check"></i>Introduction</a></li>
-<li class="chapter" data-level="" data-path="4-slr.html"><a href="4-slr.html#packages-1"><i class="fa fa-check"></i>Packages</a></li>
-<li class="chapter" data-level="" data-path="4-slr.html"><a href="4-slr.html#data-2"><i class="fa fa-check"></i>Data</a></li>
-<li class="chapter" data-level="" data-path="4-slr.html"><a href="4-slr.html#exercises-1"><i class="fa fa-check"></i>Exercises</a></li>
+<li class="chapter" data-level="4.1" data-path="3-intro-r.html"><a href="3-intro-r.html#simple-linear-regression"><i class="fa fa-check"></i><b>4.1</b> Simple Linear Regression</a><ul>
+<li class="chapter" data-level="4.1.1" data-path="4-slr.html"><a href="4-slr.html#getting-started"><i class="fa fa-check"></i><b>4.1.1</b> Getting started</a></li>
+<li class="chapter" data-level="4.1.2" data-path="4-slr.html"><a href="4-slr.html#foundation"><i class="fa fa-check"></i><b>4.1.2</b> Foundation</a></li>
+<li class="chapter" data-level="4.1.3" data-path="4-slr.html"><a href="4-slr.html#inference"><i class="fa fa-check"></i><b>4.1.3</b> Inference</a></li>
 </ul></li>
-<li class="chapter" data-level="4.2" data-path="4-slr.html"><a href="4-slr.html#in-class-advertising-sales"><i class="fa fa-check"></i><b>4.2</b> IN-CLASS: Advertising &amp; Sales</a><ul>
-<li class="chapter" data-level="" data-path="4-slr.html"><a href="4-slr.html#packages-2"><i class="fa fa-check"></i>Packages</a></li>
-<li class="chapter" data-level="" data-path="4-slr.html"><a href="4-slr.html#data-3"><i class="fa fa-check"></i>Data</a></li>
-<li class="chapter" data-level="" data-path="4-slr.html"><a href="4-slr.html#exercises-2"><i class="fa fa-check"></i>Exercises</a></li>
+<li class="chapter" data-level="4.2" data-path="4-slr.html"><a href="4-slr.html#simple-linear-regression-1"><i class="fa fa-check"></i><b>4.2</b> Simple Linear Regression</a><ul>
+<li class="chapter" data-level="4.2.1" data-path="4-slr.html"><a href="4-slr.html#introduce-data"><i class="fa fa-check"></i><b>4.2.1</b> Introduce data</a></li>
+<li class="chapter" data-level="4.2.2" data-path="4-slr.html"><a href="4-slr.html#prediction"><i class="fa fa-check"></i><b>4.2.2</b> Prediction</a></li>
+<li class="chapter" data-level="4.2.3" data-path="4-slr.html"><a href="4-slr.html#checking-conditions"><i class="fa fa-check"></i><b>4.2.3</b> Checking conditions</a></li>
+<li class="chapter" data-level="4.2.4" data-path="4-slr.html"><a href="4-slr.html#partioning-variability"><i class="fa fa-check"></i><b>4.2.4</b> Partioning variability</a></li>
 </ul></li>
-<li class="chapter" data-level="4.3" data-path="4-slr.html"><a href="4-slr.html#in-class-carbohydrates-in-beer"><i class="fa fa-check"></i><b>4.3</b> IN-CLASS: Carbohydrates in Beer</a><ul>
-<li class="chapter" data-level="" data-path="4-slr.html"><a href="4-slr.html#packages-3"><i class="fa fa-check"></i>Packages</a></li>
-<li class="chapter" data-level="" data-path="4-slr.html"><a href="4-slr.html#data-4"><i class="fa fa-check"></i>Data</a></li>
-<li class="chapter" data-level="" data-path="4-slr.html"><a href="4-slr.html#exercises-3"><i class="fa fa-check"></i>Exercises</a></li>
+<li class="chapter" data-level="4.3" data-path="4-slr.html"><a href="4-slr.html#deriving-beta_1-and-beta_0"><i class="fa fa-check"></i><b>4.3</b> Deriving <span class="math inline">\(\beta_1\)</span> and <span class="math inline">\(\beta_0\)</span></a></li>
 </ul></li>
-<li class="chapter" data-level="4.4" data-path="4-slr.html"><a href="4-slr.html#slr-notes"><i class="fa fa-check"></i><b>4.4</b> SLR Notes</a></li>
-<li class="chapter" data-level="4.5" data-path="4-slr.html"><a href="4-slr.html#r-markdown"><i class="fa fa-check"></i><b>4.5</b> R Markdown</a></li>
-<li class="chapter" data-level="4.6" data-path="4-slr.html"><a href="4-slr.html#including-plots"><i class="fa fa-check"></i><b>4.6</b> Including Plots</a></li>
-</ul></li>
-<li class="chapter" data-level="5" data-path="5-anova.html"><a href="5-anova.html"><i class="fa fa-check"></i><b>5</b> Analysis of Variance</a><ul>
-<li class="chapter" data-level="5.0.1" data-path="5-anova.html"><a href="5-anova.html#comp-diamonds"><i class="fa fa-check"></i><b>5.0.1</b> COMP: Diamonds</a></li>
-<li class="chapter" data-level="" data-path="5-anova.html"><a href="5-anova.html#introduction-2"><i class="fa fa-check"></i>Introduction</a></li>
-<li class="chapter" data-level="" data-path="5-anova.html"><a href="5-anova.html#data-5"><i class="fa fa-check"></i>Data</a></li>
-<li class="chapter" data-level="" data-path="5-anova.html"><a href="5-anova.html#exercises-4"><i class="fa fa-check"></i>Exercises</a></li>
-</ul></li>
-<li class="chapter" data-level="6" data-path="6-mlr.html"><a href="6-mlr.html"><i class="fa fa-check"></i><b>6</b> Multiple Linear Regression</a><ul>
-<li class="chapter" data-level="6.1" data-path="6-mlr.html"><a href="6-mlr.html#comp-houses-in-king-county"><i class="fa fa-check"></i><b>6.1</b> COMP: Houses in King County</a><ul>
-<li class="chapter" data-level="" data-path="6-mlr.html"><a href="6-mlr.html#packages-5"><i class="fa fa-check"></i>Packages</a></li>
-<li class="chapter" data-level="" data-path="6-mlr.html"><a href="6-mlr.html#data-6"><i class="fa fa-check"></i>Data</a></li>
-<li class="chapter" data-level="" data-path="6-mlr.html"><a href="6-mlr.html#exercises-5"><i class="fa fa-check"></i>Exercises</a></li>
-<li class="chapter" data-level="" data-path="6-mlr.html"><a href="6-mlr.html#acknowledgement-1"><i class="fa fa-check"></i>Acknowledgement</a></li>
-</ul></li>
-<li class="chapter" data-level="6.2" data-path="6-mlr.html"><a href="6-mlr.html#comp-airbnb-in-asheville-nc"><i class="fa fa-check"></i><b>6.2</b> COMP: Airbnb in Asheville, NC</a><ul>
-<li class="chapter" data-level="" data-path="6-mlr.html"><a href="6-mlr.html#packages-6"><i class="fa fa-check"></i>Packages</a></li>
-<li class="chapter" data-level="" data-path="6-mlr.html"><a href="6-mlr.html#data-7"><i class="fa fa-check"></i>Data</a></li>
-<li class="chapter" data-level="" data-path="6-mlr.html"><a href="6-mlr.html#exercises-6"><i class="fa fa-check"></i>Exercises</a></li>
-<li class="chapter" data-level="" data-path="6-mlr.html"><a href="6-mlr.html#acknowledgement-2"><i class="fa fa-check"></i>Acknowledgement</a></li>
-</ul></li>
-<li class="chapter" data-level="6.3" data-path="6-mlr.html"><a href="6-mlr.html#in-class-wages"><i class="fa fa-check"></i><b>6.3</b> IN-CLASS: Wages</a><ul>
-<li class="chapter" data-level="" data-path="6-mlr.html"><a href="6-mlr.html#packages-7"><i class="fa fa-check"></i>Packages</a></li>
-<li class="chapter" data-level="" data-path="6-mlr.html"><a href="6-mlr.html#data-8"><i class="fa fa-check"></i>Data</a></li>
-<li class="chapter" data-level="" data-path="6-mlr.html"><a href="6-mlr.html#exercises-7"><i class="fa fa-check"></i>Exercises</a></li>
-</ul></li>
-<li class="chapter" data-level="6.4" data-path="6-mlr.html"><a href="6-mlr.html#notes-matrix-form-of-linear-regression"><i class="fa fa-check"></i><b>6.4</b> NOTES: Matrix Form of Linear Regression</a><ul>
-<li class="chapter" data-level="6.4.1" data-path="6-mlr.html"><a href="6-mlr.html#introduction-3"><i class="fa fa-check"></i><b>6.4.1</b> Introduction</a></li>
-<li class="chapter" data-level="6.4.2" data-path="6-mlr.html"><a href="6-mlr.html#matrix-form-for-the-regression-model"><i class="fa fa-check"></i><b>6.4.2</b> Matrix Form for the Regression Model</a></li>
-<li class="chapter" data-level="6.4.3" data-path="6-mlr.html"><a href="6-mlr.html#estimating-the-coefficients"><i class="fa fa-check"></i><b>6.4.3</b> Estimating the Coefficients</a></li>
-<li class="chapter" data-level="6.4.4" data-path="6-mlr.html"><a href="6-mlr.html#variance-covariance-matrix-of-the-coefficients"><i class="fa fa-check"></i><b>6.4.4</b> Variance-covariance matrix of the coefficients</a></li>
-</ul></li>
-<li class="chapter" data-level="6.5" data-path="6-mlr.html"><a href="6-mlr.html#notes-log-transformations"><i class="fa fa-check"></i><b>6.5</b> NOTES: Log Transformations</a><ul>
-<li class="chapter" data-level="6.5.1" data-path="6-mlr.html"><a href="6-mlr.html#log-transformation-on-the-response-variable"><i class="fa fa-check"></i><b>6.5.1</b> Log-transformation on the response variable</a></li>
-<li class="chapter" data-level="6.5.2" data-path="6-mlr.html"><a href="6-mlr.html#log-transformation-on-the-predictor-variable"><i class="fa fa-check"></i><b>6.5.2</b> Log-transformation on the predictor variable</a></li>
-<li class="chapter" data-level="6.5.3" data-path="6-mlr.html"><a href="6-mlr.html#log-transformation-on-the-the-response-and-predictor-variable"><i class="fa fa-check"></i><b>6.5.3</b> Log-transformation on the the response and predictor variable</a></li>
-</ul></li>
-<li class="chapter" data-level="6.6" data-path="6-mlr.html"><a href="6-mlr.html#notes-model-diagnostics"><i class="fa fa-check"></i><b>6.6</b> NOTES: Model Diagnostics</a><ul>
-<li class="chapter" data-level="6.6.1" data-path="6-mlr.html"><a href="6-mlr.html#introduction-4"><i class="fa fa-check"></i><b>6.6.1</b> Introduction</a></li>
-<li class="chapter" data-level="6.6.2" data-path="6-mlr.html"><a href="6-mlr.html#matrix-form-for-the-regression-model-1"><i class="fa fa-check"></i><b>6.6.2</b> Matrix Form for the Regression Model</a></li>
-<li class="chapter" data-level="6.6.3" data-path="6-mlr.html"><a href="6-mlr.html#hat-matrix-leverage"><i class="fa fa-check"></i><b>6.6.3</b> Hat Matrix &amp; Leverage</a></li>
-<li class="chapter" data-level="6.6.4" data-path="6-mlr.html"><a href="6-mlr.html#standardized-residuals"><i class="fa fa-check"></i><b>6.6.4</b> Standardized Residuals</a></li>
-<li class="chapter" data-level="6.6.5" data-path="6-mlr.html"><a href="6-mlr.html#cooks-distance"><i class="fa fa-check"></i><b>6.6.5</b> Cook’s Distance</a></li>
-</ul></li>
-</ul></li>
-<li class="chapter" data-level="7" data-path="7-select.html"><a href="7-select.html"><i class="fa fa-check"></i><b>7</b> Model Selection</a><ul>
-<li class="chapter" data-level="7.1" data-path="7-select.html"><a href="7-select.html#comp-sats-and-mlb"><i class="fa fa-check"></i><b>7.1</b> COMP: SATs and MLB</a><ul>
-<li class="chapter" data-level="" data-path="7-select.html"><a href="7-select.html#introduction-5"><i class="fa fa-check"></i>Introduction</a></li>
-<li class="chapter" data-level="" data-path="7-select.html"><a href="7-select.html#data-9"><i class="fa fa-check"></i>Data</a></li>
-<li class="chapter" data-level="" data-path="7-select.html"><a href="7-select.html#exercises-8"><i class="fa fa-check"></i>Exercises</a></li>
-<li class="chapter" data-level="" data-path="7-select.html"><a href="7-select.html#acknowledgements"><i class="fa fa-check"></i>Acknowledgements</a></li>
-</ul></li>
-<li class="chapter" data-level="7.2" data-path="7-select.html"><a href="7-select.html#in-class-sats-by-state"><i class="fa fa-check"></i><b>7.2</b> IN-CLASS: SATs by State</a><ul>
-<li class="chapter" data-level="" data-path="7-select.html"><a href="7-select.html#manual-backward-selection"><i class="fa fa-check"></i>“Manual” backward selection</a></li>
-<li class="chapter" data-level="" data-path="7-select.html"><a href="7-select.html#backward-selection-using-regsubsets"><i class="fa fa-check"></i>Backward selection using regsubsets</a></li>
-<li class="chapter" data-level="" data-path="7-select.html"><a href="7-select.html#changing-selection-criteria"><i class="fa fa-check"></i>Changing selection criteria</a></li>
-<li class="chapter" data-level="" data-path="7-select.html"><a href="7-select.html#different-selection-procedure"><i class="fa fa-check"></i>Different selection procedure</a></li>
-<li class="chapter" data-level="" data-path="7-select.html"><a href="7-select.html#choosing-a-final-model"><i class="fa fa-check"></i>Choosing a final model</a></li>
-</ul></li>
-<li class="chapter" data-level="7.3" data-path="7-select.html"><a href="7-select.html#notes-model-selection-criteria"><i class="fa fa-check"></i><b>7.3</b> NOTES: Model Selection Criteria</a><ul>
-<li class="chapter" data-level="7.3.1" data-path="7-select.html"><a href="7-select.html#maximum-likelihood-estimation-of-boldsymbolbeta-and-sigma"><i class="fa fa-check"></i><b>7.3.1</b> Maximum Likelihood Estimation of <span class="math inline">\(\boldsymbol{\beta}\)</span> and <span class="math inline">\(\sigma\)</span></a></li>
-<li class="chapter" data-level="7.3.2" data-path="7-select.html"><a href="7-select.html#aic"><i class="fa fa-check"></i><b>7.3.2</b> AIC</a></li>
-<li class="chapter" data-level="7.3.3" data-path="7-select.html"><a href="7-select.html#bic"><i class="fa fa-check"></i><b>7.3.3</b> BIC</a></li>
-</ul></li>
-</ul></li>
-<li class="chapter" data-level="8" data-path="8-logistic.html"><a href="8-logistic.html"><i class="fa fa-check"></i><b>8</b> Logistic Regression</a><ul>
-<li class="chapter" data-level="8.1" data-path="8-logistic.html"><a href="8-logistic.html#comp-spotify"><i class="fa fa-check"></i><b>8.1</b> COMP: Spotify</a><ul>
-<li class="chapter" data-level="" data-path="8-logistic.html"><a href="8-logistic.html#introduction-6"><i class="fa fa-check"></i>Introduction</a></li>
-<li class="chapter" data-level="" data-path="8-logistic.html"><a href="8-logistic.html#packages-9"><i class="fa fa-check"></i>Packages</a></li>
-<li class="chapter" data-level="" data-path="8-logistic.html"><a href="8-logistic.html#data-10"><i class="fa fa-check"></i>Data</a></li>
-<li class="chapter" data-level="" data-path="8-logistic.html"><a href="8-logistic.html#exercises-9"><i class="fa fa-check"></i>Exercises</a></li>
-</ul></li>
-<li class="chapter" data-level="8.2" data-path="8-logistic.html"><a href="8-logistic.html#in-class-risk-of-heart-disease"><i class="fa fa-check"></i><b>8.2</b> IN-CLASS: Risk of Heart Disease</a><ul>
-<li class="chapter" data-level="" data-path="8-logistic.html"><a href="8-logistic.html#packages-10"><i class="fa fa-check"></i>Packages</a></li>
-<li class="chapter" data-level="" data-path="8-logistic.html"><a href="8-logistic.html#data-11"><i class="fa fa-check"></i>Data</a></li>
-<li class="chapter" data-level="" data-path="8-logistic.html"><a href="8-logistic.html#exercises-10"><i class="fa fa-check"></i>Exercises</a></li>
-<li class="chapter" data-level="" data-path="8-logistic.html"><a href="8-logistic.html#references"><i class="fa fa-check"></i>References</a></li>
-</ul></li>
-</ul></li>
-<li class="chapter" data-level="9" data-path="9-multinom-logistic.html"><a href="9-multinom-logistic.html"><i class="fa fa-check"></i><b>9</b> Multinomial Logistic Regression</a><ul>
-<li class="chapter" data-level="9.1" data-path="9-multinom-logistic.html"><a href="9-multinom-logistic.html#comp-general-social-survey"><i class="fa fa-check"></i><b>9.1</b> COMP: General Social Survey</a><ul>
-<li class="chapter" data-level="" data-path="9-multinom-logistic.html"><a href="9-multinom-logistic.html#introduction-7"><i class="fa fa-check"></i>Introduction</a></li>
-<li class="chapter" data-level="" data-path="9-multinom-logistic.html"><a href="9-multinom-logistic.html#packages-11"><i class="fa fa-check"></i>Packages</a></li>
-<li class="chapter" data-level="" data-path="9-multinom-logistic.html"><a href="9-multinom-logistic.html#data-12"><i class="fa fa-check"></i>Data</a></li>
-<li class="chapter" data-level="" data-path="9-multinom-logistic.html"><a href="9-multinom-logistic.html#exercises-11"><i class="fa fa-check"></i>Exercises</a></li>
-<li class="chapter" data-level="" data-path="9-multinom-logistic.html"><a href="9-multinom-logistic.html#acknowledgements-1"><i class="fa fa-check"></i>Acknowledgements</a></li>
-</ul></li>
-<li class="chapter" data-level="9.2" data-path="9-multinom-logistic.html"><a href="9-multinom-logistic.html#in-class-sesame-street"><i class="fa fa-check"></i><b>9.2</b> IN-CLASS: Sesame Street</a><ul>
-<li class="chapter" data-level="" data-path="9-multinom-logistic.html"><a href="9-multinom-logistic.html#packages-12"><i class="fa fa-check"></i>Packages</a></li>
-<li class="chapter" data-level="" data-path="9-multinom-logistic.html"><a href="9-multinom-logistic.html#data-13"><i class="fa fa-check"></i>Data</a></li>
-<li class="chapter" data-level="" data-path="9-multinom-logistic.html"><a href="9-multinom-logistic.html#exercises-12"><i class="fa fa-check"></i>Exercises</a></li>
-<li class="chapter" data-level="" data-path="9-multinom-logistic.html"><a href="9-multinom-logistic.html#references-1"><i class="fa fa-check"></i>References</a></li>
-</ul></li>
-</ul></li>
-<li class="chapter" data-level="10" data-path="10-special.html"><a href="10-special.html"><i class="fa fa-check"></i><b>10</b> Special Topics</a><ul>
-<li class="chapter" data-level="10.1" data-path="10-special.html"><a href="10-special.html#comp-regression-start-to-finish"><i class="fa fa-check"></i><b>10.1</b> COMP: Regression Start to Finish</a><ul>
-<li class="chapter" data-level="" data-path="10-special.html"><a href="10-special.html#introduction-8"><i class="fa fa-check"></i>Introduction</a></li>
-<li class="chapter" data-level="" data-path="10-special.html"><a href="10-special.html#packages-13"><i class="fa fa-check"></i>Packages</a></li>
-<li class="chapter" data-level="" data-path="10-special.html"><a href="10-special.html#data-14"><i class="fa fa-check"></i>Data</a></li>
-<li class="chapter" data-level="" data-path="10-special.html"><a href="10-special.html#exercises-13"><i class="fa fa-check"></i>Exercises</a></li>
-</ul></li>
-<li class="chapter" data-level="10.2" data-path="10-special.html"><a href="10-special.html#in-class-missing-data-exercise"><i class="fa fa-check"></i><b>10.2</b> IN-CLASS: Missing Data Exercise</a></li>
-</ul></li>
+<li class="chapter" data-level="5" data-path="5-anova.html"><a href="5-anova.html"><i class="fa fa-check"></i><b>5</b> Analysis of Variance</a></li>
+<li class="chapter" data-level="6" data-path="6-mlr.html"><a href="6-mlr.html"><i class="fa fa-check"></i><b>6</b> Multiple Linear Regression</a></li>
+<li class="chapter" data-level="7" data-path="7-select.html"><a href="7-select.html"><i class="fa fa-check"></i><b>7</b> Model Selection</a></li>
+<li class="chapter" data-level="8" data-path="8-logistic.html"><a href="8-logistic.html"><i class="fa fa-check"></i><b>8</b> Logistic Regression</a></li>
+<li class="chapter" data-level="9" data-path="9-multinom-logistic.html"><a href="9-multinom-logistic.html"><i class="fa fa-check"></i><b>9</b> Multinomial Logistic Regression</a></li>
+<li class="chapter" data-level="10" data-path="10-special.html"><a href="10-special.html"><i class="fa fa-check"></i><b>10</b> Special Topics</a></li>
 <li class="chapter" data-level="11" data-path="11-datasets.html"><a href="11-datasets.html"><i class="fa fa-check"></i><b>11</b> Data Sets</a></li>
-<li class="chapter" data-level="" data-path="references-2.html"><a href="references-2.html"><i class="fa fa-check"></i>References</a></li>
+<li class="chapter" data-level="" data-path="references.html"><a href="references.html"><i class="fa fa-check"></i>References</a></li>
 <li class="divider"></li>
 <li><a href="https://github.com/rstudio/bookdown" target="blank">Published with bookdown</a></li>
 
@@ -312,180 +211,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
             <section class="normal" id="section-">
 <div id="logistic" class="section level1">
 <h1><span class="header-section-number"> 8</span> Logistic Regression</h1>
-<div id="comp-spotify" class="section level2">
-<h2><span class="header-section-number">8.1</span> COMP: Spotify</h2>
-<div id="introduction-6" class="section level3 unnumbered">
-<h3>Introduction</h3>
-<p>Over the past ten years, recommendation systems have become increasingly popular as more companies strive to offer customized user experiences. Amazon recommends products you may like based on your browse and purchase history, Netflix recommends movies and TV shows based on your viewing history, and music platforms like Spotify recommend songs you may like based on your listening history. While these recommendation systems are built using a variety of algorithms, they are all trying to achieve the same goal: use the characteristics of the products/movies/music a user is known to like to figure out the products/movies/music the user may like but hasn’t discovered yet.</p>
-<div class="sourceCode" id="cb74"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb74-1"><a href="8-logistic.html#cb74-1"></a><span class="co"># See [&quot;How Does Spotify Know You So Well?&quot;](https://medium.com/s/story/spotifys-discover-weekly-how-machine-learning-finds-your-new-music-19a41ab76efe) for more information about Spotify&#39;s recommendation algorithms.</span></span></code></pre></div>
-<p>In today’s lab, we will focus on using the characteristics of songs a user previously played to determine whether or not a user will like a new song. We will use logistic regression to build a model that predicts the probability a user likes a song using the relevant characteristics of that song.</p>
-</div>
-<div id="packages-9" class="section level3 unnumbered">
-<h3>Packages</h3>
-<p>You will need the following packages for today’s lab:</p>
-<div class="sourceCode" id="cb75"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb75-1"><a href="8-logistic.html#cb75-1"></a><span class="kw">library</span>(tidyverse)</span>
-<span id="cb75-2"><a href="8-logistic.html#cb75-2"></a><span class="kw">library</span>(broom)</span>
-<span id="cb75-3"><a href="8-logistic.html#cb75-3"></a><span class="co">## Fill in other packages as needed</span></span></code></pre></div>
-</div>
-<div id="data-10" class="section level3 unnumbered">
-<h3>Data</h3>
-<p>The data in this lab is from the <a href="https://www.kaggle.com/geomack/spotifyclassification">Spotify Song Attributes</a> data set in Kaggle. This data set contains song characteristics of 2017 songs played by a single user and whether or not he liked the song. Since this dataset contains the song preferences of a single user, the scope of the analysis is limited to this particular user.</p>
-<p>You will use data <code>spotify.csv</code> to build the logistic regression model and test the performance of the model using the songs in <code>test_songs.csv</code>.
-Click <a href="https://www2.stat.duke.edu/courses/Spring19/sta210.001/labs/data/spotify.csv"><strong>here</strong></a> to download the dataset <code>spotify.csv</code>, and click <a href="https://www2.stat.duke.edu/courses/Spring19/sta210.001/labs/data/test_songs.csv"><strong>here</strong></a> to download the dataset <code>test_songs.csv</code>. Upload both files to the to the <code>data</code> folder in your <code>lab-07</code> project.</p>
-<p>The <a href="https://developer.spotify.com/documentation/web-api/reference/tracks/get-audio-features/">Spotify documentation page</a> contains a description of the variables included in this dataset.</p>
-</div>
-<div id="exercises-9" class="section level3 unnumbered">
-<h3>Exercises</h3>
-<div id="exploratory-data-analysis-1" class="section level4 unnumbered">
-<h4>Exploratory Data Analysis</h4>
-<ol style="list-style-type: decimal">
-<li>Read through the <a href="https://developer.spotify.com/documentation/web-api/reference/tracks/get-audio-features/">Spotify documentation page</a> to learn more about the variables in the dataset. The response variable for this analysis is <code>like</code>, such that 1 indicates that the user likes the song and 0 otherwise. The remaining will be considered as predictor variables in the model.</li>
-</ol>
-<div class="sourceCode" id="cb76"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb76-1"><a href="8-logistic.html#cb76-1"></a><span class="co"># Part of the code to make `x` a factor. </span></span>
-<span id="cb76-2"><a href="8-logistic.html#cb76-2"></a></span>
-<span id="cb76-3"><a href="8-logistic.html#cb76-3"></a><span class="co"># mutate(x = factor(x))</span></span></code></pre></div>
-<pre><code>- Which potential predictor variables are categorical? You only need to include the variables that are in the dataset.
-- Recode the each of the categorical predictors so they are a `factor` variable type.</code></pre>
-<ol start="2" style="list-style-type: decimal">
-<li><p>Choose a quantitative predictor variable. Make the appropriate plot of the response versus this predictor variable. Describe the relationship between the two variables.</p></li>
-<li><p>Choose a categorical predictor variable. Make the appropriate plot of the response versus this predictor variable. Describe the relationship between the two variables.</p></li>
-<li><p>Let’s consider a potential interaction effect between the variables you choose in Exercises 2 and 3. Make the appropriate plots to examine the potential interaction effect. Do these plots suggest there is a significant interaction effect? Briefly explain.</p></li>
-</ol>
-<p><em>In practice, you should do exploratory data analysis for all potential explanatory variables. We did an abbreviated exploratory data analysis to make the assignment more manageable.</em></p>
-</div>
-<div id="part-ii-logistic-regression-model" class="section level4 unnumbered">
-<h4>Part II: Logistic Regression Model</h4>
-<ol start="5" style="list-style-type: decimal">
-<li><p>Fit the full model and display the model output. The main objective for the model is to predict whether the user will like a song. Should we use this model for this objective? Briefly explain.</p></li>
-<li><p>Use the <code>step</code> function to perform backward selection. Display the output for the selected model.</p></li>
-<li><p>Briefly describe the criteria used by <code>step</code> to select the final model.</p></li>
-</ol>
-<p>For the remainder of this lab, you will use the model chosen by model selection . In practice; however, you would not just stop with the results from the automated model selection procedure and would examine the model further to see if there are any significant interactions, higher-order terms, or if it could even be simplified.</p>
-<ol start="8" style="list-style-type: decimal">
-<li><p>Consider the variable <code>duration_ms</code>.</p>
-<ul>
-<li>Interpret the coefficient of <code>duration_ms</code> and its 95% confidence interval in terms of the odds of the user liking a song.</li>
-<li>Suppose instead of <code>duration_ms</code>, we use the variable <code>duration_s</code>, the duration of a song in seconds. What would be the effect of <code>duration_s</code> on the odds of the user liking a song? Include the updated coefficient and corresponding 95% confidence interval for <code>duration_s</code>. <em>Assume all other variables in the model are unchanged.</em></li>
-</ul></li>
-<li><p>Interpret <code>mode</code> and its 95% confidence interval in terms of the odds of the user liking a song.</p>
-<ul>
-<li>Based on this model, is there evidence of a significant difference in the user’s preference between songs in a major key versus those in a minor key?</li>
-</ul></li>
-</ol>
-</div>
-<div id="part-iii-model-assessment" class="section level4 unnumbered">
-<h4>Part III: Model Assessment</h4>
-<p>In the next few questions, we will do an abbreviated analysis of the residuals.</p>
-<ol start="10" style="list-style-type: decimal">
-<li><p>Create a binned plot of the residuals versus the predicted probabilities. <em>You will first need to use the <code>augment</code> function with the options <code>type.predict = "response"</code> and <code>type.residuals = "response"</code> to get the predicted probabilities and corresponding residuals.</em></p></li>
-<li><p>Choose a quantitative predictor in the final model. Make the appropriate table or plot to examine the residuals versus this predictor variable.</p></li>
-<li><p>Choose a categorical predictor in the final model. Make the appropriate table or plot to examine the residuals versus this predictor variable.</p></li>
-</ol>
-<p><em>In practice, you should examine plots of residuals versus <u>every</u> predictor variable to make a complete assessment of the model fit. For the sake of time on the lab, you will use these three plots to help make the assessment in Exercise 14.</em></p>
-<ol start="13" style="list-style-type: decimal">
-<li><p>Plot the ROC curve and find the area under the curve.</p></li>
-<li><p>Based on the residual plots and the ROC curve, is this logistic model a good fit for the data? Briefly explain.</p></li>
-</ol>
-</div>
-<div id="part-iv-prediction" class="section level4 unnumbered">
-<h4>Part IV: Prediction</h4>
-<ol start="15" style="list-style-type: decimal">
-<li>You are part of the data science team at Spotify, and your model will be used to make song recommendations to users. The goal is to recommend songs the user has a high probability of liking.</li>
-</ol>
-<p>As a group, choose a threshold value to distinguish between songs the user will like and those the user won’t like. What is your threshold value? Use the ROC curve to help justify your choice.</p>
-<ol start="16" style="list-style-type: decimal">
-<li><p>Now let’s put your model and decision threshold to the test! Use your model to calculate the predicted probability that the user will like the following two songs:</p>
-<ul>
-<li>“Sign of the Times” by Harry Styles</li>
-<li>“Hotline Bling” by Drake</li>
-</ul></li>
-</ol>
-<p>The data for the songs can be found in <em>test_songs.csv</em>.</p>
-<ol start="17" style="list-style-type: decimal">
-<li><p>Using your decision threshold from Question 15, would you recommend “Sign of the Times” to this user? Would your recommend “Hotline Bling” to this user? Briefly explain your decision.</p></li>
-<li><p>The user likes “Hotline Bling” but doesn’t like “Sign of the Times”. How good were your recommendations based on these two songs?</p>
-<ul>
-<li>If they were good recommendations, explain how the model and threshold helped you distinguish between songs the user would like and those he wouldn’t.</li>
-<li>If they were not good recommendations, explain the limitations in your model and/or threshold.</li>
-</ul></li>
-</ol>
-<hr />
-</div>
-</div>
-</div>
-<div id="in-class-risk-of-heart-disease" class="section level2">
-<h2><span class="header-section-number">8.2</span> IN-CLASS: Risk of Heart Disease</h2>
-<p>The goal of this exercise is to walk through a logistic regression analysis. It will give you a basic idea of the analysis steps and thought-process; however, due to class time constraints, this analysis is not exhaustive.</p>
-<div id="packages-10" class="section level3 unnumbered">
-<h3>Packages</h3>
-<div class="sourceCode" id="cb78"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb78-1"><a href="8-logistic.html#cb78-1"></a><span class="kw">library</span>(tidyverse)</span>
-<span id="cb78-2"><a href="8-logistic.html#cb78-2"></a><span class="kw">library</span>(broom)</span>
-<span id="cb78-3"><a href="8-logistic.html#cb78-3"></a><span class="kw">library</span>(rms)</span>
-<span id="cb78-4"><a href="8-logistic.html#cb78-4"></a><span class="co">## add any other packages as needed </span></span></code></pre></div>
-</div>
-<div id="data-11" class="section level3 unnumbered">
-<h3>Data</h3>
-<p>This data is from an ongoing cardiovascular study on residents of the town of Framingham, Massachusetts. The goal is to predict whether a patient has a 10-year risk of future coronary heart disease. The dataset includes the following:</p>
-<ul>
-<li><code>male</code>: 0 = Female; 1 = Male</li>
-<li><code>age</code>: Age at exam time.</li>
-<li><code>education</code>: 1 = Some High School; 2 = High School or GED; 3 = Some College or Vocational School; 4 = College</li>
-<li><code>currentSmoker</code>: 0 = nonsmoker; 1 = smoker</li>
-<li><code>cigsPerDay</code>: number of cigarettes smoked per day (estimated average)</li>
-<li><code>BPMeds</code>: 0 = Not on Blood Pressure medications; 1 = Is on Blood Pressure medications</li>
-<li><code>prevalentStroke</code></li>
-<li><code>prevalentHyp</code></li>
-<li><code>diabetes</code>: 0 = No; 1 = Yes</li>
-<li><code>totChol</code>: total cholesterol (mg/dL)</li>
-<li><code>sysBP</code>: systolic blood pressure (mmHg)</li>
-<li><code>diaBP</code>: diastolic blood pressure (mmHg)</li>
-<li><code>BMI</code>: BodyMass Index calculated as: Weight (kg) / Height(meter-squared)</li>
-<li><code>heartRate</code> Beats/Min (Ventricular)</li>
-<li><code>glucose</code>: total glucose mg/dL</li>
-<li><code>TenYearCHD</code>: 0 = Patient doesn’t have 10-year risk of future coronary heart disease; 1 = Patient has 10-year risk of future coronary heart disease;</li>
-</ul>
-<div class="sourceCode" id="cb79"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb79-1"><a href="8-logistic.html#cb79-1"></a>fram_data &lt;-<span class="st"> </span><span class="kw">read_csv</span>(<span class="st">&quot;data/framingham.csv&quot;</span>) <span class="op">%&gt;%</span></span>
-<span id="cb79-2"><a href="8-logistic.html#cb79-2"></a><span class="st">  </span><span class="kw">drop_na</span>() <span class="op">%&gt;%</span></span>
-<span id="cb79-3"><a href="8-logistic.html#cb79-3"></a><span class="st">  </span><span class="kw">mutate</span>(<span class="dt">education =</span> <span class="kw">case_when</span>(</span>
-<span id="cb79-4"><a href="8-logistic.html#cb79-4"></a>    education <span class="op">==</span><span class="st"> </span><span class="dv">1</span> <span class="op">~</span><span class="st"> &quot;Some HS&quot;</span>, </span>
-<span id="cb79-5"><a href="8-logistic.html#cb79-5"></a>    education <span class="op">==</span><span class="st"> </span><span class="dv">2</span> <span class="op">~</span><span class="st"> &quot;HS or GED&quot;</span>, </span>
-<span id="cb79-6"><a href="8-logistic.html#cb79-6"></a>    education <span class="op">==</span><span class="st"> </span><span class="dv">3</span> <span class="op">~</span><span class="st"> &quot;Some College&quot;</span>, </span>
-<span id="cb79-7"><a href="8-logistic.html#cb79-7"></a>    education <span class="op">==</span><span class="st"> </span><span class="dv">4</span> <span class="op">~</span><span class="st"> &quot;College&quot;</span></span>
-<span id="cb79-8"><a href="8-logistic.html#cb79-8"></a>  ),</span>
-<span id="cb79-9"><a href="8-logistic.html#cb79-9"></a>  <span class="dt">currentSmoker =</span> <span class="kw">if_else</span>(currentSmoker <span class="op">==</span><span class="st"> </span><span class="dv">0</span>, <span class="st">&quot;nonsmoker&quot;</span>, <span class="st">&quot;smoker&quot;</span>),</span>
-<span id="cb79-10"><a href="8-logistic.html#cb79-10"></a>  <span class="dt">diabetes =</span> <span class="kw">if_else</span>(diabetes <span class="op">==</span><span class="st"> </span><span class="dv">0</span>,<span class="st">&quot;No&quot;</span>, <span class="st">&quot;Yes&quot;</span>),</span>
-<span id="cb79-11"><a href="8-logistic.html#cb79-11"></a>  <span class="dt">male =</span> <span class="kw">factor</span>(male)</span>
-<span id="cb79-12"><a href="8-logistic.html#cb79-12"></a>  )</span></code></pre></div>
-</div>
-<div id="exercises-10" class="section level3 unnumbered">
-<h3>Exercises</h3>
-<ul>
-<li><p>Fit a full model (main effects only) with <code>TenYearCHD</code> as the response. Display the model output.</p></li>
-<li><p>Based on the goal of the analysis, should the full model be the final model? Why or why not?</p></li>
-<li><p>Use the <code>step</code> function to conduct backward model selection. What is selection criteria used by the <code>step</code> function?</p>
-<ul>
-<li>Display the final model.</li>
-</ul></li>
-<li><p>There is reason to believe that the factors related to coronary heart disease may have different effects for men and women. We would like to include this information in the model. Use the drop-in-deviance test to test at least three interactions with <code>male</code>.</p>
-<ul>
-<li>Which interactions did you choose? Why?</li>
-<li>Include the output from the tests.</li>
-</ul></li>
-<li><p>Use the results from model selection and the drop-in-deviance test to select a final model. Display the model below.</p></li>
-<li><p>Plot and analyze the binned residuals for the final model. Include all appropriate plots. What is your assessment on the model fit based on these plots?</p></li>
-<li><p>Plot and analyze the ROC curve. Based on the ROC curve, does the model fit the data well?</p></li>
-<li><p>A doctor plans to use the results from your model to help select patients for a new heart disease prevention program. She asks you which threshold would be best to select patients for this program. What threshold would you recommend to the doctor? Why?</p></li>
-</ul>
-</div>
-<div id="references" class="section level3 unnumbered">
-<h3>References</h3>
-<ul>
-<li>Data obtained from <a href="https://www.kaggle.com/neisha/heart-disease-prediction-using-logistic-regression/data">https://www.kaggle.com/neisha/heart-disease-prediction-using-logistic-regression/data</a></li>
-</ul>
-<hr />
 
-</div>
-</div>
 </div>
             </section>
 

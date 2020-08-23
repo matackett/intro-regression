@@ -5,20 +5,20 @@
   <meta charset="utf-8" />
   <meta http-equiv="X-UA-Compatible" content="IE=edge" />
   <title> 7 Model Selection | Intro Regression</title>
-  <meta name="description" content="An electronic book with assignments and in-class activities to help students apply concepts in an intermediate-level regression analysis course. The primary focus is application and computing; there are also supplemental math notes on some topics." />
-  <meta name="generator" content="bookdown 0.19 and GitBook 2.6.7" />
+  <meta name="description" content="An electronic book to accompany a second-semester undegraduate regression analysis course. The primary focus is application and computing using R. Some topics include supplemental math notes." />
+  <meta name="generator" content="bookdown 0.20 and GitBook 2.6.7" />
 
   <meta property="og:title" content=" 7 Model Selection | Intro Regression" />
   <meta property="og:type" content="book" />
   <meta property="og:url" content="https://www.introregression.org/" />
   <meta property="og:image" content="https://www.introregression.org/img/introregression-sticker.png" />
-  <meta property="og:description" content="An electronic book with assignments and in-class activities to help students apply concepts in an intermediate-level regression analysis course. The primary focus is application and computing; there are also supplemental math notes on some topics." />
+  <meta property="og:description" content="An electronic book to accompany a second-semester undegraduate regression analysis course. The primary focus is application and computing using R. Some topics include supplemental math notes." />
   <meta name="github-repo" content="matackett/intro-regression" />
 
   <meta name="twitter:card" content="summary" />
   <meta name="twitter:title" content=" 7 Model Selection | Intro Regression" />
   
-  <meta name="twitter:description" content="An electronic book with assignments and in-class activities to help students apply concepts in an intermediate-level regression analysis course. The primary focus is application and computing; there are also supplemental math notes on some topics." />
+  <meta name="twitter:description" content="An electronic book to accompany a second-semester undegraduate regression analysis course. The primary focus is application and computing using R. Some topics include supplemental math notes." />
   <meta name="twitter:image" content="https://www.introregression.org/img/introregression-sticker.png" />
 
 <meta name="author" content="Maria Tackett" />
@@ -49,6 +49,7 @@
 
 
 
+<script src="libs/accessible-code-block-0.0.1/empty-anchor.js"></script>
 
 
 <style type="text/css">
@@ -167,129 +168,27 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 </ul></li>
 </ul></li>
 <li class="chapter" data-level="4" data-path="4-slr.html"><a href="4-slr.html"><i class="fa fa-check"></i><b>4</b> Simple Linear Regression</a><ul>
-<li class="chapter" data-level="4.1" data-path="4-slr.html"><a href="4-slr.html#comp-college-admissions"><i class="fa fa-check"></i><b>4.1</b> COMP: College Admissions</a><ul>
-<li class="chapter" data-level="" data-path="4-slr.html"><a href="4-slr.html#introduction-1"><i class="fa fa-check"></i>Introduction</a></li>
-<li class="chapter" data-level="" data-path="4-slr.html"><a href="4-slr.html#packages-1"><i class="fa fa-check"></i>Packages</a></li>
-<li class="chapter" data-level="" data-path="4-slr.html"><a href="4-slr.html#data-2"><i class="fa fa-check"></i>Data</a></li>
-<li class="chapter" data-level="" data-path="4-slr.html"><a href="4-slr.html#exercises-1"><i class="fa fa-check"></i>Exercises</a></li>
+<li class="chapter" data-level="4.1" data-path="3-intro-r.html"><a href="3-intro-r.html#simple-linear-regression"><i class="fa fa-check"></i><b>4.1</b> Simple Linear Regression</a><ul>
+<li class="chapter" data-level="4.1.1" data-path="4-slr.html"><a href="4-slr.html#getting-started"><i class="fa fa-check"></i><b>4.1.1</b> Getting started</a></li>
+<li class="chapter" data-level="4.1.2" data-path="4-slr.html"><a href="4-slr.html#foundation"><i class="fa fa-check"></i><b>4.1.2</b> Foundation</a></li>
+<li class="chapter" data-level="4.1.3" data-path="4-slr.html"><a href="4-slr.html#inference"><i class="fa fa-check"></i><b>4.1.3</b> Inference</a></li>
 </ul></li>
-<li class="chapter" data-level="4.2" data-path="4-slr.html"><a href="4-slr.html#in-class-advertising-sales"><i class="fa fa-check"></i><b>4.2</b> IN-CLASS: Advertising &amp; Sales</a><ul>
-<li class="chapter" data-level="" data-path="4-slr.html"><a href="4-slr.html#packages-2"><i class="fa fa-check"></i>Packages</a></li>
-<li class="chapter" data-level="" data-path="4-slr.html"><a href="4-slr.html#data-3"><i class="fa fa-check"></i>Data</a></li>
-<li class="chapter" data-level="" data-path="4-slr.html"><a href="4-slr.html#exercises-2"><i class="fa fa-check"></i>Exercises</a></li>
+<li class="chapter" data-level="4.2" data-path="4-slr.html"><a href="4-slr.html#simple-linear-regression-1"><i class="fa fa-check"></i><b>4.2</b> Simple Linear Regression</a><ul>
+<li class="chapter" data-level="4.2.1" data-path="4-slr.html"><a href="4-slr.html#introduce-data"><i class="fa fa-check"></i><b>4.2.1</b> Introduce data</a></li>
+<li class="chapter" data-level="4.2.2" data-path="4-slr.html"><a href="4-slr.html#prediction"><i class="fa fa-check"></i><b>4.2.2</b> Prediction</a></li>
+<li class="chapter" data-level="4.2.3" data-path="4-slr.html"><a href="4-slr.html#checking-conditions"><i class="fa fa-check"></i><b>4.2.3</b> Checking conditions</a></li>
+<li class="chapter" data-level="4.2.4" data-path="4-slr.html"><a href="4-slr.html#partioning-variability"><i class="fa fa-check"></i><b>4.2.4</b> Partioning variability</a></li>
 </ul></li>
-<li class="chapter" data-level="4.3" data-path="4-slr.html"><a href="4-slr.html#in-class-carbohydrates-in-beer"><i class="fa fa-check"></i><b>4.3</b> IN-CLASS: Carbohydrates in Beer</a><ul>
-<li class="chapter" data-level="" data-path="4-slr.html"><a href="4-slr.html#packages-3"><i class="fa fa-check"></i>Packages</a></li>
-<li class="chapter" data-level="" data-path="4-slr.html"><a href="4-slr.html#data-4"><i class="fa fa-check"></i>Data</a></li>
-<li class="chapter" data-level="" data-path="4-slr.html"><a href="4-slr.html#exercises-3"><i class="fa fa-check"></i>Exercises</a></li>
+<li class="chapter" data-level="4.3" data-path="4-slr.html"><a href="4-slr.html#deriving-beta_1-and-beta_0"><i class="fa fa-check"></i><b>4.3</b> Deriving <span class="math inline">\(\beta_1\)</span> and <span class="math inline">\(\beta_0\)</span></a></li>
 </ul></li>
-<li class="chapter" data-level="4.4" data-path="4-slr.html"><a href="4-slr.html#slr-notes"><i class="fa fa-check"></i><b>4.4</b> SLR Notes</a></li>
-<li class="chapter" data-level="4.5" data-path="4-slr.html"><a href="4-slr.html#r-markdown"><i class="fa fa-check"></i><b>4.5</b> R Markdown</a></li>
-<li class="chapter" data-level="4.6" data-path="4-slr.html"><a href="4-slr.html#including-plots"><i class="fa fa-check"></i><b>4.6</b> Including Plots</a></li>
-</ul></li>
-<li class="chapter" data-level="5" data-path="5-anova.html"><a href="5-anova.html"><i class="fa fa-check"></i><b>5</b> Analysis of Variance</a><ul>
-<li class="chapter" data-level="5.0.1" data-path="5-anova.html"><a href="5-anova.html#comp-diamonds"><i class="fa fa-check"></i><b>5.0.1</b> COMP: Diamonds</a></li>
-<li class="chapter" data-level="" data-path="5-anova.html"><a href="5-anova.html#introduction-2"><i class="fa fa-check"></i>Introduction</a></li>
-<li class="chapter" data-level="" data-path="5-anova.html"><a href="5-anova.html#data-5"><i class="fa fa-check"></i>Data</a></li>
-<li class="chapter" data-level="" data-path="5-anova.html"><a href="5-anova.html#exercises-4"><i class="fa fa-check"></i>Exercises</a></li>
-</ul></li>
-<li class="chapter" data-level="6" data-path="6-mlr.html"><a href="6-mlr.html"><i class="fa fa-check"></i><b>6</b> Multiple Linear Regression</a><ul>
-<li class="chapter" data-level="6.1" data-path="6-mlr.html"><a href="6-mlr.html#comp-houses-in-king-county"><i class="fa fa-check"></i><b>6.1</b> COMP: Houses in King County</a><ul>
-<li class="chapter" data-level="" data-path="6-mlr.html"><a href="6-mlr.html#packages-5"><i class="fa fa-check"></i>Packages</a></li>
-<li class="chapter" data-level="" data-path="6-mlr.html"><a href="6-mlr.html#data-6"><i class="fa fa-check"></i>Data</a></li>
-<li class="chapter" data-level="" data-path="6-mlr.html"><a href="6-mlr.html#exercises-5"><i class="fa fa-check"></i>Exercises</a></li>
-<li class="chapter" data-level="" data-path="6-mlr.html"><a href="6-mlr.html#acknowledgement-1"><i class="fa fa-check"></i>Acknowledgement</a></li>
-</ul></li>
-<li class="chapter" data-level="6.2" data-path="6-mlr.html"><a href="6-mlr.html#comp-airbnb-in-asheville-nc"><i class="fa fa-check"></i><b>6.2</b> COMP: Airbnb in Asheville, NC</a><ul>
-<li class="chapter" data-level="" data-path="6-mlr.html"><a href="6-mlr.html#packages-6"><i class="fa fa-check"></i>Packages</a></li>
-<li class="chapter" data-level="" data-path="6-mlr.html"><a href="6-mlr.html#data-7"><i class="fa fa-check"></i>Data</a></li>
-<li class="chapter" data-level="" data-path="6-mlr.html"><a href="6-mlr.html#exercises-6"><i class="fa fa-check"></i>Exercises</a></li>
-<li class="chapter" data-level="" data-path="6-mlr.html"><a href="6-mlr.html#acknowledgement-2"><i class="fa fa-check"></i>Acknowledgement</a></li>
-</ul></li>
-<li class="chapter" data-level="6.3" data-path="6-mlr.html"><a href="6-mlr.html#in-class-wages"><i class="fa fa-check"></i><b>6.3</b> IN-CLASS: Wages</a><ul>
-<li class="chapter" data-level="" data-path="6-mlr.html"><a href="6-mlr.html#packages-7"><i class="fa fa-check"></i>Packages</a></li>
-<li class="chapter" data-level="" data-path="6-mlr.html"><a href="6-mlr.html#data-8"><i class="fa fa-check"></i>Data</a></li>
-<li class="chapter" data-level="" data-path="6-mlr.html"><a href="6-mlr.html#exercises-7"><i class="fa fa-check"></i>Exercises</a></li>
-</ul></li>
-<li class="chapter" data-level="6.4" data-path="6-mlr.html"><a href="6-mlr.html#notes-matrix-form-of-linear-regression"><i class="fa fa-check"></i><b>6.4</b> NOTES: Matrix Form of Linear Regression</a><ul>
-<li class="chapter" data-level="6.4.1" data-path="6-mlr.html"><a href="6-mlr.html#introduction-3"><i class="fa fa-check"></i><b>6.4.1</b> Introduction</a></li>
-<li class="chapter" data-level="6.4.2" data-path="6-mlr.html"><a href="6-mlr.html#matrix-form-for-the-regression-model"><i class="fa fa-check"></i><b>6.4.2</b> Matrix Form for the Regression Model</a></li>
-<li class="chapter" data-level="6.4.3" data-path="6-mlr.html"><a href="6-mlr.html#estimating-the-coefficients"><i class="fa fa-check"></i><b>6.4.3</b> Estimating the Coefficients</a></li>
-<li class="chapter" data-level="6.4.4" data-path="6-mlr.html"><a href="6-mlr.html#variance-covariance-matrix-of-the-coefficients"><i class="fa fa-check"></i><b>6.4.4</b> Variance-covariance matrix of the coefficients</a></li>
-</ul></li>
-<li class="chapter" data-level="6.5" data-path="6-mlr.html"><a href="6-mlr.html#notes-log-transformations"><i class="fa fa-check"></i><b>6.5</b> NOTES: Log Transformations</a><ul>
-<li class="chapter" data-level="6.5.1" data-path="6-mlr.html"><a href="6-mlr.html#log-transformation-on-the-response-variable"><i class="fa fa-check"></i><b>6.5.1</b> Log-transformation on the response variable</a></li>
-<li class="chapter" data-level="6.5.2" data-path="6-mlr.html"><a href="6-mlr.html#log-transformation-on-the-predictor-variable"><i class="fa fa-check"></i><b>6.5.2</b> Log-transformation on the predictor variable</a></li>
-<li class="chapter" data-level="6.5.3" data-path="6-mlr.html"><a href="6-mlr.html#log-transformation-on-the-the-response-and-predictor-variable"><i class="fa fa-check"></i><b>6.5.3</b> Log-transformation on the the response and predictor variable</a></li>
-</ul></li>
-<li class="chapter" data-level="6.6" data-path="6-mlr.html"><a href="6-mlr.html#notes-model-diagnostics"><i class="fa fa-check"></i><b>6.6</b> NOTES: Model Diagnostics</a><ul>
-<li class="chapter" data-level="6.6.1" data-path="6-mlr.html"><a href="6-mlr.html#introduction-4"><i class="fa fa-check"></i><b>6.6.1</b> Introduction</a></li>
-<li class="chapter" data-level="6.6.2" data-path="6-mlr.html"><a href="6-mlr.html#matrix-form-for-the-regression-model-1"><i class="fa fa-check"></i><b>6.6.2</b> Matrix Form for the Regression Model</a></li>
-<li class="chapter" data-level="6.6.3" data-path="6-mlr.html"><a href="6-mlr.html#hat-matrix-leverage"><i class="fa fa-check"></i><b>6.6.3</b> Hat Matrix &amp; Leverage</a></li>
-<li class="chapter" data-level="6.6.4" data-path="6-mlr.html"><a href="6-mlr.html#standardized-residuals"><i class="fa fa-check"></i><b>6.6.4</b> Standardized Residuals</a></li>
-<li class="chapter" data-level="6.6.5" data-path="6-mlr.html"><a href="6-mlr.html#cooks-distance"><i class="fa fa-check"></i><b>6.6.5</b> Cook’s Distance</a></li>
-</ul></li>
-</ul></li>
-<li class="chapter" data-level="7" data-path="7-select.html"><a href="7-select.html"><i class="fa fa-check"></i><b>7</b> Model Selection</a><ul>
-<li class="chapter" data-level="7.1" data-path="7-select.html"><a href="7-select.html#comp-sats-and-mlb"><i class="fa fa-check"></i><b>7.1</b> COMP: SATs and MLB</a><ul>
-<li class="chapter" data-level="" data-path="7-select.html"><a href="7-select.html#introduction-5"><i class="fa fa-check"></i>Introduction</a></li>
-<li class="chapter" data-level="" data-path="7-select.html"><a href="7-select.html#data-9"><i class="fa fa-check"></i>Data</a></li>
-<li class="chapter" data-level="" data-path="7-select.html"><a href="7-select.html#exercises-8"><i class="fa fa-check"></i>Exercises</a></li>
-<li class="chapter" data-level="" data-path="7-select.html"><a href="7-select.html#acknowledgements"><i class="fa fa-check"></i>Acknowledgements</a></li>
-</ul></li>
-<li class="chapter" data-level="7.2" data-path="7-select.html"><a href="7-select.html#in-class-sats-by-state"><i class="fa fa-check"></i><b>7.2</b> IN-CLASS: SATs by State</a><ul>
-<li class="chapter" data-level="" data-path="7-select.html"><a href="7-select.html#manual-backward-selection"><i class="fa fa-check"></i>“Manual” backward selection</a></li>
-<li class="chapter" data-level="" data-path="7-select.html"><a href="7-select.html#backward-selection-using-regsubsets"><i class="fa fa-check"></i>Backward selection using regsubsets</a></li>
-<li class="chapter" data-level="" data-path="7-select.html"><a href="7-select.html#changing-selection-criteria"><i class="fa fa-check"></i>Changing selection criteria</a></li>
-<li class="chapter" data-level="" data-path="7-select.html"><a href="7-select.html#different-selection-procedure"><i class="fa fa-check"></i>Different selection procedure</a></li>
-<li class="chapter" data-level="" data-path="7-select.html"><a href="7-select.html#choosing-a-final-model"><i class="fa fa-check"></i>Choosing a final model</a></li>
-</ul></li>
-<li class="chapter" data-level="7.3" data-path="7-select.html"><a href="7-select.html#notes-model-selection-criteria"><i class="fa fa-check"></i><b>7.3</b> NOTES: Model Selection Criteria</a><ul>
-<li class="chapter" data-level="7.3.1" data-path="7-select.html"><a href="7-select.html#maximum-likelihood-estimation-of-boldsymbolbeta-and-sigma"><i class="fa fa-check"></i><b>7.3.1</b> Maximum Likelihood Estimation of <span class="math inline">\(\boldsymbol{\beta}\)</span> and <span class="math inline">\(\sigma\)</span></a></li>
-<li class="chapter" data-level="7.3.2" data-path="7-select.html"><a href="7-select.html#aic"><i class="fa fa-check"></i><b>7.3.2</b> AIC</a></li>
-<li class="chapter" data-level="7.3.3" data-path="7-select.html"><a href="7-select.html#bic"><i class="fa fa-check"></i><b>7.3.3</b> BIC</a></li>
-</ul></li>
-</ul></li>
-<li class="chapter" data-level="8" data-path="8-logistic.html"><a href="8-logistic.html"><i class="fa fa-check"></i><b>8</b> Logistic Regression</a><ul>
-<li class="chapter" data-level="8.1" data-path="8-logistic.html"><a href="8-logistic.html#comp-spotify"><i class="fa fa-check"></i><b>8.1</b> COMP: Spotify</a><ul>
-<li class="chapter" data-level="" data-path="8-logistic.html"><a href="8-logistic.html#introduction-6"><i class="fa fa-check"></i>Introduction</a></li>
-<li class="chapter" data-level="" data-path="8-logistic.html"><a href="8-logistic.html#packages-9"><i class="fa fa-check"></i>Packages</a></li>
-<li class="chapter" data-level="" data-path="8-logistic.html"><a href="8-logistic.html#data-10"><i class="fa fa-check"></i>Data</a></li>
-<li class="chapter" data-level="" data-path="8-logistic.html"><a href="8-logistic.html#exercises-9"><i class="fa fa-check"></i>Exercises</a></li>
-</ul></li>
-<li class="chapter" data-level="8.2" data-path="8-logistic.html"><a href="8-logistic.html#in-class-risk-of-heart-disease"><i class="fa fa-check"></i><b>8.2</b> IN-CLASS: Risk of Heart Disease</a><ul>
-<li class="chapter" data-level="" data-path="8-logistic.html"><a href="8-logistic.html#packages-10"><i class="fa fa-check"></i>Packages</a></li>
-<li class="chapter" data-level="" data-path="8-logistic.html"><a href="8-logistic.html#data-11"><i class="fa fa-check"></i>Data</a></li>
-<li class="chapter" data-level="" data-path="8-logistic.html"><a href="8-logistic.html#exercises-10"><i class="fa fa-check"></i>Exercises</a></li>
-<li class="chapter" data-level="" data-path="8-logistic.html"><a href="8-logistic.html#references"><i class="fa fa-check"></i>References</a></li>
-</ul></li>
-</ul></li>
-<li class="chapter" data-level="9" data-path="9-multinom-logistic.html"><a href="9-multinom-logistic.html"><i class="fa fa-check"></i><b>9</b> Multinomial Logistic Regression</a><ul>
-<li class="chapter" data-level="9.1" data-path="9-multinom-logistic.html"><a href="9-multinom-logistic.html#comp-general-social-survey"><i class="fa fa-check"></i><b>9.1</b> COMP: General Social Survey</a><ul>
-<li class="chapter" data-level="" data-path="9-multinom-logistic.html"><a href="9-multinom-logistic.html#introduction-7"><i class="fa fa-check"></i>Introduction</a></li>
-<li class="chapter" data-level="" data-path="9-multinom-logistic.html"><a href="9-multinom-logistic.html#packages-11"><i class="fa fa-check"></i>Packages</a></li>
-<li class="chapter" data-level="" data-path="9-multinom-logistic.html"><a href="9-multinom-logistic.html#data-12"><i class="fa fa-check"></i>Data</a></li>
-<li class="chapter" data-level="" data-path="9-multinom-logistic.html"><a href="9-multinom-logistic.html#exercises-11"><i class="fa fa-check"></i>Exercises</a></li>
-<li class="chapter" data-level="" data-path="9-multinom-logistic.html"><a href="9-multinom-logistic.html#acknowledgements-1"><i class="fa fa-check"></i>Acknowledgements</a></li>
-</ul></li>
-<li class="chapter" data-level="9.2" data-path="9-multinom-logistic.html"><a href="9-multinom-logistic.html#in-class-sesame-street"><i class="fa fa-check"></i><b>9.2</b> IN-CLASS: Sesame Street</a><ul>
-<li class="chapter" data-level="" data-path="9-multinom-logistic.html"><a href="9-multinom-logistic.html#packages-12"><i class="fa fa-check"></i>Packages</a></li>
-<li class="chapter" data-level="" data-path="9-multinom-logistic.html"><a href="9-multinom-logistic.html#data-13"><i class="fa fa-check"></i>Data</a></li>
-<li class="chapter" data-level="" data-path="9-multinom-logistic.html"><a href="9-multinom-logistic.html#exercises-12"><i class="fa fa-check"></i>Exercises</a></li>
-<li class="chapter" data-level="" data-path="9-multinom-logistic.html"><a href="9-multinom-logistic.html#references-1"><i class="fa fa-check"></i>References</a></li>
-</ul></li>
-</ul></li>
-<li class="chapter" data-level="10" data-path="10-special.html"><a href="10-special.html"><i class="fa fa-check"></i><b>10</b> Special Topics</a><ul>
-<li class="chapter" data-level="10.1" data-path="10-special.html"><a href="10-special.html#comp-regression-start-to-finish"><i class="fa fa-check"></i><b>10.1</b> COMP: Regression Start to Finish</a><ul>
-<li class="chapter" data-level="" data-path="10-special.html"><a href="10-special.html#introduction-8"><i class="fa fa-check"></i>Introduction</a></li>
-<li class="chapter" data-level="" data-path="10-special.html"><a href="10-special.html#packages-13"><i class="fa fa-check"></i>Packages</a></li>
-<li class="chapter" data-level="" data-path="10-special.html"><a href="10-special.html#data-14"><i class="fa fa-check"></i>Data</a></li>
-<li class="chapter" data-level="" data-path="10-special.html"><a href="10-special.html#exercises-13"><i class="fa fa-check"></i>Exercises</a></li>
-</ul></li>
-<li class="chapter" data-level="10.2" data-path="10-special.html"><a href="10-special.html#in-class-missing-data-exercise"><i class="fa fa-check"></i><b>10.2</b> IN-CLASS: Missing Data Exercise</a></li>
-</ul></li>
+<li class="chapter" data-level="5" data-path="5-anova.html"><a href="5-anova.html"><i class="fa fa-check"></i><b>5</b> Analysis of Variance</a></li>
+<li class="chapter" data-level="6" data-path="6-mlr.html"><a href="6-mlr.html"><i class="fa fa-check"></i><b>6</b> Multiple Linear Regression</a></li>
+<li class="chapter" data-level="7" data-path="7-select.html"><a href="7-select.html"><i class="fa fa-check"></i><b>7</b> Model Selection</a></li>
+<li class="chapter" data-level="8" data-path="8-logistic.html"><a href="8-logistic.html"><i class="fa fa-check"></i><b>8</b> Logistic Regression</a></li>
+<li class="chapter" data-level="9" data-path="9-multinom-logistic.html"><a href="9-multinom-logistic.html"><i class="fa fa-check"></i><b>9</b> Multinomial Logistic Regression</a></li>
+<li class="chapter" data-level="10" data-path="10-special.html"><a href="10-special.html"><i class="fa fa-check"></i><b>10</b> Special Topics</a></li>
 <li class="chapter" data-level="11" data-path="11-datasets.html"><a href="11-datasets.html"><i class="fa fa-check"></i><b>11</b> Data Sets</a></li>
-<li class="chapter" data-level="" data-path="references-2.html"><a href="references-2.html"><i class="fa fa-check"></i>References</a></li>
+<li class="chapter" data-level="" data-path="references.html"><a href="references.html"><i class="fa fa-check"></i>References</a></li>
 <li class="divider"></li>
 <li><a href="https://github.com/rstudio/bookdown" target="blank">Published with bookdown</a></li>
 
@@ -312,252 +211,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
             <section class="normal" id="section-">
 <div id="select" class="section level1">
 <h1><span class="header-section-number"> 7</span> Model Selection</h1>
-<div id="comp-sats-and-mlb" class="section level2">
-<h2><span class="header-section-number">7.1</span> COMP: SATs and MLB</h2>
-<div id="introduction-5" class="section level3 unnumbered">
-<h3>Introduction</h3>
-<p>The goal of today’s assignment is to practice forward and backward model selection. In addition to practice with model selection functions in R, you will manually conduct a backward selection procedure to better understand what occurs when you use model selection functions.</p>
-<div id="packages-8" class="section level4 unnumbered">
-<h4>Packages</h4>
-<p>You will need the following packages for today’s assignment:</p>
-<div class="sourceCode" id="cb47"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb47-1"><a href="7-select.html#cb47-1"></a><span class="kw">library</span>(tidyverse)</span>
-<span id="cb47-2"><a href="7-select.html#cb47-2"></a><span class="kw">library</span>(knitr)</span>
-<span id="cb47-3"><a href="7-select.html#cb47-3"></a><span class="kw">library</span>(broom)</span>
-<span id="cb47-4"><a href="7-select.html#cb47-4"></a><span class="kw">library</span>(leaps)</span>
-<span id="cb47-5"><a href="7-select.html#cb47-5"></a><span class="kw">library</span>(Sleuth3) <span class="co">#case1201 data</span></span>
-<span id="cb47-6"><a href="7-select.html#cb47-6"></a><span class="kw">library</span>(ISLR) <span class="co">#Hitters data</span></span></code></pre></div>
-</div>
-</div>
-<div id="data-9" class="section level3 unnumbered">
-<h3>Data</h3>
-<p>There are two datasets for this assignment. You will read more about the datasets in the respective parts of this assignment.</p>
-<div id="part-i" class="section level4 unnumbered">
-<h4>Part I</h4>
-<p>The dataset for Part I contains the SAT score (out of 1600) and other variables that may be associated with SAT performance for each of the 50 states in the U.S. The data is based on test takers for the 1982 exam. The following variables are in the dataset:</p>
-<ul>
-<li><strong><code>SAT</code></strong>: average total SAT score</li>
-<li><strong><code>State</code></strong>: U.S. State</li>
-<li><strong><code>Takers</code></strong>: percentage of high school seniors who took exam</li>
-<li><strong><code>Income</code></strong>: median income of families of test-takers ($ hundreds)</li>
-<li><strong><code>Years</code></strong>: average number of years test-takers had formal education in social sciences, natural sciences, and humanities</li>
-<li><strong><code>Public</code></strong>: percentage of test-takers who attended public high schools</li>
-<li><strong><code>Expend</code></strong>: total state expenditure on high schools ($ hundreds per student)</li>
-<li><strong><code>Rank</code></strong>: median percentile rank of test-takers within their high school classes</li>
-</ul>
-</div>
-<div id="part-ii" class="section level4 unnumbered">
-<h4>Part II</h4>
-<p>The dataset for Part II contains the performance statistics and salaries of Major League Baseball players in the 1986 and 1987 seasons. The data is in the <code>Hitters</code> dataset in the <code>ISLR</code> package. Type <code>?Hitters</code> in the console to see the variables names and their definitions.</p>
-</div>
-</div>
-<div id="exercises-8" class="section level3 unnumbered">
-<h3>Exercises</h3>
-<div id="part-i-1" class="section level4 unnumbered">
-<h4>Part I</h4>
-<p>For the first part of the assignment, you will return to the model selection activity you started in class using the SAT data. The data is in the <code>case1201</code> data frame in the <code>Sleuth3</code> package.</p>
-<div class="sourceCode" id="cb48"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb48-1"><a href="7-select.html#cb48-1"></a>sat_scores &lt;-<span class="st"> </span>case1201 <span class="op">%&gt;%</span></span>
-<span id="cb48-2"><a href="7-select.html#cb48-2"></a><span class="st">  </span><span class="kw">select</span>(<span class="op">-</span>State) </span></code></pre></div>
-<ol style="list-style-type: decimal">
-<li>Manually perform backward selection using <span class="math inline">\(Adj. R^2\)</span> as the selection criterion. To help you get started, the full model and the code for the first set of models to test are below. Show each step of the selection process. Display the coefficients and <span class="math inline">\(Adj. R^2\)</span> of your final model.</li>
-</ol>
-<div class="sourceCode" id="cb49"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb49-1"><a href="7-select.html#cb49-1"></a>full_model &lt;-<span class="st"> </span><span class="kw">lm</span>(SAT <span class="op">~</span><span class="st"> </span>., <span class="dt">data =</span> sat_scores)</span></code></pre></div>
-<div class="sourceCode" id="cb50"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb50-1"><a href="7-select.html#cb50-1"></a>m1 &lt;-<span class="st"> </span><span class="kw">lm</span>(SAT <span class="op">~</span><span class="st"> </span>Income <span class="op">+</span><span class="st"> </span>Years <span class="op">+</span><span class="st"> </span>Public <span class="op">+</span><span class="st"> </span>Expend <span class="op">+</span><span class="st"> </span>Rank, <span class="dt">data =</span> sat_scores)</span></code></pre></div>
-<div class="sourceCode" id="cb51"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb51-1"><a href="7-select.html#cb51-1"></a>m2 &lt;-<span class="st"> </span><span class="kw">lm</span>(SAT <span class="op">~</span><span class="st"> </span>Takers <span class="op">+</span><span class="st"> </span>Years <span class="op">+</span><span class="st"> </span>Public <span class="op">+</span><span class="st"> </span>Expend <span class="op">+</span><span class="st"> </span>Rank, <span class="dt">data =</span> sat_scores)</span></code></pre></div>
-<div class="sourceCode" id="cb52"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb52-1"><a href="7-select.html#cb52-1"></a>m3 &lt;-<span class="st"> </span><span class="kw">lm</span>(SAT <span class="op">~</span><span class="st"> </span>Takers <span class="op">+</span><span class="st"> </span>Income <span class="op">+</span><span class="st"> </span>Public <span class="op">+</span><span class="st"> </span>Expend <span class="op">+</span><span class="st"> </span>Rank, <span class="dt">data =</span> sat_scores)</span></code></pre></div>
-<div class="sourceCode" id="cb53"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb53-1"><a href="7-select.html#cb53-1"></a>m4 &lt;-<span class="st"> </span><span class="kw">lm</span>(SAT <span class="op">~</span><span class="st"> </span>Takers <span class="op">+</span><span class="st"> </span>Income <span class="op">+</span><span class="st"> </span>Years <span class="op">+</span><span class="st"> </span>Expend <span class="op">+</span><span class="st"> </span>Rank, <span class="dt">data =</span> sat_scores)</span></code></pre></div>
-<div class="sourceCode" id="cb54"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb54-1"><a href="7-select.html#cb54-1"></a>m5 &lt;-<span class="st"> </span><span class="kw">lm</span>(SAT <span class="op">~</span><span class="st"> </span>Takers <span class="op">+</span><span class="st"> </span>Income <span class="op">+</span><span class="st"> </span>Years <span class="op">+</span><span class="st"> </span>Public <span class="op">+</span><span class="st"> </span>Rank, <span class="dt">data =</span> sat_scores)</span></code></pre></div>
-<div class="sourceCode" id="cb55"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb55-1"><a href="7-select.html#cb55-1"></a>m6 &lt;-<span class="st"> </span><span class="kw">lm</span>(SAT <span class="op">~</span><span class="st"> </span>Takers <span class="op">+</span><span class="st"> </span>Income <span class="op">+</span><span class="st"> </span>Years <span class="op">+</span><span class="st"> </span>Public <span class="op">+</span><span class="st"> </span>Expend, <span class="dt">data =</span> sat_scores)</span></code></pre></div>
-<ol start="2" style="list-style-type: decimal">
-<li><p>What is the best 5-variable model? Display the model output.</p></li>
-<li><p>Use the <code>regsubsets</code> function to perform backward selection. What is the final model when <span class="math inline">\(Adj. R^2\)</span> is the selection criterion? Display the coefficients and the <span class="math inline">\(Adj. R^2\)</span> of the final model. <em>This should be the same result you got in Exercise 1.</em></p></li>
-<li><p>What is the final model when <span class="math inline">\(BIC\)</span> is the selection criterion? Display the coefficients and the <span class="math inline">\(BIC\)</span> of the final model.</p></li>
-<li><p>Compare the final models selected by <span class="math inline">\(Adj. R^2\)</span> and <span class="math inline">\(BIC\)</span>.</p>
-<ul>
-<li>Do the models have the same number of predictors? Briefly explain.</li>
-<li>Are the same predictor variables in each model? Briefly explain.</li>
-</ul></li>
-<li><p>Consider the comparisons made in the previous exercise. Are these differences what you would expect given the selection criteria used? Briefly explain.</p></li>
-</ol>
-</div>
-<div id="part-ii-1" class="section level4 unnumbered">
-<h4>Part II</h4>
-<p>The data for this part of the assignment is the <code>Hitters</code> dataset in the <code>ISLR</code> package. Your goal is to fit a regression model that uses the performance statistics of baseball players to predictor their salary. There are 19 potential predictor variables, so you will use the <code>regsubsets</code> function to conduct forward selection to choose a final model.</p>
-<ol start="7" style="list-style-type: decimal">
-<li><p>Read through the data dictionary for the <code>Hitters</code> dataset. You can access it by typing <code>?Hitters</code> in the console. What is the difference between the variables <code>HmRun</code> and <code>CHmRun</code>?</p></li>
-<li><p>Some observations have missing values for <code>Salary</code>. Filter the data, so only observations that have values for <code>Salary</code> are included. You will use this filtered data for the remainder of the assignment.</p></li>
-<li><p>Fill in the code below to conduct forward selection and save the results in an object called <code>sel_summary</code> (selection summary).</p></li>
-</ol>
-<div class="sourceCode" id="cb56"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb56-1"><a href="7-select.html#cb56-1"></a><span class="co"># The `nvmax` option indicates the maximum-sized variable subsets to consider in the model selection.</span></span></code></pre></div>
-<div class="sourceCode" id="cb57"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb57-1"><a href="7-select.html#cb57-1"></a>regfit_forward &lt;-<span class="st"> </span><span class="kw">regsubsets</span>(_______, ________, <span class="dt">method=</span><span class="st">&quot;forward&quot;</span>, <span class="dt">nvmax =</span> <span class="dv">19</span>)</span>
-<span id="cb57-2"><a href="7-select.html#cb57-2"></a>sel_summary &lt;-<span class="st"> </span><span class="kw">summary</span>(_______)</span></code></pre></div>
-<ol start="10" style="list-style-type: decimal">
-<li>The object <code>sel_summary</code> contains the summary statistics for the best fit model containing <span class="math inline">\(k\)</span> predictors, where <span class="math inline">\(k = 1, \ldots, 19\)</span>. The object <code>sel_summary</code> is a list object, so it is cumbersome to extract the relevant summary statistics. Therefore, you can create a data frame called <code>summary_stats</code> such that each row represents the best fit model with <span class="math inline">\(k\)</span> predictors and each column is a summary statistic. For example, the second row contains the summary statistics of the best fit model that contains 2 variables.</li>
-</ol>
-<p>Fill in the code below to create the data frame <code>summary_stats</code> that includes the <span class="math inline">\(BIC\)</span>, <span class="math inline">\(R^2\)</span>, <span class="math inline">\(Adj. R^2\)</span>, and residual sum of squares (RSS) for each model in <code>sel_summary</code>. The data frame <code>summary_stats</code> will also include the column <code>np</code>, the number of predictors in the model represented on each row.</p>
-<div class="sourceCode" id="cb58"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb58-1"><a href="7-select.html#cb58-1"></a>summary_stats &lt;-<span class="st"> </span><span class="kw">data.frame</span>(<span class="dt">bic =</span> sel_summary<span class="op">$</span>bic, </span>
-<span id="cb58-2"><a href="7-select.html#cb58-2"></a>                       <span class="dt">adjr2 =</span> _______, </span>
-<span id="cb58-3"><a href="7-select.html#cb58-3"></a>                       <span class="dt">rsq =</span> _______,</span>
-<span id="cb58-4"><a href="7-select.html#cb58-4"></a>                       <span class="dt">rss =</span> _______) <span class="op">%&gt;%</span></span>
-<span id="cb58-5"><a href="7-select.html#cb58-5"></a><span class="st">  </span><span class="kw">mutate</span>(<span class="dt">np =</span> <span class="kw">row_number</span>()) <span class="co">#number of variables</span></span></code></pre></div>
-<div class="sourceCode" id="cb59"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb59-1"><a href="7-select.html#cb59-1"></a><span class="co"># See the [ggplot2 documentation](https://ggplot2.tidyverse.org/reference/geom_abline.html#arguments) for code to add a vertical line.</span></span></code></pre></div>
-<ol start="11" style="list-style-type: decimal">
-<li>Use the data in the <code>summary_stats</code> data frame to plot <span class="math inline">\(BIC\)</span> versus the number of predictors. Include a vertical line on your plot that shows the number of predictors for the overall final model you would select based on <span class="math inline">\(BIC\)</span>. Be sure your plot has clear and informative title and axes labels.
-<ul>
-<li>How does <span class="math inline">\(BIC\)</span> change as the number of predictors increases?</li>
-<li>How many predictors are in the final model selected based on <span class="math inline">\(BIC\)</span>?</li>
-</ul></li>
-</ol>
-<p><em>You can fill in the code below with either <code>max</code> or <code>min</code> to find the number of predictors in the final model selected based on <span class="math inline">\(BIC\)</span>.</em></p>
-<div class="sourceCode" id="cb60"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb60-1"><a href="7-select.html#cb60-1"></a>np_bic &lt;-<span class="st"> </span>summary_stats <span class="op">%&gt;%</span></span>
-<span id="cb60-2"><a href="7-select.html#cb60-2"></a><span class="st">  </span><span class="kw">filter</span>(bic <span class="op">==</span><span class="st"> </span><span class="kw">_____</span>(bic)) <span class="op">%&gt;%</span></span>
-<span id="cb60-3"><a href="7-select.html#cb60-3"></a><span class="st">  </span><span class="kw">select</span>(np) <span class="op">%&gt;%</span><span class="st"> </span></span>
-<span id="cb60-4"><a href="7-select.html#cb60-4"></a><span class="st">  </span><span class="kw">pull</span>()</span></code></pre></div>
-<ol start="12" style="list-style-type: decimal">
-<li><p>Use the data in the <code>summary_stats</code> data frame to plot <span class="math inline">\(Adj. R^2\)</span> versus the number of predictors. Include a vertical line on your plot that shows the number of predictors for the final model you would select based on <span class="math inline">\(Adj. R^2\)</span>. Be sure your plot has clear and informative title and axes labels.</p>
-<ul>
-<li>How does <span class="math inline">\(Adj. R^2\)</span> change as the number of predictors increases?</li>
-<li>How many predictors are in the final model selected based on <span class="math inline">\(Adj. R^2\)</span>?</li>
-</ul></li>
-<li><p>Use the data in the <code>summary_stats</code> data frame to plot <span class="math inline">\(R^2\)</span> versus the number of predictors. Include a vertical line on your plot that shows the number of predictors for the final model selected based on <span class="math inline">\(R^2\)</span>. Be sure your plot has clear and informative title and axes labels.</p>
-<ul>
-<li>How does <span class="math inline">\(R^2\)</span> change as the number of predictors increases?</li>
-<li>How many predictors are in the final model selected based on <span class="math inline">\(R^2\)</span>?</li>
-</ul></li>
-<li><p>Should <span class="math inline">\(R^2\)</span> be used as a model selection criterion? Briefly explain why or why not using your answers to Exercises 11 - 13.</p></li>
-<li><p>Choose a final model to predict a baseball player’s <code>Salary</code> from his performance statistics. Display the variables, their coefficients, and the summary statistics from the <code>summary_stats</code> data frame for this model.</p></li>
-<li><p>Briefly explain why you chose the model in the previous exercise.</p>
-<ul>
-<li>Which model selection criteria did you use (<span class="math inline">\(BIC\)</span>, <span class="math inline">\(Adj. R^2\)</span>, <span class="math inline">\(R^2\)</span>)? Why?</li>
-<li>What other factors did you consider besides the value of the model selection criteria?</li>
-</ul></li>
-</ol>
-</div>
-</div>
-<div id="acknowledgements" class="section level3 unnumbered">
-<h3>Acknowledgements</h3>
-<p>Part II of this assignment was modeled on Lab 6.5 in <a href="http://www-bcf.usc.edu/~gareth/ISL/">An Introduction to Statistical Learning</a> and <a href="https://www.andrew.cmu.edu/user/achoulde/95791/homework/homework3.html">Variable Selection in Regression</a>.</p>
-<hr />
-</div>
-</div>
-<div id="in-class-sats-by-state" class="section level2">
-<h2><span class="header-section-number">7.2</span> IN-CLASS: SATs by State</h2>
-<div class="sourceCode" id="cb61"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb61-1"><a href="7-select.html#cb61-1"></a><span class="kw">library</span>(tidyverse)</span>
-<span id="cb61-2"><a href="7-select.html#cb61-2"></a><span class="kw">library</span>(knitr)</span>
-<span id="cb61-3"><a href="7-select.html#cb61-3"></a><span class="kw">library</span>(broom)</span>
-<span id="cb61-4"><a href="7-select.html#cb61-4"></a><span class="kw">library</span>(Sleuth3)</span>
-<span id="cb61-5"><a href="7-select.html#cb61-5"></a><span class="kw">library</span>(leaps)</span></code></pre></div>
-<div class="sourceCode" id="cb62"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb62-1"><a href="7-select.html#cb62-1"></a>sat_scores &lt;-<span class="st"> </span>case1201 <span class="op">%&gt;%</span></span>
-<span id="cb62-2"><a href="7-select.html#cb62-2"></a><span class="st">  </span><span class="kw">select</span>(<span class="op">-</span>State) <span class="co">#remove the state variable</span></span></code></pre></div>
-<div id="manual-backward-selection" class="section level3 unnumbered">
-<h3>“Manual” backward selection</h3>
-<ul>
-<li>“Manually”" perform backward selection using Adj. <span class="math inline">\(R^2\)</span> as the selection criteria. Show each step of the selection process. To help you get started, the full model and the code for the first set of models to test are below. You will need to find Adj. <span class="math inline">\(R^2\)</span> for each model.</li>
-</ul>
-<div class="sourceCode" id="cb63"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb63-1"><a href="7-select.html#cb63-1"></a>full_model &lt;-<span class="st"> </span><span class="kw">lm</span>(SAT <span class="op">~</span><span class="st"> </span>., <span class="dt">data =</span> sat_scores)</span></code></pre></div>
-<div class="sourceCode" id="cb64"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb64-1"><a href="7-select.html#cb64-1"></a>m1 &lt;-<span class="st"> </span><span class="kw">lm</span>(SAT <span class="op">~</span><span class="st"> </span>Income <span class="op">+</span><span class="st"> </span>Years <span class="op">+</span><span class="st"> </span>Public <span class="op">+</span><span class="st"> </span>Expend <span class="op">+</span><span class="st"> </span>Rank, <span class="dt">data =</span> sat_scores)</span></code></pre></div>
-<div class="sourceCode" id="cb65"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb65-1"><a href="7-select.html#cb65-1"></a>m2 &lt;-<span class="st"> </span><span class="kw">lm</span>(SAT <span class="op">~</span><span class="st"> </span>Takers <span class="op">+</span><span class="st"> </span>Years <span class="op">+</span><span class="st"> </span>Public <span class="op">+</span><span class="st"> </span>Expend <span class="op">+</span><span class="st"> </span>Rank, <span class="dt">data =</span> sat_scores)</span></code></pre></div>
-<div class="sourceCode" id="cb66"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb66-1"><a href="7-select.html#cb66-1"></a>m3 &lt;-<span class="st"> </span><span class="kw">lm</span>(SAT <span class="op">~</span><span class="st"> </span>Takers <span class="op">+</span><span class="st"> </span>Income <span class="op">+</span><span class="st"> </span>Public <span class="op">+</span><span class="st"> </span>Expend <span class="op">+</span><span class="st"> </span>Rank, <span class="dt">data =</span> sat_scores)</span></code></pre></div>
-<div class="sourceCode" id="cb67"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb67-1"><a href="7-select.html#cb67-1"></a>m4 &lt;-<span class="st"> </span><span class="kw">lm</span>(SAT <span class="op">~</span><span class="st"> </span>Takers <span class="op">+</span><span class="st"> </span>Years <span class="op">+</span><span class="st"> </span>Income <span class="op">+</span><span class="st"> </span>Expend <span class="op">+</span><span class="st"> </span>Rank, <span class="dt">data =</span> sat_scores)</span></code></pre></div>
-<div class="sourceCode" id="cb68"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb68-1"><a href="7-select.html#cb68-1"></a>m5 &lt;-<span class="st"> </span><span class="kw">lm</span>(SAT <span class="op">~</span><span class="st"> </span>Takers <span class="op">+</span><span class="st"> </span>Years <span class="op">+</span><span class="st"> </span>Public <span class="op">+</span><span class="st"> </span>Income <span class="op">+</span><span class="st"> </span>Expend, <span class="dt">data =</span> sat_scores)</span></code></pre></div>
-<div class="sourceCode" id="cb69"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb69-1"><a href="7-select.html#cb69-1"></a>m6 &lt;-<span class="st"> </span><span class="kw">lm</span>(SAT <span class="op">~</span><span class="st"> </span>Takers <span class="op">+</span><span class="st"> </span>Years <span class="op">+</span><span class="st"> </span>Public <span class="op">+</span><span class="st"> </span>Income <span class="op">+</span><span class="st"> </span>Rank, <span class="dt">data =</span> sat_scores)</span></code></pre></div>
-<p>Continue the model selection until you have a final model. Show each step of the model selection process.</p>
-</div>
-<div id="backward-selection-using-regsubsets" class="section level3 unnumbered">
-<h3>Backward selection using regsubsets</h3>
-<ul>
-<li>Use the <code>regsubsets</code> function to perform backward selection using Adj. <span class="math inline">\(R^2\)</span> as the selection criteria.</li>
-</ul>
-<div class="sourceCode" id="cb70"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb70-1"><a href="7-select.html#cb70-1"></a><span class="co"># input code for backward selection using Adj R-sq</span></span></code></pre></div>
-<p>Are the variables the same as the ones at you chose? Is the Adj. <span class="math inline">\(R^2\)</span> the same?</p>
-</div>
-<div id="changing-selection-criteria" class="section level3 unnumbered">
-<h3>Changing selection criteria</h3>
-<ul>
-<li>Use the <code>regsubsets</code> function to perform backward selection using BIC as the selection criteria.</li>
-</ul>
-<div class="sourceCode" id="cb71"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb71-1"><a href="7-select.html#cb71-1"></a><span class="co"># input code for backward selection using BIC</span></span></code></pre></div>
-<p>What variables were chosen for the follow model? How does this model compare to the one selected using Adj. <span class="math inline">\(R^2\)</span>?</p>
-<ul>
-<li>Use the <code>step</code> function to perform backward selection using AIC as the selection criteria.</li>
-</ul>
-<div class="sourceCode" id="cb72"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb72-1"><a href="7-select.html#cb72-1"></a><span class="co"># input code for backward selection using AIC</span></span></code></pre></div>
-<p>What variables were chosen for the follow model? How does this model compare to the models chosen from the other selection criteria?</p>
-</div>
-<div id="different-selection-procedure" class="section level3 unnumbered">
-<h3>Different selection procedure</h3>
-<ul>
-<li>Use forward or stepwise selection to choose a model. You can choose the model selection criteria.</li>
-</ul>
-<div class="sourceCode" id="cb73"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb73-1"><a href="7-select.html#cb73-1"></a><span class="co"># input code for forward or stepwise selection</span></span></code></pre></div>
-<ul>
-<li>How does this model compare to the previous selected models?</li>
-</ul>
-</div>
-<div id="choosing-a-final-model" class="section level3 unnumbered">
-<h3>Choosing a final model</h3>
-<ul>
-<li>You likely have at least 2 different models chosen by the various model selection procedures. Which variables will you include in your final model? Why did you choose this to be your final model?</li>
-</ul>
-<hr />
-</div>
-</div>
-<div id="notes-model-selection-criteria" class="section level2">
-<h2><span class="header-section-number">7.3</span> NOTES: Model Selection Criteria</h2>
-<p>This document discusses some of the mathematical details of Akaike’s Information Criterion (AIC) and Schwarz’s Bayesian Information Criterion (BIC). We assume the reader knowledge of the matrix form for multiple linear regression.Please see <a href="https://github.com/STA210-Sp19/supplemental-notes/blob/master/regression-basics-matrix.pdf">Matrix Form of Linear Regression</a> for a review.</p>
-<div id="maximum-likelihood-estimation-of-boldsymbolbeta-and-sigma" class="section level3">
-<h3><span class="header-section-number">7.3.1</span> Maximum Likelihood Estimation of <span class="math inline">\(\boldsymbol{\beta}\)</span> and <span class="math inline">\(\sigma\)</span></h3>
-<p>To understand the formulas for AIC and BIC, we will first briefly explain the likelihood function and maximum likelihood estimates for regression.</p>
-<p>Let <span class="math inline">\(\mathbf{Y}\)</span> be <span class="math inline">\(n \times 1\)</span> matrix of responses, <span class="math inline">\(\mathbf{X}\)</span>, the <span class="math inline">\(n \times (p+1)\)</span> matrix of predictors, and <span class="math inline">\(\boldsymbol{\beta}\)</span>, <span class="math inline">\((p+1) \times 1\)</span> matrix of coefficients. If the multiple linear regression model is correct then,</p>
-<p><span class="math display">\[\begin{equation}
-\label{norm-assumption}
-\mathbf{Y} \sim N(\mathbf{X}\boldsymbol{\beta}, \sigma^2)
-\end{equation}\]</span></p>
-<p>When we do linear regression, our goal is to estimate the unknown parameters <span class="math inline">\(\boldsymbol{\beta}\)</span> and <span class="math inline">\(\sigma^2\)</span> from (). In <a href="https://github.com/STA210-Sp19/supplemental-notes/blob/master/regression-basics-matrix.pdf">Matrix Form of Linear Regression</a>, we showed a way to estimate these parameters using matrix alegbra. Another approach for estimating <span class="math inline">\(\boldsymbol{\beta}\)</span> and <span class="math inline">\(\sigma^2\)</span> is using <em>maximum likelihood estimation</em>.</p>
-<p>A <strong>likelihood function</strong> is used to summarise the evidence from the data in support of each possible value of a model parameter. Using (), we will write the likelihood function for linear regression as</p>
-<p><span class="math display">\[\begin{equation}
-\label{lr}
-L(\mathbf{X}, \mathbf{Y}|\boldsymbol{\beta}, \sigma^2) = \prod\limits_{i=1}^n (2\pi \sigma^2)^{-\frac{1}{2}} \exp\bigg\{-\frac{1}{2\sigma^2}\sum\limits_{i=1}^n(Y_i - \mathbf{X}_i \boldsymbol{\beta})^T(Y_i - \mathbf{X}_i \boldsymbol{\beta})\bigg\}
-\end{equation}\]</span></p>
-<p>where <span class="math inline">\(Y_i\)</span> is the <span class="math inline">\(i^{th}\)</span> response and <span class="math inline">\(\mathbf{X}_i\)</span> is the vector of predictors for the <span class="math inline">\(i^{th}\)</span> observation. One approach estimating <span class="math inline">\(\boldsymbol{\beta}\)</span> and <span class="math inline">\(\sigma^2\)</span> is to find the values of those parameters that maximize the likelihood in (), i.e. <strong>maximum likelhood estimation</strong>. To make the calculations more manageable, instead of maximizing the likelihood function, we will instead maximize its logarithm, i.e. the log-likelihood function. The values of the parameters that maximize the log-likelihood function are those that maximize the likelihood function. The log-likelihood function we will maximize is</p>
-<p><span class="math display">\[\begin{equation}
-\label{logL}
-\begin{aligned}
-\log L(\mathbf{X}, \mathbf{Y}|\boldsymbol{\beta}, \sigma^2) &amp;= \sum\limits_{i=1}^n -\frac{1}{2}\log(2\pi\sigma^2) -\frac{1}{2\sigma^2}\sum\limits_{i=1}^n(Y_i - \mathbf{X}_i \boldsymbol{\beta})^T(Y_i - \mathbf{X}_i \boldsymbol{\beta}) \\[10pt]
-&amp;= -\frac{n}{2}\log(2\pi\sigma^2) - \frac{1}{2\sigma^2}(\mathbf{Y} - \mathbf{X} \boldsymbol{\beta})^T(\mathbf{Y} - \mathbf{X} \boldsymbol{\beta})\\
-\end{aligned}
-\end{equation}\]</span></p>
-<p>[–insert details MLES–]</p>
-<p>The maximum likelihood estimate of <span class="math inline">\(\boldsymbol{\beta}\)</span> and <span class="math inline">\(\sigma^2\)</span> are</p>
-<p><span class="math display">\[\begin{equation}
-\label{mle}
-\hat{\boldsymbol{\beta}} = (\mathbf{X}^T\mathbf{X})^{-1}\mathbf{X}^T\mathbf{Y} \hspace{10mm} \hat{\sigma}^2 = \frac{1}{n}(\mathbf{Y} - \mathbf{X} \boldsymbol{\beta})^T(\mathbf{Y} - \mathbf{X} \boldsymbol{\beta}) = \frac{1}{n}RSS
-\end{equation}\]</span></p>
-<p>where <span class="math inline">\(RSS\)</span> is the residual sum of squares. Note that the maximum likelihood estimate is not exactly equal to the estimate of <span class="math inline">\(\sigma^2\)</span> we typically use <span class="math inline">\(\frac{RSS}{n-p-1}\)</span>. This is because the maximum likelihood estimate of <span class="math inline">\(\sigma^2\)</span> in () is a <em>biased</em> estimator of <span class="math inline">\(\sigma^2\)</span>. When <span class="math inline">\(n\)</span> is much larger than the number of predictors <span class="math inline">\(p\)</span>, then the differences in these two estimates are trivial.</p>
-</div>
-<div id="aic" class="section level3">
-<h3><span class="header-section-number">7.3.2</span> AIC</h3>
-<p>Akaike’s Information Criterion (AIC) is</p>
-<p><span class="math display">\[\begin{equation}
-\label{aic}
-AIC = -2 \log L + 2(p+1)
-\end{equation}\]</span></p>
-<p>where <span class="math inline">\(\log L\)</span> is the log-likelihood. This is the general form of AIC that can be applied to a variety of models, but for now, let’s focus on AIC for mutliple linear regression.</p>
-<p><span class="math display">\[\begin{equation}
-\label{aic-reg}
-\begin{aligned}
-AIC &amp;= -2 \log L + 2(p+1) \\[10pt]
-&amp;= -2\bigg[-\frac{n}{2}\log(2\pi\sigma^2) - \frac{1}{2\sigma^2}(\mathbf{Y} - \mathbf{X} \boldsymbol{\beta})^T(\mathbf{Y} - \mathbf{X} \boldsymbol{\beta})\bigg] + 2(p+1) \\[10pt]
-&amp;= n\log\big(2\pi\frac{RSS}{n}\big) + \frac{1}{RSS/n}RSS \\[10pt]
-&amp;= n\log(2\pi) + n\log(RSS) - n\log(n) + 2(p+1)
-\end{aligned}
-\end{equation}\]</span></p>
-</div>
-<div id="bic" class="section level3">
-<h3><span class="header-section-number">7.3.3</span> BIC</h3>
-<p>[—]</p>
 
-</div>
-</div>
 </div>
             </section>
 
