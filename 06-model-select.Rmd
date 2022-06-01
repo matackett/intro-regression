@@ -1,4 +1,0 @@
-# Model Selection {#select}
-
-```{r child = c("comp-ex/06-model-select.Rmd", "class-ex/05-model-select-sat.Rmd", "notes/83-model-selection-criteria.Rmd"  ), eval = FALSE}
-```

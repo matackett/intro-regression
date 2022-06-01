@@ -1,4 +1,0 @@
-# Analysis of Variance {#anova}
-
-```{r child="comp-ex/03-anova.Rmd", echo = FALSE, eval = F}
-```

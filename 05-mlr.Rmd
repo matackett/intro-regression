@@ -1,5 +1,0 @@
-# Multiple Linear Regression {#mlr}
-
-```{r child = c("comp-ex/04-mlr.Rmd", "comp-ex/05-mlr-pt2.Rmd", "class-ex/03-mlr-wages.Rmd", "notes/80-regression-basics-matrix.Rmd", "notes/81-log-transformations.Rmd", "notes/82-model-diagnostics-matrix.Rmd"), echo = F, eval = F}
-```
-

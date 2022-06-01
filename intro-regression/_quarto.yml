@@ -1,0 +1,30 @@
+project:
+  type: website
+
+website:
+  title: "Modern Regression"
+  sidebar:
+    search: true
+    style: "docked"
+    contents:
+      - href: index.qmd
+      - section: "Introduction"
+        contents: 
+          - topics.qmd
+          - computing.qmd
+      - section: "---"
+      - section: "Course content"
+        contents: 
+          - slr/index.qmd
+          - mlr/index.qmd
+          - logistic/index.qmd
+          - multinomial/index.qmd
+
+format:
+  html:
+    theme: cosmo
+    css: styles.css
+    toc: true
+
+
+

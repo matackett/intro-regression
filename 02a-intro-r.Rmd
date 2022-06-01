@@ -1,4 +1,0 @@
-# Intro to R {#intro-r}
-
-```{r child = c("comp-ex/01-intro-r.Rmd", "class-ex/00-intro-movies.Rmd")}
-```

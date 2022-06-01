@@ -1,5 +1,0 @@
-# Logistic Regression {#logistic}
-
-
-```{r child = c("comp-ex/07-logistic.Rmd", "class-ex/06-logistic-chd.Rmd" ), eval = FALSE}
-```

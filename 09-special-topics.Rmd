@@ -1,4 +1,0 @@
-# Special Topics {#special}
-
-```{r child = c("comp-ex/09-put-together.Rmd", "class-ex/08-missing-data.Rmd"), eval = FALSE}
-```

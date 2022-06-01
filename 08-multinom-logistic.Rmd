@@ -1,4 +1,0 @@
-# Multinomial Logistic Regression {#multinom-logistic}
-
-```{r child = c("comp-ex/08-multinom-logistic.Rmd", "class-ex/07-multinom-sesame.Rmd" ), eval  = FALSE}
-```

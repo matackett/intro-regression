@@ -1,3 +1,0 @@
-# Analysis of Variance {#anova}
-
-
