@@ -21,37 +21,51 @@
     "text": "To learn more about Quarto websites visit https://quarto.org/docs/websites."
   },
   {
-    "objectID": "topics.html",
-    "href": "topics.html",
-    "title": "Topics",
-    "section": "",
-    "text": "To learn more about Quarto websites visit https://quarto.org/docs/websites."
-  },
-  {
-    "objectID": "slr/index.html",
-    "href": "slr/index.html",
-    "title": "Simple linear regression",
-    "section": "",
-    "text": "Labs\n\n\nHomework\n\n\nSupplemental notes"
-  },
-  {
-    "objectID": "slr/index.html#labs",
-    "href": "slr/index.html#labs",
-    "title": "Simple linear regression",
+    "objectID": "topics/10-slr/index.html#labs",
+    "href": "topics/10-slr/index.html#labs",
+    "title": "Simple Linear Regression",
     "section": "Labs",
     "text": "Labs"
   },
   {
-    "objectID": "slr/index.html#homework",
-    "href": "slr/index.html#homework",
-    "title": "Simple linear regression",
+    "objectID": "topics/10-slr/index.html#homework",
+    "href": "topics/10-slr/index.html#homework",
+    "title": "Simple Linear Regression",
     "section": "Homework",
     "text": "Homework"
   },
   {
-    "objectID": "slr/index.html#supplemental-notes",
-    "href": "slr/index.html#supplemental-notes",
-    "title": "Simple linear regression",
+    "objectID": "topics/10-slr/index.html#supplemental-notes",
+    "href": "topics/10-slr/index.html#supplemental-notes",
+    "title": "Simple Linear Regression",
+    "section": "Supplemental notes",
+    "text": "Supplemental notes"
+  },
+  {
+    "objectID": "topics/index.html",
+    "href": "topics/index.html",
+    "title": "Topics",
+    "section": "",
+    "text": "Simple Linear Regression\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nAnalysis of Variance\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nMultiple linear regression\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nLogistic regression\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nMultinomial logistic regression\n\n\n\n\n\n\n\n\n\n\nNo matching items\n\n\nThis is more text about the topics."
+  },
+  {
+    "objectID": "topics/20-anova/index.html#labs",
+    "href": "topics/20-anova/index.html#labs",
+    "title": "Analysis of Variance",
+    "section": "Labs",
+    "text": "Labs"
+  },
+  {
+    "objectID": "topics/20-anova/index.html#homework",
+    "href": "topics/20-anova/index.html#homework",
+    "title": "Analysis of Variance",
+    "section": "Homework",
+    "text": "Homework"
+  },
+  {
+    "objectID": "topics/20-anova/index.html#supplemental-notes",
+    "href": "topics/20-anova/index.html#supplemental-notes",
+    "title": "Analysis of Variance",
     "section": "Supplemental notes",
     "text": "Supplemental notes"
   }

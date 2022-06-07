@@ -1,0 +1,12 @@
+[
+  {
+    "listing": "/topics/index.html",
+    "items": [
+      "/topics/10-slr/index.html",
+      "/topics/20-anova/index.html",
+      "/topics/30-mlr/index.html",
+      "/topics/40-logistic/index.html",
+      "/topics/50-multinomial/index.html"
+    ]
+  }
+]

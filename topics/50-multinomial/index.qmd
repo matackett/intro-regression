@@ -1,0 +1,12 @@
+---
+title: "Multinomial logistic regression"
+category: "Unit 50"
+---
+
+## Slides 
+
+## Labs 
+
+## Homework 
+
+## Supplemental notes

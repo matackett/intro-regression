@@ -1,5 +1,6 @@
 ---
-title: "Simple linear regression"
+title: "Analysis of Variance"
+category: "Unit 20"
 ---
 
 ## Slides 

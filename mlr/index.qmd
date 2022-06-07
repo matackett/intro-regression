@@ -1,3 +1,0 @@
----
-title: "Multiple linear regression"
----

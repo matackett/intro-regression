@@ -1,0 +1,25 @@
+---
+title: "Topics"
+listing:
+  id: topics-list
+  type: grid
+  sort: "categories"
+  contents:
+    - "10-slr/index.qmd"
+    - "20-anova/index.qmd"
+    - "30-mlr/index.qmd"
+    - "40-logistic/index.qmd"
+    - "50-multinomial/index.qmd"
+  fields: [title, description, image]
+  image-placeholder: "images/image-place-holder.png"
+  grid-columns: 2
+editor: visual
+---
+
+This is some text about the topics. 
+
+:::{#topics-list}
+:::
+
+This is more text about the topics. 
+

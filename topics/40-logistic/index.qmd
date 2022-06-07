@@ -1,0 +1,12 @@
+---
+title: "Logistic regression"
+category: "Unit 40"
+---
+
+## Slides 
+
+## Labs 
+
+## Homework 
+
+## Supplemental notes

@@ -10,15 +10,16 @@ website:
       - href: index.qmd
       - section: "Introduction"
         contents: 
-          - topics.qmd
+          - topics/index.qmd
           - computing.qmd
       - section: "---"
       - section: "Course content"
         contents: 
-          - slr/index.qmd
-          - mlr/index.qmd
-          - logistic/index.qmd
-          - multinomial/index.qmd
+          - topics/10-slr/index.qmd
+          - topics/20-anova/index.qmd
+          - topics/30-mlr/index.qmd
+          - topics/40-logistic/index.qmd
+          - topics/50-multinomial/index.qmd
 
 format:
   html:
